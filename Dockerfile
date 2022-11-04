@@ -1,11 +1,13 @@
 FROM node:14.15.5-alpine3.13 as js-builder
 
+RUN apk add --no-cache git
+
 WORKDIR /usr/src/app/
 
 COPY package.json yarn.lock ./
 COPY packages packages
 
-RUN yarn install --pure-lockfile --no-progress
+RUN yarn install --pure-lockfile --no-progress --network-concurrency 1
 
 COPY tsconfig.json .eslintrc .editorconfig .browserslistrc .prettierrc.js ./
 COPY public public
@@ -22,13 +24,10 @@ RUN apk add --no-cache gcc g++
 
 WORKDIR $GOPATH/src/github.com/grafana/grafana
 
-COPY go.mod go.sum ./
+COPY go.mod go.sum build.go package.json ./
+COPY pkg pkg
 
 RUN go mod verify
-
-COPY pkg pkg
-COPY build.go package.json ./
-
 RUN go run build.go build
 
 # Final stage

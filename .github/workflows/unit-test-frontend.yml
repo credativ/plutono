@@ -1,0 +1,36 @@
+name: Frontend unit tests
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "v*"
+  pull_request:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  unit-test-frontend:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: write
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.15.5
+          cache: yarn
+
+      - name: Install dependencies
+        run: yarn install --pure-lockfile --no-progress --network-concurrency 1
+
+      - name: Test
+        run: yarn test:ci
