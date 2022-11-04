@@ -30,7 +30,7 @@ jobs:
           cache: yarn
 
       - name: Install dependencies
-        run: yarn install --pure-lockfile --no-progress
+        run: yarn install --pure-lockfile --no-progress --network-concurrency 1
 
       - name: Test
         run: yarn test:ci
