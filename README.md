@@ -1,6 +1,6 @@
-![Grafana](docs/logo-horizontal.png)
+# Plutono
 
-The open-source platform for monitoring and observability.
+Plutono is a fork of [Grafana](https://github.com/grafana/grafana/), the open-source platform for monitoring and observability.
 
 [![License](https://img.shields.io/github/license/grafana/grafana)](LICENSE)
 [![Circle CI](https://img.shields.io/circleci/build/gh/grafana/grafana)](https://circleci.com/gh/grafana/grafana)
