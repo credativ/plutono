@@ -203,7 +203,7 @@
   },
   "dependencies": {
     "@emotion/core": "10.0.27",
-    "@credativ/plutono-aws-sdk": "0.0.3",
+    "@credativ/plutono-aws-sdk": "0.0.4-alpha.1",
     "@popperjs/core": "2.5.4",
     "@reduxjs/toolkit": "1.5.0",
     "@sentry/browser": "5.25.0",
