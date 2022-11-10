@@ -28,10 +28,10 @@
   "dependencies": {
     "@babel/core": "7.9.0",
     "@babel/preset-env": "7.9.0",
-    "@credativ/plutono-data": "7.5.17",
+    "@credativ/plutono-data": "7.5.18-alpha.1",
     "@grafana/eslint-config": "2.3.0",
     "@grafana/tsconfig": "^1.0.0-rc1",
-    "@credativ/plutono-ui": "7.5.17",
+    "@credativ/plutono-ui": "7.5.18-alpha.1",
     "@types/command-exists": "^1.2.0",
     "@types/expect-puppeteer": "3.3.1",
     "@types/fs-extra": "^8.1.0",

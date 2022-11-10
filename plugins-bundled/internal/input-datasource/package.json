@@ -16,9 +16,9 @@
   "author": "Grafana Labs",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@credativ/plutono-data": "7.5.17",
-    "@credativ/plutono-toolkit": "7.5.17",
-    "@credativ/plutono-ui": "7.5.17"
+    "@credativ/plutono-data": "7.5.18-alpha.1",
+    "@credativ/plutono-toolkit": "7.5.18-alpha.1",
+    "@credativ/plutono-ui": "7.5.18-alpha.1"
   },
   "volta": {
     "node": "12.16.2"
