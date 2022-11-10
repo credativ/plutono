@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
 import { VariableHide, VariableModel } from '../../../variables/types';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { PickerRenderer } from '../../../variables/pickers/PickerRenderer';
 
 interface Props {

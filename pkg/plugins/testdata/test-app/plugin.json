@@ -16,7 +16,7 @@
   },
 
   "info": {
-    "description": "Official Grafana Test App & Dashboard bundle",
+    "description": "Official Plutono Test App & Dashboard bundle",
     "author": {
       "name": "Test Inc.",
       "url": "http://test.com"
@@ -46,7 +46,7 @@
   ],
 
   "dependencies": {
-    "grafanaVersion": "3.x.x",
+    "plutonoVersion": "3.x.x",
     "plugins": [
       {"type": "datasource", "id": "graphite", "name": "Graphite", "version": "1.0.0"},
       {"type": "panel", "id": "graph", "name": "Graph", "version": "1.0.0"}

@@ -1,4 +1,4 @@
-# To troubleshoot and get more log info enable ldap debug logging in grafana.ini
+# To troubleshoot and get more log info enable ldap debug logging in plutono.ini
 # [log]
 # filters = ldap:debug
 
@@ -43,7 +43,7 @@ search_base_dns = ["cn=users,cn=accounts,dc=example,dc=test"]
 #
 #     group_search_filter = "(member:1.2.840.113556.1.4.1941:=%s)"
 #     group_search_filter_user_attribute = "distinguishedName"
-#     group_search_base_dns = ["ou=groups,dc=grafana,dc=org"]
+#     group_search_base_dns = ["ou=groups,dc=plutono,dc=org"]
 #
 #     [servers.attributes]
 #     ...
@@ -58,7 +58,7 @@ search_base_dns = ["cn=users,cn=accounts,dc=example,dc=test"]
 ## [servers.attributes] to "distinguishedName"
 # group_search_filter_user_attribute = "distinguishedName"
 ## An array of the base DNs to search through for groups. Typically uses ou=groups
-# group_search_base_dns = ["ou=groups,dc=grafana,dc=org"]
+# group_search_base_dns = ["ou=groups,dc=plutono,dc=org"]
 
 # Specify names of the ldap attributes your ldap uses
 [servers.attributes]

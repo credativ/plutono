@@ -4,15 +4,15 @@ import (
 	"errors"
 	"strconv"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/models"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/util"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 func (hs *HTTPServer) getFSDataSources(c *models.ReqContext, enabledPlugins *plugins.EnabledPlugins) (map[string]interface{}, error) {
@@ -141,7 +141,7 @@ func (hs *HTTPServer) getFrontendSettingsMap(c *models.ReqContext) (map[string]i
 		return nil, err
 	}
 
-	defaultDS := "-- Grafana --"
+	defaultDS := "-- Plutono --"
 	for n, ds := range dataSources {
 		dsM := ds.(map[string]interface{})
 		if isDefault, _ := dsM["isDefault"].(bool); isDefault {
@@ -196,7 +196,7 @@ func (hs *HTTPServer) getFrontendSettingsMap(c *models.ReqContext) (map[string]i
 		"panels":                     panels,
 		"appUrl":                     hs.Cfg.AppURL,
 		"appSubUrl":                  hs.Cfg.AppSubURL,
-		"allowOrgCreate":             (setting.AllowUserOrgCreate && c.IsSignedIn) || c.IsGrafanaAdmin,
+		"allowOrgCreate":             (setting.AllowUserOrgCreate && c.IsSignedIn) || c.IsPlutonoAdmin,
 		"authProxyEnabled":           setting.AuthProxyEnabled,
 		"ldapEnabled":                hs.Cfg.LDAPEnabled,
 		"alertingEnabled":            setting.AlertingEnabled,
@@ -225,8 +225,8 @@ func (hs *HTTPServer) getFrontendSettingsMap(c *models.ReqContext) (map[string]i
 			"commit":        commit,
 			"buildstamp":    buildstamp,
 			"edition":       hs.License.Edition(),
-			"latestVersion": hs.PluginManager.GrafanaLatestVersion,
-			"hasUpdate":     hs.PluginManager.GrafanaHasUpdate,
+			"latestVersion": hs.PluginManager.PlutonoLatestVersion,
+			"hasUpdate":     hs.PluginManager.PlutonoHasUpdate,
 			"env":           setting.Env,
 			"isEnterprise":  hs.License.HasValidLicense(),
 		},

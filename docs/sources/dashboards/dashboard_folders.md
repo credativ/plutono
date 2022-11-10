@@ -1,15 +1,15 @@
 +++
 title = "Dashboard Folders"
-keywords = ["grafana", "dashboard", "dashboard folders", "folder", "folders", "documentation", "guide"]
-aliases = ["/docs/grafana/latest/reference/dashboard_folders/"]
+keywords = ["plutono", "dashboard", "dashboard folders", "folder", "folders", "documentation", "guide"]
+aliases = ["/docs/plutono/latest/reference/dashboard_folders/"]
 weight = 3
 +++
 
 # Dashboard Folders
 
-Folders are a way to organize and group dashboards - very useful if you have a lot of dashboards or multiple teams using the same Grafana instance.
+Folders are a way to organize and group dashboards - very useful if you have a lot of dashboards or multiple teams using the same Plutono instance.
 
-> **Note:** Only Grafana Admins and Super Admins can create, edit, or delete folders. Refer to [Organization roles]({{< relref "../permissions/organization_roles.md" >}}) for more information.
+> **Note:** Only Plutono Admins and Super Admins can create, edit, or delete folders. Refer to [Organization roles]({{< relref "../permissions/organization_roles.md" >}}) for more information.
 
 ## How To Create A Folder
 

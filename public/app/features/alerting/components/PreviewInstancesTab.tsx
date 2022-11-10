@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { DataFrame } from '@grafana/data';
-import { Button, Table } from '@grafana/ui';
+import { DataFrame } from '@credativ/plutono-data';
+import { Button, Table } from '@credativ/plutono-ui';
 import { PreviewStyles } from './AlertingQueryPreview';
 
 interface Props {

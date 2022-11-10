@@ -19,19 +19,19 @@ while [ "$1" != "" ]; do
   esac
 done
 
-_grafana_tag=${1:-}
-_docker_repo=${2:-grafana/grafana}
+_plutono_tag=${1:-}
+_docker_repo=${2:-plutono/plutono}
 
 # If the tag starts with v, treat this as an official release
-if echo "$_grafana_tag" | grep -q "^v"; then
-	_grafana_version=$(echo "${_grafana_tag}" | cut -d "v" -f 2)
+if echo "$_plutono_tag" | grep -q "^v"; then
+	_plutono_version=$(echo "${_plutono_tag}" | cut -d "v" -f 2)
 else
-	_grafana_version=$_grafana_tag
+	_plutono_version=$_plutono_tag
 fi
 
 export DOCKER_CLI_EXPERIMENTAL=enabled
 
-echo "pushing ${_docker_repo}:${_grafana_version}${TAG_SUFFIX}"
+echo "pushing ${_docker_repo}:${_plutono_version}${TAG_SUFFIX}"
 
 docker_push_all () {
 	repo=$1
@@ -51,19 +51,19 @@ docker_push_all () {
   docker manifest push "${repo}:${tag}${TAG_SUFFIX}"
 }
 
-if echo "$_grafana_tag" | grep -q "^v" && echo "$_grafana_tag" | grep -vq "beta"; then
+if echo "$_plutono_tag" | grep -q "^v" && echo "$_plutono_tag" | grep -vq "beta"; then
 	echo "pushing ${_docker_repo}:latest${TAG_SUFFIX}"
 	docker_push_all "${_docker_repo}" "latest"
-	docker_push_all "${_docker_repo}" "${_grafana_version}"
-	# Push to the grafana-dev repository with the expected tag
+	docker_push_all "${_docker_repo}" "${_plutono_version}"
+	# Push to the plutono-dev repository with the expected tag
 	# for running the end to end tests successfully
-  docker push "grafana/grafana-dev:${_grafana_tag}${TAG_SUFFIX}"
-elif echo "$_grafana_tag" | grep -q "^v" && echo "$_grafana_tag" | grep -q "beta"; then
-	docker_push_all "${_docker_repo}" "${_grafana_version}"
-	# Push to the grafana-dev repository with the expected tag
+  docker push "plutono/plutono-dev:${_plutono_tag}${TAG_SUFFIX}"
+elif echo "$_plutono_tag" | grep -q "^v" && echo "$_plutono_tag" | grep -q "beta"; then
+	docker_push_all "${_docker_repo}" "${_plutono_version}"
+	# Push to the plutono-dev repository with the expected tag
 	# for running the end to end tests successfully
-  docker push "grafana/grafana-dev:${_grafana_tag}${TAG_SUFFIX}"
-elif echo "$_grafana_tag" | grep -q "master"; then
+  docker push "plutono/plutono-dev:${_plutono_tag}${TAG_SUFFIX}"
+elif echo "$_plutono_tag" | grep -q "master"; then
 	docker_push_all "${_docker_repo}" "master"
-  docker push "grafana/grafana-dev:${_grafana_version}${TAG_SUFFIX}"
+  docker push "plutono/plutono-dev:${_plutono_version}${TAG_SUFFIX}"
 fi

@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useState } from 'react';
 import { debounce } from 'lodash';
-import { LegacyForms } from '@grafana/ui';
+import { LegacyForms } from '@credativ/plutono-ui';
 const { Input } = LegacyForms;
 
 export interface Props {

@@ -8,10 +8,10 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/stretchr/testify/require"
 
 	. "github.com/smartystreets/goconvey/convey"
@@ -155,7 +155,7 @@ func TestAppInsightsPluginRoutes(t *testing.T) {
 				URL:    "https://api.applicationinsights.io",
 				Headers: []plugins.AppPluginRouteHeader{
 					{Name: "X-API-Key", Content: "{{.SecureJsonData.appInsightsApiKey}}"},
-					{Name: "x-ms-app", Content: "Grafana"},
+					{Name: "x-ms-app", Content: "Plutono"},
 				},
 			},
 			{
@@ -164,7 +164,7 @@ func TestAppInsightsPluginRoutes(t *testing.T) {
 				URL:    "https://api.applicationinsights.azure.cn",
 				Headers: []plugins.AppPluginRouteHeader{
 					{Name: "X-API-Key", Content: "{{.SecureJsonData.appInsightsApiKey}}"},
-					{Name: "x-ms-app", Content: "Grafana"},
+					{Name: "x-ms-app", Content: "Plutono"},
 				},
 			},
 		},

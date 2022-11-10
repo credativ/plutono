@@ -1,6 +1,6 @@
 import React, { InputHTMLAttributes, FunctionComponent } from 'react';
-import { InlineFormLabel, Select, InlineField } from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
+import { InlineFormLabel, Select, InlineField } from '@credativ/plutono-ui';
+import { SelectableValue } from '@credativ/plutono-data';
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string;

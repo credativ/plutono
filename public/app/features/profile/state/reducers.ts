@@ -2,7 +2,7 @@ import _ from 'lodash';
 import { PayloadAction, createSlice } from '@reduxjs/toolkit';
 import { UserState, ThunkResult } from 'app/types';
 import config from 'app/core/config';
-import { TimeZone } from '@grafana/data';
+import { TimeZone } from '@credativ/plutono-data';
 import { contextSrv } from 'app/core/core';
 
 export const initialState: UserState = {

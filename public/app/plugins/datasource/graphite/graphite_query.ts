@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import { arrayMove } from 'app/core/utils/arrayMove';
 import { Parser } from './parser';
-import { TemplateSrv } from '@grafana/runtime';
-import { ScopedVars } from '@grafana/data';
+import { TemplateSrv } from '@credativ/plutono-runtime';
+import { ScopedVars } from '@credativ/plutono-data';
 
 export default class GraphiteQuery {
   datasource: any;

@@ -1,9 +1,9 @@
 import React from 'react';
 import { cloneDeep } from 'lodash';
-import { DocsId, SelectableValue } from '@grafana/data';
-import { Container, FeatureInfoBox, fieldMatchersUI, useTheme, ValuePicker } from '@grafana/ui';
+import { DocsId, SelectableValue } from '@credativ/plutono-data';
+import { Container, FeatureInfoBox, fieldMatchersUI, useTheme, ValuePicker } from '@credativ/plutono-ui';
 import { OverrideEditor } from './OverrideEditor';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { css } from 'emotion';
 import { getDocsLink } from 'app/core/utils/docsLinks';
 import { Props } from './types';

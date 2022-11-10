@@ -1,7 +1,7 @@
 +++
 title = "Dashboard list panel"
-keywords = ["grafana", "dashboard list", "documentation", "panel", "dashlist"]
-aliases = ["/docs/grafana/latest/reference/dashlist/", "/docs/grafana/latest/features/panels/dashlist/"]
+keywords = ["plutono", "dashboard list", "documentation", "panel", "dashlist"]
+aliases = ["/docs/plutono/latest/reference/dashlist/", "/docs/plutono/latest/features/panels/dashlist/"]
 weight = 300
 +++
 

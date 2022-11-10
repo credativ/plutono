@@ -5,9 +5,9 @@ import React, { PureComponent } from 'react';
 import { InputDatasource, describeDataFrame } from './InputDatasource';
 import { InputQuery, InputOptions } from './types';
 
-import { InlineFormLabel, LegacyForms, TableInputCSV, Icon } from '@grafana/ui';
+import { InlineFormLabel, LegacyForms, TableInputCSV, Icon } from '@credativ/plutono-ui';
 const { Select } = LegacyForms;
-import { DataFrame, toCSV, SelectableValue, MutableDataFrame, QueryEditorProps } from '@grafana/data';
+import { DataFrame, toCSV, SelectableValue, MutableDataFrame, QueryEditorProps } from '@credativ/plutono-data';
 
 import { dataFrameToCSV } from './utils';
 

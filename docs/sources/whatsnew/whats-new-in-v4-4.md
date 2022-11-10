@@ -1,16 +1,16 @@
 +++
-title = "What's new in Grafana v4.4"
-description = "Feature and improvement highlights for Grafana v4.4"
-keywords = ["grafana", "new", "documentation", "4.4.0", "release notes"]
-aliases = ["/docs/grafana/latest/guides/whats-new-in-v4-4/"]
+title = "What's new in Plutono v4.4"
+description = "Feature and improvement highlights for Plutono v4.4"
+keywords = ["plutono", "new", "documentation", "4.4.0", "release notes"]
+aliases = ["/docs/plutono/latest/guides/whats-new-in-v4-4/"]
 weight = -11
 [_build]
 list = false
 +++
 
-## What's new in Grafana v4.4
+## What's new in Plutono v4.4
 
-Grafana v4.4 is now [available for download](https://grafana.com/grafana/download/4.4.0).
+Plutono v4.4 is now [available for download](https://grafana.com/grafana/download/4.4.0).
 
 **Highlights**:
 
@@ -44,4 +44,4 @@ Head to the [v4.4 download page](https://grafana.com/grafana/download) for downl
 
 ## Thanks
 
-A big thanks to all the Grafana users who contribute by submitting PRs, bug reports, helping out on our [community site](https://community.grafana.com/) and providing feedback!
+A big thanks to all the Plutono users who contribute by submitting PRs, bug reports, helping out on our [community site](https://community.grafana.com/) and providing feedback!

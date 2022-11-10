@@ -5,9 +5,9 @@ weight = 600
 
 # Multi-value variables
 
-Interpolating a variable with multiple values selected is tricky as it is not straight forward how to format the multiple values into a string that is valid in the given context where the variable is used. Grafana tries to solve this by allowing each data source plugin to inform the templating interpolation engine what format to use for multiple values.
+Interpolating a variable with multiple values selected is tricky as it is not straight forward how to format the multiple values into a string that is valid in the given context where the variable is used. Plutono tries to solve this by allowing each data source plugin to inform the templating interpolation engine what format to use for multiple values.
 
-> **Note:** The **Custom all value** option on the variable must be blank for Grafana to format all values into a single string. If leave it blank, then the Grafana concatenates (adds together) all the values in the query. Something like `value1,value2,value3`. If a custom `all` value is used, then instead the value will be something like `*` or `all`.
+> **Note:** The **Custom all value** option on the variable must be blank for Plutono to format all values into a single string. If leave it blank, then the Plutono concatenates (adds together) all the values in the query. Something like `value1,value2,value3`. If a custom `all` value is used, then instead the value will be something like `*` or `all`.
 
 ## Multi-value variables with a Graphite data source
 
@@ -25,6 +25,6 @@ Elasticsearch uses lucene query syntax, so the same variable would be formatted 
 
 Automatic escaping and formatting can cause problems and it can be tricky to grasp the logic behind it. Especially for InfluxDB and Prometheus where the use of regex syntax requires that the variable is used in regex operator context.
 
-If you do not want Grafana to do this automatic regex escaping and formatting, then you must do one of the following:
+If you do not want Plutono to do this automatic regex escaping and formatting, then you must do one of the following:
 - Turn off the **Multi-value** or **Include All option** options.
 - Use the [raw variable format]({{< relref "advanced-variable-format-options.md#raw" >}}).

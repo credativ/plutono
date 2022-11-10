@@ -4,7 +4,7 @@ import (
 	"context"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/grafana/grafana/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/log"
 )
 
 // Plugin backend plugin interface.

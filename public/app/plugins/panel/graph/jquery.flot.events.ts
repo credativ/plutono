@@ -3,7 +3,7 @@ import $ from 'jquery';
 import _ from 'lodash';
 //@ts-ignore
 import Drop from 'tether-drop';
-import { CreatePlotOverlay } from '@grafana/data';
+import { CreatePlotOverlay } from '@credativ/plutono-data';
 
 /** @ngInject */
 const createAnnotationToolip: CreatePlotOverlay = (element, event, plot) => {

@@ -1,7 +1,7 @@
 import React, { FC, FormEvent, useMemo } from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
-import { Field, Input, Select, Tab, TabContent, TabsBar, TextArea, useStyles } from '@grafana/ui';
+import { PlutonoTheme, SelectableValue } from '@credativ/plutono-data';
+import { Field, Input, Select, Tab, TabContent, TabsBar, TextArea, useStyles } from '@credativ/plutono-ui';
 import { AlertDefinition, QueryGroupOptions } from 'app/types';
 
 const intervalOptions: Array<SelectableValue<number>> = [
@@ -75,7 +75,7 @@ export const AlertDefinitionOptions: FC<Props> = ({
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => {
+const getStyles = (theme: PlutonoTheme) => {
   return {
     wrapper: css`
       padding-top: ${theme.spacing.md};

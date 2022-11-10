@@ -7,7 +7,7 @@ import {
   MutableDataFrame,
   PluginMeta,
   readCSV,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import { getQueryOptions } from './testHelpers';
 

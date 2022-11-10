@@ -19,12 +19,12 @@ func TestEncryption(t *testing.T) {
 	})
 
 	t.Run("decrypting basic payload", func(t *testing.T) {
-		encrypted, err := Encrypt([]byte("grafana"), "1234")
+		encrypted, err := Encrypt([]byte("plutono"), "1234")
 		require.NoError(t, err)
 
 		decrypted, err := Decrypt(encrypted, "1234")
 		require.NoError(t, err)
 
-		assert.Equal(t, []byte("grafana"), decrypted)
+		assert.Equal(t, []byte("plutono"), decrypted)
 	})
 }

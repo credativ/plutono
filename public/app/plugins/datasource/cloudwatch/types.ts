@@ -1,5 +1,5 @@
-import { DataQuery, SelectableValue } from '@grafana/data';
-import { AwsAuthDataSourceSecureJsonData, AwsAuthDataSourceJsonData } from '@grafana/aws-sdk';
+import { DataQuery, SelectableValue } from '@credativ/plutono-data';
+import { AwsAuthDataSourceSecureJsonData, AwsAuthDataSourceJsonData } from '@credativ/plutono-aws-sdk';
 
 export interface CloudWatchMetricsQuery extends DataQuery {
   queryMode?: 'Metrics';

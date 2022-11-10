@@ -1,37 +1,37 @@
 +++
 title = "Enterprise configuration"
 description = "Enterprise configuration documentation"
-keywords = ["grafana", "configuration", "documentation", "enterprise"]
+keywords = ["plutono", "configuration", "documentation", "enterprise"]
 weight = 300
 +++
 
-# Grafana Enterprise configuration
+# Plutono Enterprise configuration
 
-This page describes Grafana Enterprise-specific configuration options that you can specify in a `.ini` configuration file or using environment variables. Refer to [Configuration]({{< relref "../administration/configuration.md" >}}) for more information about available configuration options.
+This page describes Plutono Enterprise-specific configuration options that you can specify in a `.ini` configuration file or using environment variables. Refer to [Configuration]({{< relref "../administration/configuration.md" >}}) for more information about available configuration options.
 
 ## [enterprise]
 
 ### license_path
 
-Local filesystem path to Grafana Enterprise's license file.
+Local filesystem path to Plutono Enterprise's license file.
 Defaults to `<paths.data>/license.jwt`.
 
 ### license_text
 
-> **Note:** Available in Grafana Enterprise v7.4+.
+> **Note:** Available in Plutono Enterprise v7.4+.
 
 When set to the text representation (i.e. content of the license file)
-of the license, Grafana will evaluate and apply the given license to
+of the license, Plutono will evaluate and apply the given license to
 the instance.
 
 ### auto_refresh_license
 
-> **Note:** Available in Grafana Enterprise v7.4+.
+> **Note:** Available in Plutono Enterprise v7.4+.
 
-When enabled, Grafana will send the license and usage statistics to
+When enabled, Plutono will send the license and usage statistics to
 the license issuer. If the license has been updated on the issuer's
 side to be valid for a different number of users or a new duration,
-your Grafana instance will be updated with the new terms
+your Plutono instance will be updated with the new terms
 automatically. Defaults to `true`.
 
 ## [white_labeling]
@@ -67,7 +67,7 @@ Set to complete URL to override Apple/iOS icon.
 
 ### footer_links
 
-List the link IDs to use here. Grafana will look for matching link configurations, the link IDs should be space-separated and contain no whitespace.
+List the link IDs to use here. Plutono will look for matching link configurations, the link IDs should be space-separated and contain no whitespace.
 
 ## [usage_insights.export]
 
@@ -151,7 +151,7 @@ Name of the TrueType font file with italic style.
 
 ## [auditing]
 
-[Auditing]({{< relref "auditing.md" >}}) allows you to track important changes to your Grafana instance. By default, audit logs are logged to file but the auditing feature also supports sending logs directly to Loki.
+[Auditing]({{< relref "auditing.md" >}}) allows you to track important changes to your Plutono instance. By default, audit logs are logged to file but the auditing feature also supports sending logs directly to Loki.
 
 ### enabled
 
@@ -271,9 +271,9 @@ List of comma- or space-separated roles that will be mapped to the Editor role.
 
 List of comma- or space-separated roles that will be mapped to the Admin role.
 
-### role_values_grafana_admin
+### role_values_plutono_admin
 
-List of comma- or space-separated roles that will be mapped to the Grafana Admin (Super Admin) role.
+List of comma- or space-separated roles that will be mapped to the Plutono Admin (Super Admin) role.
 
 ## [keystore.vault]
 
@@ -307,9 +307,9 @@ New duration for renewed tokens. Vault may be configured to ignore this value an
 
 ## [security.egress]
 
-> **Note:** Available in Grafana Enterprise v7.4 and later versions.
+> **Note:** Available in Plutono Enterprise v7.4 and later versions.
 
-Security egress makes it possible to control outgoing traffic from the Grafana server.
+Security egress makes it possible to control outgoing traffic from the Plutono server.
 
 ### host_deny_list
 
@@ -329,10 +329,10 @@ A list of cookies that are stripped from the outgoing data source and alerting r
 
 ## [caching]
 
-> **Note:** Available in Grafana Enterprise v7.5 and later versions.
-> **Note:** The Memcached cache backend is unavailable in Grafana Enterprise v7.5.
+> **Note:** Available in Plutono Enterprise v7.5 and later versions.
+> **Note:** The Memcached cache backend is unavailable in Plutono Enterprise v7.5.
 
-When query caching is enabled, Grafana temporarily stores the results of data source queries and serves cached responses to similar requests.
+When query caching is enabled, Plutono temporarily stores the results of data source queries and serves cached responses to similar requests.
 
 ### backend
 

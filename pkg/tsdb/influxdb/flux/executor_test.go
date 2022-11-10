@@ -14,9 +14,9 @@ import (
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
 	"github.com/grafana/grafana-plugin-sdk-go/experimental"
-	"github.com/grafana/grafana/pkg/components/securejsondata"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/components/securejsondata"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"github.com/xorcare/pointer"
@@ -251,7 +251,7 @@ func TestMaxDataPointsExceededNoAggregate(t *testing.T) {
 	dr := executeMockedQuery(t, "max_data_points_exceeded", queryModel{MaxDataPoints: 2})
 
 	// it should contain the error-message
-	require.EqualError(t, dr.Error, "A query returned too many datapoints and the results have been truncated at 21 points to prevent memory issues. At the current graph size, Grafana can only draw 2. Try using the aggregateWindow() function in your query to reduce the number of points returned.")
+	require.EqualError(t, dr.Error, "A query returned too many datapoints and the results have been truncated at 21 points to prevent memory issues. At the current graph size, Plutono can only draw 2. Try using the aggregateWindow() function in your query to reduce the number of points returned.")
 	assertDataResponseDimensions(t, dr, 2, 21)
 }
 
@@ -262,6 +262,6 @@ func TestMaxDataPointsExceededWithAggregate(t *testing.T) {
 	dr := executeMockedQuery(t, "max_data_points_exceeded", queryModel{RawQuery: "aggregateWindow()", MaxDataPoints: 2})
 
 	// it should contain the error-message
-	require.EqualError(t, dr.Error, "A query returned too many datapoints and the results have been truncated at 21 points to prevent memory issues. At the current graph size, Grafana can only draw 2.")
+	require.EqualError(t, dr.Error, "A query returned too many datapoints and the results have been truncated at 21 points to prevent memory issues. At the current graph size, Plutono can only draw 2.")
 	assertDataResponseDimensions(t, dr, 2, 21)
 }

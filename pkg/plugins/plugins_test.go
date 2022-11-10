@@ -8,9 +8,9 @@ import (
 	"testing"
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/ini.v1"
@@ -153,7 +153,7 @@ func TestPluginManager_Init(t *testing.T) {
 		assert.Equal(t, pluginId, Plugins[pluginId].Id)
 		assert.Equal(t, "1.0.0", Plugins[pluginId].Info.Version)
 		assert.Equal(t, pluginSignatureValid, Plugins[pluginId].Signature)
-		assert.Equal(t, grafanaType, Plugins[pluginId].SignatureType)
+		assert.Equal(t, plutonoType, Plugins[pluginId].SignatureType)
 		assert.Equal(t, "Grafana Labs", Plugins[pluginId].SignatureOrg)
 		assert.False(t, Plugins[pluginId].IsCorePlugin)
 	})

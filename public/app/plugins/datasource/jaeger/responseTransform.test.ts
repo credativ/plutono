@@ -1,5 +1,5 @@
 import { createTraceFrame } from './responseTransform';
-import { ArrayVector } from '@grafana/data';
+import { ArrayVector } from '@credativ/plutono-data';
 import { testResponse } from './testResponse';
 
 describe('createTraceFrame', () => {

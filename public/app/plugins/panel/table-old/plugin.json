@@ -6,7 +6,7 @@
   "state": "deprecated",
 
   "info": {
-    "description": "Table Panel for Grafana",
+    "description": "Table Panel for Plutono",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

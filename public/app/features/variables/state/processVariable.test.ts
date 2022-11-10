@@ -1,4 +1,4 @@
-import { UrlQueryMap } from '@grafana/data';
+import { UrlQueryMap } from '@credativ/plutono-data';
 
 import { getTemplatingRootReducer } from './helpers';
 import { variableAdapters } from '../adapters';
@@ -14,7 +14,7 @@ import { updateVariableOptions } from '../query/reducer';
 import { customBuilder, queryBuilder } from '../shared/testing/builders';
 import { variablesInitTransaction } from './transactionReducer';
 import { setVariableQueryRunner, VariableQueryRunner } from '../query/VariableQueryRunner';
-import { setDataSourceSrv } from '@grafana/runtime';
+import { setDataSourceSrv } from '@credativ/plutono-runtime';
 
 jest.mock('app/features/dashboard/services/TimeSrv', () => ({
   getTimeSrv: jest.fn().mockReturnValue({

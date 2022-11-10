@@ -1,6 +1,6 @@
 # Graph Panel
 
-This is the main Graph panel and is **included** with Grafana. It provides a very rich set of graphing options.
+This is the main Graph panel and is **included** with Plutono. It provides a very rich set of graphing options.
 
 For full reference documentation:
 

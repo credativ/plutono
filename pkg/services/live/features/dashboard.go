@@ -4,7 +4,7 @@ import (
 	"encoding/json"
 
 	"github.com/centrifugal/centrifuge"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 // DashboardEvent events related to dashboards
@@ -15,7 +15,7 @@ type dashboardEvent struct {
 	SessionID string `json:"sessionId,omitempty"`
 }
 
-// DashboardHandler manages all the `grafana/dashboard/*` channels
+// DashboardHandler manages all the `plutono/dashboard/*` channels
 type DashboardHandler struct {
 	Publisher models.ChannelPublisher
 }
@@ -48,11 +48,11 @@ func (h *DashboardHandler) publish(event dashboardEvent) error {
 	if err != nil {
 		return err
 	}
-	err = h.Publisher("grafana/dashboard/uid/"+event.UID, msg)
+	err = h.Publisher("plutono/dashboard/uid/"+event.UID, msg)
 	if err != nil {
 		return err
 	}
-	return h.Publisher("grafana/dashboard/changes", msg)
+	return h.Publisher("plutono/dashboard/changes", msg)
 }
 
 // DashboardSaved will broadcast to all connected dashboards

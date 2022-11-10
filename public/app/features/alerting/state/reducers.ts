@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ApplyFieldOverrideOptions, DataFrame, DataTransformerConfig, dateTime, FieldColorModeId } from '@grafana/data';
+import { ApplyFieldOverrideOptions, DataFrame, DataTransformerConfig, dateTime, FieldColorModeId } from '@credativ/plutono-data';
 import alertDef from './alertDef';
 import {
   AlertDefinition,
@@ -16,10 +16,10 @@ import {
   QueryGroupOptions,
 } from 'app/types';
 import store from 'app/core/store';
-import { config } from '@grafana/runtime';
+import { config } from '@credativ/plutono-runtime';
 import { PanelQueryRunner } from '../../query/state/PanelQueryRunner';
 
-export const ALERT_DEFINITION_UI_STATE_STORAGE_KEY = 'grafana.alerting.alertDefinition.ui';
+export const ALERT_DEFINITION_UI_STATE_STORAGE_KEY = 'plutono.alerting.alertDefinition.ui';
 const DEFAULT_ALERT_DEFINITION_UI_STATE: AlertDefinitionUiState = { rightPaneSize: 400, topPaneSize: 0.45 };
 
 export const initialState: AlertRulesState = {

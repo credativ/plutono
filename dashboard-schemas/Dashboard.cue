@@ -58,7 +58,7 @@ package main
 	}] | *[]
 	// Auto-refresh interval.
 	refresh: string
-	// Version of the JSON schema, incremented each time a Grafana update brings
+	// Version of the JSON schema, incremented each time a Plutono update brings
 	// changes to said schema.
 	schemaVersion: int | *25
 	// Version of the dashboard, incremented each time the dashboard is updated.

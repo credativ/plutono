@@ -5,10 +5,10 @@ import { QueryPart } from 'app/core/components/query_part/query_part';
 import alertDef from './state/alertDef';
 import config from 'app/core/config';
 import appEvents from 'app/core/app_events';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { DashboardSrv } from '../dashboard/services/DashboardSrv';
 import DatasourceSrv from '../plugins/datasource_srv';
-import { DataQuery, DataSourceApi, rangeUtil } from '@grafana/data';
+import { DataQuery, DataSourceApi, rangeUtil } from '@credativ/plutono-data';
 import { PanelModel } from 'app/features/dashboard/state';
 import { getDefaultCondition } from './getAlertingValidationMessage';
 import { CoreEvents } from 'app/types';
@@ -273,7 +273,7 @@ export class AlertTabCtrl {
         this.frequencyWarning =
           'A minimum evaluation interval of ' +
           this.alertingMinInterval +
-          ' have been configured in Grafana and will be used for this alert rule. ' +
+          ' have been configured in Plutono and will be used for this alert rule. ' +
           'Please contact the administrator to configure a lower interval.';
       }
     } catch (err) {

@@ -1,20 +1,20 @@
 +++
-title = "What's new in Grafana v6.6"
-description = "Feature and improvement highlights for Grafana v6.6"
-keywords = ["grafana", "new", "documentation", "6.6", "release notes"]
-aliases = ["/docs/grafana/latest/guides/whats-new-in-v6-6/"]
+title = "What's new in Plutono v6.6"
+description = "Feature and improvement highlights for Plutono v6.6"
+keywords = ["plutono", "new", "documentation", "6.6", "release notes"]
+aliases = ["/docs/plutono/latest/guides/whats-new-in-v6-6/"]
 weight = -25
 [_build]
 list = false
 +++
 
-# What's new in Grafana v6.6
+# What's new in Plutono v6.6
 
-For all details, read the full [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md).
+For all details, read the full [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md).
 
 ## Highlights
 
-Grafana 6.6 comes with a lot of new features and enhancements:
+Plutono 6.6 comes with a lot of new features and enhancements:
 
 - [**Panels:** New stat panel]({{< relref "#new-stat-panel" >}})
 - [**Panels:** Auto min/max for Bar Gauge/Gauge/Stat]({{< relref "#auto-min-max" >}})
@@ -59,11 +59,11 @@ Here is how it looks in light theme:
 
 ## Auto min-max
 
-For the panels Gauge, Bar Gauge, and Stat, you can now leave the min and max settings empty. Grafana will, in that case, calculate the min and max based on all the data.
+For the panels Gauge, Bar Gauge, and Stat, you can now leave the min and max settings empty. Plutono will, in that case, calculate the min and max based on all the data.
 
 ## News panel
 
-This panel shows RSS feeds as news items in the default home dashboard for v6.6. Add it to your custom home dashboards to keep up-to-date with Grafana news, or switch the default RSS feed to one of your choice.
+This panel shows RSS feeds as news items in the default home dashboard for v6.6. Add it to your custom home dashboards to keep up-to-date with Plutono news, or switch the default RSS feed to one of your choice.
 
 {{< figure src="/static/img/docs/v66/news_panel.png" max-width="600px" caption="News panel" >}}
 
@@ -101,7 +101,7 @@ The time picker has gotten a major design update. Key changes:
 
 ## Cookie management modifications
 
-In order to align with a [change in Chrome 80](https://www.chromestatus.com/feature/5088147346030592), a breaking change has been introduced to Grafana's [`cookie_samesite` setting]({{< relref "../administration/configuration.md#cookie-samesite" >}}). Grafana now properly renders cookies with the `SameSite=None` attribute when this setting is `none`. The previous behavior of `none` was to omit the `SameSite` attribute from cookies. Grafana will use the previous behavior when `cookie_samesite` is set to `disabled`.
+In order to align with a [change in Chrome 80](https://www.chromestatus.com/feature/5088147346030592), a breaking change has been introduced to Plutono's [`cookie_samesite` setting]({{< relref "../administration/configuration.md#cookie-samesite" >}}). Plutono now properly renders cookies with the `SameSite=None` attribute when this setting is `none`. The previous behavior of `none` was to omit the `SameSite` attribute from cookies. Plutono will use the previous behavior when `cookie_samesite` is set to `disabled`.
 
 Read more about this in the [upgrade notes]({{< relref "../installation/upgrading/#important-changes-regarding-samesite-cookie-attribute" >}}).
 
@@ -125,7 +125,7 @@ Isolating a series from a big set of lines in a graph is important for drill-dow
 
 ## Enterprise: White labeling
 
-This release adds new white labeling options to the grafana.ini file (can also be set via ENV variables).
+This release adds new white labeling options to the plutono.ini file (can also be set via ENV variables).
 
 ```bash
 [white_labeling]
@@ -158,25 +158,25 @@ Customize the login page, side menu bar, and footer links.
 
 ## Enterprise APT and YUM repositories
 
-Now you can install the enterprise edition from the APT and YUM repository. The following table shows the APT repository for each Grafana version (for instructions read the [installation notes]({{< relref "../installation/debian/#install-from-apt-repository" >}})) :
+Now you can install the enterprise edition from the APT and YUM repository. The following table shows the APT repository for each Plutono version (for instructions read the [installation notes]({{< relref "../installation/debian/#install-from-apt-repository" >}})) :
 
-| Grafana Version | Package | Repository |
+| Plutono Version | Package | Repository |
 |-----------------|---------|------------|
-| Grafana OSS     | grafana | `https://packages.grafana.com/oss/deb stable main` |
-| Grafana OSS (Beta)     | grafana | `https://packages.grafana.com/oss/deb beta main` |
-| Grafana Enterprise     | grafana-enterprise | `https://packages.grafana.com/enterprise/deb stable main` |
-| Grafana Enterprise (Beta)     | grafana-enterprise | `https://packages.grafana.com/enterprise/deb beta main` |
+| Plutono OSS     | plutono | `https://packages.grafana.com/oss/deb stable main` |
+| Plutono OSS (Beta)     | plutono | `https://packages.grafana.com/oss/deb beta main` |
+| Plutono Enterprise     | plutono-enterprise | `https://packages.grafana.com/enterprise/deb stable main` |
+| Plutono Enterprise (Beta)     | plutono-enterprise | `https://packages.grafana.com/enterprise/deb beta main` |
 
-The following table shows the YUM repositories for each Grafana version (for instructions read the [installation notes]({{< relref "../installation/rpm/#install-from-yum-repository" >}})) :
+The following table shows the YUM repositories for each Plutono version (for instructions read the [installation notes]({{< relref "../installation/rpm/#install-from-yum-repository" >}})) :
 
-| Grafana Version            | Package            | Repository                                         |
+| Plutono Version            | Package            | Repository                                         |
 |----------------------------|--------------------|----------------------------------------------------|
-| Grafana OSS                | grafana            | `https://packages.grafana.com/oss/rpm`             |
-| Grafana OSS (Beta)         | grafana            | `https://packages.grafana.com/oss/rpm-beta`        |
-| Grafana Enterprise         | grafana-enterprise | `https://packages.grafana.com/enterprise/rpm`      |
-| Grafana Enterprise (Beta)  | grafana-enterprise | `https://packages.grafana.com/enterprise/rpm-beta` |
+| Plutono OSS                | plutono            | `https://packages.grafana.com/oss/rpm`             |
+| Plutono OSS (Beta)         | plutono            | `https://packages.grafana.com/oss/rpm-beta`        |
+| Plutono Enterprise         | plutono-enterprise | `https://packages.grafana.com/enterprise/rpm`      |
+| Plutono Enterprise (Beta)  | plutono-enterprise | `https://packages.grafana.com/enterprise/rpm-beta` |
 
-We recommend all users to install the Enterprise Edition of Grafana, which can be seamlessly upgraded with a Grafana Enterprise [subscription](https://grafana.com/products/enterprise/?utm_source=grafana-install-page).
+We recommend all users to install the Enterprise Edition of Plutono, which can be seamlessly upgraded with a Plutono Enterprise [subscription](https://grafana.com/products/enterprise/).
 
 ## Stackdriver: Meta labels
 
@@ -186,11 +186,11 @@ From now on it will be possible to utilize meta data label in "group bys", filte
 
 ## CloudWatch: Calculate period based on time range
 
-When the period field was left blank in Grafana 6.5, it would default to 60 seconds. In case users issued queries with a large time span, there was a high risk that they would reach the 100,800 data points per request limit in the Get Metric Data (GMD) API. When the period field is left blank in Grafana 6.6, the period will be calculated automatically based on the time range. The formula that is used is `time range in seconds / 2000`, and then we snap to next higher value in an array of pre-defined periods `[60, 300, 900, 3600, 21600, 86400]`. This will reduce the risk for receiving a `Too many datapoints requested` error in the panel.
+When the period field was left blank in Plutono 6.5, it would default to 60 seconds. In case users issued queries with a large time span, there was a high risk that they would reach the 100,800 data points per request limit in the Get Metric Data (GMD) API. When the period field is left blank in Plutono 6.6, the period will be calculated automatically based on the time range. The formula that is used is `time range in seconds / 2000`, and then we snap to next higher value in an array of pre-defined periods `[60, 300, 900, 3600, 21600, 86400]`. This will reduce the risk for receiving a `Too many datapoints requested` error in the panel.
 
 ## CloudWatch: Display partial result in graph when max data points per call limit is reached
 
-In case all queries in a GMD call are metric stat (not using math expressions), Grafana will paginate the response until all data points are received. But pagination is not supported in case a math expression is being used, so in that case it's not possible to receive more than 100,800 data points. Previously when that limit was reached, we only displayed an error message. In Grafana 6.6, we also display the 100,800 data points that were received in the graph.
+In case all queries in a GMD call are metric stat (not using math expressions), Plutono will paginate the response until all data points are received. But pagination is not supported in case a math expression is being used, so in that case it's not possible to receive more than 100,800 data points. Previously when that limit was reached, we only displayed an error message. In Plutono 6.6, we also display the 100,800 data points that were received in the graph.
 
 ## Upgrading
 
@@ -198,11 +198,11 @@ See [upgrade notes]({{< relref "../installation/upgrading/#upgrading-to-v6-6" >}
 
 ## Changelog
 
-Check out [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md) for a complete list of new features, changes, and bug fixes.
+Check out [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md) for a complete list of new features, changes, and bug fixes.
 
 ## Notice about upcoming changes in backendSrv for plugin authors
 
-In our mission to migrate away from AngularJS to React we have removed all AngularJS dependencies in the core data retrieval service `backendSrv`. This change is already in master and will be introduced in the next `major` Grafana release.
+In our mission to migrate away from AngularJS to React we have removed all AngularJS dependencies in the core data retrieval service `backendSrv`. This change is already in master and will be introduced in the next `major` Plutono release.
 
 Removing the AngularJS dependencies in `backendSrv` has the unfortunate side effect of AngularJS digest no longer being triggered for any request made with `backendSrv`. Because of this, external plugins using `backendSrv` directly may suffer from strange behaviour in the UI.
 

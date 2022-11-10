@@ -1,4 +1,4 @@
-import { MetricFindValue } from '@grafana/data';
+import { MetricFindValue } from '@credativ/plutono-data';
 
 export interface PostgresQueryForInterpolation {
   alias?: any;

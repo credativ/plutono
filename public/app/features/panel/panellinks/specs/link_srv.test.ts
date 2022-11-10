@@ -1,5 +1,5 @@
-import { FieldType, locationUtil, toDataFrame, VariableOrigin } from '@grafana/data';
-import { setTemplateSrv } from '@grafana/runtime';
+import { FieldType, locationUtil, toDataFrame, VariableOrigin } from '@credativ/plutono-data';
+import { setTemplateSrv } from '@credativ/plutono-runtime';
 import { getDataFrameVars, LinkSrv } from '../link_srv';
 import { TimeSrv } from 'app/features/dashboard/services/TimeSrv';
 import { TemplateSrv } from 'app/features/templating/template_srv';
@@ -123,11 +123,11 @@ describe('linkSrv', () => {
     describe('Building links with root_url set', () => {
       it.each`
         url                 | appSubUrl     | expected
-        ${'/d/XXX'}         | ${'/grafana'} | ${'/grafana/d/XXX'}
-        ${'/grafana/d/XXX'} | ${'/grafana'} | ${'/grafana/d/XXX'}
-        ${'d/whatever'}     | ${'/grafana'} | ${'d/whatever'}
+        ${'/d/XXX'}         | ${'/plutono'} | ${'/plutono/d/XXX'}
+        ${'/plutono/d/XXX'} | ${'/plutono'} | ${'/plutono/d/XXX'}
+        ${'d/whatever'}     | ${'/plutono'} | ${'d/whatever'}
         ${'/d/XXX'}         | ${''}         | ${'/d/XXX'}
-        ${'/grafana/d/XXX'} | ${''}         | ${'/grafana/d/XXX'}
+        ${'/plutono/d/XXX'} | ${''}         | ${'/plutono/d/XXX'}
         ${'d/whatever'}     | ${''}         | ${'d/whatever'}
       `(
         "when link '$url' and config.appSubUrl set to '$appSubUrl' then result should be '$expected'",

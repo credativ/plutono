@@ -13,9 +13,9 @@ import {
   RadioButtonGroup,
   FieldSet,
   TimeZonePicker,
-} from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+} from '@credativ/plutono-ui';
+import { SelectableValue } from '@credativ/plutono-data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import { DashboardSearchHit, DashboardSearchItemType } from 'app/features/search/types';
 import { backendSrv } from 'app/core/services/backend_srv';

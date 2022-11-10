@@ -1,12 +1,12 @@
 +++
 title = "Best practices for managing dashboards"
-description = "Best practices for managing dashboards in Grafana"
+description = "Best practices for managing dashboards in Plutono"
 weight = 200
 +++
 
 # Best practices for managing dashboards
 
-This page outlines some best practices to follow when managing Grafana dashboards.
+This page outlines some best practices to follow when managing Plutono dashboards.
 
 ## Before you begin
 

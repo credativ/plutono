@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon } from '@grafana/ui';
+import { Icon } from '@credativ/plutono-ui';
 
 export interface FunctionDescriptor {
   text: string;

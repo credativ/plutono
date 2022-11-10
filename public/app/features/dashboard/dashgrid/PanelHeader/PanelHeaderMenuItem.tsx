@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
 import { css } from 'emotion';
-import { PanelMenuItem } from '@grafana/data';
-import { Icon, IconName, useTheme } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { PanelMenuItem } from '@credativ/plutono-data';
+import { Icon, IconName, useTheme } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 interface Props {
   children?: any;

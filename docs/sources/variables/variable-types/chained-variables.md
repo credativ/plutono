@@ -1,7 +1,7 @@
 +++
 title = "Chained variables"
-keywords = ["grafana", "templating", "variable", "nested", "chained", "linked"]
-aliases = ["/docs/grafana/latest/variables/chained-variables.md"]
+keywords = ["plutono", "templating", "variable", "nested", "chained", "linked"]
+aliases = ["/docs/plutono/latest/variables/chained-variables.md"]
 weight = 800
 +++
 
@@ -13,12 +13,12 @@ Chained variable queries are different for every data source, but the premise is
 
 Extremely complex linked templated dashboards are possible, 5 or 10 levels deep. Technically, there is no limit to how deep or complex you can go, but the more links you have, the greater the query load.
 
-## Grafana Play dashboard examples
+## Plutono Play dashboard examples
 
-The following Grafana Play dashboards contain fairly simple chained variables, only two layers deep. To view the variables and their settings, click **Dashboard settings** (gear icon) and then click **Variables**. Both examples are expanded in the following section.
+The following Plutono Play dashboards contain fairly simple chained variables, only two layers deep. To view the variables and their settings, click **Dashboard settings** (gear icon) and then click **Variables**. Both examples are expanded in the following section.
 
-- [Graphite Templated Nested](https://play.grafana.org/d/000000056/graphite-templated-nested?orgId=1&var-app=country&var-server=All&var-interval=1h)
-- [InfluxDB Templated](https://play.grafana.org/d/000000002/influxdb-templated?orgId=1)
+- [Graphite Templated Nested](https://play.plutono.org/d/000000056/graphite-templated-nested?orgId=1&var-app=country&var-server=All&var-interval=1h)
+- [InfluxDB Templated](https://play.plutono.org/d/000000002/influxdb-templated?orgId=1)
 
 ## Examples explained
 
@@ -30,7 +30,7 @@ The following sections explain the linked examples in the dashboards above in de
 
 ### Graphite example
 
-In this example, you have several applications. Each application has a different subset of servers. It is based on the [Graphite Templated Nested](https://play.grafana.org/d/000000056/graphite-templated-nested?orgId=1&var-app=country&var-server=All&var-interval=1h).
+In this example, you have several applications. Each application has a different subset of servers. It is based on the [Graphite Templated Nested](https://play.plutono.org/d/000000056/graphite-templated-nested?orgId=1&var-app=country&var-server=All&var-interval=1h).
 
 Now, you could make separate variables for each metric source, but then you have to know which server goes with which app. A better solution is to use one variable to filter another. In this example, when the user changes the value of the `app` variable, it changes the dropdown options returned by the `server` variable. Both variables use the **Multi-value** option and **Include all option**, allowing users to select some or all options presented at any time.
 
@@ -90,7 +90,7 @@ apps.fakesite.web_server_01.cpu.*
 
 ### InfluxDB example
 
-In this example, you have several data centers. Each data center has a different subset of hosts. It is based on the [InfluxDB Templated](https://play.grafana.org/d/000000002/influxdb-templated?orgId=1).
+In this example, you have several data centers. Each data center has a different subset of hosts. It is based on the [InfluxDB Templated](https://play.plutono.org/d/000000002/influxdb-templated?orgId=1).
 
 In this example, when the user changes the value of the `datacenter` variable, it changes the dropdown options returned by the `host` variable. The `host` variable uses the **Multi-value** option and **Include all option**, allowing users to select some or all options presented at any time. The `datacenter` does not use either option, so you can only select one data center at a time.
 
@@ -160,7 +160,7 @@ The following practices will make your dashboards and variables easier to use.
 
 ### Variable order
 
-You can change the orders of variables in the dashboard variable list by clicking the up and down arrows on the right side of each entry. Grafana lists variable dropdowns left to right according to this list, with the variable at the top on the far left.
+You can change the orders of variables in the dashboard variable list by clicking the up and down arrows on the right side of each entry. Plutono lists variable dropdowns left to right according to this list, with the variable at the top on the far left.
 
 - List variables that do not have dependencies at the top, before their child variables.
 - Each variable should follow the one it is dependent on.
@@ -170,4 +170,4 @@ You can change the orders of variables in the dashboard variable list by clickin
 
 The more layers of dependency you have in variables, the longer it will take to update dashboards after you change variables.
 
-For example, if you have a series of four linked variables (country, region, server, metric) and you change a root variable value (country), then Grafana must run queries for all the dependent variables before it updates the visualizations in the dashboard.
+For example, if you have a series of four linked variables (country, region, server, metric) and you change a root variable value (country), then Plutono must run queries for all the dependent variables before it updates the visualizations in the dashboard.

@@ -6,8 +6,8 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 func TestSensuGoNotifier(t *testing.T) {
@@ -27,8 +27,8 @@ func TestSensuGoNotifier(t *testing.T) {
 	json = `
 	{
 		"url": "http://sensu-api.example.com:8080",
-		"entity": "grafana_instance_01",
-		"check": "grafana_rule_0",
+		"entity": "plutono_instance_01",
+		"check": "plutono_rule_0",
 		"namespace": "default",
 		"handler": "myhandler",
 		"apikey": "abcdef0123456789abcdef"
@@ -49,8 +49,8 @@ func TestSensuGoNotifier(t *testing.T) {
 	assert.Equal(t, "Sensu Go", sensuGoNotifier.Name)
 	assert.Equal(t, "sensugo", sensuGoNotifier.Type)
 	assert.Equal(t, "http://sensu-api.example.com:8080", sensuGoNotifier.URL)
-	assert.Equal(t, "grafana_instance_01", sensuGoNotifier.Entity)
-	assert.Equal(t, "grafana_rule_0", sensuGoNotifier.Check)
+	assert.Equal(t, "plutono_instance_01", sensuGoNotifier.Entity)
+	assert.Equal(t, "plutono_rule_0", sensuGoNotifier.Check)
 	assert.Equal(t, "default", sensuGoNotifier.Namespace)
 	assert.Equal(t, "myhandler", sensuGoNotifier.Handler)
 	assert.Equal(t, "abcdef0123456789abcdef", sensuGoNotifier.APIKey)

@@ -11,8 +11,8 @@ import (
 	"strings"
 
 	"github.com/go-stack/stack"
-	"github.com/grafana/grafana/pkg/util"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/util"
+	"github.com/credativ/plutono/pkg/util/errutil"
 	"github.com/inconshreveable/log15"
 	isatty "github.com/mattn/go-isatty"
 	"gopkg.in/ini.v1"
@@ -209,7 +209,7 @@ func ReadLoggingConfig(modes []string, logsPath string, cfg *ini.File) error {
 		case "console":
 			handler = log15.StreamHandler(os.Stdout, format)
 		case "file":
-			fileName := sec.Key("file_name").MustString(filepath.Join(logsPath, "grafana.log"))
+			fileName := sec.Key("file_name").MustString(filepath.Join(logsPath, "plutono.log"))
 			dpath := filepath.Dir(fileName)
 			if err := os.MkdirAll(dpath, os.ModePerm); err != nil {
 				Root.Error("Failed to create directory", "dpath", dpath, "err", err)

@@ -1,4 +1,4 @@
-import { defaultIntervals } from '@grafana/ui';
+import { defaultIntervals } from '@credativ/plutono-ui';
 
 interface Args {
   params: Record<string, string>;

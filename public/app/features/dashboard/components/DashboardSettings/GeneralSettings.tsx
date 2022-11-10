@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { SelectableValue, TimeZone } from '@grafana/data';
-import { Select, TagsInput, Input, Field, CollapsableSection, RadioButtonGroup } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { SelectableValue, TimeZone } from '@credativ/plutono-data';
+import { Select, TagsInput, Input, Field, CollapsableSection, RadioButtonGroup } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { FolderPicker } from 'app/core/components/Select/FolderPicker';
 import { DashboardModel } from '../../state/DashboardModel';
 import { DeleteDashboardButton } from '../DeleteDashboard/DeleteDashboardButton';

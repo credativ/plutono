@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/gtime"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/tsdb/sqleng"
+	"github.com/credativ/plutono/pkg/components/gtime"
+	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/tsdb/sqleng"
 )
 
 const rsIdentifier = `([_a-zA-Z0-9]+)`

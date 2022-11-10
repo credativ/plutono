@@ -1,22 +1,22 @@
 +++
-title = "With Grafana and Prometheus"
-description = "Guide for getting started with Grafana and Prometheus"
-keywords = ["grafana", "intro", "guide", "started"]
-aliases = ["/docs/grafana/latest/guides/gettingstarted","/docs/grafana/latest/guides/getting_started"]
+title = "With Plutono and Prometheus"
+description = "Guide for getting started with Plutono and Prometheus"
+keywords = ["plutono", "intro", "guide", "started"]
+aliases = ["/docs/plutono/latest/guides/gettingstarted","/docs/plutono/latest/guides/getting_started"]
 weight = 300
 +++
 
-# Getting started with Grafana and Prometheus
+# Getting started with Plutono and Prometheus
 
-Prometheus is an open source systems monitoring system for which Grafana provides out-of-the-box support. This topic walks you through the steps to create a series of dashboards in Grafana to display system metrics for a server monitored by Prometheus.
+Prometheus is an open source systems monitoring system for which Plutono provides out-of-the-box support. This topic walks you through the steps to create a series of dashboards in Plutono to display system metrics for a server monitored by Prometheus.
 
-You can also configure a [Grafana Cloud](https://grafana.com/docs/grafana-cloud/) instance to display system metrics without having to host Grafana yourself.
+You can also configure a [Plutono Cloud](https://grafana.com/docs/grafana-cloud/) instance to display system metrics without having to host Plutono yourself.
 
 {{< docs/shared "getting-started/first-step.md" >}}
 
 ## Step 2. Download Prometheus and node_exporter
 
-Prometheus, like Grafana, can be installed on many different operating systems. Refer to the [Prometheus download page](https://prometheus.io/download/), which lists all stable versions of Prometheus components. Download the following components:
+Prometheus, like Plutono, can be installed on many different operating systems. Refer to the [Prometheus download page](https://prometheus.io/download/), which lists all stable versions of Prometheus components. Download the following components:
 
  - [Prometheus](https://prometheus.io/download/#prometheus)
  - [node_exporter](https://prometheus.io/download/#node_exporter)
@@ -51,9 +51,9 @@ Prometheus node_exporter is a widely used tool that exposes system metrics. Inst
     ./prometheus --config.file=./prometheus.yml
    ```
 
-## Step 5. Check Prometheus metrics in Grafana Explore view
+## Step 5. Check Prometheus metrics in Plutono Explore view
 
-In your Grafana instance, go to the [Explore]({{< relref "../explore/_index.md" >}}) view and build queries to experiment with the metrics you want to monitor. Here you can also debug issues related to collecting metrics from Prometheus. Pay special attention to the [Prometheus-specific features]({{< relref "../explore/_index.md#prometheus-specific-features" >}}) to avail custom querying experience for Prometheus.
+In your Plutono instance, go to the [Explore]({{< relref "../explore/_index.md" >}}) view and build queries to experiment with the metrics you want to monitor. Here you can also debug issues related to collecting metrics from Prometheus. Pay special attention to the [Prometheus-specific features]({{< relref "../explore/_index.md#prometheus-specific-features" >}}) to avail custom querying experience for Prometheus.
 
 ## Step 6. Start building dashboards
 
@@ -61,4 +61,4 @@ Now that you have a curated list of queries, create [dashboards]({{< relref "../
 
 The following image shows a dashboard with three panels showing some system metrics.
 
-<img width="850px" src="/static/img/docs/getting-started/simple_grafana_prom_dashboard.png" caption="Prometheus dashboards" >
+<img width="850px" src="/static/img/docs/getting-started/simple_plutono_prom_dashboard.png" caption="Prometheus dashboards" >

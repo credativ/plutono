@@ -1,4 +1,4 @@
-import { DataQuery, DataSourceJsonData } from '@grafana/data';
+import { DataQuery, DataSourceJsonData } from '@credativ/plutono-data';
 
 export interface OpenTsdbQuery extends DataQuery {
   metric?: any;

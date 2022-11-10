@@ -1,8 +1,8 @@
 +++
 title = "Common observability strategies"
 description = "Common observability strategies"
-keywords = ["grafana", "intro", "guide", "concepts", "methods"]
-aliases = ["/docs/grafana/latest/getting-started/strategies/"]
+keywords = ["plutono", "intro", "guide", "concepts", "methods"]
+aliases = ["/docs/plutono/latest/getting-started/strategies/"]
 weight = 300
 +++
 
@@ -52,4 +52,4 @@ This method is similar to the RED method, but it includes saturation.
 - **Errors -** Rate of requests that are failing
 - **Saturation -** How "full" your system is
 
-[Here's an example from Grafana Play](https://play.grafana.org/d/000000109/the-four-golden-signals?orgId=1).
+[Here's an example from Plutono Play](https://play.plutono.org/d/000000109/the-four-golden-signals?orgId=1).

@@ -1,16 +1,16 @@
 +++
 title = "Package a plugin"
 type = "docs"
-aliases = ["/docs/grafana/latest/developers/plugins/share-a-plugin/"]
+aliases = ["/docs/plutono/latest/developers/plugins/share-a-plugin/"]
 +++
 
 # Package a plugin
 
 You've just built your first plugin, and now you want to share it with the world. In this guide, you'll learn how to package and share your plugin with others.
 
-For Grafana to be able to load a plugin, it first needs to be built. When you build a plugin from source, a `dist` directory is created that contains the production build, or _plugin assets_, for your plugin.
+For Plutono to be able to load a plugin, it first needs to be built. When you build a plugin from source, a `dist` directory is created that contains the production build, or _plugin assets_, for your plugin.
 
-When the Grafana server starts, it recursively looks in the plugin directory for any directory that contains a `plugin.json` file and tries to load the plugin assets in the same directory.
+When the Plutono server starts, it recursively looks in the plugin directory for any directory that contains a `plugin.json` file and tries to load the plugin assets in the same directory.
 
 There are three steps needed to package a plugin:
 
@@ -42,6 +42,6 @@ There are three steps needed to package a plugin:
 
 ## Publish your plugin on Grafana.com
 
-The best way to share your plugin with the world is to publish it on [Grafana Plugins](https://grafana.com/plugins). By having your plugin published on Grafana.com, more users will be able to discover your plugin.
+The best way to share your plugin with the world is to publish it on [Plutono Plugins](https://grafana.com/plugins). By having your plugin published on Grafana.com, more users will be able to discover your plugin.
 
-To publish a plugin to [Grafana Plugins](https://grafana.com/grafana/plugins), create a pull request to the [Grafana Plugin Repository](https://github.com/grafana/grafana-plugin-repository). Please note that both the source code and the packaged plugin archive need to be publicly available.
+To publish a plugin to [Plutono Plugins](https://grafana.com/grafana/plugins), create a pull request to the [Plutono Plugin Repository](https://github.com/grafana/grafana-plugin-repository). Please note that both the source code and the packaged plugin archive need to be publicly available.

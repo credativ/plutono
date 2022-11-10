@@ -1,6 +1,6 @@
 // Package searchstore converts search queries to SQL.
 //
-// Because of the wide array of deployments supported by Grafana,
+// Because of the wide array of deployments supported by Plutono,
 // search strives to be both performant enough to handle heavy users
 // and lightweight enough to not increase complexity/resource
 // utilization for light users. To allow this we're currently searching

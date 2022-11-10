@@ -1,6 +1,6 @@
 import React from 'react';
 import { MetricDescriptor } from '../types';
-import { Icon } from '@grafana/ui';
+import { Icon } from '@credativ/plutono-ui';
 
 export interface Props {
   rawQuery: string;
@@ -68,7 +68,7 @@ export class Help extends React.Component<Props, State> {
         )}
 
         {displayHelp && (
-          <div className="gf-form grafana-info-box alert-info">
+          <div className="gf-form plutono-info-box alert-info">
             <div>
               <h5>Alias Patterns</h5>Format the legend keys any way you want by using alias patterns. Format the legend
               keys any way you want by using alias patterns.
@@ -109,7 +109,7 @@ export class Help extends React.Component<Props, State> {
                 </li>
                 <li>
                   <code>{`${'{{bucket}}'}`}</code> = bucket boundary for distribution metrics when using a heatmap in
-                  Grafana
+                  Plutono
                 </li>
                 <li>
                   <code>{`${'{{project}}'}`}</code> = The project name that was specified in the query editor

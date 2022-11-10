@@ -1,7 +1,7 @@
 import coreModule from '../core_module';
 import config from 'app/core/config';
-import { AppEvents } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
+import { AppEvents } from '@credativ/plutono-data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { promiseToDigest } from '../utils/promiseToDigest';
 
 export class ResetPasswordCtrl {
@@ -21,9 +21,9 @@ export class ResetPasswordCtrl {
 
     $scope.navModel = {
       main: {
-        icon: 'grafana',
+        icon: 'plutono',
         text: 'Reset Password',
-        subTitle: 'Reset your Grafana password',
+        subTitle: 'Reset your Plutono password',
         breadcrumbs: [{ title: 'Login', url: 'login' }],
       },
     };

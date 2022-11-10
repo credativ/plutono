@@ -1,14 +1,14 @@
 +++
 title = "Microsoft SQL Server"
-description = "Guide for using Microsoft SQL Server in Grafana"
-keywords = ["grafana", "MSSQL", "Microsoft", "SQL", "guide", "Azure SQL Database"]
-aliases = ["/docs/grafana/latest/features/datasources/mssql/"]
+description = "Guide for using Microsoft SQL Server in Plutono"
+keywords = ["plutono", "MSSQL", "Microsoft", "SQL", "guide", "Azure SQL Database"]
+aliases = ["/docs/plutono/latest/features/datasources/mssql/"]
 weight = 900
 +++
 
-# Using Microsoft SQL Server in Grafana
+# Using Microsoft SQL Server in Plutono
 
-Grafana ships with a built-in Microsoft SQL Server (MS SQL) data source plugin that allows you to query and visualize data from any Microsoft SQL Server 2005 or newer, including Microsoft Azure SQL Database. This topic explains options, variables, querying, and other options specific to the MS SQL data source. Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Grafana. Only users with the organization admin role can add data sources.
+Plutono ships with a built-in Microsoft SQL Server (MS SQL) data source plugin that allows you to query and visualize data from any Microsoft SQL Server 2005 or newer, including Microsoft Azure SQL Database. This topic explains options, variables, querying, and other options specific to the MS SQL data source. Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Plutono. Only users with the organization admin role can add data sources.
 
 ## Data source options
 
@@ -49,15 +49,15 @@ number followed by a valid time identifier, e.g. `1m` (1 minute) or `30s` (30 se
 ### Database user permissions
 
 The database user you specify when you add the data source should only be granted SELECT permissions on
-the specified database and tables you want to query. Grafana does not validate that the query is safe. The query
+the specified database and tables you want to query. Plutono does not validate that the query is safe. The query
 could include any SQL statement. For example, statements like `DELETE FROM user;` and `DROP TABLE user;` would be
 executed. To protect against this we _highly_ recommend you create a specific MS SQL user with restricted permissions.
 
 Example:
 
 ```sql
- CREATE USER grafanareader WITH PASSWORD 'password'
- GRANT SELECT ON dbo.YourTable3 TO grafanareader
+ CREATE USER plutonoreader WITH PASSWORD 'password'
+ GRANT SELECT ON dbo.YourTable3 TO plutonoreader
 ```
 
 Make sure the user does not get any unwanted privileges from the public role.
@@ -94,18 +94,18 @@ To simplify syntax and to allow for dynamic parts, like date range filters, the 
 | `$__timeFrom()`                                       | Will be replaced by the start of the currently active time selection. For example, _'2017-04-21T05:01:17Z'_                                                                                                                                                                                 |
 | `$__timeTo()`                                         | Will be replaced by the end of the currently active time selection. For example, _'2017-04-21T05:06:17Z'_                                                                                                                                                                                   |
 | `$__timeGroup(dateColumn,'5m'[, fillvalue])`          | Will be replaced by an expression usable in GROUP BY clause. Providing a _fillValue_ of _NULL_ or _floating value_ will automatically fill empty series in timerange with that value. <br/>For example, _CAST(ROUND(DATEDIFF(second, '1970-01-01', time_column)/300.0, 0) as bigint)\*300_. |
-| `$__timeGroup(dateColumn,'5m', 0)`                    | Same as above but with a fill parameter so missing points in that series will be added by grafana and 0 will be used as value.                                                                                                                                                              |
+| `$__timeGroup(dateColumn,'5m', 0)`                    | Same as above but with a fill parameter so missing points in that series will be added by plutono and 0 will be used as value.                                                                                                                                                              |
 | `$__timeGroup(dateColumn,'5m', NULL)`                 | Same as above but NULL will be used as value for missing points.                                                                                                                                                                                                                            |
-| `$__timeGroup(dateColumn,'5m', previous)`             | Same as above but the previous value in that series will be used as fill value if no value has been seen yet NULL will be used (only available in Grafana 5.3+).                                                                                                                            |
-| `$__timeGroupAlias(dateColumn,'5m')`                  | Will be replaced identical to \$\_\_timeGroup but with an added column alias (only available in Grafana 5.3+).                                                                                                                                                                              |
+| `$__timeGroup(dateColumn,'5m', previous)`             | Same as above but the previous value in that series will be used as fill value if no value has been seen yet NULL will be used (only available in Plutono 5.3+).                                                                                                                            |
+| `$__timeGroupAlias(dateColumn,'5m')`                  | Will be replaced identical to \$\_\_timeGroup but with an added column alias (only available in Plutono 5.3+).                                                                                                                                                                              |
 | `$__unixEpochFilter(dateColumn)`                      | Will be replaced by a time range filter using the specified column name with times represented as Unix timestamp. For example, _dateColumn > 1494410783 AND dateColumn < 1494497183_                                                                                                        |
 | `$__unixEpochFrom()`                                  | Will be replaced by the start of the currently active time selection as Unix timestamp. For example, _1494410783_                                                                                                                                                                           |
 | `$__unixEpochTo()`                                    | Will be replaced by the end of the currently active time selection as Unix timestamp. For example, _1494497183_                                                                                                                                                                             |
 | `$__unixEpochNanoFilter(dateColumn)`                  | Will be replaced by a time range filter using the specified column name with times represented as nanosecond timestamp. For example, _dateColumn > 1494410783152415214 AND dateColumn < 1494497183142514872_                                                                                |
 | `$__unixEpochNanoFrom()`                              | Will be replaced by the start of the currently active time selection as nanosecond timestamp. For example, _1494410783152415214_                                                                                                                                                            |
 | `$__unixEpochNanoTo()`                                | Will be replaced by the end of the currently active time selection as nanosecond timestamp. For example, _1494497183142514872_                                                                                                                                                              |
-| `$__unixEpochGroup(dateColumn,'5m', [fillmode])`      | Same as \$\_\_timeGroup but for times stored as Unix timestamp (only available in Grafana 5.3+).                                                                                                                                                                                            |
-| `$__unixEpochGroupAlias(dateColumn,'5m', [fillmode])` | Same as above but also adds a column alias (only available in Grafana 5.3+).                                                                                                                                                                                                                |
+| `$__unixEpochGroup(dateColumn,'5m', [fillmode])`      | Same as \$\_\_timeGroup but for times stored as Unix timestamp (only available in Plutono 5.3+).                                                                                                                                                                                            |
+| `$__unixEpochGroupAlias(dateColumn,'5m', [fillmode])` | Same as above but also adds a column alias (only available in Plutono 5.3+).                                                                                                                                                                                                                |
 
 We plan to add many more macros. If you have suggestions for what macros you would like to see, please [open an issue](https://github.com/grafana/grafana) in our GitHub repo.
 
@@ -169,7 +169,7 @@ The resulting table panel:
 ## Time series queries
 
 If you set `Format as` to `Time series`, for use in Graph panel for example, then the query must have a column named `time` that returns either a SQL datetime or any numeric datatype representing Unix epoch in seconds. You may return a column named `metric` that is used as metric name for the value column. Any column except `time` and `metric` is treated as a value column. If you omit the `metric` column, the name of the value column will be the metric name. You may select multiple value columns, each will have its name as metric.
-If you return multiple value columns and a column named `metric` then this column is used as prefix for the series name (only available in Grafana 5.3+).
+If you return multiple value columns and a column named `metric` then this column is used as prefix for the series name (only available in Plutono 5.3+).
 
 Result sets of time series queries need to be sorted by time.
 
@@ -302,7 +302,7 @@ For example, you can have a variable that contains all values for the `hostname`
 SELECT hostname FROM host
 ```
 
-A query can return multiple columns and Grafana will automatically create a list from them. For example, the query below will return a list with values from `hostname` and `hostname2`.
+A query can return multiple columns and Plutono will automatically create a list from them. For example, the query below will return a list with values from `hostname` and `hostname2`.
 
 ```sql
 SELECT [host].[hostname], [other_host].[hostname2] FROM host JOIN other_host ON [host].[city] = [other_host].[city]
@@ -323,9 +323,9 @@ SELECT hostname FROM host WHERE region IN ($region)
 
 ### Using Variables in Queries
 
-> From Grafana 4.3.0 to 4.6.0, template variables are always quoted automatically so if it is a string value do not wrap them in quotes in where clauses.
+> From Plutono 4.3.0 to 4.6.0, template variables are always quoted automatically so if it is a string value do not wrap them in quotes in where clauses.
 >
-> From Grafana 5.0.0, template variable values are only quoted when the template variable is a `multi-value`.
+> From Plutono 5.0.0, template variable values are only quoted when the template variable is a `multi-value`.
 
 If the variable is a multi-value variable then use the `IN` comparison operator rather than `=` to match against multiple values.
 
@@ -355,7 +355,7 @@ ORDER BY atimestamp
 
 #### Disabling Quoting for Multi-value Variables
 
-Grafana automatically creates a quoted, comma-separated string for multi-value variables. For example: if `server01` and `server02` are selected then it will be formatted as: `'server01', 'server02'`. Do disable quoting, use the csv formatting option for variables:
+Plutono automatically creates a quoted, comma-separated string for multi-value variables. For example: if `server01` and `server02` are selected then it will be formatted as: `'server01', 'server02'`. Do disable quoting, use the csv formatting option for variables:
 
 `${servers:csv}`
 
@@ -370,7 +370,7 @@ Read more about variable formatting options in the [Variables]({{< relref "../va
 | Name      | Description                                                                                                                       |
 | --------- | --------------------------------------------------------------------------------------------------------------------------------- |
 | `time`    | The name of the date/time field. Could be a column with a native SQL date/time data type or epoch value.                          |
-| `timeend` | Optional name of the end date/time field. Could be a column with a native SQL date/time data type or epoch value. (Grafana v6.6+) |
+| `timeend` | Optional name of the end date/time field. Could be a column with a native SQL date/time data type or epoch value. (Plutono v6.6+) |
 | `text`    | Event description field.                                                                                                          |
 | `tags`    | Optional field name to use for event tags as a comma separated string.                                                            |
 
@@ -402,7 +402,7 @@ ORDER BY 1
 
 **Example region query using time and timeend columns with epoch values:**
 
-> Only available in Grafana v6.6+.
+> Only available in Plutono v6.6+.
 
 ```sql
 SELECT
@@ -587,7 +587,7 @@ conditions.
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with Plutono's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source.
 
@@ -598,12 +598,12 @@ datasources:
   - name: MSSQL
     type: mssql
     url: localhost:1433
-    database: grafana
-    user: grafana
+    database: plutono
+    user: plutono
     jsonData:
-      maxOpenConns: 0 # Grafana v5.4+
-      maxIdleConns: 2 # Grafana v5.4+
-      connMaxLifetime: 14400 # Grafana v5.4+
+      maxOpenConns: 0 # Plutono v5.4+
+      maxIdleConns: 2 # Plutono v5.4+
+      connMaxLifetime: 14400 # Plutono v5.4+
     secureJsonData:
       password: 'Password!'
 ```

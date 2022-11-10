@@ -1,6 +1,6 @@
 import React, { useCallback, useRef, useState } from 'react';
-import { GrafanaTheme } from '@grafana/data';
-import { HorizontalGroup, Portal, Tag, TooltipContainer, useStyles } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { HorizontalGroup, Portal, Tag, TooltipContainer, useStyles } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 
 interface AnnotationMarkerProps {
@@ -75,7 +75,7 @@ export const AnnotationMarker: React.FC<AnnotationMarkerProps> = ({ time, text, 
   );
 };
 
-const getAnnotationMarkerStyles = (theme: GrafanaTheme) => {
+const getAnnotationMarkerStyles = (theme: PlutonoTheme) => {
   const bg = theme.isDark ? theme.palette.dark2 : theme.palette.white;
   const headerBg = theme.isDark ? theme.palette.dark9 : theme.palette.gray5;
   const shadowColor = theme.isDark ? theme.palette.black : theme.palette.white;

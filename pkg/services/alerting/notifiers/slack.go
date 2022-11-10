@@ -13,11 +13,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/alerting"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 func init() {
@@ -265,7 +265,7 @@ func (sn *SlackNotifier) Notify(evalContext *alerting.EvalContext) error {
 		"text":        msg,
 		"fallback":    evalContext.GetNotificationTitle(),
 		"fields":      fields,
-		"footer":      "Grafana v" + setting.BuildVersion,
+		"footer":      "Plutono v" + setting.BuildVersion,
 		"footer_icon": "https://grafana.com/assets/img/fav32.png",
 		"ts":          time.Now().Unix(),
 	}
@@ -328,7 +328,7 @@ func (sn *SlackNotifier) Notify(evalContext *alerting.EvalContext) error {
 func (sn *SlackNotifier) slackFileUpload(evalContext *alerting.EvalContext, log log.Logger, url string, recipient string, token string) error {
 	if evalContext.ImageOnDiskPath == "" {
 		// nolint:gosec
-		// We can ignore the gosec G304 warning on this one because `setting.HomePath` comes from Grafana's configuration file.
+		// We can ignore the gosec G304 warning on this one because `setting.HomePath` comes from Plutono's configuration file.
 		evalContext.ImageOnDiskPath = filepath.Join(setting.HomePath, "public/img/mixed_styles.png")
 	}
 	log.Info("Uploading to slack via file.upload API")

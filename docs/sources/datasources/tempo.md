@@ -1,14 +1,14 @@
 +++
 title = "Tempo"
 description = "High volume, minimal dependency trace storage. OSS tracing solution from Grafana Labs."
-keywords = ["grafana", "tempo", "guide", "tracing"]
-aliases = ["/docs/grafana/latest/features/datasources/tempo"]
+keywords = ["plutono", "tempo", "guide", "tracing"]
+aliases = ["/docs/plutono/latest/features/datasources/tempo"]
 weight = 1400
 +++
 
 # Tempo data source
 
-Grafana ships with built-in support for Tempo a high volume, minimal dependency trace storage, OSS tracing solution from Grafana Labs. Add it as a data source, and you are ready to query your traces in [Explore]({{< relref "../explore/_index.md" >}}).
+Plutono ships with built-in support for Tempo a high volume, minimal dependency trace storage, OSS tracing solution from Grafana Labs. Add it as a data source, and you are ready to query your traces in [Explore]({{< relref "../explore/_index.md" >}}).
 
 ## Add data source
 
@@ -25,7 +25,7 @@ To access Tempo settings, click the **Configuration** (gear) icon, then click **
 
 ### Trace to logs
 
-> **Note:** This feature is available in Grafana 7.4+.
+> **Note:** This feature is available in Plutono 7.4+.
 
 This is a configuration for the [trace to logs feature]({{< relref "../explore/trace-integration" >}}). Select target data source (at this moment limited to Loki data sources) and select which tags will be used in the logs query.
 

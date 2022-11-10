@@ -12,7 +12,7 @@ import {
   getFieldDisplayName,
   KeyValue,
   standardTransformers,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import isString from 'lodash/isString';
 

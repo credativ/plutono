@@ -1,6 +1,6 @@
 import React from 'react';
-import { getBackendSrv } from '@grafana/runtime';
-import { PopoverContent } from '@grafana/ui';
+import { getBackendSrv } from '@credativ/plutono-runtime';
+import { PopoverContent } from '@credativ/plutono-ui';
 import { config } from 'app/core/config';
 
 export interface ServerStat {

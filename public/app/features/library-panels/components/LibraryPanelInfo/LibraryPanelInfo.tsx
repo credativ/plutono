@@ -1,5 +1,5 @@
-import { DateTimeInput, GrafanaTheme } from '@grafana/data';
-import { stylesFactory, useStyles } from '@grafana/ui';
+import { DateTimeInput, PlutonoTheme } from '@credativ/plutono-data';
+import { stylesFactory, useStyles } from '@credativ/plutono-ui';
 import { OptionsGroup } from 'app/features/dashboard/components/PanelEditor/OptionsGroup';
 import { PanelModel } from 'app/features/dashboard/state';
 import { css } from 'emotion';
@@ -37,7 +37,7 @@ export const LibraryPanelInformation: React.FC<Props> = ({ panel, formatDate }) 
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     libraryPanelInfo: css`
       color: ${theme.colors.textSemiWeak};

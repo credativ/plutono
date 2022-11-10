@@ -1,9 +1,9 @@
-import { DataSourceSettings, GrafanaTheme } from '@grafana/data';
-import { FeatureInfoBox, useStyles } from '@grafana/ui';
+import { DataSourceSettings, PlutonoTheme } from '@credativ/plutono-data';
+import { FeatureInfoBox, useStyles } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 import React, { FC } from 'react';
 import { config } from 'app/core/config';
-import { GrafanaEdition } from '@grafana/data/src/types/config';
+import { PlutonoEdition } from '@credativ/plutono-data/src/types/config';
 import { LocalStorageValueProvider } from 'app/core/components/LocalStorageValueProvider';
 
 const LOCAL_STORAGE_KEY = 'datasources.settings.cloudInfoBox.isDismissed';
@@ -23,7 +23,7 @@ export const CloudInfoBox: FC<Props> = ({ dataSource }) => {
   }
 
   // Skip showing this info box in some editions
-  if (config.buildInfo.edition !== GrafanaEdition.OpenSource) {
+  if (config.buildInfo.edition !== PlutonoEdition.OpenSource) {
     return null;
   }
 
@@ -60,12 +60,12 @@ export const CloudInfoBox: FC<Props> = ({ dataSource }) => {
               from Grafana Labs with the{' '}
               <a
                 className="external-link"
-                href={`https://grafana.com/signup/cloud/connect-account?src=grafana-oss&cnt=${dataSource.type}-settings`}
+                href={`https://grafana.com/signup/cloud/connect-account?src=plutono-oss&cnt=${dataSource.type}-settings`}
                 target="_blank"
                 rel="noreferrer"
                 title="The free plan includes 10k active metrics and 50gb storage."
               >
-                free-forever Grafana Cloud plan
+                free-forever Plutono Cloud plan
               </a>
               .
             </div>
@@ -76,7 +76,7 @@ export const CloudInfoBox: FC<Props> = ({ dataSource }) => {
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => {
+const getStyles = (theme: PlutonoTheme) => {
   return {
     box: css`
       margin: 0 0 ${theme.spacing.lg} 0;

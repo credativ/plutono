@@ -10,7 +10,7 @@ By adding a help component to your plugin, you can for example create "cheat she
 
    ```ts
    import React from 'react';
-   import { QueryEditorHelpProps } from '@grafana/data';
+   import { QueryEditorHelpProps } from '@credativ/plutono-data';
 
    export default (props: QueryEditorHelpProps) => {
      return (
@@ -37,7 +37,7 @@ By adding a help component to your plugin, you can for example create "cheat she
 
    ```ts
    import React from 'react';
-   import { QueryEditorHelpProps, DataQuery } from '@grafana/data';
+   import { QueryEditorHelpProps, DataQuery } from '@credativ/plutono-data';
 
    const examples = [
      {

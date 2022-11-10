@@ -1,7 +1,7 @@
-import { PanelModel } from '@grafana/data';
+import { PanelModel } from '@credativ/plutono-data';
 import { statPanelChangedHandler } from './StatMigrations';
-import { BigValueGraphMode, BigValueColorMode } from '@grafana/ui';
-import { BigValueTextMode } from '@grafana/ui/src/components/BigValue/BigValue';
+import { BigValueGraphMode, BigValueColorMode } from '@credativ/plutono-ui';
+import { BigValueTextMode } from '@credativ/plutono-ui/src/components/BigValue/BigValue';
 
 describe('Stat Panel Migrations', () => {
   it('change from angular singlestat sparkline disabled', () => {

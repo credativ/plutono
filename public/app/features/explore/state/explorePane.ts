@@ -30,11 +30,11 @@ import {
   TimeRange,
   HistoryItem,
   DataSourceApi,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 // Types
 import { ThunkResult } from 'app/types';
 import { getTimeZone } from 'app/features/profile/state/selectors';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { getDataSourceSrv } from '@credativ/plutono-runtime';
 import { getRichHistory } from '../../../core/utils/richHistory';
 import { richHistoryUpdatedAction } from './main';
 

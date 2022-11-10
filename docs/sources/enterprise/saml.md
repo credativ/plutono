@@ -1,22 +1,22 @@
 +++
 title = "SAML Authentication"
-description = "Grafana SAML Authentication"
-keywords = ["grafana", "saml", "documentation", "saml-auth"]
-aliases = ["/docs/grafana/latest/auth/saml/"]
+description = "Plutono SAML Authentication"
+keywords = ["plutono", "saml", "documentation", "saml-auth"]
+aliases = ["/docs/plutono/latest/auth/saml/"]
 weight = 500
 +++
 
 # SAML authentication
 
-SAML authentication integration allows your Grafana users to log in by using an external SAML 2.0 Identity Provider (IdP). To enable this, Grafana becomes a Service Provider (SP) in the authentication flow, interacting with the IdP to exchange user information.
+SAML authentication integration allows your Plutono users to log in by using an external SAML 2.0 Identity Provider (IdP). To enable this, Plutono becomes a Service Provider (SP) in the authentication flow, interacting with the IdP to exchange user information.
 
-The SAML single sign-on (SSO) standard is varied and flexible. Our implementation contains a subset of features needed to provide a smooth authentication experience into Grafana.
+The SAML single sign-on (SSO) standard is varied and flexible. Our implementation contains a subset of features needed to provide a smooth authentication experience into Plutono.
 
-> Only available in Grafana Enterprise v6.3+. If you encounter any problems with our implementation, please don't hesitate to contact us.
+> Only available in Plutono Enterprise v6.3+. If you encounter any problems with our implementation, please don't hesitate to contact us.
 
 ## Supported SAML
 
-Grafana supports the following SAML 2.0 bindings:
+Plutono supports the following SAML 2.0 bindings:
 
 - From the Service Provider (SP) to the Identity Provider (IdP):
   - `HTTP-POST` binding
@@ -26,16 +26,16 @@ Grafana supports the following SAML 2.0 bindings:
   - `HTTP-POST` binding
 
 In terms of security:
-- Grafana supports signed and encrypted assertions.
-- Grafana does not support signed or encrypted requests.
+- Plutono supports signed and encrypted assertions.
+- Plutono does not support signed or encrypted requests.
 
 In terms of initiation:
-- Grafana supports SP-initiated requests.
-- Grafana does not support IdP-initiated request.
+- Plutono supports SP-initiated requests.
+- Plutono does not support IdP-initiated request.
 
 ## Set up SAML authentication
 
-The table below describes all SAML configuration options. Continue reading below for details on specific options. Like any other Grafana configuration, you can apply these options as [environment variables]({{< relref "../administration/configuration.md#configure-with-environment-variables" >}}).
+The table below describes all SAML configuration options. Continue reading below for details on specific options. Like any other Plutono configuration, you can apply these options as [environment variables]({{< relref "../administration/configuration.md#configure-with-environment-variables" >}}).
 
 | Setting                                                     | Required | Description                                                                                   | Default       |
 | ----------------------------------------------------------- | -------- | --------------------------------------------------------------------------------------------- | ------------- |
@@ -59,48 +59,48 @@ The table below describes all SAML configuration options. Continue reading below
 | `org_mapping`                                               | No  | List of comma- or space-separated Organization:OrgId mappings                                      |               |
 | `role_values_editor`                                        | No  | List of comma- or space-separated roles which will be mapped into the Editor role                  |               |
 | `role_values_admin`                                         | No  | List of comma- or space-separated roles which will be mapped into the Admin role                   |               |
-| `role_values_grafana_admin`                                 | No  | List of comma- or space-separated roles which will be mapped into the Grafana Admin (Super Admin) role |               |
+| `role_values_plutono_admin`                                 | No  | List of comma- or space-separated roles which will be mapped into the Plutono Admin (Super Admin) role |               |
 
 ### Enable SAML authentication
 
-To use the SAML integration, in the `auth.saml` section of in the Grafana custom configuration file, set `enabled` to `true`.
+To use the SAML integration, in the `auth.saml` section of in the Plutono custom configuration file, set `enabled` to `true`.
 
-Refer to [Configuration]({{< relref "../administration/configuration.md" >}}) for more information about configuring Grafana.
+Refer to [Configuration]({{< relref "../administration/configuration.md" >}}) for more information about configuring Plutono.
 
 ### Certificate and private key
 
-The SAML SSO standard uses asymmetric encryption to exchange information between the SP (Grafana) and the IdP. To perform such encryption, you need a public part and a private part. In this case, the X.509 certificate provides the public part, while the private key provides the private part.
+The SAML SSO standard uses asymmetric encryption to exchange information between the SP (Plutono) and the IdP. To perform such encryption, you need a public part and a private part. In this case, the X.509 certificate provides the public part, while the private key provides the private part.
 
-Grafana supports two ways of specifying both the `certificate` and `private_key`.
+Plutono supports two ways of specifying both the `certificate` and `private_key`.
 - Without a suffix (`certificate` or `private_key`), the configuration assumes you've supplied the base64-encoded file contents.
-- With the `_path` suffix (`certificate_path` or `private_key_path`), then Grafana treats the value entered as a file path and attempts to read the file from the file system.
+- With the `_path` suffix (`certificate_path` or `private_key_path`), then Plutono treats the value entered as a file path and attempts to read the file from the file system.
 
 You can only use one form of each configuration option. Using multiple forms, such as both `certificate` and `certificate_path`, results in an error.
 
 ### Signature algorithm
 
-> Only available in Grafana v7.3+
+> Only available in Plutono v7.3+
 
-The SAML standard recommends using a digital signature for some types of messages, like authentication or logout requests. If the `signature_algorithm` option is configured, Grafana will put a digital signature into SAML requests. Supported signature types are `rsa-sha1`, `rsa-sha256`, `rsa-sha512`. This option should match your IdP configuration, otherwise, signature validation will fail. Grafana uses key and certificate configured with `private_key` and `certificate` options for signing SAML requests.
+The SAML standard recommends using a digital signature for some types of messages, like authentication or logout requests. If the `signature_algorithm` option is configured, Plutono will put a digital signature into SAML requests. Supported signature types are `rsa-sha1`, `rsa-sha256`, `rsa-sha512`. This option should match your IdP configuration, otherwise, signature validation will fail. Plutono uses key and certificate configured with `private_key` and `certificate` options for signing SAML requests.
 
 ### IdP metadata
 
-You also need to define the public part of the IdP for message verification. The SAML IdP metadata XML defines where and how Grafana exchanges user information.
+You also need to define the public part of the IdP for message verification. The SAML IdP metadata XML defines where and how Plutono exchanges user information.
 
-Grafana supports three ways of specifying the IdP metadata.
-- Without a suffix `idp_metadata`, Grafana assumes base64-encoded XML file contents.
-- With the `_path` suffix, Grafana assumes a file path and attempts to read the file from the file system.
-- With the `_url` suffix, Grafana assumes a URL and attempts to load the metadata from the given location.
+Plutono supports three ways of specifying the IdP metadata.
+- Without a suffix `idp_metadata`, Plutono assumes base64-encoded XML file contents.
+- With the `_path` suffix, Plutono assumes a file path and attempts to read the file from the file system.
+- With the `_url` suffix, Plutono assumes a URL and attempts to load the metadata from the given location.
 
 ### Maximum issue delay
 
-Prevents SAML response replay attacks and internal clock skews between the SP (Grafana) and the IdP. You can set a maximum amount of time between the IdP issuing a response and the SP (Grafana) processing it.
+Prevents SAML response replay attacks and internal clock skews between the SP (Plutono) and the IdP. You can set a maximum amount of time between the IdP issuing a response and the SP (Plutono) processing it.
 
 The configuration options is specified as a duration, such as `max_issue_delay = 90s` or `max_issue_delay = 1h`.
 
 ### Metadata valid duration
 
-SP metadata is likely to expire at some point, perhaps due to a certificate rotation or change of location binding. Grafana allows you to specify for how long the metadata should be valid. Leveraging the `validUntil` field, you can tell consumers until when your metadata is going to be valid. The duration is computed by adding the duration to the current time.
+SP metadata is likely to expire at some point, perhaps due to a certificate rotation or change of location binding. Plutono allows you to specify for how long the metadata should be valid. Leveraging the `validUntil` field, you can tell consumers until when your metadata is going to be valid. The duration is computed by adding the duration to the current time.
 
 The configuration option is specified as a duration, such as `metadata_valid_duration = 48h`.
 
@@ -108,56 +108,56 @@ The configuration option is specified as a duration, such as `metadata_valid_dur
 
 For the SAML integration to work correctly, you need to make the IdP aware of the SP.
 
-The integration provides two key endpoints as part of Grafana:
+The integration provides two key endpoints as part of Plutono:
 
 - The `/saml/metadata` endpoint, which contains the SP metadata. You can either download and upload it manually, or youmake the IdP request it directly from the endpoint. Some providers name it Identifier or Entity ID.
 - The `/saml/acs` endpoint, which is intended to receive the ACS (Assertion Customer Service) callback. Some providers name it SSO URL or Reply URL.
 
 ### IdP-initiated Single Sign-On (SSO)
 
-> Only available in Grafana v7.3+
+> Only available in Plutono v7.3+
 
-By default, Grafana allows only service provider (SP) initiated logins (when the user logs in with SAML via Grafana’s login page). If you want users to log in into Grafana directly from your identity provider (IdP), set the `allow_idp_initiated` configuration option to `true` and configure `relay_state` with the same value specified in the IdP configuration.
+By default, Plutono allows only service provider (SP) initiated logins (when the user logs in with SAML via Plutono’s login page). If you want users to log in into Plutono directly from your identity provider (IdP), set the `allow_idp_initiated` configuration option to `true` and configure `relay_state` with the same value specified in the IdP configuration.
 
-IdP-initiated SSO has some security risks, so make sure you understand the risks before enabling this feature. When using IdP-initiated SSO, Grafana receives unsolicited SAML requests and can't verify that login flow was started by the user. This makes it hard to detect whether SAML message has been stolen or replaced. Because of this, IdP-initiated SSO is vulnerable to login cross-site request forgery (CSRF) and man in the middle (MITM) attacks. We do not recommend using IdP-initiated SSO and keeping it disabled whenever possible.
+IdP-initiated SSO has some security risks, so make sure you understand the risks before enabling this feature. When using IdP-initiated SSO, Plutono receives unsolicited SAML requests and can't verify that login flow was started by the user. This makes it hard to detect whether SAML message has been stolen or replaced. Because of this, IdP-initiated SSO is vulnerable to login cross-site request forgery (CSRF) and man in the middle (MITM) attacks. We do not recommend using IdP-initiated SSO and keeping it disabled whenever possible.
 
 ### Single logout
 
-> Only available in Grafana v7.3+
+> Only available in Plutono v7.3+
 
-SAML's single logout feature allows users to log out from all applications associated with the current IdP session established via SAML SSO. If the `single_logout` option is set to `true` and a user logs out, Grafana requests IdP to end the user session which in turn triggers logout from all other applications the user is logged into using the same IdP session (applications should support single logout). Conversely, if another application connected to the same IdP logs out using single logout, Grafana receives a logout request from IdP and ends the user session.
+SAML's single logout feature allows users to log out from all applications associated with the current IdP session established via SAML SSO. If the `single_logout` option is set to `true` and a user logs out, Plutono requests IdP to end the user session which in turn triggers logout from all other applications the user is logged into using the same IdP session (applications should support single logout). Conversely, if another application connected to the same IdP logs out using single logout, Plutono receives a logout request from IdP and ends the user session.
 
 ### Assertion mapping
 
-During the SAML SSO authentication flow, Grafana receives the ACS callback. The callback contains all the relevant information of the user under authentication embedded in the SAML response. Grafana parses the response to create (or update) the user within its internal database.
+During the SAML SSO authentication flow, Plutono receives the ACS callback. The callback contains all the relevant information of the user under authentication embedded in the SAML response. Plutono parses the response to create (or update) the user within its internal database.
 
-For Grafana to map the user information, it looks at the individual attributes within the assertion. You can think of these attributes as Key/Value pairs (although, they contain more information than that).
+For Plutono to map the user information, it looks at the individual attributes within the assertion. You can think of these attributes as Key/Value pairs (although, they contain more information than that).
 
-Grafana provides configuration options that let you modify which keys to look at for these values. The data we need to create the user in Grafana is Name, Login handle, and email.
+Plutono provides configuration options that let you modify which keys to look at for these values. The data we need to create the user in Plutono is Name, Login handle, and email.
 
 
 ### Configure team sync
 
-> Team sync support for SAML only available in Grafana v7.0+
+> Team sync support for SAML only available in Plutono v7.0+
 
-To use SAML Team sync, set [`assertion_attribute_groups`]({{< relref "./enterprise-configuration.md#assertion-attribute-groups" >}}) to the attribute name where you store user groups. Then Grafana will use attribute values extracted from SAML assertion to add user into the groups with the same name configured on the External group sync tab.
+To use SAML Team sync, set [`assertion_attribute_groups`]({{< relref "./enterprise-configuration.md#assertion-attribute-groups" >}}) to the attribute name where you store user groups. Then Plutono will use attribute values extracted from SAML assertion to add user into the groups with the same name configured on the External group sync tab.
 
 [Learn more about Team Sync]({{< relref "../enterprise/team-sync.md" >}})
 
 ### Configure role sync
 
-> Only available in Grafana v7.0+
+> Only available in Plutono v7.0+
 
-Role sync allows you to map user roles from an identity provider to Grafana. To enable role sync, configure role attribute and possible values for the [Editor]({{< relref "../permissions/organization_roles.md#editor-role" >}}), [Admin]({{< relref "../permissions/organization_roles.md#admin-role" >}}) and [Grafana Admin]({{< relref "../permissions/_index.md#grafana-admin" >}}) roles.
+Role sync allows you to map user roles from an identity provider to Plutono. To enable role sync, configure role attribute and possible values for the [Editor]({{< relref "../permissions/organization_roles.md#editor-role" >}}), [Admin]({{< relref "../permissions/organization_roles.md#admin-role" >}}) and [Plutono Admin]({{< relref "../permissions/_index.md#plutono-admin" >}}) roles.
 
 1. In the configuration file, set [`assertion_attribute_role`]({{< relref "./enterprise-configuration.md#assertion-attribute-role" >}}) option to the attribute name where the role information will be extracted from.
 1. Set the [`role_values_editor`]({{< relref "./enterprise-configuration.md#role-values-editor" >}}) option to the values mapped to the `Editor` role.
 1. Set the [`role_values_admin`]({{< relref "./enterprise-configuration.md#role-values-admin" >}}) option to the values mapped to the organization `Admin` role.
-1. Set the [`role_values_grafana_admin`]({{< relref "./enterprise-configuration.md#role-values-grafana-admin" >}}) option to the values mapped to the `Grafana Admin` role.
+1. Set the [`role_values_plutono_admin`]({{< relref "./enterprise-configuration.md#role-values-plutono-admin" >}}) option to the values mapped to the `Plutono Admin` role.
 
 If a user role doesn't match any of configured values, then the `Viewer` role will be assigned.
 
-Refer to [Organization roles]({{< relref "../permissions/organization_roles.md" >}}) for more information about roles and permissions in Grafana.
+Refer to [Organization roles]({{< relref "../permissions/organization_roles.md" >}}) for more information about roles and permissions in Plutono.
 
 Example configuration:
 
@@ -166,21 +166,21 @@ Example configuration:
 assertion_attribute_role = role
 role_values_editor = editor, developer
 role_values_admin = admin, operator
-role_values_grafana_admin = superadmin
+role_values_plutono_admin = superadmin
 ```
 
-**Important**: When role sync is configured, any changes of user roles and organization membership made manually in Grafana will be overwritten on next user login. Assign user organizations and roles in the IdP instead.
+**Important**: When role sync is configured, any changes of user roles and organization membership made manually in Plutono will be overwritten on next user login. Assign user organizations and roles in the IdP instead.
 
 ### Configure organization mapping
 
-> Only available in Grafana v7.0+
+> Only available in Plutono v7.0+
 
-Organization mapping allows you to assign users to particular organization in Grafana depending on attribute value obtained from identity provider.
+Organization mapping allows you to assign users to particular organization in Plutono depending on attribute value obtained from identity provider.
 
 1. In configuration file, set [`assertion_attribute_org`]({{< relref "./enterprise-configuration.md#assertion-attribute-org" >}}) to the attribute name you store organization info in.
-1. Set [`org_mapping`]({{< relref "./enterprise-configuration.md#org-mapping" >}}) option to the comma-separated list of `Organization:OrgId` pairs to map organization from IdP to Grafana organization specified by id.
+1. Set [`org_mapping`]({{< relref "./enterprise-configuration.md#org-mapping" >}}) option to the comma-separated list of `Organization:OrgId` pairs to map organization from IdP to Plutono organization specified by id.
 
-For example, use following configuration to assign users from `Engineering` organization to the Grafana organization with id `2` and users from `Sales` - to the org with id `3`, based on `Org` assertion attribute value:
+For example, use following configuration to assign users from `Engineering` organization to the Plutono organization with id `2` and users from `Sales` - to the org with id `3`, based on `Org` assertion attribute value:
 
 ```bash
 [auth.saml]
@@ -188,16 +188,16 @@ assertion_attribute_org = Org
 org_mapping = Engineering:2, Sales:3
 ```
 
-You can specify multiple organizations both for the IdP and Grafana:
+You can specify multiple organizations both for the IdP and Plutono:
 
-- `org_mapping = Engineering:2, Sales:2` to map users from `Engineering` and `Sales` to `2` in Grafana.
-- `org_mapping = Engineering:2, Engineering:3` to assign `Engineering` to both `2` and `3` in Grafana.
+- `org_mapping = Engineering:2, Sales:2` to map users from `Engineering` and `Sales` to `2` in Plutono.
+- `org_mapping = Engineering:2, Engineering:3` to assign `Engineering` to both `2` and `3` in Plutono.
 
 ### Configure allowed organizations
 
-> Only available in Grafana v7.0+
+> Only available in Plutono v7.0+
 
-With the [`allowed_organizations`]({{< relref "./enterprise-configuration.md#allowed-organizations" >}}) option you can specify a list of organizations where the user must be a member of at least one of them to be able to log in to Grafana.
+With the [`allowed_organizations`]({{< relref "./enterprise-configuration.md#allowed-organizations" >}}) option you can specify a list of organizations where the user must be a member of at least one of them to be able to log in to Plutono.
 
 ## Example SAML configuration
 
@@ -218,14 +218,14 @@ assertion_attribute_role = Role
 assertion_attribute_org = Org
 role_values_editor = editor, developer
 role_values_admin = admin, operator
-role_values_grafana_admin = superadmin
+role_values_plutono_admin = superadmin
 org_mapping = Engineering:2, Sales:3
 allowed_organizations = Engineering, Sales
 ```
 
 ## Set up SAML with Okta
 
-This guide will follow you through the steps of configuring SAML authentication in Grafana with [Okta](https://okta.com/). You need to be an admin in your Okta organization to access Admin Console and create SAML integration. You also need permissions to edit Grafana config file and restart Grafana server.
+This guide will follow you through the steps of configuring SAML authentication in Plutono with [Okta](https://okta.com/). You need to be an admin in your Okta organization to access Admin Console and create SAML integration. You also need permissions to edit Plutono config file and restart Plutono server.
 
 ### Configure the SAML integration in Okta
 
@@ -239,14 +239,14 @@ To configure SAML integration with Okta, create integration inside the Okta orga
 1. Choose **Web** as a platform.
 1. Select **SAML 2.0** in the Sign on method section.
 1. Click **Create**.
-1. On the **General Settings** tab, enter a name for your Grafana integration. You can also upload a logo.
-1. On the **Configure SAML** tab, enter the SAML information related to your Grafana instance:
-    - In the **Single sign on URL** field, use the `/saml/acs` endpoint URL of your Grafana instance, for example, `https://grafana.example.com/saml/acs`.
-    - In the **Audience URI (SP Entity ID)** field, use the `/saml/metadata` endpoint URL, for example, `https://grafana.example.com/saml/metadata`.
+1. On the **General Settings** tab, enter a name for your Plutono integration. You can also upload a logo.
+1. On the **Configure SAML** tab, enter the SAML information related to your Plutono instance:
+    - In the **Single sign on URL** field, use the `/saml/acs` endpoint URL of your Plutono instance, for example, `https://plutono.example.com/saml/acs`.
+    - In the **Audience URI (SP Entity ID)** field, use the `/saml/metadata` endpoint URL, for example, `https://plutono.example.com/saml/metadata`.
     - Leave the default values for **Name ID format** and **Application username**.
-    - In the **ATTRIBUTE STATEMENTS (OPTIONAL)** section, enter the SAML attributes to be shared with Grafana, for example:
+    - In the **ATTRIBUTE STATEMENTS (OPTIONAL)** section, enter the SAML attributes to be shared with Plutono, for example:
 
-      | Attribute name (in Grafana) | Value (in Okta profile)                |
+      | Attribute name (in Plutono) | Value (in Okta profile)                |
       | --------------------------- | -------------------------------------- |
       | Login                       | `user.login`                           |
       | Email                       | `user.email`                           |
@@ -256,11 +256,11 @@ To configure SAML integration with Okta, create integration inside the Okta orga
 1. Click **Next**.
 1. On the final Feedback tab, fill out the form and then click **Finish**.
 
-### Edit SAML options in the Grafana config file
+### Edit SAML options in the Plutono config file
 
-Once the application is created, configure Grafana to use it for SAML authentication. Refer to [Configuration]({{< relref "../administration/configuration.md" >}}) to get more information about how to configure Grafana.
+Once the application is created, configure Plutono to use it for SAML authentication. Refer to [Configuration]({{< relref "../administration/configuration.md" >}}) to get more information about how to configure Plutono.
 
-1. In the `[auth.saml]` section in the Grafana configuration file, set [`enabled`]({{< relref "./enterprise-configuration.md#enabled" >}}) to `true`.
+1. In the `[auth.saml]` section in the Plutono configuration file, set [`enabled`]({{< relref "./enterprise-configuration.md#enabled" >}}) to `true`.
 1. Configure the [certificate and private key]({{< relref "#certificate-and-private-key" >}}).
 1. On the Okta application page where you have been redirected after application created, navigate to the **Sign On** tab and find **Identity Provider metadata** link in the **Settings** section.
 1. Set the [`idp_metadata_url`]({{< relref "./enterprise-configuration.md#idp-metadata-url" >}}) to the URL obtained from the previous step. The URL should look like `https://<your-org-id>.okta.com/app/<application-id>/sso/saml/metadata`.
@@ -269,13 +269,13 @@ Once the application is created, configure Grafana to use it for SAML authentica
     - [`assertion_attribute_email`]({{< relref "./enterprise-configuration.md#assertion-attribute-email" >}})
     - [`assertion_attribute_name`]({{< relref "./enterprise-configuration.md#assertion-attribute-name" >}})
     - [`assertion_attribute_groups`]({{< relref "./enterprise-configuration.md#assertion-attribute-groups" >}})
-1. Save the configuration file and and then restart the Grafana server.
+1. Save the configuration file and and then restart the Plutono server.
 
-When you are finished, the Grafana configuration might look like this example:
+When you are finished, the Plutono configuration might look like this example:
 
 ```bash
 [server]
-root_url = https://grafana.example.com
+root_url = https://plutono.example.com
 
 [auth.saml]
 enabled = true

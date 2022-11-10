@@ -2,7 +2,7 @@
 
 Thank you for sending a pull request! Here are some tips:
 
-1. If this is your first time, please read our contribution guide at https://github.com/grafana/grafana/blob/master/CONTRIBUTING.md
+1. If this is your first time, please read our contribution guide at https://github.com/credativ/plutono/blob/master/CONTRIBUTING.md
 
 2. Ensure you include and run the appropriate tests as part of your Pull Request.
 

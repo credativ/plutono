@@ -8,12 +8,12 @@ import {
   FieldConfig,
   DisplayProcessor,
   DisplayValue,
-} from '@grafana/data';
-import { BarGauge, DataLinksContextMenu, VizRepeater, VizRepeaterRenderValueProps } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { BarGauge, DataLinksContextMenu, VizRepeater, VizRepeaterRenderValueProps } from '@credativ/plutono-ui';
 
 import { config } from 'app/core/config';
 import { BarGaugeOptions } from './types';
-import { DataLinksContextMenuApi } from '@grafana/ui/src/components/DataLinks/DataLinksContextMenu';
+import { DataLinksContextMenuApi } from '@credativ/plutono-ui/src/components/DataLinks/DataLinksContextMenu';
 import { isNumber } from 'lodash';
 
 export class BarGaugePanel extends PureComponent<PanelProps<BarGaugeOptions>> {

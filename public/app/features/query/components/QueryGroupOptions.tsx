@@ -2,10 +2,10 @@
 import React, { PureComponent, ChangeEvent, FocusEvent } from 'react';
 
 // Utils
-import { rangeUtil, PanelData, DataSourceApi } from '@grafana/data';
+import { rangeUtil, PanelData, DataSourceApi } from '@credativ/plutono-data';
 
 // Components
-import { Switch, Input, InlineField, InlineFormLabel, stylesFactory } from '@grafana/ui';
+import { Switch, Input, InlineField, InlineFormLabel, stylesFactory } from '@credativ/plutono-ui';
 
 // Types
 import { QueryOperationRow } from 'app/core/components/QueryOperationRow/QueryOperationRow';

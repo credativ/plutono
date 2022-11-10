@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { UserPicker } from './UserPicker';
 
-jest.mock('@grafana/runtime', () => ({
+jest.mock('@credativ/plutono-runtime', () => ({
   getBackendSrv: () => ({ get: jest.fn().mockResolvedValue([]) }),
 }));
 

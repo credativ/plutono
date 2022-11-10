@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button, ButtonVariant, ModalsController, FullWidthButtonContainer } from '@grafana/ui';
+import { Button, ButtonVariant, ModalsController, FullWidthButtonContainer } from '@credativ/plutono-ui';
 import { DashboardModel } from 'app/features/dashboard/state';
 import { SaveDashboardAsModal } from './SaveDashboardAsModal';
 import { SaveDashboardModalProxy } from './SaveDashboardModalProxy';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 interface SaveDashboardButtonProps {
   dashboard: DashboardModel;

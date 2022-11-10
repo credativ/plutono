@@ -5,9 +5,9 @@ weight = 300
 
 # Queries
 
-_Queries_ are how Grafana panels communicate with data sources to get data for the visualization. A query is a question written in the query language used by the data source. Grafana asks, "Hey data source, would you send me this data, organized this way?" If the query is properly formed, then the data source responds. How often the query is sent to the data source and how many data points are collected can be adjusted in the panel data source options.
+_Queries_ are how Plutono panels communicate with data sources to get data for the visualization. A query is a question written in the query language used by the data source. Plutono asks, "Hey data source, would you send me this data, organized this way?" If the query is properly formed, then the data source responds. How often the query is sent to the data source and how many data points are collected can be adjusted in the panel data source options.
 
-Grafana supports up to 26 queries per panel.
+Plutono supports up to 26 queries per panel.
 
 ## Query editors
 
@@ -39,7 +39,7 @@ SELECT hostname FROM host  WHERE region IN($region)
 query_result(max_over_time(<metric>[${__range_s}s]) != <state>)
 ```
 
-For more information about writing a query for your data source, refer to the specific [Grafana data source]({{< relref "../datasources/_index.md" >}}) documentation.
+For more information about writing a query for your data source, refer to the specific [Plutono data source]({{< relref "../datasources/_index.md" >}}) documentation.
 
 ## Query tab UI
 
@@ -55,14 +55,14 @@ The Query tab consists of the following elements:
 
 ### Data source selector
 
-The data source selector is a drop-down list. Click it to select a data source you have added. When you create a panel, Grafana automatically selects your default data source. For more information about adding data sources, refer to [Add a data source]({{< relref "../datasources/add-a-data-source.md" >}}).
+The data source selector is a drop-down list. Click it to select a data source you have added. When you create a panel, Plutono automatically selects your default data source. For more information about adding data sources, refer to [Add a data source]({{< relref "../datasources/add-a-data-source.md" >}}).
 
 {{< figure src="/static/img/docs/queries/data-source-selector-7-0.png" class="docs-image--no-shadow" max-width="250px" >}}
 
-In addition to the data sources that you have configured in your Grafana, there are three special data sources available:
+In addition to the data sources that you have configured in your Plutono, there are three special data sources available:
 
-- **Grafana -** A built-in data source that generates random walk data. Useful for testing visualizations and running experiments.
-- **Mixed -** Select this to query multiple data sources in the same panel. When this data source is selected, Grafana allows you to select a data source for every new query that you add.
+- **Plutono -** A built-in data source that generates random walk data. Useful for testing visualizations and running experiments.
+- **Mixed -** Select this to query multiple data sources in the same panel. When this data source is selected, Plutono allows you to select a data source for every new query that you add.
   * The first query will use the data source that was selected before you selected **Mixed**.
   * You cannot change an existing query to use the Mixed Data Source.
 - **Dashboard -** Select this to use a result set from another panel in the same dashboard.
@@ -73,7 +73,7 @@ Click **Query options** next to the data source selector to see settings for you
 
 {{< figure src="/static/img/docs/queries/data-source-options-7-0.png" class="docs-image--no-shadow" max-width="1000px" >}}
 
-Grafana sets defaults that are shown in dark gray text. Changes are displayed in white text. To return a field to the default setting, delete the white text from the field.
+Plutono sets defaults that are shown in dark gray text. Changes are displayed in white text. To return a field to the default setting, delete the white text from the field.
 
 Panel data source query options:
 
@@ -87,7 +87,7 @@ Panel data source query options:
 
 - **Interval -** The interval is a time span that you can use when aggregating or grouping data points by time.
 
-  Grafana automatically calculates an appropriate interval and it can be used as a variable in templated queries. The variable is either in seconds: `$__interval` or in milliseconds: `$__interval_ms`. It is typically used in aggregation functions like sum or average. For example, a Prometheus query using the interval variable: `rate(http_requests_total[$__interval])`.
+  Plutono automatically calculates an appropriate interval and it can be used as a variable in templated queries. The variable is either in seconds: `$__interval` or in milliseconds: `$__interval_ms`. It is typically used in aggregation functions like sum or average. For example, a Prometheus query using the interval variable: `rate(http_requests_total[$__interval])`.
 
   This automatic interval is calculated based on the width of the graph. If the user zooms out a lot then the interval becomes greater, resulting in a more coarse grained aggregation whereas if the user zooms in then the interval decreases resulting in a more fine grained aggregation.
 
@@ -147,12 +147,12 @@ You can:
 |:--:|:---|
 | {{< figure src="/static/img/docs/queries/query-editor-help-7-4.png" class="docs-image--no-shadow" max-width="30px" max-height="30px" >}} | Toggle query editor help. If supported by the data source, click this icon to display information on how to use the query editor or provide quick access to common queries. |
 | {{< figure src="/static/img/docs/queries/duplicate-query-icon-7-0.png" class="docs-image--no-shadow" max-width="30px" max-height="30px" >}} | Copy a query. Duplicating queries is useful when working with multiple complex queries that are similar and you want to either experiment with different variants or do minor alterations. |
-| {{< figure src="/static/img/docs/queries/hide-query-icon-7-0.png" class="docs-image--no-shadow" max-width="30px" max-height="30px" >}} | Hide a query. Grafana does not send hidden queries to the data source. |
+| {{< figure src="/static/img/docs/queries/hide-query-icon-7-0.png" class="docs-image--no-shadow" max-width="30px" max-height="30px" >}} | Hide a query. Plutono does not send hidden queries to the data source. |
 | {{< figure src="/static/img/docs/queries/remove-query-icon-7-0.png" class="docs-image--no-shadow" max-width="30px" max-height="30px" >}} | Remove a query. Removing a query permanently deletes it, but sometimes you can recover deleted queries by reverting to previously saved versions of the panel. |
 | {{< figure src="/static/img/docs/queries/query-drag-icon-7-2.png" class="docs-image--no-shadow" max-width="30px" max-height="30px" >}} | Reorder queries. Change the order of queries by clicking and holding the drag icon, then drag queries where desired. The order of results reflects the order of the queries, so you can often adjust your visual results based on query order. |
 
 ### Expressions
 
-If your data source supports them, then Grafana displays the **Expression** button and shows any existing expressions in the query editor list.
+If your data source supports them, then Plutono displays the **Expression** button and shows any existing expressions in the query editor list.
 
 For more information about expressions, refer to [Expressions]({{< relref "expressions.md" >}}).

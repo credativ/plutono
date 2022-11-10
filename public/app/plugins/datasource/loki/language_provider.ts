@@ -13,12 +13,12 @@ import syntax, { FUNCTIONS, PIPE_PARSERS, PIPE_OPERATORS } from './syntax';
 
 // Types
 import { LokiQuery } from './types';
-import { dateTime, AbsoluteTimeRange, LanguageProvider, HistoryItem } from '@grafana/data';
+import { dateTime, AbsoluteTimeRange, LanguageProvider, HistoryItem } from '@credativ/plutono-data';
 import { PromQuery } from '../prometheus/types';
 import { RATE_RANGES } from '../prometheus/promql';
 
 import LokiDatasource from './datasource';
-import { CompletionItem, TypeaheadInput, TypeaheadOutput, CompletionItemGroup } from '@grafana/ui';
+import { CompletionItem, TypeaheadInput, TypeaheadOutput, CompletionItemGroup } from '@credativ/plutono-ui';
 import { Grammar } from 'prismjs';
 
 const DEFAULT_KEYS = ['job', 'namespace'];

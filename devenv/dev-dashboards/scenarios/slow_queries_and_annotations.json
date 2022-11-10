@@ -3,7 +3,7 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": "-- Plutono --",
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -11,7 +11,7 @@
         "type": "dashboard"
       },
       {
-        "datasource": "-- Grafana --",
+        "datasource": "-- Plutono --",
         "enable": true,
         "hide": false,
         "iconColor": "rgba(255, 96, 96, 1)",

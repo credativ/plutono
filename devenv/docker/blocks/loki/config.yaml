@@ -16,10 +16,10 @@ scrape_configs:
     labels:
       job: varlogs
       __path__: /var/log/*log
-- job_name: grafana
+- job_name: plutono
   static_configs:
   - targets:
       - localhost
     labels:
-      job: grafana
-      __path__: /var/log/grafana/*log
+      job: plutono
+      __path__: /var/log/plutono/*log

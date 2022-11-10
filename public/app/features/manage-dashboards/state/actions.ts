@@ -1,4 +1,4 @@
-import { AppEvents, DataSourceInstanceSettings, locationUtil } from '@grafana/data';
+import { AppEvents, DataSourceInstanceSettings, locationUtil } from '@credativ/plutono-data';
 import { getBackendSrv } from 'app/core/services/backend_srv';
 import {
   clearDashboard,
@@ -12,7 +12,7 @@ import { updateLocation } from 'app/core/actions';
 import { ThunkResult, FolderInfo, DashboardDTO, DashboardDataDTO } from 'app/types';
 import { appEvents } from '../../../core/core';
 import { dashboardWatcher } from 'app/features/live/dashboard/dashboardWatcher';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { getDataSourceSrv } from '@credativ/plutono-runtime';
 
 export function fetchGcomDashboard(id: string): ThunkResult<void> {
   return async (dispatch) => {

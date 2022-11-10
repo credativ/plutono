@@ -1,12 +1,12 @@
 +++
 title = "Manage teams"
-aliases =["/docs/grafana/latest/manage-users/add-or-remove-user-from-team/","/docs/grafana/latest/manage-users/create-or-remove-team/"]
+aliases =["/docs/plutono/latest/manage-users/add-or-remove-user-from-team/","/docs/plutono/latest/manage-users/create-or-remove-team/"]
 weight = 300
 +++
 
 # Manage teams
 
-A _team_ is a group of users assigned to an organization on a Grafana server. Each user can belong to more than one organization and more than one team. Teams are generally managed by Organization Admins, but they can also be managed by Editors if the [editors_can_admin]({{< relref "../../administration/configuration.md#editors_can_admin" >}}) server setting is set to `true`. For more information, refer to [Organization roles]({{< relref "../../permissions/organization_roles.md" >}}).
+A _team_ is a group of users assigned to an organization on a Plutono server. Each user can belong to more than one organization and more than one team. Teams are generally managed by Organization Admins, but they can also be managed by Editors if the [editors_can_admin]({{< relref "../../administration/configuration.md#editors_can_admin" >}}) server setting is set to `true`. For more information, refer to [Organization roles]({{< relref "../../permissions/organization_roles.md" >}}).
 
 Teams members are assigned one of two permissions:
 - Member - Required to be a member of the team.
@@ -16,7 +16,7 @@ Teams members are assigned one of two permissions:
 
 ## View team list
 
-See the complete list of teams in your Grafana organization.
+See the complete list of teams in your Plutono organization.
 
 {{< docs/shared "manage-users/view-team-list.md" >}}
 
@@ -30,7 +30,7 @@ See the complete list of teams in your Grafana organization.
 
 ## Create a team
 
-Add a team to your Grafana organization.
+Add a team to your Plutono organization.
 
 {{< docs/list >}}
 {{< docs/shared "manage-users/view-team-list.md" >}}

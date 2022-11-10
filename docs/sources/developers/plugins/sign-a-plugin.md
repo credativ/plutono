@@ -4,40 +4,40 @@ title = "Sign a plugin"
 
 # Sign a plugin
 
-Signing a plugin allows Grafana to verify the authenticity of the plugin with [signature verification]({{< relref "../../plugins/plugin-signatures.md" >}}). This gives users a way to make sure plugins haven't been tampered with. All Grafana Labs-authored backend plugins, including Enterprise plugins, are signed.
+Signing a plugin allows Plutono to verify the authenticity of the plugin with [signature verification]({{< relref "../../plugins/plugin-signatures.md" >}}). This gives users a way to make sure plugins haven't been tampered with. All Grafana Labs-authored backend plugins, including Enterprise plugins, are signed.
 
-> **Important:** Future versions of Grafana will require all plugins to be signed.
+> **Important:** Future versions of Plutono will require all plugins to be signed.
 
-## Sign your plugin using Grafana Toolkit
+## Sign your plugin using Plutono Toolkit
 
-The easiest way to sign your plugin is by using the [Grafana Toolkit](https://www.npmjs.com/package/@grafana/toolkit).
+The easiest way to sign your plugin is by using the [Plutono Toolkit](https://www.npmjs.com/package/@credativ/plutono-toolkit).
 
 You can sign your plugin as a _public_ or a _private_ plugin. In both cases, you need to [create an account on Grafana.com](https://grafana.com/signup) and generate an API key with the `PluginPublisher` role. By creating an account, you can verify that you own the plugin that you want to sign.
 
 ### Sign a public plugin
 
-Plugins signed under the community or commercial signature level are considered _public plugins_. Public plugins are published on [Grafana Plugin](https://grafana.com/plugins). For more information about installing public plugins, refer to [Install Grafana plugins]({{< relref "../../plugins/installation.md" >}}).
+Plugins signed under the community or commercial signature level are considered _public plugins_. Public plugins are published on [Plutono Plugin](https://grafana.com/plugins). For more information about installing public plugins, refer to [Install Plutono plugins]({{< relref "../../plugins/installation.md" >}}).
 
-1. Submit your plugin for review by creating a pull request in the [grafana-plugin-repository](https://github.com/grafana/grafana-plugin-repository).
+1. Submit your plugin for review by creating a pull request in the [plutono-plugin-repository](https://github.com/grafana/grafana-plugin-repository).
 1. When your plugin is approved, you're granted a [plugin signature level](#plugin-signature-levels). **Without a plugin signature level, you won't be able to sign your plugin**.
-1. Sign the plugin with the API key you just created. Grafana Toolkit creates a [MANIFEST.txt](#plugin-manifest) file in the `dist` directory of your plugin.
+1. Sign the plugin with the API key you just created. Plutono Toolkit creates a [MANIFEST.txt](#plugin-manifest) file in the `dist` directory of your plugin.
 
    ```
-   export GRAFANA_API_KEY=<YOUR_API_KEY>
-   npx @grafana/toolkit plugin:sign
+   export PLUTONO_API_KEY=<YOUR_API_KEY>
+   npx @credativ/plutono-toolkit plugin:sign
    ```
 
 ### Sign a private plugin
 
 If you're developing plugins for internal use only and don't want to make it public, you can sign it under a Private [signature level](#plugin-signature-levels).
 
-1. Sign the plugin with the API key you just created. Grafana Toolkit creates a [MANIFEST.txt](#plugin-manifest) file in the `dist` directory of your plugin.
+1. Sign the plugin with the API key you just created. Plutono Toolkit creates a [MANIFEST.txt](#plugin-manifest) file in the `dist` directory of your plugin.
 
    The `rootUrls` flag accepts a comma-separated list of URLs for which the plugin can be used. The URLs need to match the [root_url]({{< relref "../../administration/configuration.md#root_url" >}}) setting.
 
    ```
-   export GRAFANA_API_KEY=<YOUR_API_KEY>
-   npx @grafana/toolkit plugin:sign --rootUrls https://example.com/grafana
+   export PLUTONO_API_KEY=<YOUR_API_KEY>
+   npx @credativ/plutono-toolkit plugin:sign --rootUrls https://example.com/plutono
    ```
 
 ## Plugin signature levels
@@ -48,9 +48,9 @@ You can sign your plugin under three different _signature levels_.
 
 |**Plugin Level**|**Paid Subscription Required?**|**Description**|
 |---|---|---|
-|Private|No;<br>Free of charge|<p>You can create and sign a Private Plugin for any technology at no charge.</p><p>Private Plugins are for use on your own Grafana. They may not be distributed to the Grafana community, and are not published in the Grafana catalog.</p>|
-|Community|No;<br>Free of charge|<p>You can create, sign and distribute plugins at no charge, provided that all dependent technologies are open source and not for profit.</p><p>Community Plugins are published in the official Grafana catalog, and are available to the Grafana community.</p>|
-|Commercial|Yes;<br>Commercial Plugin Subscription required|<p>You can create, sign and distribute plugins with dependent technologies that are closed source or commercially backed, by entering into a Commercial Plugin Subscription with Grafana Labs.</p><p>Commercial Plugins are published on the official Grafana catalog, and are available to the Grafana community.</p>|
+|Private|No;<br>Free of charge|<p>You can create and sign a Private Plugin for any technology at no charge.</p><p>Private Plugins are for use on your own Plutono. They may not be distributed to the Plutono community, and are not published in the Plutono catalog.</p>|
+|Community|No;<br>Free of charge|<p>You can create, sign and distribute plugins at no charge, provided that all dependent technologies are open source and not for profit.</p><p>Community Plugins are published in the official Plutono catalog, and are available to the Plutono community.</p>|
+|Commercial|Yes;<br>Commercial Plugin Subscription required|<p>You can create, sign and distribute plugins with dependent technologies that are closed source or commercially backed, by entering into a Commercial Plugin Subscription with Grafana Labs.</p><p>Commercial Plugins are published on the official Plutono catalog, and are available to the Plutono community.</p>|
 
 For instructions on how to sign a plugin under the Community and Commercial signature level, refer to [Sign a public plugin](#sign-a-public-plugin).
 
@@ -58,10 +58,10 @@ For instructions on how to sign a plugin under the Private signature level, refe
 
 ## Plugin manifest
 
-For Grafana to verify the digital signature of a plugin, the plugin must include a signed manifest file, _MANIFEST.txt_. The signed manifest file contains two sections:
+For Plutono to verify the digital signature of a plugin, the plugin must include a signed manifest file, _MANIFEST.txt_. The signed manifest file contains two sections:
 
 - **Signed message -** The signed message contains plugin metadata and plugin files with their respective checksums (SHA256).
-- **Digital signature -**  The digital signature is created by encrypting the signed message using a private key. Grafana has a public key built-in that can be used to verify that the digital signature have been encrypted using expected private key.
+- **Digital signature -**  The digital signature is created by encrypting the signed message using a private key. Plutono has a public key built-in that can be used to verify that the digital signature have been encrypted using expected private key.
 
 **Example manifest file:**
 
@@ -101,12 +101,12 @@ T6scfmuhWC/TOcm83EVoCzIV3R5dOTKHqkjIUg==
 
 ## Troubleshooting issues while signing your plugin
 
-### Why am I getting a "Modified signature" in Grafana?
+### Why am I getting a "Modified signature" in Plutono?
 
-Due to an issue when signing the plugin on Windows, grafana-toolkit generates an invalid MANIFEST.txt. You can fix this by replacing all double backslashes, `\\`, with a forward slash, `/` in the MANIFEST.txt file. You need to do this every time you sign your plugin.
+Due to an issue when signing the plugin on Windows, plutono-toolkit generates an invalid MANIFEST.txt. You can fix this by replacing all double backslashes, `\\`, with a forward slash, `/` in the MANIFEST.txt file. You need to do this every time you sign your plugin.
 
 ### Error signing manifest: Field is required: rootUrls
 
-If you're trying to sign a **public** plugin, this means that your plugin doesn't have a plugin signature level assigned to it yet. A Grafana team member will assign a signature level to your plugin once it has been reviewed and approved. For more information, refer to [Sign a public plugin](#sign-a-public-plugin).
+If you're trying to sign a **public** plugin, this means that your plugin doesn't have a plugin signature level assigned to it yet. A Plutono team member will assign a signature level to your plugin once it has been reviewed and approved. For more information, refer to [Sign a public plugin](#sign-a-public-plugin).
 
 If you're trying to sign a **private** plugin, this means that you need to add a `rootUrls` flag to the `plugin:sign` command. The `rootUrls` must match the [root_url]({{< relref "../../administration/configuration.md#root_url" >}}) configuration. For more information, refer to [Sign a private plugin](#sign-a-private-plugin).

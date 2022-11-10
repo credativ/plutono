@@ -1,4 +1,4 @@
-import { DataSourceSettings } from '@grafana/data';
+import { DataSourceSettings } from '@credativ/plutono-data';
 
 export function createDatasourceSettings<T>(jsonData: T): DataSourceSettings<T> {
   return {

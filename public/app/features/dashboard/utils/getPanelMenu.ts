@@ -1,7 +1,7 @@
 import { updateLocation } from 'app/core/actions';
 import { store } from 'app/store/store';
-import { AngularComponent, getDataSourceSrv, getLocationSrv } from '@grafana/runtime';
-import { PanelMenuItem } from '@grafana/data';
+import { AngularComponent, getDataSourceSrv, getLocationSrv } from '@credativ/plutono-runtime';
+import { PanelMenuItem } from '@credativ/plutono-data';
 import { copyPanel, duplicatePanel, removePanel, sharePanel } from 'app/features/dashboard/utils/panel';
 import { PanelModel } from 'app/features/dashboard/state/PanelModel';
 import { DashboardModel } from 'app/features/dashboard/state/DashboardModel';

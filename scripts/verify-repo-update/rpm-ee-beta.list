@@ -1,5 +1,5 @@
-[grafana]
-name=grafana
+[plutono]
+name=plutono
 baseurl=https://packages.grafana.com/enterprise/rpm-beta
 repo_gpgcheck=1
 enabled=1

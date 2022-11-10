@@ -11,7 +11,7 @@
   "overrides": [
     {
       "files": [
-        "packages/grafana-ui/src/components/uPlot/**/*.{ts,tsx}",
+        "packages/plutono-ui/src/components/uPlot/**/*.{ts,tsx}",
         "public/app/**/*.{ts,tsx}"
       ],
       "rules": {

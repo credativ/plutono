@@ -21,8 +21,8 @@ The query editor for Explore is similar to the query editor for the data source 
    ```ts
    import React from 'react';
 
-   import { ExploreQueryFieldProps } from '@grafana/data';
-   import { QueryField } from '@grafana/ui';
+   import { ExploreQueryFieldProps } from '@credativ/plutono-data';
+   import { QueryField } from '@credativ/plutono-ui';
    import { DataSource } from './DataSource';
    import { MyQuery, MyDataSourceOptions } from './types';
 
@@ -51,7 +51,7 @@ The query editor for Explore is similar to the query editor for the data source 
 1. Add a [QueryField]({{< relref "../../packages_api/ui/queryfield.md" >}}) to `ExploreQueryEditor`.
 
    ```ts
-   import { QueryField } from '@grafana/ui';
+   import { QueryField } from '@credativ/plutono-ui';
    ```
 
    ```ts

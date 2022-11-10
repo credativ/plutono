@@ -1,5 +1,5 @@
 import { defaultsDeep } from 'lodash';
-import { PanelPluginMeta, PluginMeta, PluginType, PanelPlugin, PanelProps } from '@grafana/data';
+import { PanelPluginMeta, PluginMeta, PluginType, PanelPlugin, PanelProps } from '@credativ/plutono-data';
 import { ComponentType } from 'enzyme';
 
 export const getMockPlugins = (amount: number): PluginMeta[] => {
@@ -14,7 +14,7 @@ export const getMockPlugins = (amount: number): PluginMeta[] => {
       info: {
         author: {
           name: 'Grafana Labs',
-          url: 'url/to/GrafanaLabs',
+          url: 'url/to/PlutonoLabs',
         },
         description: 'pretty decent plugin',
         links: ['one link'],
@@ -77,7 +77,7 @@ export function getMockPlugin(overrides?: Partial<PluginMeta>): PluginMeta {
     info: {
       author: {
         name: 'Grafana Labs',
-        url: 'url/to/GrafanaLabs',
+        url: 'url/to/PlutonoLabs',
       },
       description: 'pretty decent plugin',
       links: [{ name: 'project', url: 'one link' }],

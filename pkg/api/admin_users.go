@@ -4,12 +4,12 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 func AdminCreateUser(c *models.ReqContext, form dtos.AdminCreateUserForm) response.Response {
@@ -92,12 +92,12 @@ func AdminUpdateUserPermissions(c *models.ReqContext, form dtos.AdminUpdateUserP
 
 	cmd := models.UpdateUserPermissionsCommand{
 		UserId:         userID,
-		IsGrafanaAdmin: form.IsGrafanaAdmin,
+		IsPlutonoAdmin: form.IsPlutonoAdmin,
 	}
 
 	if err := bus.Dispatch(&cmd); err != nil {
-		if errors.Is(err, models.ErrLastGrafanaAdmin) {
-			return response.Error(400, models.ErrLastGrafanaAdmin.Error(), nil)
+		if errors.Is(err, models.ErrLastPlutonoAdmin) {
+			return response.Error(400, models.ErrLastPlutonoAdmin.Error(), nil)
 		}
 
 		return response.Error(500, "Failed to update user permissions", err)

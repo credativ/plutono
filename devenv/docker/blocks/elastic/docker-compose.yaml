@@ -8,7 +8,7 @@
       - ./docker/blocks/elastic/elasticsearch.yml:/usr/share/elasticsearch/config/elasticsearch.yml
 
   fake-elastic-data:
-    image: grafana/fake-data-gen
+    image: plutono/fake-data-gen
     network_mode: bridge
     environment:
       FD_DATASOURCE: elasticsearch

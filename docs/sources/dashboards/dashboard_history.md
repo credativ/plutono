@@ -1,7 +1,7 @@
 +++
 title = "Dashboard Version History"
-keywords = ["grafana", "dashboard", "documentation", "version", "history"]
-aliases = ["/docs/grafana/latest/reference/dashboard_history/"]
+keywords = ["plutono", "dashboard", "documentation", "version", "history"]
+aliases = ["/docs/plutono/latest/reference/dashboard_history/"]
 weight = 100
 +++
 

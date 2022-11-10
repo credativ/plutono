@@ -1,19 +1,19 @@
 +++
 title = "View server stats"
-keywords = ["grafana", "server", "statistics"]
-aliases = ["/docs/grafana/latest/admin/view-server-stats/"]
+keywords = ["plutono", "server", "statistics"]
+aliases = ["/docs/plutono/latest/admin/view-server-stats/"]
 weight = 400
 +++
 
-# View Grafana server stats
+# View Plutono server stats
 
-If you are a Grafana server admin, then you can view useful statistics about your Grafana server in the Stats tab.
+If you are a Plutono server admin, then you can view useful statistics about your Plutono server in the Stats tab.
 
-> **Note:** Only Grafana server administrators can access the **Server Admin** menu. For more information about about administrative permissions, refer to [Grafana server admin]({{< relref "../../permissions/_index.md" >}}).
+> **Note:** Only Plutono server administrators can access the **Server Admin** menu. For more information about about administrative permissions, refer to [Plutono server admin]({{< relref "../../permissions/_index.md" >}}).
 
 ## View server stats
 
-1. Log in to your Grafana server with an account that has the Grafana Admin flag set.
+1. Log in to your Plutono server with an account that has the Plutono Admin flag set.
 1. Hover your cursor over the **Server Admin** (shield) icon in the side menu and then click the **Stats** tab.
 
 ## Available stats

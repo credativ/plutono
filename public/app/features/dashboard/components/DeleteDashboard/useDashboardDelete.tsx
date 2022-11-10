@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 import { useAsyncFn } from 'react-use';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@credativ/plutono-data';
 import appEvents from 'app/core/app_events';
 import { updateLocation } from 'app/core/reducers/location';
 import { deleteDashboard } from 'app/features/manage-dashboards/state/actions';

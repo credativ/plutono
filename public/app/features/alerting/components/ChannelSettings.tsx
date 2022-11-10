@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { CollapsableSection, InfoBox } from '@grafana/ui';
+import { CollapsableSection, InfoBox } from '@credativ/plutono-ui';
 import { NotificationChannelOptions } from './NotificationChannelOptions';
 import { NotificationSettingsProps } from './NotificationChannelForm';
 import { NotificationChannelSecureFields, NotificationChannelType } from '../../../types';

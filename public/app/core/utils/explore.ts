@@ -24,16 +24,16 @@ import {
   rangeUtil,
   DateTime,
   isDateTime,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import store from 'app/core/store';
 import { v4 as uuidv4 } from 'uuid';
 import { getNextRefIdChar } from './query';
 // Types
-import { RefreshPicker } from '@grafana/ui';
+import { RefreshPicker } from '@credativ/plutono-ui';
 import { QueryOptions, QueryTransaction } from 'app/types/explore';
 import { config } from '../config';
 import { TimeSrv } from 'app/features/dashboard/services/TimeSrv';
-import { DataSourceSrv } from '@grafana/runtime';
+import { DataSourceSrv } from '@credativ/plutono-runtime';
 import { PanelModel } from 'app/features/dashboard/state';
 
 export const DEFAULT_RANGE = {
@@ -47,7 +47,7 @@ export const DEFAULT_UI_STATE = {
 
 const MAX_HISTORY_ITEMS = 100;
 
-export const LAST_USED_DATASOURCE_KEY = 'grafana.explore.datasource';
+export const LAST_USED_DATASOURCE_KEY = 'plutono.explore.datasource';
 export const lastUsedDatasourceKeyForOrgId = (orgId: number) => `${LAST_USED_DATASOURCE_KEY}.${orgId}`;
 
 /**
@@ -324,7 +324,7 @@ export function updateHistory<T extends DataQuery = any>(
   }
 
   // Combine all queries of a datasource type into one history
-  const historyKey = `grafana.explore.history.${datasourceId}`;
+  const historyKey = `plutono.explore.history.${datasourceId}`;
   try {
     store.setObject(historyKey, updatedHistory);
     return updatedHistory;
@@ -335,7 +335,7 @@ export function updateHistory<T extends DataQuery = any>(
 }
 
 export function clearHistory(datasourceId: string) {
-  const historyKey = `grafana.explore.history.${datasourceId}`;
+  const historyKey = `plutono.explore.history.${datasourceId}`;
   store.delete(historyKey);
 }
 

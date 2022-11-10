@@ -1,6 +1,6 @@
 import angular from 'angular';
 import coreModule from '../core_module';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 
 export class DeltaCtrl {
   observer: any;
@@ -39,7 +39,7 @@ coreModule.directive('diffDelta', delta);
 // Link to JSON line number
 export class LinkJSONCtrl {
   /** @ngInject */
-  constructor(private $scope: any, private $rootScope: GrafanaRootScope, private $anchorScroll: any) {}
+  constructor(private $scope: any, private $rootScope: PlutonoRootScope, private $anchorScroll: any) {}
 
   goToLine(line: number) {
     let unbind: () => void;

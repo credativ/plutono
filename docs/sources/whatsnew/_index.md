@@ -1,15 +1,15 @@
 +++
 title = "What's new"
-aliases = ["/docs/grafana/latest/guides/"]
+aliases = ["/docs/plutono/latest/guides/"]
 weight = 1
 +++
 
-# What's new Grafana
+# What's new Plutono
 
-Grafana is changing all the time. For release highlights checkout links below, if you want a complete list of every change, as well
+Plutono is changing all the time. For release highlights checkout links below, if you want a complete list of every change, as well
 as info on deprecations, breaking changes and plugin development read the [release notes]({{< relref "../release-notes" >}}).
 
-## Grafana 7
+## Plutono 7
 
 - [What's new in 7.5]({{< relref "whats-new-in-v7-5" >}})
 - [What's new in 7.4]({{< relref "whats-new-in-v7-4" >}})
@@ -18,7 +18,7 @@ as info on deprecations, breaking changes and plugin development read the [relea
 - [What's new in 7.1]({{< relref "whats-new-in-v7-1" >}})
 - [What's new in 7.0]({{< relref "whats-new-in-v7-0" >}})
 
-## Grafana 6
+## Plutono 6
 - [What's new in 6.7]({{< relref "whats-new-in-v6-7" >}})
 - [What's new in 6.6]({{< relref "whats-new-in-v6-6" >}})
 - [What's new in 6.5]({{< relref "whats-new-in-v6-5" >}})
@@ -28,7 +28,7 @@ as info on deprecations, breaking changes and plugin development read the [relea
 - [What's new in 6.1]({{< relref "whats-new-in-v6-1" >}})
 - [What's new in 6.0]({{< relref "whats-new-in-v6-0" >}})
 
-## Grafana 5
+## Plutono 5
 - [What's new in 5.4]({{< relref "whats-new-in-v5-4" >}})
 - [What's new in 5.3]({{< relref "whats-new-in-v5-3" >}})
 - [What's new in 5.2]({{< relref "whats-new-in-v5-2" >}})

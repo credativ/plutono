@@ -357,7 +357,7 @@ The plugin allso adds the following methods to the plot object:
 
             if (mouseUpHandler) {
                 $(document).unbind("mouseup", mouseUpHandler);
-                // grafana addition
+                // plutono addition
                 // In L114 this plugin is overrinding document.onselectstart handler to prevent default or custom behaviour
                 // Then this patch is being restored during mouseup event. But, mouseup handler is unbound when this plugin is destroyed
                 // and the overridden onselectstart handler is not restored.  The problematic behaviour surfaces when flot is re-rendered

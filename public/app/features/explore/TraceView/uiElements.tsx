@@ -1,13 +1,13 @@
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import {
   Button,
   Input,
   Popover,
   PopoverController,
   stylesFactory,
-  Tooltip as GrafanaTooltip,
+  Tooltip as PlutonoTooltip,
   useTheme,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import { ButtonProps, Elements, PopoverProps, TooltipProps } from '@jaegertracing/jaeger-ui-components';
 import cx from 'classnames';
 import { css } from 'emotion';
@@ -50,7 +50,7 @@ export const UIElements: Elements = {
     );
   },
   Tooltip({ children, title }: TooltipProps) {
-    return <GrafanaTooltip content={title}>{children}</GrafanaTooltip>;
+    return <PlutonoTooltip content={title}>{children}</PlutonoTooltip>;
   },
   Icon: (() => null as any) as any,
   Dropdown: (() => null as any) as any,
@@ -76,7 +76,7 @@ export const UIElements: Elements = {
   },
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     Divider: css`
       display: inline-block;

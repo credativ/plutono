@@ -18,7 +18,7 @@ import {
   LegacyForms,
   SeriesColorPickerPopoverWithTheme,
   UnitPicker,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import { FunctionEditor } from 'app/plugins/datasource/graphite/FunctionEditor';
 import { LokiAnnotationsQueryEditor } from '../plugins/datasource/loki/components/AnnotationsQueryEditor';
 import { HelpModal } from './components/help/HelpModal';

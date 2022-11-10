@@ -1,4 +1,4 @@
-import { FetchResponse } from '@grafana/runtime';
+import { FetchResponse } from '@credativ/plutono-runtime';
 
 export function createFetchResponse<T>(data: T): FetchResponse<T> {
   return {

@@ -6,8 +6,8 @@ import {
   rangeUtil,
   StandardVariableQuery,
   StandardVariableSupport,
-} from '@grafana/data';
-import { getTemplateSrv, TemplateSrv } from '@grafana/runtime';
+} from '@credativ/plutono-data';
+import { getTemplateSrv, TemplateSrv } from '@credativ/plutono-runtime';
 
 import { PrometheusDatasource } from './datasource';
 import { PromQuery } from './types';

@@ -1,5 +1,5 @@
-import { getBackendSrv } from '@grafana/runtime';
-import { PluginMeta } from '@grafana/data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
+import { PluginMeta } from '@credativ/plutono-data';
 
 type PluginCache = {
   [key: string]: PluginMeta;

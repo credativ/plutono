@@ -1,6 +1,6 @@
 # Architecture
 
-Are you looking to take on contributions with bigger impact? These guides help you get a better understanding of the structure and design of the Grafana codebase.
+Are you looking to take on contributions with bigger impact? These guides help you get a better understanding of the structure and design of the Plutono codebase.
 
 Learn more about the backend architecture:
 

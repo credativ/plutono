@@ -1,13 +1,13 @@
 +++
-title = "Grafana Enterprise license"
+title = "Plutono Enterprise license"
 description = "Enterprise license"
-keywords = ["grafana", "licensing", "enterprise"]
+keywords = ["plutono", "licensing", "enterprise"]
 weight = 100
 +++
 
-# Grafana Enterprise license
+# Plutono Enterprise license
 
-To run Grafana Enterprise, you need a valid license. [Contact a Grafana Labs representative](https://grafana.com/contact?about=grafana-enterprise) to obtain the license. For information on how to activate your license, refer to [Activate an Enterprise license]({{< relref "./activate-license.md" >}}).
+To run Plutono Enterprise, you need a valid license. [Contact a Grafana Labs representative](https://grafana.com/contact?about=plutono-enterprise) to obtain the license. For information on how to activate your license, refer to [Activate an Enterprise license]({{< relref "./activate-license.md" >}}).
 
 See also:
 

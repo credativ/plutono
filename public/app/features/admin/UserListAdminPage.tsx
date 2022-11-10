@@ -2,8 +2,8 @@ import React, { useEffect } from 'react';
 import { css, cx } from 'emotion';
 import { hot } from 'react-hot-loader';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { NavModel } from '@grafana/data';
-import { Pagination, Tooltip, HorizontalGroup, stylesFactory, LinkButton, Input, Icon } from '@grafana/ui';
+import { NavModel } from '@credativ/plutono-data';
+import { Pagination, Tooltip, HorizontalGroup, stylesFactory, LinkButton, Input, Icon } from '@credativ/plutono-ui';
 import { StoreState, UserDTO } from '../../types';
 import Page from 'app/core/components/Page/Page';
 import { getNavModel } from '../../core/selectors/navModel';
@@ -69,7 +69,7 @@ const UserListAdminPageUnConnected: React.FC<Props> = (props) => {
                   <th>Name</th>
                   <th>
                     Seen&nbsp;
-                    <Tooltip placement="top" content="Time since user was seen using Grafana">
+                    <Tooltip placement="top" content="Time since user was seen using Plutono">
                       <Icon name="question-circle" />
                     </Tooltip>
                   </th>
@@ -118,7 +118,7 @@ const renderUser = (user: UserDTO) => {
       <td className="link-td">
         {user.isAdmin && (
           <a href={editUrl}>
-            <Tooltip placement="top" content="Grafana Admin">
+            <Tooltip placement="top" content="Plutono Admin">
               <Icon name="shield" />
             </Tooltip>
           </a>

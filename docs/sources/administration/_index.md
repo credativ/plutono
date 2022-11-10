@@ -6,7 +6,7 @@ weight = 40
 
 # Administration
 
-This section includes information for Grafana administrators, team administrators, and users performing administrative tasks:
+This section includes information for Plutono administrators, team administrators, and users performing administrative tasks:
 
 - [Change Preferences]({{< relref "preferences" >}})
 - [Configuration]({{< relref "configuration" >}})

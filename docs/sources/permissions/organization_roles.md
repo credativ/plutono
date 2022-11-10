@@ -1,15 +1,15 @@
 +++
 title = "Organization roles"
-description = "Grafana organization roles guide "
-keywords = ["grafana", "configuration", "documentation", "organization", "roles", "permissions"]
+description = "Plutono organization roles guide "
+keywords = ["plutono", "configuration", "documentation", "organization", "roles", "permissions"]
 weight = 100
 +++
 
 # Organization roles
 
-Users can belong to one or more organizations. A user's organization membership is tied to a role that defines what the user is allowed to do in that organization. Grafana supports multiple _organizations_ in order to support a wide variety of deployment models, including using a single Grafana instance to provide service to multiple potentially untrusted organizations.
+Users can belong to one or more organizations. A user's organization membership is tied to a role that defines what the user is allowed to do in that organization. Plutono supports multiple _organizations_ in order to support a wide variety of deployment models, including using a single Plutono instance to provide service to multiple potentially untrusted organizations.
 
-In most cases, Grafana is deployed with a single organization.
+In most cases, Plutono is deployed with a single organization.
 
 Each organization can have one or more data sources.
 
@@ -56,7 +56,7 @@ Can do everything scoped to the organization. For example:
 - Cannot add, edit, or delete data sources.
 - Cannot manage other organizations, users, and teams.
 
-This role can be changed with the Grafana server setting [editors_can_admin]({{< relref "../administration/configuration.md#editors_can_admin" >}}). If you set this to `true`, then users with the Editor role can also administrate dashboards, folders, and teams they create. This is especially useful for enabling self-organizing teams to administer their own dashboards.
+This role can be changed with the Plutono server setting [editors_can_admin]({{< relref "../administration/configuration.md#editors_can_admin" >}}). If you set this to `true`, then users with the Editor role can also administrate dashboards, folders, and teams they create. This is especially useful for enabling self-organizing teams to administer their own dashboards.
 
 ## Viewer role
 
@@ -68,8 +68,8 @@ This role can be changed with the Grafana server setting [editors_can_admin]({{<
 - Cannot access Explore.
 - Cannot manage other organizations, users, and teams.
 
-This role can be changed with the Grafana server setting [viewers_can_edit]({{< relref "../administration/configuration.md#viewers-can-edit" >}}). If you set this to `true`, then users with the Viewer role can:
+This role can be changed with the Plutono server setting [viewers_can_edit]({{< relref "../administration/configuration.md#viewers-can-edit" >}}). If you set this to `true`, then users with the Viewer role can:
 - Make transient dashboard edits, meaning they can modify panels and queries but not save the changes or create new dashboards.
 - Access and use [Explore]({{< relref "../explore/_index.md" >}}).
 
-This is especially useful for public Grafana installations where you want anonymous users to be able to edit panels and queries but not save or create new dashboards.
+This is especially useful for public Plutono installations where you want anonymous users to be able to edit panels and queries but not save or create new dashboards.

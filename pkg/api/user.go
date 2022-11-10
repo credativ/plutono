@@ -3,12 +3,12 @@ package api
 import (
 	"errors"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 // GET /api/user  (current authenticated user)
@@ -60,7 +60,7 @@ func GetUserByLoginOrEmail(c *models.ReqContext) response.Response {
 		Email:          user.Email,
 		Login:          user.Login,
 		Theme:          user.Theme,
-		IsGrafanaAdmin: user.IsAdmin,
+		IsPlutonoAdmin: user.IsAdmin,
 		OrgId:          user.OrgId,
 		UpdatedAt:      user.Updated,
 		CreatedAt:      user.Created,
@@ -353,7 +353,7 @@ func GetAuthProviderLabel(authModule string) string {
 		return "AzureAD"
 	case "oauth_gitlab":
 		return "GitLab"
-	case "oauth_grafana_com", "oauth_grafananet":
+	case "oauth_plutono_com", "oauth_plutononet":
 		return "grafana.com"
 	case "auth.saml":
 		return "SAML"

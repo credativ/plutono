@@ -1,8 +1,8 @@
-import { IconButton, IconName, stylesFactory, useTheme } from '@grafana/ui';
+import { IconButton, IconName, stylesFactory, useTheme } from '@credativ/plutono-ui';
 import React from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 interface QueryOperationActionProps {
   icon: IconName;
@@ -35,7 +35,7 @@ export const QueryOperationAction: React.FC<QueryOperationActionProps> = ({ icon
 
 QueryOperationAction.displayName = 'QueryOperationAction';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     icon: css`
       color: ${theme.colors.textWeak};

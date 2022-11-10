@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { renderMarkdown } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
+import { renderMarkdown } from '@credativ/plutono-data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 
 interface Props {
   plugin: {

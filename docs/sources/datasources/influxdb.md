@@ -1,18 +1,18 @@
 +++
 title = "InfluxDB"
-description = "Guide for using InfluxDB in Grafana"
-keywords = ["grafana", "influxdb", "guide", "flux"]
-aliases = ["/docs/grafana/latest/features/datasources/influxdb"]
+description = "Guide for using InfluxDB in Plutono"
+keywords = ["plutono", "influxdb", "guide", "flux"]
+aliases = ["/docs/plutono/latest/features/datasources/influxdb"]
 weight = 700
 +++
 
-# Using InfluxDB in Grafana
+# Using InfluxDB in Plutono
 
-Grafana ships with a feature-rich data source plugin for InfluxDB. The plugin includes a custom query editor and supports annotations and query templates.
+Plutono ships with a feature-rich data source plugin for InfluxDB. The plugin includes a custom query editor and supports annotations and query templates.
 
 ## Add the data source
 
-1. Open the side menu by clicking the Grafana icon in the top header.
+1. Open the side menu by clicking the Plutono icon in the top header.
 1. In the side menu under the `Dashboards` link you should find a link named `Data Sources`.
 1. Click the `+ Add data source` button in the top header.
 1. Select *InfluxDB* from the *Type* dropdown.
@@ -28,19 +28,19 @@ Name        | Description
 `Name`      | The data source name. This is how you refer to the data source in panels and queries.
 `Default`   | Default data source means that it will be pre-selected for new panels.
 `URL`       | The HTTP protocol, IP address and port of your InfluxDB API (InfluxDB API port is by default 8086)
-`Access`    | Server (default) = URL needs to be accessible from the Grafana backend/server, Browser = URL needs to be accessible from the browser.
+`Access`    | Server (default) = URL needs to be accessible from the Plutono backend/server, Browser = URL needs to be accessible from the browser.
 `Database`  | Name of your InfluxDB database
 `User`      | Name of your database user
 `Password`  | Database user's password
 `HTTP mode` | How to query the database (`GET` or `POST` HTTP verb). The `POST` verb allows heavy queries that would return an error using the `GET` verb. Default is `GET`.
 `Min time interval` | Refer to [Min time interval]({{< relref "#min-time-interval" >}}).
-`Max series`| Limits the number of series/tables that Grafana processes. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000.
+`Max series`| Limits the number of series/tables that Plutono processes. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000.
 
 Access mode controls how requests to the data source will be handled. Server should be the preferred way if nothing else stated.
 
 ### Server access mode (Default)
 
-All requests will be made from the browser to Grafana backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the grafana backend/server if you select this access mode.
+All requests will be made from the browser to Plutono backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the plutono backend/server if you select this access mode.
 
 ### Browser access mode
 
@@ -75,7 +75,7 @@ the tag key and then selecting `--remove tag filter--`.
 
 **Regex matching**
 
-You can type in regex patterns for metric names or tag filter values. Be sure to wrap the regex pattern in forward slashes (`/`). Grafana automatically adjusts the filter tag condition to use the InfluxDB regex match condition operator (`=~`).
+You can type in regex patterns for metric names or tag filter values. Be sure to wrap the regex pattern in forward slashes (`/`). Plutono automatically adjusts the filter tag condition to use the InfluxDB regex match condition operator (`=~`).
 
 ### Field and Aggregation functions
 In the `SELECT` row you can specify what fields and functions you want to use. If you have a
@@ -121,7 +121,7 @@ change the option `Format As` to `Table` if you want to show raw data in the `Ta
 
 ## Flux support
 
-> Starting in v7.1, Grafana can execute Flux queries.
+> Starting in v7.1, Plutono can execute Flux queries.
 
 The client supports Flux running on InfluxDB 1.8+.  See [1.8 compatibility](https://github.com/influxdata/influxdb-client-go/#influxdb-18-api-compatibility) for more information and connection details.
 
@@ -133,9 +133,9 @@ Name             | Description
 `Token`          | The authentication token used for Flux queries. With Influx 2.0, use the [influx authentication token to function](https://v2.docs.influxdata.com/v2.0/security/tokens/create-token/).  For influx 1.8, the token is `username:password`
 `Default Bucket` | The [Influx bucket](https://v2.docs.influxdata.com/v2.0/organizations/buckets/) that will be used for the `v.defaultBucket` macro in Flux queries
 `Min time interval` | Refer to [Min time interval]({{< relref "#min-time-interval" >}}).
-`Max series`| Limits the number of series/tables that Grafana processes. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000.
+`Max series`| Limits the number of series/tables that Plutono processes. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000.
 
-You can use the [Flux query and scripting language](https://www.influxdata.com/products/flux/). Grafana's Flux query editor is a text editor for raw Flux queries with Macro support.
+You can use the [Flux query and scripting language](https://www.influxdata.com/products/flux/). Plutono's Flux query editor is a text editor for raw Flux queries with Macro support.
 
 
 ### Supported macros
@@ -146,13 +146,13 @@ Macro example        | Description
 ------------         | -------------
 `v.timeRangeStart`   | Will be replaced by the start of the currently active time selection. For example, *2020-06-11T13:31:00Z*
 `v.timeRangeStop`    | Will be replaced by the end of the currently active time selection. For example, *2020-06-11T14:31:00Z*
-`v.windowPeriod`     | Will be replaced with an interval string compatible with Flux that corresponds to Grafana's calculated interval based on the time range of the active time selection. For example, *5s*
+`v.windowPeriod`     | Will be replaced with an interval string compatible with Flux that corresponds to Plutono's calculated interval based on the time range of the active time selection. For example, *5s*
 `v.defaultBucket`    | Will be replaced with the data source configuration's "Default Bucket" setting
 `v.organization`     | Will be replaced with the data source configuration's "Organization" setting
 
 For example, the following query will be interpolated as the query that follows it, with interval and time period values changing according to active time selection\):
 
-Grafana Flux query:
+Plutono Flux query:
 
 ```flux
 from(bucket: v.defaultBucket)
@@ -166,7 +166,7 @@ from(bucket: v.defaultBucket)
 Interpolated query send to Influx:
 
 ```flux
-from(bucket: "grafana")
+from(bucket: "plutono")
   |> range(start: 2020-06-11T13:59:07Z, stop: 2020-06-11T14:59:07Z)
   |> filter(fn: (r) => r["_measurement"] == "cpu" or r["_measurement"] == "swap")
   |> filter(fn: (r) => r["_field"] == "usage_system" or r["_field"] == "free")
@@ -178,7 +178,7 @@ You can view the interpolated version of a query with the Query Inspector.
 
 ## Querying Logs (BETA)
 
-> Only available in Grafana v6.3+.
+> Only available in Plutono v6.3+.
 
 Querying and displaying log data from InfluxDB is available in [Explore]({{< relref "../explore" >}}), and in the [logs panel]({{< relref "../panels/visualizations/logs-panel.md" >}}) in dashboards.
 Select the InfluxDB data source, and then enter a query to display your logs.
@@ -246,10 +246,10 @@ SELECT mean("value") FROM "logins" WHERE "hostname" =~ /^[[host]]$/ AND $timeFil
 ```
 
 Why two ways? The first syntax is easier to read and write but does not allow you to use a variable in the middle of a word. When the *Multi-value* or *Include all value*
-options are enabled, Grafana converts the labels from plain text to a regex compatible string. Which means you have to use `=~` instead of `=`.
+options are enabled, Plutono converts the labels from plain text to a regex compatible string. Which means you have to use `=~` instead of `=`.
 
 Example Dashboard:
-[InfluxDB Templated Dashboard](https://play.grafana.org/dashboard/db/influxdb-templated)
+[InfluxDB Templated Dashboard](https://play.plutono.org/dashboard/db/influxdb-templated)
 
 ### Ad hoc filters variable
 
@@ -270,7 +270,7 @@ For InfluxDB, you need to enter a query like the one in the example above. The `
 
 ## Configure the data source with provisioning
 
-You can now configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}}).
+You can now configure data sources using config files with Plutono's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}}).
 
 Here are some provisioning examples for this data source.
 
@@ -283,8 +283,8 @@ datasources:
     type: influxdb
     access: proxy
     database: site
-    user: grafana
-    password: grafana
+    user: plutono
+    password: plutono
     url: http://localhost:8086
     jsonData:
       httpMode: GET

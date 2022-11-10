@@ -1,19 +1,19 @@
 +++
 title = "Elasticsearch"
-description = "Guide for using Elasticsearch in Grafana"
-keywords = ["grafana", "elasticsearch", "guide"]
-aliases = ["/docs/grafana/latest/features/datasources/elasticsearch"]
+description = "Guide for using Elasticsearch in Plutono"
+keywords = ["plutono", "elasticsearch", "guide"]
+aliases = ["/docs/plutono/latest/features/datasources/elasticsearch"]
 weight = 400
 +++
 
-# Using Elasticsearch in Grafana
+# Using Elasticsearch in Plutono
 
-Grafana ships with advanced support for Elasticsearch. You can do many types of simple or complex Elasticsearch queries to
+Plutono ships with advanced support for Elasticsearch. You can do many types of simple or complex Elasticsearch queries to
 visualize logs or metrics stored in Elasticsearch. You can also annotate your graphs with log events stored in Elasticsearch.
 
 ## Adding the data source
 
-1. Open the side menu by clicking the Grafana icon in the top header.
+1. Open the side menu by clicking the Plutono icon in the top header.
 1. In the side menu under the `Dashboards` link you should find a link named `Data Sources`.
 1. Click the `+ Add data source` button in the top header.
 1. Select *Elasticsearch* from the *Type* dropdown.
@@ -25,13 +25,13 @@ visualize logs or metrics stored in Elasticsearch. You can also annotate your gr
 | `Name`    | The data source name. This is how you refer to the data source in panels and queries.                                                 |
 | `Default` | Default data source means that it will be pre-selected for new panels.                                                                |
 | `Url`     | The HTTP protocol, IP, and port of your Elasticsearch server.                                                                         |
-| `Access`  | Server (default) = URL needs to be accessible from the Grafana backend/server, Browser = URL needs to be accessible from the browser. |
+| `Access`  | Server (default) = URL needs to be accessible from the Plutono backend/server, Browser = URL needs to be accessible from the browser. |
 
 Access mode controls how requests to the data source will be handled. Server should be the preferred way if nothing else stated.
 
 ### Server access mode (Default)
 
-All requests will be made from the browser to Grafana backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the grafana backend/server if you select this access mode.
+All requests will be made from the browser to Plutono backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the plutono backend/server if you select this access mode.
 
 ### Browser (Direct) access
 
@@ -165,7 +165,7 @@ There are two syntaxes:
 - `[[varname]]` Example: @hostname:[[hostname]]
 
 Why two ways? The first syntax is easier to read and write but does not allow you to use a variable in the middle of a word. When the *Multi-value* or *Include all value*
-options are enabled, Grafana converts the labels from plain text to a lucene compatible condition.
+options are enabled, Plutono converts the labels from plain text to a lucene compatible condition.
 
 ![Query with template variables](/static/img/docs/elasticsearch/elastic-templating-query-7-4.png)
 
@@ -173,12 +173,12 @@ In the above example, we have a lucene query that filters documents based on the
 a variable in the *Terms* group by field input box. This allows you to use a variable to quickly change how the data is grouped.
 
 Example dashboard:
-[Elasticsearch Templated Dashboard](https://play.grafana.org/dashboard/db/elasticsearch-templated)
+[Elasticsearch Templated Dashboard](https://play.plutono.org/dashboard/db/elasticsearch-templated)
 
 ## Annotations
 
 [Annotations]({{< relref "../dashboards/annotations.md" >}}) allow you to overlay rich event information on top of graphs. You add annotation
-queries via the Dashboard menu / Annotations view. Grafana can query any Elasticsearch index
+queries via the Dashboard menu / Annotations view. Plutono can query any Elasticsearch index
 for annotation events.
 
 | Name       | Description                                                                                                                                |
@@ -208,7 +208,7 @@ Optionally enter a lucene query into the query field to filter the log messages.
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with Plutono's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source.
 
@@ -247,15 +247,15 @@ datasources:
 
 ## Amazon Elasticsearch Service
 
-AWS users using Amazon's Elasticsearch Service can use Grafana's Elasticsearch data source to visualize Elasticsearch data.
+AWS users using Amazon's Elasticsearch Service can use Plutono's Elasticsearch data source to visualize Elasticsearch data.
 If you are using an AWS Identity and Access Management (IAM) policy to control access to your Amazon Elasticsearch Service domain, then you must use AWS Signature Version 4 (AWS SigV4) to sign all requests to that domain.
 For more details on AWS SigV4, refer to the [AWS documentation](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html).
 
 ### AWS Signature Version 4 authentication
 
-> **Note:** Only available in Grafana v7.3+.
+> **Note:** Only available in Plutono v7.3+.
 
-In order to sign requests to your Amazon Elasticsearch Service domain, SigV4 can be enabled in the Grafana [configuration]({{< relref "../administration/configuration.md#sigv4_auth_enabled" >}}).
+In order to sign requests to your Amazon Elasticsearch Service domain, SigV4 can be enabled in the Plutono [configuration]({{< relref "../administration/configuration.md#sigv4_auth_enabled" >}}).
 
 Once AWS SigV4 is enabled, it can be configured on the Elasticsearch data source configuration page. Refer to [Cloudwatch authentication]({{<relref "./cloudwatch.md#authentication" >}}) for more information about authentication options.
 

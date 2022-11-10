@@ -5,7 +5,7 @@ import { DashboardInitPhase, DashboardRouteInfo } from 'app/types';
 import { getBackendSrv } from 'app/core/services/backend_srv';
 import { dashboardInitCompleted, dashboardInitFetching, dashboardInitServices } from './reducers';
 import { updateLocation } from '../../../core/actions';
-import { setEchoSrv } from '@grafana/runtime';
+import { setEchoSrv } from '@credativ/plutono-runtime';
 import { Echo } from '../../../core/services/echo/Echo';
 import { variableAdapters } from 'app/features/variables/adapters';
 import { createConstantVariableAdapter } from 'app/features/variables/constant/adapter';

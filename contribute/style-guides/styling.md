@@ -1,4 +1,4 @@
-# Styling Grafana
+# Styling Plutono
 
 [Emotion](https://emotion.sh/docs/introduction) is our default-to-be approach to styling React components. It provides a way for styles to be a consequence of properties and state of a component.
 
@@ -31,8 +31,8 @@ To access the theme in your styles, use the `useStyles` hook. It provides basic 
 
 ```tsx
 import React, { FC } from 'react';
-import { GrafanaTheme } from '@grafana/data';
-import { useStyles } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { useStyles } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 
 const Foo: FC<FooProps> = () => {
@@ -43,7 +43,7 @@ const Foo: FC<FooProps> = () => {
 
 };
 
-const getStyles = (theme: GrafanaTheme) => css`
+const getStyles = (theme: PlutonoTheme) => css`
   padding: ${theme.spacing.md};
 `;
 ```
@@ -57,8 +57,8 @@ Let's say you need to style a component that has a different background dependin
 ```tsx
 import React from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { selectThemeVariant, stylesFactory, useTheme } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { selectThemeVariant, stylesFactory, useTheme } from '@credativ/plutono-ui';
 
 interface ComponentAProps {
   isActive: boolean
@@ -78,7 +78,7 @@ const ComponentA: React.FC<ComponentAProps> = ({isActive}) => {
 
 
 // Mind, that you can pass multiple arguments, theme included
-const getStyles = stylesFactory((theme: GrafanaTheme, isActive: boolean) => {
+const getStyles = stylesFactory((theme: PlutonoTheme, isActive: boolean) => {
   const backgroundColor = isActive ? theme.colors.red : theme.colors.blue;
 
   return {
@@ -92,7 +92,7 @@ const getStyles = stylesFactory((theme: GrafanaTheme, isActive: boolean) => {
 });
 ```
 
-For more information about themes at Grafana please see the [themes guide](./themes.md).
+For more information about themes at Plutono please see the [themes guide](./themes.md).
 
 ### Composing class names
 

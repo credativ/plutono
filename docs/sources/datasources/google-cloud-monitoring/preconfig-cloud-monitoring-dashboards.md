@@ -1,14 +1,14 @@
 +++
 title = "Preconfigured dashboards"
-description = "Guide for using Google Cloud Monitoring in Grafana"
-keywords = ["grafana", "stackdriver", "google", "guide", "cloud", "monitoring"]
-aliases = ["/docs/grafana/latest/features/datasources/stackdriver", "/docs/grafana/latest/features/datasources/cloudmonitoring/"]
+description = "Guide for using Google Cloud Monitoring in Plutono"
+keywords = ["plutono", "stackdriver", "google", "guide", "cloud", "monitoring"]
+aliases = ["/docs/plutono/latest/features/datasources/stackdriver", "/docs/plutono/latest/features/datasources/cloudmonitoring/"]
 weight = 10
 +++
 
 # Preconfigured Cloud Monitoring dashboards
 
-Google Cloud Monitoring data source ships with pre-configured dashboards for some of the most popular GCP services. These curated dashboards are based on similar dashboards in the GCP dashboard samples repository. See also, [Using Google Cloud Monitoring in Grafana]({{< relref "./_index.md" >}}) for detailed instructions on how to add and configure the Google Cloud Monitoring data source.
+Google Cloud Monitoring data source ships with pre-configured dashboards for some of the most popular GCP services. These curated dashboards are based on similar dashboards in the GCP dashboard samples repository. See also, [Using Google Cloud Monitoring in Plutono]({{< relref "./_index.md" >}}) for detailed instructions on how to add and configure the Google Cloud Monitoring data source.
 ## Curated dashboards
 
 To import the curated dashboards:

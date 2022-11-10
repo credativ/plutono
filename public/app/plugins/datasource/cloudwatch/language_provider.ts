@@ -15,10 +15,10 @@ import syntax, {
 
 // Types
 import { CloudWatchQuery, TSDBResponse } from './types';
-import { AbsoluteTimeRange, HistoryItem, LanguageProvider } from '@grafana/data';
+import { AbsoluteTimeRange, HistoryItem, LanguageProvider } from '@credativ/plutono-data';
 
 import { CloudWatchDatasource } from './datasource';
-import { Token, TypeaheadInput, TypeaheadOutput } from '@grafana/ui';
+import { Token, TypeaheadInput, TypeaheadOutput } from '@credativ/plutono-ui';
 import Prism, { Grammar } from 'prismjs';
 
 export type CloudWatchHistoryItem = HistoryItem<CloudWatchQuery>;

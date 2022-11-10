@@ -6,14 +6,14 @@
       - '8083:8083'
       - '8086:8086'
     environment:
-      INFLUXDB_ADMIN_USER: grafana
-      INFLUXDB_ADMIN_PASSWORD: grafana
+      INFLUXDB_ADMIN_USER: plutono
+      INFLUXDB_ADMIN_PASSWORD: plutono
       INFLUXDB_DB: site
     volumes:
       - ./docker/blocks/influxdb/influxdb.conf:/etc/influxdb/influxdb.conf
 
   fake-influxdb-data:
-    image: grafana/fake-data-gen
+    image: plutono/fake-data-gen
     links:
       - influxdb
     environment:
@@ -27,5 +27,5 @@
     volumes:
       - ./docker/blocks/influxdb/telegraf.conf:/etc/telegraf/telegraf.conf:ro
       - /var/log:/var/log
-      - ../data/log:/var/log/grafana
+      - ../data/log:/var/log/plutono
 

@@ -7,9 +7,9 @@ import (
 	"time"
 
 	"github.com/benbjohnson/clock"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/services/ngalert/eval"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/services/alerting"
+	"github.com/credativ/plutono/pkg/services/ngalert/eval"
 	"golang.org/x/sync/errgroup"
 )
 
@@ -24,7 +24,7 @@ type scheduleService interface {
 	overrideCfg(cfg schedulerCfg)
 }
 
-func (sch *schedule) definitionRoutine(grafanaCtx context.Context, key alertDefinitionKey, evalCh <-chan *evalContext, stopCh <-chan struct{}) error {
+func (sch *schedule) definitionRoutine(plutonoCtx context.Context, key alertDefinitionKey, evalCh <-chan *evalContext, stopCh <-chan struct{}) error {
 	sch.log.Debug("alert definition routine started", "key", key)
 
 	evalRunning := false
@@ -95,8 +95,8 @@ func (sch *schedule) definitionRoutine(grafanaCtx context.Context, key alertDefi
 			sch.log.Debug("stopping alert definition routine", "key", key)
 			// interrupt evaluation if it's running
 			return nil
-		case <-grafanaCtx.Done():
-			return grafanaCtx.Err()
+		case <-plutonoCtx.Done():
+			return plutonoCtx.Err()
 		}
 	}
 }
@@ -201,8 +201,8 @@ func (sch *schedule) Unpause() error {
 	return nil
 }
 
-func (sch *schedule) Ticker(grafanaCtx context.Context) error {
-	dispatcherGroup, ctx := errgroup.WithContext(grafanaCtx)
+func (sch *schedule) Ticker(plutonoCtx context.Context) error {
+	dispatcherGroup, ctx := errgroup.WithContext(plutonoCtx)
 	for {
 		select {
 		case tick := <-sch.heartbeat.C:
@@ -277,7 +277,7 @@ func (sch *schedule) Ticker(grafanaCtx context.Context) error {
 				definitionInfo.stopCh <- struct{}{}
 				sch.registry.del(key)
 			}
-		case <-grafanaCtx.Done():
+		case <-plutonoCtx.Done():
 			err := dispatcherGroup.Wait()
 			return err
 		}

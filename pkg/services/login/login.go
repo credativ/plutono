@@ -3,11 +3,11 @@ package login
 import (
 	"errors"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/quota"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/services/quota"
 )
 
 func init() {
@@ -103,9 +103,9 @@ func (ls *LoginService) UpsertUser(cmd *models.UpsertUserCommand) error {
 		return err
 	}
 
-	// Sync isGrafanaAdmin permission
-	if extUser.IsGrafanaAdmin != nil && *extUser.IsGrafanaAdmin != cmd.Result.IsAdmin {
-		if err := ls.Bus.Dispatch(&models.UpdateUserPermissionsCommand{UserId: cmd.Result.Id, IsGrafanaAdmin: *extUser.IsGrafanaAdmin}); err != nil {
+	// Sync isPlutonoAdmin permission
+	if extUser.IsPlutonoAdmin != nil && *extUser.IsPlutonoAdmin != cmd.Result.IsAdmin {
+		if err := ls.Bus.Dispatch(&models.UpdateUserPermissionsCommand{UserId: cmd.Result.Id, IsPlutonoAdmin: *extUser.IsPlutonoAdmin}); err != nil {
 			return err
 		}
 	}

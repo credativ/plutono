@@ -1,6 +1,6 @@
 import React from 'react';
-import { LogRows, CustomScrollbar } from '@grafana/ui';
-import { PanelProps } from '@grafana/data';
+import { LogRows, CustomScrollbar } from '@credativ/plutono-ui';
+import { PanelProps } from '@credativ/plutono-data';
 import { Options } from './types';
 import { dataFrameToLogsModel, dedupLogRows } from 'app/core/logs_model';
 

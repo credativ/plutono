@@ -1,5 +1,5 @@
-import { AppEvents, locationUtil } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
+import { AppEvents, locationUtil } from '@credativ/plutono-data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { backendSrv } from 'app/core/services/backend_srv';
 import { FolderState, ThunkResult } from 'app/types';
 import { DashboardAcl, DashboardAclUpdateDTO, NewDashboardAclItem, PermissionLevel } from 'app/types/acl';

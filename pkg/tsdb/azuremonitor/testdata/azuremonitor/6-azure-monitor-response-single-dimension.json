@@ -4,7 +4,7 @@
   "interval": "PT1H",
   "value": [
     {
-      "id": "\/subscriptions\/xxx\/resourceGroups\/grafanastaging\/providers\/Microsoft.Storage\/storageAccounts\/grafanastaging\/blobServices\/default\/providers\/Microsoft.Insights\/metrics\/BlobCount",
+      "id": "\/subscriptions\/xxx\/resourceGroups\/plutonostaging\/providers\/Microsoft.Storage\/storageAccounts\/plutonostaging\/blobServices\/default\/providers\/Microsoft.Insights\/metrics\/BlobCount",
       "type": "Microsoft.Insights\/metrics",
       "name": {
         "value": "BlobCount",

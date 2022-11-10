@@ -1,7 +1,7 @@
 +++
 title = "Manage variables"
-keywords = ["grafana", "templating", "documentation", "guide", "template", "variable"]
-aliases = ["/docs/grafana/latest/reference/templating"]
+keywords = ["plutono", "templating", "documentation", "guide", "template", "variable"]
+aliases = ["/docs/plutono/latest/reference/templating"]
 weight = 120
 +++
 

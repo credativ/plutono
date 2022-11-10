@@ -1,8 +1,8 @@
 +++
 title = "Dashboard and folder permissions"
-description = "Grafana Dashboard and Folder Permissions Guide "
-keywords = ["grafana", "configuration", "documentation", "dashboard", "folder", "permissions", "teams"]
-aliases = ["/docs/grafana/latest/permissions/dashboard_folder_permissions/"]
+description = "Plutono Dashboard and Folder Permissions Guide "
+keywords = ["plutono", "configuration", "documentation", "dashboard", "folder", "permissions", "teams"]
+aliases = ["/docs/plutono/latest/permissions/dashboard_folder_permissions/"]
 weight = 200
 +++
 
@@ -12,13 +12,13 @@ You can assign and remove permissions for organization roles, users, and teams f
 
 This topic explains how to grant permissions to specific folders and dashboards.
 
-To learn more about denying access to certain Grafana users, refer to [Restricting access]({{< relref "restricting-access.md">}}).
+To learn more about denying access to certain Plutono users, refer to [Restricting access]({{< relref "restricting-access.md">}}).
 
 ![Folder permissions](/static/img/docs/permissions/folder-permissions-7-5.png)
 
 ## Permission levels
 
-Grafana has three permission levels that can be assigned. These permissions are separate from [organization roles]({{< relref "organization_roles.md">}}).
+Plutono has three permission levels that can be assigned. These permissions are separate from [organization roles]({{< relref "organization_roles.md">}}).
 
 - **Admin -** Can create, edit, or delete dashboards. Can create, edit, and delete folders. Can also change dashboard and folder permissions.
 - **Edit -** Can create and edit dashboards. _Cannot_ change folder or dashboard permissions, or add, edit, or delete folders.

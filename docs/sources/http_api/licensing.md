@@ -1,17 +1,17 @@
 +++
 title = "Licensing HTTP API "
 description = "Enterprise Licensing HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "licensing", "enterprise"]
-aliases = ["/docs/grafana/latest/http_api/licensing/"]
+keywords = ["plutono", "http", "documentation", "api", "licensing", "enterprise"]
+aliases = ["/docs/plutono/latest/http_api/licensing/"]
 +++
 
 # Enterprise License API
 
-Licensing is only available in Grafana Enterprise. Read more about [Grafana Enterprise]({{< relref "../enterprise" >}}).
+Licensing is only available in Plutono Enterprise. Read more about [Plutono Enterprise]({{< relref "../enterprise" >}}).
 
 ## Check license availability
 
-> **Note:** Available in Grafana Enterprise v7.4+.
+> **Note:** Available in Plutono Enterprise v7.4+.
 
 `GET /api/licensing/check`
 
@@ -41,7 +41,7 @@ Status codes:
 
 ## Manually force license refresh
 
-> **Note:** Available in Grafana Enterprise v7.4+.
+> **Note:** Available in Plutono Enterprise v7.4+.
 
 `POST /api/licensing/token/renew`
 
@@ -68,14 +68,14 @@ Content-Length: 357
 {
   "jti":"2",
   "iss":"https://grafana.com",
-  "sub":"https://play.grafana.org/"
+  "sub":"https://play.plutono.org/"
   "lid":"1",
   "included_admins":5,
   "included_viewers":10,
   "lic_exp_warn_days":30,
   "tok_exp_warn_days":2,
   "update_days":1,
-  "prod":["grafana-enterprise"],
+  "prod":["plutono-enterprise"],
   "company":"Grafana Labs"
 }
 ```
@@ -91,11 +91,11 @@ Status Codes:
 
 ## Remove license from database
 
-> **Note:** Available in Grafana Enterprise v7.4+.
+> **Note:** Available in Plutono Enterprise v7.4+.
 
 `DELETE /api/licensing/token`
 
-Removes the license stored in the Grafana database.
+Removes the license stored in the Plutono database.
 
 **Example request:**
 
@@ -105,7 +105,7 @@ Accept: application/json
 Content-Type: application/json
 Authorization: Bearer eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk
 
-{"instance": "http://play.grafana.org/"}
+{"instance": "http://play.plutono.org/"}
 ```
 
 JSON Body schema:

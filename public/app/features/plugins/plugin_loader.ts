@@ -26,18 +26,18 @@ import impressionSrv from 'app/core/services/impression_srv';
 import builtInPlugins from './built_in_plugins';
 import * as d3 from 'd3';
 import * as emotion from 'emotion';
-import * as grafanaData from '@grafana/data';
-import * as grafanaUIraw from '@grafana/ui';
-import * as grafanaRuntime from '@grafana/runtime';
+import * as plutonoData from '@credativ/plutono-data';
+import * as plutonoUIraw from '@credativ/plutono-ui';
+import * as plutonoRuntime from '@credativ/plutono-runtime';
 
 // Help the 6.4 to 6.5 migration
-// The base classes were moved from @grafana/ui to @grafana/data
+// The base classes were moved from @credativ/plutono-ui to @credativ/plutono-data
 // This exposes the same classes on both import paths
-const grafanaUI = grafanaUIraw as any;
-grafanaUI.PanelPlugin = grafanaData.PanelPlugin;
-grafanaUI.DataSourcePlugin = grafanaData.DataSourcePlugin;
-grafanaUI.AppPlugin = grafanaData.AppPlugin;
-grafanaUI.DataSourceApi = grafanaData.DataSourceApi;
+const plutonoUI = plutonoUIraw as any;
+plutonoUI.PanelPlugin = plutonoData.PanelPlugin;
+plutonoUI.DataSourcePlugin = plutonoData.DataSourcePlugin;
+plutonoUI.AppPlugin = plutonoData.AppPlugin;
+plutonoUI.DataSourceApi = plutonoData.DataSourceApi;
 
 // rxjs
 import * as rxjs from 'rxjs';
@@ -48,9 +48,9 @@ const bust = `?_cache=${Date.now()}`;
 function locate(load: { address: string }) {
   return load.address + bust;
 }
-grafanaRuntime.SystemJS.registry.set('plugin-loader', grafanaRuntime.SystemJS.newModule({ locate: locate }));
+plutonoRuntime.SystemJS.registry.set('plugin-loader', plutonoRuntime.SystemJS.newModule({ locate: locate }));
 
-grafanaRuntime.SystemJS.config({
+plutonoRuntime.SystemJS.config({
   baseURL: 'public',
   defaultExtension: 'js',
   packages: {
@@ -72,14 +72,14 @@ grafanaRuntime.SystemJS.config({
 });
 
 function exposeToPlugin(name: string, component: any) {
-  grafanaRuntime.SystemJS.registerDynamic(name, [], true, (require: any, exports: any, module: { exports: any }) => {
+  plutonoRuntime.SystemJS.registerDynamic(name, [], true, (require: any, exports: any, module: { exports: any }) => {
     module.exports = component;
   });
 }
 
-exposeToPlugin('@grafana/data', grafanaData);
-exposeToPlugin('@grafana/ui', grafanaUI);
-exposeToPlugin('@grafana/runtime', grafanaRuntime);
+exposeToPlugin('@credativ/plutono-data', plutonoData);
+exposeToPlugin('@credativ/plutono-ui', plutonoUI);
+exposeToPlugin('@credativ/plutono-runtime', plutonoRuntime);
 exposeToPlugin('lodash', _);
 exposeToPlugin('moment', moment);
 exposeToPlugin('jquery', jquery);
@@ -116,7 +116,7 @@ exposeToPlugin('app/core/services/backend_srv', {
 });
 
 exposeToPlugin('app/plugins/sdk', sdk);
-exposeToPlugin('app/core/utils/datemath', grafanaData.dateMath);
+exposeToPlugin('app/core/utils/datemath', plutonoData.dateMath);
 exposeToPlugin('app/core/utils/flatten', flatten);
 exposeToPlugin('app/core/utils/kbn', kbn);
 exposeToPlugin('app/core/utils/ticks', ticks);
@@ -175,10 +175,10 @@ export async function importPluginModule(path: string): Promise<any> {
       return Promise.resolve(builtIn);
     }
   }
-  return grafanaRuntime.SystemJS.import(path);
+  return plutonoRuntime.SystemJS.import(path);
 }
 
-export function importDataSourcePlugin(meta: grafanaData.DataSourcePluginMeta): Promise<GenericDataSourcePlugin> {
+export function importDataSourcePlugin(meta: plutonoData.DataSourcePluginMeta): Promise<GenericDataSourcePlugin> {
   return importPluginModule(meta.module).then((pluginExports) => {
     if (pluginExports.plugin) {
       const dsPlugin = pluginExports.plugin as GenericDataSourcePlugin;
@@ -187,10 +187,10 @@ export function importDataSourcePlugin(meta: grafanaData.DataSourcePluginMeta): 
     }
 
     if (pluginExports.Datasource) {
-      const dsPlugin = new grafanaData.DataSourcePlugin<
-        grafanaData.DataSourceApi<grafanaData.DataQuery, grafanaData.DataSourceJsonData>,
-        grafanaData.DataQuery,
-        grafanaData.DataSourceJsonData
+      const dsPlugin = new plutonoData.DataSourcePlugin<
+        plutonoData.DataSourceApi<plutonoData.DataQuery, plutonoData.DataSourceJsonData>,
+        plutonoData.DataQuery,
+        plutonoData.DataSourceJsonData
       >(pluginExports.Datasource);
       dsPlugin.setComponentsFromLegacyExports(pluginExports);
       dsPlugin.meta = meta;
@@ -201,9 +201,9 @@ export function importDataSourcePlugin(meta: grafanaData.DataSourcePluginMeta): 
   });
 }
 
-export function importAppPlugin(meta: grafanaData.PluginMeta): Promise<grafanaData.AppPlugin> {
+export function importAppPlugin(meta: plutonoData.PluginMeta): Promise<plutonoData.AppPlugin> {
   return importPluginModule(meta.module).then((pluginExports) => {
-    const plugin = pluginExports.plugin ? (pluginExports.plugin as grafanaData.AppPlugin) : new grafanaData.AppPlugin();
+    const plugin = pluginExports.plugin ? (pluginExports.plugin as plutonoData.AppPlugin) : new plutonoData.AppPlugin();
     plugin.init(meta);
     plugin.meta = meta;
     plugin.setComponentsFromLegacyExports(pluginExports);
@@ -215,11 +215,11 @@ import { getPanelPluginNotFound, getPanelPluginLoadError } from '../dashboard/da
 import { GenericDataSourcePlugin } from '../datasources/settings/PluginSettings';
 
 interface PanelCache {
-  [key: string]: Promise<grafanaData.PanelPlugin>;
+  [key: string]: Promise<plutonoData.PanelPlugin>;
 }
 const panelCache: PanelCache = {};
 
-export function importPanelPlugin(id: string): Promise<grafanaData.PanelPlugin> {
+export function importPanelPlugin(id: string): Promise<plutonoData.PanelPlugin> {
   const loaded = panelCache[id];
 
   if (loaded) {
@@ -235,9 +235,9 @@ export function importPanelPlugin(id: string): Promise<grafanaData.PanelPlugin> 
   panelCache[id] = importPluginModule(meta.module)
     .then((pluginExports) => {
       if (pluginExports.plugin) {
-        return pluginExports.plugin as grafanaData.PanelPlugin;
+        return pluginExports.plugin as plutonoData.PanelPlugin;
       } else if (pluginExports.PanelCtrl) {
-        const plugin = new grafanaData.PanelPlugin(null);
+        const plugin = new plutonoData.PanelPlugin(null);
         plugin.angularPanelCtrl = pluginExports.PanelCtrl;
         return plugin;
       }

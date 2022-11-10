@@ -1,6 +1,6 @@
 import React from 'react';
 import { mount, shallow } from 'enzyme';
-import { DataSourceApi } from '@grafana/data';
+import { DataSourceApi } from '@credativ/plutono-data';
 
 import { AdHocFilterField, DEFAULT_REMOVE_FILTER_VALUE, KeyValuePair, Props } from './AdHocFilterField';
 import { AdHocFilter } from './AdHocFilter';

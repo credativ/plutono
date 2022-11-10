@@ -1,14 +1,14 @@
 +++
 title = "Sort dashboards by using insights data"
 description = "Sort dashboards by using insights data"
-keywords = ["grafana", "search", "sort", "enterprise"]
-aliases = ["/docs/grafana/latest/enterprise/usage-insights/improved-search.md"]
+keywords = ["plutono", "search", "sort", "enterprise"]
+aliases = ["/docs/plutono/latest/enterprise/usage-insights/improved-search.md"]
 weight = 400
 +++
 
 # Sort dashboards by using insights data
 
-> **Note:** Available in Grafana Enterprise v7.0+.
+> **Note:** Available in Plutono Enterprise v7.0+.
 
 In the search view, you can sort dashboards by using insights data. Doing so helps you find unused or broken dashboards or discover those that are most viewed.
 

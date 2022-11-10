@@ -1228,7 +1228,7 @@ Licensed under the MIT license.
                 points = s.datapoints.points;
                 ps = s.datapoints.pointsize;
 
-                // grafana
+                // plutono
                 if (s.transform === 'negative-Y') {
                   for (j = 0; j < points.length; j += ps) {
                     if (points[j] == null)
@@ -1431,7 +1431,7 @@ Licensed under the MIT license.
 
                 var info = surface.getTextInfo(layer, t.label, font, null, maxWidth);
 
-                /// Grafana fix, add +1 to label width
+                /// Plutono fix, add +1 to label width
                 labelWidth = Math.max(labelWidth, info.width + 1);
                 labelHeight = Math.max(labelHeight, info.height);
             }
@@ -1681,7 +1681,7 @@ Licensed under the MIT license.
                 delta = max - min;
 
             if (delta == 0.0) {
-                // Grafana fix: wide Y min and max using increased wideFactor
+                // Plutono fix: wide Y min and max using increased wideFactor
                 // when all series values are the same
                 var wideFactor = 0.25;
                 var widen = Math.abs(max == 0 ? 1 : max * wideFactor);
@@ -1717,7 +1717,7 @@ Licensed under the MIT license.
             axis.max = max;
         }
 
-        // grafana change
+        // plutono change
         function getSignificantDigitCount(n) {
           //remove decimal and make positive
           n = Math.abs(String(n).replace(".", ""));
@@ -3049,7 +3049,7 @@ Licensed under the MIT license.
           triggerClickHoverEvent("plotclick", e, function (s) { return s["clickable"] != false; });
         }
 
-        // grafana addon - added to support mobile devices click in plot
+        // plutono addon - added to support mobile devices click in plot
         function onTouch(e) {
             if (!e.cancelable) {
                 return;
@@ -3064,7 +3064,7 @@ Licensed under the MIT license.
             e.preventDefault();
         }
 
-        // grafana addon - added to support mobile devices and mapping touch event to click event structure
+        // plutono addon - added to support mobile devices and mapping touch event to click event structure
         function mapFromTouchEvent(e) {
             if (!e || !e.originalEvent) {
                 return e;

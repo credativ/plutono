@@ -1,14 +1,14 @@
 +++
 title = "Export logs of usage insights"
 description = "Export logs of usage insights"
-keywords = ["grafana", "export", "usage-insights", "enterprise"]
-aliases = ["/docs/grafana/latest/enterprise/usage-insights/export-logs.md"]
+keywords = ["plutono", "export", "usage-insights", "enterprise"]
+aliases = ["/docs/plutono/latest/enterprise/usage-insights/export-logs.md"]
 weight = 500
 +++
 
 # Export logs of usage insights
 
-> **Note:** Available in Grafana Enterprise v7.4+.
+> **Note:** Available in Plutono Enterprise v7.4+.
 
 By exporting usage logs to Loki, you can directly query them and create dashboards of the information that matters to you most, such as dashboard errors, most active organizations, or your top-10 most-used queries.
 
@@ -41,8 +41,8 @@ Logs of usage insights contain the following fields, where the fields followed b
 | `orgName`\* | string | Name of the user’s organization. |
 | `timestamp`\* | string | The date and time that the request was made, in Coordinated Universal Time (UTC) in [RFC3339](https://tools.ietf.org/html/rfc3339#section-5.6) format. |
 | `tokenId`\* | number | ID of the user’s authentication token. |
-| `username`\* | string | Name of the Grafana user that made the request. |
-| `userId`\* | number | ID of the Grafana user that made the request. |
+| `username`\* | string | Name of the Plutono user that made the request. |
+| `userId`\* | number | ID of the Plutono user that made the request. |
 
 ## Configuration
 
@@ -66,14 +66,14 @@ url = localhost:9095
 tls = true
 ```
 
-## Visualize Loki usage insights in Grafana
+## Visualize Loki usage insights in Plutono
 
-Now that your logs are exported into Loki, you can build Grafana dashboards to understand your Grafana instance usage.
-1. Add Loki as a data source. Refer to [Grafana fundamentals tutorial](/tutorials/grafana-fundamentals/#6).
+Now that your logs are exported into Loki, you can build Plutono dashboards to understand your Plutono instance usage.
+1. Add Loki as a data source. Refer to [Plutono fundamentals tutorial](/tutorials/plutono-fundamentals/#6).
 1. Import one of the following dashboards:
-    * [Usage insights](/grafana/dashboards/13785)
-    * [Usage insights datasource details](/grafana/dashboards/13786)
+    * [Usage insights](/plutono/dashboards/13785)
+    * [Usage insights datasource details](/plutono/dashboards/13786)
 1. Play with usage insights to understand them:
     * In Explore, you can use the query `{datasource="gdev-loki",kind="usage_insights"}` to retrieve all logs related to your `gdev-loki` data source.
     * In a dashboard, you can build a table panel with the query `topk(10, sum by (error) (count_over_time({kind="usage_insights", datasource="gdev-prometheus"} | json | error != "" [$__interval])))` to display the 10 most common errors your users see using the `gdev-prometheus` data source.
-    * In a dashboard, you can build a graph panel with the queries `sum by(host) (count_over_time({kind="usage_insights"} | json | eventName="data-request" | error != "" [$__interval]))` and `sum by(host) (count_over_time({kind="usage_insights"} | json | eventName="data-request" | error = "" [$__interval]))` to show the evolution of the data request count over time. Using `by (host)` allows you to have more information for each Grafana server you have if you have set up Grafana for [high availability](<{{< relref "../../administration/set-up-for-high-availability.md" >}}>). 
+    * In a dashboard, you can build a graph panel with the queries `sum by(host) (count_over_time({kind="usage_insights"} | json | eventName="data-request" | error != "" [$__interval]))` and `sum by(host) (count_over_time({kind="usage_insights"} | json | eventName="data-request" | error = "" [$__interval]))` to show the evolution of the data request count over time. Using `by (host)` allows you to have more information for each Plutono server you have if you have set up Plutono for [high availability](<{{< relref "../../administration/set-up-for-high-availability.md" >}}>). 

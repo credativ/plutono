@@ -1,8 +1,8 @@
 # Developer guide
 
-This guide helps you get started developing Grafana.
+This guide helps you get started developing Plutono.
 
-Before you begin, you might want to read [How to contribute to Grafana as a junior dev](https://medium.com/@ivanahuckova/how-to-contribute-to-grafana-as-junior-dev-c01fe3064502) by [Ivana Huckova](https://medium.com/@ivanahuckova).
+Before you begin, you might want to read [How to contribute to Plutono as a junior dev](https://medium.com/@ivanahuckova/how-to-contribute-to-plutono-as-junior-dev-c01fe3064502) by [Ivana Huckova](https://medium.com/@ivanahuckova).
 
 ## Dependencies
 
@@ -27,22 +27,22 @@ npm install -g yarn
 
 ### Windows
 
-If you are running Grafana on Windows 10, we recommend installing the Windows Subsystem for Linux (WSL). For installation instructions, refer to the [Microsoft WSL Installation Guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
+If you are running Plutono on Windows 10, we recommend installing the Windows Subsystem for Linux (WSL). For installation instructions, refer to the [Microsoft WSL Installation Guide](https://docs.microsoft.com/en-us/windows/wsl/install-win10).
 
-## Download Grafana
+## Download Plutono
 
-We recommend using the Git command-line interface to download the source code for the Grafana project:
+We recommend using the Git command-line interface to download the source code for the Plutono project:
 
-1. Open a terminal and run `git clone https://github.com/grafana/grafana.git`. This command downloads Grafana to a new `grafana` directory in your current directory.
-1. Open the `grafana` directory in your favorite code editor.
+1. Open a terminal and run `git clone https://github.com/credativ/plutono.git`. This command downloads Plutono to a new `plutono` directory in your current directory.
+1. Open the `plutono` directory in your favorite code editor.
 
-For alternative ways of cloning the Grafana repository, please refer to [GitHub's cloning a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) documentation.
+For alternative ways of cloning the Plutono repository, please refer to [GitHub's cloning a repository](https://docs.github.com/en/github/creating-cloning-and-archiving-repositories/cloning-a-repository) documentation.
 
-**Warning:** Do not use `go get` to download Grafana. Recent versions of Go have added behavior which isn't compatible with the way the Grafana repository is structured.
+**Warning:** Do not use `go get` to download Plutono. Recent versions of Go have added behavior which isn't compatible with the way the Plutono repository is structured.
 
-## Build Grafana
+## Build Plutono
 
-Grafana consists of two components; the _frontend_, and the _backend_.
+Plutono consists of two components; the _frontend_, and the _backend_.
 
 ### Frontend
 
@@ -76,16 +76,16 @@ Log in using the default credentials:
 | -------- | -------- |
 | `admin`  | `admin`  |
 
-When you log in for the first time, Grafana asks you to change your password.
+When you log in for the first time, Plutono asks you to change your password.
 
 #### Building on Windows
 
-The Grafana backend includes SQLite which requires GCC to compile. So in order to compile Grafana on Windows you need to install GCC. We recommend [TDM-GCC](http://tdm-gcc.tdragon.net/download). Eventually, if you use [Scoop](https://scoop.sh), you can install GCC through that.
+The Plutono backend includes SQLite which requires GCC to compile. So in order to compile Plutono on Windows you need to install GCC. We recommend [TDM-GCC](http://tdm-gcc.tdragon.net/download). Eventually, if you use [Scoop](https://scoop.sh), you can install GCC through that.
 
-You can simply build the back-end as follows: `go run build.go build`. The Grafana binaries will be in bin\\windows-amd64.
+You can simply build the back-end as follows: `go run build.go build`. The Plutono binaries will be in bin\\windows-amd64.
 Alternately, if you wish to use the `make` command, install [Make for Windows](http://gnuwin32.sourceforge.net/packages/make.htm) and use it in a Unix shell (f.ex. Git Bash).
 
-## Test Grafana
+## Test Plutono
 
 The test suite consists of three types of tests: _Frontend tests_, _backend tests_, and _end-to-end tests_.
 
@@ -115,7 +115,7 @@ go run build.go test
 
 ### Run end-to-end tests
 
-The end to end tests in Grafana use [Cypress](https://www.cypress.io/) to run automated scripts in a headless Chromium browser. Read more about our [e2e framework](/contribute/style-guides/e2e.md).
+The end to end tests in Plutono use [Cypress](https://www.cypress.io/) to run automated scripts in a headless Chromium browser. Read more about our [e2e framework](/contribute/style-guides/e2e.md).
 
 To run the tests:
 
@@ -123,7 +123,7 @@ To run the tests:
 yarn e2e
 ```
 
-By default, the end-to-end tests starts a Grafana instance listening on `localhost:3001`. To use a specific URL, set the `BASE_URL` environment variable:
+By default, the end-to-end tests starts a Plutono instance listening on `localhost:3001`. To use a specific URL, set the `BASE_URL` environment variable:
 
 ```
 BASE_URL=http://localhost:3333 yarn e2e
@@ -141,7 +141,7 @@ If you want to pick a test first, use the `yarn e2e:dev`, to pick a test and fol
 yarn e2e:dev
 ```
 
-## Configure Grafana for development
+## Configure Plutono for development
 
 The default configuration, `defaults.ini`, is located in the `conf` directory.
 
@@ -155,21 +155,21 @@ app_mode = development
 
 ### Add data sources
 
-By now, you should be able to build and test a change you've made to the Grafana source code. In most cases, you need to add at least one data source to verify the change.
+By now, you should be able to build and test a change you've made to the Plutono source code. In most cases, you need to add at least one data source to verify the change.
 
-To set up data sources for your development environment, go to the [devenv](/devenv) directory in the Grafana repository:
+To set up data sources for your development environment, go to the [devenv](/devenv) directory in the Plutono repository:
 
 ```
 cd devenv
 ```
 
-Run the `setup.sh` script to set up a set of data sources and dashboards in your local Grafana instance. The script creates a set of data sources called **gdev-\<type\>**, and a set of dashboards located in a folder called **gdev dashboards**.
+Run the `setup.sh` script to set up a set of data sources and dashboards in your local Plutono instance. The script creates a set of data sources called **gdev-\<type\>**, and a set of dashboards located in a folder called **gdev dashboards**.
 
 Some of the data sources require databases to run in the background.
 
-Installing and configuring databases can be a tricky business. Grafana uses [Docker](https://docker.com) to make the task of setting up databases a little easier. Make sure you [install Docker](https://docs.docker.com/docker-for-mac/install/) before proceeding to the next step.
+Installing and configuring databases can be a tricky business. Plutono uses [Docker](https://docker.com) to make the task of setting up databases a little easier. Make sure you [install Docker](https://docs.docker.com/docker-for-mac/install/) before proceeding to the next step.
 
-In the root directory of your Grafana repository, run the following command:
+In the root directory of your Plutono repository, run the following command:
 
 ```
 make devenv sources=influxdb,loki
@@ -187,7 +187,7 @@ To build a Docker image, run:
 make build-docker-full
 ```
 
-The resulting image will be tagged as grafana/grafana:dev.
+The resulting image will be tagged as plutono/plutono:dev.
 
 > **Note:** If you've already set up a local development environment, and you're running a `linux/amd64` machine, you can speed up building the Docker image:
 
@@ -249,5 +249,5 @@ If that happens to you, chances are you've already set a lower limit and your sh
 
 - Read our [style guides](/contribute/style-guides).
 - Learn how to [Create a pull request](/contribute/create-pull-request.md).
-- Read [How to contribute to Grafana as a junior dev](https://medium.com/@ivanahuckova/how-to-contribute-to-grafana-as-junior-dev-c01fe3064502) by [Ivana Huckova](https://medium.com/@ivanahuckova).
+- Read [How to contribute to Plutono as a junior dev](https://medium.com/@ivanahuckova/how-to-contribute-to-plutono-as-junior-dev-c01fe3064502) by [Ivana Huckova](https://medium.com/@ivanahuckova).
 - Read about the [architecture](architecture).

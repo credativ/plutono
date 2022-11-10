@@ -1,6 +1,6 @@
 import { Observable, Subject } from 'rxjs';
 
-import { BackendSrvRequest } from '@grafana/runtime';
+import { BackendSrvRequest } from '@credativ/plutono-runtime';
 
 export interface QueueState extends Record<string, { state: FetchStatus; options: BackendSrvRequest }> {}
 
@@ -29,7 +29,7 @@ export class FetchQueue {
 
   constructor(debug = false) {
     // This will create an implicit live subscription for as long as this class lives.
-    // But as FetchQueue is used by the singleton backendSrv that also lives for as long as Grafana app lives
+    // But as FetchQueue is used by the singleton backendSrv that also lives for as long as Plutono app lives
     // I think this ok. We could add some disposable pattern later if the need arises.
     this.queue.subscribe((entry) => {
       const { id, state, options } = entry;

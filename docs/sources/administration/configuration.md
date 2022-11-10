@@ -1,22 +1,22 @@
 +++
 title = "Configuration"
 description = "Configuration documentation"
-keywords = ["grafana", "configuration", "documentation"]
-aliases = ["/docs/grafana/latest/installation/configuration/"]
+keywords = ["plutono", "configuration", "documentation"]
+aliases = ["/docs/plutono/latest/installation/configuration/"]
 weight = 150
 +++
 
 # Configuration
 
-Grafana has a number of configuration options that you can specify in a `.ini` configuration file or specified using environment variables.
+Plutono has a number of configuration options that you can specify in a `.ini` configuration file or specified using environment variables.
 
-> **Note:** You must restart Grafana for any configuration changes to take effect.
+> **Note:** You must restart Plutono for any configuration changes to take effect.
 
-To see all settings currently applied to the Grafana server, refer to [View server settings]({{< relref "view-server/view-server-settings.md" >}}).
+To see all settings currently applied to the Plutono server, refer to [View server settings]({{< relref "view-server/view-server-settings.md" >}}).
 
 ## Config file locations
 
-_Do not_ change `defaults.ini`! Grafana defaults are stored in this file. Depending on your OS, make all configuration changes in either `custom.ini` or `grafana.ini`.
+_Do not_ change `defaults.ini`! Plutono defaults are stored in this file. Depending on your OS, make all configuration changes in either `custom.ini` or `plutono.ini`.
 
 - Default configuration from `$WORKING_DIR/conf/defaults.ini`
 - Custom configuration from `$WORKING_DIR/conf/custom.ini`
@@ -24,11 +24,11 @@ _Do not_ change `defaults.ini`! Grafana defaults are stored in this file. Depend
 
 ### Linux
 
-If you installed Grafana using the `deb` or `rpm` packages, then your configuration file is located at `/etc/grafana/grafana.ini` and a separate `custom.ini` is not used. This path is specified in the Grafana init.d script using `--config` file parameter.
+If you installed Plutono using the `deb` or `rpm` packages, then your configuration file is located at `/etc/plutono/plutono.ini` and a separate `custom.ini` is not used. This path is specified in the Plutono init.d script using `--config` file parameter.
 
 ### Docker
 
-Refer to [Configure a Grafana Docker image]({{< relref "configure-docker.md" >}}) for information about environmental variables, persistent storage, and building custom Docker images.
+Refer to [Configure a Plutono Docker image]({{< relref "configure-docker.md" >}}) for information about environmental variables, persistent storage, and building custom Docker images.
 
 ### Windows
 
@@ -36,7 +36,7 @@ Refer to [Configure a Grafana Docker image]({{< relref "configure-docker.md" >}}
 
 ### macOS
 
-By default, the configuration file is located at `/usr/local/etc/grafana/grafana.ini`. For a Grafana instance installed using Homebrew, edit the `grafana.ini` file directly. Otherwise, add a configuration file named `custom.ini` to the `conf` folder to override any of the settings defined in `conf/defaults.ini`.
+By default, the configuration file is located at `/usr/local/etc/plutono/plutono.ini`. For a Plutono instance installed using Homebrew, edit the `plutono.ini` file directly. Otherwise, add a configuration file named `custom.ini` to the `conf` folder to override any of the settings defined in `conf/defaults.ini`.
 
 ## Comments in .ini Files
 
@@ -49,7 +49,7 @@ Semicolons (the `;` char) are the standard way to comment out lines in a `.ini` 
 ;http_port = 3000
 ```
 
-A common problem is forgetting to uncomment a line in the `custom.ini` (or `grafana.ini`) file which causes the configuration option to be ignored.
+A common problem is forgetting to uncomment a line in the `custom.ini` (or `plutono.ini`) file which causes the configuration option to be ignored.
 
 ## Configure with environment variables
 
@@ -71,7 +71,7 @@ admin_user = admin
 [auth.google]
 client_secret = 0ldS3cretKey
 
-[plugin.grafana-image-renderer]
+[plugin.plutono-image-renderer]
 rendering_ignore_https_errors = true
 ```
 
@@ -81,15 +81,15 @@ You can override them on Linux machines with:
 export GF_DEFAULT_INSTANCE_NAME=my-instance
 export GF_SECURITY_ADMIN_USER=owner
 export GF_AUTH_GOOGLE_CLIENT_SECRET=newS3cretKey
-export GF_PLUGIN_GRAFANA_IMAGE_RENDERER_RENDERING_IGNORE_HTTPS_ERRORS=true
+export GF_PLUGIN_PLUTONO_IMAGE_RENDERER_RENDERING_IGNORE_HTTPS_ERRORS=true
 ```
 
 ## Variable expansion
 
-> **Note:** Only available in Grafana 7.1+.
+> **Note:** Only available in Plutono 7.1+.
 
 If any of your options contains the expression `$__<provider>{<argument>}`
-or `${<environment variable>}`, then they will be processed by Grafana's
+or `${<environment variable>}`, then they will be processed by Plutono's
 variable expander. The expander runs the provider with the provided argument
 to get the final value of the option.
 
@@ -101,13 +101,13 @@ The `env` provider can be used to expand an environment variable. If you
 set an option to `$__env{PORT}` the `PORT` environment variable will be
 used in its place. For environment variables you can also use the
 short-hand syntax `${PORT}`.
-Grafana's log directory would be set to the `grafana` directory in the
+Plutono's log directory would be set to the `plutono` directory in the
 directory behind the `LOGDIR` environment variable in the following
 example.
 
 ```ini
 [paths]
-logs = $__env{LOGDIR}/grafana
+logs = $__env{LOGDIR}/plutono
 ```
 
 ### File provider
@@ -126,18 +126,18 @@ password = $__file{/etc/secrets/gf_sql_password}
 
 The `vault` provider allows you to manage your secrets with [Hashicorp Vault](https://www.hashicorp.com/products/vault).
 
-> Vault provider is only available in Grafana Enterprise v7.1+. For more information, refer to [Vault integration]({{< relref "../enterprise/vault.md" >}}) in [Grafana Enterprise]({{< relref "../enterprise" >}}).
+> Vault provider is only available in Plutono Enterprise v7.1+. For more information, refer to [Vault integration]({{< relref "../enterprise/vault.md" >}}) in [Plutono Enterprise]({{< relref "../enterprise" >}}).
 
 <hr />
 
 ## app_mode
 
-Options are `production` and `development`. Default is `production`. _Do not_ change this option unless you are working on Grafana development.
+Options are `production` and `development`. Default is `production`. _Do not_ change this option unless you are working on Plutono development.
 
 ## instance_name
 
-Set the name of the grafana-server instance. Used in logging, internal metrics, and clustering info. Defaults to: `${HOSTNAME}`, which will be replaced with
-environment variable `HOSTNAME`, if that is empty or does not exist Grafana will try to use system calls to get the machine name.
+Set the name of the plutono-server instance. Used in logging, internal metrics, and clustering info. Defaults to: `${HOSTNAME}`, which will be replaced with
+environment variable `HOSTNAME`, if that is empty or does not exist Plutono will try to use system calls to get the machine name.
 
 <hr />
 
@@ -145,9 +145,9 @@ environment variable `HOSTNAME`, if that is empty or does not exist Grafana will
 
 ### data
 
-Path to where Grafana stores the sqlite3 database (if used), file-based sessions (if used), and other data. This path is usually specified via command line in the init.d script or the systemd service file.
+Path to where Plutono stores the sqlite3 database (if used), file-based sessions (if used), and other data. This path is usually specified via command line in the init.d script or the systemd service file.
 
-**macOS:** The default SQLite database is located at `/usr/local/var/lib/grafana`
+**macOS:** The default SQLite database is located at `/usr/local/var/lib/plutono`
 
 ### temp_data_lifetime
 
@@ -156,25 +156,25 @@ How long temporary images in `data` directory should be kept. Defaults to: `24h`
 
 ### logs
 
-Path to where Grafana stores logs. This path is usually specified via command line in the init.d script or the systemd service file. You can override it in the configuration file or in the default environment variable file. However, please note that by overriding this the default log path will be used temporarily until Grafana has fully initialized/started.
+Path to where Plutono stores logs. This path is usually specified via command line in the init.d script or the systemd service file. You can override it in the configuration file or in the default environment variable file. However, please note that by overriding this the default log path will be used temporarily until Plutono has fully initialized/started.
 
 Override log path using the command line argument `cfg:default.paths.logs`:
 
 ```bash
-./grafana-server --config /custom/config.ini --homepath /custom/homepath cfg:default.paths.logs=/custom/path
+./plutono-server --config /custom/config.ini --homepath /custom/homepath cfg:default.paths.logs=/custom/path
 ```
 
-**macOS:** By default, the log file should be located at `/usr/local/var/log/grafana/grafana.log`.
+**macOS:** By default, the log file should be located at `/usr/local/var/log/plutono/plutono.log`.
 
 ### plugins
 
-Directory where Grafana automatically scans and looks for plugins. For information about manually or automatically installing plugins, refer to [Install Grafana plugins]({{< relref "../plugins/installation.md" >}}).
+Directory where Plutono automatically scans and looks for plugins. For information about manually or automatically installing plugins, refer to [Install Plutono plugins]({{< relref "../plugins/installation.md" >}}).
 
-**macOS:** By default, the Mac plugin location is: `/usr/local/var/lib/grafana/plugins`.
+**macOS:** By default, the Mac plugin location is: `/usr/local/var/lib/plutono/plugins`.
 
 ### provisioning
 
-Folder that contains [provisioning]({{< relref "provisioning.md" >}}) config files that Grafana will apply on startup. Dashboards will be reloaded when the json files changes.
+Folder that contains [provisioning]({{< relref "provisioning.md" >}}) config files that Plutono will apply on startup. Dashboards will be reloaded when the json files changes.
 
 <hr />
 
@@ -190,19 +190,19 @@ The IP address to bind to. If empty will bind to all interfaces
 
 ### http_port
 
-The port to bind to, defaults to `3000`. To use port 80 you need to either give the Grafana binary permission for example:
+The port to bind to, defaults to `3000`. To use port 80 you need to either give the Plutono binary permission for example:
 
 ```bash
-$ sudo setcap 'cap_net_bind_service=+ep' /usr/sbin/grafana-server
+$ sudo setcap 'cap_net_bind_service=+ep' /usr/sbin/plutono-server
 ```
 
-Or redirect port 80 to the Grafana port using:
+Or redirect port 80 to the Plutono port using:
 
 ```bash
 $ sudo iptables -t nat -A PREROUTING -p tcp --dport 80 -j REDIRECT --to-port 3000
 ```
 
-Another way is put a webserver like Nginx or Apache in front of Grafana and have them proxy requests to Grafana.
+Another way is put a webserver like Nginx or Apache in front of Plutono and have them proxy requests to Plutono.
 
 ### domain
 
@@ -214,30 +214,30 @@ Redirect to correct domain if host header does not match domain. Prevents DNS re
 
 ### root_url
 
-This is the full URL used to access Grafana from a web browser. This is
+This is the full URL used to access Plutono from a web browser. This is
 important if you use Google or GitHub OAuth authentication (for the
 callback URL to be correct).
 
 > **Note:** This setting is also important if you have a reverse proxy
-> in front of Grafana that exposes it through a subpath. In that
+> in front of Plutono that exposes it through a subpath. In that
 > case add the subpath to the end of this URL setting.
 
 ### serve_from_sub_path
 
-Serve Grafana from subpath specified in `root_url` setting. By default it is set to `false` for compatibility reasons.
+Serve Plutono from subpath specified in `root_url` setting. By default it is set to `false` for compatibility reasons.
 
 By enabling this setting and using a subpath in `root_url` above, e.g.
-`root_url = http://localhost:3000/grafana`, Grafana is accessible on
-`http://localhost:3000/grafana`.
+`root_url = http://localhost:3000/plutono`, Plutono is accessible on
+`http://localhost:3000/plutono`.
 
 ### router_logging
 
-Set to `true` for Grafana to log all HTTP requests (not just errors). These are logged as Info level events to the Grafana log.
+Set to `true` for Plutono to log all HTTP requests (not just errors). These are logged as Info level events to the Plutono log.
 
 ### static_root_path
 
 The path to the directory where the front end files (HTML, JS, and CSS
-files). Defaults to `public` which is why the Grafana binary needs to be
+files). Defaults to `public` which is why the Plutono binary needs to be
 executed with working directory set to the installation path.
 
 ### enable_gzip
@@ -257,16 +257,16 @@ Path to the certificate key file (if `protocol` is set to `https` or `h2`).
 
 ### socket
 
-Path where the socket should be created when `protocol=socket`. Make sure that Grafana has appropriate permissions before you change this setting.
+Path where the socket should be created when `protocol=socket`. Make sure that Plutono has appropriate permissions before you change this setting.
 
 ### cdn_url
 
-> **Note**: Available in Grafana v7.4 and later versions.
+> **Note**: Available in Plutono v7.4 and later versions.
 
-Specify a full HTTP URL address to the root of your Grafana CDN assets. Grafana will add edition and version paths.
+Specify a full HTTP URL address to the root of your Plutono CDN assets. Plutono will add edition and version paths.
 
-For example, given a cdn url like `https://cdn.myserver.com` grafana will try to load a javascript file from
-`http://cdn.myserver.com/grafana-oss/7.4.0/public/build/app.<hash>.js`.
+For example, given a cdn url like `https://cdn.myserver.com` plutono will try to load a javascript file from
+`http://cdn.myserver.com/plutono-oss/7.4.0/public/build/app.<hash>.js`.
 
 ### read_timeout
 
@@ -277,9 +277,9 @@ Sets the maximum time using a duration format (5s/5m/5ms) before timing out read
 
 ## [database]
 
-Grafana needs a database to store users and dashboards (and other
+Plutono needs a database to store users and dashboards (and other
 things). By default it is configured to use [`sqlite3`](https://www.sqlite.org/index.html) which is an
-embedded database (included in the main Grafana binary).
+embedded database (included in the main Plutono binary).
 
 ### type
 
@@ -288,11 +288,11 @@ Either `mysql`, `postgres` or `sqlite3`, it's your choice.
 ### host
 
 Only applicable to MySQL or Postgres. Includes IP or hostname and port or in case of Unix sockets the path to it.
-For example, for MySQL running on the same host as Grafana: `host = 127.0.0.1:3306` or with Unix sockets: `host = /var/run/mysqld/mysqld.sock`
+For example, for MySQL running on the same host as Plutono: `host = 127.0.0.1:3306` or with Unix sockets: `host = /var/run/mysqld/mysqld.sock`
 
 ### name
 
-The name of the Grafana database. Leave it set to `grafana` or some
+The name of the Plutono database. Leave it set to `plutono` or some
 other name.
 
 ### user
@@ -331,7 +331,7 @@ For MySQL, use either `true`, `false`, or `skip-verify`.
 
 ### isolation_level
 
-Only the MySQL driver supports isolation levels in Grafana. In case the value is empty, the driver's default isolation level is applied. Available options are "READ-UNCOMMITTED", "READ-COMMITTED", "REPEATABLE-READ" or "SERIALIZABLE".
+Only the MySQL driver supports isolation levels in Plutono. In case the value is empty, the driver's default isolation level is applied. Available options are "READ-UNCOMMITTED", "READ-COMMITTED", "REPEATABLE-READ" or "SERIALIZABLE".
 
 ### ca_cert_path
 
@@ -408,11 +408,11 @@ Interval between keep-alive probes. Default is `30` seconds. For more details ch
 
 ### tls_handshake_timeout_seconds
 
-The length of time that Grafana will wait for a successful TLS handshake with the datasource. Default is `10` seconds. For more details check the [Transport.TLSHandshakeTimeout](https://golang.org/pkg/net/http/#Transport.TLSHandshakeTimeout) documentation.
+The length of time that Plutono will wait for a successful TLS handshake with the datasource. Default is `10` seconds. For more details check the [Transport.TLSHandshakeTimeout](https://golang.org/pkg/net/http/#Transport.TLSHandshakeTimeout) documentation.
 
 ### expect_continue_timeout_seconds
 
-The length of time that Grafana will wait for a datasource’s first response headers after fully writing the request headers, if the request has an “Expect: 100-continue” header. A value of `0` will result in the body being sent immediately. Default is `1` second. For more details check the [Transport.ExpectContinueTimeout](https://golang.org/pkg/net/http/#Transport.ExpectContinueTimeout) documentation.
+The length of time that Plutono will wait for a datasource’s first response headers after fully writing the request headers, if the request has an “Expect: 100-continue” header. A value of `0` will result in the body being sent immediately. Default is `1` second. For more details check the [Transport.ExpectContinueTimeout](https://golang.org/pkg/net/http/#Transport.ExpectContinueTimeout) documentation.
 
 ### max_conns_per_host
 
@@ -421,15 +421,15 @@ For more details check the [Transport.MaxConnsPerHost](https://golang.org/pkg/ne
 
 ### max_idle_connections
 
-The maximum number of idle connections that Grafana will maintain. Default is `100`. For more details check the [Transport.MaxIdleConns](https://golang.org/pkg/net/http/#Transport.MaxIdleConns) documentation.
+The maximum number of idle connections that Plutono will maintain. Default is `100`. For more details check the [Transport.MaxIdleConns](https://golang.org/pkg/net/http/#Transport.MaxIdleConns) documentation.
 
 ### idle_conn_timeout_seconds
 
-The length of time that Grafana maintains idle connections before closing them. Default is `90` seconds. For more details check the [Transport.IdleConnTimeout](https://golang.org/pkg/net/http/#Transport.IdleConnTimeout) documentation.
+The length of time that Plutono maintains idle connections before closing them. Default is `90` seconds. For more details check the [Transport.IdleConnTimeout](https://golang.org/pkg/net/http/#Transport.IdleConnTimeout) documentation.
 
 ### send_user_header
 
-If enabled and user is not anonymous, data proxy will add X-Grafana-User header with username into the request. Default is `false`.
+If enabled and user is not anonymous, data proxy will add X-Plutono-User header with username into the request. Default is `false`.
 
 <hr />
 
@@ -437,19 +437,19 @@ If enabled and user is not anonymous, data proxy will add X-Grafana-User header 
 
 ### reporting_enabled
 
-When enabled Grafana will send anonymous usage statistics to
-`stats.grafana.org`. No IP addresses are being tracked, only simple counters to
+When enabled Plutono will send anonymous usage statistics to
+`stats.plutono.org`. No IP addresses are being tracked, only simple counters to
 track running instances, versions, dashboard and error counts. It is very helpful
 to us, so please leave this enabled. Counters are sent every 24 hours. Default
 value is `true`.
 
 ### check_for_updates
 
-Set to false to disable all checks to https://grafana.com for new versions of installed plugins and to the Grafana GitHub repository to check for a newer version of Grafana. The version information is used in some UI views to notify that a new Grafana update or a plugin update exists. This option does not cause any auto updates, nor send any sensitive information. The check is run every 10 minutes.
+Set to false to disable all checks to https://grafana.com for new versions of installed plugins and to the Plutono GitHub repository to check for a newer version of Plutono. The version information is used in some UI views to notify that a new Plutono update or a plugin update exists. This option does not cause any auto updates, nor send any sensitive information. The check is run every 10 minutes.
 
 ### google_analytics_ua_id
 
-If you want to track Grafana usage via Google analytics specify _your_ Universal
+If you want to track Plutono usage via Google analytics specify _your_ Universal
 Analytics ID here. By default this feature is disabled.
 
 ### google_tag_manager_id
@@ -462,18 +462,18 @@ Google Tag Manager ID, only enabled if you enter an ID here.
 
 ### disable_initial_admin_creation
 
-> Only available in Grafana v6.5+.
+> Only available in Plutono v6.5+.
 
-Disable creation of admin user on first start of Grafana. Default is `false`.
+Disable creation of admin user on first start of Plutono. Default is `false`.
 
 ### admin_user
 
-The name of the default Grafana Admin user, who has full permissions.
+The name of the default Plutono Admin user, who has full permissions.
 Default is `admin`.
 
 ### admin_password
 
-The password of the default Grafana Admin. Set once on first-run. Default is `admin`.
+The password of the default Plutono Admin. Set once on first-run. Default is `admin`.
 
 ### secret_key
 
@@ -487,7 +487,7 @@ Default is `false`.
 
 ### data_source_proxy_whitelist
 
-Define a whitelist of allowed IP addresses or domains, with ports, to be used in data source URLs with the Grafana data source proxy. Format: `ip_or_domain:port` separated by spaces. PostgreSQL, MySQL, and MSSQL data sources do not use the proxy and are therefore unaffected by this setting.
+Define a whitelist of allowed IP addresses or domains, with ports, to be used in data source URLs with the Plutono data source proxy. Format: `ip_or_domain:port` separated by spaces. PostgreSQL, MySQL, and MSSQL data sources do not use the proxy and are therefore unaffected by this setting.
 
 ### disable_brute_force_login_protection
 
@@ -495,7 +495,7 @@ Set to `true` to disable [brute force login protection](https://cheatsheetseries
 
 ### cookie_secure
 
-Set to `true` if you host Grafana behind HTTPS. Default is `false`.
+Set to `true` if you host Plutono behind HTTPS. Default is `false`.
 
 ### cookie_samesite
 
@@ -503,8 +503,8 @@ Sets the `SameSite` cookie attribute and prevents the browser from sending this 
 
 ### allow_embedding
 
-When `false`, the HTTP header `X-Frame-Options: deny` will be set in Grafana HTTP responses which will instruct
-browsers to not allow rendering Grafana in a `<frame>`, `<iframe>`, `<embed>` or `<object>`. The main goal is to
+When `false`, the HTTP header `X-Frame-Options: deny` will be set in Plutono HTTP responses which will instruct
+browsers to not allow rendering Plutono in a `<frame>`, `<iframe>`, `<embed>` or `<object>`. The main goal is to
 mitigate the risk of [Clickjacking](https://www.owasp.org/index.php/Clickjacking). Default is `false`.
 
 ### strict_transport_security
@@ -549,7 +549,7 @@ Set to `false` to disable external snapshot publish endpoint (default `true`).
 
 ### external_snapshot_url
 
-Set root URL to a Grafana instance where you want to publish external snapshots (defaults to https://snapshots-origin.raintank.io).
+Set root URL to a Plutono instance where you want to publish external snapshots (defaults to https://snapshots-origin.raintank.io).
 
 ### external_snapshot_name
 
@@ -557,7 +557,7 @@ Set name for external snapshot button. Defaults to `Publish to snapshot.raintank
 
 ### public_mode
 
-Set to true to enable this Grafana instance to act as an external snapshot server and allow unauthenticated requests for creating and deleting snapshots. Default is `false`.
+Set to true to enable this Plutono instance to act as an external snapshot server and allow unauthenticated requests for creating and deleting snapshots. Default is `false`.
 
 ### snapshot_remove_expired
 
@@ -573,16 +573,16 @@ Number dashboard versions to keep (per dashboard). Default: `20`, Minimum: `1`.
 
 ### min_refresh_interval
 
-> Only available in Grafana v6.7+.
+> Only available in Plutono v6.7+.
 
 This feature prevents users from setting the dashboard refresh interval to a lower value than a given interval value. The default interval value is 5 seconds.
 The interval string is a possibly signed sequence of decimal numbers, followed by a unit suffix (ms, s, m, h, d), e.g. `30s` or `1m`.
 
-As of Grafana v7.3, this also limits the refresh interval options in Explore.
+As of Plutono v7.3, this also limits the refresh interval options in Explore.
 
 ### default_home_dashboard_path
 
-Path to the default home dashboard. If this value is empty, then Grafana uses StaticRootPath + "dashboards/home.json"
+Path to the default home dashboard. If this value is empty, then Plutono uses StaticRootPath + "dashboards/home.json"
 
 <hr />
 
@@ -592,7 +592,7 @@ Path to the default home dashboard. If this value is empty, then Grafana uses St
 
 Set to `false` to prohibit users from being able to sign up / create
 user accounts. Default is `false`. The admin user can still create
-users from the [Grafana Admin Pages](/reference/admin).
+users from the [Plutono Admin Pages](/reference/admin).
 
 ### allow_org_create
 
@@ -660,17 +660,17 @@ Default is `24h` (24 hours). The minimum supported duration is `15m` (15 minutes
 
 ### hidden_users
 
-This is a comma-separated list of usernames. Users specified here are hidden in the Grafana UI. They are still visible to Grafana administrators and to themselves.
+This is a comma-separated list of usernames. Users specified here are hidden in the Plutono UI. They are still visible to Plutono administrators and to themselves.
 
 <hr>
 
 ## [auth]
 
-Grafana provides many ways to authenticate users. Refer to the Grafana [Authentication overview]({{< relref "../auth/overview.md" >}}) and other authentication documentation for detailed instructions on how to set up and configure authentication.
+Plutono provides many ways to authenticate users. Refer to the Plutono [Authentication overview]({{< relref "../auth/overview.md" >}}) and other authentication documentation for detailed instructions on how to set up and configure authentication.
 
 ### login_cookie_name
 
-The cookie name for storing the auth token. Default is `grafana_session`.
+The cookie name for storing the auth token. Default is `plutono_session`.
 
 ### login_maximum_inactive_lifetime_duration
 
@@ -714,7 +714,7 @@ Limit of API key seconds to live before expiration. Default is -1 (unlimited).
 
 ### sigv4_auth_enabled
 
-> Only available in Grafana 7.3+.
+> Only available in Plutono 7.3+.
 
 Set to `true` to enable the AWS Signature Version 4 Authentication option for HTTP-based datasources. Default is `false`.
 
@@ -722,7 +722,7 @@ Set to `true` to enable the AWS Signature Version 4 Authentication option for HT
 
 ## [auth.anonymous]
 
-Refer to [Anonymous authentication]({{< relref "../auth/grafana.md/#anonymous-authentication" >}}) for detailed instructions.
+Refer to [Anonymous authentication]({{< relref "../auth/plutono.md/#anonymous-authentication" >}}) for detailed instructions.
 
 <hr />
 
@@ -744,13 +744,13 @@ Refer to [Google OAuth2 authentication]({{< relref "../auth/google.md" >}}) for 
 
 <hr />
 
-## [auth.grafananet]
+## [auth.plutononet]
 
 Legacy key names, still in the config file so they work in env variables.
 
 <hr />
 
-## [auth.grafana_com]
+## [auth.plutono_com]
 
 Legacy key names, still in the config file so they work in env variables.
 
@@ -824,7 +824,7 @@ Email server settings.
 
 ### enabled
 
-Enable this to allow Grafana to send email. Default is `false`.
+Enable this to allow Plutono to send email. Default is `false`.
 
 If the password contains `#` or `;`, then you have to wrap it with triple quotes. Example: """#password;"""
 
@@ -858,7 +858,7 @@ Address used when sending out emails, default is `admin@grafana.localhost`.
 
 ### from_name
 
-Name to be used when sending out emails, default is `Grafana`.
+Name to be used when sending out emails, default is `Plutono`.
 
 ### ehlo_identity
 
@@ -884,7 +884,7 @@ Default is `emails/*.html`.
 
 ## [log]
 
-Grafana logging options.
+Plutono logging options.
 
 ### mode
 
@@ -978,7 +978,7 @@ Syslog tag. By default, the process's `argv[0]` is used.
 
 ## [log.frontend]
 
-**Note:** This feature is available in Grafana 7.4+.
+**Note:** This feature is available in Plutono 7.4+.
 
 ### enabled
 
@@ -998,11 +998,11 @@ Rate of events to be reported between `0` (none) and `1` (all, default), float.
 
 ### log_endpoint_requests_per_second_limit
 
-Requests per second limit enforced per an extended period, for Grafana backend log ingestion endpoint, `/log`. Default is `3`.
+Requests per second limit enforced per an extended period, for Plutono backend log ingestion endpoint, `/log`. Default is `3`.
 
 ### log_endpoint_burst_limit
 
-Maximum requests accepted per short interval of time for Grafana backend log ingestion endpoint, `/log`. Default is `15`.
+Maximum requests accepted per short interval of time for Plutono backend log ingestion endpoint, `/log`. Default is `15`.
 
 <hr>
 
@@ -1058,15 +1058,15 @@ Sets a global limit on number of users that can be logged in at one time. Defaul
 
 ## [alerting]
 
-For more information about the Alerting feature in Grafana, refer to [Alerts overview]({{< relref "../alerting/_index.md" >}}).
+For more information about the Alerting feature in Plutono, refer to [Alerts overview]({{< relref "../alerting/_index.md" >}}).
 
 ### enabled
 
-Set to `false` to disable alerting engine and hide Alerting in the Grafana UI. Default is `true`.
+Set to `false` to disable alerting engine and hide Alerting in the Plutono UI. Default is `true`.
 
 ### execute_alerts
 
-Turns off alert rule execution, but Alerting is still visible in the Grafana UI.
+Turns off alert rule execution, but Alerting is still visible in the Plutono UI.
 
 ### error_or_timeout
 
@@ -1074,7 +1074,7 @@ Default setting for new alert rules. Defaults to categorize error and timeouts a
 
 ### nodata_or_nullvalues
 
-Defines how Grafana handles nodata or null values in alerting. Options are `alerting`, `no_data`, `keep_state`, and `ok`. Default is `no_data`.
+Defines how Plutono handles nodata or null values in alerting. Options are `alerting`, `no_data`, `keep_state`, and `ok`. Default is `no_data`.
 
 ### concurrent_render_limit
 
@@ -1106,7 +1106,7 @@ This setting should be expressed as a duration. Examples: 6h (hours), 10d (days)
 
 ### max_annotations_to_keep =
 
-Configures max number of alert annotations that Grafana stores. Default value is 0, which keeps all alert annotations.
+Configures max number of alert annotations that Plutono stores. Default value is 0, which keeps all alert annotations.
 
 <hr>
 
@@ -1127,7 +1127,7 @@ This setting should be expressed as a duration. Examples: 6h (hours), 10d (days)
 
 ### max_annotations_to_keep
 
-Configures max number of dashboard annotations that Grafana stores. Default value is 0, which keeps all dashboard annotations.
+Configures max number of dashboard annotations that Plutono stores. Default value is 0, which keeps all dashboard annotations.
 
 ## [annotations.api]
 
@@ -1135,12 +1135,12 @@ API annotations means that the annotations have been created using the API witho
 
 ### max_age
 
-Configures how long Grafana stores API annotations. Default is 0, which keeps them forever.
+Configures how long Plutono stores API annotations. Default is 0, which keeps them forever.
 This setting should be expressed as a duration. Examples: 6h (hours), 10d (days), 2w (weeks), 1M (month).
 
 ### max_annotations_to_keep
 
-Configures max number of API annotations that Grafana keeps. Default value is 0, which keeps all API annotations.
+Configures max number of API annotations that Plutono keeps. Default value is 0, which keeps all API annotations.
 
 <hr>
 
@@ -1154,7 +1154,7 @@ Enable or disable the Explore section. Default is `enabled`.
 
 ## [metrics]
 
-For detailed instructions, refer to [Internal Grafana metrics]({{< relref "view-server/internal-metrics.md" >}}).
+For detailed instructions, refer to [Internal Plutono metrics]({{< relref "view-server/internal-metrics.md" >}}).
 
 ### enabled
 
@@ -1176,7 +1176,7 @@ If both are set, then basic authentication is required to access the metrics end
 
 ## [metrics.environment_info]
 
-Adds dimensions to the `grafana_environment_info` metric, which can expose more information about the Grafana instance.
+Adds dimensions to the `plutono_environment_info` metric, which can expose more information about the Plutono instance.
 
 ```
 ; exampleLabel1 = exampleValue1
@@ -1185,7 +1185,7 @@ Adds dimensions to the `grafana_environment_info` metric, which can expose more 
 
 ## [metrics.graphite]
 
-Use these options if you want to send internal Grafana metrics to Graphite.
+Use these options if you want to send internal Plutono metrics to Graphite.
 
 ### address
 
@@ -1193,11 +1193,11 @@ Enable by setting the address. Format is `<Hostname or ip>`:port.
 
 ### prefix
 
-Graphite metric prefix. Defaults to `prod.grafana.%(instance_name)s.`
+Graphite metric prefix. Defaults to `prod.plutono.%(instance_name)s.`
 
 <hr>
 
-## [grafana_net]
+## [plutono_net]
 
 ### url
 
@@ -1205,7 +1205,7 @@ Default is https://grafana.com.
 
 <hr>
 
-## [grafana_com]
+## [plutono_com]
 
 ### url
 
@@ -1215,7 +1215,7 @@ Default is https://grafana.com.
 
 ## [tracing.jaeger]
 
-Configure Grafana's Jaeger client for distributed tracing.
+Configure Plutono's Jaeger client for distributed tracing.
 
 You can also use the standard `JAEGER_*` environment variables to configure
 Jaeger. See the table at the end of https://www.jaegertracing.io/docs/1.16/client-features/
@@ -1284,7 +1284,7 @@ These options control how images should be made public so they can be shared on 
 
 ### provider
 
-Options are s3, webdav, gcs, azure_blob, local). If left empty, then Grafana ignores the upload action.
+Options are s3, webdav, gcs, azure_blob, local). If left empty, then Plutono ignores the upload action.
 
 <hr>
 
@@ -1307,12 +1307,12 @@ of the default, which is virtual hosted bucket addressing when possible (`http:/
 (for backward compatibility, only works when no bucket or region are configured)
 Bucket URL for S3. AWS region can be specified within URL or defaults to 'us-east-1', e.g.
 
-- http://grafana.s3.amazonaws.com/
-- https://grafana.s3-ap-southeast-2.amazonaws.com/
+- http://plutono.s3.amazonaws.com/
+- https://plutono.s3-ap-southeast-2.amazonaws.com/
 
 ### bucket
 
-Bucket name for S3. e.g. grafana.snapshot.
+Bucket name for S3. e.g. plutono.snapshot.
 
 ### region
 
@@ -1338,7 +1338,7 @@ Secret key, e.g. AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA.
 
 ### url
 
-URL where Grafana sends PUT request with images.
+URL where Plutono sends PUT request with images.
 
 ### username
 
@@ -1361,7 +1361,7 @@ Optional URL to send to users in notifications. If the string contains the seque
 Optional path to JSON key file associated with a Google service account to authenticate and authorize. If no value is provided it tries to use the [application default credentials](https://cloud.google.com/docs/authentication/production#finding_credentials_automatically).
 Service Account keys can be created and downloaded from https://console.developers.google.com/permissions/serviceaccounts.
 
-Service Account should have "Storage Object Writer" role. The access control model of the bucket needs to be "Set object-level and bucket-level permissions". Grafana itself will make the images public readable when signed urls are not enabled.
+Service Account should have "Storage Object Writer" role. The access control model of the bucket needs to be "Set object-level and bucket-level permissions". Plutono itself will make the images public readable when signed urls are not enabled.
 
 ### bucket
 
@@ -1373,7 +1373,7 @@ Optional extra path inside bucket.
 
 ### enable_signed_urls
 
-If set to true, Grafana creates a [signed URL](https://cloud.google.com/storage/docs/access-control/signed-urls] for
+If set to true, Plutono creates a [signed URL](https://cloud.google.com/storage/docs/access-control/signed-urls] for
 the image uploaded to Google Cloud Storage.
 
 ### signed_url_expiration
@@ -1408,11 +1408,11 @@ Options to configure a remote HTTP image rendering service, e.g. using https://g
 
 ### server_url
 
-URL to a remote HTTP image renderer service, e.g. http://localhost:8081/render, will enable Grafana to render panels and dashboards to PNG-images using HTTP requests to an external service.
+URL to a remote HTTP image renderer service, e.g. http://localhost:8081/render, will enable Plutono to render panels and dashboards to PNG-images using HTTP requests to an external service.
 
 ### callback_url
 
-If the remote HTTP image renderer service runs on a different server than the Grafana server you may have to configure this to a URL where Grafana is reachable, e.g. http://grafana.domain/.
+If the remote HTTP image renderer service runs on a different server than the Plutono server you may have to configure this to a URL where Plutono is reachable, e.g. http://plutono.domain/.
 
 ### concurrent_render_request_limit
 
@@ -1427,7 +1427,7 @@ Set to `true` if you want to test alpha panels that are not yet ready for genera
 
 ### disable_sanitize_html
 
-If set to true Grafana will allow script tags in text panels. Not recommended as it enables XSS vulnerabilities. Default is false. This setting was introduced in Grafana v6.0.
+If set to true Plutono will allow script tags in text panels. Not recommended as it enables XSS vulnerabilities. Default is false. This setting was introduced in Plutono v6.0.
 
 ## [plugins]
 
@@ -1445,22 +1445,22 @@ Custom install/learn more url for enterprise plugins. Defaults to https://grafan
 
 <hr>
 
-## [plugin.grafana-image-renderer]
+## [plugin.plutono-image-renderer]
 
 For more information, refer to [Image rendering]({{< relref "image_rendering.md" >}}).
 
 ### rendering_timezone
 
-Instruct headless browser instance to use a default timezone when not provided by Grafana, e.g. when rendering panel image of alert. See [ICUs metaZones.txt](https://cs.chromium.org/chromium/src/third_party/icu/source/data/misc/metaZones.txt) for a list of supported timezone IDs. Fallbacks to TZ environment variable if not set.
+Instruct headless browser instance to use a default timezone when not provided by Plutono, e.g. when rendering panel image of alert. See [ICUs metaZones.txt](https://cs.chromium.org/chromium/src/third_party/icu/source/data/misc/metaZones.txt) for a list of supported timezone IDs. Fallbacks to TZ environment variable if not set.
 
 ### rendering_language
 
-Instruct headless browser instance to use a default language when not provided by Grafana, e.g. when rendering panel image of alert.
+Instruct headless browser instance to use a default language when not provided by Plutono, e.g. when rendering panel image of alert.
 Refer to the HTTP header Accept-Language to understand how to format this value, e.g. 'fr-CH, fr;q=0.9, en;q=0.8, de;q=0.7, \*;q=0.5'.
 
 ### rendering_viewport_device_scale_factor
 
-Instruct headless browser instance to use a default device scale factor when not provided by Grafana, e.g. when rendering panel image of alert.
+Instruct headless browser instance to use a default device scale factor when not provided by Plutono, e.g. when rendering panel image of alert.
 Default is `1`. Using a higher value will produce more detailed images (higher DPI), but requires more disk space to store an image.
 
 ### rendering_ignore_https_errors
@@ -1473,7 +1473,7 @@ Instruct headless browser instance whether to capture and log verbose informatio
 
 When enabled, debug messages are captured and logged as well.
 
-For the verbose information to be included in the Grafana server log you have to adjust the rendering log level to debug, configure [log].filter = rendering:debug.
+For the verbose information to be included in the Plutono server log you have to adjust the rendering log level to debug, configure [log].filter = rendering:debug.
 
 ### rendering_dumpio
 
@@ -1533,7 +1533,7 @@ Change the listening port of the gRPC server. Default port is `0` and will autom
 
 ## [enterprise]
 
-For more information about Grafana Enterprise, refer to [Grafana Enterprise]({{< relref "../enterprise/_index.md" >}}).
+For more information about Plutono Enterprise, refer to [Plutono Enterprise]({{< relref "../enterprise/_index.md" >}}).
 
 <hr>
 
@@ -1545,7 +1545,7 @@ Keys of alpha features to enable, separated by space. Available alpha features a
 
 ## [date_formats]
 
-> **Note:** The date format options below are only available in Grafana v7.2+.
+> **Note:** The date format options below are only available in Plutono v7.2+.
 
 This section controls system-wide defaults for date formats used in time ranges, graphs, and date input boxes.
 
@@ -1581,8 +1581,8 @@ Used as the default time zone for user preferences. Can be either `browser` for 
 
 ## [expressions]
 
-> **Note:** This feature is available in Grafana v7.4 and later versions.
+> **Note:** This feature is available in Plutono v7.4 and later versions.
 
 ### enabled
 
-Set this to `false` to disable expressions and hide them in the Grafana UI. Default is `true`.
+Set this to `false` to disable expressions and hide them in the Plutono UI. Default is `true`.

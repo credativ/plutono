@@ -1,23 +1,23 @@
-# Grafana High Availability (HA) test setup
+# Plutono High Availability (HA) test setup
 
-A set of docker compose services which together creates a Grafana HA test setup with capability of easily
-scaling up/down number of Grafana instances.
+A set of docker compose services which together creates a Plutono HA test setup with capability of easily
+scaling up/down number of Plutono instances.
 
 Included services
 
-- Grafana
-- Mysql - Grafana configuration database and session storage
-- Prometheus - Monitoring of Grafana and used as data source of provisioned alert rules
-- Nginx - Reverse proxy for Grafana and Prometheus. Enables browsing Grafana/Prometheus UI using a hostname
+- Plutono
+- Mysql - Plutono configuration database and session storage
+- Prometheus - Monitoring of Plutono and used as data source of provisioned alert rules
+- Nginx - Reverse proxy for Plutono and Prometheus. Enables browsing Plutono/Prometheus UI using a hostname
 
 ## Prerequisites
 
-### Build grafana docker container
+### Build plutono docker container
 
-Build a Grafana docker container from current branch and commit and tag it as grafana/grafana:dev.
+Build a Plutono docker container from current branch and commit and tag it as plutono/plutono:dev.
 
 ```bash
-$ cd <grafana repo>
+$ cd <plutono repo>
 $ make build-docker-full
 ```
 
@@ -38,11 +38,11 @@ PING whatever.loc (127.0.0.1) 56(84) bytes of data.
 
 #### Alternative 2 - Manually update /etc/hosts
 
-Update your `/etc/hosts` to be able to access Grafana and/or Prometheus UI using a hostname.
+Update your `/etc/hosts` to be able to access Plutono and/or Prometheus UI using a hostname.
 
 ```bash
 $ cat /etc/hosts
-127.0.0.1       grafana.loc
+127.0.0.1       plutono.loc
 127.0.0.1       prometheus.loc
 ```
 
@@ -53,7 +53,7 @@ $ docker-compose up -d
 ```
 
 Browse
-- http://grafana.loc/
+- http://plutono.loc/
 - http://prometheus.loc/
 
 Check for any errors
@@ -62,14 +62,14 @@ Check for any errors
 $ docker-compose logs | grep error
 ```
 
-### Scale Grafana instances up/down
+### Scale Plutono instances up/down
 
-Scale number of Grafana instances to `<instances>`
+Scale number of Plutono instances to `<instances>`
 
 ```bash
-$ docker-compose up --scale grafana=<instances> -d
+$ docker-compose up --scale plutono=<instances> -d
 # for example 3 instances
-$ docker-compose up --scale grafana=3 -d
+$ docker-compose up --scale plutono=3 -d
 ```
 
 ## Test alerting

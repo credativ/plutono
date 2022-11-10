@@ -1,14 +1,14 @@
 +++
 title = "Jaeger"
-description = "Guide for using Jaeger in Grafana"
-keywords = ["grafana", "jaeger", "guide", "tracing"]
-aliases = ["/docs/grafana/latest/features/datasources/jaeger"]
+description = "Guide for using Jaeger in Plutono"
+keywords = ["plutono", "jaeger", "guide", "tracing"]
+aliases = ["/docs/plutono/latest/features/datasources/jaeger"]
 weight = 800
 +++
 
 # Jaeger data source
 
-Grafana ships with built-in support for Jaeger, which provides open source, end-to-end distributed tracing.
+Plutono ships with built-in support for Jaeger, which provides open source, end-to-end distributed tracing.
 Just add it as a data source and you are ready to query your traces in [Explore]({{< relref "../explore/_index.md" >}}).
 
 ## Add data source
@@ -26,7 +26,7 @@ To access Jaeger settings, click the **Configuration** (gear) icon, then click *
 
 ### Trace to logs
 
-> **Note:** This feature is available in Grafana 7.4+.
+> **Note:** This feature is available in Plutono 7.4+.
 
 This is a configuration for the [trace to logs feature]({{< relref "../explore/trace-integration" >}}). Select target data source (at this moment limited to Loki data sources) and select which tags will be used in the logs query.
 
@@ -57,7 +57,7 @@ You can link to Jaeger trace from logs in Loki by configuring a derived field wi
 
 ## Configure the data source with provisioning
 
-You can set up the data source via configuration files with Grafana’s provisioning system. Refer to [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}}) for information on various settings and how it works.
+You can set up the data source via configuration files with Plutono’s provisioning system. Refer to [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}}) for information on various settings and how it works.
 
 Here is an example with basic auth and trace-to-logs field.
 
@@ -76,7 +76,7 @@ datasources:
     isDefault: false
     jsonData:
         tracesToLogs:
-            # Field with internal link pointing to a Loki data source in Grafana.
+            # Field with internal link pointing to a Loki data source in Plutono.
             # datasourceUid value must match the `datasourceUid` value of the Loki data source.
             datasourceUid: loki
             tags:

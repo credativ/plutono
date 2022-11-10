@@ -1,11 +1,11 @@
 +++
-title = "With Grafana and InfluxDB"
-description = "Guide for getting started with Grafana and InfluxDB"
-keywords = ["grafana", "intro", "guide", "started"]
+title = "With Plutono and InfluxDB"
+description = "Guide for getting started with Plutono and InfluxDB"
+keywords = ["plutono", "intro", "guide", "started"]
 weight = 250
 +++
 
-# Getting started with Grafana and InfluxDB
+# Getting started with Plutono and InfluxDB
 
 {{< docs/shared "influxdb/intro.md" >}}
 
@@ -33,33 +33,33 @@ If you are using the cloud account, then the wizards will guide you through the 
 
 > **Note:** The regular system monitoring template in InfluxDB Cloud is not compatible with Windows. Windows users who use InfluxDB Cloud to monitor their system will need to use the [Windows System Monitoring Template](https://github.com/influxdata/community-templates/tree/master/windows_system).
 
-## Step 5. Add your InfluxDB data source to Grafana
+## Step 5. Add your InfluxDB data source to Plutono
 
-You can have more than one InfluxDB data source defined in Grafana.
+You can have more than one InfluxDB data source defined in Plutono.
 
 1. Follow the general instructions to [add a data source]({{< relref "../datasources/add-a-data-source.md" >}}).
 1. Decide if you will use InfluxQL or Flux as your query language.
    - For InfluxQL, refer to [InfluxDB data source]({{< relref "../datasources/influxdb/_index.md" >}}) for information about specific data source fields.
-   - For Flux, refer to [Flux query language in Grafana]({{< relref "../datasources/influxdb/influxdb-flux.md" >}}) for information about specific data source fields.
+   - For Flux, refer to [Flux query language in Plutono]({{< relref "../datasources/influxdb/influxdb-flux.md" >}}) for information about specific data source fields.
 
 ### InfluxDB guides
 
-InfluxDB publishes guidance for connecting different versions of their product to Grafana.
+InfluxDB publishes guidance for connecting different versions of their product to Plutono.
 
 - **InfluxDB OSS or Enterprise 1.8+.** To turn on Flux, refer to [Configure InfluxDB](https://docs.influxdata.com/influxdb/v1.8/administration/config/#flux-enabled-false.). Select your InfluxDB version in the upper right corner.
-- **InfluxDB OSS or Enterprise 2.x.** Refer to [Use Grafana with InfluxDB](https://docs.influxdata.com/influxdb/v2.0/tools/grafana/). Select your InfluxDB version in the upper right corner.
--  **InfluxDB Cloud.** Refer to [Use Grafana with InfluxDB Cloud](https://docs.influxdata.com/influxdb/cloud/tools/grafana/).
+- **InfluxDB OSS or Enterprise 2.x.** Refer to [Use Plutono with InfluxDB](https://docs.influxdata.com/influxdb/v2.0/tools/plutono/). Select your InfluxDB version in the upper right corner.
+-  **InfluxDB Cloud.** Refer to [Use Plutono with InfluxDB Cloud](https://docs.influxdata.com/influxdb/cloud/tools/plutono/).
 
 ### Important tips
 
-- Make sure your Grafana token has read access. If it doesn't, then you'll get an authentication error and be unable to connect Grafana to InfluxDB.
+- Make sure your Plutono token has read access. If it doesn't, then you'll get an authentication error and be unable to connect Plutono to InfluxDB.
 - Avoid apostrophes and other non-standard characters in bucket and token names.
 - If the text name of the organization or bucket doesn't work, then try the ID number.
-- If you change your bucket name in InfluxDB, then you must also change it in Grafana and your Telegraf .conf file as well.
+- If you change your bucket name in InfluxDB, then you must also change it in Plutono and your Telegraf .conf file as well.
 
 ## Step 6. Add a query
 
-This step varies depending on the query language that you selected when you set up your data source in Grafana.
+This step varies depending on the query language that you selected when you set up your data source in Plutono.
 
 ### InfluxQL query language
 
@@ -67,7 +67,7 @@ In the query editor, click **select measurement**.
 
 ![InfluxQL query](/static/img/docs/influxdb/influxql-query-7-5.png)
 
-Grafana displays a list of possible series. Click one to select it, and Grafana graphs any available data. If there is no data to display, then try another selection or check your data source.
+Plutono displays a list of possible series. Click one to select it, and Plutono graphs any available data. If there is no data to display, then try another selection or check your data source.
 
 ### Flux query language
 
@@ -94,17 +94,17 @@ You can also create Flux queries in the InfluxDB Explore view.
 
    ![InfluxDB Explore Script Editor](/static/img/docs/influxdb/explore-query-text-7-5.png)
 
-1. In Grafana, [add a panel](../panels/add-a-panel.md) and then paste your Flux code into the query editor.
+1. In Plutono, [add a panel](../panels/add-a-panel.md) and then paste your Flux code into the query editor.
 1. Click **Apply**. Your new panel should be visible with data from your Flux query.
 
-## Step 7. Check InfluxDB metrics in Grafana Explore
+## Step 7. Check InfluxDB metrics in Plutono Explore
 
-In your Grafana instance, go to the [Explore]({{< relref "../explore/_index.md" >}}) view and build queries to experiment with the metrics you want to monitor. Here you can also debug issues related to collecting metrics.
+In your Plutono instance, go to the [Explore]({{< relref "../explore/_index.md" >}}) view and build queries to experiment with the metrics you want to monitor. Here you can also debug issues related to collecting metrics.
 
 ## Step 8. Start building dashboards
 
 There you go! Use Explore and Data Explorer to experiment with your data, and add the queries that you like to your dashboard as panels. Have fun!
 
 Here are some resources to learn more:
-- Grafana documentation: [InfluxDB data source](../datasources/influxdb/_index.md)
+- Plutono documentation: [InfluxDB data source](../datasources/influxdb/_index.md)
 - InfluxDB documentation: [Comparison of Flux vs InfluxQL](https://docs.influxdata.com/influxdb/v1.8/flux/flux-vs-influxql/)

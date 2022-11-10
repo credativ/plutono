@@ -1,7 +1,7 @@
 import React, { MouseEvent, useContext } from 'react';
 import { css } from 'emotion';
-import { CallToActionCard, Icon, IconName, LinkButton, ThemeContext } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { CallToActionCard, Icon, IconName, LinkButton, ThemeContext } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 export interface Props {
   title: string;
@@ -56,7 +56,7 @@ const EmptyListCTA: React.FunctionComponent<Props> = ({
           ''
         )}
         {infoBox ? (
-          <div key="infoBoxHtml" className={`grafana-info-box ${infoBoxStyles}`}>
+          <div key="infoBoxHtml" className={`plutono-info-box ${infoBoxStyles}`}>
             {infoBoxTitle && <h5>{infoBoxTitle}</h5>}
             <div dangerouslySetInnerHTML={infoBox} />
           </div>

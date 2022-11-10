@@ -5,8 +5,8 @@ import (
 
 	"sort"
 
-	"github.com/grafana/grafana/pkg/components/null"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/null"
+	"github.com/credativ/plutono/pkg/tsdb"
 )
 
 // queryReducer reduces a timeseries to a nullable float

@@ -10,13 +10,13 @@ import (
 	"strings"
 
 	"github.com/VividCortex/mysqlerr"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/setting"
 
 	"github.com/go-sql-driver/mysql"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/tsdb/sqleng"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/tsdb/sqleng"
 	"xorm.io/core"
 )
 
@@ -152,4 +152,4 @@ func (t *mysqlQueryResultTransformer) TransformQueryError(err error) error {
 	return err
 }
 
-var errQueryFailed = errors.New("query failed - please inspect Grafana server log for details")
+var errQueryFailed = errors.New("query failed - please inspect Plutono server log for details")

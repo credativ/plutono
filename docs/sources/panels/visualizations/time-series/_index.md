@@ -1,6 +1,6 @@
 +++
 title = "Time series panel"
-keywords = ["grafana", "graph panel", "time series panel", "documentation", "guide", "graph"]
+keywords = ["plutono", "graph panel", "time series panel", "documentation", "guide", "graph"]
 weight = 1200
 +++
 
@@ -10,7 +10,7 @@ weight = 1200
 
 Time series panel is a robust visualization to plot time series data. It can render as a line, a path of dots, or a series of bars. This type of graph is versatile enough to display almost any time-series data.
 
-For Time series panel examples, refer to the Grafana Play dashboard [New Features in v7.4](https://play.grafana.org/d/nP8rcffGk/new-features-in-v7-4?orgId=1).
+For Time series panel examples, refer to the Plutono Play dashboard [New Features in v7.4](https://play.plutono.org/d/nP8rcffGk/new-features-in-v7-4?orgId=1).
 
 ## Data and field options
 
@@ -29,14 +29,14 @@ You can also use field options to create different types of graphs or adjust you
 
 ## Display options
 
-> **Note:** You can migrate Graph panel visualizations to Time series visualizations. To migrate, on the Panel tab, click **Time series** visualization. Grafana transfers all applicable settings. (While in beta, migration is still being refined. It will get better as time goes on!)
+> **Note:** You can migrate Graph panel visualizations to Time series visualizations. To migrate, on the Panel tab, click **Time series** visualization. Plutono transfers all applicable settings. (While in beta, migration is still being refined. It will get better as time goes on!)
 
 ### Tooltip mode
 
-When you hover your cursor over the graph, Grafana can display tooltips. Choose how tooltips behave.
+When you hover your cursor over the graph, Plutono can display tooltips. Choose how tooltips behave.
 
 - **Single -** The hover tooltip shows only a single series, the one that you are hovering over on the graph.
-- **All -** The hover tooltip shows all series in the graph. Grafana highlights the series that you are hovering over in bold in the series list in the tooltip.
+- **All -** The hover tooltip shows all series in the graph. Plutono highlights the series that you are hovering over in bold in the series list in the tooltip.
 - **Hidden -** Do not display the tooltip when you interact with the graph.
 
 > **Note:** Use an override to hide individual series from the tooltip.

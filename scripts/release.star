@@ -179,7 +179,7 @@ def release_pipelines(ver_mode='release', trigger=None):
         pipelines.append(publish_pipeline)
 
     pipelines.append(notify_pipeline(
-        name='notify-{}'.format(ver_mode), slack_channel='grafana-ci-notifications', trigger=trigger,
+        name='notify-{}'.format(ver_mode), slack_channel='plutono-ci-notifications', trigger=trigger,
         depends_on=[p['name'] for p in pipelines],
     ))
 
@@ -209,7 +209,7 @@ def test_release_pipelines():
     pipelines = oss_pipelines + enterprise_pipelines + [publish_pipeline,]
 
     pipelines.append(notify_pipeline(
-        name='notify-{}'.format(ver_mode), slack_channel='grafana-ci-notifications', trigger=trigger,
+        name='notify-{}'.format(ver_mode), slack_channel='plutono-ci-notifications', trigger=trigger,
         depends_on=[p['name'] for p in pipelines],
     ))
 

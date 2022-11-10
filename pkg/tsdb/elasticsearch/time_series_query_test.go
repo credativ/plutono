@@ -5,10 +5,10 @@ import (
 	"testing"
 	"time"
 
-	es "github.com/grafana/grafana/pkg/tsdb/elasticsearch/client"
+	es "github.com/credativ/plutono/pkg/tsdb/elasticsearch/client"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/tsdb"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

@@ -1,8 +1,8 @@
 +++
 title = "Heatmap panel"
 description = "Heatmap visualization documentation"
-keywords = ["grafana", "heatmap", "panel", "documentation"]
-aliases =["/docs/grafana/latest/features/panels/heatmap/"]
+keywords = ["plutono", "heatmap", "panel", "documentation"]
+aliases =["/docs/plutono/latest/features/panels/heatmap/"]
 weight = 600
 +++
 
@@ -35,7 +35,7 @@ Use these settings to adjust how axes are displayed in your visualization.
 
 - **Y Axis Buckets -** Number of buckets Y axis will be split into.
 - **Size -** (Only visible if **Scale** is _linear_). Size of each Y axis bucket. This option has priority over **Y Axis Buckets**.
-- **Split Factor -** (Only visible if **Scale** is _log (base 2)_ or greater). By default Grafana splits Y values by log base. This option allows to split each default bucket into specified number of buckets.
+- **Split Factor -** (Only visible if **Scale** is _log (base 2)_ or greater). By default Plutono splits Y values by log base. This option allows to split each default bucket into specified number of buckets.
 - **X Axis Buckets -** Number of buckets X axis will be split into.
 - **Size -** Size of each X axis bucket. Number or time interval (10s, 5m, 1h, etc). Supported intervals: ms, s, m, h, d, w, M, y. This option has priority over **X Axis Buckets**.
 
@@ -45,13 +45,13 @@ When Data format is Time series buckets data source returns series with names re
 
 #### Bucket size
 
-The Bucket count and size options are used by Grafana to calculate how big each cell in the heatmap is. You can define the bucket size either by count (the first input box) or by specifying a size interval. For the Y-Axis the size interval is just a value but for the X-bucket you can specify a time interval in the Size input, for example, the time range 1h. This will make the cells 1h wide on the X-axis.
+The Bucket count and size options are used by Plutono to calculate how big each cell in the heatmap is. You can define the bucket size either by count (the first input box) or by specifying a size interval. For the Y-Axis the size interval is just a value but for the X-bucket you can specify a time interval in the Size input, for example, the time range 1h. This will make the cells 1h wide on the X-axis.
 
 #### Data format
 
 Choose an option in the **Format** list.
-- **Time series -** Grafana does the bucketing by going through all time series values. The bucket sizes and intervals are set in the Buckets options.
-- **Time series buckets -** Each time series already represents a Y-Axis bucket. The time series name (alias) needs to be a numeric value representing the upper or lower interval for the bucket. Grafana does no bucketing, so the bucket size options are hidden.
+- **Time series -** Plutono does the bucketing by going through all time series values. The bucket sizes and intervals are set in the Buckets options.
+- **Time series buckets -** Each time series already represents a Y-Axis bucket. The time series name (alias) needs to be a numeric value representing the upper or lower interval for the bucket. Plutono does no bucketing, so the bucket size options are hidden.
 
 ## Display options
 
@@ -75,7 +75,7 @@ You can also change the color mode to Opacity. In this case, the color will not 
 
 ### Color scale
 
-By default, Grafana calculates cell colors based on minimum and maximum buckets values. With Min and Max you can overwrite those values. Think of a bucket value as a Z-axis and Min and Max as Z-Min and Z-Max respectively.
+By default, Plutono calculates cell colors based on minimum and maximum buckets values. With Min and Max you can overwrite those values. Think of a bucket value as a Z-axis and Min and Max as Z-Min and Z-Max respectively.
 
 - **Min -** Minimum value using for cell color calculation. If the bucket value is less than Min, then it is mapped to the "minimum" color. Default is series min value.
 - **Max -** Maximum value using for cell color calculation. If the bucket value is greater than Max, then it is mapped to the "maximum" color. Default is series max value.

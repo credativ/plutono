@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import SideMenuDropDown from './SideMenuDropDown';
-import { Icon } from '@grafana/ui';
-import { NavModelItem } from '@grafana/data';
+import { Icon } from '@credativ/plutono-ui';
+import { NavModelItem } from '@credativ/plutono-data';
 
 export interface Props {
   link: NavModelItem;

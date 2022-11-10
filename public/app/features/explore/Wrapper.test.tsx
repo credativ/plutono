@@ -3,7 +3,7 @@ import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import Wrapper from './Wrapper';
 import { configureStore } from '../../store/configureStore';
 import { Provider } from 'react-redux';
-import { setDataSourceSrv } from '@grafana/runtime';
+import { setDataSourceSrv } from '@credativ/plutono-runtime';
 import {
   ArrayDataFrame,
   DataQueryResponse,
@@ -12,8 +12,8 @@ import {
   FieldType,
   QueryEditorProps,
   ScopedVars,
-} from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+} from '@credativ/plutono-data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import { setTimeSrv } from '../dashboard/services/TimeSrv';
 import { from, Observable } from 'rxjs';

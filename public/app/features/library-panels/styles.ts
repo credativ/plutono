@@ -1,7 +1,7 @@
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 
-export function getModalStyles(theme: GrafanaTheme) {
+export function getModalStyles(theme: PlutonoTheme) {
   return {
     myTable: css`
       max-height: 204px;

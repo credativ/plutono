@@ -6,7 +6,7 @@ import {
   QueryEditorProps,
   VariableModel as BaseVariableModel,
   VariableType,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import { NEW_VARIABLE_ID } from './state/types';
 import { VariableQueryProps } from '../../types';

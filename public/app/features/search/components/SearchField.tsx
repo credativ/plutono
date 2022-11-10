@@ -1,7 +1,7 @@
 import React, { FC, useContext } from 'react';
 import { css, cx } from 'emotion';
-import { ThemeContext } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { ThemeContext } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { DashboardQuery } from '../types';
 
 type Omit<T, K extends keyof T> = Pick<T, Exclude<keyof T, K>>;
@@ -14,7 +14,7 @@ interface SearchFieldProps extends Omit<React.InputHTMLAttributes<HTMLInputEleme
   width?: number;
 }
 
-const getSearchFieldStyles = (theme: GrafanaTheme) => ({
+const getSearchFieldStyles = (theme: PlutonoTheme) => ({
   wrapper: css`
     width: 100%;
     display: flex;

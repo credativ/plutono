@@ -1,7 +1,7 @@
 +++
 title = "Google OAuth2 Authentication"
-description = "Grafana OAuthentication Guide "
-keywords = ["grafana", "configuration", "documentation", "oauth"]
+description = "Plutono OAuthentication Guide "
+keywords = ["plutono", "configuration", "documentation", "oauth"]
 weight = 600
 +++
 
@@ -17,16 +17,16 @@ First, you need to create a Google OAuth Client:
 1. Click **Create Credentials**, then click **OAuth Client ID** in the drop-down menu
 1. Enter the following:
    - Application Type: Web Application
-   - Name: Grafana
-   - Authorized JavaScript Origins: https://grafana.mycompany.com
-   - Authorized Redirect URLs: https://grafana.mycompany.com/login/google
-   - Replace https://grafana.mycompany.com with the URL of your Grafana instance.
+   - Name: Plutono
+   - Authorized JavaScript Origins: https://plutono.mycompany.com
+   - Authorized Redirect URLs: https://plutono.mycompany.com/login/google
+   - Replace https://plutono.mycompany.com with the URL of your Plutono instance.
 1. Click Create
 1. Copy the Client ID and Client Secret from the 'OAuth Client' modal
 
-## Enable Google OAuth in Grafana
+## Enable Google OAuth in Plutono
 
-Specify the Client ID and Secret in the [Grafana configuration file]({{< relref "../administration/configuration.md#config-file-locations" >}}). For example:
+Specify the Client ID and Secret in the [Plutono configuration file]({{< relref "../administration/configuration.md#config-file-locations" >}}). For example:
 
 ```bash
 [auth.google]
@@ -41,9 +41,9 @@ allow_sign_up = true
 ```
 
 You may have to set the `root_url` option of `[server]` for the callback URL to be
-correct. For example in case you are serving Grafana behind a proxy.
+correct. For example in case you are serving Plutono behind a proxy.
 
-Restart the Grafana back-end. You should now see a Google login button
+Restart the Plutono back-end. You should now see a Google login button
 on the login page. You can now login or sign up with your Google
 accounts. The `allowed_domains` option is optional, and domains were separated by space.
 

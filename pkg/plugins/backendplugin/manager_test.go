@@ -12,9 +12,9 @@ import (
 
 	"github.com/grafana/grafana-aws-sdk/pkg/awsds"
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/require"
 )
 
@@ -257,7 +257,7 @@ func TestManager(t *testing.T) {
 	})
 
 	newManagerScenario(t, true, func(t *testing.T, ctx *managerScenarioCtx) {
-		t.Run("Plugin registration scenario when Grafana is licensed", func(t *testing.T) {
+		t.Run("Plugin registration scenario when Plutono is licensed", func(t *testing.T) {
 			ctx.license.edition = "Enterprise"
 			ctx.license.hasLicense = true
 			ctx.license.tokenRaw = "testtoken"

@@ -1,12 +1,12 @@
 +++
 title = "Table field options"
-keywords = ["grafana", "table options", "documentation", "format tables"]
+keywords = ["plutono", "table options", "documentation", "format tables"]
 weight = 500
 +++
 
 # Table field options
 
-This section explains all available table field options. They are listed in the same order as in Grafana. Options listed in this topic apply only to table panel visualizations.
+This section explains all available table field options. They are listed in the same order as in Plutono. Options listed in this topic apply only to table panel visualizations.
 
 Most field options will not affect the visualization until you click outside of the field option box you are editing or press Enter.
 
@@ -17,7 +17,7 @@ For more information about applying these options, refer to:
 
 ## Column alignment
 
-Choose how Grafana should align cell contents:
+Choose how Plutono should align cell contents:
 
 - Auto (default)
 - Left
@@ -26,13 +26,13 @@ Choose how Grafana should align cell contents:
 
 ## Column width
 
-By default, Grafana automatically calculates the column width based on the cell contents. In this field option, can override the setting and define the width for all columns in pixels.
+By default, Plutono automatically calculates the column width based on the cell contents. In this field option, can override the setting and define the width for all columns in pixels.
 
 For example, if you enter `100` in the field, then when you click outside the field, all the columns will be set to 100 pixels wide.
 
 ## Cell display mode
 
-By default, Grafana automatically chooses display settings. You can override the settings by choosing one of the following options to change all fields.
+By default, Plutono automatically chooses display settings. You can override the settings by choosing one of the following options to change all fields.
 
 > **Note:** If you set these in the Field tab, then the display modes will apply to all fields, including the time field. Many options will work best if you set them in the Override tab.
 
@@ -68,7 +68,7 @@ Shows value formatted as code. If a value is an object the JSON view allowing br
 
 ### Image
 
-> Only available in Grafana 7.3+
+> Only available in Plutono 7.3+
 
 If you have a field value that is an image URL or a base64 encoded image you can configure the table to display it as an image.
 
@@ -76,6 +76,6 @@ If you have a field value that is an image URL or a base64 encoded image you can
 
 ## Column filter
 
-> **Note:** This feature is available in Grafana 7.2+.
+> **Note:** This feature is available in Plutono 7.2+.
 >
 Turn this on to enable table field filters. For more information, refer to [Filter table columns]({{< relref "filter-table-columns.md" >}}).

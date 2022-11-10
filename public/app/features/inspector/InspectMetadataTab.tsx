@@ -1,5 +1,5 @@
 import React from 'react';
-import { DataSourceApi, PanelData } from '@grafana/data';
+import { DataSourceApi, PanelData } from '@credativ/plutono-data';
 
 interface InspectMetadataTabProps {
   data: PanelData;

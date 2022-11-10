@@ -1,6 +1,6 @@
 +++
 title = "Playlists"
-keywords = ["grafana", "dashboard", "documentation", "playlist"]
+keywords = ["plutono", "dashboard", "documentation", "playlist"]
 weight = 4
 draft = "true"
 +++
@@ -11,9 +11,9 @@ draft = "true"
 A _playlist
 - is a list of dashboards that are displayed in a sequence. You might use a playlist to build situational awareness or to present your metrics to your team or visitors.
 
-Grafana automatically scales dashboards to any resolution, which makes them perfect for big screens.
+Plutono automatically scales dashboards to any resolution, which makes them perfect for big screens.
 
-You can access the Playlist feature from Grafana's side menu, in the Dashboards submenu.
+You can access the Playlist feature from Plutono's side menu, in the Dashboards submenu.
 
 {{< figure src="/static/img/docs/v50/playlist.png" max-width="25rem">}}
 
@@ -21,13 +21,13 @@ You can access the Playlist feature from Grafana's side menu, in the Dashboards 
 
 You create a playlist to present dashboards in a sequence, with a set order and time interval between dashboards.
 
-1. To access the Playlist feature, hover your cursor over Grafana's side menu.
+1. To access the Playlist feature, hover your cursor over Plutono's side menu.
 1. Click **Playlists**.
 1. Click **New playlist**.
 1. In the **Name** text box, enter a name for your playlist.
 1. In the **Interval** text box, enter a time interval.
 
-The time interval is the amount of time for Grafana to stay on a particular dashboard before advancing to the next one on the playlist.
+The time interval is the amount of time for Plutono to stay on a particular dashboard before advancing to the next one on the playlist.
 
 1. Next to the dashboard(s) you want to add to your playlist, click **Add to playlist**.
 1. Click **Create**.
@@ -36,7 +36,7 @@ The time interval is the amount of time for Grafana to stay on a p
 
 You can edit playlists while creating them or after saving them.
 
-1. To access the Playlist feature, hover your cursor over Grafana's side menu.
+1. To access the Playlist feature, hover your cursor over Plutono's side menu.
 1. Click **Playlists**.
 1. Click on the Playlist that you want to edit.
 
@@ -84,7 +84,7 @@ You can edit playlists while creating them or after saving them.
 
 You can save a playlist to add it to your **Playlists** page, where you can start it. Be sure that all the dashboards you want to appear in your playlist are added when creating or editing the playlist before saving it.
 
-1. To access the Playlist feature, hover your cursor over Grafana's side menu.
+1. To access the Playlist feature, hover your cursor over Plutono's side menu.
 1. Click **Playlists**.
 1. Click on the playlist.
 1. Edit the playlist.
@@ -145,6 +145,6 @@ You can share a playlist by copying the link address on the view mode you prefer
 1. In the dropdown, right click the view mode you prefer.
 1. Click **Copy Link Address** to copy the URL to your clipboard.
 
-    Example: The URL for the first playlist on the Grafana Play site in Kiosk mode will look like this:
-[https://play.grafana.org/playlists/play/1?kiosk](https://play.grafana.org/playlists/play/1?kiosk).
+    Example: The URL for the first playlist on the Plutono Play site in Kiosk mode will look like this:
+[https://play.plutono.org/playlists/play/1?kiosk](https://play.plutono.org/playlists/play/1?kiosk).
 1. Paste the URL to your destination.

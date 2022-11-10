@@ -3,9 +3,9 @@ import React, { PureComponent } from 'react';
 import cloneDeep from 'lodash/cloneDeep';
 import extend from 'lodash/extend';
 
-import { Button } from '@grafana/ui';
-import { PluginMeta, AppPlugin, deprecationWarning } from '@grafana/data';
-import { AngularComponent, getAngularLoader, getBackendSrv } from '@grafana/runtime';
+import { Button } from '@credativ/plutono-ui';
+import { PluginMeta, AppPlugin, deprecationWarning } from '@credativ/plutono-data';
+import { AngularComponent, getAngularLoader, getBackendSrv } from '@credativ/plutono-runtime';
 
 import { css } from 'emotion';
 

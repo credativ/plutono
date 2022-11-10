@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { css } from 'emotion';
-import { Button, HorizontalGroup, Modal, stylesFactory, useTheme } from '@grafana/ui';
-import { AppEvents, GrafanaTheme } from '@grafana/data';
+import { Button, HorizontalGroup, Modal, stylesFactory, useTheme } from '@credativ/plutono-ui';
+import { AppEvents, PlutonoTheme } from '@credativ/plutono-data';
 import { FolderInfo } from 'app/types';
 import { FolderPicker } from 'app/core/components/Select/FolderPicker';
 import appEvents from 'app/core/app_events';
@@ -75,7 +75,7 @@ export const MoveToFolderModal: FC<Props> = ({ results, onMoveItems, isOpen, onD
   ) : null;
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     modal: css`
       width: 500px;

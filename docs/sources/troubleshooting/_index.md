@@ -1,21 +1,21 @@
 +++
 title = "Troubleshooting"
-description = "Guide to troubleshooting Grafana problems"
-keywords = ["grafana", "troubleshooting", "documentation", "guide"]
+description = "Guide to troubleshooting Plutono problems"
+keywords = ["plutono", "troubleshooting", "documentation", "guide"]
 weight = 180
 +++
 
 # Troubleshooting
 
-This page lists some tools and advice to help troubleshoot common Grafana issues.
+This page lists some tools and advice to help troubleshoot common Plutono issues.
 
 ## Troubleshoot with logs
 
-If you encounter an error or problem, then you can check the Grafana server log. Usually located at `/var/log/grafana/grafana.log` on Unix systems or in `<grafana_install_dir>/data/log` on other platforms and manual installations.
+If you encounter an error or problem, then you can check the Plutono server log. Usually located at `/var/log/plutono/plutono.log` on Unix systems or in `<plutono_install_dir>/data/log` on other platforms and manual installations.
 
-You can enable more logging by changing log level in the Grafana configuration file.
+You can enable more logging by changing log level in the Plutono configuration file.
 
-For more information, refer to [Enable debug logging in Grafana CLI]({{< relref "../administration/cli.md#enable-debug-logging" >}}) and the [log section in Configuration]({{< relref "../administration/configuration.md#log" >}}).
+For more information, refer to [Enable debug logging in Plutono CLI]({{< relref "../administration/cli.md#enable-debug-logging" >}}) and the [log section in Configuration]({{< relref "../administration/configuration.md#log" >}}).
 
 ## Troubleshoot transformations
 
@@ -37,7 +37,7 @@ sudo yum install urw-fonts
 
 ## FAQs
 
-Check out the [FAQ section](https://community.grafana.com/c/howto/faq) on the Grafana Community page for answers to frequently
+Check out the [FAQ section](https://community.grafana.com/c/howto/faq) on the Plutono Community page for answers to frequently
 asked questions.
 
 

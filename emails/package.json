@@ -1,7 +1,7 @@
 {
-  "name": "Grafana-Email-Campaign",
+  "name": "Plutono-Email-Campaign",
   "version": "1.0.0",
-  "description": "Grafana Email templates based on Zurb Ink",
+  "description": "Plutono Email templates based on Zurb Ink",
   "repository": "dnnsldr/",
   "author": {
     "name": "dnnsldr",

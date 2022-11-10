@@ -1,13 +1,13 @@
 +++
 title = "JWT Authentication"
-description = "Grafana JWT Authentication"
-keywords = ["grafana", "configuration", "documentation", "jwt", "jwk"]
+description = "Plutono JWT Authentication"
+keywords = ["plutono", "configuration", "documentation", "jwt", "jwk"]
 weight = 250
 +++
 
 # JWT authentication
 
-You can configure Grafana to accept a JWT token provided in the HTTP header. The token is verified using any of the following:
+You can configure Plutono to accept a JWT token provided in the HTTP header. The token is verified using any of the following:
 - PEM-encoded key file
 - JSON Web Key Set (JWKS) in a local file 
 - JWKS provided by the configured JWKS endpoint
@@ -29,7 +29,7 @@ header_name = X-JWT-Assertion
 
 ## Configure login claim
 
-To identify the user, some of the claims needs to be selected as a login info. You could specify a claim that contains either a username or an email of the Grafana user.
+To identify the user, some of the claims needs to be selected as a login info. You could specify a claim that contains either a username or an email of the Plutono user.
 
 Typically, the subject claim called `"sub"` would be used as a login but it might also be set to some application specific claim.
 

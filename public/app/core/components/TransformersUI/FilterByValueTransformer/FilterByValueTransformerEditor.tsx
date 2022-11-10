@@ -11,15 +11,15 @@ import {
   FieldType,
   ValueMatcherID,
   valueMatchers,
-} from '@grafana/data';
-import { Button, RadioButtonGroup, stylesFactory } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { Button, RadioButtonGroup, stylesFactory } from '@credativ/plutono-ui';
 import cloneDeep from 'lodash/cloneDeep';
 import {
   FilterByValueFilter,
   FilterByValueMatch,
   FilterByValueTransformerOptions,
   FilterByValueType,
-} from '@grafana/data/src/transformations/transformers/filterByValue';
+} from '@credativ/plutono-data/src/transformations/transformers/filterByValue';
 
 import { DataFrameFieldsInfo, FilterByValueFilterEditor } from './FilterByValueFilterEditor';
 

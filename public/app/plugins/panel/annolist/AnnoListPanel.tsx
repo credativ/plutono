@@ -2,9 +2,9 @@
 import React, { PureComponent } from 'react';
 // Types
 import { AnnoOptions } from './types';
-import { AnnotationEvent, AppEvents, dateTime, DurationUnit, PanelProps } from '@grafana/data';
-import { getBackendSrv, getLocationSrv } from '@grafana/runtime';
-import { AbstractList } from '@grafana/ui/src/components/List/AbstractList';
+import { AnnotationEvent, AppEvents, dateTime, DurationUnit, PanelProps } from '@credativ/plutono-data';
+import { getBackendSrv, getLocationSrv } from '@credativ/plutono-runtime';
+import { AbstractList } from '@credativ/plutono-ui/src/components/List/AbstractList';
 import { getDashboardSrv } from 'app/features/dashboard/services/DashboardSrv';
 import appEvents from 'app/core/app_events';
 import { AnnotationListItem } from './AnnotationListItem';
@@ -55,9 +55,9 @@ export class AnnoListPanel extends PureComponent<Props, State> {
   }
 
   async doSearch() {
-    // http://docs.grafana.org/http_api/annotations/
-    // https://github.com/grafana/grafana/blob/master/public/app/core/services/backend_srv.ts
-    // https://github.com/grafana/grafana/blob/master/public/app/features/annotations/annotations_srv.ts
+    // http://docs.plutono.org/http_api/annotations/
+    // https://github.com/credativ/plutono/blob/master/public/app/core/services/backend_srv.ts
+    // https://github.com/credativ/plutono/blob/master/public/app/features/annotations/annotations_srv.ts
 
     const { options } = this.props;
     const { queryUser, queryTags } = this.state;

@@ -1,4 +1,4 @@
-import { DataSourceSettings, PluginType, PluginInclude, NavModel, NavModelItem } from '@grafana/data';
+import { DataSourceSettings, PluginType, PluginInclude, NavModel, NavModelItem } from '@credativ/plutono-data';
 import config from 'app/core/config';
 import { GenericDataSourcePlugin } from '../settings/PluginSettings';
 

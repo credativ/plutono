@@ -16,8 +16,8 @@ import {
   DataSourceApi,
   rangeUtil,
   ScopedVars,
-} from '@grafana/data';
-import { getBackendSrv, getDataSourceSrv } from '@grafana/runtime';
+} from '@credativ/plutono-data';
+import { getBackendSrv, getDataSourceSrv } from '@credativ/plutono-runtime';
 import { appEvents } from 'app/core/core';
 import { getTimeSrv } from '../dashboard/services/TimeSrv';
 import { Observable, of } from 'rxjs';

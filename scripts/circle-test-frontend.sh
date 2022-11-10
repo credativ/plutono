@@ -7,7 +7,7 @@ start=$(date +%s)
 
 export TEST_MAX_WORKERS=2
 
-/tmp/grabpl test-frontend --github-token "${GITHUB_GRAFANABOT_TOKEN}" "$@"
+/tmp/grabpl test-frontend --github-token "${GITHUB_PLUTONOBOT_TOKEN}" "$@"
 
 end=$(date +%s)
 seconds=$((end - start))
@@ -15,6 +15,6 @@ seconds=$((end - start))
 exit_if_fail ./scripts/ci-frontend-metrics.sh
 
 if [ "${CIRCLE_BRANCH}" == "master" ]; then
-	exit_if_fail ./scripts/ci-metrics-publisher.sh grafana.ci-performance.frontend-tests=$seconds
+	exit_if_fail ./scripts/ci-metrics-publisher.sh plutono.ci-performance.frontend-tests=$seconds
 fi
 

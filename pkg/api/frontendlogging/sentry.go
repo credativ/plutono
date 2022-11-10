@@ -5,7 +5,7 @@ import (
 	"strings"
 
 	"github.com/getsentry/sentry-go"
-	"github.com/grafana/grafana/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/inconshreveable/log15"
 )
 

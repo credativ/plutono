@@ -10,7 +10,7 @@ The highest permission always wins so if you for example want to hide a folder o
 - You cannot override permissions for users with the Organization Admin role. Admins always have access to everything.
 - A more specific permission with a lower permission level will not have any effect if a more general rule exists with higher permission level. You need to remove or lower the permission level of the more general rule.
 
-Here are some examples of how Grafana resolves multiple permissions.
+Here are some examples of how Plutono resolves multiple permissions.
 
 ## Example 1 (user1 has the Editor Role)
 

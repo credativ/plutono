@@ -19,7 +19,7 @@
       "icon": "info",
       "tags": [],
       "targetBlank": true,
-      "title": "Grafana Docs",
+      "title": "Plutono Docs",
       "tooltip": "",
       "type": "link",
       "url": "https://grafana.com/docs/grafana/latest/"

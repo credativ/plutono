@@ -1,28 +1,28 @@
 +++
-title = "What's New in Grafana v7.4"
-description = "Feature and improvement highlights for Grafana v7.4"
-keywords = ["grafana", "new", "documentation", "7.4", "release notes"]
+title = "What's New in Plutono v7.4"
+description = "Feature and improvement highlights for Plutono v7.4"
+keywords = ["plutono", "new", "documentation", "7.4", "release notes"]
 weight = -31
-aliases = ["/docs/grafana/latest/guides/whats-new-in-v7-4/"]
+aliases = ["/docs/plutono/latest/guides/whats-new-in-v7-4/"]
 [_build]
 list = false
 +++
 
-# What's new in Grafana v7.4
+# What's new in Plutono v7.4
 
-This topic includes the release notes for Grafana v7.4. For all details, read the full [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md).
+This topic includes the release notes for Plutono v7.4. For all details, read the full [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md).
 
-Check out the [New Features in 7.4](https://play.grafana.org/d/nP8rcffGk/1-new-features-in-v7-4?orgId=1) dashboard on Grafana Play!
+Check out the [New Features in 7.4](https://play.plutono.org/d/nP8rcffGk/1-new-features-in-v7-4?orgId=1) dashboard on Plutono Play!
 
-## Grafana OSS features
+## Plutono OSS features
 
-These features are included in the Grafana open source edition.
+These features are included in the Plutono open source edition.
 
 ### Time series panel visualization (Beta)
 
-Grafana 7.4 adds a beta version of the next-gen graph visualization. The new graph panel, the _Time series_ visualization, is high-performance visualization based on the uPlot library. This new graph visualization uses the new panel architecture introduced in Grafana 7.0 and integrates with field options, overrides, and transformations.
+Plutono 7.4 adds a beta version of the next-gen graph visualization. The new graph panel, the _Time series_ visualization, is high-performance visualization based on the uPlot library. This new graph visualization uses the new panel architecture introduced in Plutono 7.0 and integrates with field options, overrides, and transformations.
 
-The Time series beta panel implements the majority of the functionalities available in the current Graph panel. Our plan is to have close to full coverage of the features in Grafana 8.0, coming later this year.
+The Time series beta panel implements the majority of the functionalities available in the current Graph panel. Our plan is to have close to full coverage of the features in Plutono 8.0, coming later this year.
 
 Apart from major performance improvements, the new Time series panel implements new features like line interpolation modes, support for more than two Y-axes, soft min and max axis limits, automatic points display based on data density, and gradient fill modes.
 
@@ -42,13 +42,13 @@ _Node graph_ is a new panel type that can visualize directed graphs or network i
 
 All the information and stats shown in the Node graph beta are driven by the data provided in the response from the data source. The first data source that is using this panel is AWS X-Ray, for displaying their service map data.
 
-For more details about how to use the X-Ray service map feature, see the [X-Ray plugin documentation](https://grafana.com/grafana/plugins/grafana-x-ray-datasource).
+For more details about how to use the X-Ray service map feature, see the [X-Ray plugin documentation](https://grafana.com/grafana/plugins/plutono-x-ray-datasource).
 
 For more information, refer to [Node graph panel]({{< relref "../panels/visualizations/node-graph.md" >}}).
 
 ### New transformations
 
-The following transformations were added in Grafana 7.4.
+The following transformations were added in Plutono 7.4.
 
 #### Sort by transformation
 
@@ -58,7 +58,7 @@ For more information, refer to [Sort by]({{< relref "../panels/transformations/t
 
 #### Filter data by value transform
 
-The new _Filter data by value_ transformation allows you to filter your data directly in Grafana and remove some data points from your query result.
+The new _Filter data by value_ transformation allows you to filter your data directly in Plutono and remove some data points from your query result.
 
 This transformation is very useful if your data source does not natively filter by values. You might also use this to narrow values to display if you are using a shared query.
 
@@ -72,7 +72,7 @@ For more information, refer to [Add a field override]({{< relref "../panels/fiel
 
 ### Exemplar support
 
-Grafana graphs now support Prometheus _exemplars_. They are displayed as diamonds in the graph visualization.
+Plutono graphs now support Prometheus _exemplars_. They are displayed as diamonds in the graph visualization.
 
 > **Note:** Support for exemplars will be added in version Prometheus 2.25+.
 
@@ -97,7 +97,7 @@ _Server-side expressions_ is an experimental feature that allows you to manipula
 
 The main use case is for [multi-dimensional]({{< relref "../basics/timeseries-dimensions.md" >}}) data sources used with the upcoming next generation alerting, but expressions can be used with backend data sources and visualization as well.
 
-> **Note:** Queries built with this feature might break with minor version upgrades until Grafana 8 is released. This feature does not work with the current Grafana alerting.
+> **Note:** Queries built with this feature might break with minor version upgrades until Plutono 8 is released. This feature does not work with the current Plutono alerting.
 
 For more information, refer to [Expressions]({{< relref "../panels/expressions.md" >}}). [Queries]({{< relref "../panels/queries.md" >}}) was also updated as a result of this feature.
 
@@ -113,7 +113,7 @@ For more information, refer to the [alert notification docs]({{< relref "../aler
 
 We have added support for [Content Security Policy (CSP)](https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP), a layer of security that helps detect and mitigate certain types of attacks, including Cross Site Scripting (XSS) and data injection attacks.
 
-CSP support is disabled by default, to enable it you must set `content_security_policy = true` in the Grafana configuration. If enabling it, you should also review, and potentially tweak, the CSP header template, via the configuration setting `content_security_policy_template`.
+CSP support is disabled by default, to enable it you must set `content_security_policy = true` in the Plutono configuration. If enabling it, you should also review, and potentially tweak, the CSP header template, via the configuration setting `content_security_policy_template`.
 
 You can lock down what can be done in the frontend code. Lock down what can be loaded, what JavaScript is executed. Not compatible with some plugins.
 
@@ -127,7 +127,7 @@ You can now use the `hidden_users` configuration setting to hide specific users 
 
 ### Elasticsearch data source updates
 
-Grafana 7.4 includes the following enhancements
+Plutono 7.4 includes the following enhancements
 
 - Added support for serial differencing pipeline aggregation.
 - Added support for moving function pipeline aggregation.
@@ -140,7 +140,7 @@ For more information, refer to the [Elasticsearch docs]({{<relref "../datasource
 
 ### Azure Monitor updates
 
-The Azure Monitor query type was renamed to Metrics and Azure Logs Analytics was renamed to Logs to match the service names in Azure and align the concepts with the rest of Grafana.
+The Azure Monitor query type was renamed to Metrics and Azure Logs Analytics was renamed to Logs to match the service names in Azure and align the concepts with the rest of Plutono.
 
 [Azure Monitor]({{< relref "../datasources/azuremonitor.md" >}}) was updated to reflect this change.
 
@@ -180,23 +180,23 @@ The variables list has an additional column indicating whether variables are ref
 
 For more information, refer to [Inspect variables and their dependencies]({{< relref "../variables/inspect-variable.md">}}).
 
-## Grafana Enterprise features
+## Plutono Enterprise features
 
-These features are included in the Grafana Enterprise edition.
+These features are included in the Plutono Enterprise edition.
 
 ### Licensing changes
 
 When determining a user’s role for billing purposes, a user who has the ability to edit and save dashboards is considered an Editor. This includes any user who is an Editor or Admin at the Org level, and who has granted Admin or Edit permissions via [Dashboard and folder permissions]({{< relref "../permissions/dashboard-folder-permissions.md">}}).
 
-After the number of Viewers or Editors has reached its license limit, only Admins will see a banner in Grafana indicating that the license limit has been reached. Previously, all users saw the banner.
+After the number of Viewers or Editors has reached its license limit, only Admins will see a banner in Plutono indicating that the license limit has been reached. Previously, all users saw the banner.
 
-Grafana Enterprise license tokens update automatically on a daily basis, which means you no longer need to manually update your license, and the process for adding additional users to a license is smoother than it was before.
+Plutono Enterprise license tokens update automatically on a daily basis, which means you no longer need to manually update your license, and the process for adding additional users to a license is smoother than it was before.
 
 Refer to [Licensing restrictions]({{< relref "../enterprise/license/license-restrictions.md" >}}) for more information.
 
 ### Export usage insights to Loki
 
-You can now export usage insights logs to Loki and query them from Grafana. Usage insights logs include dashboard visits, data source views, queries and errors, and more.
+You can now export usage insights logs to Loki and query them from Plutono. Usage insights logs include dashboard visits, data source views, queries and errors, and more.
 
 For more information, refer to [Export logs of usage insights]({{< relref "../enterprise/usage-insights/export-logs.md" >}}).
 
@@ -216,13 +216,13 @@ You can now select a font, other than the default, for Unicode-based scripts. As
 
 ### Request security
 
-Request security introduces ways to limit requests from the Grafana server, and it targets requests that are generated by users.
+Request security introduces ways to limit requests from the Plutono server, and it targets requests that are generated by users.
 
 For more information, refer to [Request security]({{< relref "../enterprise/request-security.md" >}}).
 
 ## Breaking changes
 
-The following Grafana 7.4 changes might break previous functionality.
+The following Plutono 7.4 changes might break previous functionality.
 
 ### Plugin compatibility
 
@@ -240,4 +240,4 @@ See [upgrade notes]({{< relref "../installation/upgrading.md" >}}).
 
 ## Changelog
 
-Check out [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md) for a complete list of new features, changes, and bug fixes.
+Check out [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md) for a complete list of new features, changes, and bug fixes.

@@ -6,9 +6,9 @@ import (
 	"runtime"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 	. "github.com/smartystreets/goconvey/convey"
 	"github.com/stretchr/testify/require"
 )
@@ -710,12 +710,12 @@ func TestGuardianGetHiddenACL(t *testing.T) {
 			So(hiddenACL[0].UserID, ShouldEqual, 2)
 		})
 
-		Convey("Grafana admin should not get hidden acl", func() {
+		Convey("Plutono admin should not get hidden acl", func() {
 			user := &models.SignedInUser{
 				OrgId:          orgID,
 				UserId:         1,
 				Login:          "user1",
-				IsGrafanaAdmin: true,
+				IsPlutonoAdmin: true,
 			}
 			g := New(dashboardID, orgID, user)
 

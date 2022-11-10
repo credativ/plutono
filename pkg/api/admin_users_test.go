@@ -4,13 +4,13 @@ import (
 	"fmt"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/auth"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/api/routing"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/auth"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -26,13 +26,13 @@ func TestAdminAPIEndpoint(t *testing.T) {
 
 	t.Run("Given a server admin attempts to remove themselves as an admin", func(t *testing.T) {
 		updateCmd := dtos.AdminUpdateUserPermissionsForm{
-			IsGrafanaAdmin: false,
+			IsPlutonoAdmin: false,
 		}
 
 		putAdminScenario(t, "When calling PUT on", "/api/admin/users/1/permissions",
 			"/api/admin/users/:id/permissions", role, updateCmd, func(sc *scenarioContext) {
 				bus.AddHandler("test", func(cmd *models.UpdateUserPermissionsCommand) error {
-					return models.ErrLastGrafanaAdmin
+					return models.ErrLastPlutonoAdmin
 				})
 
 				sc.fakeReqWithParams("PUT", sc.url, map[string]string{}).exec()

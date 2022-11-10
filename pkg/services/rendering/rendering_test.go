@@ -3,7 +3,7 @@ package rendering
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/require"
 )
 
@@ -34,9 +34,9 @@ func TestGetUrl(t *testing.T) {
 
 			t.Run("And serve from sub path should return expected path", func(t *testing.T) {
 				rs.Cfg.ServeFromSubPath = true
-				rs.Cfg.AppSubURL = "/grafana"
+				rs.Cfg.AppSubURL = "/plutono"
 				url := rs.getURL(path)
-				require.Equal(t, "http://localhost:3000/grafana/"+path+"&render=1", url)
+				require.Equal(t, "http://localhost:3000/plutono/"+path+"&render=1", url)
 			})
 		})
 

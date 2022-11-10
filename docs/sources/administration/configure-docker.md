@@ -1,53 +1,53 @@
 +++
-title = "Configure Grafana Docker image"
-description = "Guide for configuring the Grafana Docker image"
-keywords = ["grafana", "configuration", "documentation", "docker"]
-aliases = ["/docs/grafana/latest/installation/configure-docker/"]
+title = "Configure Plutono Docker image"
+description = "Guide for configuring the Plutono Docker image"
+keywords = ["plutono", "configuration", "documentation", "docker"]
+aliases = ["/docs/plutono/latest/installation/configure-docker/"]
 weight = 200
 +++
 
-# Configure a Grafana Docker image
+# Configure a Plutono Docker image
 
-If you are running Grafana in a Docker image, then you configure Grafana using [environment variables]({{< relref "../administration/configuration.md#configure-with-environment-variables" >}}) rather than directly editing the configuration file. If you want to save your data, then you also need to designate persistent storage or bind mounts for the Grafana container.
+If you are running Plutono in a Docker image, then you configure Plutono using [environment variables]({{< relref "../administration/configuration.md#configure-with-environment-variables" >}}) rather than directly editing the configuration file. If you want to save your data, then you also need to designate persistent storage or bind mounts for the Plutono container.
 
-## Save your Grafana data
+## Save your Plutono data
 
-If you do not designate a location for information storage, then all your Grafana data disappears as soon as you stop your container. To save your data, you need to set up persistent storage or bind mounts for your container.
+If you do not designate a location for information storage, then all your Plutono data disappears as soon as you stop your container. To save your data, you need to set up persistent storage or bind mounts for your container.
 
-### Run Grafana container with persistent storage (recommended)
+### Run Plutono container with persistent storage (recommended)
 
 ```bash
-# create a persistent volume for your data in /var/lib/grafana (database and plugins)
-docker volume create grafana-storage
+# create a persistent volume for your data in /var/lib/plutono (database and plugins)
+docker volume create plutono-storage
 
-# start grafana
-docker run -d -p 3000:3000 --name=grafana -v grafana-storage:/var/lib/grafana grafana/grafana
+# start plutono
+docker run -d -p 3000:3000 --name=plutono -v plutono-storage:/var/lib/plutono plutono/plutono
 ```
 
-### Run Grafana container using bind mounts
+### Run Plutono container using bind mounts
 
-You may want to run Grafana in Docker but use folders on your host for the database or configuration. When doing so, it becomes important to start the container with a user that is able to access and write to the folder you map into the container.
+You may want to run Plutono in Docker but use folders on your host for the database or configuration. When doing so, it becomes important to start the container with a user that is able to access and write to the folder you map into the container.
 
 ```bash
 mkdir data # creates a folder for your data
 ID=$(id -u) # saves your user id in the ID variable
 
-# starts grafana with your user id and using the data folder
-docker run -d --user $ID --volume "$PWD/data:/var/lib/grafana" -p 3000:3000 grafana/grafana:7.2.1
+# starts plutono with your user id and using the data folder
+docker run -d --user $ID --volume "$PWD/data:/var/lib/plutono" -p 3000:3000 plutono/plutono:7.2.1
 ```
 
 ## Default paths
 
-The following settings are hard-coded when launching the Grafana Docker container and can only be overridden using environment variables, not in `conf/grafana.ini`.
+The following settings are hard-coded when launching the Plutono Docker container and can only be overridden using environment variables, not in `conf/plutono.ini`.
 
 Setting               | Default value
 ----------------------|---------------------------
-GF_PATHS_CONFIG       | /etc/grafana/grafana.ini
-GF_PATHS_DATA         | /var/lib/grafana
-GF_PATHS_HOME         | /usr/share/grafana
-GF_PATHS_LOGS         | /var/log/grafana
-GF_PATHS_PLUGINS      | /var/lib/grafana/plugins
-GF_PATHS_PROVISIONING | /etc/grafana/provisioning
+GF_PATHS_CONFIG       | /etc/plutono/plutono.ini
+GF_PATHS_DATA         | /var/lib/plutono
+GF_PATHS_HOME         | /usr/share/plutono
+GF_PATHS_LOGS         | /var/log/plutono
+GF_PATHS_PLUGINS      | /var/lib/plutono/plugins
+GF_PATHS_PROVISIONING | /etc/plutono/provisioning
 
 ## Logging
 
@@ -56,17 +56,17 @@ Logs in the Docker container go to standard out by default, as is common in the 
 Example:
 
 ```bash
-# Run Grafana while logging to both standard out and /var/log/grafana/grafana.log
-docker run -p 3000:3000 -e "GF_LOG_MODE=console file" grafana/grafana
+# Run Plutono while logging to both standard out and /var/log/plutono/plutono.log
+docker run -p 3000:3000 -e "GF_LOG_MODE=console file" plutono/plutono
 ```
 
-## Configure Grafana with Docker Secrets
+## Configure Plutono with Docker Secrets
 
-> Only available in Grafana v5.2 and later.
+> Only available in Plutono v5.2 and later.
 
-It's possible to supply Grafana with configuration through files. This works well with [Docker Secrets](https://docs.docker.com/engine/swarm/secrets/) as the secrets by default gets mapped into `/run/secrets/<name of secret>` of the container.
+It's possible to supply Plutono with configuration through files. This works well with [Docker Secrets](https://docs.docker.com/engine/swarm/secrets/) as the secrets by default gets mapped into `/run/secrets/<name of secret>` of the container.
 
-You can do this with any of the configuration options in conf/grafana.ini by setting `GF_<SectionName>_<KeyName>__FILE` to the path of the file holding the secret.
+You can do this with any of the configuration options in conf/plutono.ini by setting `GF_<SectionName>_<KeyName>__FILE` to the path of the file holding the secret.
 
 For example, you could set the admin password this way:
 
@@ -78,12 +78,12 @@ For example, you could set the admin password this way:
 ```bash
 docker run -d \
 -p 3000:3000 \
---name=grafana \
+--name=plutono \
 -e "GF_AWS_PROFILES=default" \
 -e "GF_AWS_default_ACCESS_KEY_ID=YOUR_ACCESS_KEY" \
 -e "GF_AWS_default_SECRET_ACCESS_KEY=YOUR_SECRET_KEY" \
 -e "GF_AWS_default_REGION=us-east-1" \
-grafana/grafana
+plutono/plutono
 ```
 
 You may also specify multiple profiles to `GF_AWS_PROFILES` (e.g.

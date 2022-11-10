@@ -2,15 +2,15 @@ package features
 
 import (
 	"github.com/centrifugal/centrifuge"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 var (
 	logger = log.New("live.features") // scoped to all features?
 )
 
-// MeasurementsRunner will simply broadcast all events to `grafana/broadcast/*` channels.
+// MeasurementsRunner will simply broadcast all events to `plutono/broadcast/*` channels.
 // This makes no assumptions about the shape of the data and will broadcast it to anyone listening
 type MeasurementsRunner struct {
 }

@@ -1,6 +1,6 @@
 package migrations
 
-import "github.com/grafana/grafana/pkg/services/sqlstore/migrator"
+import "github.com/credativ/plutono/pkg/services/sqlstore/migrator"
 
 func addCacheMigration(mg *migrator.Migrator) {
 	var cacheDataV1 = migrator.Table{

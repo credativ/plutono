@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { UserDTO, UserSession } from 'app/types';
-import { LoadingPlaceholder, Button, Icon } from '@grafana/ui';
+import { LoadingPlaceholder, Button, Icon } from '@credativ/plutono-ui';
 
 export interface Props {
   user: UserDTO;

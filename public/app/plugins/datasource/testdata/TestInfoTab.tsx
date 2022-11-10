@@ -2,7 +2,7 @@
 import React, { PureComponent } from 'react';
 
 // Types
-import { PluginConfigPageProps, DataSourcePluginMeta, DataSourceJsonData } from '@grafana/data';
+import { PluginConfigPageProps, DataSourcePluginMeta, DataSourceJsonData } from '@credativ/plutono-data';
 
 interface Props extends PluginConfigPageProps<DataSourcePluginMeta<DataSourceJsonData>> {}
 
@@ -19,7 +19,7 @@ export class TestInfoTab extends PureComponent<Props> {
         <br />
         <a
           className="btn btn-inverse"
-          href="https://github.com/grafana/grafana/tree/master/devenv"
+          href="https://github.com/credativ/plutono/tree/master/devenv"
           target="_blank"
           rel="noopener noreferrer"
         >

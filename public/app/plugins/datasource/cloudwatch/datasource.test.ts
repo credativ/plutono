@@ -1,6 +1,6 @@
 import { of } from 'rxjs';
-import { setBackendSrv } from '@grafana/runtime';
-import { dateTime, getDefaultTimeRange } from '@grafana/data';
+import { setBackendSrv } from '@credativ/plutono-runtime';
+import { dateTime, getDefaultTimeRange } from '@credativ/plutono-data';
 
 import { TemplateSrv } from '../../../features/templating/template_srv';
 import { CloudWatchDatasource } from './datasource';

@@ -11,21 +11,21 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/api/datasource"
-	"github.com/grafana/grafana/pkg/components/securejsondata"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/api/datasource"
+	"github.com/credativ/plutono/pkg/components/securejsondata"
+	"github.com/credativ/plutono/pkg/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
 	"golang.org/x/oauth2"
 	macaron "gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/login/social"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/login/social"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 func TestDataSourceProxy_routeRule(t *testing.T) {
@@ -300,7 +300,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 		t.Run("Can translate request URL and path", func(t *testing.T) {
 			assert.Equal(t, "graphite:8080", req.URL.Host)
 			assert.Equal(t, "/render", req.URL.Path)
-			assert.Equal(t, "Grafana/5.3.0", req.Header.Get("User-Agent"))
+			assert.Equal(t, "Plutono/5.3.0", req.Header.Get("User-Agent"))
 		})
 	})
 
@@ -345,7 +345,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 		requestURL, err := url.Parse("http://grafana.com/sub")
 		require.NoError(t, err)
 		req := http.Request{URL: requestURL, Header: make(http.Header)}
-		cookies := "grafana_user=admin; grafana_remember=99; grafana_sess=11; JSESSION_ID=test"
+		cookies := "plutono_user=admin; plutono_remember=99; plutono_sess=11; JSESSION_ID=test"
 		req.Header.Set("Cookie", cookies)
 
 		proxy.director(&req)
@@ -372,7 +372,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 		requestURL, err := url.Parse("http://grafana.com/sub")
 		require.NoError(t, err)
 		req := http.Request{URL: requestURL, Header: make(http.Header)}
-		cookies := "grafana_user=admin; grafana_remember=99; grafana_sess=11; JSESSION_ID=test"
+		cookies := "plutono_user=admin; plutono_remember=99; plutono_sess=11; JSESSION_ID=test"
 		req.Header.Set("Cookie", cookies)
 
 		proxy.director(&req)
@@ -468,7 +468,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 			},
 			&setting.Cfg{SendUserHeader: true},
 		)
-		assert.Equal(t, "test_user", req.Header.Get("X-Grafana-User"))
+		assert.Equal(t, "test_user", req.Header.Get("X-Plutono-User"))
 	})
 
 	t.Run("When SendUserHeader config is disabled", func(t *testing.T) {
@@ -482,7 +482,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 			&setting.Cfg{SendUserHeader: false},
 		)
 		// Get will return empty string even if header is not set
-		assert.Empty(t, req.Header.Get("X-Grafana-User"))
+		assert.Empty(t, req.Header.Get("X-Plutono-User"))
 	})
 
 	t.Run("When SendUserHeader config is enabled but user is anonymous", func(t *testing.T) {
@@ -494,7 +494,7 @@ func TestDataSourceProxy_routeRule(t *testing.T) {
 			&setting.Cfg{SendUserHeader: true},
 		)
 		// Get will return empty string even if header is not set
-		assert.Empty(t, req.Header.Get("X-Grafana-User"))
+		assert.Empty(t, req.Header.Get("X-Plutono-User"))
 	})
 
 	t.Run("When proxying data source proxy should handle authentication", func(t *testing.T) {

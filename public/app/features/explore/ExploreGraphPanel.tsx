@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { css, cx } from 'emotion';
-import { GrafanaTheme, TimeZone, AbsoluteTimeRange, GraphSeriesXY, dateTime } from '@grafana/data';
+import { PlutonoTheme, TimeZone, AbsoluteTimeRange, GraphSeriesXY, dateTime } from '@credativ/plutono-data';
 
 import {
   selectThemeVariant,
@@ -13,11 +13,11 @@ import {
   GraphSeriesTogglerAPI,
   Chart,
   Icon,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 
 const MAX_NUMBER_OF_TIME_SERIES = 20;
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: PlutonoTheme) => ({
   timeSeriesDisclaimer: css`
     label: time-series-disclaimer;
     width: 300px;

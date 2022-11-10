@@ -13,14 +13,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/fs"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/infra/fs"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
+	"github.com/credativ/plutono/pkg/util/errutil"
 )
 
 var (
@@ -57,8 +57,8 @@ type PluginManager struct {
 	// AllowUnsignedPluginsCondition changes the policy for allowing unsigned plugins. Signature validation only runs when plugins are starting
 	// and running plugins will not be terminated if they violate the new policy.
 	AllowUnsignedPluginsCondition unsignedPluginConditionFunc
-	GrafanaLatestVersion          string
-	GrafanaHasUpdate              bool
+	PlutonoLatestVersion          string
+	PlutonoHasUpdate              bool
 	pluginScanningErrors          map[string]PluginError
 }
 
@@ -316,7 +316,7 @@ func (pm *PluginManager) GetDatasource(pluginID string) (*DataSourcePlugin, bool
 
 func (s *PluginScanner) walker(currentPath string, f os.FileInfo, err error) error {
 	// We scan all the subfolders for plugin.json (with some exceptions) so that we also load embedded plugins, for
-	// example https://github.com/raintank/worldping-app/tree/master/dist/grafana-worldmap-panel worldmap panel plugin
+	// example https://github.com/raintank/worldping-app/tree/master/dist/plutono-worldmap-panel worldmap panel plugin
 	// is embedded in worldping app.
 	if err != nil {
 		return fmt.Errorf("filepath.Walk reported an error for %q: %w", currentPath, err)

@@ -15,4 +15,4 @@ _whatsNewUrl="https://grafana.com/docs/grafana/latest/guides/whats-new-in-v7-0/"
     --wn "${_whatsNewUrl}" \
     --rn "${_releaseNoteUrl}" \
     --version "${CIRCLE_TAG}" \
-    --apikey  "${GRAFANA_COM_API_KEY}" "${EXTRA_OPTS}"
+    --apikey  "${PLUTONO_COM_API_KEY}" "${EXTRA_OPTS}"

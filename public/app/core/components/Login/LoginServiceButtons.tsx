@@ -1,8 +1,8 @@
 import React from 'react';
 import config from 'app/core/config';
 import { css, cx } from 'emotion';
-import { useStyles } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { useStyles } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 
 const loginServices: () => LoginServices = () => {
   const oauthEnabled = !!config.oauth;
@@ -30,11 +30,11 @@ const loginServices: () => LoginServices = () => {
       enabled: oauthEnabled && config.oauth.gitlab,
       name: 'GitLab',
     },
-    grafanacom: {
-      enabled: oauthEnabled && config.oauth.grafana_com,
+    plutonocom: {
+      enabled: oauthEnabled && config.oauth.plutono_com,
       name: 'Grafana.com',
-      hrefName: 'grafana_com',
-      icon: 'grafana_com',
+      hrefName: 'plutono_com',
+      icon: 'plutono_com',
     },
     okta: {
       enabled: oauthEnabled && config.oauth.okta,
@@ -61,7 +61,7 @@ export interface LoginServices {
   [key: string]: LoginService;
 }
 
-const getServiceStyles = (theme: GrafanaTheme) => {
+const getServiceStyles = (theme: PlutonoTheme) => {
   return {
     container: css`
       width: 100%;

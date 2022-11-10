@@ -6,7 +6,7 @@ import config from 'app/core/config';
 import TimeSeries from 'app/core/time_series2';
 import $ from 'jquery';
 import { graphDirective, GraphElement } from '../graph';
-import { dateTime, EventBusSrv } from '@grafana/data';
+import { dateTime, EventBusSrv } from '@credativ/plutono-data';
 import { DashboardModel } from '../../../../features/dashboard/state';
 
 jest.mock('app/features/annotations/all', () => ({
@@ -39,7 +39,7 @@ const scope = {
 };
 let link;
 
-describe('grafanaGraph', () => {
+describe('plutonoGraph', () => {
   const setupCtx = (beforeRender?: any) => {
     config.bootData = {
       user: {

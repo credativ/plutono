@@ -5,19 +5,19 @@ weight = 200
 
 # Manage organizations as a Server Admin
 
-This topic explains organization management tasks performed by Grafana Server Admins.
+This topic explains organization management tasks performed by Plutono Server Admins.
 
-In order to perform any of these tasks, you must be logged in to Grafana on an account with Grafana Server Admin permissions. For more information about Grafana Admin permissions, refer to [Grafana Server Admin role]({{< relref "../../permissions/_index.md#grafana-server-admin-role" >}})
+In order to perform any of these tasks, you must be logged in to Plutono on an account with Plutono Server Admin permissions. For more information about Plutono Admin permissions, refer to [Plutono Server Admin role]({{< relref "../../permissions/_index.md#plutono-server-admin-role" >}})
 
-> **Note:** The Grafana Server Admin role does not exist in Grafana Cloud. Grafana Cloud users cannot perform tasks listed in this section.
+> **Note:** The Plutono Server Admin role does not exist in Plutono Cloud. Plutono Cloud users cannot perform tasks listed in this section.
 
 ## View organization list
 
-See a complete list of organizations set up on your Grafana server.
+See a complete list of organizations set up on your Plutono server.
 
 {{< docs/shared "manage-users/view-server-org-list.md" >}}
 
-Grafana displays all organizations set up on the server, listed in alphabetical order by organization name. The following information is displayed:
+Plutono displays all organizations set up on the server, listed in alphabetical order by organization name. The following information is displayed:
 - **Id -** The ID number of the organization.
 - **Name -** The name of the organization.
 
@@ -25,7 +25,7 @@ Grafana displays all organizations set up on the server, listed in alphabetical 
 
 ## Create organization
 
-Add an organization to your Grafana server.
+Add an organization to your Plutono server.
 
 {{< docs/list >}}
 {{< docs/shared "manage-users/view-server-org-list.md" >}}
@@ -34,14 +34,14 @@ Add an organization to your Grafana server.
 {{< /docs/list >}}
 
 Two things happen:
-- Grafana creates a new organization with you as the sole member and Admin.
-- Grafana opens the new organization [Preferences tab]({{< relref "../../administration/preferences/_index.md" >}}).
+- Plutono creates a new organization with you as the sole member and Admin.
+- Plutono opens the new organization [Preferences tab]({{< relref "../../administration/preferences/_index.md" >}}).
 
 You can now add users or perform other Organization Admin tasks.
 
 ## Delete organization
 
-Permanently remove an organization from your Grafana server.
+Permanently remove an organization from your Plutono server.
 
 **Warning:** Deleting the organization also deletes all teams and dashboards for this organization.
 
@@ -53,7 +53,7 @@ Permanently remove an organization from your Grafana server.
 
 ## Edit an organization
 
-Grafana Server Admins can perform some organization management tasks that are almost identical to Organization Admin tasks, just accessed from a different menu path.
+Plutono Server Admins can perform some organization management tasks that are almost identical to Organization Admin tasks, just accessed from a different menu path.
 
 ![Server admin Edit Organization](/static/img/docs/manage-users/server-admin-edit-org-7-3.png)
 

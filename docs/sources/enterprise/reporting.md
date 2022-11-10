@@ -1,16 +1,16 @@
 +++
 title = "Reporting"
 description = ""
-keywords = ["grafana", "reporting"]
-aliases = ["/docs/grafana/latest/administration/reports"]
+keywords = ["plutono", "reporting"]
+aliases = ["/docs/plutono/latest/administration/reports"]
 weight = 400
 +++
 
 # Reporting
 
-Reporting allows you to automatically generate PDFs from any of your dashboards and have Grafana email them to interested parties on a schedule.
+Reporting allows you to automatically generate PDFs from any of your dashboards and have Plutono email them to interested parties on a schedule.
 
-> Only available in Grafana Enterprise v6.4+.
+> Only available in Plutono Enterprise v6.4+.
 
 {{< figure src="/static/img/docs/enterprise/reports_list.png" max-width="500px" class="docs-image--no-shadow" >}}
 
@@ -44,7 +44,7 @@ Currently only Organization Admins can create reports.
 
 ### Layout and orientation
 
-> We're actively working on developing new report layout options. [Contact us](https://grafana.com/contact?about=grafana-enterprise&topic=design-process&value=reporting) if you would like to get involved in the design process.
+> We're actively working on developing new report layout options. [Contact us](https://grafana.com/contact?about=plutono-enterprise&topic=design-process&value=reporting) if you would like to get involved in the design process.
 
 Layout | Orientation | Support | Description | Preview
 ------ | ----------- | ------- | ----------- | -------
@@ -83,7 +83,7 @@ Weekly reports are generated once per week. All fields are required.
 
 #### Monthly
 
-> Only available in Grafana Enterprise v7.1+.
+> Only available in Plutono Enterprise v7.1+.
 
 Monthly reports are generated once per month. All fields are required.
 
@@ -93,13 +93,13 @@ Monthly reports are generated once per month. All fields are required.
 
 #### Never
 
-> Only available in Grafana Enterprise v7.0+.
+> Only available in Plutono Enterprise v7.0+.
 
 Reports which are scheduled to never be sent have no parameter and will not be sent to the scheduler. They may be manually generated from the **Send test email** prompt or via the [Reporting API]({{< relref "../http_api/reporting.md" >}}).
 
 ### Send test email
 
-> Only available in Grafana Enterprise v7.0+.
+> Only available in Plutono Enterprise v7.0+.
 
 1. In the report, click **Send test email**.
 1. In the Email field, enter the email address or addresses that you want to test, separated by semicolon.
@@ -145,37 +145,37 @@ font_italic = DejaVuSansCondensed-Oblique.ttf
 
 ## Report time range
 
-> Setting custom report time range is available in Grafana Enterprise v7.2+.
+> Setting custom report time range is available in Plutono Enterprise v7.2+.
 
 By default, reports use the saved time range of the dashboard. Changing the time range of the report can be done by:
 - Saving a modified time range to the dashboard.
 - Setting a time range via **Time range** field in the report form. If specified, then this custom time range overrides the one from the report's dashboard.
 
-The page header of the report displays the time range for the dashboard's data queries. Dashboards set to use the browser's time zone will use the time zone on the Grafana server.
+The page header of the report displays the time range for the dashboard's data queries. Dashboards set to use the browser's time zone will use the time zone on the Plutono server.
 
-If the time zone is set differently between your Grafana server and its remote image renderer, then the time ranges in the report might be different between the page header and the time axes in the panels. We advise always setting the time zone to UTC for dashboards when using a remote renderer to avoid this.
+If the time zone is set differently between your Plutono server and its remote image renderer, then the time ranges in the report might be different between the page header and the time axes in the panels. We advise always setting the time zone to UTC for dashboards when using a remote renderer to avoid this.
 
 ## Choose template variables
 
-> ** Note:** Available in Grafana Enterprise version 7.5+ (behind `reportVariables` feature flag).
+> ** Note:** Available in Plutono Enterprise version 7.5+ (behind `reportVariables` feature flag).
 
 You can configure report-specific template variables for the dashboard on the report page. The variables that you select will override the variables from the dashboard, and they are used when rendering a PDF file of the report. For detailed information about using template variables, refer to the [Templates and variables]({{< relref "../variables/_index.md" >}}) section.
 
 ## Reports settings
 
-> Only available in Grafana Enterprise v7.2+.
+> Only available in Plutono Enterprise v7.2+.
 
 You can configure organization-wide report settings in the **Settings** tab on the **Reporting** page. Settings are applied to all the reports for current organization.
 
 You can customize the branding options.
 
 Report branding:
-**Company logo URL** - Company logo displayed in the report PDF. Defaults to the Grafana logo.
+**Company logo URL** - Company logo displayed in the report PDF. Defaults to the Plutono logo.
 
 Email branding:
-- **Company logo URL** - Company logo displayed in the report PDF. Defaults to the Grafana logo.
+- **Company logo URL** - Company logo displayed in the report PDF. Defaults to the Plutono logo.
 - **Email footer** - Toggle to enable report email footer. Select **Sent by** or **None**.
-- **Footer link text** - Text for the link in the report email footer. Defaults to "Grafana".
+- **Footer link text** - Text for the link in the report email footer. Defaults to "Plutono".
 - **Footer link URL** - Link for the report email footer.
 
 {{< figure src="/static/img/docs/enterprise/reports_settings.png" max-width="500px" class="docs-image--no-shadow" >}}

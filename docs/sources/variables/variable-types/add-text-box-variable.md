@@ -1,6 +1,6 @@
 +++
 title = "Add a text box variable"
-aliases = ["/docs/grafana/latest/variables/add-text-box-variable.md"]
+aliases = ["/docs/plutono/latest/variables/add-text-box-variable.md"]
 weight = 300
 +++
 
@@ -22,6 +22,6 @@ _Text box_ variables display a free text input field with an optional default va
 
 ## Enter Text options
 
-1. (optional) In the **Default value** field, select the default value for the variable. If you do not enter anything in this field, then Grafana displays an empty text box for users to type text into.
-1. In **Preview of values**, Grafana displays a list of the current variable values. Review them to ensure they match what you expect.
+1. (optional) In the **Default value** field, select the default value for the variable. If you do not enter anything in this field, then Plutono displays an empty text box for users to type text into.
+1. In **Preview of values**, Plutono displays a list of the current variable values. Review them to ensure they match what you expect.
 1. Click **Add** to add the variable to the dashboard.

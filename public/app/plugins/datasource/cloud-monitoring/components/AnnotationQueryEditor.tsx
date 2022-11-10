@@ -1,7 +1,7 @@
 import React from 'react';
-import { LegacyForms } from '@grafana/ui';
-import { TemplateSrv } from '@grafana/runtime';
-import { SelectableValue } from '@grafana/data';
+import { LegacyForms } from '@credativ/plutono-ui';
+import { TemplateSrv } from '@credativ/plutono-runtime';
+import { SelectableValue } from '@credativ/plutono-data';
 
 import CloudMonitoringDatasource from '../datasource';
 import { AnnotationsHelp, LabelFilter, Metrics, Project } from './';

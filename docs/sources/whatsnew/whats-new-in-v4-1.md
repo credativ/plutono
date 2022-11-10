@@ -1,27 +1,27 @@
 +++
-title = "What's new in Grafana v4.1"
-description = "Feature and improvement highlights for Grafana v4.1"
-keywords = ["grafana", "new", "documentation", "4.1.0", "release notes"]
-aliases = ["/docs/grafana/latest/guides/whats-new-in-v4-1/"]
+title = "What's new in Plutono v4.1"
+description = "Feature and improvement highlights for Plutono v4.1"
+keywords = ["plutono", "new", "documentation", "4.1.0", "release notes"]
+aliases = ["/docs/plutono/latest/guides/whats-new-in-v4-1/"]
 weight = -8
 [_build]
 list = false
 +++
 
-## What's new in Grafana v4.1
+## What's new in Plutono v4.1
 - **Graph**: Support for shared tooltip on all graphs as you hover over one graph. [#1578](https://github.com/grafana/grafana/pull/1578), [#6274](https://github.com/grafana/grafana/pull/6274)
 - **Victorops**: Add VictorOps notification integration [#6411](https://github.com/grafana/grafana/issues/6411), thx [@ichekrygin](https://github.com/ichekrygin)
 - **Opsgenie**: Add OpsGenie notification integratiion [#6687](https://github.com/grafana/grafana/issues/6687), thx [@kylemcc](https://github.com/kylemcc)
 - **Cloudwatch**: Make it possible to specify access and secret key on the data source configuration page [#6697](https://github.com/grafana/grafana/issues/6697)
 - **Elasticsearch**: Added support for Elasticsearch 5.x [#5740](https://github.com/grafana/grafana/issues/5740), thx [@lpic10](https://github.com/lpic10)
 - **Panel**: Added help text for panels. [#4079](https://github.com/grafana/grafana/issues/4079), thx [@utkarshcmu](https://github.com/utkarshcmu)
-- [Full changelog](https://github.com/grafana/grafana/blob/master/CHANGELOG.md)
+- [Full changelog](https://github.com/credativ/plutono/blob/master/CHANGELOG.md)
 
 ### Shared tooltip
 
 {{< figure class="float-right"  max-width="60%" src="/static/img/docs/v41/shared_tooltip.gif" caption="Shared tooltip" >}}
 
-Showing the tooltip on all panels at the same time has been a long standing request in Grafana and we are really happy to finally be able to release it.
+Showing the tooltip on all panels at the same time has been a long standing request in Plutono and we are really happy to finally be able to release it.
 You can enable/disable the shared tooltip from the dashboard settings menu or cycle between default, shared tooltip and shared crosshair by pressing Ctrl/Cmd+O.
 
 <div class="clearfix"></div>
@@ -43,19 +43,19 @@ Panels with a help text available have a little indicator in the top left corner
 
 {{< figure class="float-right"  max-width="60%" src="/static/img/docs/v41/cloudwatch_settings.png" caption="Cloudwatch configuration" >}}
 
-In Grafana 4.1.0 you can configure your Cloudwatch data source with `access key` and `secret key` directly in the data source configuration page.
-This enables people to use the Cloudwatch data source without having access to the filesystem where Grafana is running.
+In Plutono 4.1.0 you can configure your Cloudwatch data source with `access key` and `secret key` directly in the data source configuration page.
+This enables people to use the Cloudwatch data source without having access to the filesystem where Plutono is running.
 
 Once the `access key` and `secret key` have been saved the user will no longer be able to view them.
 <div class="clearfix"></div>
 
 ## Upgrade and Breaking changes
 
-Elasticsearch 1.x is no longer supported. Please upgrade to Elasticsearch 2.x or 5.x. Otherwise Grafana 4.1.0 contains no breaking changes.
+Elasticsearch 1.x is no longer supported. Please upgrade to Elasticsearch 2.x or 5.x. Otherwise Plutono 4.1.0 contains no breaking changes.
 
 ## Changelog
 
-Check out the [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md) file for a complete list
+Check out the [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md) file for a complete list
 of new features, changes, and bug fixes.
 
 ## Download
@@ -63,4 +63,4 @@ of new features, changes, and bug fixes.
 Head to [v4.1 download page](/download/4_1_0/) for download links and instructions.
 
 ## Thanks
-A big thanks to all the Grafana users who contribute by submitting PRs, bug reports and feedback!
+A big thanks to all the Plutono users who contribute by submitting PRs, bug reports and feedback!

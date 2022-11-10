@@ -11,20 +11,20 @@ import (
 	"time"
 
 	"github.com/go-sql-driver/mysql"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/fs"
-	"github.com/grafana/grafana/pkg/infra/localcache"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/annotations"
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrations"
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrator"
-	"github.com/grafana/grafana/pkg/services/sqlstore/sqlutil"
-	"github.com/grafana/grafana/pkg/setting"
-	_ "github.com/grafana/grafana/pkg/tsdb/mssql"
-	"github.com/grafana/grafana/pkg/util"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/fs"
+	"github.com/credativ/plutono/pkg/infra/localcache"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/services/annotations"
+	"github.com/credativ/plutono/pkg/services/sqlstore/migrations"
+	"github.com/credativ/plutono/pkg/services/sqlstore/migrator"
+	"github.com/credativ/plutono/pkg/services/sqlstore/sqlutil"
+	"github.com/credativ/plutono/pkg/setting"
+	_ "github.com/credativ/plutono/pkg/tsdb/mssql"
+	"github.com/credativ/plutono/pkg/util"
+	"github.com/credativ/plutono/pkg/util/errutil"
 	_ "github.com/lib/pq"
 	"xorm.io/xorm"
 )
@@ -384,7 +384,7 @@ func (ss *SQLStore) readConfig() {
 	ss.dbCfg.ClientKeyPath = sec.Key("client_key_path").String()
 	ss.dbCfg.ClientCertPath = sec.Key("client_cert_path").String()
 	ss.dbCfg.ServerCertName = sec.Key("server_cert_name").String()
-	ss.dbCfg.Path = sec.Key("path").MustString("data/grafana.db")
+	ss.dbCfg.Path = sec.Key("path").MustString("data/plutono.db")
 	ss.dbCfg.IsolationLevel = sec.Key("isolation_level").String()
 
 	ss.dbCfg.CacheMode = sec.Key("cache_mode").MustString("private")
@@ -423,7 +423,7 @@ func InitTestDB(t ITestDB, opts ...InitTestDBOpt) *SQLStore {
 		dbType := migrator.SQLite
 
 		// environment variable present for test db?
-		if db, present := os.LookupEnv("GRAFANA_TEST_DB"); present {
+		if db, present := os.LookupEnv("PLUTONO_TEST_DB"); present {
 			t.Logf("Using database type %q", db)
 			dbType = db
 		}
@@ -493,7 +493,7 @@ func InitTestDB(t ITestDB, opts ...InitTestDBOpt) *SQLStore {
 }
 
 func IsTestDbMySQL() bool {
-	if db, present := os.LookupEnv("GRAFANA_TEST_DB"); present {
+	if db, present := os.LookupEnv("PLUTONO_TEST_DB"); present {
 		return db == migrator.MySQL
 	}
 
@@ -501,7 +501,7 @@ func IsTestDbMySQL() bool {
 }
 
 func IsTestDbPostgres() bool {
-	if db, present := os.LookupEnv("GRAFANA_TEST_DB"); present {
+	if db, present := os.LookupEnv("PLUTONO_TEST_DB"); present {
 		return db == migrator.Postgres
 	}
 

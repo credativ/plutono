@@ -2,8 +2,8 @@
 import React, { memo } from 'react';
 
 // Types
-import { QueryEditorProps } from '@grafana/data';
-import { InlineFormLabel } from '@grafana/ui';
+import { QueryEditorProps } from '@credativ/plutono-data';
+import { InlineFormLabel } from '@credativ/plutono-ui';
 import { LokiDatasource } from '../datasource';
 import { LokiQuery, LokiOptions } from '../types';
 import { LokiQueryField } from './LokiQueryField';

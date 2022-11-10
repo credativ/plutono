@@ -1,16 +1,16 @@
 +++
-title = "What's new in Grafana v5.3"
-description = "Feature and improvement highlights for Grafana v5.3"
-keywords = ["grafana", "new", "documentation", "5.3", "release notes"]
-aliases = ["/docs/grafana/latest/guides/whats-new-in-v5-3/"]
+title = "What's new in Plutono v5.3"
+description = "Feature and improvement highlights for Plutono v5.3"
+keywords = ["plutono", "new", "documentation", "5.3", "release notes"]
+aliases = ["/docs/plutono/latest/guides/whats-new-in-v5-3/"]
 weight = -17
 [_build]
 list = false
 +++
 
-# What's new in Grafana v5.3
+# What's new in Plutono v5.3
 
-Grafana v5.3 brings new features, many enhancements and bug fixes. This article will detail the major new features and enhancements.
+Plutono v5.3 brings new features, many enhancements and bug fixes. This article will detail the major new features and enhancements.
 
 - [Google Stackdriver]({{< relref "#google-stackdriver" >}}) as a core data source!
 - [TV mode]({{< relref "#tv-and-kiosk-mode" >}}) is improved and more accessible
@@ -24,20 +24,20 @@ Grafana v5.3 brings new features, many enhancements and bug fixes. This article 
 
 {{< figure src="/static/img/docs/v53/stackdriver-with-heatmap.png"  max-width= "600px" class="docs-image--no-shadow docs-image--right" >}}
 
-Grafana v5.3 ships with built-in support for [Google Stackdriver](https://cloud.google.com/stackdriver/) and enables you to visualize your Stackdriver metrics in Grafana.
+Plutono v5.3 ships with built-in support for [Google Stackdriver](https://cloud.google.com/stackdriver/) and enables you to visualize your Stackdriver metrics in Plutono.
 
-Getting started with the plugin is easy. Simply create a GCE Service account that has access to the Stackdriver API scope, download the Service Account key file from Google and upload it on the Stackdriver data source configuration page in Grafana and you should have a secure server-to-server authentication setup. Like other core plugins, Stackdriver has built-in support for alerting. It also comes with support for heatmaps and basic variables.
+Getting started with the plugin is easy. Simply create a GCE Service account that has access to the Stackdriver API scope, download the Service Account key file from Google and upload it on the Stackdriver data source configuration page in Plutono and you should have a secure server-to-server authentication setup. Like other core plugins, Stackdriver has built-in support for alerting. It also comes with support for heatmaps and basic variables.
 
-If you're already accustomed to the Stackdriver Metrics Explorer UI, you'll notice that there are a lot of similarities to the query editor in Grafana. It is possible to add filters using wildcards and regular expressions. You can do Group By, Primary Aggregation and Alignment.
+If you're already accustomed to the Stackdriver Metrics Explorer UI, you'll notice that there are a lot of similarities to the query editor in Plutono. It is possible to add filters using wildcards and regular expressions. You can do Group By, Primary Aggregation and Alignment.
 
-Alias By allows you to format the legend the way you want, and it's a feature that is not yet present in the Metrics Explorer. Two other features that are only supported in the Grafana plugin are the abilities to manually set the Alignment Period in the query editor and to add Annotations queries.
+Alias By allows you to format the legend the way you want, and it's a feature that is not yet present in the Metrics Explorer. Two other features that are only supported in the Plutono plugin are the abilities to manually set the Alignment Period in the query editor and to add Annotations queries.
 
-The Grafana Stackdriver plugin comes with support for automatic unit detection. Grafana will try to map the Stackdriver unit type to a corresponding unit type in Grafana, and if successful the panel Y-axes will be updated accordingly to display the correct unit of measure. This is the first core plugin to provide support for unit detection, and it is our intention to provide support for this in other core plugins in the near future.
+The Plutono Stackdriver plugin comes with support for automatic unit detection. Plutono will try to map the Stackdriver unit type to a corresponding unit type in Plutono, and if successful the panel Y-axes will be updated accordingly to display the correct unit of measure. This is the first core plugin to provide support for unit detection, and it is our intention to provide support for this in other core plugins in the near future.
 
 The data source is still in the `beta` phase, meaning it's currently in active development and is still missing one important feature - templating queries.
 Please try it out, but be aware of that it might be subject to changes and possible bugs. We would love to hear your feedback.
 
-Refer to [Using Google Stackdriver in Grafana]({{< relref "../datasources/google-cloud-monitoring/_index.md" >}}) for more detailed information on how to get started and use it.
+Refer to [Using Google Stackdriver in Plutono]({{< relref "../datasources/google-cloud-monitoring/_index.md" >}}) for more detailed information on how to get started and use it.
 
 ## TV and Kiosk Mode
 
@@ -56,35 +56,35 @@ certain view mode enabled. Additionally, this also enables [playlists](/dashboar
 
 ## Notification Reminders
 
-Do you use Grafana alerting and have some notifications that are more important than others? Then it's possible to set reminders so that you continue to be alerted until the problem is fixed. This is done on the notification channel itself and will affect all alerts that use that channel.
+Do you use Plutono alerting and have some notifications that are more important than others? Then it's possible to set reminders so that you continue to be alerted until the problem is fixed. This is done on the notification channel itself and will affect all alerts that use that channel.
 For additional examples of why reminders might be useful for you, see [multiple series](/alerting/alerts-overview/#multiple-series).
 
 For more information about how to enable and configure reminders, refer to [alerting reminders](/alerting/notifications/#send-reminders).
 
 ## Postgres Query Builder
 
-Grafana 5.3 comes with a new graphical query builder for Postgres. This brings Postgres integration more in line with some of the other data sources and makes it easier for both advanced users and beginners to work with timeseries in Postgres. For more information about Postgres graphical query builder, refer to [query editor]({{< relref "../datasources/postgres/#query-editor" >}}).
+Plutono 5.3 comes with a new graphical query builder for Postgres. This brings Postgres integration more in line with some of the other data sources and makes it easier for both advanced users and beginners to work with timeseries in Postgres. For more information about Postgres graphical query builder, refer to [query editor]({{< relref "../datasources/postgres/#query-editor" >}}).
 
 {{< figure src="/static/img/docs/v53/postgres_query_still.png" class="docs-image--no-shadow" animated-gif="/static/img/docs/v53/postgres_query.gif" >}}
 
 ## Improved OAuth Support for GitLab
 
-Grafana 5.3 comes with a new OAuth integration for GitLab that enables configuration to only allow users that are a member of certain GitLab groups to authenticate. This makes it possible to use GitLab OAuth with Grafana in a shared environment without giving everyone access to Grafana.
+Plutono 5.3 comes with a new OAuth integration for GitLab that enables configuration to only allow users that are a member of certain GitLab groups to authenticate. This makes it possible to use GitLab OAuth with Plutono in a shared environment without giving everyone access to Plutono.
 For more information about how to enable and configure OAuth, refer to [Gitlab OAuth](/auth/gitlab/).
 
 ## Annotations
 
-Grafana 5.3 brings improved support for [native annotations](/dashboards/annotations/#native-annotations) and makes it possible to use template variables when filtering by tags.
+Plutono 5.3 brings improved support for [native annotations](/dashboards/annotations/#native-annotations) and makes it possible to use template variables when filtering by tags.
 For more information about native annotation, refer to [query by tag](/dashboards/annotations/#query-by-tag).
 
 {{< figure src="/static/img/docs/v53/annotation_tag_filter_variable.png" max-width="600px" >}}
 
 ## Variables
 
-Grafana 5.3 ships with a brand new variable type named `Text box` which makes it easier and more convenient to provide free text input to a variable.
+Plutono 5.3 ships with a brand new variable type named `Text box` which makes it easier and more convenient to provide free text input to a variable.
 This new variable type will display as a free text input field with an optional prefilled default value.
 
 ## Changelog
 
-Check out the [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md) file for a complete list
+Check out the [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md) file for a complete list
 of new features, changes, and bug fixes.

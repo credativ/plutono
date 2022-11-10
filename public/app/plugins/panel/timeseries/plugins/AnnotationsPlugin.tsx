@@ -1,5 +1,5 @@
-import { DataFrame, DataFrameView, dateTimeFormat, systemDateFormats, TimeZone } from '@grafana/data';
-import { EventsCanvas, usePlotContext, useTheme } from '@grafana/ui';
+import { DataFrame, DataFrameView, dateTimeFormat, systemDateFormats, TimeZone } from '@credativ/plutono-data';
+import { EventsCanvas, usePlotContext, useTheme } from '@credativ/plutono-ui';
 import React, { useCallback, useEffect, useRef } from 'react';
 import { AnnotationMarker } from './AnnotationMarker';
 

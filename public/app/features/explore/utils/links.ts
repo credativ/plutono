@@ -8,8 +8,8 @@ import {
   ScopedVars,
   DataFrame,
   getFieldDisplayValuesProxy,
-} from '@grafana/data';
-import { config, getTemplateSrv } from '@grafana/runtime';
+} from '@credativ/plutono-data';
+import { config, getTemplateSrv } from '@credativ/plutono-runtime';
 import { SplitOpen } from 'app/types/explore';
 import { getLinkSrv } from '../../panel/panellinks/link_srv';
 

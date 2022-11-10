@@ -13,7 +13,7 @@ import (
 
 	"testing"
 
-	"github.com/grafana/grafana/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/log"
 	"golang.org/x/oauth2"
 )
 
@@ -70,28 +70,28 @@ func TestSearchJSONForEmail(t *testing.T) {
 				Name: "Given a simple user info JSON response and valid JMES path",
 				UserInfoJSONResponse: []byte(`{
 	"attributes": {
-		"email": "grafana@localhost"
+		"email": "plutono@localhost"
 	}
 }`),
 				EmailAttributePath: "attributes.email",
-				ExpectedResult:     "grafana@localhost",
+				ExpectedResult:     "plutono@localhost",
 			},
 			{
 				Name: "Given a user info JSON response with e-mails array and valid JMES path",
 				UserInfoJSONResponse: []byte(`{
 	"attributes": {
-		"emails": ["grafana@localhost", "admin@localhost"]
+		"emails": ["plutono@localhost", "admin@localhost"]
 	}
 }`),
 				EmailAttributePath: "attributes.emails[0]",
-				ExpectedResult:     "grafana@localhost",
+				ExpectedResult:     "plutono@localhost",
 			},
 			{
 				Name: "Given a nested user info JSON response and valid JMES path",
 				UserInfoJSONResponse: []byte(`{
 	"identities": [
 		{
-			"userId": "grafana@localhost"
+			"userId": "plutono@localhost"
 		},
 		{
 			"userId": "admin@localhost"
@@ -99,7 +99,7 @@ func TestSearchJSONForEmail(t *testing.T) {
 	]
 }`),
 				EmailAttributePath: "identities[0].userId",
-				ExpectedResult:     "grafana@localhost",
+				ExpectedResult:     "plutono@localhost",
 			},
 		}
 

@@ -4,7 +4,7 @@ export interface NewsOptions {
 }
 
 export const defaults: NewsOptions = {
-  // will default to grafana blog
+  // will default to plutono blog
 };
 
 export interface NewsItem {

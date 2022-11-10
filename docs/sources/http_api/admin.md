@@ -1,21 +1,21 @@
 +++
 title = "Admin HTTP API "
-description = "Grafana Admin HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "admin"]
-aliases = ["/docs/grafana/latest/http_api/admin/"]
+description = "Plutono Admin HTTP API"
+keywords = ["plutono", "http", "documentation", "api", "admin"]
+aliases = ["/docs/plutono/latest/http_api/admin/"]
 +++
 
 # Admin API
 
 The Admin HTTP API does not currently work with an API Token. API Tokens are currently only linked to an organization and an organization role. They cannot be given
-the permission of server admin, only users can be given that permission. So in order to use these API calls you will have to use Basic Auth and the Grafana user
-must have the Grafana Admin permission. (The default admin user is called `admin` and has permission to use this API.)
+the permission of server admin, only users can be given that permission. So in order to use these API calls you will have to use Basic Auth and the Plutono user
+must have the Plutono Admin permission. (The default admin user is called `admin` and has permission to use this API.)
 
 ## Settings
 
 `GET /api/admin/settings`
 
-Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 
 **Example Request**:
 
@@ -71,7 +71,7 @@ Content-Type: application/json
     "token_url":"https://accounts.google.com/o/oauth2/token"
   },
   "auth.ldap":{
-    "config_file":"/etc/grafana/ldap.toml",
+    "config_file":"/etc/plutono/ldap.toml",
     "enabled":"false"
   },
   "auth.proxy":{
@@ -82,13 +82,13 @@ Content-Type: application/json
   },
   "dashboards.json":{
     "enabled":"false",
-    "path":"/var/lib/grafana/dashboards"
+    "path":"/var/lib/plutono/dashboards"
   },
   "database":{
     "host":"127.0.0.1:0000",
-    "name":"grafana",
+    "name":"plutono",
     "password":"************",
-    "path":"grafana.db",
+    "path":"plutono.db",
     "ssl_mode":"disable",
     "type":"sqlite3",
     "user":"root"
@@ -116,13 +116,13 @@ Content-Type: application/json
     "max_size_shift":""
   },
   "paths":{
-    "data":"/tsdb/grafana",
-    "logs":"/logs/apps/grafana"},
+    "data":"/tsdb/plutono",
+    "logs":"/logs/apps/plutono"},
     "security":{
     "admin_password":"************",
     "admin_user":"admin",
-    "cookie_remember_name":"grafana_remember",
-    "cookie_username":"grafana_user",
+    "cookie_remember_name":"plutono_remember",
+    "cookie_username":"plutono_user",
     "disable_gravatar":"false",
     "login_remember_days":"7",
     "secret_key":"************"
@@ -142,7 +142,7 @@ Content-Type: application/json
     "static_root_path":"public"
   },
   "session":{
-    "cookie_name":"grafana_sess",
+    "cookie_name":"plutono_sess",
     "cookie_secure":"false",
     "gc_interval_time":"",
     "provider":"file",
@@ -153,7 +153,7 @@ Content-Type: application/json
     "cert_file":"",
     "enabled":"false",
     "from_address":"admin@grafana.localhost",
-    "from_name":"Grafana",
+    "from_name":"Plutono",
     "ehlo_identity":"dashboard.example.com",
     "host":"localhost:25",
     "key_file":"",
@@ -169,11 +169,11 @@ Content-Type: application/json
   }
 }
 ```
-## Grafana Stats
+## Plutono Stats
 
 `GET /api/admin/stats`
 
-Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 
 **Example Request**:
 
@@ -207,7 +207,7 @@ Content-Type: application/json
 
 `POST /api/admin/users`
 
-Create new user. Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Create new user. Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 
 **Example Request**:
 
@@ -240,7 +240,7 @@ Content-Type: application/json
 
 `PUT /api/admin/users/:id/password`
 
-Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 Change password for a specific user.
 
 **Example Request**:
@@ -266,7 +266,7 @@ Content-Type: application/json
 
 `PUT /api/admin/users/:id/permissions`
 
-Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 
 **Example Request**:
 
@@ -275,7 +275,7 @@ PUT /api/admin/users/2/permissions HTTP/1.1
 Accept: application/json
 Content-Type: application/json
 
-{"isGrafanaAdmin": true}
+{"isPlutonoAdmin": true}
 ```
 
 **Example Response**:
@@ -291,7 +291,7 @@ Content-Type: application/json
 
 `DELETE /api/admin/users/:id`
 
-Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 
 **Example Request**:
 
@@ -314,7 +314,7 @@ Content-Type: application/json
 
 `POST /api/admin/pause-all-alerts`
 
-Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 
 **Example Request**:
 
@@ -351,7 +351,7 @@ Content-Type: application/json
 
 Return a list of all auth tokens (devices) that the user currently have logged in from.
 
-Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 
 **Example Request**:
 
@@ -402,7 +402,7 @@ Content-Type: application/json
 Revokes the given auth token (device) for the user. User of issued auth token (device) will no longer be logged in
 and will be required to authenticate again upon next activity.
 
-Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 
 **Example Request**:
 
@@ -434,7 +434,7 @@ Content-Type: application/json
 Logout user revokes all auth tokens (devices) for the user. User of issued auth tokens (devices) will no longer be logged in
 and will be required to authenticate again upon next activity.
 
-Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 
 **Example Request**:
 
@@ -469,7 +469,7 @@ Reloads the provisioning config files for specified type and provision entities 
 until the new provisioned entities are already stored in the database. In case of dashboards, it will stop
 polling for changes in dashboard files and then restart it with new configurations after returning.
 
-Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 
 **Example Request**:
 
@@ -496,7 +496,7 @@ Content-Type: application/json
 
 Reloads the LDAP configuration.
 
-Only works with Basic Authentication (username and password). See [introduction](http://docs.grafana.org/http_api/admin/#admin-api) for an explanation.
+Only works with Basic Authentication (username and password). See [introduction](http://docs.plutono.org/http_api/admin/#admin-api) for an explanation.
 
 **Example Request**:
 

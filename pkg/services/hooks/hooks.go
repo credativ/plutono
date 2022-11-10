@@ -1,9 +1,9 @@
 package hooks
 
 import (
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/registry"
 )
 
 type IndexDataHook func(indexData *dtos.IndexViewData, req *models.ReqContext)

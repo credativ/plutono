@@ -1,4 +1,4 @@
-import { TransformerRegistryItem } from '@grafana/data';
+import { TransformerRegistryItem } from '@credativ/plutono-data';
 import { reduceTransformRegistryItem } from '../components/TransformersUI/ReduceTransformerEditor';
 import { filterFieldsByNameTransformRegistryItem } from '../components/TransformersUI/FilterByNameTransformerEditor';
 import { filterFramesByRefIdTransformRegistryItem } from '../components/TransformersUI/FilterByRefIdTransformerEditor';

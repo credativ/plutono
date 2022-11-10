@@ -1,5 +1,5 @@
 import React, { useCallback } from 'react';
-import { LegacyForms, Select, StatsPicker } from '@grafana/ui';
+import { LegacyForms, Select, StatsPicker } from '@credativ/plutono-ui';
 import {
   DataTransformerID,
   ReducerID,
@@ -7,10 +7,10 @@ import {
   standardTransformers,
   TransformerRegistryItem,
   TransformerUIProps,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
-import { ReduceTransformerMode, ReduceTransformerOptions } from '@grafana/data/src/transformations/transformers/reduce';
-import { selectors } from '@grafana/e2e-selectors';
+import { ReduceTransformerMode, ReduceTransformerOptions } from '@credativ/plutono-data/src/transformations/transformers/reduce';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 // TODO:  Minimal implementation, needs some <3
 export const ReduceTransformerEditor: React.FC<TransformerUIProps<ReduceTransformerOptions>> = ({

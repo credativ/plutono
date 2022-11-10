@@ -1,4 +1,4 @@
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { LibraryPanelDTO, LibraryPanelSearchResult, PanelModelWithLibraryPanel } from '../types';
 
 export interface GetLibraryPanelsOptions {

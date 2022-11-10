@@ -1,6 +1,6 @@
 import React, { FormEvent, PureComponent } from 'react';
 import { MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { InlineFieldRow, VerticalGroup } from '@grafana/ui';
+import { InlineFieldRow, VerticalGroup } from '@credativ/plutono-ui';
 
 import { DataSourceVariableModel, VariableWithMultiSupport } from '../types';
 import { OnPropChangeArguments, VariableEditorProps } from '../editor/types';
@@ -13,7 +13,7 @@ import { connectWithStore } from '../../../core/utils/connectWithReduxStore';
 import { changeVariableMultiValue } from '../state/actions';
 import { VariableSectionHeader } from '../editor/VariableSectionHeader';
 import { VariableSelectField } from '../editor/VariableSelectField';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 import { VariableTextField } from '../editor/VariableTextField';
 
 export interface OwnProps extends VariableEditorProps<DataSourceVariableModel> {}

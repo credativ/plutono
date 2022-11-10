@@ -1,7 +1,7 @@
 +++
 title = "Time series"
 description = "Introduction to time series"
-keywords = ["grafana", "intro", "guide", "concepts", "timeseries"]
+keywords = ["plutono", "intro", "guide", "concepts", "timeseries"]
 weight = 400
 +++
 
@@ -85,7 +85,7 @@ If measurements are taken at regular intervals, most of these delta-of-deltas wi
 
 Another feature of a TSDB is the ability to filter measurements using _tags_. Each data point is labeled with a tag that adds context information, such as where the measurement was taken. Here's an example of the [InfluxDB data format](https://docs.influxdata.com/influxdb/v1.7/write_protocols/line_protocol_tutorial/#syntax) that demonstrates how each measurement is stored.
 
-Here are some of the TSDBs supported by Grafana:
+Here are some of the TSDBs supported by Plutono:
 
 - [Graphite](https://graphiteapp.org/)
 - [InfluxDB](https://www.influxdata.com/products/influxdb-overview/)

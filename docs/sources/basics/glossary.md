@@ -1,14 +1,14 @@
 +++
 title = "Glossary"
-description = "Grafana glossary"
-keywords = ["grafana", "intro", "glossary", "dictionary"]
-aliases = ["/docs/grafana/latest/guides/glossary", "/docs/grafana/latest/getting-started/glossary"]
+description = "Plutono glossary"
+keywords = ["plutono", "intro", "glossary", "dictionary"]
+aliases = ["/docs/plutono/latest/guides/glossary", "/docs/plutono/latest/getting-started/glossary"]
 weight = 800
 +++
 
 # Glossary
 
-This topic lists words and abbreviations that are commonly used in the Grafana documentation and community.
+This topic lists words and abbreviations that are commonly used in the Plutono documentation and community.
 
 <table>
   <tr>
@@ -20,7 +20,7 @@ This topic lists words and abbreviations that are commonly used in the Grafana d
   <tr>
     <td style="vertical-align: top">Data source</td>
     <td>
-      A file, database, or service providing the data. Grafana supports several data sources by default, and can be extended to support additional data sources through plugins.
+      A file, database, or service providing the data. Plutono supports several data sources by default, and can be extended to support additional data sources through plugins.
     </td>
   </tr>
   <tr>
@@ -38,7 +38,7 @@ This topic lists words and abbreviations that are commonly used in the Grafana d
   <tr>
     <td style="vertical-align: top">Export/Import dashboard</td>
     <td>
-      Grafana includes the ability to export your dashboards to a file containing JSON. Community members sometimes share their created dashboards on the <a href="https://grafana.com/grafana/dashboards">Grafana Dashboards page</a>. Dashboards previously exported or found on this site may be imported by other users.
+      Plutono includes the ability to export your dashboards to a file containing JSON. Community members sometimes share their created dashboards on the <a href="https://grafana.com/grafana/dashboards">Plutono Dashboards page</a>. Dashboards previously exported or found on this site may be imported by other users.
     </td>
   </tr>
   <tr>
@@ -48,9 +48,9 @@ This topic lists words and abbreviations that are commonly used in the Grafana d
     </td>
   </tr>
   <tr>
-    <td style="vertical-align: top">Integration (Grafana Cloud)</td>
+    <td style="vertical-align: top">Integration (Plutono Cloud)</td>
     <td>
-      Each Integration in Grafana Cloud uses the cloud agent to connect your data source to Grafana Cloud for visualizing. Note: Prometheus uses the word “integrations” to refer to software that exposes Prometheus metrics without needing an exporter, which is a different use of the same word we use here.
+      Each Integration in Plutono Cloud uses the cloud agent to connect your data source to Plutono Cloud for visualizing. Note: Prometheus uses the word “integrations” to refer to software that exposes Prometheus metrics without needing an exporter, which is a different use of the same word we use here.
     </td>
   </tr>
   <tr>
@@ -62,28 +62,28 @@ This topic lists words and abbreviations that are commonly used in the Grafana d
   <tr>
     <td style="vertical-align: top">Mixin</td>
     <td>
-      A mixin is a set of Grafana dashboards and Prometheus rules and alerts, written in Jsonnet and packaged together in a bundle.
+      A mixin is a set of Plutono dashboards and Prometheus rules and alerts, written in Jsonnet and packaged together in a bundle.
     </td>
   </tr>
   <tr>
     <td style="vertical-align: top">Panel</td>
     <td>
-      Basic building block in Grafana, composed by a query and a visualization. Can be moved and resized within a dashboard.
+      Basic building block in Plutono, composed by a query and a visualization. Can be moved and resized within a dashboard.
     </td>
   </tr>
   <tr>
     <td style="vertical-align: top">Plugin</td>
     <td>
-      An extension of Grafana that allows users to provide additional functionality to enhance their experience. The types of plugins currently supported are:
+      An extension of Plutono that allows users to provide additional functionality to enhance their experience. The types of plugins currently supported are:
       <ul>
         <li>
-          <b>App plugin:</b> Extends Grafana with a customized experience. It includes a set of panel and data source plugins, as well as custom pages.
+          <b>App plugin:</b> Extends Plutono with a customized experience. It includes a set of panel and data source plugins, as well as custom pages.
         </li>
         <li>
-          <b>Data source plugin:</b> Extends Grafana with support for additional data sources.
+          <b>Data source plugin:</b> Extends Plutono with support for additional data sources.
         </li>
         <li>
-          <b>Panel plugin:</b> Extends Grafana with additional visualization options.
+          <b>Panel plugin:</b> Extends Plutono with additional visualization options.
         </li>
       </ul>
     </td>

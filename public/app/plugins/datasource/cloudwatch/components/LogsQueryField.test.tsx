@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { CloudWatchLogsQueryField } from './LogsQueryField';
 import { ExploreId } from '../../../../types';
 import { DescribeLogGroupsRequest } from '../types';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 
 jest.mock('lodash/debounce', () => {
   const fakeDebounce = (func: () => any, period: number) => func;

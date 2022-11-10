@@ -5,11 +5,11 @@ import (
 	"sort"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 const (
@@ -285,7 +285,7 @@ func (hs *HTTPServer) getNavTree(c *models.ReqContext, hasEditPerm bool) ([]*dto
 		})
 	}
 
-	if c.IsGrafanaAdmin {
+	if c.IsPlutonoAdmin {
 		adminNavLinks := []*dtos.NavLink{
 			{Text: "Users", Id: "global-users", Url: setting.AppSubUrl + "/admin/users", Icon: "user"},
 			{Text: "Orgs", Id: "global-orgs", Url: setting.AppSubUrl + "/admin/orgs", Icon: "building"},
@@ -386,7 +386,7 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 			OrgName:                    c.OrgName,
 			OrgRole:                    c.OrgRole,
 			GravatarUrl:                dtos.GetGravatarUrl(c.Email),
-			IsGrafanaAdmin:             c.IsGrafanaAdmin,
+			IsPlutonoAdmin:             c.IsPlutonoAdmin,
 			LightTheme:                 prefs.Theme == lightName,
 			Timezone:                   prefs.Timezone,
 			Locale:                     locale,
@@ -401,13 +401,13 @@ func (hs *HTTPServer) setIndexViewData(c *models.ReqContext) (*dtos.IndexViewDat
 		GoogleTagManagerId:      setting.GoogleTagManagerId,
 		BuildVersion:            setting.BuildVersion,
 		BuildCommit:             setting.BuildCommit,
-		NewGrafanaVersion:       hs.PluginManager.GrafanaLatestVersion,
-		NewGrafanaVersionExists: hs.PluginManager.GrafanaHasUpdate,
+		NewPlutonoVersion:       hs.PluginManager.PlutonoLatestVersion,
+		NewPlutonoVersionExists: hs.PluginManager.PlutonoHasUpdate,
 		AppName:                 setting.ApplicationName,
 		AppNameBodyClass:        getAppNameBodyClass(hs.License.HasValidLicense()),
 		FavIcon:                 "public/img/fav32.png",
 		AppleTouchIcon:          "public/img/apple-touch-icon.png",
-		AppTitle:                "Grafana",
+		AppTitle:                "Plutono",
 		NavTree:                 navTree,
 		Sentry:                  &hs.Cfg.Sentry,
 		Nonce:                   c.RequestNonce,
@@ -469,5 +469,5 @@ func getAppNameBodyClass(validLicense bool) string {
 		return "app-enterprise"
 	}
 
-	return "app-grafana"
+	return "app-plutono"
 }

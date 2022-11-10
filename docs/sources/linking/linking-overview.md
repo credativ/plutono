@@ -1,7 +1,7 @@
 +++
 title = "Linking overview"
-keywords = ["grafana", "linking", "create links", "link panels", "link dashboards", "navigate"]
-aliases = ["/docs/grafana/latest/features/navigation-links/"]
+keywords = ["plutono", "linking", "create links", "link panels", "link dashboards", "navigate"]
+aliases = ["/docs/plutono/latest/features/navigation-links/"]
 weight = 100
 +++
 
@@ -9,13 +9,13 @@ weight = 100
 
 You can use links to navigate between commonly-used dashboards or to connect others to your visualizations. Links let you create shortcuts to other dashboards, panels, and even external websites.
 
-Grafana supports dashboard links, panel links, and data links. Dashboard links are displayed at the top of the dashboard. Panel links are accessible by clicking an icon on the top left corner of the panel.
+Plutono supports dashboard links, panel links, and data links. Dashboard links are displayed at the top of the dashboard. Panel links are accessible by clicking an icon on the top left corner of the panel.
 
 ## Which link should you use?
 
 Start by figuring out how you're currently navigating between dashboards. If you're often jumping between a set of dashboards and struggling to find the same context in each, links can help optimize your workflow.
 
-The next step is to figure out which link type is right for your workflow. Even though all the link types in Grafana are used to create shortcuts to other dashboards or external websites, they work in different contexts.
+The next step is to figure out which link type is right for your workflow. Even though all the link types in Plutono are used to create shortcuts to other dashboards or external websites, they work in different contexts.
 
 - If the link relates to most if not all of the panels in the dashboard, use [dashboard links]({{< relref "dashboard-links.md" >}}).
 - If you want to drill down into specific panels, use [panel links]({{< relref "panel-links.md" >}}).

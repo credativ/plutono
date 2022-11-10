@@ -1,8 +1,8 @@
 +++
 title = "Dashboard and data source insights"
 description = "Understand how your dashboards and data sources are used"
-keywords = ["grafana", "usage-insights", "enterprise"]
-aliases = ["/docs/grafana/latest/enterprise/usage-insights/dashboard-datasource-insights.md"]
+keywords = ["plutono", "usage-insights", "enterprise"]
+aliases = ["/docs/plutono/latest/enterprise/usage-insights/dashboard-datasource-insights.md"]
 weight = 200
 +++
 
@@ -12,7 +12,7 @@ For every dashboard and data source, you can access usage information.
 
 ## Dashboard insights
 
-> **Note:** Available in Grafana Enterprise v7.0+.
+> **Note:** Available in Plutono Enterprise v7.0+.
 
 To see dashboard usage information, go to the top bar and click **Dashboard insights**.
 
@@ -27,7 +27,7 @@ Dashboard insights show the following information:
 
 ## Data source insights
 
-> **Note:** Available in Grafana Enterprise v7.3+.
+> **Note:** Available in Plutono Enterprise v7.3+.
 
 Data source insights give you information about how a data source has been used in the past 30 days, such as:
 

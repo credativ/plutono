@@ -1,5 +1,5 @@
 import { FormEvent, useReducer } from 'react';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 import { defaultQuery, defaultQueryParams, queryReducer } from '../reducers/searchQueryReducer';
 import {
   ADD_TAG,

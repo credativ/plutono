@@ -1,4 +1,4 @@
-import { IconName } from '@grafana/ui';
+import { IconName } from '@credativ/plutono-ui';
 
 export type CardType = 'tutorial' | 'docs' | 'other';
 

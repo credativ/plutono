@@ -1,6 +1,6 @@
 +++
 title = "Graph time series as points"
-keywords = ["grafana", "time series panel", "documentation", "guide", "graph"]
+keywords = ["plutono", "time series panel", "documentation", "guide", "graph"]
 weight = 300
 +++
 

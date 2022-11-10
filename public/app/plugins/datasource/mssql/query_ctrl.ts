@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { QueryCtrl } from 'app/plugins/sdk';
 import { auto } from 'angular';
-import { PanelEvents, QueryResultMeta } from '@grafana/data';
+import { PanelEvents, QueryResultMeta } from '@credativ/plutono-data';
 
 export interface MssqlQuery {
   refId: string;

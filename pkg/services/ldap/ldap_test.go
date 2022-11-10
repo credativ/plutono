@@ -4,7 +4,7 @@ import (
 	"errors"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/log"
 	. "github.com/smartystreets/goconvey/convey"
 	"gopkg.in/ldap.v3"
 )
@@ -141,11 +141,11 @@ func TestPublicAPI(t *testing.T) {
 			server := &Server{
 				Connection: connection,
 				Config: &ServerConfig{
-					BindDN: "cn=admin,dc=grafana,dc=org",
+					BindDN: "cn=admin,dc=plutono,dc=org",
 				},
 			}
 
-			dn := "cn=user,ou=users,dc=grafana,dc=org"
+			dn := "cn=user,ou=users,dc=plutono,dc=org"
 			err := server.UserBind(dn, "pwd")
 
 			So(err, ShouldBeNil)
@@ -164,7 +164,7 @@ func TestPublicAPI(t *testing.T) {
 			server := &Server{
 				Connection: connection,
 				Config: &ServerConfig{
-					BindDN: "cn=%s,ou=users,dc=grafana,dc=org",
+					BindDN: "cn=%s,ou=users,dc=plutono,dc=org",
 				},
 				log: log.New("test-logger"),
 			}
@@ -183,7 +183,7 @@ func TestPublicAPI(t *testing.T) {
 				return nil
 			}
 
-			dn := "cn=admin,dc=grafana,dc=org"
+			dn := "cn=admin,dc=plutono,dc=org"
 
 			server := &Server{
 				Connection: connection,
@@ -209,7 +209,7 @@ func TestPublicAPI(t *testing.T) {
 				return expected
 			}
 
-			dn := "cn=admin,dc=grafana,dc=org"
+			dn := "cn=admin,dc=plutono,dc=org"
 
 			server := &Server{
 				Connection: connection,

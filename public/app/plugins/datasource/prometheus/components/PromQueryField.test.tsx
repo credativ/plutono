@@ -3,7 +3,7 @@ import RCCascader from 'rc-cascader';
 import React from 'react';
 import PromQlLanguageProvider from '../language_provider';
 import PromQueryField, { groupMetricsByPrefix, RECORDING_RULES_GROUP } from './PromQueryField';
-import { DataSourceInstanceSettings, dateTime } from '@grafana/data';
+import { DataSourceInstanceSettings, dateTime } from '@credativ/plutono-data';
 import { PromOptions } from '../types';
 import { fireEvent, render, screen } from '@testing-library/react';
 

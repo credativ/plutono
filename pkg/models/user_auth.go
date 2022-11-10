@@ -3,7 +3,7 @@ package models
 import (
 	"time"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/setting"
 	"golang.org/x/oauth2"
 )
 
@@ -33,7 +33,7 @@ type ExternalUserInfo struct {
 	Name           string
 	Groups         []string
 	OrgRoles       map[int64]RoleType
-	IsGrafanaAdmin *bool // This is a pointer to know if we should sync this or not (nil = ignore sync)
+	IsPlutonoAdmin *bool // This is a pointer to know if we should sync this or not (nil = ignore sync)
 	IsDisabled     bool
 }
 

@@ -15,7 +15,7 @@ import {
 import { auto } from 'angular';
 import { getProcessedDataFrames } from 'app/features/query/state/runRequest';
 import { DataProcessor } from '../graph/data_processor';
-import { LegacyResponseData, PanelEvents, DataFrame, rangeUtil } from '@grafana/data';
+import { LegacyResponseData, PanelEvents, DataFrame, rangeUtil } from '@credativ/plutono-data';
 import { CoreEvents } from 'app/types';
 
 const X_BUCKET_NUMBER_DEFAULT = 30;
@@ -141,7 +141,7 @@ export class HeatmapCtrl extends MetricsPanelCtrl {
       aliasColors: {}, // avoids null reference
     });
 
-    // Bind grafana panel events
+    // Bind plutono panel events
     this.events.on(PanelEvents.render, this.onRender.bind(this));
     this.events.on(PanelEvents.dataFramesReceived, this.onDataFramesReceived.bind(this));
     this.events.on(PanelEvents.dataSnapshotLoad, this.onSnapshotLoad.bind(this));

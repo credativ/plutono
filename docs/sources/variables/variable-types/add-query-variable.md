@@ -1,6 +1,6 @@
 +++
 title = "Add a query variable"
-aliases = ["/docs/grafana/latest/variables/add-query-variable.md"]
+aliases = ["/docs/plutono/latest/variables/add-query-variable.md"]
 weight = 100
 +++
 
@@ -8,7 +8,7 @@ weight = 100
 
 Query variables allow you to write a data source query that can return a list of metric names, tag values, or keys. For example, a query variable might return a list of server names, sensor IDs, or data centers. The variable values change as they dynamically fetch options with a data source query.
 
-Query expressions can contain references to other variables and in effect create linked variables. Grafana detects this and automatically refreshes a variable when one of its linked variables change.
+Query expressions can contain references to other variables and in effect create linked variables. Plutono detects this and automatically refreshes a variable when one of its linked variables change.
 
 ## Query expressions
 
@@ -40,5 +40,5 @@ Query expressions are different for each data source. For more information, refe
 1. In the **Sort** list, select the sort order for values to be displayed in the dropdown list. The default option, **Disabled**, means that the order of options returned by your data source query will be used.
 1. (optional) Enter [Selection Options]({{< relref "../variable-selection-options.md" >}}).
 1. (optional) Enter [Value groups/tags]({{< relref "../variable-value-tags.md" >}}).
-1. In **Preview of values**, Grafana displays a list of the current variable values. Review them to ensure they match what you expect.
+1. In **Preview of values**, Plutono displays a list of the current variable values. Review them to ensure they match what you expect.
 1. Click **Add** to add the variable to the dashboard.

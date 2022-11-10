@@ -1,20 +1,20 @@
 +++
 title = "License expiration"
 description = ""
-keywords = ["grafana", "licensing"]
-aliases = ["/docs/grafana/latest/enterprise/license-expiration"]
+keywords = ["plutono", "licensing"]
+aliases = ["/docs/plutono/latest/enterprise/license-expiration"]
 weight = 200
 +++
 
 # License expiration
 
-If your license has expired, most of Grafana keeps working as normal. Some enterprise functionality stops or runs with reduced functionality and Grafana displays a banner informing the users that Grafana is running on an expired license. Your Grafana admin needs to upload a new license file to restore full functionality.
+If your license has expired, most of Plutono keeps working as normal. Some enterprise functionality stops or runs with reduced functionality and Plutono displays a banner informing the users that Plutono is running on an expired license. Your Plutono admin needs to upload a new license file to restore full functionality.
 
-> Replace your license as soon as possible. Running Grafana Enterprise with an expired license is unsupported and can lead to unexpected consequences.
+> Replace your license as soon as possible. Running Plutono Enterprise with an expired license is unsupported and can lead to unexpected consequences.
 
 ## Update your license
 
-1. Locate your current `license.jwt` file. In a standard installation it is stored inside the Grafana data directory, which on a typical Linux installation is in `/var/lib/grafana/data`. This location might be overridden in the ini file [Configuration]({{< relref "../../administration/configuration.md" >}}).
+1. Locate your current `license.jwt` file. In a standard installation it is stored inside the Plutono data directory, which on a typical Linux installation is in `/var/lib/plutono/data`. This location might be overridden in the ini file [Configuration]({{< relref "../../administration/configuration.md" >}}).
 
    ```ini
    [enterprise]
@@ -23,14 +23,14 @@ If your license has expired, most of Grafana keeps working as normal. Some enter
 
    The configuration file's location may also be overridden by the `GF_ENTERPRISE_LICENSE_PATH` environment variable.
 
-2. Log in to your [Grafana Cloud Account](https://grafana.com/login) and make sure you're in the correct organization in the dropdown at the top of the page.
-3. Under the **Grafana Enterprise** section in the menu bar to the left, choose licenses and download the currently valid license with which you want to run Grafana. If you cannot see a valid license on Grafana.com, please contact your account manager at Grafana Labs to renew your subscription.
+2. Log in to your [Plutono Cloud Account](https://grafana.com/login) and make sure you're in the correct organization in the dropdown at the top of the page.
+3. Under the **Plutono Enterprise** section in the menu bar to the left, choose licenses and download the currently valid license with which you want to run Plutono. If you cannot see a valid license on Grafana.com, please contact your account manager at Grafana Labs to renew your subscription.
 4. Replace the current `license.jwt`-file with the one you've just downloaded.
-5. [Restart Grafana]({{< relref "../../installation/restart-grafana.md" >}}).
+5. [Restart Plutono]({{< relref "../../installation/restart-plutono.md" >}}).
 
 ## If your license expires
 
-If your Grafana Enterprise license expires, you can expect the following changes in feature behavior.
+If your Plutono Enterprise license expires, you can expect the following changes in feature behavior.
 
 ### Data source permissions
 
@@ -62,7 +62,7 @@ The white labeling feature is turned off, meaning that any white labeling option
 
 Exporting usage insights logs to Loki will be turned off for licenses expired for more than 7 days.
 
-All the other usage insights features are turned off as soon as the license expires, meaning that you will not be able to see dashboard usage, presence indicators, or use improved search. Grafana continues to collect usage data and you will have access to it as soon as you update your license.
+All the other usage insights features are turned off as soon as the license expires, meaning that you will not be able to see dashboard usage, presence indicators, or use improved search. Plutono continues to collect usage data and you will have access to it as soon as you update your license.
 
 ### Vault integration
 

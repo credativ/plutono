@@ -11,7 +11,7 @@ import {
 } from '../state/sharedReducer';
 import { variableAdapters } from '../adapters';
 import { createIntervalVariableAdapter } from './adapter';
-import { dateTime } from '@grafana/data';
+import { dateTime } from '@credativ/plutono-data';
 import { getTimeSrv, setTimeSrv, TimeSrv } from '../../dashboard/services/TimeSrv';
 import { TemplateSrv } from '../../templating/template_srv';
 import { intervalBuilder } from '../shared/testing/builders';
@@ -116,7 +116,7 @@ describe('interval actions', () => {
             } as unknown) as TimeSrv;
           },
           templateSrv: ({
-            setGrafanaVariable: jest.fn(),
+            setPlutonoVariable: jest.fn(),
           } as unknown) as TemplateSrv,
         };
 
@@ -129,7 +129,7 @@ describe('interval actions', () => {
 
         expect(dependencies.calculateInterval).toHaveBeenCalledTimes(0);
         expect(dependencies.getTimeSrv().timeRange).toHaveBeenCalledTimes(0);
-        expect(dependencies.templateSrv.setGrafanaVariable).toHaveBeenCalledTimes(0);
+        expect(dependencies.templateSrv.setPlutonoVariable).toHaveBeenCalledTimes(0);
       });
     });
 
@@ -151,7 +151,7 @@ describe('interval actions', () => {
             to: '2001-01-02',
           },
         });
-        const setGrafanaVariableMock = jest.fn();
+        const setPlutonoVariableMock = jest.fn();
         const dependencies: UpdateAutoValueDependencies = {
           calculateInterval: jest.fn().mockReturnValue({ interval: '10s' }),
           getTimeSrv: () => {
@@ -160,7 +160,7 @@ describe('interval actions', () => {
             } as unknown) as TimeSrv;
           },
           templateSrv: ({
-            setGrafanaVariable: setGrafanaVariableMock,
+            setPlutonoVariable: setPlutonoVariableMock,
           } as unknown) as TemplateSrv,
         };
 
@@ -185,11 +185,11 @@ describe('interval actions', () => {
           '13s'
         );
         expect(timeRangeMock).toHaveBeenCalledTimes(1);
-        expect(setGrafanaVariableMock).toHaveBeenCalledTimes(2);
-        expect(setGrafanaVariableMock.mock.calls[0][0]).toBe('$__auto_interval_intervalName');
-        expect(setGrafanaVariableMock.mock.calls[0][1]).toBe('10s');
-        expect(setGrafanaVariableMock.mock.calls[1][0]).toBe('$__auto_interval');
-        expect(setGrafanaVariableMock.mock.calls[1][1]).toBe('10s');
+        expect(setPlutonoVariableMock).toHaveBeenCalledTimes(2);
+        expect(setPlutonoVariableMock.mock.calls[0][0]).toBe('$__auto_interval_intervalName');
+        expect(setPlutonoVariableMock.mock.calls[0][1]).toBe('10s');
+        expect(setPlutonoVariableMock.mock.calls[1][0]).toBe('$__auto_interval');
+        expect(setPlutonoVariableMock.mock.calls[1][1]).toBe('10s');
       });
     });
   });

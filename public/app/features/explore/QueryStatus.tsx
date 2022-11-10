@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 
 import { ElapsedTime } from './ElapsedTime';
-import { PanelData, LoadingState } from '@grafana/data';
+import { PanelData, LoadingState } from '@credativ/plutono-data';
 
 function formatLatency(value: number) {
   return `${(value / 1000).toFixed(1)}s`;

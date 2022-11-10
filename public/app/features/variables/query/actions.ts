@@ -1,4 +1,4 @@
-import { toDataQueryError, getDataSourceSrv } from '@grafana/runtime';
+import { toDataQueryError, getDataSourceSrv } from '@credativ/plutono-runtime';
 import { updateOptions } from '../state/actions';
 import { QueryVariableModel } from '../types';
 import { ThunkResult } from '../../../types';

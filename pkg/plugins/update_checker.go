@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/hashicorp/go-version"
 )
 
@@ -16,7 +16,7 @@ var (
 	httpClient = http.Client{Timeout: 10 * time.Second}
 )
 
-type GrafanaNetPlugin struct {
+type PlutonoNetPlugin struct {
 	Slug    string `json:"slug"`
 	Version string `json:"version"`
 }
@@ -47,7 +47,7 @@ func (pm *PluginManager) checkForUpdates() {
 	pm.log.Debug("Checking for updates")
 
 	pluginSlugs := getAllExternalPluginSlugs()
-	resp, err := httpClient.Get("https://grafana.com/api/plugins/versioncheck?slugIn=" + pluginSlugs + "&grafanaVersion=" + setting.BuildVersion)
+	resp, err := httpClient.Get("https://grafana.com/api/plugins/versioncheck?slugIn=" + pluginSlugs + "&plutonoVersion=" + setting.BuildVersion)
 	if err != nil {
 		log.Tracef("Failed to get plugins repo from grafana.com, %v", err.Error())
 		return
@@ -64,7 +64,7 @@ func (pm *PluginManager) checkForUpdates() {
 		return
 	}
 
-	gNetPlugins := []GrafanaNetPlugin{}
+	gNetPlugins := []PlutonoNetPlugin{}
 	err = json.Unmarshal(body, &gNetPlugins)
 	if err != nil {
 		log.Tracef("Failed to unmarshal plugin repo, reading response from grafana.com, %v", err.Error())
@@ -74,21 +74,21 @@ func (pm *PluginManager) checkForUpdates() {
 	for _, plug := range Plugins {
 		for _, gplug := range gNetPlugins {
 			if gplug.Slug == plug.Id {
-				plug.GrafanaNetVersion = gplug.Version
+				plug.PlutonoNetVersion = gplug.Version
 
 				plugVersion, err1 := version.NewVersion(plug.Info.Version)
 				gplugVersion, err2 := version.NewVersion(gplug.Version)
 
 				if err1 != nil || err2 != nil {
-					plug.GrafanaNetHasUpdate = plug.Info.Version != plug.GrafanaNetVersion
+					plug.PlutonoNetHasUpdate = plug.Info.Version != plug.PlutonoNetVersion
 				} else {
-					plug.GrafanaNetHasUpdate = plugVersion.LessThan(gplugVersion)
+					plug.PlutonoNetHasUpdate = plugVersion.LessThan(gplugVersion)
 				}
 			}
 		}
 	}
 
-	resp2, err := httpClient.Get("https://raw.githubusercontent.com/grafana/grafana/master/latest.json")
+	resp2, err := httpClient.Get("https://raw.githubusercontent.com/plutono/plutono/master/latest.json")
 	if err != nil {
 		log.Tracef("Failed to get latest.json repo from github.com: %v", err.Error())
 		return
@@ -112,16 +112,16 @@ func (pm *PluginManager) checkForUpdates() {
 	}
 
 	if strings.Contains(setting.BuildVersion, "-") {
-		pm.GrafanaLatestVersion = githubLatest.Testing
-		pm.GrafanaHasUpdate = !strings.HasPrefix(setting.BuildVersion, githubLatest.Testing)
+		pm.PlutonoLatestVersion = githubLatest.Testing
+		pm.PlutonoHasUpdate = !strings.HasPrefix(setting.BuildVersion, githubLatest.Testing)
 	} else {
-		pm.GrafanaLatestVersion = githubLatest.Stable
-		pm.GrafanaHasUpdate = githubLatest.Stable != setting.BuildVersion
+		pm.PlutonoLatestVersion = githubLatest.Stable
+		pm.PlutonoHasUpdate = githubLatest.Stable != setting.BuildVersion
 	}
 
 	currVersion, err1 := version.NewVersion(setting.BuildVersion)
-	latestVersion, err2 := version.NewVersion(pm.GrafanaLatestVersion)
+	latestVersion, err2 := version.NewVersion(pm.PlutonoLatestVersion)
 	if err1 == nil && err2 == nil {
-		pm.GrafanaHasUpdate = currVersion.LessThan(latestVersion)
+		pm.PlutonoHasUpdate = currVersion.LessThan(latestVersion)
 	}
 }

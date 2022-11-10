@@ -1,4 +1,4 @@
-import { DataSourcePlugin } from '@grafana/data';
+import { DataSourcePlugin } from '@credativ/plutono-data';
 import { TestDataDataSource } from './datasource';
 import { TestInfoTab } from './TestInfoTab';
 import { ConfigEditor } from './ConfigEditor';

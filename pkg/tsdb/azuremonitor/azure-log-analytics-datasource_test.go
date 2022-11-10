@@ -8,10 +8,10 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/stretchr/testify/require"
 )
 
@@ -88,7 +88,7 @@ func TestPluginRoutes(t *testing.T) {
 				Method: "GET",
 				URL:    "https://api.loganalytics.io/v1/workspaces",
 				Headers: []plugins.AppPluginRouteHeader{
-					{Name: "x-ms-app", Content: "Grafana"},
+					{Name: "x-ms-app", Content: "Plutono"},
 				},
 			},
 			{
@@ -96,7 +96,7 @@ func TestPluginRoutes(t *testing.T) {
 				Method: "GET",
 				URL:    "https://api.loganalytics.azure.cn/v1/workspaces",
 				Headers: []plugins.AppPluginRouteHeader{
-					{Name: "x-ms-app", Content: "Grafana"},
+					{Name: "x-ms-app", Content: "Plutono"},
 				},
 			},
 			{
@@ -104,7 +104,7 @@ func TestPluginRoutes(t *testing.T) {
 				Method: "GET",
 				URL:    "https://api.loganalytics.us/v1/workspaces",
 				Headers: []plugins.AppPluginRouteHeader{
-					{Name: "x-ms-app", Content: "Grafana"},
+					{Name: "x-ms-app", Content: "Plutono"},
 				},
 			},
 		},

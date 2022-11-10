@@ -1,6 +1,6 @@
 +++
 title = "Alerts"
-aliases = ["/docs/grafana/latest/alerting/rules/", "/docs/grafana/latest/alerting/metrics/"]
+aliases = ["/docs/plutono/latest/alerting/rules/", "/docs/plutono/latest/alerting/metrics/"]
 weight = 110
 +++
 
@@ -10,8 +10,8 @@ Alerts allow you to identify problems in your system moments after they occur. B
 
 Alerts consists of two parts:
 
-- Alert rules - When the alert is triggered. Alert rules are defined by one or more conditions that are regularly evaluated by Grafana.
-- Notification channel - How the alert is delivered. When the conditions of an alert rule are met, the Grafana notifies the channels configured for that alert.
+- Alert rules - When the alert is triggered. Alert rules are defined by one or more conditions that are regularly evaluated by Plutono.
+- Notification channel - How the alert is delivered. When the conditions of an alert rule are met, the Plutono notifies the channels configured for that alert.
 
 Currently only the graph panel visualization supports alerts.
 
@@ -26,7 +26,7 @@ You can perform the following tasks for alerts:
 
 ## Clustering
 
-Currently alerting supports a limited form of high availability. Since v4.2.0 of Grafana, alert notifications are deduped when running multiple servers. This means all alerts are executed on every server but no duplicate alert notifications are sent due to the deduping logic. Proper load balancing of alerts will be introduced in the future.
+Currently alerting supports a limited form of high availability. Since v4.2.0 of Plutono, alert notifications are deduped when running multiple servers. This means all alerts are executed on every server but no duplicate alert notifications are sent due to the deduping logic. Proper load balancing of alerts will be introduced in the future.
 
 ## Notifications
 
@@ -36,15 +36,15 @@ The actual notifications are configured and shared between multiple alerts.
 
 ## Alert execution
 
-Alert rules are evaluated in the Grafana backend in a scheduler and query execution engine that is part
-of core Grafana. Alert rules can query only backend data sources with alerting enabled. Such data sources are:
-- builtin or developed and maintained by grafana, such as: `Graphite`, `Prometheus`, `Loki`, `InfluxDB`, `Elasticsearch`,
+Alert rules are evaluated in the Plutono backend in a scheduler and query execution engine that is part
+of core Plutono. Alert rules can query only backend data sources with alerting enabled. Such data sources are:
+- builtin or developed and maintained by plutono, such as: `Graphite`, `Prometheus`, `Loki`, `InfluxDB`, `Elasticsearch`,
 `Google Cloud Monitoring`, `Cloudwatch`, `Azure Monitor`, `MySQL`, `PostgreSQL`, `MSSQL`, `OpenTSDB`, `Oracle`, and `Azure Data Explorer`
 - any community backend data sources with alerting enabled (`backend` and `alerting` properties are set in the [plugin.json]({{< relref "../developers/plugins/metadata.md" >}}))
 
 ## Metrics from the alert engine
 
-The alert engine publishes some internal metrics about itself. You can read more about how Grafana publishes [internal metrics]({{< relref "../administration/view-server/internal-metrics.md" >}}).
+The alert engine publishes some internal metrics about itself. You can read more about how Plutono publishes [internal metrics]({{< relref "../administration/view-server/internal-metrics.md" >}}).
 
 Description | Type | Metric name
 ---------- | ----------- | ----------

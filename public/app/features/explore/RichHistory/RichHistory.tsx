@@ -3,11 +3,11 @@ import React, { PureComponent } from 'react';
 //Services & Utils
 import { RICH_HISTORY_SETTING_KEYS, SortOrder } from 'app/core/utils/richHistory';
 import store from 'app/core/store';
-import { Themeable, withTheme, TabbedContainer, TabConfig } from '@grafana/ui';
+import { Themeable, withTheme, TabbedContainer, TabConfig } from '@credativ/plutono-ui';
 
 //Types
 import { RichHistoryQuery, ExploreId } from 'app/types/explore';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 
 //Components
 import { RichHistorySettings } from './RichHistorySettings';

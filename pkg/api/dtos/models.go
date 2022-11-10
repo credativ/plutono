@@ -6,10 +6,10 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 var regNonAlphaNumeric = regexp.MustCompile("[^a-zA-Z0-9]+")
@@ -35,7 +35,7 @@ type CurrentUser struct {
 	OrgId                      int64             `json:"orgId"`
 	OrgName                    string            `json:"orgName"`
 	OrgRole                    models.RoleType   `json:"orgRole"`
-	IsGrafanaAdmin             bool              `json:"isGrafanaAdmin"`
+	IsPlutonoAdmin             bool              `json:"isPlutonoAdmin"`
 	GravatarUrl                string            `json:"gravatarUrl"`
 	Timezone                   string            `json:"timezone"`
 	Locale                     string            `json:"locale"`
@@ -77,7 +77,7 @@ func GetGravatarUrlWithDefault(text string, defaultText string) string {
 }
 
 func IsHiddenUser(userLogin string, signedInUser *models.SignedInUser, cfg *setting.Cfg) bool {
-	if userLogin == "" || signedInUser.IsGrafanaAdmin || userLogin == signedInUser.Login {
+	if userLogin == "" || signedInUser.IsPlutonoAdmin || userLogin == signedInUser.Login {
 		return false
 	}
 

@@ -1,4 +1,4 @@
-import { DataSourcePlugin } from '@grafana/data';
+import { DataSourcePlugin } from '@credativ/plutono-data';
 import CloudMonitoringDatasource from './datasource';
 import { QueryEditor } from './components/QueryEditor';
 import { CloudMonitoringConfigCtrl } from './config_ctrl';

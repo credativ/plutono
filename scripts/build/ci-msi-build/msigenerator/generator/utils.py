@@ -28,8 +28,8 @@ def get_zip(version, target_filename):
     exists = os.path.isfile(target_filename)
     if exists:
         return target_filename
-    url = 'https://s3-us-west-2.amazonaws.com/grafana-releases/release/grafana-{}.windows-amd64.zip'.format(version)
-    #url = 'https://dl.grafana.com/enterprise/release/grafana-enterprise-{}.windows-amd64.zip'.format(version)
+    url = 'https://s3-us-west-2.amazonaws.com/plutono-releases/release/plutono-{}.windows-amd64.zip'.format(version)
+    #url = 'https://dl.grafana.com/enterprise/release/plutono-enterprise-{}.windows-amd64.zip'.format(version)
     filename = wget.download(url, out=target_filename, bar=wget.bar_thermometer)
     return filename
 
@@ -42,16 +42,16 @@ def detect_version(dist_path):
     detectedHash = ''
     isEnterprise = False
     print("Detecting Version...")
-    # grafana-6.0.0-ca0bc2c5pre3.windows-amd64.zip
+    # plutono-6.0.0-ca0bc2c5pre3.windows-amd64.zip
     # get files in directory matching pattern
-    fileList = glob.glob(dist_path + '/grafana*.windows-amd64.zip')
+    fileList = glob.glob(dist_path + '/plutono*.windows-amd64.zip')
     print(fileList)
     if len(fileList) == 0:
         print('Skipping detection, no matches')
         return
     firstFile = fileList[0]
-    p1 = re.search(r'grafana-(enterprise-)?(\d\.\d\.\d)-(.+)\.windows-amd64\.zip$', firstFile)
-    p2 = re.search(r'grafana-(enterprise-)?(\d\.\d\.\d)\.windows-amd64\.zip$', firstFile)
+    p1 = re.search(r'plutono-(enterprise-)?(\d\.\d\.\d)-(.+)\.windows-amd64\.zip$', firstFile)
+    p2 = re.search(r'plutono-(enterprise-)?(\d\.\d\.\d)\.windows-amd64\.zip$', firstFile)
     if p1:
         detectedVersion = p1.group(2)
         detectedHash = p1.group(3)
@@ -65,12 +65,12 @@ def detect_version(dist_path):
     return detectedVersion, detectedHash, isEnterprise
 
     #if os.path.isdir(dist_path + 'enterprise-dist'):
-    #    # grafana-enterprise-6.0.0-29b28127pre3.windows-amd64.zip
+    #    # plutono-enterprise-6.0.0-29b28127pre3.windows-amd64.zip
     #    # get files in directory matching pattern
-    #    fileList = glob.glob(dist_path + '/enterprise-dist/grafana*.windows-amd64.zip')
+    #    fileList = glob.glob(dist_path + '/enterprise-dist/plutono*.windows-amd64.zip')
     #    firstFile = fileList[0]
-    #    p1 = re.search(r'grafana-enterprise-(\d\.\d\.\d)\.windows-amd64.zip$', firstFile)
-    #    p2 = re.search(r'grafana-enterprise-(\d\.\d\.\d)-(.*)\.windows-amd64.zip$', firstFile)
+    #    p1 = re.search(r'plutono-enterprise-(\d\.\d\.\d)\.windows-amd64.zip$', firstFile)
+    #    p2 = re.search(r'plutono-enterprise-(\d\.\d\.\d)-(.*)\.windows-amd64.zip$', firstFile)
     #    if p1:
     #        detectedVersion = p1.group(1)
     #        isEnterprise = True
@@ -89,18 +89,18 @@ def generate_product_wxs(env, config, features, scratch_file, target_dir):
     fh.close()
     shutil.copy2(scratch_file, target_dir)
 
-def generate_service_wxs(env, grafana_version, scratch_file, target_dir, nssm_version='2.24'):
-    template = env.get_template('common/grafana-service.wxs.j2')
-    output = template.render(grafana_version=grafana_version, nssm_version=nssm_version)
+def generate_service_wxs(env, plutono_version, scratch_file, target_dir, nssm_version='2.24'):
+    template = env.get_template('common/plutono-service.wxs.j2')
+    output = template.render(plutono_version=plutono_version, nssm_version=nssm_version)
     fh = open(scratch_file, 'w')
     fh.write(output)
     fh.close()
     shutil.copy2(scratch_file, target_dir)
 
-def generate_firewall_wxs(env, grafana_version, scratch_file, target_dir):
+def generate_firewall_wxs(env, plutono_version, scratch_file, target_dir):
     os.system("ls -al templates")
-    template = env.get_template('common/grafana-firewall.wxs.j2')
-    output = template.render(grafana_version=grafana_version)
+    template = env.get_template('common/plutono-firewall.wxs.j2')
+    output = template.render(plutono_version=plutono_version)
     fh = open(scratch_file, 'w')
     fh.write(output)
     fh.close()

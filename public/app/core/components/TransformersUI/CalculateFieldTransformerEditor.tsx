@@ -14,15 +14,15 @@ import {
   standardTransformers,
   TransformerRegistryItem,
   TransformerUIProps,
-} from '@grafana/data';
-import { FilterPill, HorizontalGroup, Input, LegacyForms, Select, StatsPicker } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { FilterPill, HorizontalGroup, Input, LegacyForms, Select, StatsPicker } from '@credativ/plutono-ui';
 import {
   BinaryOptions,
   CalculateFieldMode,
   CalculateFieldTransformerOptions,
   getNameFromOptions,
   ReduceOptions,
-} from '@grafana/data/src/transformations/transformers/calculateField';
+} from '@credativ/plutono-data/src/transformations/transformers/calculateField';
 
 import defaults from 'lodash/defaults';
 

@@ -1,5 +1,5 @@
-import { getBackendSrv } from '@grafana/runtime';
-import { PanelPlugin } from '@grafana/data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
+import { PanelPlugin } from '@credativ/plutono-data';
 import { ThunkResult } from 'app/types';
 import {
   pluginDashboardsLoad,

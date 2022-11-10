@@ -79,7 +79,7 @@ export function getFlotRange(panelMin: any, panelMax: any, datamin: number, data
   const delta = max - min;
 
   if (delta === 0.0) {
-    // Grafana fix: wide Y min and max using increased wideFactor
+    // Plutono fix: wide Y min and max using increased wideFactor
     // when all series values are the same
     const wideFactor = 0.25;
     const widen = Math.abs(max === 0 ? 1 : max * wideFactor);
@@ -146,18 +146,18 @@ export function getFlotTickDecimals(datamin: number, datamax: number, axis: { mi
   size *= magn;
 
   const tickDecimals = Math.max(0, -Math.floor(Math.log(delta) / Math.LN10) + 1);
-  // grafana addition
+  // plutono addition
   const scaledDecimals = tickDecimals - Math.floor(Math.log(size) / Math.LN10);
   return { tickDecimals, scaledDecimals };
 }
 
 /**
- * Format timestamp similar to Grafana graph panel.
+ * Format timestamp similar to Plutono graph panel.
  * @param ticks Number of ticks
  * @param min Time from (in milliseconds)
  * @param max Time to (in milliseconds)
  */
-export function grafanaTimeFormat(ticks: number, min: number, max: number) {
+export function plutonoTimeFormat(ticks: number, min: number, max: number) {
   if (min && max && ticks) {
     const range = max - min;
     const secPerTick = range / ticks / 1000;

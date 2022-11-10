@@ -1,5 +1,5 @@
 import { DatasourceSrv } from 'app/features/plugins/datasource_srv';
-import { DataSourceInstanceSettings, DataSourcePlugin } from '@grafana/data';
+import { DataSourceInstanceSettings, DataSourcePlugin } from '@credativ/plutono-data';
 
 // Datasource variable $datasource with current value 'BBB'
 const templateSrv: any = {
@@ -45,10 +45,10 @@ describe('datasource_srv', () => {
       uid: 'uid-code-mmm',
       meta: { metrics: true, annotations: true } as any,
     },
-    '-- Grafana --': {
-      type: 'grafana',
-      name: '-- Grafana --',
-      meta: { builtIn: true, metrics: true, id: 'grafana' },
+    '-- Plutono --': {
+      type: 'plutono',
+      name: '-- Plutono --',
+      meta: { builtIn: true, metrics: true, id: 'plutono' },
     },
     '-- Dashboard --': {
       type: 'dashboard',
@@ -234,11 +234,11 @@ describe('datasource_srv', () => {
           Object {
             "meta": Object {
               "builtIn": true,
-              "id": "grafana",
+              "id": "plutono",
               "metrics": true,
             },
-            "name": "-- Grafana --",
-            "type": "grafana",
+            "name": "-- Plutono --",
+            "type": "plutono",
           },
         ]
       `);

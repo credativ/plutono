@@ -1,4 +1,4 @@
-import { DataQuery, DataSourceJsonData, QueryResultMeta, ScopedVars } from '@grafana/data';
+import { DataQuery, DataSourceJsonData, QueryResultMeta, ScopedVars } from '@credativ/plutono-data';
 
 export interface LokiInstantQueryRequest {
   query: string;

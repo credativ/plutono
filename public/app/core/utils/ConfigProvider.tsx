@@ -1,11 +1,11 @@
 import React, { useEffect, useState } from 'react';
-import { config, GrafanaBootConfig } from '@grafana/runtime';
-import { ThemeContext } from '@grafana/ui';
+import { config, PlutonoBootConfig } from '@credativ/plutono-runtime';
+import { ThemeContext } from '@credativ/plutono-ui';
 import { appEvents } from '../core';
 import { ThemeChangedEvent } from 'app/types/events';
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 
-export const ConfigContext = React.createContext<GrafanaBootConfig>(config);
+export const ConfigContext = React.createContext<PlutonoBootConfig>(config);
 export const ConfigConsumer = ConfigContext.Consumer;
 
 export const provideConfig = (component: React.ComponentType<any>) => {
@@ -16,7 +16,7 @@ export const provideConfig = (component: React.ComponentType<any>) => {
 };
 
 export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
-  const [theme, setTheme] = useState<GrafanaTheme>(config.theme);
+  const [theme, setTheme] = useState<PlutonoTheme>(config.theme);
 
   useEffect(() => {
     const sub = appEvents.subscribe(ThemeChangedEvent, (event) => {

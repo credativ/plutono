@@ -1,6 +1,6 @@
-import { DynamicConfigValue, FieldConfigOptionsRegistry, FieldOverrideContext, GrafanaTheme } from '@grafana/data';
+import { DynamicConfigValue, FieldConfigOptionsRegistry, FieldOverrideContext, PlutonoTheme } from '@credativ/plutono-data';
 import React from 'react';
-import { Counter, Field, HorizontalGroup, IconButton, Label, stylesFactory, useTheme } from '@grafana/ui';
+import { Counter, Field, HorizontalGroup, IconButton, Label, stylesFactory, useTheme } from '@credativ/plutono-ui';
 import { css, cx } from 'emotion';
 import { OptionsGroup } from './OptionsGroup';
 
@@ -101,7 +101,7 @@ export const DynamicConfigValueEditor: React.FC<DynamicConfigValueEditorProps> =
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     collapsibleOverrideEditor: css`
       label: collapsibleOverrideEditor;

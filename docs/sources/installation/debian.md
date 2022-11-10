@@ -1,33 +1,33 @@
 +++
 title = "Install on Debian/Ubuntu"
-description = "Install guide for Grafana on Debian or Ubuntu"
-keywords = ["grafana", "installation", "documentation"]
-aliases = ["/docs/grafana/latest/installation/installation/debian"]
+description = "Install guide for Plutono on Debian or Ubuntu"
+keywords = ["plutono", "installation", "documentation"]
+aliases = ["/docs/plutono/latest/installation/installation/debian"]
 weight = 200
 +++
 
 # Install on Debian or Ubuntu
 
-This page explains how to install Grafana dependencies, download and install Grafana, get the service up and running on your Debian or Ubuntu system, and also describes the installation package details.
+This page explains how to install Plutono dependencies, download and install Plutono, get the service up and running on your Debian or Ubuntu system, and also describes the installation package details.
 
-**Note on upgrading:** While the process for upgrading Grafana is very similar to installing Grafana, there are some key backup steps you should perform. Read [Upgrading Grafana]({{< relref "upgrading.md" >}}) for tips and guidance on updating an existing installation.
+**Note on upgrading:** While the process for upgrading Plutono is very similar to installing Plutono, there are some key backup steps you should perform. Read [Upgrading Plutono]({{< relref "upgrading.md" >}}) for tips and guidance on updating an existing installation.
 
 ## 1. Download and install
 
-You can install Grafana using our official APT repository, by downloading a `.deb` package, or by downloading a binary `.tar.gz` file.
+You can install Plutono using our official APT repository, by downloading a `.deb` package, or by downloading a binary `.tar.gz` file.
 
 ### Install from APT repository
 
-If you install from the APT repository, then Grafana is automatically updated every time you run `apt-get update`.
+If you install from the APT repository, then Plutono is automatically updated every time you run `apt-get update`.
 
-| Grafana Version | Package | Repository |
+| Plutono Version | Package | Repository |
 |-----------------|---------|------------|
-| Grafana OSS     | grafana | `https://packages.grafana.com/oss/deb stable main` |
-| Grafana OSS (Beta)     | grafana | `https://packages.grafana.com/oss/deb beta main` |
-| Grafana Enterprise     | grafana-enterprise | `https://packages.grafana.com/enterprise/deb stable main` |
-| Grafana Enterprise (Beta)     | grafana-enterprise | `https://packages.grafana.com/enterprise/deb beta main` |
+| Plutono OSS     | plutono | `https://packages.grafana.com/oss/deb stable main` |
+| Plutono OSS (Beta)     | plutono | `https://packages.grafana.com/oss/deb beta main` |
+| Plutono Enterprise     | plutono-enterprise | `https://packages.grafana.com/enterprise/deb stable main` |
+| Plutono Enterprise (Beta)     | plutono-enterprise | `https://packages.grafana.com/enterprise/deb beta main` |
 
-> We recommend all users install the Enterprise Edition of Grafana, which can be seamlessly upgraded with a Grafana Enterprise [subscription](https://grafana.com/products/enterprise/?utm_source=grafana-install-page).
+> We recommend all users install the Enterprise Edition of Plutono, which can be seamlessly upgraded with a Plutono Enterprise [subscription](https://grafana.com/products/enterprise/).
 
 #### To install the latest Enterprise edition:
 
@@ -40,19 +40,19 @@ wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 Add this repository for stable releases:
 
 ```bash
-echo "deb https://packages.grafana.com/enterprise/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+echo "deb https://packages.grafana.com/enterprise/deb stable main" | sudo tee -a /etc/apt/sources.list.d/plutono.list
 ```
 
 Add this repository if you want beta releases:
 ```bash
-echo "deb https://packages.grafana.com/enterprise/deb beta main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+echo "deb https://packages.grafana.com/enterprise/deb beta main" | sudo tee -a /etc/apt/sources.list.d/plutono.list
 ```
 
 After you add the repository:
 
 ```bash
 sudo apt-get update
-sudo apt-get install grafana-enterprise
+sudo apt-get install plutono-enterprise
 ```
 
 #### To install the latest OSS release:
@@ -66,27 +66,27 @@ wget -q -O - https://packages.grafana.com/gpg.key | sudo apt-key add -
 Add this repository for stable releases:
 
 ```bash
-echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+echo "deb https://packages.grafana.com/oss/deb stable main" | sudo tee -a /etc/apt/sources.list.d/plutono.list
 ```
 
 Add this repository if you want beta releases:
 ```bash
-echo "deb https://packages.grafana.com/oss/deb beta main" | sudo tee -a /etc/apt/sources.list.d/grafana.list
+echo "deb https://packages.grafana.com/oss/deb beta main" | sudo tee -a /etc/apt/sources.list.d/plutono.list
 ```
 
 After you add the repository:
 
 ```bash
 sudo apt-get update
-sudo apt-get install grafana
+sudo apt-get install plutono
 ```
 
 ### Install .deb package
 
-If you install the `.deb` package, then you will need to manually update Grafana for each new version.
+If you install the `.deb` package, then you will need to manually update Plutono for each new version.
 
-1. On the [Grafana download page](https://grafana.com/grafana/download), select the Grafana version you want to install.
-   * The most recent Grafana version is selected by default.
+1. On the [Plutono download page](https://grafana.com/grafana/download), select the Plutono version you want to install.
+   * The most recent Plutono version is selected by default.
    * The **Version** field displays only finished releases. If you want to install a beta version, click **Nightly Builds** and then select a version.
 1. Select an **Edition**.
    - **Enterprise** - Recommended download. Functionally identical to the open source version, but includes features you can unlock with a license if you so choose.
@@ -97,12 +97,12 @@ If you install the `.deb` package, then you will need to manually update Grafana
 ```bash
 sudo apt-get install -y adduser libfontconfig1
 wget <.deb package url>
-sudo dpkg -i grafana<edition>_<version>_amd64.deb
+sudo dpkg -i plutono<edition>_<version>_amd64.deb
 ```
 
 ## Install from binary .tar.gz file
 
-Download the latest [`.tar.gz` file](https://grafana.com/grafana/download?platform=linux) and extract it. The files extract into a folder named after the Grafana version downloaded. This folder contains all files required to run Grafana. There are no init scripts or install scripts in this package.
+Download the latest [`.tar.gz` file](https://grafana.com/grafana/download?platform=linux) and extract it. The files extract into a folder named after the Plutono version downloaded. This folder contains all files required to run Plutono. There are no init scripts or install scripts in this package.
 
 ```bash
 wget <tar.gz package url>
@@ -111,7 +111,7 @@ sudo tar -zxvf <tar.gz package>
 
 ## 2. Start the server
 
-This starts the `grafana-server` process as the `grafana` user, which was created during the package installation.
+This starts the `plutono-server` process as the `plutono` user, which was created during the package installation.
 
 If you installed with the APT repository or `.deb` package, then you can start the server using `systemd` or `init.d`. If you installed a binary `.tar.gz` file, then you need to execute the binary.
 
@@ -121,14 +121,14 @@ To start the service and verify that the service has started:
 
 ```bash
 sudo systemctl daemon-reload
-sudo systemctl start grafana-server
-sudo systemctl status grafana-server
+sudo systemctl start plutono-server
+sudo systemctl status plutono-server
 ```
 
-Configure the Grafana server to start at boot:
+Configure the Plutono server to start at boot:
 
 ```bash
-sudo systemctl enable grafana-server.service
+sudo systemctl enable plutono-server.service
 ```
 
 ### Start the server with init.d
@@ -136,40 +136,40 @@ sudo systemctl enable grafana-server.service
 To start the service and verify that the service has started:
 
 ```bash
-sudo service grafana-server start
-sudo service grafana-server status
+sudo service plutono-server start
+sudo service plutono-server status
 ```
 
-Configure the Grafana server to start at boot:
+Configure the Plutono server to start at boot:
 
 ```bash
-sudo update-rc.d grafana-server defaults
+sudo update-rc.d plutono-server defaults
 ```
 
 ### Execute the binary
 
-The `grafana-server` binary .tar.gz needs the working directory to be the root install directory where the binary and the `public` folder are located.
+The `plutono-server` binary .tar.gz needs the working directory to be the root install directory where the binary and the `public` folder are located.
 
-Start Grafana by running:
+Start Plutono by running:
 ```bash
-./bin/grafana-server web
+./bin/plutono-server web
 ```
 
 ## Package details
 
-- Installs binary to `/usr/sbin/grafana-server`
-- Installs Init.d script to `/etc/init.d/grafana-server`
-- Creates default file (environment vars) to `/etc/default/grafana-server`
-- Installs configuration file to `/etc/grafana/grafana.ini`
-- Installs systemd service (if systemd is available) name `grafana-server.service`
-- The default configuration sets the log file at `/var/log/grafana/grafana.log`
-- The default configuration specifies a SQLite3 db at `/var/lib/grafana/grafana.db`
-- Installs HTML/JS/CSS and other Grafana files at `/usr/share/grafana`
+- Installs binary to `/usr/sbin/plutono-server`
+- Installs Init.d script to `/etc/init.d/plutono-server`
+- Creates default file (environment vars) to `/etc/default/plutono-server`
+- Installs configuration file to `/etc/plutono/plutono.ini`
+- Installs systemd service (if systemd is available) name `plutono-server.service`
+- The default configuration sets the log file at `/var/log/plutono/plutono.log`
+- The default configuration specifies a SQLite3 db at `/var/lib/plutono/plutono.db`
+- Installs HTML/JS/CSS and other Plutono files at `/usr/share/plutono`
 
 ## Next steps
 
 Refer to the [Getting Started]({{< relref "../getting-started/getting-started/" >}}) guide for information about logging in, setting up data sources, and so on.
 
-## Configure Grafana
+## Configure Plutono
 
 Refer to the [Configuration]({{< relref "../administration/configuration.md" >}}) page for details on options for customizing your environment, logging, database, and so on.

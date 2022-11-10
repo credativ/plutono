@@ -1,6 +1,6 @@
 import angular from 'angular';
 
-const directiveModule = angular.module('grafana.directives');
+const directiveModule = angular.module('plutono.directives');
 const directiveCache: any = {};
 
 /** @ngInject */

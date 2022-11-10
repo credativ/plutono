@@ -2,7 +2,7 @@ import angular, { ILocationService, IRootScopeService } from 'angular';
 import _ from 'lodash';
 import { DashboardModel } from '../state/DashboardModel';
 import { ContextSrv } from 'app/core/services/context_srv';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 import { AppEventConsumer, CoreEvents } from 'app/types';
 import { appEvents } from 'app/core/app_events';
 import { UnsavedChangesModal } from '../components/SaveDashboard/UnsavedChangesModal';
@@ -24,7 +24,7 @@ export class ChangeTracker {
     $window: any,
     private $timeout: any,
     private contextSrv: ContextSrv,
-    private $rootScope: GrafanaRootScope
+    private $rootScope: PlutonoRootScope
   ) {
     this.$location = $location;
     this.$window = $window;

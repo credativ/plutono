@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { escapeStringForRegex, unEscapeStringFromRegex } from '@grafana/data';
-import { Input, Icon } from '@grafana/ui';
+import { escapeStringForRegex, unEscapeStringFromRegex } from '@credativ/plutono-data';
+import { Input, Icon } from '@credativ/plutono-ui';
 
 export interface Props {
   value: string | undefined;

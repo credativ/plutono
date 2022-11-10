@@ -1,4 +1,4 @@
-import { e2e } from '@grafana/e2e';
+import { e2e } from '@credativ/plutono-e2e';
 import { expect } from '../../../public/test/lib/common';
 
 const PANEL_UNDER_TEST = 'Random walk series';

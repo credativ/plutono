@@ -2,8 +2,8 @@
 import React, { FunctionComponent } from 'react';
 import { css } from 'emotion';
 // Components
-import { IconName, IconType, IconSize, IconButton, useTheme, stylesFactory } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { IconName, IconType, IconSize, IconButton, useTheme, stylesFactory } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 
 interface Props {
   icon?: IconName;
@@ -36,7 +36,7 @@ export const DashNavButton: FunctionComponent<Props> = ({ icon, iconType, iconSi
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   noBorderContainer: css`
     padding: 0 ${theme.spacing.xs};
     display: flex;

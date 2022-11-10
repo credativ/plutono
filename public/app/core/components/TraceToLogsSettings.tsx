@@ -1,10 +1,10 @@
 import {
   DataSourceJsonData,
   DataSourcePluginOptionsEditorProps,
-  GrafanaTheme,
+  PlutonoTheme,
   updateDatasourcePluginJsonDataOption,
-} from '@grafana/data';
-import { InlineFormLabel, TagsInput, useStyles } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { InlineFormLabel, TagsInput, useStyles } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 import React from 'react';
 import { DataSourcePicker } from './Select/DataSourcePicker';
@@ -64,7 +64,7 @@ export function TraceToLogsSettings({ options, onOptionsChange }: Props) {
   );
 }
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: PlutonoTheme) => ({
   infoText: css`
     padding-bottom: ${theme.spacing.md};
     color: ${theme.colors.textSemiWeak};

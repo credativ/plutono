@@ -1,22 +1,22 @@
 +++
 title = "Legacy review guidelines"
-aliases = ["/docs/grafana/latest/plugins/developing/plugin-review-guidelines/"]
+aliases = ["/docs/plutono/latest/plugins/developing/plugin-review-guidelines/"]
 +++
 
 # Legacy review guidelines
 
-The Grafana team reviews all plugins that are published on Grafana.com. There are two areas we review, the metadata for the plugin and the plugin functionality.
+The Plutono team reviews all plugins that are published on Grafana.com. There are two areas we review, the metadata for the plugin and the plugin functionality.
 
 ## Metadata
 
-The plugin metadata consists of a `plugin.json` file and the README.md file. The `plugin.json` file is used by Grafana to load the plugin, and the README.md file is shown in the plugins section of Grafana and the plugins section of https://grafana.com.
+The plugin metadata consists of a `plugin.json` file and the README.md file. The `plugin.json` file is used by Plutono to load the plugin, and the README.md file is shown in the plugins section of Plutono and the plugins section of https://grafana.com.
 
 ### README.md
 
-The README.md file is shown on the plugins page in Grafana and the plugin page on Grafana.com. There are some differences between the GitHub markdown and the markdown allowed in Grafana/Grafana.com:
+The README.md file is shown on the plugins page in Plutono and the plugin page on Grafana.com. There are some differences between the GitHub markdown and the markdown allowed in Plutono/Grafana.com:
 
 - Cannot contain inline HTML.
-- Any image links should be absolute links. For example: https://raw.githubusercontent.com/grafana/azure-monitor-datasource/master/dist/img/grafana_cloud_install.png
+- Any image links should be absolute links. For example: https://raw.githubusercontent.com/plutono/azure-monitor-datasource/master/dist/img/plutono_cloud_install.png
 
 The README should:
 
@@ -25,7 +25,7 @@ The README should:
 
 ### Plugin.json
 
-The `plugin.json` file is the same concept as the `package.json` file for an npm package. When the Grafana server starts it will scan the plugin folders (all folders in the data/plugins subfolder) and load every folder that contains a `plugin.json` file unless the folder contains a subfolder named `dist`. In that case, the Grafana server will load the `dist` folder instead.
+The `plugin.json` file is the same concept as the `package.json` file for an npm package. When the Plutono server starts it will scan the plugin folders (all folders in the data/plugins subfolder) and load every folder that contains a `plugin.json` file unless the folder contains a subfolder named `dist`. In that case, the Plutono server will load the `dist` folder instead.
 
 A minimal `plugin.json` file:
 
@@ -36,7 +36,7 @@ A minimal `plugin.json` file:
   "id": "yourorg-clock-panel",
 
   "info": {
-    "description": "Clock panel for grafana",
+    "description": "Clock panel for plutono",
     "author": {
       "name": "Author Name",
       "url": "http://yourwebsite.com"
@@ -47,13 +47,13 @@ A minimal `plugin.json` file:
   },
 
   "dependencies": {
-    "grafanaVersion": "3.x.x",
+    "plutonoVersion": "3.x.x",
     "plugins": [ ]
   }
 }
 ```
 
-- The convention for the plugin id is **[grafana.com username/org]-[plugin name]-[datasource|app|panel]** and it has to be unique. The org **cannot** be `grafana` unless it is a plugin created by the Grafana core team.
+- The convention for the plugin id is **[grafana.com username/org]-[plugin name]-[datasource|app|panel]** and it has to be unique. The org **cannot** be `plutono` unless it is a plugin created by the Plutono core team.
 
     Examples:
 
@@ -66,7 +66,7 @@ A minimal `plugin.json` file:
 - The `type` field should be either `datasource` `app` or `panel`.
 - The `version` field should be in the form: x.x.x e.g. `1.0.0` or `0.4.1`.
 
-The full file format for `plugin.json` file is in [plugin.json](http://docs.grafana.org/plugins/developing/plugin.json/).
+The full file format for `plugin.json` file is in [plugin.json](http://docs.plutono.org/plugins/developing/plugin.json/).
 
 ## Plugin Language
 
@@ -107,7 +107,7 @@ Directories:
 
 ## HTML and CSS
 
-For the HTML on editor tabs, we recommend using the inbuilt Grafana styles rather than defining your own. This makes plugins feel like a more natural part of Grafana. If done correctly, the html will also be responsive and adapt to smaller screens. The `gf-form` css classes should be used for labels and inputs.
+For the HTML on editor tabs, we recommend using the inbuilt Plutono styles rather than defining your own. This makes plugins feel like a more natural part of Plutono. If done correctly, the html will also be responsive and adapt to smaller screens. The `gf-form` css classes should be used for labels and inputs.
 
 Below is a minimal example of an editor row with one form group and two fields, a dropdown and a text input:
 
@@ -132,7 +132,7 @@ Below is a minimal example of an editor row with one form group and two fields, 
 Use the `width-x` and `max-width-x` classes to control the width of your labels and input fields. Try to get labels and input fields to line up neatly by having the same width for all the labels in a group and the same width for all inputs in a group if possible.
 
 ## Data Sources
-For more information about data sources, refer to the [basic guide for data sources](http://docs.grafana.org/plugins/developing/datasources/).
+For more information about data sources, refer to the [basic guide for data sources](http://docs.plutono.org/plugins/developing/datasources/).
 
 ### Configuration Page Guidelines
 
@@ -150,7 +150,7 @@ For more information about data sources, refer to the [basic guide for data sour
 
 #### Password Security
 
-If possible, any passwords or secrets should be saved in the `secureJsonData` blob. To encrypt sensitive data, the Grafana server's proxy feature must be used. The Grafana server has support for token authentication (OAuth) and HTTP Header authentication. If the calls have to be sent directly from the browser to a third-party API, this will not be possible and sensitive data will not be encrypted.
+If possible, any passwords or secrets should be saved in the `secureJsonData` blob. To encrypt sensitive data, the Plutono server's proxy feature must be used. The Plutono server has support for token authentication (OAuth) and HTTP Header authentication. If the calls have to be sent directly from the browser to a third-party API, this will not be possible and sensitive data will not be encrypted.
 
 Read more here about how [authentication for data sources]({{< relref "../add-authentication-for-data-source-plugins.md" >}}) works.
 
@@ -164,10 +164,10 @@ If using the proxy feature, the Configuration page should use the `secureJsonDat
 
 Each query editor is unique and can have a unique style. It should be adapted to what the users of the data source are used to.
 
-- Should use the Grafana CSS `gf-form` classes.
+- Should use the Plutono CSS `gf-form` classes.
 - Should be neat and tidy. Labels and fields in columns should be aligned and should be the same width if possible.
-- The data source should be able to handle when a user toggles a query (by clicking on the eye icon) and not execute the query. This is done by checking the `hide` property - an [example](https://github.com/grafana/grafana/blob/e75840737e81f70b6d169df21eca86a624d4bdc4/public/app/plugins/datasource/postgres/datasource.ts#L73).
+- The data source should be able to handle when a user toggles a query (by clicking on the eye icon) and not execute the query. This is done by checking the `hide` property - an [example](https://github.com/credativ/plutono/blob/e75840737e81f70b6d169df21eca86a624d4bdc4/public/app/plugins/datasource/postgres/datasource.ts#L73).
 - Should not execute queries if fields in the Query Editor are empty and the query will throw an exception (defensive programming).
 - Should handle errors. There are two main ways to do this:
-  - use the notification system in Grafana to show a toaster pop-up with the error message. For an example of a pop-up with the error message, refer to [code in triggers_panel_ctrl](https://github.com/alexanderzobnin/grafana-zabbix/blob/fdbbba2fb03f5f2a4b3b0715415e09d5a4cf6cde/src/panel-triggers/triggers_panel_ctrl.js#L467-L471).
+  - use the notification system in Plutono to show a toaster pop-up with the error message. For an example of a pop-up with the error message, refer to [code in triggers_panel_ctrl](https://github.com/alexanderzobnin/plutono-zabbix/blob/fdbbba2fb03f5f2a4b3b0715415e09d5a4cf6cde/src/panel-triggers/triggers_panel_ctrl.js#L467-L471).
   - provide an error notification in the query editor like the MySQL/Postgres data sources do. For an example of error notification in the query editor, refer to [code in query_ctrl](https://github.com/grafana/azure-monitor-datasource/blob/b184d077f082a69f962120ef0d1f8296a0d46f03/src/query_ctrl.ts#L36-L51) and in the [html](https://github.com/grafana/azure-monitor-datasource/blob/b184d077f082a69f962120ef0d1f8296a0d46f03/src/partials/query.editor.html#L190-L193).

@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { css } from 'emotion';
-import { DeleteButton, Icon, IconButton, Tag, useTheme } from '@grafana/ui';
+import { DeleteButton, Icon, IconButton, Tag, useTheme } from '@credativ/plutono-ui';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
 import { arrayMove } from 'app/core/utils/arrayMove';
 import { DashboardModel, DashboardLink } from '../../state/DashboardModel';

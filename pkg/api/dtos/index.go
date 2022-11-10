@@ -1,7 +1,7 @@
 package dtos
 
 import (
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/setting"
 
 	"html/template"
 )
@@ -17,8 +17,8 @@ type IndexViewData struct {
 	BuildVersion            string
 	BuildCommit             string
 	Theme                   string
-	NewGrafanaVersionExists bool
-	NewGrafanaVersion       string
+	NewPlutonoVersionExists bool
+	NewPlutonoVersion       string
 	AppName                 string
 	AppNameBodyClass        string
 	FavIcon                 template.URL

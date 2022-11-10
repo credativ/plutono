@@ -1,12 +1,12 @@
 +++
-title = "Release notes for Grafana 7.3.2"
+title = "Release notes for Plutono 7.3.2"
 [_build]
 list = false
 +++
 
 <!-- Auto generated do not edit -->
 
-# Release notes for Grafana 7.3.2
+# Release notes for Plutono 7.3.2
 
 ### Features and enhancements
 * **CloudWatch Logs**: Change how we measure query progress. [#28912](https://github.com/grafana/grafana/pull/28912), [@aocenas](https://github.com/aocenas)

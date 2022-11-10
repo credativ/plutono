@@ -1,21 +1,21 @@
 +++
 title = "Legacy snapshot mode"
-aliases = ["/docs/grafana/latest/plugins/developing/snapshot-mode/"]
+aliases = ["/docs/plutono/latest/plugins/developing/snapshot-mode/"]
 +++
 
 # Legacy snapshot mode
 
-{{< figure class="float-right"  src="/static/img/docs/Grafana-snapshot-example.png" caption="A dashboard using snapshot data and not live data." >}}
+{{< figure class="float-right"  src="/static/img/docs/Plutono-snapshot-example.png" caption="A dashboard using snapshot data and not live data." >}}
 
-Grafana has this great feature where you can [save a snapshot of your dashboard]({{< relref "../../../dashboards/json-model.md" >}}). Instead of sending a screenshot of a dashboard to someone, you can send them a working, interactive Grafana dashboard with the snapshot data embedded inside it. The snapshot can be saved on your Grafana server and is available to all your co-workers. Raintank also hosts a [snapshot server](http://snapshot.raintank.io/) if you want to send the snapshot to someone who does not have access to your Grafana server.
+Plutono has this great feature where you can [save a snapshot of your dashboard]({{< relref "../../../dashboards/json-model.md" >}}). Instead of sending a screenshot of a dashboard to someone, you can send them a working, interactive Plutono dashboard with the snapshot data embedded inside it. The snapshot can be saved on your Plutono server and is available to all your co-workers. Raintank also hosts a [snapshot server](http://snapshot.raintank.io/) if you want to send the snapshot to someone who does not have access to your Plutono server.
 
 {{< figure class="float-right"  src="/static/img/docs/animated_gifs/snapshots.gif" caption="Selecting a snapshot" >}}
 
-This all works because Grafana saves a snapshot of the current data in the dashboard json instead of fetching the data from a data source. However, if you are building a custom panel plugin then this will not work straight out of the box. You will need to make some small (and easy!) changes first.
+This all works because Plutono saves a snapshot of the current data in the dashboard json instead of fetching the data from a data source. However, if you are building a custom panel plugin then this will not work straight out of the box. You will need to make some small (and easy!) changes first.
 
 ## Enabling support for loading snapshot data
 
-Grafana automatically saves data from data sources in the dashboard json when the snapshot is created so we do not have to write any code for that. Enabling snapshot support for reading time series data is very simple. First in the constructor, we need to add an event handler for `data-snapshot-load`. This event is triggered by Grafana when the snapshot data is loaded from the dashboard json.
+Plutono automatically saves data from data sources in the dashboard json when the snapshot is created so we do not have to write any code for that. Enabling snapshot support for reading time series data is very simple. First in the constructor, we need to add an event handler for `data-snapshot-load`. This event is triggered by Plutono when the snapshot data is loaded from the dashboard json.
 
 ```javascript
 constructor($scope, $injector, contextSrv) {
@@ -35,15 +35,15 @@ onDataSnapshotLoad(snapshotData) {
 }
 ```
 
-This will cover most use cases for snapshot support. Sometimes you will want to save data that is not time series data from a Grafana data source and then you have to do a bit more work to get snapshot support.
+This will cover most use cases for snapshot support. Sometimes you will want to save data that is not time series data from a Plutono data source and then you have to do a bit more work to get snapshot support.
 
 ## Saving custom data for snapshots
 
-Data that is not time series data from a Grafana data source is not saved automatically by Grafana. Saving custom data for snapshot mode has to be done manually.
+Data that is not time series data from a Plutono data source is not saved automatically by Plutono. Saving custom data for snapshot mode has to be done manually.
 
-{{< figure class="float-right"  src="/static/img/docs/Grafana-save-snapshot.png" caption="Save snapshot" >}}
+{{< figure class="float-right"  src="/static/img/docs/Plutono-save-snapshot.png" caption="Save snapshot" >}}
 
-Grafana gives us a chance to save data to the dashboard json when it is creating a snapshot. In the 'data-received' event handler, you can check the snapshot flag on the dashboard object. If this is true, then Grafana is creating a snapshot and you can manually save custom data to the panel json. In the example, a new field called snapshotLocationData in the panel json is initialized with a snapshot of the custom data.
+Plutono gives us a chance to save data to the dashboard json when it is creating a snapshot. In the 'data-received' event handler, you can check the snapshot flag on the dashboard object. If this is true, then Plutono is creating a snapshot and you can manually save custom data to the panel json. In the example, a new field called snapshotLocationData in the panel json is initialized with a snapshot of the custom data.
 
 ```javascript
 onDataReceived(dataList) {

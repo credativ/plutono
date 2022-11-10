@@ -54,14 +54,14 @@ describe('Test Datasource Query Editor', () => {
     expect(screen.getByRole('textbox', { name: /string input/i })).toHaveValue('1,20,90,30,5,0');
 
     await fireEvent.keyDown(select, { keyCode: 40 });
-    await userEvent.click(screen.getByText('Grafana API'));
+    await userEvent.click(screen.getByText('Plutono API'));
     expect(mockOnChange).toHaveBeenCalledWith(
-      expect.objectContaining({ scenarioId: 'grafana_api', stringInput: 'datasources' })
+      expect.objectContaining({ scenarioId: 'plutono_api', stringInput: 'datasources' })
     );
     rerender(
-      <QueryEditor {...props} query={{ ...defaultQuery, scenarioId: 'grafana_api', stringInput: 'datasources' }} />
+      <QueryEditor {...props} query={{ ...defaultQuery, scenarioId: 'plutono_api', stringInput: 'datasources' }} />
     );
-    expect(await screen.findByText('Grafana API')).toBeInTheDocument();
+    expect(await screen.findByText('Plutono API')).toBeInTheDocument();
     expect(screen.getByText('Data Sources')).toBeInTheDocument();
 
     await fireEvent.keyDown(select, { keyCode: 40 });

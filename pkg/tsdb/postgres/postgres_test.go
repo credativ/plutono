@@ -10,15 +10,15 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/securejsondata"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/services/sqlstore/sqlutil"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/tsdb/sqleng"
+	"github.com/credativ/plutono/pkg/components/securejsondata"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/services/sqlstore/sqlutil"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/tsdb/sqleng"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"xorm.io/xorm"
@@ -142,8 +142,8 @@ func TestGenerateConnectionString(t *testing.T) {
 }
 
 // To run this test, set runPostgresTests=true
-// Or from the commandline: GRAFANA_TEST_DB=postgres go test -v ./pkg/tsdb/postgres
-// The tests require a PostgreSQL db named grafanadstest and a user/password grafanatest/grafanatest!
+// Or from the commandline: PLUTONO_TEST_DB=postgres go test -v ./pkg/tsdb/postgres
+// The tests require a PostgreSQL db named plutonodstest and a user/password plutonotest/plutonotest!
 // Use the docker/blocks/postgres_tests/docker-compose.yaml to spin up a
 // preconfigured Postgres server suitable for running these tests.
 // There is also a datasource and dashboard provisioned by devenv scripts that you can
@@ -1117,8 +1117,8 @@ func TestPostgres(t *testing.T) {
 
 func InitPostgresTestDB(t *testing.T) *xorm.Engine {
 	testDB := sqlutil.PostgresTestDB()
-	x, err := xorm.NewEngine(testDB.DriverName, strings.Replace(testDB.ConnStr, "dbname=grafanatest",
-		"dbname=grafanadstest", 1))
+	x, err := xorm.NewEngine(testDB.DriverName, strings.Replace(testDB.ConnStr, "dbname=plutonotest",
+		"dbname=plutonodstest", 1))
 	require.NoError(t, err, "Failed to init postgres DB")
 
 	x.DatabaseTZ = time.UTC

@@ -3,7 +3,7 @@ package ngalert
 import (
 	"fmt"
 
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrator"
+	"github.com/credativ/plutono/pkg/services/sqlstore/migrator"
 )
 
 func addAlertDefinitionMigrations(mg *migrator.Migrator) {

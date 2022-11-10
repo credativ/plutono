@@ -14,7 +14,7 @@
 - This will insert zeros for series that are missing measurements and will make stacking work properly
 
 #### Group by time
-- Group by time is important, otherwise the query could return many thousands of datapoints that will slow down Grafana
+- Group by time is important, otherwise the query could return many thousands of datapoints that will slow down Plutono
 - Leave the group by time field empty for each query and it will be calculated based on time range and pixel width of the graph
 - If you use fill(0) or fill(null) set a low limit for the auto group by time interval
 - The low limit can only be set in the group by time option below your queries
@@ -22,6 +22,6 @@
 
 #### Documentation links:
 
-[Grafana's InfluxDB Documentation](http://docs.grafana.org/features/datasources/influxdb)
+[Plutono's InfluxDB Documentation](http://docs.plutono.org/features/datasources/influxdb)
 
 [Official InfluxDB Documentation](https://docs.influxdata.com/influxdb)

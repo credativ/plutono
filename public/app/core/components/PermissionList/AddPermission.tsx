@@ -3,8 +3,8 @@ import { css } from 'emotion';
 import config from 'app/core/config';
 import { UserPicker } from 'app/core/components/Select/UserPicker';
 import { TeamPicker, Team } from 'app/core/components/Select/TeamPicker';
-import { Button, Form, HorizontalGroup, Icon, Select, stylesFactory } from '@grafana/ui';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
+import { Button, Form, HorizontalGroup, Icon, Select, stylesFactory } from '@credativ/plutono-ui';
+import { PlutonoTheme, SelectableValue } from '@credativ/plutono-data';
 import { User } from 'app/types';
 import {
   dashboardPermissionLevels,
@@ -135,7 +135,7 @@ class AddPermissions extends Component<Props, NewDashboardAclItem> {
   }
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   label: css`
     color: ${theme.colors.textBlue};
     font-weight: bold;

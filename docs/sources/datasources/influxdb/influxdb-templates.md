@@ -26,10 +26,10 @@ SELECT mean("value") FROM "logins" WHERE "hostname" =~ /^$host$/ AND $timeFilter
 SELECT mean("value") FROM "logins" WHERE "hostname" =~ /^[[host]]$/ AND $timeFilter GROUP BY time($__interval), "hostname"
 ```
 
-Why two ways? The first syntax is easier to read and write but does not allow you to use a variable in the middle of a word. When the **Multi-value** or **Include all value** options are enabled, Grafana converts the labels from plain text to a regex compatible string. Which means you have to use `=~` instead of `=`.
+Why two ways? The first syntax is easier to read and write but does not allow you to use a variable in the middle of a word. When the **Multi-value** or **Include all value** options are enabled, Plutono converts the labels from plain text to a regex compatible string. Which means you have to use `=~` instead of `=`.
 
 Example dashboard:
-[InfluxDB Templated Dashboard](https://play.grafana.org/dashboard/db/influxdb-templated)
+[InfluxDB Templated Dashboard](https://play.plutono.org/dashboard/db/influxdb-templated)
 
 ## Query variables
 

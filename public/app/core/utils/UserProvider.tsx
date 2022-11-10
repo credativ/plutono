@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { UserDTO, Team, UserOrg, UserSession } from 'app/types';
 import { config } from 'app/core/config';
-import { dateTimeFormat, dateTimeFormatTimeAgo } from '@grafana/data';
+import { dateTimeFormat, dateTimeFormatTimeAgo } from '@credativ/plutono-data';
 
 export interface UserAPI {
   changePassword: (changePassword: ChangePasswordFields) => void;

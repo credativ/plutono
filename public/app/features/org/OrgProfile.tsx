@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Input, Field, FieldSet, Button, Form } from '@grafana/ui';
+import { Input, Field, FieldSet, Button, Form } from '@credativ/plutono-ui';
 
 export interface Props {
   orgName: string;

@@ -1,31 +1,31 @@
-name: "grafana"
+name: "plutono"
 arch: "${ARCH}"
 platform: "linux"
 version: "${VERSION}"
 section: "default"
 priority: "extra"
 replaces:
-- grafana
+- plutono
 provides:
-- grafana-server
-- grafana-cli
+- plutono-server
+- plutono-cli
 depends:
 - adduser
 - libfontconfig1
 maintainer: "<contact@grafana.com>"
 description: |
-  Grafana
-vendor: "Grafana"
+  Plutono
+vendor: "Plutono"
 homepage: "https://grafana.com"
 license: "Apache 2"
 bindir: "/usr/sbin"
 files:
-  "./bin/grafana-server": "/usr/sbin/grafana-server"
-  "./bin/grafana-cli": "/usr/sbin/grafana-cli"
+  "./bin/plutono-server": "/usr/sbin/plutono-server"
+  "./bin/plutono-cli": "/usr/sbin/plutono-cli"
 config_files:
-  ./packaging/deb/init.d/grafana-server: "/etc/init.d/grafana-server"
-  ./packaging/deb/default/grafana-server: "/etc/default/grafana-server"
-  ./packaging/deb/systemd/grafana-server.service: "/usr/lib/systemd/system/grafana-server.service"
+  ./packaging/deb/init.d/plutono-server: "/etc/init.d/plutono-server"
+  ./packaging/deb/default/plutono-server: "/etc/default/plutono-server"
+  ./packaging/deb/systemd/plutono-server.service: "/usr/lib/systemd/system/plutono-server.service"
 overrides:
   rpm:
     scripts:

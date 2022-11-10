@@ -1,6 +1,6 @@
-# Grafana MSI Generator
+# Plutono MSI Generator
 
-Creates a docker image that can be included within CircleCI or run locally to generate an MSI for Grafana.
+Creates a docker image that can be included within CircleCI or run locally to generate an MSI for Plutono.
 
 ## Docker Image
 
@@ -11,16 +11,16 @@ The detection process expects a zip file in `/master/dist`.
 
 There are two patterns that will be matched for a build in the dist directory:
 ```
-grafana-6.0.0-ca0bc2c5pre3.windows-amd64.zip
-grafana-5.4.3.windows-amd64.zip
+plutono-6.0.0-ca0bc2c5pre3.windows-amd64.zip
+plutono-5.4.3.windows-amd64.zip
 ```
 
 ### Building an MSI
 
-The process is automated to expect a dist directory, and will build an msi for first matching grafana-*.windows-amd64.zip file found.
+The process is automated to expect a dist directory, and will build an msi for first matching plutono-*.windows-amd64.zip file found.
 
 ```
-grafana-5.4.3.windows-amd64.zip
+plutono-5.4.3.windows-amd64.zip
 ```
 
 ## CircleCI

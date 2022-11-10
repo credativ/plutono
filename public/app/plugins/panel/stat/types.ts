@@ -4,7 +4,7 @@ import {
   BigValueGraphMode,
   BigValueJustifyMode,
   BigValueTextMode,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import {
   ReducerID,
   standardEditorsRegistry,
@@ -13,7 +13,7 @@ import {
   escapeStringForRegex,
   VizOrientation,
   PanelOptionsEditorBuilder,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 // Structure copied from angular
 export interface StatPanelOptions extends SingleStatBaseOptions {

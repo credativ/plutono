@@ -15,13 +15,13 @@ var (
 
 func init() {
 	pluginRequestCounter = prometheus.NewCounterVec(prometheus.CounterOpts{
-		Namespace: "grafana",
+		Namespace: "plutono",
 		Name:      "plugin_request_total",
 		Help:      "The total amount of plugin requests",
 	}, []string{"plugin_id", "endpoint", "status"})
 
 	pluginRequestDuration = prometheus.NewSummaryVec(prometheus.SummaryOpts{
-		Namespace:  "grafana",
+		Namespace:  "plutono",
 		Name:       "plugin_request_duration_milliseconds",
 		Help:       "Plugin request duration",
 		Objectives: map[float64]float64{0.5: 0.05, 0.9: 0.01, 0.99: 0.001},

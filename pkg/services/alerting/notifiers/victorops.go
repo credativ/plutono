@@ -3,12 +3,12 @@ package notifiers
 import (
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/alerting"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 // AlertStateCritical - Victorops uses "CRITICAL" string to indicate "Alerting" state
@@ -115,7 +115,7 @@ func (vn *VictoropsNotifier) Notify(evalContext *alerting.EvalContext) error {
 	bodyJSON.Set("timestamp", time.Now().Unix())
 	bodyJSON.Set("state_start_time", evalContext.StartTime.Unix())
 	bodyJSON.Set("state_message", evalContext.Rule.Message)
-	bodyJSON.Set("monitoring_tool", "Grafana v"+setting.BuildVersion)
+	bodyJSON.Set("monitoring_tool", "Plutono v"+setting.BuildVersion)
 	bodyJSON.Set("alert_url", ruleURL)
 	bodyJSON.Set("metrics", fields)
 

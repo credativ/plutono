@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect, MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { NavModel } from '@grafana/data';
-import { config } from '@grafana/runtime';
-import { Form } from '@grafana/ui';
+import { NavModel } from '@credativ/plutono-data';
+import { config } from '@credativ/plutono-runtime';
+import { Form } from '@credativ/plutono-ui';
 import Page from 'app/core/components/Page/Page';
 import { NotificationChannelForm } from './components/NotificationChannelForm';
 import {

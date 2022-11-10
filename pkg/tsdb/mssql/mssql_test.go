@@ -8,18 +8,18 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/securejsondata"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore/sqlutil"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/tsdb/sqleng"
+	"github.com/credativ/plutono/pkg/components/securejsondata"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/sqlstore/sqlutil"
+	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/tsdb/sqleng"
 	. "github.com/smartystreets/goconvey/convey"
 	"xorm.io/xorm"
 )
 
 // To run this test, remove the Skip from SkipConvey
-// The tests require a MSSQL db named grafanatest and a user/password grafana/Password!
+// The tests require a MSSQL db named plutonotest and a user/password plutono/Password!
 // Use the docker/blocks/mssql_tests/docker-compose.yaml to spin up a
 // preconfigured MSSQL server suitable for running these tests.
 // There is also a datasource and dashboard provisioned by devenv scripts that you can

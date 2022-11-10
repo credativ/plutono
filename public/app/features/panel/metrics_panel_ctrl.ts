@@ -13,7 +13,7 @@ import {
   TimeRange,
   toDataFrameDTO,
   toLegacyResponseData,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { Unsubscribable } from 'rxjs';
 import { PanelModel } from 'app/features/dashboard/state';
 import { PanelQueryRunner } from '../query/state/PanelQueryRunner';

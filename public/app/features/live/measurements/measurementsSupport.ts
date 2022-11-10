@@ -1,5 +1,5 @@
-import { LiveChannelSupport, LiveChannelConfig } from '@grafana/data';
-import { MeasurementCollector } from '@grafana/runtime';
+import { LiveChannelSupport, LiveChannelConfig } from '@credativ/plutono-data';
+import { MeasurementCollector } from '@credativ/plutono-runtime';
 
 interface MeasurementChannel {
   config: LiveChannelConfig;

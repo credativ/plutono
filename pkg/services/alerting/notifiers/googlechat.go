@@ -5,11 +5,11 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/alerting"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 func init() {
@@ -171,12 +171,12 @@ func (gcn *GoogleChatNotifier) Notify(evalContext *alerting.EvalContext) error {
 		}
 	}
 
-	// add a button widget (link to Grafana)
+	// add a button widget (link to Plutono)
 	widgets = append(widgets, buttonWidget{
 		Buttons: []button{
 			{
 				TextButton: textButton{
-					Text: "OPEN IN GRAFANA",
+					Text: "OPEN IN PLUTONO",
 					OnClick: onClick{
 						OpenLink: openLink{
 							URL: ruleURL,
@@ -190,7 +190,7 @@ func (gcn *GoogleChatNotifier) Notify(evalContext *alerting.EvalContext) error {
 	// add text paragraph widget for the build version and timestamp
 	widgets = append(widgets, textParagraphWidget{
 		Text: text{
-			Text: "Grafana v" + setting.BuildVersion + " | " + (time.Now()).Format(time.RFC822),
+			Text: "Plutono v" + setting.BuildVersion + " | " + (time.Now()).Format(time.RFC822),
 		},
 	})
 

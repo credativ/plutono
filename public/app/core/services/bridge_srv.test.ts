@@ -1,4 +1,4 @@
-import { UrlQueryMap } from '@grafana/data';
+import { UrlQueryMap } from '@credativ/plutono-data';
 import { findTemplateVarChanges } from './bridge_srv';
 
 describe('when checking template variables', () => {

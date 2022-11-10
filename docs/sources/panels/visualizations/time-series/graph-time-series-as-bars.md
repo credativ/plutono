@@ -1,6 +1,6 @@
 +++
 title = "Graph time series as bars"
-keywords = ["grafana", "time series panel", "documentation", "guide", "graph"]
+keywords = ["plutono", "time series panel", "documentation", "guide", "graph"]
 weight = 200
 +++
 
@@ -109,7 +109,7 @@ Choose when the points should be shown on the graph
 
 #### Auto
 
-Grafana automatically decides whether or not to show the points depending on the density of the data. If the density is low, then points are shown.
+Plutono automatically decides whether or not to show the points depending on the density of the data. If the density is low, then points are shown.
 
 #### Always
 

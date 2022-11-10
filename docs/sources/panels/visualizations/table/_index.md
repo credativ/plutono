@@ -1,7 +1,7 @@
 +++
 title = "Table panel"
-keywords = ["grafana", "dashboard", "documentation", "panels", "table panel"]
-aliases = ["/docs/grafana/latest/reference/table/", "/docs/grafana/latest/features/panels/table_panel/"]
+keywords = ["plutono", "dashboard", "documentation", "panels", "table panel"]
+aliases = ["/docs/plutono/latest/reference/table/", "/docs/plutono/latest/features/panels/table_panel/"]
 weight = 1000
 +++
 
@@ -21,7 +21,7 @@ Table visualizations allow you to apply:
 
 ## Display options
 
-> **Note:** If you are using a table visualization created before Grafana 7.0, then you need to migrate to the new table version in order to see these options. To migrate, on the Panel tab, click **Table** visualization. Grafana updates the table version and you can then access all table options.
+> **Note:** If you are using a table visualization created before Plutono 7.0, then you need to migrate to the new table version in order to see these options. To migrate, on the Panel tab, click **Table** visualization. Plutono updates the table version and you can then access all table options.
 
 - **Show header -** Show or hide column names imported from your data source.
 - **Sort ascending/descending -** Click a column title to change the sort order from default to descending to ascending. Each time you click, the sort order changes to the next option in the cycle. You can only sort by one column at a time.

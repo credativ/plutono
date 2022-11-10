@@ -7,10 +7,10 @@ import {
   TransformerUIProps,
   getFieldDisplayName,
   stringToJsRegex,
-} from '@grafana/data';
-import { Field, Input, FilterPill, HorizontalGroup } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { Field, Input, FilterPill, HorizontalGroup } from '@credativ/plutono-ui';
 import { css } from 'emotion';
-import { FilterFieldsByNameTransformerOptions } from '@grafana/data/src/transformations/transformers/filterByName';
+import { FilterFieldsByNameTransformerOptions } from '@credativ/plutono-data/src/transformations/transformers/filterByName';
 
 interface FilterByNameTransformerEditorProps extends TransformerUIProps<FilterFieldsByNameTransformerOptions> {}
 

@@ -9,9 +9,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/rendering"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/rendering"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 func (hs *HTTPServer) RenderToPng(c *models.ReqContext) {

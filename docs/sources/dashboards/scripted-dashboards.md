@@ -1,7 +1,7 @@
 +++
 title = "Scripted dashboards"
-keywords = ["grafana", "dashboard", "documentation", "scripted"]
-aliases = ["/docs/grafana/latest/reference/scripting/"]
+keywords = ["plutono", "dashboard", "documentation", "scripted"]
+aliases = ["/docs/plutono/latest/reference/scripting/"]
 weight = 1500
 +++
 
@@ -11,9 +11,9 @@ weight = 1500
 
 If you have lots of metric names that change (new servers etc) in a defined pattern it is irritating to constantly have to create new dashboards.
 
-With scripted dashboards you can dynamically create your dashboards using javascript. In the Grafana install folder
+With scripted dashboards you can dynamically create your dashboards using javascript. In the Plutono install folder
 under `public/dashboards/` there is a file named `scripted.js`. This file contains an example of a scripted dashboard. You can access it by using the URL:
-`http://grafana_url/dashboard/script/scripted.js?rows=3&name=myName`
+`http://plutono_url/dashboard/script/scripted.js?rows=3&name=myName`
 
 If you open scripted.js you can see how it reads URL parameters from ARGS variable and then adds rows and panels.
 
@@ -52,4 +52,4 @@ return dashboard;
 
 ## More examples
 
-You can find more examples in `public/dashboards/` directory of your Grafana installation.
+You can find more examples in `public/dashboards/` directory of your Plutono installation.

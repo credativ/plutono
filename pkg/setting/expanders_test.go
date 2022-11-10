@@ -81,11 +81,11 @@ func TestExpanderRegex(t *testing.T) {
 		"$__file{/dev/null}": {{"__file", "/dev/null"}},
 		"$__vault{item}":     {{"__vault", "item"}},
 		// contains a space in the argument
-		"$__file{C:\\Program Files\\grafana\\something}": {{"__file", "C:\\Program Files\\grafana\\something"}},
+		"$__file{C:\\Program Files\\plutono\\something}": {{"__file", "C:\\Program Files\\plutono\\something"}},
 
 		// complex cases
 		"get variable from $__env{ENV}ironment":               {{"__env", "ENV"}},
-		"$__env{VAR1} $__file{/var/lib/grafana/secrets/var1}": {{"__env", "VAR1"}, {"__file", "/var/lib/grafana/secrets/var1"}},
+		"$__env{VAR1} $__file{/var/lib/plutono/secrets/var1}": {{"__env", "VAR1"}, {"__file", "/var/lib/plutono/secrets/var1"}},
 		"$__env{$__file{this is invalid}}":                    {{"__env", "$__file{this is invalid"}},
 	}
 

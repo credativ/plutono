@@ -1,13 +1,13 @@
 +++
 title = "Explore"
 keywords = ["explore", "loki", "logs"]
-aliases = ["/docs/grafana/latest/features/explore/"]
+aliases = ["/docs/plutono/latest/features/explore/"]
 weight = 90
 +++
 
 # Explore
 
-Grafana's dashboard UI is all about building dashboards for visualization. Explore strips away the dashboard and panel options so that you can focus on the query. It helps you iterate until you have a working query and then think about building a dashboard.
+Plutono's dashboard UI is all about building dashboards for visualization. Explore strips away the dashboard and panel options so that you can focus on the query. It helps you iterate until you have a working query and then think about building a dashboard.
 
 If you just want to explore your data and do not want to create a dashboard, then Explore makes this much easier. If your data source supports graph and table data, then Explore shows the results both as a graph and a table. This allows you to see trends in the data and more details at the same time. See also:
 
@@ -52,7 +52,7 @@ To close the newly created query, click on the Close Split button.
 
 ## Navigate between Explore and a dashboard
 
-To help accelerate workflows that involve regularly switching from Explore to a dashboard and vice-versa, Grafana provides you with the ability to return to the origin dashboard after navigating to Explore from the panel's dropdown.
+To help accelerate workflows that involve regularly switching from Explore to a dashboard and vice-versa, Plutono provides you with the ability to return to the origin dashboard after navigating to Explore from the panel's dropdown.
 
 After you've navigated to Explore, you should notice a "Back" button in the Explore toolbar. Simply click it to return to the origin dashboard. To bring changes you make in Explore back to the dashboard, click the arrow next to the button to reveal a "Return to panel with changes" menu item.
 
@@ -60,6 +60,6 @@ After you've navigated to Explore, you should notice a "Back" button in the Expl
 
 ## Share shortened link
 
-> **Note:** Available in Grafana 7.3 and later versions.
+> **Note:** Available in Plutono 7.3 and later versions.
 
 The Share shortened link capability allows you to create smaller and simpler URLs of the format /goto/:uid instead of using longer URLs with query parameters. To create a shortened link, click the **Share** option in Explore toolbar. Any shortened links that are never used will be automatically deleted after 7 days.

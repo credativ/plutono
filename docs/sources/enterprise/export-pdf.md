@@ -1,7 +1,7 @@
 +++
 title = "Export dashboard as PDF"
 description = ""
-keywords = ["grafana", "export", "pdf", "share"]
+keywords = ["plutono", "export", "pdf", "share"]
 weight = 900
 +++
 
@@ -9,9 +9,9 @@ weight = 900
 
 You can generate PDFs from any of your dashboards and save it to file.
 
-> Only available in Grafana Enterprise v6.7+.
+> Only available in Plutono Enterprise v6.7+.
 
 1. In the upper right corner of the dashboard that you want to export as PDF, click the **Share dashboard** icon.
 1. On the PDF tab, select the layout option for exported dashboard: **Portrait** or **Landscape**.
 1. Click **Save as PDF** to render dashboard as a PDF document.
-   Grafana opens the PDF in a new window or browser tab.
+   Plutono opens the PDF in a new window or browser tab.

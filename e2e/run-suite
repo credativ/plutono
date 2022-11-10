@@ -25,7 +25,7 @@ if [ "$1" == "dev" ]; then
     CMD="open"
 fi
 
-cd packages/grafana-e2e
+cd packages/plutono-e2e
 
 yarn $CMD --env BASE_URL=$URL,SLOWMO=$SLOWMO \
   --config integrationFolder=../../e2e/$SUITE/specs,screenshotsFolder=../../e2e/$SUITE/screenshots,videosFolder=../../e2e/$SUITE/videos,fileServerFolder=./cypress,viewportWidth=1920,viewportHeight=1080,trashAssetsBeforeRuns=false \

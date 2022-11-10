@@ -1,6 +1,6 @@
 import React from 'react';
-import { DataQueryError } from '@grafana/data';
-import { JSONFormatter } from '@grafana/ui';
+import { DataQueryError } from '@credativ/plutono-data';
+import { JSONFormatter } from '@credativ/plutono-ui';
 
 interface InspectErrorTabProps {
   error?: DataQueryError;

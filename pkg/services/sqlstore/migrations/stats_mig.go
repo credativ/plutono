@@ -1,6 +1,6 @@
 package migrations
 
-import . "github.com/grafana/grafana/pkg/services/sqlstore/migrator"
+import . "github.com/credativ/plutono/pkg/services/sqlstore/migrator"
 
 // commented out because of the deadcode CI check
 // func addStatsMigrations(mg *Migrator) {

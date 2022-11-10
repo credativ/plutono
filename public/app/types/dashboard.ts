@@ -1,7 +1,7 @@
 import { DashboardAcl } from './acl';
-import { DataQuery, PanelPlugin } from '@grafana/data';
+import { DataQuery, PanelPlugin } from '@credativ/plutono-data';
 import { DashboardModel } from 'app/features/dashboard/state/DashboardModel';
-import { AngularComponent } from '@grafana/runtime';
+import { AngularComponent } from '@credativ/plutono-runtime';
 
 export interface DashboardDTO {
   redirectUri?: string;

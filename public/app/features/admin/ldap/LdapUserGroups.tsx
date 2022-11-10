@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Tooltip, Icon } from '@grafana/ui';
+import { Tooltip, Icon } from '@credativ/plutono-ui';
 import { LdapRole } from 'app/types';
 
 interface Props {

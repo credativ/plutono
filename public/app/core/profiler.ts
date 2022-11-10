@@ -1,12 +1,12 @@
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 
 export class Profiler {
   panelsRendered: number;
   enabled: boolean;
-  $rootScope: GrafanaRootScope;
+  $rootScope: PlutonoRootScope;
   window: any;
 
-  init(config: any, $rootScope: GrafanaRootScope) {
+  init(config: any, $rootScope: PlutonoRootScope) {
     this.$rootScope = $rootScope;
     this.window = window;
 

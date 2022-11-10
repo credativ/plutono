@@ -3,8 +3,8 @@ package models
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -22,17 +22,17 @@ func TestGetFullDashboardUrl(t *testing.T) {
 	origAppURL := setting.AppUrl
 	t.Cleanup(func() { setting.AppUrl = origAppURL })
 
-	setting.AppUrl = "http://grafana.local/"
+	setting.AppUrl = "http://plutono.local/"
 	url := GetFullDashboardUrl("uid", "my-dashboard")
-	assert.Equal(t, "http://grafana.local/d/uid/my-dashboard", url)
+	assert.Equal(t, "http://plutono.local/d/uid/my-dashboard", url)
 }
 
 func TestDashboard_UpdateSlug(t *testing.T) {
-	dashboard := NewDashboard("Grafana Play Home")
-	assert.Equal(t, "grafana-play-home", dashboard.Slug)
+	dashboard := NewDashboard("Plutono Play Home")
+	assert.Equal(t, "plutono-play-home", dashboard.Slug)
 
 	dashboard.UpdateSlug()
-	assert.Equal(t, "grafana-play-home", dashboard.Slug)
+	assert.Equal(t, "plutono-play-home", dashboard.Slug)
 }
 
 func TestNewDashboardFromJson(t *testing.T) {
@@ -70,7 +70,7 @@ func TestSaveDashboardCommand_GetDashboardModel(t *testing.T) {
 
 func TestSlugifyTitle(t *testing.T) {
 	testCases := map[string]string{
-		"Grafana Play Home": "grafana-play-home",
+		"Plutono Play Home": "plutono-play-home",
 		"snöräv-över-ån":    "snorav-over-an",
 		"漢字":                "han-zi",      // Hanzi for hanzi
 		"🇦🇶":                "8J-HpvCfh7Y", // flag of Antarctica-emoji, using fallback

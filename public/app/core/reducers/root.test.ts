@@ -6,8 +6,8 @@ import { Team } from '../../types';
 import { cleanUpAction } from '../actions/cleanUp';
 import { initialTeamsState, teamsLoaded } from '../../features/teams/state/reducers';
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@credativ/plutono-runtime', () => ({
+  ...((jest.requireActual('@credativ/plutono-runtime') as unknown) as object),
   config: {
     bootData: {
       navTree: [],

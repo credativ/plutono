@@ -13,14 +13,14 @@ import (
 
 	"golang.org/x/oauth2"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/login"
-	"github.com/grafana/grafana/pkg/login/social"
-	"github.com/grafana/grafana/pkg/middleware/cookies"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	"github.com/credativ/plutono/pkg/login"
+	"github.com/credativ/plutono/pkg/login/social"
+	"github.com/credativ/plutono/pkg/middleware/cookies"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 var (
@@ -167,7 +167,7 @@ func (hs *HTTPServer) OAuthLogin(ctx *models.ReqContext) {
 		return
 	}
 
-	// validate that the email is allowed to login to grafana
+	// validate that the email is allowed to login to plutono
 	if !connect.IsEmailAllowed(userInfo.Email) {
 		hs.handleOAuthLoginErrorWithRedirect(ctx, loginInfo, login.ErrEmailNotAllowed)
 		return
@@ -238,14 +238,14 @@ func buildExternalUserInfo(token *oauth2.Token, userInfo *social.BasicUserInfo, 
 	return extUser
 }
 
-// syncUser syncs a Grafana user profile with the corresponding OAuth profile.
+// syncUser syncs a Plutono user profile with the corresponding OAuth profile.
 func syncUser(
 	ctx *models.ReqContext,
 	extUser *models.ExternalUserInfo,
 	connect social.SocialConnector,
 ) (*models.User, error) {
-	oauthLogger.Debug("Syncing Grafana user with corresponding OAuth profile")
-	// add/update user in Grafana
+	oauthLogger.Debug("Syncing Plutono user with corresponding OAuth profile")
+	// add/update user in Plutono
 	cmd := &models.UpsertUserCommand{
 		ReqContext:    ctx,
 		ExternalUser:  extUser,

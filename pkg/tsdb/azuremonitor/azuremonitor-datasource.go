@@ -14,15 +14,15 @@ import (
 	"time"
 
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/api/pluginproxy"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/api/pluginproxy"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util/errutil"
 	opentracing "github.com/opentracing/opentracing-go"
 	"golang.org/x/net/context/ctxhttp"
 
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/tsdb"
 )
 
 // AzureMonitorDatasource calls the Azure Monitor API - one of the four API's supported
@@ -252,7 +252,7 @@ func (e *AzureMonitorDatasource) createRequest(ctx context.Context, dsInfo *mode
 	}
 
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+	req.Header.Set("User-Agent", fmt.Sprintf("Plutono/%s", setting.BuildVersion))
 
 	pluginproxy.ApplyRoute(ctx, req, proxyPass, azureMonitorRoute, dsInfo)
 
@@ -299,7 +299,7 @@ func (e *AzureMonitorDatasource) parseResponse(queryRes *tsdb.QueryResult, amr A
 		dataField.Labels = labels
 		if amr.Value[0].Unit != "Unspecified" {
 			dataField.SetConfig(&data.FieldConfig{
-				Unit: toGrafanaUnit(amr.Value[0].Unit),
+				Unit: toPlutonoUnit(amr.Value[0].Unit),
 			})
 		}
 		if query.Alias != "" {
@@ -410,8 +410,8 @@ func formatAzureMonitorLegendKey(alias string, resourceName string, metricName s
 // Map values from:
 //   https://docs.microsoft.com/en-us/rest/api/monitor/metrics/list#unit
 // to
-//   https://github.com/grafana/grafana/blob/master/packages/grafana-data/src/valueFormats/categories.ts#L24
-func toGrafanaUnit(unit string) string {
+//   https://github.com/credativ/plutono/blob/master/packages/plutono-data/src/valueFormats/categories.ts#L24
+func toPlutonoUnit(unit string) string {
 	switch unit {
 	case "BitsPerSecond":
 		return "bps"
@@ -432,6 +432,6 @@ func toGrafanaUnit(unit string) string {
 	}
 	return unit // this will become a suffix in the display
 	// "ByteSeconds", "Cores", "MilliCores", and "NanoCores" all both:
-	// 1. Do not have a corresponding unit in Grafana's current list.
+	// 1. Do not have a corresponding unit in Plutono's current list.
 	// 2. Do not have the unit listed in any of Azure Monitor's supported metrics anyways.
 }

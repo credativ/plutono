@@ -1,5 +1,5 @@
-import { DataSourceSrv } from '@grafana/runtime';
-import { DataSourceApi, PluginMeta, DataTransformerConfig, DataSourceInstanceSettings } from '@grafana/data';
+import { DataSourceSrv } from '@credativ/plutono-runtime';
+import { DataSourceApi, PluginMeta, DataTransformerConfig, DataSourceInstanceSettings } from '@credativ/plutono-data';
 
 import { ElasticsearchQuery } from '../../plugins/datasource/elasticsearch/types';
 import { getAlertingValidationMessage } from './getAlertingValidationMessage';

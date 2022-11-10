@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { OrgRole } from '@grafana/data';
-import { Select } from '@grafana/ui';
+import { OrgRole } from '@credativ/plutono-data';
+import { Select } from '@credativ/plutono-ui';
 
 interface Props {
   value: OrgRole;

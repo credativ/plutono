@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import TableModel from 'app/core/table_model';
-import { FieldType, QueryResultMeta, TimeSeries, TableData } from '@grafana/data';
+import { FieldType, QueryResultMeta, TimeSeries, TableData } from '@credativ/plutono-data';
 
 export default class InfluxSeries {
   refId?: string;

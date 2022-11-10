@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
-import { SelectableValue } from '@grafana/data';
-import { Segment } from '@grafana/ui';
+import { SelectableValue } from '@credativ/plutono-data';
+import { Segment } from '@credativ/plutono-ui';
 
 export interface Props {
   onChange: (perSeriesAligner: string) => void;

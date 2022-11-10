@@ -14,7 +14,7 @@ import { getTeamLoadingNav } from './state/navModel';
 import { getNavModel } from 'app/core/selectors/navModel';
 import { getRouteParamsId, getRouteParamsPage } from '../../core/selectors/location';
 import { contextSrv, User } from 'app/core/services/context_srv';
-import { NavModel } from '@grafana/data';
+import { NavModel } from '@credativ/plutono-data';
 
 export interface Props {
   team: Team;

@@ -1,4 +1,4 @@
-import { e2e } from '@grafana/e2e';
+import { e2e } from '@credativ/plutono-e2e';
 
 const PANEL_UNDER_TEST = '2 yaxis and axis labels';
 

@@ -1,11 +1,11 @@
 import React, { ChangeEvent } from 'react';
-import { Button, HorizontalGroup, Input, Label, LoadingPlaceholder, stylesFactory, withTheme } from '@grafana/ui';
+import { Button, HorizontalGroup, Input, Label, LoadingPlaceholder, stylesFactory, withTheme } from '@credativ/plutono-ui';
 import LokiLanguageProvider from '../language_provider';
 import { css, cx } from 'emotion';
 import store from 'app/core/store';
 import { FixedSizeList } from 'react-window';
 
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { LokiLabel } from './LokiLabel';
 
 // Hard limit on labels to render
@@ -13,12 +13,12 @@ const MAX_LABEL_COUNT = 100;
 const MAX_VALUE_COUNT = 10000;
 const MAX_AUTO_SELECT = 4;
 const EMPTY_SELECTOR = '{}';
-export const LAST_USED_LABELS_KEY = 'grafana.datasources.loki.browser.labels';
+export const LAST_USED_LABELS_KEY = 'plutono.datasources.loki.browser.labels';
 
 export interface BrowserProps {
   languageProvider: LokiLanguageProvider;
   onChange: (selector: string) => void;
-  theme: GrafanaTheme;
+  theme: PlutonoTheme;
   autoSelect?: number;
   hide?: () => void;
 }
@@ -88,7 +88,7 @@ export function facetLabels(
   });
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   wrapper: css`
     background-color: ${theme.colors.bg2};
     padding: ${theme.spacing.md};

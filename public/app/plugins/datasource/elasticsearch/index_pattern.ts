@@ -1,4 +1,4 @@
-import { toUtc, dateTime, DateTime, DurationUnit } from '@grafana/data';
+import { toUtc, dateTime, DateTime, DurationUnit } from '@credativ/plutono-data';
 import { Interval } from './types';
 
 type IntervalMap = Record<

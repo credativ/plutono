@@ -1,8 +1,8 @@
-import { GrafanaTheme } from '@grafana/data';
-import { stylesFactory } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { stylesFactory } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 
-export const getStyles = stylesFactory((theme: GrafanaTheme, hidden: boolean) => ({
+export const getStyles = stylesFactory((theme: PlutonoTheme, hidden: boolean) => ({
   color:
     hidden &&
     css`

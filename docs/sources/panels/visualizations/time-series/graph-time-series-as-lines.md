@@ -1,6 +1,6 @@
 +++
 title = "Graph time series as lines"
-keywords = ["grafana", "time series panel", "documentation", "guide", "graph"]
+keywords = ["plutono", "time series panel", "documentation", "guide", "graph"]
 weight = 100
 +++
 
@@ -29,7 +29,7 @@ Some field options will not affect the visualization until you click outside of 
 
 ### Line interpolation
 
-Choose how Grafana interpolates the series line. The screenshots below show the same data displayed with different line interpolations.
+Choose how Plutono interpolates the series line. The screenshots below show the same data displayed with different line interpolations.
 
 #### Linear
 
@@ -173,7 +173,7 @@ Choose when the points should be shown on the graph.
 
 #### Auto
 
-Grafana automatically decides whether or not to show the points depending on the density of the data. If the density is low, then points are shown.
+Plutono automatically decides whether or not to show the points depending on the density of the data. If the density is low, then points are shown.
 
 #### Always
 

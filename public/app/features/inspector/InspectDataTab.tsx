@@ -11,9 +11,9 @@ import {
   SelectableValue,
   toCSV,
   transformDataFrame,
-} from '@grafana/data';
-import { Button, Container, Field, HorizontalGroup, Select, Spinner, Switch, Table, VerticalGroup } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+} from '@credativ/plutono-data';
+import { Button, Container, Field, HorizontalGroup, Select, Spinner, Switch, Table, VerticalGroup } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import { getPanelInspectorStyles } from './styles';
 import { config } from 'app/core/config';

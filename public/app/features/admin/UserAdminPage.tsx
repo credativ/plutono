@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
-import { NavModel } from '@grafana/data';
+import { NavModel } from '@credativ/plutono-data';
 import { getNavModel } from 'app/core/selectors/navModel';
 import { getRouteParamsId } from 'app/core/selectors/location';
 import config from 'app/core/config';
@@ -88,9 +88,9 @@ export class UserAdminPage extends PureComponent<Props, State> {
     this.props.enableUser(userId);
   };
 
-  onGrafanaAdminChange = (isGrafanaAdmin: boolean) => {
+  onPlutonoAdminChange = (isPlutonoAdmin: boolean) => {
     const { userId, updateUserPermissions } = this.props;
-    updateUserPermissions(userId, isGrafanaAdmin);
+    updateUserPermissions(userId, isPlutonoAdmin);
   };
 
   onOrgRemove = (orgId: number) => {
@@ -144,7 +144,7 @@ export class UserAdminPage extends PureComponent<Props, State> {
               {isLDAPUser && config.licenseInfo.hasLicense && ldapSyncInfo && (
                 <UserLdapSyncInfo ldapSyncInfo={ldapSyncInfo} user={user} onUserSync={this.onUserSync} />
               )}
-              <UserPermissions isGrafanaAdmin={user.isGrafanaAdmin} onGrafanaAdminChange={this.onGrafanaAdminChange} />
+              <UserPermissions isPlutonoAdmin={user.isPlutonoAdmin} onPlutonoAdminChange={this.onPlutonoAdminChange} />
             </>
           )}
 

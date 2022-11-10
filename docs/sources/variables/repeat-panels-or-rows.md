@@ -1,35 +1,35 @@
 +++
 title = "Repeat panels or rows"
-keywords = ["grafana", "templating", "documentation", "guide", "template", "variable", "repeat"]
+keywords = ["plutono", "templating", "documentation", "guide", "template", "variable", "repeat"]
 weight = 800
 +++
 
 # Repeat panels or rows
 
-Grafana lets you create dynamic dashboards using _template variables_. All variables in your queries expand to the current value of the variable before the query is sent to the database. Variables let you reuse a single dashboard for all your services.
+Plutono lets you create dynamic dashboards using _template variables_. All variables in your queries expand to the current value of the variable before the query is sent to the database. Variables let you reuse a single dashboard for all your services.
 
 Template variables can be very useful to dynamically change your queries across a whole dashboard. If you want
-Grafana to dynamically create new panels or rows based on what values you have selected, you can use the _Repeat_ feature.
+Plutono to dynamically create new panels or rows based on what values you have selected, you can use the _Repeat_ feature.
 
-## Grafana Play examples
+## Plutono Play examples
 
 You can see examples in the following dashboards:
 
-- [Prometheus repeat](https://play.grafana.org/d/000000036/prometheus-repeat)
-- [Repeated Rows Dashboard](https://play.grafana.org/d/000000153/repeat-rows)
+- [Prometheus repeat](https://play.plutono.org/d/000000036/prometheus-repeat)
+- [Repeated Rows Dashboard](https://play.plutono.org/d/000000153/repeat-rows)
 
 ## Repeating panels
 
-If you have a variable with `Multi-value` or `Include all value` options enabled you can choose one panel and have Grafana repeat that panel
+If you have a variable with `Multi-value` or `Include all value` options enabled you can choose one panel and have Plutono repeat that panel
 for every selected value. You find the _Repeat_ feature under the _General tab_ in panel edit mode.
 
 The `direction` controls how the panels will be arranged.
 
-By choosing `horizontal` the panels will be arranged side-by-side. Grafana will automatically adjust the width
+By choosing `horizontal` the panels will be arranged side-by-side. Plutono will automatically adjust the width
 of each repeated panel so that the whole row is filled. Currently, you cannot mix other panels on a row with a repeated
 panel.
 
-Set `Max per row` to tell grafana how many panels per row you want at most. It defaults to _4_ if you don't set anything.
+Set `Max per row` to tell plutono how many panels per row you want at most. It defaults to _4_ if you don't set anything.
 
 By choosing `vertical` the panels will be arranged from top to bottom in a column. The width of the repeated panels will be the same as of the first panel (the original template) being repeated.
 

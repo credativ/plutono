@@ -1,6 +1,6 @@
 +++
 title = "Add ad hoc filters"
-aliases = ["/docs/grafana/latest/variables/add-ad-hoc-filters.md"]
+aliases = ["/docs/plutono/latest/variables/add-ad-hoc-filters.md"]
 weight = 700
 +++
 

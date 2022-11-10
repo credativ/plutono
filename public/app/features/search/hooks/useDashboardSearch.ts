@@ -1,11 +1,11 @@
 import { KeyboardEvent, useReducer } from 'react';
-import { getLocationSrv } from '@grafana/runtime';
+import { getLocationSrv } from '@credativ/plutono-runtime';
 import { DashboardQuery, DashboardSearchItemType, DashboardSection } from '../types';
 import { MOVE_SELECTION_DOWN, MOVE_SELECTION_UP } from '../reducers/actionTypes';
 import { dashboardsSearchState, DashboardsSearchState, searchReducer } from '../reducers/dashboardSearch';
 import { findSelected } from '../utils';
 import { useSearch } from './useSearch';
-import { locationUtil } from '@grafana/data';
+import { locationUtil } from '@credativ/plutono-data';
 
 export const useDashboardSearch = (query: DashboardQuery, onCloseSearch: () => void) => {
   const reducer = useReducer(searchReducer, dashboardsSearchState);

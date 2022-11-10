@@ -6,18 +6,18 @@ import {
   VizRepeater,
   VizRepeaterRenderValueProps,
   BigValueTextMode,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import {
   DisplayValueAlignmentFactors,
   FieldDisplay,
   getDisplayValueAlignmentFactors,
   getFieldDisplayValues,
   PanelProps,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import { config } from 'app/core/config';
 import { StatPanelOptions } from './types';
-import { DataLinksContextMenuApi } from '@grafana/ui/src/components/DataLinks/DataLinksContextMenu';
+import { DataLinksContextMenuApi } from '@credativ/plutono-ui/src/components/DataLinks/DataLinksContextMenu';
 
 export class StatPanel extends PureComponent<PanelProps<StatPanelOptions>> {
   renderComponent = (

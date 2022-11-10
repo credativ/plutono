@@ -5,8 +5,8 @@ import {
   ThresholdsMode,
   ThresholdsConfig,
   FieldConfig,
-} from '@grafana/data';
-import { ReduceTransformerOptions } from '@grafana/data/src/transformations/transformers/reduce';
+} from '@credativ/plutono-data';
+import { ReduceTransformerOptions } from '@credativ/plutono-data/src/transformations/transformers/reduce';
 import omitBy from 'lodash/omitBy';
 import isNil from 'lodash/isNil';
 import isNumber from 'lodash/isNumber';

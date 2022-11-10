@@ -4,8 +4,8 @@ import (
 	"context"
 	"errors"
 
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 func (hs *HTTPServer) AdminProvisioningReloadDashboards(c *models.ReqContext) response.Response {

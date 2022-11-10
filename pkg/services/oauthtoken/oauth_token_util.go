@@ -4,10 +4,10 @@ import (
 	"context"
 	"errors"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/login/social"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/login/social"
+	"github.com/credativ/plutono/pkg/models"
 	"golang.org/x/oauth2"
 )
 
@@ -82,7 +82,7 @@ func IsOAuthPassThruEnabled(ds *models.DataSource) bool {
 	return ds.JsonData != nil && ds.JsonData.Get("oauthPassThru").MustBool()
 }
 
-// tokensEq checks for OAuth2 token equivalence given the fields of the struct Grafana is interested in
+// tokensEq checks for OAuth2 token equivalence given the fields of the struct Plutono is interested in
 func tokensEq(t1, t2 *oauth2.Token) bool {
 	return t1.AccessToken == t2.AccessToken &&
 		t1.RefreshToken == t2.RefreshToken &&

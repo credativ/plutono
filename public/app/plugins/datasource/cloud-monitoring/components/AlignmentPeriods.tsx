@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import _ from 'lodash';
 
-import { TemplateSrv } from '@grafana/runtime';
-import { SelectableValue, rangeUtil } from '@grafana/data';
-import { Segment } from '@grafana/ui';
+import { TemplateSrv } from '@credativ/plutono-runtime';
+import { SelectableValue, rangeUtil } from '@credativ/plutono-data';
+import { Segment } from '@credativ/plutono-ui';
 import { alignmentPeriods, alignOptions } from '../constants';
 
 export interface Props {

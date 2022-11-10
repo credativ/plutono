@@ -1,6 +1,6 @@
 +++
 title = "Pie chart panel"
-keywords = ["grafana", "pie chart"]
+keywords = ["plutono", "pie chart"]
 weight = 850
 +++
 

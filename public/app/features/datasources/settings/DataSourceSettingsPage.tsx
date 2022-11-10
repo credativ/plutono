@@ -22,13 +22,13 @@ import { getNavModel } from 'app/core/selectors/navModel';
 import { getRouteParamsId } from 'app/core/selectors/location';
 // Types
 import { CoreEvents, StoreState } from 'app/types/';
-import { DataSourcePluginMeta, DataSourceSettings, NavModel, UrlQueryMap } from '@grafana/data';
-import { Alert, InfoBox } from '@grafana/ui';
+import { DataSourcePluginMeta, DataSourceSettings, NavModel, UrlQueryMap } from '@credativ/plutono-data';
+import { Alert, InfoBox } from '@credativ/plutono-ui';
 import { getDataSourceLoadingNav } from '../state/navModel';
 import PluginStateinfo from 'app/features/plugins/PluginStateInfo';
 import { dataSourceLoaded, setDataSourceName, setIsDefault } from '../state/reducers';
 import { connectWithCleanUp } from 'app/core/components/connectWithCleanUp';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { CloudInfoBox } from './CloudInfoBox';
 
 export interface Props {

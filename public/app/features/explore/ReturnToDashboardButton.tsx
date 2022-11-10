@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
-import { Icon, Tooltip, ButtonSelect, ToolbarButton, ButtonGroup } from '@grafana/ui';
-import { DataQuery } from '@grafana/data';
+import { Icon, Tooltip, ButtonSelect, ToolbarButton, ButtonGroup } from '@credativ/plutono-ui';
+import { DataQuery } from '@credativ/plutono-data';
 
 import kbn from '../../core/utils/kbn';
 import { getDashboardSrv } from '../dashboard/services/DashboardSrv';

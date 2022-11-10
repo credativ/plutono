@@ -4,7 +4,7 @@ import { Props, TeamPages } from './TeamPages';
 import { OrgRole, Team, TeamMember } from '../../types';
 import { getMockTeam } from './__mocks__/teamMocks';
 import { User } from 'app/core/services/context_srv';
-import { NavModel } from '@grafana/data';
+import { NavModel } from '@credativ/plutono-data';
 
 jest.mock('app/core/config', () => ({
   ...((jest.requireActual('app/core/config') as unknown) as object),
@@ -25,7 +25,7 @@ const setup = (propOverrides?: object) => {
     editorsCanAdmin: false,
     signedInUser: {
       id: 1,
-      isGrafanaAdmin: false,
+      isPlutonoAdmin: false,
       orgRole: OrgRole.Viewer,
     } as User,
   };
@@ -92,7 +92,7 @@ describe('Render', () => {
         editorsCanAdmin: true,
         signedInUser: {
           id: 1,
-          isGrafanaAdmin: false,
+          isPlutonoAdmin: false,
           orgRole: OrgRole.Admin,
         } as User,
       });
@@ -112,7 +112,7 @@ describe('Render', () => {
         editorsCanAdmin: true,
         signedInUser: {
           id: 1,
-          isGrafanaAdmin: false,
+          isPlutonoAdmin: false,
           orgRole: OrgRole.Viewer,
         } as User,
       });

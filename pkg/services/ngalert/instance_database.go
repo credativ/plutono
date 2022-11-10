@@ -6,7 +6,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
 )
 
 // getAlertInstance is a handler for retrieving an alert instance based on OrgId, AlertDefintionID, and

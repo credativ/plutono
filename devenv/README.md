@@ -2,13 +2,13 @@
 
 This folder contains useful scripts and configuration so you can:
 
-- Configure data sources in Grafana for development.
+- Configure data sources in Plutono for development.
 - Configure dashboards for development and test scenarios.
 - Create docker-compose file with databases and fake data.
 
 ## Install Docker
 
-Grafana uses [Docker](https://docker.com) to make the task of setting up databases a little easier. If you do not have it already, make sure you [install Docker](https://docs.docker.com/docker-for-mac/install/) before proceeding to the next step.
+Plutono uses [Docker](https://docker.com) to make the task of setting up databases a little easier. If you do not have it already, make sure you [install Docker](https://docs.docker.com/docker-for-mac/install/) before proceeding to the next step.
 
 ## Developer dashboards and data sources
 
@@ -16,7 +16,7 @@ Grafana uses [Docker](https://docker.com) to make the task of setting up databas
 ./setup.sh
 ```
 
-After restarting the Grafana server, there should be a number of data sources named `gdev-<type>` provisioned as well as
+After restarting the Plutono server, there should be a number of data sources named `gdev-<type>` provisioned as well as
 a dashboard folder named `gdev dashboards`. This folder contains dashboard and panel features tests dashboards. 
 
 Please update these dashboards or make new ones as new panels and dashboards features are developed or new bugs are
@@ -36,14 +36,14 @@ make devenv sources=influxdb,prometheus2,elastic5
 Some of the blocks support dynamic change of the image version used in the Docker file. The signature looks like this: 
 
 ```bash
-make devenv sources=postgres,openldap,grafana postgres_version=9.2 grafana_version=6.7.0-beta1
+make devenv sources=postgres,openldap,plutono postgres_version=9.2 plutono_version=6.7.0-beta1
 ```
 
 
 ### Notes per block
 
-#### Grafana
-The grafana block is pre-configured with the dev-datasources and dashboards.
+#### Plutono
+The plutono block is pre-configured with the dev-datasources and dashboards.
 
 #### Jaeger
 Jaeger block runs both Jaeger and Loki container. Loki container sends traces to Jaeger and also logs its own logs into itself so it is possible to setup derived field for traceID from Loki to Jaeger. You need to install a docker plugin for the self logging to work, without it the container won't start. See https://github.com/grafana/loki/tree/master/cmd/docker-driver#plugin-installation for installation instructions.
@@ -53,10 +53,10 @@ Jaeger block runs both Jaeger and Loki container. Loki container sends traces to
 ### Containers fail to start (Mac OS)
 
 ```
-ERROR: for <service_name> Cannot start service <service_name>: OCI runtime create failed: container_linux.go:349: starting container process caused "process_linux.go:449: container init caused \"rootfs_linux.go:58: mounting ... merged/var/log/grafana: operation not permitted\\\"\"": unknown
+ERROR: for <service_name> Cannot start service <service_name>: OCI runtime create failed: container_linux.go:349: starting container process caused "process_linux.go:449: container init caused \"rootfs_linux.go:58: mounting ... merged/var/log/plutono: operation not permitted\\\"\"": unknown
 ERROR: Encountered errors while bringing up the project.
 ```
 
-If running Mac OSX the above error might be encountered when starting certain Docker containers that mount `/var/log/`. When first run this causes Docker to try to create the folder `/var/log/grafana` however by default Docker for Mac does not have permission to create folders at this location as it runs as the current user. 
+If running Mac OSX the above error might be encountered when starting certain Docker containers that mount `/var/log/`. When first run this causes Docker to try to create the folder `/var/log/plutono` however by default Docker for Mac does not have permission to create folders at this location as it runs as the current user. 
 
-To solve this issue manually create the folder `/var/log/grafana` and give your user write permissions then try starting the containers again.
+To solve this issue manually create the folder `/var/log/plutono` and give your user write permissions then try starting the containers again.

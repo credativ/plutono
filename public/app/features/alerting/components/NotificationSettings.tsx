@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Checkbox, CollapsableSection, Field, InfoBox, Input } from '@grafana/ui';
+import { Checkbox, CollapsableSection, Field, InfoBox, Input } from '@credativ/plutono-ui';
 import { NotificationSettingsProps } from './NotificationChannelForm';
 
 interface Props extends NotificationSettingsProps {
@@ -22,8 +22,8 @@ export const NotificationSettings: FC<Props> = ({ currentFormValues, imageRender
       </Field>
       {currentFormValues.uploadImage && !imageRendererAvailable && (
         <InfoBox title="No image renderer available/installed">
-          Grafana cannot find an image renderer to capture an image for the notification. Please make sure the Grafana
-          Image Renderer plugin is installed. Please contact your Grafana administrator to install the plugin.
+          Plutono cannot find an image renderer to capture an image for the notification. Please make sure the Plutono
+          Image Renderer plugin is installed. Please contact your Plutono administrator to install the plugin.
         </InfoBox>
       )}
       <Field>

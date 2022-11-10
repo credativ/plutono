@@ -10,8 +10,8 @@ import {
   stylesFactory,
   Themeable,
   withTheme,
-} from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+} from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { Organization, OrgRole, UserOrg } from 'app/types';
 import { OrgPicker, OrgSelectItem } from 'app/core/components/Select/OrgPicker';
 import { OrgRolePicker } from './OrgRolePicker';
@@ -74,7 +74,7 @@ export class UserOrgs extends PureComponent<Props, State> {
   }
 }
 
-const getOrgRowStyles = stylesFactory((theme: GrafanaTheme) => {
+const getOrgRowStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     removeButton: css`
       margin-right: 0.6rem;

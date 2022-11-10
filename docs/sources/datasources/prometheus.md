@@ -1,14 +1,14 @@
 +++
 title = "Prometheus"
-description = "Guide for using Prometheus in Grafana"
-keywords = ["grafana", "prometheus", "guide"]
-aliases = ["/docs/grafana/latest/features/datasources/prometheus"]
+description = "Guide for using Prometheus in Plutono"
+keywords = ["plutono", "prometheus", "guide"]
+aliases = ["/docs/plutono/latest/features/datasources/prometheus"]
 weight = 1300
 +++
 
 # Prometheus data source
 
-Grafana includes built-in support for Prometheus. This topic explains options, variables, querying, and other options specific to the Prometheus data source. Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Grafana. Only users with the organization admin role can add data sources.
+Plutono includes built-in support for Prometheus. This topic explains options, variables, querying, and other options specific to the Prometheus data source. Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Plutono. Only users with the organization admin role can add data sources.
 
 ## Prometheus settings
 
@@ -19,7 +19,7 @@ To access Prometheus settings, hover your mouse over the **Configuration** (gear
 | `Name`                    | The data source name. This is how you refer to the data source in panels and queries.                                                                                                                   |
 | `Default`                 | Default data source means that it will be pre-selected for new panels.                                                                                                                                  |
 | `Url`                     | The URL of your Prometheus server, e.g. `http://prometheus.example.org:9090`.                                                                                                                           |
-| `Access`                  | Server (default) = URL needs to be accessible from the Grafana backend/server, Browser = URL needs to be accessible from the browser.                                                                   |
+| `Access`                  | Server (default) = URL needs to be accessible from the Plutono backend/server, Browser = URL needs to be accessible from the browser.                                                                   |
 | `Basic Auth`              | Enable basic authentication to the Prometheus data source.                                                                                                                                              |
 | `User`                    | User name for basic authentication.                                                                                                                                                                     |
 | `Password`                | Password for basic authentication.                                                                                                                                                                      |
@@ -54,7 +54,7 @@ Open a graph in edit mode by clicking the title > Edit (or by pressing `e` key w
 | `Min time interval` | This value multiplied by the denominator from the _Resolution_ setting sets a lower limit to both the `$__interval` variable and the [`step` parameter of Prometheus range queries](https://prometheus.io/docs/prometheus/latest/querying/api/#range-queries). Defaults to _Scrape interval_ as set in the data source options.                                                                                                                                                                           |
 | `Exemplars`         | Run and show exemplars in the graph.                                                                                                                                                                                                                                                                                                                                                                                                                                                                      |
 
-> **Note:** Grafana modifies the request dates for queries to align them with the dynamically calculated step. This ensures consistent display of metrics data, but it can result in a small gap of data at the right edge of a graph.
+> **Note:** Plutono modifies the request dates for queries to align them with the dynamically calculated step. This ensures consistent display of metrics data, but it can result in a small gap of data at the right edge of a graph.
 
 #### Instant queries in dashboards
 
@@ -65,7 +65,7 @@ Instant query results are made up only of one data point per series but can be s
 To show them in the graph as a latest value point, add a series override and select `Points > true`.
 To show a horizontal line across the whole graph, add a series override and select `Transform > constant`.
 
-> Support for constant series overrides is available from Grafana v6.4
+> Support for constant series overrides is available from Plutono v6.4
 
 ### Query editor in Explore
 
@@ -102,7 +102,7 @@ For details of what _metric names_, _label names_ and _label values_ are please 
 
 #### Using interval and range variables
 
-> Support for `$__range`, `$__range_s` and `$__range_ms` only available from Grafana v5.3
+> Support for `$__range`, `$__range_s` and `$__range_ms` only available from Plutono v5.3
 
 You can use some global built-in variables in query variables; `$__interval`, `$__interval_ms`, `$__range`, `$__range_s` and `$__range_ms`, see [Global built-in variables]({{< relref "../variables/variable-types/global-variables.md" >}}) for more information. These can be convenient to use in conjunction with the `query_result` function when you need to filter variable queries since
 
@@ -128,7 +128,7 @@ Regex:
 
 ### Using `$__rate_interval` variable
 
-> **Note:** Available in Grafana 7.2 and above
+> **Note:** Available in Plutono 7.2 and above
 
 The `$__rate_interval` variable is meant to be used in the rate function. It is defined as max( `$__interval` + _Scrape interval_, 4 \* _Scrape interval_), where _Scrape interval_ is the Min step setting (AKA query*interval, a setting per PromQL query), if any is set, and otherwise the \_Scrape interval* as set in the Prometheus data source (but ignoring any Min interval setting in the panel, because the latter is modified by the resolution setting).
 
@@ -140,7 +140,7 @@ There are two syntaxes:
 - `[[varname]]` Example: rate(http_requests_total{job=~"[[job]]"}[5m])
 
 Why two ways? The first syntax is easier to read and write but does not allow you to use a variable in the middle of a word. When the _Multi-value_ or _Include all value_
-options are enabled, Grafana converts the labels from plain text to a regex compatible string. Which means you have to use `=~` instead of `=`.
+options are enabled, Plutono converts the labels from plain text to a regex compatible string. Which means you have to use `=~` instead of `=`.
 
 ### Ad hoc filters variable
 
@@ -159,11 +159,11 @@ Prometheus supports two ways to query annotations.
 
 The step option is useful to limit the number of events returned from your query.
 
-## Get Grafana metrics into Prometheus
+## Get Plutono metrics into Prometheus
 
-Grafana exposes metrics for Prometheus on the `/metrics` endpoint. We also bundle a dashboard within Grafana so you can get started viewing your metrics faster. You can import the bundled dashboard by going to the data source edit page and click the dashboard tab. There you can find a dashboard for Grafana and one for Prometheus. Import and start viewing all the metrics!
+Plutono exposes metrics for Prometheus on the `/metrics` endpoint. We also bundle a dashboard within Plutono so you can get started viewing your metrics faster. You can import the bundled dashboard by going to the data source edit page and click the dashboard tab. There you can find a dashboard for Plutono and one for Prometheus. Import and start viewing all the metrics!
 
-For detailed instructions, refer to [Internal Grafana metrics]({{< relref "../administration/view-server/internal-metrics.md">}}).
+For detailed instructions, refer to [Internal Plutono metrics]({{< relref "../administration/view-server/internal-metrics.md">}}).
 
 ## Prometheus API
 
@@ -172,11 +172,11 @@ The Prometheus data source works with other projects that implement the [Prometh
 - [Cortex](https://cortexmetrics.io/docs/)
 - [Thanos](https://thanos.io/v0.17/components/query.md/)
 
-For more information on how to query other Prometheus-compatible projects from Grafana, refer to the specific project documentation.
+For more information on how to query other Prometheus-compatible projects from Plutono, refer to the specific project documentation.
 
 ## Provision the Prometheus data source
 
-You can configure data sources using config files with Grafana's provisioning system. Read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}}).
+You can configure data sources using config files with Plutono's provisioning system. Read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}}).
 
 Here are some provisioning examples for this data source:
 
@@ -192,7 +192,7 @@ datasources:
     url: http://localhost:9090
     jsonData:
       exemplarTraceIdDestinations:
-        # Field with internal link pointing to data source in Grafana.
+        # Field with internal link pointing to data source in Plutono.
         # datasourceUid value can be anything, but it should be unique across all defined data source uids.
         - datasourceUid: my_jaeger_uid
           name: traceID
@@ -206,17 +206,17 @@ datasources:
 
 The Prometheus data source works with Amazon Managed Service for Prometheus. If you are using an AWS Identity and Access Management (IAM) policy to control access to your Amazon Managed Service for Prometheus domain, then you must use AWS Signature Version 4 (AWS SigV4) to sign all requests to that domain. For more details on AWS SigV4, refer to the [AWS documentation](https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html).
 
-> **Note:** Grafana version 7.3.5 or higher is required to use SigV4 authentication.
+> **Note:** Plutono version 7.3.5 or higher is required to use SigV4 authentication.
 
-To connect the Prometheus data source to Amazon Managed Service for Prometheus using SigV4 authentication, refer to the AWS guide to [Set up Grafana open source or Grafana Enterprise for use with AMP](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-onboard-query-standalone-grafana.html).
+To connect the Prometheus data source to Amazon Managed Service for Prometheus using SigV4 authentication, refer to the AWS guide to [Set up Plutono open source or Plutono Enterprise for use with AMP](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-onboard-query-standalone-plutono.html).
 
-If you are running Grafana in an Amazon EKS cluster, follow the AWS guide to [Query using Grafana running in an Amazon EKS cluster](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-onboard-query-grafana-7.3.html).
+If you are running Plutono in an Amazon EKS cluster, follow the AWS guide to [Query using Plutono running in an Amazon EKS cluster](https://docs.aws.amazon.com/prometheus/latest/userguide/AMP-onboard-query-plutono-7.3.html).
 
 ## Configuring exemplars
 
-> **Note:** This feature is available in Prometheus 2.26+ and Grafana 7.4+.
+> **Note:** This feature is available in Prometheus 2.26+ and Plutono 7.4+.
 
-Grafana 7.4 and later versions have the capability to show exemplars data alongside a metric both in Explore and Dashboards.
+Plutono 7.4 and later versions have the capability to show exemplars data alongside a metric both in Explore and Dashboards.
 Exemplars are a way to associate higher cardinality metadata from a specific event with traditional timeseries data.
 {{< figure src="/static/img/docs/v74/exemplars.png" class="docs-image--no-shadow" caption="Screenshot showing the detail window of an Exemplar" >}}
 

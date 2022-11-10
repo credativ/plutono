@@ -1,13 +1,13 @@
 +++
 title = "External Group Sync HTTP API "
-description = "Grafana External Group Sync HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "team", "teams", "group", "member", "enterprise"]
-aliases = ["/docs/grafana/latest/http_api/external_group_sync/"]
+description = "Plutono External Group Sync HTTP API"
+keywords = ["plutono", "http", "documentation", "api", "team", "teams", "group", "member", "enterprise"]
+aliases = ["/docs/plutono/latest/http_api/external_group_sync/"]
 +++
 
 # External Group Synchronization API
 
-> External Group Synchronization is only available in Grafana Enterprise. Read more about [Grafana Enterprise]({{< relref "../enterprise" >}}).
+> External Group Synchronization is only available in Plutono Enterprise. Read more about [Plutono Enterprise]({{< relref "../enterprise" >}}).
 
 ## Get External Groups
 
@@ -32,7 +32,7 @@ Content-Type: application/json
   {
     "orgId": 1,
     "teamId": 1,
-    "groupId": "cn=editors,ou=groups,dc=grafana,dc=org"
+    "groupId": "cn=editors,ou=groups,dc=plutono,dc=org"
   }
 ]
 ```
@@ -56,7 +56,7 @@ Content-Type: application/json
 Authorization: Basic YWRtaW46YWRtaW4=
 
 {
-  "groupId": "cn=editors,ou=groups,dc=grafana,dc=org"
+  "groupId": "cn=editors,ou=groups,dc=plutono,dc=org"
 }
 ```
 
@@ -84,7 +84,7 @@ Status Codes:
 **Example Request**:
 
 ```http
-DELETE /api/teams/1/groups/cn=editors,ou=groups,dc=grafana,dc=org HTTP/1.1
+DELETE /api/teams/1/groups/cn=editors,ou=groups,dc=plutono,dc=org HTTP/1.1
 Accept: application/json
 Content-Type: application/json
 Authorization: Basic YWRtaW46YWRtaW4=

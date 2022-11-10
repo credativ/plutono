@@ -20,7 +20,7 @@ into
 SELECT * FROM services WHERE id = "auth-api"
 ```
 
-Grafana provides a couple of helper functions to interpolate variables in a string template. Let's see how you can use them in your plugin.
+Plutono provides a couple of helper functions to interpolate variables in a string template. Let's see how you can use them in your plugin.
 
 ## Interpolate variables in panel plugins
 
@@ -43,7 +43,7 @@ For data sources, you need to use the [getTemplateSrv]({{< relref "../../package
 1. Import `getTemplateSrv` from the `runtime` package.
 
    ```ts
-   import { getTemplateSrv } from '@grafana/runtime';
+   import { getTemplateSrv } from '@credativ/plutono-runtime';
    ```
 
 1. In your `query` method, call the `replace` method with a user-defined template string.
@@ -86,10 +86,10 @@ The following example shows how to update a variable called `service`.
 
 - `query` contains the query parameters you want to update. Query parameters controlling variables are prefixed with `var-`.
 - `partial: true` makes the update only affect the query parameters listed in `query`, and leaves the other query parameters unchanged.
-- `replace: true` tells Grafana to update the current URL state, rather than creating a new history entry.
+- `replace: true` tells Plutono to update the current URL state, rather than creating a new history entry.
 
 ```ts
-import { getLocationSrv } from '@grafana/runtime';
+import { getLocationSrv } from '@credativ/plutono-runtime';
 ```
 
 ```ts
@@ -102,7 +102,7 @@ getLocationSrv().update({
 });
 ```
 
-> **Note:** Grafana queries your data source whenever you update a variable. Excessive updates to variables can slow down Grafana and lead to a poor user experience.
+> **Note:** Plutono queries your data source whenever you update a variable. Excessive updates to variables can slow down Plutono and lead to a poor user experience.
 
 ## Add support for query variables to your data source
 
@@ -131,7 +131,7 @@ async metricFindQuery(query: MyVariableQuery, options?: any) {
 }
 ```
 
-> **Note:** By default, Grafana provides a default query model and editor for simple text queries. If that's all you need, then you can leave the query type as `string`.
+> **Note:** By default, Plutono provides a default query model and editor for simple text queries. If that's all you need, then you can leave the query type as `string`.
 >
 > ```ts
 > async metricFindQuery(query: string, options?: any)
@@ -184,7 +184,7 @@ Let's create a custom query editor to allow the user to edit the query model.
    };
    ```
 
-   Grafana saves the query model whenever one of the text fields loses focus (`onBlur`) and then previews the values returned by `metricFindQuery`.
+   Plutono saves the query model whenever one of the text fields loses focus (`onBlur`) and then previews the values returned by `metricFindQuery`.
 
    The second argument to `onChange` allows you to set a text representation of the query which will appear next to the name of the variable in the variables list.
 

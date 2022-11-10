@@ -1,5 +1,5 @@
-import { PanelPlugin } from '@grafana/data';
-import { DrawStyle, GraphFieldConfig } from '@grafana/ui';
+import { PanelPlugin } from '@credativ/plutono-data';
+import { DrawStyle, GraphFieldConfig } from '@credativ/plutono-ui';
 import { XYChartPanel } from './XYChartPanel';
 import { Options } from './types';
 import { XYDimsEditor } from './XYDimsEditor';

@@ -1,21 +1,21 @@
 +++
-title = "What's new in Grafana v6.0"
-description = "Feature and improvement highlights for Grafana v6.0"
-keywords = ["grafana", "new", "documentation", "6.0", "release notes"]
-aliases = ["/docs/grafana/latest/guides/whats-new-in-v6-0/"]
+title = "What's new in Plutono v6.0"
+description = "Feature and improvement highlights for Plutono v6.0"
+keywords = ["plutono", "new", "documentation", "6.0", "release notes"]
+aliases = ["/docs/plutono/latest/guides/whats-new-in-v6-0/"]
 weight = -19
 [_build]
 list = false
 +++
 
-# What's new in Grafana v6.0
+# What's new in Plutono v6.0
 
-This update to Grafana introduces a new way of exploring your data, support for log data, and tons of other features.
+This update to Plutono introduces a new way of exploring your data, support for log data, and tons of other features.
 
 The main highlights are:
 
 - [Explore]({{< relref "#explore" >}}) - A new query focused workflow for ad-hoc data exploration and troubleshooting.
-- [Grafana Loki]({{< relref "#explore-and-grafana-loki" >}}) - Integration with the new open source log aggregation system from Grafana Labs.
+- [Plutono Loki]({{< relref "#explore-and-plutono-loki" >}}) - Integration with the new open source log aggregation system from Grafana Labs.
 - [Gauge Panel]({{< relref "#gauge-panel" >}}) - A new standalone panel for gauges.
 - [New Panel Editor UX]({{< relref "#new-panel-editor" >}}) improves panel editing
     and enables easy switching between different visualizations.
@@ -23,17 +23,17 @@ The main highlights are:
 - [Azure Monitor]({{< relref "#azure-monitor-data-source" >}}) plugin is ported from being an external plugin to be a core data source
 - [React Plugin]({{< relref "#react-panels-query-editors" >}}) support enables an easier way to build plugins.
 - [Named Colors]({{< relref "#named-colors" >}}) in our new improved color picker.
-- [Removal of user session storage]({{< relref "#easier-to-deploy-improved-security" >}}) makes Grafana easier to deploy and improves security.
+- [Removal of user session storage]({{< relref "#easier-to-deploy-improved-security" >}}) makes Plutono easier to deploy and improves security.
 
 ## Explore
 
 {{< figure src="/static/img/docs/v60/explore_prometheus.png" max-width="800px" class="docs-image--right" caption="Screenshot of the new Explore option in the panel menu" >}}
 
-Grafana's dashboard UI is all about building dashboards for visualization. **Explore** strips away all the dashboard and panel options so that you can focus on the query and metric exploration. Iterate until you have a working query and then think about building a dashboard. You can also jump from a dashboard panel into **Explore** and from there do some ad-hoc query exploration with the panel queries as a starting point.
+Plutono's dashboard UI is all about building dashboards for visualization. **Explore** strips away all the dashboard and panel options so that you can focus on the query and metric exploration. Iterate until you have a working query and then think about building a dashboard. You can also jump from a dashboard panel into **Explore** and from there do some ad-hoc query exploration with the panel queries as a starting point.
 
-For infrastructure monitoring and incident response, you no longer need to switch to other tools to debug what went wrong. **Explore** allows you to dig deeper into your metrics and logs to find the cause. Grafana's new logging data source, [Loki](https://github.com/grafana/loki) is tightly integrated into Explore and allows you to correlate metrics and logs by viewing them side-by-side.
+For infrastructure monitoring and incident response, you no longer need to switch to other tools to debug what went wrong. **Explore** allows you to dig deeper into your metrics and logs to find the cause. Plutono's new logging data source, [Loki](https://github.com/grafana/loki) is tightly integrated into Explore and allows you to correlate metrics and logs by viewing them side-by-side.
 
-**Explore** is a new paradigm for Grafana. It creates a new interactive debugging workflow that integrates two pillars
+**Explore** is a new paradigm for Plutono. It creates a new interactive debugging workflow that integrates two pillars
 of observability—metrics and logs. Explore works with every data source but for Prometheus we have customized the
 query editor and the experience to provide the best possible exploration UX.
 
@@ -41,7 +41,7 @@ query editor and the experience to provide the best possible exploration UX.
 
 Explore features a new [Prometheus query editor](/explore/#prometheus-specific-features). This new editor has improved autocomplete, metric tree selector,
 integrations with the Explore table view for easy label filtering, and useful query hints that can automatically apply
-functions to your query. There is also integration between Prometheus and Grafana Loki (see more about Loki below) that
+functions to your query. There is also integration between Prometheus and Plutono Loki (see more about Loki below) that
 enabled jumping between metrics query and logs query with preserved label filters.
 
 ### Explore splits
@@ -52,14 +52,14 @@ Explore supports splitting the view so you can compare different queries, differ
 
 <br />
 
-### Explore and Grafana Loki
+### Explore and Plutono Loki
 
 The log exploration and visualization features in Explore are available to any data source but are currently only implemented by the new open source log
-aggregation system from Grafana Lab called [Grafana Loki](https://github.com/grafana/loki).
+aggregation system from Plutono Lab called [Plutono Loki](https://github.com/grafana/loki).
 
 Loki is a horizontally-scalable, highly-available, multi-tenant log aggregation system inspired by Prometheus. It is designed to be very cost effective, as it does not index the contents of the logs, but rather a set of labels for each log stream. The logs from Loki are queried in a similar way to querying with label selectors in Prometheus. It uses labels to group log streams which can be made to match up with your Prometheus labels.
 
-For more information about Grafana Loki, refer to [Github Grafana Loki](https://github.com/grafana/loki) or [Grafana Labs hosted Loki](https://grafana.com/loki).
+For more information about Plutono Loki, refer to [Github Plutono Loki](https://github.com/grafana/loki) or [Grafana Labs hosted Loki](https://grafana.com/loki).
 
 The Explore feature allows you to query logs and features a new log panel. In the near future, we will be adding support
 for other log sources to Explore and the next planned integration is Elasticsearch.
@@ -75,7 +75,7 @@ for other log sources to Explore and the next planned integration is Elasticsear
 
 ## New Panel Editor
 
-Grafana v6.0 has a completely redesigned UX around editing panels. You can now resize the visualization area if you want
+Plutono v6.0 has a completely redesigned UX around editing panels. You can now resize the visualization area if you want
 more space for queries/options and vice versa. You can now also change visualization (panel type) from within the new
 panel edit mode. No need to add a new panel to try out different visualizations! Check out the
 video below to see the new Panel Editor in action.
@@ -102,9 +102,9 @@ continue to refine and start using in other panels.
 
 ### React Panels and Query Editors
 
-A major part of all the work that has gone into Grafana v6.0 has been on the migration to React. This investment
-is part of the future-proofing of Grafana's code base and ecosystem. Starting in v6.0 **Panels** and **Data
-source** plugins can be written in React using our published `@grafana/ui` sdk library. More information on this
+A major part of all the work that has gone into Plutono v6.0 has been on the migration to React. This investment
+is part of the future-proofing of Plutono's code base and ecosystem. Starting in v6.0 **Panels** and **Data
+source** plugins can be written in React using our published `@credativ/plutono-ui` sdk library. More information on this
 will be shared soon.
 
 {{< figure src="/static/img/docs/v60/react_panels.png" max-width="600px" caption="React Panel" >}}
@@ -112,25 +112,25 @@ will be shared soon.
 
 ## Google Stackdriver data source
 
-Built-in support for [Google Stackdriver](https://cloud.google.com/stackdriver/) is officially released in Grafana 6.0. Beta support was added in Grafana 5.3 and we have added lots of improvements since then.
+Built-in support for [Google Stackdriver](https://cloud.google.com/stackdriver/) is officially released in Plutono 6.0. Beta support was added in Plutono 5.3 and we have added lots of improvements since then.
 
-To get started read the guide: [Using Google Stackdriver in Grafana]({{< relref "../datasources/google-cloud-monitoring/_index.md/" >}}).
+To get started read the guide: [Using Google Stackdriver in Plutono]({{< relref "../datasources/google-cloud-monitoring/_index.md/" >}}).
 
 ## Azure Monitor data source
 
-One of the goals of the Grafana v6.0 release is to add support for the three major clouds. Amazon CloudWatch has been a core data source for years and Google Stackdriver is also now supported. We developed an external plugin for Azure Monitor last year and for this release the [plugin](https://grafana.com/plugins/grafana-azure-monitor-datasource) is being moved into Grafana to be one of the built-in data sources. For users of the external plugin, Grafana will automatically start using the built-in version. As a core data source, the Azure Monitor data source is able to get alerting support, in the 6.0 release alerting is supported for the Azure Monitor service, with the rest to follow.
+One of the goals of the Plutono v6.0 release is to add support for the three major clouds. Amazon CloudWatch has been a core data source for years and Google Stackdriver is also now supported. We developed an external plugin for Azure Monitor last year and for this release the [plugin](https://grafana.com/plugins/plutono-azure-monitor-datasource) is being moved into Plutono to be one of the built-in data sources. For users of the external plugin, Plutono will automatically start using the built-in version. As a core data source, the Azure Monitor data source is able to get alerting support, in the 6.0 release alerting is supported for the Azure Monitor service, with the rest to follow.
 
-The Azure Monitor data source integrates four Azure services with Grafana - Azure Monitor, Azure Log Analytics, Azure Application Insights and Azure Application Insights Analytics.
+The Azure Monitor data source integrates four Azure services with Plutono - Azure Monitor, Azure Log Analytics, Azure Application Insights and Azure Application Insights Analytics.
 
-Please read [Using Azure Monitor in Grafana documentation]({{< relref "../datasources/azuremonitor/" >}}) for more detailed information on how to get started and use it.
+Please read [Using Azure Monitor in Plutono documentation]({{< relref "../datasources/azuremonitor/" >}}) for more detailed information on how to get started and use it.
 
 ## Provisioning support for alert notifiers
 
-Grafana now has support for provisioning alert notifiers from configuration files, allowing operators to provision notifiers without using the UI or the API. A new field called `uid` has been introduced which is a string identifier that the administrator can set themselves. This is the same kind of identifier used for dashboards since v5.0. This feature makes it possible to use the same notifier configuration in multiple environments and refer to notifiers in dashboard json by a string identifier instead of the numeric id which depends on insert order and how many notifiers exist in the instance.
+Plutono now has support for provisioning alert notifiers from configuration files, allowing operators to provision notifiers without using the UI or the API. A new field called `uid` has been introduced which is a string identifier that the administrator can set themselves. This is the same kind of identifier used for dashboards since v5.0. This feature makes it possible to use the same notifier configuration in multiple environments and refer to notifiers in dashboard json by a string identifier instead of the numeric id which depends on insert order and how many notifiers exist in the instance.
 
 ## Easier to deploy and improved security
 
-Grafana 6.0 removes the need to configure and set up additional storage for [user sessions](/tutorials/ha_setup/#user-sessions). This should make it easier to deploy and operate Grafana in a
+Plutono 6.0 removes the need to configure and set up additional storage for [user sessions](/tutorials/ha_setup/#user-sessions). This should make it easier to deploy and operate Plutono in a
 high availability setup and/or if you're using a stateless user session store like Redis, Memcache, Postgres or MySQL.
 
 Instead of user sessions, we've implemented a solution based on short-lived tokens that are rotated frequently. This also replaces the old "remember me cookie"
@@ -155,7 +155,7 @@ We have updated the color picker to show named colors and primary colors. We hop
 helps making colors more consistent across dashboards. We hope to do more in this color picker in the future, like showing
 colors used in the dashboard.
 
-Named colors also enables Grafana to adapt colors to the current theme.
+Named colors also enables Plutono to adapt colors to the current theme.
 
 <div class="clearfix"></div>
 
@@ -171,4 +171,4 @@ See [upgrade notes](/installation/upgrading/#upgrading-to-v6-0).
 
 ## Changelog
 
-Check out the [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md) file for a complete list of new features, changes, and bug fixes.
+Check out the [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md) file for a complete list of new features, changes, and bug fixes.

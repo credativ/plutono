@@ -1,7 +1,7 @@
 import { of } from 'rxjs';
 import { TestScheduler } from 'rxjs/testing';
-import { FetchResponse } from '@grafana/runtime';
-import { dateTime, toUtc } from '@grafana/data';
+import { FetchResponse } from '@credativ/plutono-runtime';
+import { dateTime, toUtc } from '@credativ/plutono-data';
 
 import { PostgresDatasource } from '../datasource';
 import { backendSrv } from 'app/core/services/backend_srv'; // will use the version in __mocks__
@@ -9,8 +9,8 @@ import { TemplateSrv } from 'app/features/templating/template_srv';
 import { initialCustomVariableModelState } from '../../../../features/variables/custom/reducer';
 import { TimeSrv } from '../../../../features/dashboard/services/TimeSrv';
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@credativ/plutono-runtime', () => ({
+  ...((jest.requireActual('@credativ/plutono-runtime') as unknown) as object),
   getBackendSrv: () => backendSrv,
 }));
 
@@ -74,7 +74,7 @@ describe('PostgreSQLDatasource', () => {
           {
             format: 'time_series',
             rawQuery: true,
-            rawSql: 'select time, metric from grafana_metric',
+            rawSql: 'select time, metric from plutono_metric',
             refId: 'A',
             datasource: 'gdev-ds',
           },
@@ -86,7 +86,7 @@ describe('PostgreSQLDatasource', () => {
           A: {
             refId: 'A',
             meta: {
-              executedQueryString: 'select time, metric from grafana_metric',
+              executedQueryString: 'select time, metric from plutono_metric',
               rowCount: 0,
             },
             series: [
@@ -110,7 +110,7 @@ describe('PostgreSQLDatasource', () => {
             {
               datapoints: [[30.226249741223704, 1599643351085]],
               meta: {
-                executedQueryString: 'select time, metric from grafana_metric',
+                executedQueryString: 'select time, metric from plutono_metric',
                 rowCount: 0,
               },
               refId: 'A',
@@ -135,7 +135,7 @@ describe('PostgreSQLDatasource', () => {
           {
             format: 'table',
             rawQuery: true,
-            rawSql: 'select time, metric, value from grafana_metric',
+            rawSql: 'select time, metric, value from plutono_metric',
             refId: 'A',
             datasource: 'gdev-ds',
           },
@@ -147,7 +147,7 @@ describe('PostgreSQLDatasource', () => {
           A: {
             refId: 'A',
             meta: {
-              executedQueryString: 'select time, metric, value from grafana_metric',
+              executedQueryString: 'select time, metric, value from plutono_metric',
               rowCount: 1,
             },
             series: null,
@@ -194,7 +194,7 @@ describe('PostgreSQLDatasource', () => {
               type: 'table',
               refId: 'A',
               meta: {
-                executedQueryString: 'select time, metric, value from grafana_metric',
+                executedQueryString: 'select time, metric, value from plutono_metric',
                 rowCount: 1,
               },
             },
@@ -217,7 +217,7 @@ describe('PostgreSQLDatasource', () => {
           {
             format: 'table',
             rawQuery: true,
-            rawSql: 'select time, metric, value from grafana_metric',
+            rawSql: 'select time, metric, value from plutono_metric',
             refId: 'A',
             datasource: 'gdev-ds',
             hide: true,
@@ -523,7 +523,7 @@ describe('PostgreSQLDatasource', () => {
       avg(value) as "value",
       hostname as "metric"
     FROM
-      grafana_metric
+      plutono_metric
     WHERE
       $__timeFilter("createdAt") AND
       measurement = 'logins.count' AND
@@ -550,7 +550,7 @@ describe('PostgreSQLDatasource', () => {
       avg(value) as "value",
       hostname as "metric"
     FROM
-      grafana_metric
+      plutono_metric
     WHERE
       $__timeFilter("createdAt") AND
       measurement = 'logins.count'

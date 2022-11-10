@@ -17,9 +17,9 @@ import {
   QueryResultMeta,
   TimeSeriesValue,
   ScopedVars,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
-import { getTemplateSrv, getDataSourceSrv } from '@grafana/runtime';
+import { getTemplateSrv, getDataSourceSrv } from '@credativ/plutono-runtime';
 import TableModel from 'app/core/table_model';
 import { formatQuery, getHighlighterExpressionsFromQuery } from './query_utils';
 import {

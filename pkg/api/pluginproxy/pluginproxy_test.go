@@ -5,11 +5,11 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	macaron "gopkg.in/macaron.v1"
@@ -66,7 +66,7 @@ func TestPluginProxy(t *testing.T) {
 		)
 
 		// Get will return empty string even if header is not set
-		assert.Equal(t, "test_user", req.Header.Get("X-Grafana-User"))
+		assert.Equal(t, "test_user", req.Header.Get("X-Plutono-User"))
 	})
 
 	t.Run("When SendUserHeader config is disabled", func(t *testing.T) {
@@ -81,7 +81,7 @@ func TestPluginProxy(t *testing.T) {
 			nil,
 		)
 		// Get will return empty string even if header is not set
-		assert.Equal(t, "", req.Header.Get("X-Grafana-User"))
+		assert.Equal(t, "", req.Header.Get("X-Plutono-User"))
 	})
 
 	t.Run("When SendUserHeader config is enabled but user is anonymous", func(t *testing.T) {
@@ -95,7 +95,7 @@ func TestPluginProxy(t *testing.T) {
 		)
 
 		// Get will return empty string even if header is not set
-		assert.Equal(t, "", req.Header.Get("X-Grafana-User"))
+		assert.Equal(t, "", req.Header.Get("X-Plutono-User"))
 	})
 
 	t.Run("When getting templated url", func(t *testing.T) {
@@ -206,7 +206,7 @@ func getPluginProxiedRequest(t *testing.T, ctx *models.ReqContext, cfg *setting.
 	}
 	proxy := NewApiPluginProxy(ctx, "", route, "", cfg)
 
-	req, err := http.NewRequest(http.MethodGet, "/api/plugin-proxy/grafana-simple-app/api/v4/alerts", nil)
+	req, err := http.NewRequest(http.MethodGet, "/api/plugin-proxy/plutono-simple-app/api/v4/alerts", nil)
 	require.NoError(t, err)
 	proxy.Director(req)
 	return req

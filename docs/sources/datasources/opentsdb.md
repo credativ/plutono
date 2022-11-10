@@ -1,14 +1,14 @@
 +++
 title = "OpenTSDB"
-description = "Guide for using OpenTSDB in Grafana"
-keywords = ["grafana", "opentsdb", "guide"]
-aliases = ["/docs/grafana/latest/features/opentsdb", "/docs/grafana/latest/features/datasources/opentsdb/"]
+description = "Guide for using OpenTSDB in Plutono"
+keywords = ["plutono", "opentsdb", "guide"]
+aliases = ["/docs/plutono/latest/features/opentsdb", "/docs/plutono/latest/features/datasources/opentsdb/"]
 weight = 1100
 +++
 
-# Using OpenTSDB in Grafana
+# Using OpenTSDB in Plutono
 
-Grafana ships with advanced support for OpenTSDB. This topic explains options, variables, querying, and other options specific to the OpenTSDB data source. Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Grafana. Only users with the organization admin role can add data sources.
+Plutono ships with advanced support for OpenTSDB. This topic explains options, variables, querying, and other options specific to the OpenTSDB data source. Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Plutono. Only users with the organization admin role can add data sources.
 
 ## OpenTSDB settings
 
@@ -50,7 +50,7 @@ types of template variables.
 
 ### Query variable
 
-Grafana's OpenTSDB data source supports template variable queries. This means you can create template variables
+Plutono's OpenTSDB data source supports template variable queries. This means you can create template variables
 that fetch the values from OpenTSDB. For example, metric names, tag names, or tag values.
 
 When using OpenTSDB with a template variable of `query` type you can use following syntax for lookup.
@@ -82,7 +82,7 @@ For details on OpenTSDB metric queries, check out the official [OpenTSDB documen
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with Plutono's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source.
 

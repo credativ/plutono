@@ -1,16 +1,16 @@
 +++
-title = "What's new in Grafana v4.2"
-description = "Feature and improvement highlights for Grafana v4.2"
-keywords = ["grafana", "new", "documentation", "4.2.0", "release notes"]
-aliases = ["/docs/grafana/latest/guides/whats-new-in-v4-2/"]
+title = "What's new in Plutono v4.2"
+description = "Feature and improvement highlights for Plutono v4.2"
+keywords = ["plutono", "new", "documentation", "4.2.0", "release notes"]
+aliases = ["/docs/plutono/latest/guides/whats-new-in-v4-2/"]
 weight = -9
 [_build]
 list = false
 +++
 
-## What's new in Grafana v4.2
+## What's new in Plutono v4.2
 
-Grafana v4.2 Beta is now [available for download](https://grafana.com/grafana/download/4.2.0).
+Plutono v4.2 Beta is now [available for download](https://grafana.com/grafana/download/4.2.0).
 Just like the last release this one contains lots bug fixes and minor improvements.
 We are very happy to say that 27 of 40 issues was closed by pull requests from the community.
 Big thumbs up!
@@ -23,8 +23,8 @@ Big thumbs up!
 - **Templating**: Make $__interval and $__interval_ms global built in variables that can be used in by any data source (in panel queries), closes [#7190](https://github.com/grafana/grafana/issues/7190), closes [#6582](https://github.com/grafana/grafana/issues/6582)
 - **Alerting**: Adds deduping of alert notifications [#7632](https://github.com/grafana/grafana/pull/7632)
 - **Alerting**: Better information about why an alert triggered [#7035](https://github.com/grafana/grafana/issues/7035)
-- **Orgs**: Sharing dashboards using Grafana share feature will now redirect to correct org. [#6948](https://github.com/grafana/grafana/issues/6948)
-- [Full changelog](https://github.com/grafana/grafana/blob/master/CHANGELOG.md)
+- **Orgs**: Sharing dashboards using Plutono share feature will now redirect to correct org. [#6948](https://github.com/grafana/grafana/issues/6948)
+- [Full changelog](https://github.com/credativ/plutono/blob/master/CHANGELOG.md)
 
 ### New alert notification channels
 
@@ -38,7 +38,7 @@ This release adds **five** new alert notifications channels, all of them contrib
 
 ### Templating
 
-We added two new global built in variables in grafana. `$__interval` and `$__interval_ms` are now reserved template names in grafana and can be used by any data source.
+We added two new global built in variables in plutono. `$__interval` and `$__interval_ms` are now reserved template names in plutono and can be used by any data source.
 We might add more global built in variables in the future and if we do we will prefix them with `$__`. So please avoid using that in your template variables.
 
 ### Dedupe alert notifications when running multiple servers
@@ -49,7 +49,7 @@ This makes it possible to run alerting on multiple servers and only get one noti
 We currently solve this with sql transactions which puts some limitations for how many servers you can use to execute the same rules.
 3-5 servers should not be a problem but as always, it depends on how many alerts you have and how frequently they execute.
 
-Next up for a better HA situation is to add support for workload balancing between Grafana servers.
+Next up for a better HA situation is to add support for workload balancing between Plutono servers.
 
 ### Alerting more info
 
@@ -65,16 +65,16 @@ Making it possible to have users in multiple groups and have detailed access con
 
 ## Upgrade and Breaking changes
 
-If you're using HTTPS in grafana we now force you to use TLS 1.2 and the most secure ciphers.
+If you're using HTTPS in plutono we now force you to use TLS 1.2 and the most secure ciphers.
 We think its better to be secure by default rather then making it configurable.
-If you want to run HTTPS with lower versions of TLS we suggest you put a reserve proxy in front of grafana.
+If you want to run HTTPS with lower versions of TLS we suggest you put a reserve proxy in front of plutono.
 
 If you have template variables name `$__interval` or `$__interval_ms` they will no longer work since these keywords
 are reserved as global built in variables. We might add more global built in variables in the future and if we do, we will prefix them with `$__`. So please avoid using that in your template variables.
 
 ## Changelog
 
-Check out the [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md) file for a complete list
+Check out the [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md) file for a complete list
 of new features, changes, and bug fixes.
 
 ## Download
@@ -83,4 +83,4 @@ Head to [v4.2-beta download page](/download/4_2_0/) for download links and instr
 
 ## Thanks
 
-A big thanks to all the Grafana users who contribute by submitting PRs, bug reports and feedback!
+A big thanks to all the Plutono users who contribute by submitting PRs, bug reports and feedback!

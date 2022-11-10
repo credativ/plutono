@@ -4,8 +4,8 @@
       args:
         - postgres_version=${postgres_version}
     environment:
-      POSTGRES_USER: grafanatest
-      POSTGRES_PASSWORD: grafanatest
+      POSTGRES_USER: plutonotest
+      POSTGRES_PASSWORD: plutonotest
     ports:
       - "5432:5432"
     tmpfs: /var/lib/postgresql/data:rw

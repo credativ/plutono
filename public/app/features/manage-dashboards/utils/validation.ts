@@ -1,5 +1,5 @@
 import validationSrv from '../services/ValidationSrv';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 
 export const validateDashboardJson = (json: string) => {
   try {

@@ -5,7 +5,7 @@ weight = 140
 
 # Variables types
 
-Grafana uses several types of variables.
+Plutono uses several types of variables.
 
 |  Variable type  | Description   |
 |:---|:---|

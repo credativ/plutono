@@ -1,5 +1,5 @@
-import { FieldColorModeId, FieldType, PreferredVisualisationType } from '@grafana/data';
-import { NodeGraphDataFrameFieldNames } from '@grafana/ui';
+import { FieldColorModeId, FieldType, PreferredVisualisationType } from '@credativ/plutono-data';
+import { NodeGraphDataFrameFieldNames } from '@credativ/plutono-ui';
 
 export const nodes = {
   fields: [

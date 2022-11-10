@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
-import { NavModel } from '@grafana/data';
+import { NavModel } from '@credativ/plutono-data';
 
 import Page from 'app/core/components/Page/Page';
 import OrgProfile from './OrgProfile';
@@ -10,7 +10,7 @@ import { loadOrganization, updateOrganization } from './state/actions';
 import { Organization, StoreState } from 'app/types';
 import { getNavModel } from 'app/core/selectors/navModel';
 import { setOrganizationName } from './state/reducers';
-import { VerticalGroup } from '@grafana/ui';
+import { VerticalGroup } from '@credativ/plutono-ui';
 
 export interface Props {
   navModel: NavModel;

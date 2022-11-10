@@ -9,7 +9,7 @@ import {
   Field,
   InputControl,
   Legend,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import { FolderPicker } from 'app/core/components/Select/FolderPicker';
 import { DataSourcePicker } from 'app/core/components/Select/DataSourcePicker';
 import { DashboardInput, DashboardInputs, DataSourceInput, ImportDashboardDTO } from '../state/reducers';
@@ -75,7 +75,7 @@ export const ImportDashboardForm: FC<Props> = ({
       </Field>
       <Field
         label="Unique identifier (uid)"
-        description="The unique identifier (uid) of a dashboard can be used for uniquely identify a dashboard between multiple Grafana installs.
+        description="The unique identifier (uid) of a dashboard can be used for uniquely identify a dashboard between multiple Plutono installs.
                 The uid allows having consistent URL’s for accessing dashboards so changing the title of a dashboard will not break any
                 bookmarked links to that dashboard."
         invalid={!!errors.uid}

@@ -1,22 +1,22 @@
 +++
 title = "Reporting API"
-description = "Grafana Enterprise APIs"
-keywords = ["grafana", "enterprise", "api", "reporting"]
-aliases = ["/docs/grafana/latest/http_api/reporting/"]
+description = "Plutono Enterprise APIs"
+keywords = ["plutono", "enterprise", "api", "reporting"]
+aliases = ["/docs/plutono/latest/http_api/reporting/"]
 +++
 
 # Reporting API
 
 This API allows you to interact programmatically with the [Reporting]({{< relref "../enterprise/reporting.md" >}}) feature.
 
-> Reporting is only available in Grafana Enterprise. Read more about [Grafana Enterprise]({{< relref "../enterprise" >}}).
+> Reporting is only available in Plutono Enterprise. Read more about [Plutono Enterprise]({{< relref "../enterprise" >}}).
 
 
 ## Send a report
 
-> Only available in Grafana Enterprise v7.0+.
+> Only available in Plutono Enterprise v7.0+.
 
-> This API endpoint is experimental and may be deprecated in a future release. On deprecation, a migration strategy will be provided and the endpoint will remain functional until the next major release of Grafana.
+> This API endpoint is experimental and may be deprecated in a future release. On deprecation, a migration strategy will be provided and the endpoint will remain functional until the next major release of Plutono.
 
 `POST /api/reports/email`
 

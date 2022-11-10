@@ -1,8 +1,8 @@
 +++
 title = "Authentication HTTP API "
-description = "Grafana Authentication HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "authentication"]
-aliases = ["/docs/grafana/latest/http_api/authentication/"]
+description = "Plutono Authentication HTTP API"
+keywords = ["plutono", "http", "documentation", "api", "authentication"]
+aliases = ["/docs/plutono/latest/http_api/authentication/"]
 +++
 
 # Authentication API
@@ -11,9 +11,9 @@ aliases = ["/docs/grafana/latest/http_api/authentication/"]
 
 Currently you can authenticate via an `API Token` or via a `Session cookie` (acquired using regular login or OAuth).
 
-## X-Grafana-Org-Id Header
+## X-Plutono-Org-Id Header
 
-**X-Grafana-Org-Id**  is an optional property that specifies the organization to which the action is applied. If it is not set, the created key belongs to the current context org. Use this header in all requests except those regarding admin.
+**X-Plutono-Org-Id**  is an optional property that specifies the organization to which the action is applied. If it is not set, the created key belongs to the current context org. Use this header in all requests except those regarding admin.
 
 **Example Request**:
 
@@ -21,7 +21,7 @@ Currently you can authenticate via an `API Token` or via a `Session cookie` (acq
 POST /api/auth/keys HTTP/1.1
 Accept: application/json
 Content-Type: application/json
-X-Grafana-Org-Id: 2
+X-Plutono-Org-Id: 2
 Authorization: Bearer eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk
 
 {
@@ -131,7 +131,7 @@ Authorization: Bearer eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk
 JSON Body schema:
 
 - **name** – The key name
-- **role** – Sets the access level/Grafana Role for the key. Can be one of the following values: `Viewer`, `Editor` or `Admin`.
+- **role** – Sets the access level/Plutono Role for the key. Can be one of the following values: `Viewer`, `Editor` or `Admin`.
 - **secondsToLive** – Sets the key expiration in seconds. It is optional. If it is a positive number an expiration date for the key is set. If it is null, zero or is omitted completely (unless `api_key_max_seconds_to_live` configuration option is set) the key will never expire.
 
 Error statuses:

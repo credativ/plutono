@@ -7,13 +7,13 @@ import {
   PanelState,
   QueriesToUpdateOnDashboardLoad,
 } from 'app/types';
-import { AngularComponent } from '@grafana/runtime';
+import { AngularComponent } from '@credativ/plutono-runtime';
 import { EDIT_PANEL_ID } from 'app/core/constants';
 import { processAclItems } from 'app/core/utils/acl';
 import { panelEditorReducer } from '../components/PanelEditor/state/reducers';
 import { DashboardModel } from './DashboardModel';
 import { PanelModel } from './PanelModel';
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin } from '@credativ/plutono-data';
 
 export const initialState: DashboardState = {
   initPhase: DashboardInitPhase.NotStarted,

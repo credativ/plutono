@@ -9,9 +9,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
 )
 
 var (
@@ -102,7 +102,7 @@ func validateDashboardAsConfig(t *testing.T, cfg []*config) {
 	require.Equal(t, ds.FolderUID, "xyz")
 	require.True(t, ds.Editable)
 	require.Equal(t, len(ds.Options), 1)
-	require.Equal(t, ds.Options["path"], "/var/lib/grafana/dashboards")
+	require.Equal(t, ds.Options["path"], "/var/lib/plutono/dashboards")
 	require.True(t, ds.DisableDeletion)
 	require.Equal(t, ds.UpdateIntervalSeconds, int64(15))
 
@@ -114,7 +114,7 @@ func validateDashboardAsConfig(t *testing.T, cfg []*config) {
 	require.Equal(t, ds2.FolderUID, "")
 	require.False(t, ds2.Editable)
 	require.Equal(t, len(ds2.Options), 1)
-	require.Equal(t, ds2.Options["path"], "/var/lib/grafana/dashboards")
+	require.Equal(t, ds2.Options["path"], "/var/lib/plutono/dashboards")
 	require.False(t, ds2.DisableDeletion)
 	require.Equal(t, ds2.UpdateIntervalSeconds, int64(10))
 }

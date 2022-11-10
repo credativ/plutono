@@ -16,7 +16,7 @@ func setAutoTimeGrain(intervalMs int64, timeGrains []int64) (string, error) {
 
 // findClosestAllowedIntervalMs is used for the auto time grain setting.
 // It finds the closest time grain from the list of allowed time grains for Azure Monitor
-// using the Grafana interval in milliseconds
+// using the Plutono interval in milliseconds
 // Some metrics only allow a limited list of time grains. The allowedTimeGrains parameter
 // allows overriding the default list of allowed time grains.
 func findClosestAllowedIntervalMS(intervalMs int64, allowedTimeGrains []int64) int64 {

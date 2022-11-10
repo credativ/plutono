@@ -1,7 +1,7 @@
 import React, { FC, memo, useState } from 'react';
 import { css } from 'emotion';
-import { HorizontalGroup, stylesFactory, useTheme, Spinner } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { HorizontalGroup, stylesFactory, useTheme, Spinner } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { contextSrv } from 'app/core/services/context_srv';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
 import { FilterInput } from 'app/core/components/FilterInput/FilterInput';
@@ -151,7 +151,7 @@ export const ManageDashboards: FC<Props & ConnectProps & DispatchProps> = memo((
 
 export default connectWithRouteParams(ManageDashboards);
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     container: css`
       height: 100%;

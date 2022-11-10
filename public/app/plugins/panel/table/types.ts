@@ -1,4 +1,4 @@
-import { TableSortByFieldState } from '@grafana/ui';
+import { TableSortByFieldState } from '@credativ/plutono-ui';
 
 export interface Options {
   frameIndex: number;

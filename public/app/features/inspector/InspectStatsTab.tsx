@@ -1,5 +1,5 @@
-import { PanelData, QueryResultMetaStat, TimeZone } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { PanelData, QueryResultMetaStat, TimeZone } from '@credativ/plutono-data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { InspectStatsTable } from './InspectStatsTable';
 import React from 'react';
 

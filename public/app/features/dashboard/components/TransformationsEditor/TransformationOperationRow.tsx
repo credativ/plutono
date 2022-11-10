@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { DataFrame, DataTransformerConfig, TransformerRegistryItem } from '@grafana/data';
-import { HorizontalGroup } from '@grafana/ui';
+import { DataFrame, DataTransformerConfig, TransformerRegistryItem } from '@credativ/plutono-data';
+import { HorizontalGroup } from '@credativ/plutono-ui';
 
 import { TransformationEditor } from './TransformationEditor';
 import {

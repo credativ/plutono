@@ -1,8 +1,8 @@
 // Libraries
 import React, { PureComponent } from 'react';
-import { PanelProps } from '@grafana/data';
-import { Button, Spinner, stylesFactory } from '@grafana/ui';
-import { config } from '@grafana/runtime';
+import { PanelProps } from '@credativ/plutono-data';
+import { Button, Spinner, stylesFactory } from '@credativ/plutono-ui';
+import { config } from '@credativ/plutono-runtime';
 import { css, cx } from 'emotion';
 import { contextSrv } from 'app/core/core';
 import { backendSrv } from 'app/core/services/backend_srv';

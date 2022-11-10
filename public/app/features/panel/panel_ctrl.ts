@@ -9,7 +9,7 @@ import {
   AngularPanelMenuItem,
   EventBusExtended,
   EventBusSrv,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { DashboardModel } from '../dashboard/state';
 
 export class PanelCtrl {

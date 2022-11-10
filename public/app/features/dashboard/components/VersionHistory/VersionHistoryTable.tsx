@@ -1,6 +1,6 @@
 import React from 'react';
 import { css } from 'emotion';
-import { Checkbox, Button, Tag, ModalsController } from '@grafana/ui';
+import { Checkbox, Button, Tag, ModalsController } from '@credativ/plutono-ui';
 import { DecoratedRevisionModel } from '../DashboardSettings/VersionsSettings';
 import { RevertDashboardModal } from './RevertDashboardModal';
 

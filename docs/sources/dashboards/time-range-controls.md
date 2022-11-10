@@ -1,13 +1,13 @@
 +++
 title = "Time range controls"
-keywords = ["grafana", "dashboard", "documentation", "time range"]
-aliases = ["/docs/grafana/latest/reference/timerange/"]
+keywords = ["plutono", "dashboard", "documentation", "time range"]
+aliases = ["/docs/plutono/latest/reference/timerange/"]
 weight = 7
 +++
 
 # Time range controls
 
-Grafana provides several ways to manage the time ranges of the data being visualized, both at the dashboard level and the panel level.
+Plutono provides several ways to manage the time ranges of the data being visualized, both at the dashboard level and the panel level.
 
 This page describes supported time units and relative ranges, the common time controls, dashboard-wide time settings, and panel-specific time settings.
 
@@ -73,7 +73,7 @@ Select the relative time range from the **Relative time ranges** list. Some exam
 Set an absolute time range one of two ways:
 
 - Type values into the **From** and **To** fields. You can type exact time values or relative values, such as `now-24h`, and then click **Apply time range**.
-- Click in the **From** or **To** field. Grafana displays a calendar. Click the day or days you want to use as the current time range and then click **Apply time range**.
+- Click in the **From** or **To** field. Plutono displays a calendar. Click the day or days you want to use as the current time range and then click **Apply time range**.
 
 This section also displays recently used absolute ranges.
 
@@ -87,9 +87,9 @@ Click and drag to select the time range in the visualization that you want to vi
 
 ### Refresh dashboard
 
-Click the **Refresh dashboard** icon to immediately run every query on the dashboard and refresh the visualizations. Grafana cancels any pending requests when a new refresh is triggered.
+Click the **Refresh dashboard** icon to immediately run every query on the dashboard and refresh the visualizations. Plutono cancels any pending requests when a new refresh is triggered.
 
-By default, Grafana does not automatically refresh the dashboard. Queries run on their own schedule according to the panel settings. However, if you want to regularly refresh the dashboard, then click the down arrow next to the **Refresh dashboard** icon and then select a refresh interval.
+By default, Plutono does not automatically refresh the dashboard. Queries run on their own schedule according to the panel settings. However, if you want to regularly refresh the dashboard, then click the down arrow next to the **Refresh dashboard** icon and then select a refresh interval.
 
 ## Dashboard time settings
 
@@ -98,12 +98,12 @@ Time settings are saved on a per-dashboard basis.
 To access the dashboard time settings, click the **Dashboard settings** (gear) icon at the top of the screen. The settings are in the **Time Options** section of the General tab.
 
 - **Timezone -** Specify the local time zone of the service or system that you are monitoring. This can be helpful when monitoring a system or service that operates across several time zones.
-  - **Default -** The default selected time zone for the user profile, team, or organization is used. If no time zone is specified for the user profile, a team the user is a member of, or the organization, then Grafana uses local browser time.
+  - **Default -** The default selected time zone for the user profile, team, or organization is used. If no time zone is specified for the user profile, a team the user is a member of, or the organization, then Plutono uses local browser time.
   - **Local browser time -** The time zone configured for the viewing user browser is used. This is usually the same time zone as set on the computer.
   - Standard [ISO 8601 time zones](https://en.wikipedia.org/wiki/List_of_tz_database_time_zones), including UTC.
 - **Auto-refresh -** Customize the options displayed for relative time and the auto-refresh options. Entries are comma separated and accept any valid time unit.
 - **Now delay now- -** Override the `now` value by entering a time delay. Most commonly, this feature is used to accommodate known delays in data aggregation to avoid null values.
-- **Hide time picker -** Select this option if you do not want Grafana to display the time picker.
+- **Hide time picker -** Select this option if you do not want Plutono to display the time picker.
 
 ## Panel time overrides and timeshift
 

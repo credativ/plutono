@@ -8,11 +8,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/events"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/events"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 func (ss *SQLStore) addUserQueryAndCommandHandlers() {
@@ -441,7 +441,7 @@ func GetUserProfile(query *models.GetUserProfileQuery) error {
 		Email:          user.Email,
 		Login:          user.Login,
 		Theme:          user.Theme,
-		IsGrafanaAdmin: user.IsAdmin,
+		IsPlutonoAdmin: user.IsAdmin,
 		IsDisabled:     user.IsDisabled,
 		OrgId:          user.OrgId,
 		UpdatedAt:      user.Updated,
@@ -513,7 +513,7 @@ func GetSignedInUser(query *models.GetSignedInUserQuery) error {
 
 	var rawSQL = `SELECT
 		u.id             as user_id,
-		u.is_admin       as is_grafana_admin,
+		u.is_admin       as is_plutono_admin,
 		u.email          as email,
 		u.login          as login,
 		u.name           as name,
@@ -730,7 +730,7 @@ func UpdateUserPermissions(cmd *models.UpdateUserPermissionsCommand) error {
 			return err
 		}
 
-		user.IsAdmin = cmd.IsGrafanaAdmin
+		user.IsAdmin = cmd.IsPlutonoAdmin
 		sess.UseBool("is_admin")
 
 		_, err := sess.ID(user.Id).Update(&user)
@@ -768,7 +768,7 @@ func validateOneAdminLeft(sess *DBSession) error {
 	}
 
 	if count == 0 {
-		return models.ErrLastGrafanaAdmin
+		return models.ErrLastPlutonoAdmin
 	}
 
 	return nil

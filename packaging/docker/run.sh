@@ -18,7 +18,7 @@ if [ ! -r "$GF_PATHS_HOME" ]; then
 fi
 
 if [ $PERMISSIONS_OK -eq 1 ]; then
-    echo "You may have issues with file permissions, more information here: http://docs.grafana.org/installation/docker/#migrate-to-v51-or-later"
+    echo "You may have issues with file permissions, more information here: http://docs.plutono.org/installation/docker/#migrate-to-v51-or-later"
 fi
 
 if [ ! -d "$GF_PATHS_PLUGINS" ]; then
@@ -70,14 +70,14 @@ if [ ! -z "${GF_INSTALL_PLUGINS}" ]; then
     if [[ $plugin =~ .*\;.* ]]; then
         pluginUrl=$(echo "$plugin" | cut -d';' -f 1)
         pluginWithoutUrl=$(echo "$plugin" | cut -d';' -f 2)
-        grafana-cli --pluginUrl "${pluginUrl}" --pluginsDir "${GF_PATHS_PLUGINS}" plugins install ${pluginWithoutUrl}
+        plutono-cli --pluginUrl "${pluginUrl}" --pluginsDir "${GF_PATHS_PLUGINS}" plugins install ${pluginWithoutUrl}
     else
-        grafana-cli --pluginsDir "${GF_PATHS_PLUGINS}" plugins install ${plugin}
+        plutono-cli --pluginsDir "${GF_PATHS_PLUGINS}" plugins install ${plugin}
     fi
   done
 fi
 
-exec grafana-server                                         \
+exec plutono-server                                         \
   --homepath="$GF_PATHS_HOME"                               \
   --config="$GF_PATHS_CONFIG"                               \
   --packaging=docker                                        \

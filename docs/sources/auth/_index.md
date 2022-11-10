@@ -6,11 +6,11 @@ weight = 30
 
 # User Authentication Overview
 
-Grafana provides many ways to authenticate users. Some authentication integrations also enable syncing user permissions and org memberships.
+Plutono provides many ways to authenticate users. Some authentication integrations also enable syncing user permissions and org memberships.
 
-Here is a table showing all supported authentication providers and the features available for them. [Team sync]({{< relref "../enterprise/team-sync.md" >}}) and [active sync]({{< relref "../enterprise/enhanced_ldap.md#active-ldap-synchronization" >}}) are only available in Grafana Enterprise.
+Here is a table showing all supported authentication providers and the features available for them. [Team sync]({{< relref "../enterprise/team-sync.md" >}}) and [active sync]({{< relref "../enterprise/enhanced_ldap.md#active-ldap-synchronization" >}}) are only available in Plutono Enterprise.
 
-See also, [Grafana Authentication]({{< relref "grafana.md" >}}).
+See also, [Plutono Authentication]({{< relref "plutono.md" >}}).
 
 Provider | Support | Role mapping | Team sync<br> *(Enterprise only)* | Active sync<br> *(Enterprise only)*
 -------- | :-----: | :----------: | :-------: | :---------:

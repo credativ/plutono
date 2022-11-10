@@ -3,7 +3,7 @@ package auth
 import (
 	"fmt"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 type userAuthToken struct {

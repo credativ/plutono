@@ -3,7 +3,7 @@ package dtos
 import (
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/components/simplejson"
 )
 
 type DashboardMeta struct {

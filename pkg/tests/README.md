@@ -1,3 +1,3 @@
 # Integration tests
 
-This directory contains Grafana server integration tests.
+This directory contains Plutono server integration tests.

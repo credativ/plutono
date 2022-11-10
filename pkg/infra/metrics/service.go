@@ -3,10 +3,10 @@ package metrics
 import (
 	"context"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/metrics/graphitebridge"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/metrics/graphitebridge"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 var metricsLogger log.Logger = log.New("metrics")

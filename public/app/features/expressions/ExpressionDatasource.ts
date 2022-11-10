@@ -1,7 +1,7 @@
-import { DataSourceInstanceSettings, DataSourcePluginMeta } from '@grafana/data';
+import { DataSourceInstanceSettings, DataSourcePluginMeta } from '@credativ/plutono-data';
 import { ExpressionQuery, GELQueryType } from './types';
 import { ExpressionQueryEditor } from './ExpressionQueryEditor';
-import { DataSourceWithBackend } from '@grafana/runtime';
+import { DataSourceWithBackend } from '@credativ/plutono-runtime';
 
 /**
  * This is a singleton instance that just pretends to be a DataSource

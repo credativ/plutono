@@ -4,8 +4,8 @@ import AutoSizer from 'react-virtualized-auto-sizer';
 import { css, cx } from 'emotion';
 import { Subscription } from 'rxjs';
 
-import { FieldConfigSource, GrafanaTheme } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { FieldConfigSource, PlutonoTheme } from '@credativ/plutono-data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import {
   HorizontalGroup,
   ModalsController,
@@ -13,7 +13,7 @@ import {
   RadioButtonGroup,
   stylesFactory,
   ToolbarButton,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 
 import config from 'app/core/config';
 import { appEvents } from 'app/core/core';
@@ -429,7 +429,7 @@ export const PanelEditor = connector(PanelEditorUnconnected);
 /*
  * Styles
  */
-export const getStyles = stylesFactory((theme: GrafanaTheme, props: Props) => {
+export const getStyles = stylesFactory((theme: PlutonoTheme, props: Props) => {
   const { uiState } = props;
   const paneSpacing = theme.spacing.md;
 

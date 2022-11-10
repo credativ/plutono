@@ -1,18 +1,18 @@
 +++
-title = "What's new in Grafana v2.5"
-description = "Feature and improvement highlights for Grafana v2.5"
-keywords = ["grafana", "new", "documentation", "2.5", "release notes"]
-aliases = ["/docs/grafana/latest/guides/whats-new-in-v2-5/"]
+title = "What's new in Plutono v2.5"
+description = "Feature and improvement highlights for Plutono v2.5"
+keywords = ["plutono", "new", "documentation", "2.5", "release notes"]
+aliases = ["/docs/plutono/latest/guides/whats-new-in-v2-5/"]
 weight = -3
 [_build]
 list = false
 +++
 
-# What's new in Grafana v2.5
+# What's new in Plutono v2.5
 
 ## Release highlights
 This is an exciting release, and we want to share some of the highlights. The release includes many
-fixes and enhancements to all areas of Grafana, like new Data Sources, a new and improved timepicker, user invites, panel
+fixes and enhancements to all areas of Plutono, like new Data Sources, a new and improved timepicker, user invites, panel
 resize handles and improved InfluxDB and OpenTSDB support.
 
 ### New time range controls
@@ -40,14 +40,14 @@ and complex queries for logs or metrics.
 - Query only relevant indices based on time pattern
 - Alias patterns for short readable series names
 
-Try the new Elasticsearch query editor on the [play.grafana.org](https://play.grafana.org/dashboard/db/elasticsearch-metrics) site.
+Try the new Elasticsearch query editor on the [play.plutono.org](https://play.plutono.org/dashboard/db/elasticsearch-metrics) site.
 
 ### CloudWatch
 
 <img src="/static/img/docs/whatsnew_2_5/cloudwatch.png" alt="Cloudwatch editor">
 
-Grafana 2.5 ships with a new CloudWatch data source that will allow you to query and visualize CloudWatch
-metrics directly from Grafana.
+Plutono 2.5 ships with a new CloudWatch data source that will allow you to query and visualize CloudWatch
+metrics directly from Plutono.
 
 - Rich editor with auto completion for metric names, namespaces and dimensions
 - Templating queries for generic dashboards
@@ -57,7 +57,7 @@ metrics directly from Grafana.
 
 <img src="/static/img/docs/whatsnew_2_5/prometheus_editor.png" alt="Prometheus editor">
 
-Grafana 2.5 ships with a new Prometheus data source that will allow you to query and visualize data
+Plutono 2.5 ships with a new Prometheus data source that will allow you to query and visualize data
 stored in Prometheus.
 
 
@@ -101,8 +101,8 @@ future release.
 
 ### Changelog
 For a detailed list and link to github issues for everything included in the 2.5 release please
-view the [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md) file.
+view the [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md) file.
 
 - - -
 
-### <a href="https://grafana.com/get">Download Grafana 2.5 now</a>
+### <a href="https://grafana.com/get">Download Plutono 2.5 now</a>

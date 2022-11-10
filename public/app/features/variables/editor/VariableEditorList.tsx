@@ -1,8 +1,8 @@
 import React, { FC, MouseEvent, PureComponent } from 'react';
 import { css } from 'emotion';
-import { Icon, IconButton, useStyles } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
-import { GrafanaTheme } from '@grafana/data';
+import { Icon, IconButton, useStyles } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
+import { PlutonoTheme } from '@credativ/plutono-data';
 
 import EmptyListCTA from '../../../core/components/EmptyListCTA/EmptyListCTA';
 import { QueryVariableModel, VariableModel } from '../types';
@@ -66,7 +66,7 @@ export class VariableEditorList extends PureComponent<Props> {
                     or sensor names in your metric queries you can use variables in their place. Variables are shown as
                     dropdown select boxes at the top of the dashboard. These dropdowns make it easy to change the data
                     being displayed in your dashboard. Check out the
-                    <a class="external-link" href="http://docs.grafana.org/reference/templating/" target="_blank">
+                    <a class="external-link" href="http://docs.plutono.org/reference/templating/" target="_blank">
                       Templating documentation
                     </a>
                     for more information.
@@ -222,7 +222,7 @@ const VariableCheckIndicator: FC<VariableCheckIndicatorProps> = ({ passed }) => 
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: PlutonoTheme) => ({
   iconPassed: css`
     color: ${theme.palette.greenBase};
   `,

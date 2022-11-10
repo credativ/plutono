@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import _ from 'lodash';
-import { FilterPill, HorizontalGroup } from '@grafana/ui';
-import { FieldConfigEditorProps } from '@grafana/data';
-import { HideSeriesConfig } from '@grafana/ui/src/components/uPlot/config';
+import { FilterPill, HorizontalGroup } from '@credativ/plutono-ui';
+import { FieldConfigEditorProps } from '@credativ/plutono-data';
+import { HideSeriesConfig } from '@credativ/plutono-ui/src/components/uPlot/config';
 
 export const SeriesConfigEditor: React.FC<FieldConfigEditorProps<HideSeriesConfig, {}>> = (props) => {
   const { value, onChange } = props;

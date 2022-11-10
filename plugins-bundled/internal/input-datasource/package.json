@@ -1,24 +1,24 @@
 {
-  "name": "@grafana-plugins/input-datasource",
+  "name": "@credativ/plutono-plugins-input-datasource",
   "version": "7.5.17",
   "description": "Input Datasource",
   "private": true,
   "repository": {
     "type": "git",
-    "url": "http://github.com/grafana/grafana.git"
+    "url": "http://github.com/credativ/plutono.git"
   },
   "scripts": {
-    "build": "grafana-toolkit plugin:build",
-    "test": "grafana-toolkit plugin:test",
-    "dev": "grafana-toolkit plugin:dev",
-    "watch": "grafana-toolkit plugin:dev --watch"
+    "build": "plutono-toolkit plugin:build",
+    "test": "plutono-toolkit plugin:test",
+    "dev": "plutono-toolkit plugin:dev",
+    "watch": "plutono-toolkit plugin:dev --watch"
   },
   "author": "Grafana Labs",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@grafana/data": "7.5.17",
-    "@grafana/toolkit": "7.5.17",
-    "@grafana/ui": "7.5.17"
+    "@credativ/plutono-data": "7.5.17",
+    "@credativ/plutono-toolkit": "7.5.17",
+    "@credativ/plutono-ui": "7.5.17"
   },
   "volta": {
     "node": "12.16.2"

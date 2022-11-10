@@ -7,8 +7,8 @@ import {
   useTheme,
   CodeEditorSuggestionItem,
   variableSuggestionToCodeEditorSuggestion,
-} from '@grafana/ui';
-import { GrafanaTheme, StandardEditorProps } from '@grafana/data';
+} from '@credativ/plutono-ui';
+import { PlutonoTheme, StandardEditorProps } from '@credativ/plutono-data';
 
 import { TextOptions } from './types';
 
@@ -50,7 +50,7 @@ export const TextPanelEditor: FC<StandardEditorProps<string, any, TextOptions>> 
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   editorBox: css`
     label: editorBox;
     border: ${theme.border.width.sm} solid ${theme.colors.border2};

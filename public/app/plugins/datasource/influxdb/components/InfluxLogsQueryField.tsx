@@ -1,10 +1,10 @@
 import React from 'react';
-import { ExploreQueryFieldProps } from '@grafana/data';
-import { ButtonCascader, CascaderOption } from '@grafana/ui';
+import { ExploreQueryFieldProps } from '@credativ/plutono-data';
+import { ButtonCascader, CascaderOption } from '@credativ/plutono-ui';
 
 import InfluxQueryModel from '../influx_query_model';
 import { AdHocFilterField, KeyValuePair } from 'app/features/explore/AdHocFilterField';
-import { getTemplateSrv, TemplateSrv } from '@grafana/runtime';
+import { getTemplateSrv, TemplateSrv } from '@credativ/plutono-runtime';
 import InfluxDatasource from '../datasource';
 import { InfluxQueryBuilder } from '../query_builder';
 import { InfluxOptions, InfluxQuery } from '../types';

@@ -1,4 +1,4 @@
-import { TimeZone } from '@grafana/data';
+import { TimeZone } from '@credativ/plutono-data';
 import { OrgRole } from '.';
 
 export interface OrgUser {
@@ -28,7 +28,7 @@ export interface UserDTO {
   login: string;
   email: string;
   name: string;
-  isGrafanaAdmin: boolean;
+  isPlutonoAdmin: boolean;
   isDisabled: boolean;
   isAdmin?: boolean;
   isExternal?: boolean;

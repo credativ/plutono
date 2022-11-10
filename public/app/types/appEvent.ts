@@ -1,5 +1,5 @@
 import { IAngularEvent } from 'angular';
-import { AppEvent } from '@grafana/data';
+import { AppEvent } from '@credativ/plutono-data';
 
 export interface AppEventEmitter {
   /**

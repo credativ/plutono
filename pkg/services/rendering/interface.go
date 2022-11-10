@@ -5,7 +5,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 var ErrTimeout = errors.New("timeout error - you can set timeout in seconds with &timeout url parameter")

@@ -1,8 +1,8 @@
-# Grafana technical terminology
+# Plutono technical terminology
 
 <!-- Keep terms in alphabetical order: -->
 
-This document defines technical terms used in Grafana.
+This document defines technical terms used in Plutono.
 
 ## TLS/SSL
 

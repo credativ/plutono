@@ -6,9 +6,9 @@ weight = 1
 
 # User Authentication Overview
 
-Grafana provides many ways to authenticate users. Some authentication integrations also enable syncing user permissions and org memberships.
+Plutono provides many ways to authenticate users. Some authentication integrations also enable syncing user permissions and org memberships.
 
-Here is a table showing all supported authentication providers and the features available for them. [Team sync]({{< relref "../enterprise/team-sync.md" >}}) and [active sync]({{< relref "../enterprise/enhanced_ldap.md#active-ldap-synchronization" >}}) are only available in Grafana Enterprise.
+Here is a table showing all supported authentication providers and the features available for them. [Team sync]({{< relref "../enterprise/team-sync.md" >}}) and [active sync]({{< relref "../enterprise/enhanced_ldap.md#active-ldap-synchronization" >}}) are only available in Plutono Enterprise.
 
 Provider | Support | Role mapping | Team sync<br> *(Enterprise only)* | Active sync<br> *(Enterprise only)*
 -------- | :-----: | :----------: | :-------: | :---------:
@@ -22,27 +22,27 @@ Provider | Support | Role mapping | Team sync<br> *(Enterprise only)* | Active s
 [Okta OAuth]({{< relref "okta.md" >}})             | v7.0+ | v7.0+ | v7.0+ | -
 [SAML]({{< relref "../enterprise/saml.md" >}}) (Enterprise only)    | v6.3+ | v7.0+ | v7.0+ | -
 
-## Grafana Auth
+## Plutono Auth
 
-Grafana of course has a built in user authentication system with password authentication enabled by default. You can
+Plutono of course has a built in user authentication system with password authentication enabled by default. You can
 disable authentication by enabling anonymous access. You can also hide login form and only allow login through an auth
 provider (listed above). There are also options for allowing self sign up.
 
 ### Login and short-lived tokens
 
-> The following applies when using Grafana's built in user authentication, LDAP (without Auth proxy) or OAuth integration.
+> The following applies when using Plutono's built in user authentication, LDAP (without Auth proxy) or OAuth integration.
 
-Grafana are using short-lived tokens as a mechanism for verifying authenticated users.
+Plutono are using short-lived tokens as a mechanism for verifying authenticated users.
 These short-lived tokens are rotated each `token_rotation_interval_minutes` for an active authenticated user.
 
-An active authenticated user that gets it token rotated will extend the `login_maximum_inactive_lifetime_days` time from "now" that Grafana will remember the user.
+An active authenticated user that gets it token rotated will extend the `login_maximum_inactive_lifetime_days` time from "now" that Plutono will remember the user.
 This means that a user can close its browser and come back before `now + login_maximum_inactive_lifetime_days` and still being authenticated.
  This is true as long as the time since user login is less than `login_maximum_lifetime_days`.
 
 #### Remote logout
 
 You can logout from other devices by removing login sessions from the bottom of your profile page. If you are
-a Grafana admin user you can also do the same for any user from the Server Admin / Edit User view.
+a Plutono admin user you can also do the same for any user from the Server Admin / Edit User view.
 
 ## Settings
 
@@ -52,7 +52,7 @@ Example:
 [auth]
 
 # Login cookie name
-login_cookie_name = grafana_session
+login_cookie_name = plutono_session
 
 
 # The maximum lifetime (duration) an authenticated user can be inactive before being required to login at next visit. Default is 7 days (7d). This setting should be expressed as a duration, e.g. 5m (minutes), 6h (hours), 10d (days), 2w (weeks), 1M (month). The lifetime resets at each successful token rotation (token_rotation_interval_minutes).
@@ -71,7 +71,7 @@ api_key_max_seconds_to_live = -1
 
 ### Anonymous authentication
 
-You can make Grafana accessible without any login required by enabling anonymous access in the configuration file.
+You can make Plutono accessible without any login required by enabling anonymous access in the configuration file.
 
 Example:
 
@@ -86,11 +86,11 @@ org_name = Main Org.
 org_role = Viewer
 ```
 
-If you change your organization name in the Grafana UI this setting needs to be updated to match the new name.
+If you change your organization name in the Plutono UI this setting needs to be updated to match the new name.
 
 ### Basic authentication
 
-Basic auth is enabled by default and works with the built in Grafana user password authentication system and LDAP
+Basic auth is enabled by default and works with the built in Plutono user password authentication system and LDAP
 authentication integration.
 
 To disable basic auth:
@@ -102,7 +102,7 @@ enabled = false
 
 ### Disable login form
 
-You can hide the Grafana login form using the below configuration settings.
+You can hide the Plutono login form using the below configuration settings.
 
 ```bash
 [auth]
@@ -123,7 +123,7 @@ oauth_auto_login = true
 ### Avoid automatic OAuth login
 
 To sign in with a username and password and avoid automatic OAuth login, add the `disableAutoLogin` parameter to your login URL. 
-For example:  `grafana.example.com/login?disableAutoLogin` or `grafana.example.com/login?disableAutoLogin=true`
+For example:  `plutono.example.com/login?disableAutoLogin` or `plutono.example.com/login?disableAutoLogin=true`
 
 ### Hide sign-out menu
 
@@ -136,7 +136,7 @@ disable_signout_menu = true
 
 ### URL redirect after signing out
 
-URL to redirect the user to after signing out from Grafana. This can for example be used to enable signout from OAuth provider.
+URL to redirect the user to after signing out from Plutono. This can for example be used to enable signout from OAuth provider.
 
 ```bash
 [auth]

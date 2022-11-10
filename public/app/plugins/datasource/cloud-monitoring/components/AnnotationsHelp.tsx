@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 export const AnnotationsHelp: FC = () => {
   return (
-    <div className="gf-form grafana-info-box alert-info">
+    <div className="gf-form plutono-info-box alert-info">
       <div>
         <h5>Annotation Query Format</h5>
         <p>

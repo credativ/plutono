@@ -1,5 +1,5 @@
-import { DataQuery, DataTransformerConfig } from '@grafana/data';
-import { DataSourceSrv } from '@grafana/runtime';
+import { DataQuery, DataTransformerConfig } from '@credativ/plutono-data';
+import { DataSourceSrv } from '@credativ/plutono-runtime';
 
 export const getDefaultCondition = () => ({
   type: 'query',

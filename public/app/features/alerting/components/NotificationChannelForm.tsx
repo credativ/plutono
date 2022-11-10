@@ -1,7 +1,7 @@
 import React, { FC, useEffect } from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
-import { Button, FormAPI, HorizontalGroup, stylesFactory, useTheme, Spinner } from '@grafana/ui';
+import { PlutonoTheme, SelectableValue } from '@credativ/plutono-data';
+import { Button, FormAPI, HorizontalGroup, stylesFactory, useTheme, Spinner } from '@credativ/plutono-ui';
 import { NotificationChannelType, NotificationChannelDTO, NotificationChannelSecureFields } from '../../../types';
 import { NotificationSettings } from './NotificationSettings';
 import { BasicSettings } from './BasicSettings';
@@ -115,7 +115,7 @@ export const NotificationChannelForm: FC<Props> = ({
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     formContainer: css``,
     formItem: css`

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import config from 'app/core/config';
 

@@ -1,4 +1,4 @@
-import { dateTime, LoadingState } from '@grafana/data';
+import { dateTime, LoadingState } from '@credativ/plutono-data';
 
 import { makeExplorePaneState } from './utils';
 import { ExploreId, ExploreItemState } from 'app/types/explore';

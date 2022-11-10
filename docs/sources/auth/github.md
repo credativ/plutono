@@ -1,7 +1,7 @@
 +++
 title = "GitHub OAuth2 Authentication"
-description = "Grafana OAuthentication Guide "
-keywords = ["grafana", "configuration", "documentation", "oauth"]
+description = "Plutono OAuthentication Guide "
+keywords = ["plutono", "configuration", "documentation", "oauth"]
 weight = 800
 +++
 
@@ -16,16 +16,16 @@ settings page). When you create the application you will need to specify
 a callback URL. Specify this as callback:
 
 ```bash
-http://<my_grafana_server_name_or_ip>:<grafana_server_port>/login/github
+http://<my_plutono_server_name_or_ip>:<plutono_server_port>/login/github
 ```
 
 This callback URL must match the full HTTP address that you use in your
-browser to access Grafana, but with the suffix path of `/login/github`.
+browser to access Plutono, but with the suffix path of `/login/github`.
 When the GitHub OAuth application is created you will get a Client ID and a
-Client Secret. Specify these in the Grafana configuration file. For
+Client Secret. Specify these in the Plutono configuration file. For
 example:
 
-## Enable GitHub in Grafana
+## Enable GitHub in Plutono
 
 ```bash
 [auth.github]
@@ -42,9 +42,9 @@ allowed_organizations =
 ```
 
 You may have to set the `root_url` option of `[server]` for the callback URL to be
-correct. For example in case you are serving Grafana behind a proxy.
+correct. For example in case you are serving Plutono behind a proxy.
 
-Restart the Grafana back-end. You should now see a GitHub login button
+Restart the Plutono back-end. You should now see a GitHub login button
 on the login page. You can now login or sign up with your GitHub
 accounts.
 
@@ -58,7 +58,7 @@ automatically signed up.
 Require an active team membership for at least one of the given teams on
 GitHub. If the authenticated user isn't a member of at least one of the
 teams they will not be able to register or authenticate with your
-Grafana instance. For example:
+Plutono instance. For example:
 
 ```bash
 [auth.github]
@@ -78,7 +78,7 @@ allow_sign_up = true
 Require an active organization membership for at least one of the given
 organizations on GitHub. If the authenticated user isn't a member of at least
 one of the organizations they will not be able to register or authenticate with
-your Grafana instance. For example
+your Plutono instance. For example
 
 ```bash
 [auth.github]
@@ -96,9 +96,9 @@ allowed_organizations = github google
 
 ### Team Sync (Enterprise only)
 
->  Only available in Grafana Enterprise v6.3+
+>  Only available in Plutono Enterprise v6.3+
 
-With Team Sync you can map your GitHub org teams to teams in Grafana so that your users will automatically be added to
+With Team Sync you can map your GitHub org teams to teams in Plutono so that your users will automatically be added to
 the correct teams.
 
 Your GitHub teams can be referenced in two ways:

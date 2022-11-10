@@ -1,8 +1,8 @@
 import React, { FC, memo } from 'react';
 import { useAsync } from 'react-use';
 import { connect, MapStateToProps } from 'react-redux';
-import { NavModel, locationUtil } from '@grafana/data';
-import { getLocationSrv } from '@grafana/runtime';
+import { NavModel, locationUtil } from '@credativ/plutono-data';
+import { getLocationSrv } from '@credativ/plutono-runtime';
 import { FolderDTO, StoreState } from 'app/types';
 import { getNavModel } from 'app/core/selectors/navModel';
 import { getRouteParams, getUrl } from 'app/core/selectors/location';

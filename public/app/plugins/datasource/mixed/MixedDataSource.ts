@@ -10,8 +10,8 @@ import {
   DataSourceApi,
   DataSourceInstanceSettings,
   LoadingState,
-} from '@grafana/data';
-import { getDataSourceSrv, toDataQueryError } from '@grafana/runtime';
+} from '@credativ/plutono-data';
+import { getDataSourceSrv, toDataQueryError } from '@credativ/plutono-runtime';
 
 export const MIXED_DATASOURCE_NAME = '-- Mixed --';
 

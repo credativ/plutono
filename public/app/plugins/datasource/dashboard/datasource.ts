@@ -1,4 +1,4 @@
-import { DataSourceApi, DataQueryRequest, DataQueryResponse, DataSourceInstanceSettings } from '@grafana/data';
+import { DataSourceApi, DataQueryRequest, DataQueryResponse, DataSourceInstanceSettings } from '@credativ/plutono-data';
 import { DashboardQuery } from './types';
 
 /**

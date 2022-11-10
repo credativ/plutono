@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
-import { NavModel, renderMarkdown } from '@grafana/data';
-import { HorizontalGroup, Pagination, VerticalGroup } from '@grafana/ui';
+import { NavModel, renderMarkdown } from '@credativ/plutono-data';
+import { HorizontalGroup, Pagination, VerticalGroup } from '@credativ/plutono-ui';
 
 import Page from 'app/core/components/Page/Page';
 import UsersActionBar from './UsersActionBar';
@@ -119,7 +119,7 @@ export class UsersListPage extends PureComponent<Props, State> {
           <>
             <UsersActionBar onShowInvites={this.onShowInvites} showInvites={this.state.showInvites} />
             {externalUserMngInfoHtml && (
-              <div className="grafana-info-box" dangerouslySetInnerHTML={{ __html: externalUserMngInfoHtml }} />
+              <div className="plutono-info-box" dangerouslySetInnerHTML={{ __html: externalUserMngInfoHtml }} />
             )}
             {hasFetched && this.renderTable()}
           </>

@@ -56,7 +56,7 @@ done
 # shellcheck disable=SC2124
 EXTRA_OPTS="$@"
 
-cd /go/src/github.com/grafana/grafana
+cd /go/src/github.com/credativ/plutono
 echo "current dir: $(pwd)"
 
 if [ "$CIRCLE_TAG" != "" ]; then
@@ -131,7 +131,7 @@ function package_setup() {
     rm -rf dist
   fi
   mkdir dist
-  go run build.go -gen-version ${OPT} > dist/grafana.version
+  go run build.go -gen-version ${OPT} > dist/plutono.version
   # Load ruby, needed for packing with fpm
   # shellcheck disable=SC1091
   source /etc/profile.d/rvm.sh

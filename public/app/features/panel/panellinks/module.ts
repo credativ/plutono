@@ -58,6 +58,6 @@ export class PanelLinksEditorCtrl {
 }
 
 angular
-  .module('grafana.directives')
+  .module('plutono.directives')
   .directive('panelLinksEditor', panelLinksEditor)
   .controller('PanelLinksEditorCtrl', PanelLinksEditorCtrl);

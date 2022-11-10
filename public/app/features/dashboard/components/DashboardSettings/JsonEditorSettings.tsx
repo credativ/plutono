@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import { Button, CodeEditor } from '@grafana/ui';
+import { Button, CodeEditor } from '@credativ/plutono-ui';
 import { dashboardWatcher } from 'app/features/live/dashboard/dashboardWatcher';
 import { getDashboardSrv } from '../../services/DashboardSrv';
 import { DashboardModel } from '../../state/DashboardModel';

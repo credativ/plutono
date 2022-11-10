@@ -21,7 +21,7 @@ You can apply thresholds to the following visualizations:
 
 ## Default thresholds
 
-On visualizations that support it, Grafana sets default threshold values of:
+On visualizations that support it, Plutono sets default threshold values of:
 - 80 = red
 - Base = green
 - Mode = Absolute
@@ -30,14 +30,14 @@ The **Base** value represents minus infinity. It is generally the “good” col
 
 ## Add a threshold
 
-You can add as many thresholds to a panel as you want. Grafana automatically sorts thresholds from highest value to lowest.
+You can add as many thresholds to a panel as you want. Plutono automatically sorts thresholds from highest value to lowest.
 
 > **Note:** These instructions apply only to the Stat, Gauge, Bar gauge, and Table visualizations.
 
 1. Navigate to the panel you want to add a threshold to.
 1. Click the **Field** tab.
 1. Click **Add threshold**.
-1. Grafana adds a threshold with suggested numerical and color values.
+1. Plutono adds a threshold with suggested numerical and color values.
 1. Accept the recommendations or edit the new threshold.
    - **Edit color:** Click the color dot you wish to change and then select a new color.
    - **Edit number:** Click the number you wish to change and then enter a new number.
@@ -54,7 +54,7 @@ In the Graph panel visualization, thresholds allow you to add arbitrary lines or
 1. Fill in as many fields as you want. Only the **T1** fields are required.
    - **T1 -** Both values are required to display a threshold.
      - **lt** or **gt** - Select **lt** for less than or **gt** for greater than to indicate what the threshold applies to.
-     - **Value -** Enter a threshold value. Grafana draws a threshold line along the Y-axis at that value.
+     - **Value -** Enter a threshold value. Plutono draws a threshold line along the Y-axis at that value.
    - **Color -** Choose a condition that corresponds to a color, or define your own color.
      - **custom -** You define the fill color and line color.
      - **critical -** Fill and line color are red.

@@ -11,7 +11,7 @@ exports[`Render should render component 1`] = `
       External group sync
     </h3>
     <Tooltip
-      content="Sync LDAP or OAuth groups with your Grafana teams."
+      content="Sync LDAP or OAuth groups with your Plutono teams."
       placement="auto"
     >
       <Icon
@@ -50,7 +50,7 @@ exports[`Render should render component 1`] = `
           <Input
             className="gf-form-input width-30"
             onChange={[Function]}
-            placeholder="cn=ops,ou=groups,dc=grafana,dc=org"
+            placeholder="cn=ops,ou=groups,dc=plutono,dc=org"
             type="text"
             value=""
           />
@@ -73,8 +73,8 @@ exports[`Render should render component 1`] = `
     buttonIcon="users-alt"
     buttonTitle="Add Group"
     onClick={[Function]}
-    proTip="Sync LDAP or OAuth groups with your Grafana teams."
-    proTipLink="http://docs.grafana.org/auth/enhanced_ldap/"
+    proTip="Sync LDAP or OAuth groups with your Plutono teams."
+    proTipLink="http://docs.plutono.org/auth/enhanced_ldap/"
     proTipLinkTitle="Learn more"
     proTipTarget="_blank"
     title="There are no external groups to sync with"
@@ -93,7 +93,7 @@ exports[`Render should render groups table 1`] = `
       External group sync
     </h3>
     <Tooltip
-      content="Sync LDAP or OAuth groups with your Grafana teams."
+      content="Sync LDAP or OAuth groups with your Plutono teams."
       placement="auto"
     >
       <Icon
@@ -141,7 +141,7 @@ exports[`Render should render groups table 1`] = `
           <Input
             className="gf-form-input width-30"
             onChange={[Function]}
-            placeholder="cn=ops,ou=groups,dc=grafana,dc=org"
+            placeholder="cn=ops,ou=groups,dc=plutono,dc=org"
             type="text"
             value=""
           />

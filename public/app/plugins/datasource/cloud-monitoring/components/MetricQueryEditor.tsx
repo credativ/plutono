@@ -3,7 +3,7 @@ import { Project, VisualMetricQueryEditor, AliasBy } from '.';
 import { MetricQuery, MetricDescriptor, EditorMode } from '../types';
 import { getAlignmentPickerData } from '../functions';
 import CloudMonitoringDatasource from '../datasource';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 import { MQLQueryEditor } from './MQLQueryEditor';
 
 export interface Props {

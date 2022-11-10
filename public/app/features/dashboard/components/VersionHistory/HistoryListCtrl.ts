@@ -4,8 +4,8 @@ import angular, { ILocationService, IScope } from 'angular';
 import { DashboardModel } from '../../state/DashboardModel';
 import { DecoratedRevisionModel } from '../DashboardSettings/VersionsSettings';
 import { CalculateDiffOptions, HistorySrv } from './HistorySrv';
-import { AppEvents, locationUtil } from '@grafana/data';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { AppEvents, locationUtil } from '@credativ/plutono-data';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 import { CoreEvents } from 'app/types';
 import { promiseToDigest } from '../../../../core/utils/promiseToDigest';
 
@@ -22,7 +22,7 @@ export class HistoryListCtrl {
   /** @ngInject */
   constructor(
     private $route: any,
-    private $rootScope: GrafanaRootScope,
+    private $rootScope: PlutonoRootScope,
     private $location: ILocationService,
     private historySrv: HistorySrv,
     public $scope: IScope
@@ -111,4 +111,4 @@ export function dashboardHistoryDirective() {
   };
 }
 
-angular.module('grafana.directives').directive('gfDashboardHistory', dashboardHistoryDirective);
+angular.module('plutono.directives').directive('gfDashboardHistory', dashboardHistoryDirective);

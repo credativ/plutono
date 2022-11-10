@@ -1,15 +1,15 @@
 +++
 title = "Azure AD OAuth2 authentication"
-description = "Grafana Azure AD OAuth Guide "
-keywords = ["grafana", "configuration", "documentation", "oauth"]
+description = "Plutono Azure AD OAuth Guide "
+keywords = ["plutono", "configuration", "documentation", "oauth"]
 weight = 700
 +++
 
 # Azure AD OAuth2 authentication
 
-> Only available in Grafana v6.7+
+> Only available in Plutono v6.7+
 
-The Azure AD authentication provides the possibility to use an Azure Active Directory tenant as an identity provider for Grafana. By using Azure AD Application Roles it is also possible to assign Users and Groups to Grafana roles from the Azure Portal.
+The Azure AD authentication provides the possibility to use an Azure Active Directory tenant as an identity provider for Plutono. By using Azure AD Application Roles it is also possible to assign Users and Groups to Plutono roles from the Azure Portal.
 
 ## Create the Azure AD application
 
@@ -21,7 +21,7 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
 
 1. Under **Redirect URI**, select **Web** as the app type.
 
-1. Add the redirect URL `https://<grafana domain>/login/azuread`, then click **Register**.
+1. Add the redirect URL `https://<plutono domain>/login/azuread`, then click **Register**.
 
 1. The app's **Overview** page is displayed. Note the **Application ID**, this is the OAuth client id.
 
@@ -31,13 +31,13 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
    - Note the **OAuth 2.0 token endpoint (v2)**, this is the token URL.
 
 1. Click **Certificates & secrets** and add a new entry under Client secrets.
-    - Description: Grafana OAuth
+    - Description: Plutono OAuth
     - Expires: Never
 
 1. Click **Add**, then copy the key value. This is the OAuth client secret.
 
 1. Click **Manifest**.
-   - Add definitions for the required Application Roles for Grafana (Viewer, Editor, Admin). Without this configuration, all users will be assigned the Viewer role.
+   - Add definitions for the required Application Roles for Plutono (Viewer, Editor, Admin). Without this configuration, all users will be assigned the Viewer role.
    - Every role requires a unique id. On Linux, this can be created with `uuidgen`. For example:
 
         ```json
@@ -46,8 +46,8 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
         			"allowedMemberTypes": [
         				"User"
         			],
-        			"description": "Grafana admin Users",
-        			"displayName": "Grafana Admin",
+        			"description": "Plutono admin Users",
+        			"displayName": "Plutono Admin",
         			"id": "SOME_UNIQUE_ID",
         			"isEnabled": true,
         			"lang": null,
@@ -58,8 +58,8 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
         			"allowedMemberTypes": [
         				"User"
         			],
-        			"description": "Grafana read only Users",
-        			"displayName": "Grafana Viewer",
+        			"description": "Plutono read only Users",
+        			"displayName": "Plutono Viewer",
         			"id": "SOME_UNIQUE_ID",
         			"isEnabled": true,
         			"lang": null,
@@ -70,8 +70,8 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
         			"allowedMemberTypes": [
         				"User"
         			],
-        			"description": "Grafana Editor Users",
-        			"displayName": "Grafana Editor",
+        			"description": "Plutono Editor Users",
+        			"displayName": "Plutono Editor",
         			"id": "SOME_UNIQUE_ID",
         			"isEnabled": true,
         			"lang": null,
@@ -83,11 +83,11 @@ To enable the Azure AD OAuth2 you must register your application with Azure AD.
 
 1. Go to **Azure Active Directory** and then to **Enterprise Applications**. Search for your application and click on it.
 
-1. Click on **Users and Groups** and add Users/Groups to the Grafana roles by using **Add User**.
+1. Click on **Users and Groups** and add Users/Groups to the Plutono roles by using **Add User**.
 
-## Enable Azure AD OAuth in Grafana
+## Enable Azure AD OAuth in Plutono
 
-1. Add the following to the [Grafana configuration file]({{< relref "../administration/configuration.md#config-file-locations" >}}):
+1. Add the following to the [Plutono configuration file]({{< relref "../administration/configuration.md#config-file-locations" >}}):
 
 ```ini
 [auth.azuread]
@@ -103,7 +103,7 @@ allowed_domains =
 allowed_groups =
 ```
 
-> **Note:** Ensure that the [root_url]({{< relref "../administration/configuration/#root-url" >}}) in Grafana is set in your Azure Application Reply URLs (App -> Settings -> Reply URLs)
+> **Note:** Ensure that the [root_url]({{< relref "../administration/configuration/#root-url" >}}) in Plutono is set in your Azure Application Reply URLs (App -> Settings -> Reply URLs)
 
 ### Configure allowed groups and domains
 
@@ -129,9 +129,9 @@ allowed_domains = mycompany.com mycompany.org
 
 ### Team Sync (Enterprise only)
 
->  Only available in Grafana Enterprise v6.7+
+>  Only available in Plutono Enterprise v6.7+
 
-With Team Sync you can map your Azure AD groups to teams in Grafana so that your users will automatically be added to
+With Team Sync you can map your Azure AD groups to teams in Plutono so that your users will automatically be added to
 the correct teams.
 
 Azure AD groups can be referenced by group Object Id, like `8bab1c86-8fba-33e5-2089-1d1c80ec267d`.

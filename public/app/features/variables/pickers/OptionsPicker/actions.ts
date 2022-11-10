@@ -23,7 +23,7 @@ import {
   updateOptionsFromSearch,
   updateSearchQuery,
 } from './reducer';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { getDataSourceSrv } from '@credativ/plutono-runtime';
 import { getTimeSrv } from 'app/features/dashboard/services/TimeSrv';
 import { changeVariableProp, setCurrentVariableValue } from '../../state/sharedReducer';
 import { toVariablePayload, VariableIdentifier } from '../../state/types';

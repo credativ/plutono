@@ -4,7 +4,7 @@ import { InfluxLogsQueryField, pairsAreValid } from './InfluxLogsQueryField';
 import { InfluxDatasourceMock } from '../datasource.mock';
 import InfluxDatasource from '../datasource';
 import { InfluxQuery } from '../types';
-import { ButtonCascader } from '@grafana/ui';
+import { ButtonCascader } from '@credativ/plutono-ui';
 import { KeyValuePair } from '../../../../features/explore/AdHocFilterField';
 
 describe('pairsAreValid()', () => {

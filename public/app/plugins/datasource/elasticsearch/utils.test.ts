@@ -17,7 +17,7 @@ describe('removeEmpty', () => {
       },
       nestedObjectToKeep: {
         thisShouldBeRemoved: null,
-        thisShouldBeKept: 'Hello, Grafana',
+        thisShouldBeKept: 'Hello, Plutono',
       },
     };
 
@@ -27,7 +27,7 @@ describe('removeEmpty', () => {
       booleansShouldBeKept: false,
       nonEmptyArraysShouldBeKept: [1, 2, 3],
       nestedObjectToKeep: {
-        thisShouldBeKept: 'Hello, Grafana',
+        thisShouldBeKept: 'Hello, Plutono',
       },
     };
 

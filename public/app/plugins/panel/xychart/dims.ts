@@ -1,8 +1,8 @@
-import { DataFrame, Field, FieldMatcher, FieldType, getFieldDisplayName } from '@grafana/data';
+import { DataFrame, Field, FieldMatcher, FieldType, getFieldDisplayName } from '@credativ/plutono-data';
 import { XYDimensionConfig } from './types';
 
 // TODO: fix import
-import { XYFieldMatchers } from '@grafana/ui/src/components/GraphNG/types';
+import { XYFieldMatchers } from '@credativ/plutono-ui/src/components/GraphNG/types';
 
 export enum DimensionError {
   NoData,

@@ -6,8 +6,8 @@ import {
   PanelData,
   sortLogsResult,
   standardTransformers,
-} from '@grafana/data';
-import { config } from '@grafana/runtime';
+} from '@credativ/plutono-data';
+import { config } from '@credativ/plutono-runtime';
 import { groupBy } from 'lodash';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';

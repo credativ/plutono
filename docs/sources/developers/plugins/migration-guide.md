@@ -4,18 +4,18 @@ title = "Plugin migration guide"
 
 # Plugin migration guide
 
-This guide explains how to migrate pre-Grafana 7.0 plugins from Angular to the new React-based plugin platform introduced in Grafana 7.0.
+This guide explains how to migrate pre-Plutono 7.0 plugins from Angular to the new React-based plugin platform introduced in Plutono 7.0.
 
 It's written for:
 
-- Plugin authors who want to migrate their plugins to Grafana 7.0+.
-- Plugin users who are using custom plugins and want to know whether they can upgrade to Grafana 7.0 without losing functionality.
+- Plugin authors who want to migrate their plugins to Plutono 7.0+.
+- Plugin users who are using custom plugins and want to know whether they can upgrade to Plutono 7.0 without losing functionality.
 
 > If you've successfully migrated your plugin from Angular to React, please [submit an issue on GitHub](https://github.com/grafana/grafana/issues/new?title=Docs%20feedback:%20/developers/plugins/migration-guide.md) and share your experiences with us so that we can improve this guide!
 
-## What's new in Grafana 7.0?
+## What's new in Plutono 7.0?
 
-Grafana 7.0 introduced a whole new plugin platform based on React. The new platform supersedes the previous Angular-based plugin platform.
+Plutono 7.0 introduced a whole new plugin platform based on React. The new platform supersedes the previous Angular-based plugin platform.
 
 Plugins built using Angular still work for the foreseeable future, but we encourage new plugin authors to develop with the new platform.
 
@@ -23,29 +23,29 @@ Plugins built using Angular still work for the foreseeable future, but we encour
 
 Along with the move to React, the new plugin platform introduced a new internal data format called [data frames]({{< relref "data-frames.md" >}}).
 
-Previously, data source plugins could send data either as time series or tables. With data frames, data sources can send any data in a table-like structure. This gives you more flexibility to visualize your data in Grafana.
+Previously, data source plugins could send data either as time series or tables. With data frames, data sources can send any data in a table-like structure. This gives you more flexibility to visualize your data in Plutono.
 
 ### Improved TypeScript support
 
-While the previous Angular-based plugin SDK did support TypeScript, for the React platform, we’ve greatly improved the support. All our APIs are now TypeScript, which might require existing code to update to the new stricter type definitions. Grafana 7.0 also introduced several new APIs for plugin developers that take advantage of many of the new features in Grafana 7.0.
+While the previous Angular-based plugin SDK did support TypeScript, for the React platform, we’ve greatly improved the support. All our APIs are now TypeScript, which might require existing code to update to the new stricter type definitions. Plutono 7.0 also introduced several new APIs for plugin developers that take advantage of many of the new features in Plutono 7.0.
 
-### Grafana Toolkit
+### Plutono Toolkit
 
-With Grafana 7.0, we released a new tool for making it easier to develop plugins. Before, you’d use Gulp, Grunt, or similar tools to generate the minified assets. Grafana Toolkit takes care of building and testing your plugin without complicated configuration files.
+With Plutono 7.0, we released a new tool for making it easier to develop plugins. Before, you’d use Gulp, Grunt, or similar tools to generate the minified assets. Plutono Toolkit takes care of building and testing your plugin without complicated configuration files.
 
-For more information, refer to [@grafana/toolkit](https://www.npmjs.com/package/@grafana/toolkit).
+For more information, refer to [@credativ/plutono-toolkit](https://www.npmjs.com/package/@credativ/plutono-toolkit).
 
 ### Field options
 
-Grafana 7.0 introduced the concept of [_field options_]({{< relref "../../panels/field-options/_index.md#field-options" >}}), a new way of configuring your data before it gets visualized. Since this was not available in previous versions, any plugin that enables field-based configuration will not work in previous versions of Grafana.
+Plutono 7.0 introduced the concept of [_field options_]({{< relref "../../panels/field-options/_index.md#field-options" >}}), a new way of configuring your data before it gets visualized. Since this was not available in previous versions, any plugin that enables field-based configuration will not work in previous versions of Plutono.
 
-For plugins prior to Grafana 7.0, all options are considered _Display options_. The tab for field configuration isn't available.
+For plugins prior to Plutono 7.0, all options are considered _Display options_. The tab for field configuration isn't available.
 
 ### Backend plugins
 
-While backend plugins were available as an experimental feature in previous versions of Grafana, the support has been greatly improved for Grafana 7. Backend plugins for Grafana 7.0 are backwards-compatible and will continue to work. However, the old backend plugin system has been deprecated, and we recommend that you use the new SDK for backend plugins.
+While backend plugins were available as an experimental feature in previous versions of Plutono, the support has been greatly improved for Plutono 7. Backend plugins for Plutono 7.0 are backwards-compatible and will continue to work. However, the old backend plugin system has been deprecated, and we recommend that you use the new SDK for backend plugins.
 
-Since Grafana 7.0 introduced [signing of backend plugins]({{< relref "../../plugins/plugin-signatures.md" >}}), community plugins won’t load by default if they’re unsigned.
+Since Plutono 7.0 introduced [signing of backend plugins]({{< relref "../../plugins/plugin-signatures.md" >}}), community plugins won’t load by default if they’re unsigned.
 
 To learn more, refer to [Backend plugins]({{< relref "backend" >}}).
 
@@ -56,18 +56,18 @@ There are several benefits in using the new plugin platform.
 - **Better performance:** Components written in React are more responsive.
 - **Support for field options:** By migrating to the new data frame format, you can leverage the new field options to let users customize their data and display options.
 
-## Compatibility between Grafana versions
+## Compatibility between Plutono versions
 
-A plugin developed for Grafana 6 will work for Grafana 7.0. However, plugins developed using the new plugin platform in Grafana 7.0 will only work for Grafana 7.0 and up.
+A plugin developed for Plutono 6 will work for Plutono 7.0. However, plugins developed using the new plugin platform in Plutono 7.0 will only work for Plutono 7.0 and up.
 
 ### Interoperability between data formats
 
-Grafana detects the data format sent by the data source and transforms it for the panel, if needed.
+Plutono detects the data format sent by the data source and transforms it for the panel, if needed.
 
 For example:
 
-- A legacy panel with data source that returns data frames: Grafana converts the response to the legacy format.
-- A legacy data source with a panel using data frames: Grafana converts the response to the data frame format.
+- A legacy panel with data source that returns data frames: Plutono converts the response to the legacy format.
+- A legacy data source with a panel using data frames: Plutono converts the response to the data frame format.
 - If both panel and data source use the same format, no transformations are made. Data is passed as is.
 
 ### target and jsonData are unchanged
@@ -76,22 +76,22 @@ The query model, `target`, and the configuration model, jsonData, are still the 
 
 ## Migrate a plugin from Angular to React
 
-If you’re looking to migrate a plugin to the new plugin platform, then we recommend that you release it under a new major version. Consider keeping a release branch for the previous version to be able to roll out patch releases for versions prior to Grafana 7.
+If you’re looking to migrate a plugin to the new plugin platform, then we recommend that you release it under a new major version. Consider keeping a release branch for the previous version to be able to roll out patch releases for versions prior to Plutono 7.
 
 While there's no 1-to-1 migration path from an Angular plugin to the new React platform, from early adopters, we’ve learned that one of the easiest ways to migrate is to:
 
 1. Create a new branch called `migrate-to-react`.
-1. Start from scratch with one of the templates provided by Grafana Toolkit.
+1. Start from scratch with one of the templates provided by Plutono Toolkit.
 1. Move the existing code into the new plugin incrementally, one component at a time.
 
 ### Migrate a panel plugin
 
-Prior to Grafana 7.0, you would export a MetricsPanelCtrl from module.ts.
+Prior to Plutono 7.0, you would export a MetricsPanelCtrl from module.ts.
 
 **src/module.ts**
 
 ```ts
-import { MetricsPanelCtrl } from 'grafana/app/plugins/sdk';
+import { MetricsPanelCtrl } from 'plutono/app/plugins/sdk';
 
 class MyPanelCtrl extends MetricsPanelCtrl {
   // ...
@@ -105,7 +105,7 @@ Starting with 7.0, plugins now export a PanelPlugin from module.ts where MyPanel
 **src/module.ts**
 
 ```ts
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin } from '@credativ/plutono-data';
 
 export const plugin = new PanelPlugin<MyOptions>(MyPanel);
 ```
@@ -113,7 +113,7 @@ export const plugin = new PanelPlugin<MyOptions>(MyPanel);
 **src/MyPanel.tsx**
 
 ```ts
-import { PanelProps } from '@grafana/data';
+import { PanelProps } from '@credativ/plutono-data';
 
 interface Props extends PanelProps<SimpleOptions> {}
 
@@ -139,14 +139,14 @@ To fully migrate to the new plugin platform, convert the time series response to
 
 Before 7.0, data source and panel plugins exchanged data using either time series or tables. Starting with 7.0, plugins use the new data frame format to pass data from data sources to panels.
 
-Grafana 7.0 is backward compatible with the old data format used in previous versions. Panels and data sources using the old format will still work with plugins using the new data frame format.
+Plutono 7.0 is backward compatible with the old data format used in previous versions. Panels and data sources using the old format will still work with plugins using the new data frame format.
 
 The `DataQueryResponse` returned by the `query` method can be either a [LegacyResponseData](https://grafana.com/docs/grafana/latest/packages_api/data/legacyresponsedata/) or a [DataFrame](https://grafana.com/docs/grafana/latest/packages_api/data/dataframe/).
 
 The [toDataFrame()](https://grafana.com/docs/grafana/latest/packages_api/data/todataframe/) function converts a legacy response, such as `TimeSeries` or `Table`, to a `DataFrame`. Use it to gradually move your code to the new format.
 
 ```ts
-import { toDataFrame } from '@grafana/data';
+import { toDataFrame } from '@credativ/plutono-data';
 ```
 
 ```ts
@@ -164,4 +164,4 @@ For more information, refer to [Data frames]({{< relref "data-frames.md">}}).
 
 ## Troubleshoot plugin migration
 
-As of Grafana 7.0, backend plugins can now be cryptographically signed to verify their origin. By default, Grafana ignores unsigned plugins. For more information, refer to [Allow unsigned plugins]({{< relref "../../plugins/plugin-signatures.md#allow-unsigned-plugins" >}}).
+As of Plutono 7.0, backend plugins can now be cryptographically signed to verify their origin. By default, Plutono ignores unsigned plugins. For more information, refer to [Allow unsigned plugins]({{< relref "../../plugins/plugin-signatures.md#allow-unsigned-plugins" >}}).

@@ -2,7 +2,7 @@ import _ from 'lodash';
 import config from 'app/core/config';
 import { DashboardExporter } from './DashboardExporter';
 import { DashboardModel } from '../../state/DashboardModel';
-import { PanelPluginMeta } from '@grafana/data';
+import { PanelPluginMeta } from '@credativ/plutono-data';
 import { variableAdapters } from '../../../variables/adapters';
 import { createConstantVariableAdapter } from '../../../variables/constant/adapter';
 import { createQueryVariableAdapter } from '../../../variables/query/adapter';
@@ -19,8 +19,8 @@ jest.mock('app/core/store', () => {
   };
 });
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@credativ/plutono-runtime', () => ({
+  ...((jest.requireActual('@credativ/plutono-runtime') as unknown) as object),
   getDataSourceSrv: () => ({
     get: jest.fn((arg) => getStub(arg)),
   }),
@@ -209,10 +209,10 @@ describe('given dashboard with repeated panels', () => {
     expect(require.version).toBe('1.1.2');
   });
 
-  it('should add grafana version', () => {
-    const require: any = _.find(exported.__requires, { name: 'Grafana' });
-    expect(require.type).toBe('grafana');
-    expect(require.id).toBe('grafana');
+  it('should add plutono version', () => {
+    const require: any = _.find(exported.__requires, { name: 'Plutono' });
+    expect(require.type).toBe('plutono');
+    expect(require.id).toBe('plutono');
     expect(require.version).toBe('3.0.2');
   });
 
@@ -265,12 +265,12 @@ stubs['-- Mixed --'] = {
   },
 };
 
-stubs['-- Grafana --'] = {
-  name: '-- Grafana --',
+stubs['-- Plutono --'] = {
+  name: '-- Plutono --',
   meta: {
-    id: 'grafana',
+    id: 'plutono',
     info: { version: '1.2.1' },
-    name: 'grafana',
+    name: 'plutono',
     builtIn: true,
   },
 };

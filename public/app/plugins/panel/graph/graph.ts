@@ -24,7 +24,7 @@ import ReactDOM from 'react-dom';
 import { GraphLegendProps, Legend } from './Legend/Legend';
 
 import { GraphCtrl } from './module';
-import { graphTickFormatter, graphTimeFormat, IconName, MenuItem, MenuItemsGroup } from '@grafana/ui';
+import { graphTickFormatter, graphTimeFormat, IconName, MenuItem, MenuItemsGroup } from '@credativ/plutono-ui';
 import { provideTheme } from 'app/core/utils/ConfigProvider';
 import {
   DataFrame,
@@ -42,7 +42,7 @@ import {
   LinkModelSupplier,
   PanelEvents,
   toUtc,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { GraphContextMenuCtrl } from './GraphContextMenuCtrl';
 import { TimeSrv } from 'app/features/dashboard/services/TimeSrv';
 import { ContextSrv } from 'app/core/services/context_srv';
@@ -945,5 +945,5 @@ function graphDirective(timeSrv: TimeSrv, popoverSrv: any, contextSrv: ContextSr
   };
 }
 
-coreModule.directive('grafanaGraph', graphDirective);
+coreModule.directive('plutonoGraph', graphDirective);
 export { GraphElement, graphDirective };

@@ -1,7 +1,7 @@
 {
   "__inputs": [],
   "__requires": [
-    { "type": "grafana", "id": "grafana", "name": "Grafana", "version": "7.3.0-pre" },
+    { "type": "plutono", "id": "plutono", "name": "Plutono", "version": "7.3.0-pre" },
     { "type": "panel", "id": "graph", "name": "Graph", "version": "" },
     { "type": "datasource", "id": "stackdriver", "name": "Google Cloud Monitoring", "version": "1.0.0" }
   ],
@@ -9,7 +9,7 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": "-- Plutono --",
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -564,7 +564,7 @@
       },
       {
         "allValue": null,
-        "current": { "selected": false, "text": "grafana auto", "value": "grafana-auto" },
+        "current": { "selected": false, "text": "plutono auto", "value": "plutono-auto" },
         "datasource": "${datasource}",
         "definition": "",
         "description": null,
@@ -575,7 +575,7 @@
         "multi": false,
         "name": "alignmentPeriod",
         "options": [
-          { "selected": true, "text": "grafana auto", "value": "grafana-auto" },
+          { "selected": true, "text": "plutono auto", "value": "plutono-auto" },
           { "selected": false, "text": "stackdriver auto", "value": "stackdriver-auto" },
           { "selected": false, "text": "cloud monitoring auto", "value": "cloud-monitoring-auto" },
           { "selected": false, "text": "1m", "value": "+60s" },

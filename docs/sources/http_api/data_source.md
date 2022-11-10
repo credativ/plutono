@@ -1,8 +1,8 @@
 +++
 title = "Data source HTTP API "
-description = "Grafana Data source HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "data source"]
-aliases = ["/docs/grafana/latest/http_api/datasource/"]
+description = "Plutono Data source HTTP API"
+keywords = ["plutono", "http", "documentation", "api", "data source"]
+aliases = ["/docs/plutono/latest/http_api/datasource/"]
 +++
 
 
@@ -39,7 +39,7 @@ Content-Type: application/json
      "url": "http://mydatasource.com",
      "password": "",
      "user": "",
-     "database": "grafana-dash",
+     "database": "plutono-dash",
      "basicAuth": false,
      "isDefault": false,
      "jsonData": {
@@ -271,7 +271,7 @@ Content-Type: application/json
 }
 ```
 
-> **Note:** By defining `password` and `basicAuthPassword` under `secureJsonData` Grafana encrypts them securely as an encrypted blob in the database. The response then lists the encrypted fields under `secureJsonFields`.
+> **Note:** By defining `password` and `basicAuthPassword` under `secureJsonData` Plutono encrypts them securely as an encrypted blob in the database. The response then lists the encrypted fields under `secureJsonFields`.
 
 **Example Graphite Request with basic auth enabled**:
 
@@ -504,7 +504,7 @@ Queries a data source having backend implementation.
 
 `POST /api/tsdb/query`
 
-> **Note:** Most of Grafana's builtin data sources have backend implementation.
+> **Note:** Most of Plutono's builtin data sources have backend implementation.
 
 **Example Request**:
 
@@ -532,7 +532,7 @@ Content-Type: application/json
 
 JSON Body schema:
 
-- **from/to** – Should be either absolute in epoch timestamps in milliseconds or relative using Grafana time units. For example, `now-1h`.
+- **from/to** – Should be either absolute in epoch timestamps in milliseconds or relative using Plutono time units. For example, `now-1h`.
 - **queries.refId** – Specifies an identifier of the query. Is optional and default to "A".
 - **queries.datasourceId** – Specifies the data source to be queried. Each `query` in the request must have an unique `datasourceId`.
 - **queries.maxDataPoints** - Species maximum amount of data points that dashboard panel can render. Is optional and default to 100.
@@ -556,7 +556,7 @@ Content-Type: application/json
       "intervalMs": 86400000,
       "maxDataPoints": 1092,
       "datasourceId": 86,
-      "rawSql": "SELECT\n  time,\n  sum(opened) AS \"Opened\",\n  sum(closed) AS \"Closed\"\nFROM\n  issues_activity\nWHERE\n  $__unixEpochFilter(time) AND\n  period = 'm' AND\n  repo IN('grafana/grafana') AND\n  opened_by IN('Contributor','Grafana Labs')\nGROUP BY 1\nORDER BY 1\n",
+      "rawSql": "SELECT\n  time,\n  sum(opened) AS \"Opened\",\n  sum(closed) AS \"Closed\"\nFROM\n  issues_activity\nWHERE\n  $__unixEpochFilter(time) AND\n  period = 'm' AND\n  repo IN('plutono/plutono') AND\n  opened_by IN('Contributor','Grafana Labs')\nGROUP BY 1\nORDER BY 1\n",
       "format": "time_series"
     }
   ]
@@ -574,7 +574,7 @@ Content-Type: application/json
       "refId": "A",
       "meta": {
         "rowCount": 0,
-        "sql": "SELECT\n  time,\n  sum(opened) AS \"Opened\",\n  sum(closed) AS \"Closed\"\nFROM\n  issues_activity\nWHERE\n  time >= 1420066800 AND time <= 1575845999 AND\n  period = 'm' AND\n  repo IN('grafana/grafana') AND\n  opened_by IN('Contributor','Grafana Labs')\nGROUP BY 1\nORDER BY 1\n"
+        "sql": "SELECT\n  time,\n  sum(opened) AS \"Opened\",\n  sum(closed) AS \"Closed\"\nFROM\n  issues_activity\nWHERE\n  time >= 1420066800 AND time <= 1575845999 AND\n  period = 'm' AND\n  repo IN('plutono/plutono') AND\n  opened_by IN('Contributor','Grafana Labs')\nGROUP BY 1\nORDER BY 1\n"
       },
       "series": [
         {

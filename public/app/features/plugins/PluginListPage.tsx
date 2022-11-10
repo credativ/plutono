@@ -7,11 +7,11 @@ import PluginList from './PluginList';
 import { loadPlugins } from './state/actions';
 import { getNavModel } from 'app/core/selectors/navModel';
 import { getPlugins, getPluginsSearchQuery } from './state/selectors';
-import { NavModel, PluginMeta } from '@grafana/data';
+import { NavModel, PluginMeta } from '@credativ/plutono-data';
 import { StoreState } from 'app/types';
 import { setPluginsSearchQuery } from './state/reducers';
 import { useAsync } from 'react-use';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { PluginsErrorsInfo } from './PluginsErrorsInfo';
 
 export interface Props {
@@ -36,7 +36,7 @@ export const PluginListPage: React.FC<Props> = ({
   }, [loadPlugins]);
 
   const linkButton = {
-    href: 'https://grafana.com/plugins?utm_source=grafana_plugin_list',
+    href: 'https://grafana.com/plugins',
     title: 'Find more plugins on Grafana.com',
   };
 
@@ -56,7 +56,7 @@ export const PluginListPage: React.FC<Props> = ({
               <br />
               <p>
                 Note that <strong>unsigned front-end datasource and panel plugins</strong> are still usable, but this is
-                subject to change in the upcoming releases of Grafana
+                subject to change in the upcoming releases of Plutono
               </p>
             </>
           </PluginsErrorsInfo>

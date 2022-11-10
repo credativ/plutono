@@ -1,10 +1,10 @@
 import React, { ChangeEvent, FormEvent, PureComponent } from 'react';
 import { css } from 'emotion';
 import { MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { InlineField, InlineFieldRow, VerticalGroup } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
-import { getTemplateSrv } from '@grafana/runtime';
-import { DataSourceInstanceSettings, LoadingState, SelectableValue } from '@grafana/data';
+import { InlineField, InlineFieldRow, VerticalGroup } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
+import { getTemplateSrv } from '@credativ/plutono-runtime';
+import { DataSourceInstanceSettings, LoadingState, SelectableValue } from '@credativ/plutono-data';
 
 import { SelectionOptionsEditor } from '../editor/SelectionOptionsEditor';
 import { QueryVariableModel, VariableRefresh, VariableSort, VariableWithMultiSupport } from '../types';
@@ -240,7 +240,7 @@ export class QueryVariableEditorUnConnected extends PureComponent<Props, State> 
 
           <VerticalGroup spacing="none">
             <h5>Value group tags</h5>
-            <em className="muted p-b-1">Experimental feature, will be deprecated in Grafana v8.</em>
+            <em className="muted p-b-1">Experimental feature, will be deprecated in Plutono v8.</em>
 
             <VariableSwitchField
               value={this.props.variable.useTags}

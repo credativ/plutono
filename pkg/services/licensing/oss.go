@@ -1,10 +1,10 @@
 package licensing
 
 import (
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/hooks"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/hooks"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 const (
@@ -33,15 +33,15 @@ func (*OSSLicensingService) StateInfo() string {
 }
 
 func (*OSSLicensingService) ContentDeliveryPrefix() string {
-	return "grafana-oss"
+	return "plutono-oss"
 }
 
 func (l *OSSLicensingService) LicenseURL(user *models.SignedInUser) string {
-	if user.IsGrafanaAdmin {
+	if user.IsPlutonoAdmin {
 		return l.Cfg.AppSubURL + "/admin/upgrading"
 	}
 
-	return "https://grafana.com/products/enterprise/?utm_source=grafana_footer"
+	return "https://grafana.com/products/enterprise/"
 }
 
 func (l *OSSLicensingService) Init() error {

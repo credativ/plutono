@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { Unsubscribable, PartialObserver } from 'rxjs';
-import { FeatureInfoBox, stylesFactory, Button, JSONFormatter, CustomScrollbar, CodeEditor } from '@grafana/ui';
+import { FeatureInfoBox, stylesFactory, Button, JSONFormatter, CustomScrollbar, CodeEditor } from '@credativ/plutono-ui';
 import {
-  GrafanaTheme,
+  PlutonoTheme,
   PanelProps,
   LiveChannelStatusEvent,
   isValidLiveChannelAddress,
@@ -14,10 +14,10 @@ import {
   PanelData,
   LoadingState,
   applyFieldOverrides,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { TablePanel } from '../table/TablePanel';
 import { LivePanelOptions, MessageDisplayMode } from './types';
-import { config, getGrafanaLiveSrv, MeasurementCollector } from '@grafana/runtime';
+import { config, getPlutonoLiveSrv, MeasurementCollector } from '@credativ/plutono-runtime';
 import { css, cx } from 'emotion';
 
 interface Props extends PanelProps<LivePanelOptions> {}
@@ -38,7 +38,7 @@ export class LivePanel extends PureComponent<Props, State> {
   constructor(props: Props) {
     super(props);
 
-    this.isValid = !!getGrafanaLiveSrv();
+    this.isValid = !!getPlutonoLiveSrv();
     this.state = { changed: 0 };
   }
 
@@ -88,7 +88,7 @@ export class LivePanel extends PureComponent<Props, State> {
       return;
     }
 
-    const channel = getGrafanaLiveSrv().getChannel(addr);
+    const channel = getPlutonoLiveSrv().getChannel(addr);
     const changed = channel.id !== this.state.channel?.id;
     console.log('LOAD', addr, changed, channel);
     if (changed) {
@@ -111,12 +111,12 @@ export class LivePanel extends PureComponent<Props, State> {
     enable = live`;
     return (
       <FeatureInfoBox
-        title="Grafana Live"
+        title="Plutono Live"
         style={{
           height: this.props.height,
         }}
       >
-        <p>Grafana live requires a feature flag to run</p>
+        <p>Plutono live requires a feature flag to run</p>
 
         <b>custom.ini:</b>
         <pre>{preformatted}</pre>
@@ -275,7 +275,7 @@ export class LivePanel extends PureComponent<Props, State> {
     if (!channel) {
       return (
         <FeatureInfoBox
-          title="Grafana Live"
+          title="Plutono Live"
           style={{
             height: this.props.height,
           }}
@@ -301,7 +301,7 @@ export class LivePanel extends PureComponent<Props, State> {
   }
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   statusWrap: css`
     margin: auto;
     position: absolute;

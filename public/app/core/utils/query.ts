@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { DataQuery } from '@grafana/data';
+import { DataQuery } from '@credativ/plutono-data';
 
 export const getNextRefIdChar = (queries: DataQuery[]): string => {
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ';

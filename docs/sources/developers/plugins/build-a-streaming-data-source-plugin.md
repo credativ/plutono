@@ -8,7 +8,7 @@ This guide explains how to build a streaming data source plugin.
 
 This guide assumes that you're already familiar with how to [Build a data source plugin]({{< relref "/tutorials/build-a-data-source-plugin.md" >}}).
 
-When monitoring critical applications, you want your dashboard to refresh as soon as your data does. In Grafana, you can set your dashboards to automatically refresh at a certain interval, no matter what data source you use. Unfortunately, this means that your queries are requesting all the data to be sent again, regardless of whether the data has actually changed.
+When monitoring critical applications, you want your dashboard to refresh as soon as your data does. In Plutono, you can set your dashboards to automatically refresh at a certain interval, no matter what data source you use. Unfortunately, this means that your queries are requesting all the data to be sent again, regardless of whether the data has actually changed.
 
 By enabling _streaming_ for your data source plugin, you can update your dashboard as soon as new data becomes available.
 
@@ -16,7 +16,7 @@ For example, a streaming data source plugin can connect to a websocket, or subsc
 
 Let's see how you can add streaming to an existing data source!
 
-Grafana uses [RxJS](https://rxjs.dev/) to continuously send data from a data source to a panel visualization. There's a lot more to RxJS than what's covered in this guide. If you want to learn more, check out the [RxJS documentation](https://rxjs.dev/guide/overview).
+Plutono uses [RxJS](https://rxjs.dev/) to continuously send data from a data source to a panel visualization. There's a lot more to RxJS than what's covered in this guide. If you want to learn more, check out the [RxJS documentation](https://rxjs.dev/guide/overview).
 
 1. Enable streaming for your data source in the `plugin.json` file.
 
@@ -57,7 +57,7 @@ Grafana uses [RxJS](https://rxjs.dev/) to continuously send data from a data sou
 1. In the `subscribe` function, create a `CircularDataFrame`.
 
    ```ts
-   import { CircularDataFrame } from '@grafana/data';
+   import { CircularDataFrame } from '@credativ/plutono-data';
    ```
 
    ```ts
@@ -76,7 +76,7 @@ Grafana uses [RxJS](https://rxjs.dev/) to continuously send data from a data sou
 1. Use `subscriber.next()` to send the updated data frame whenever you receive new updates.
 
    ```ts
-   import { LoadingState } from '@grafana/data';
+   import { LoadingState } from '@credativ/plutono-data';
    ```
 
    ```ts

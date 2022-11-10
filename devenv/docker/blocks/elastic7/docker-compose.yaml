@@ -8,7 +8,7 @@
       - "12300:9300"
 
   fake-elastic7-data:
-    image: grafana/fake-data-gen
+    image: plutono/fake-data-gen
     links:
       - elasticsearch7
     environment:
@@ -22,7 +22,7 @@
     volumes:
       - ./docker/blocks/elastic7/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
       - /var/log:/var/log:ro
-      - ../data/log:/var/log/grafana:ro
+      - ../data/log:/var/log/plutono:ro
 
   metricbeat7:
     image: docker.elastic.co/beats/metricbeat-oss:7.0.0

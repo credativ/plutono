@@ -29,7 +29,7 @@ func TestLogFile(t *testing.T) {
 		assert.NoError(t, err)
 	})
 
-	fileLogWrite.Filename = "grafana_test.log"
+	fileLogWrite.Filename = "plutono_test.log"
 	err := fileLogWrite.Init()
 	require.NoError(t, err)
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { PanelModel, PanelPlugin } from '@grafana/data';
-import { TagsInput } from '@grafana/ui';
+import { PanelModel, PanelPlugin } from '@credativ/plutono-data';
+import { TagsInput } from '@credativ/plutono-ui';
 import { AnnoListPanel } from './AnnoListPanel';
 import { AnnoOptions } from './types';
 

@@ -1,7 +1,7 @@
 import React, { FC, useMemo } from 'react';
 import { Provider } from 'react-redux';
 // @ts-ignore
-import { Button } from '@grafana/ui';
+import { Button } from '@credativ/plutono-ui';
 import { createDependencyEdges, createDependencyNodes, filterNodesWithDependencies } from './utils';
 import { store } from '../../../store/store';
 import { VariableModel } from '../types';

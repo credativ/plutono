@@ -1,12 +1,12 @@
 +++
 title = "Dashboards"
-aliases = ["/docs/grafana/latest/features/dashboard/dashboards/"]
+aliases = ["/docs/plutono/latest/features/dashboard/dashboards/"]
 weight = 80
 +++
 
 # Dashboard overview
 
-A _dashboard_ is a set of one or more panels organized and arranged into one or more rows. Grafana ships with a variety of Panels. Grafana makes it easy to construct the right queries, and customize the display properties so that you can create the perfect dashboard for your need. Each panel can interact with data from any configured Grafana Data Source (currently Graphite, Prometheus, Elasticsearch, InfluxDB, OpenTSDB, MySQL, PostgreSQL, Microsoft SQL Server and AWS Cloudwatch).
+A _dashboard_ is a set of one or more panels organized and arranged into one or more rows. Plutono ships with a variety of Panels. Plutono makes it easy to construct the right queries, and customize the display properties so that you can create the perfect dashboard for your need. Each panel can interact with data from any configured Plutono Data Source (currently Graphite, Prometheus, Elasticsearch, InfluxDB, OpenTSDB, MySQL, PostgreSQL, Microsoft SQL Server and AWS Cloudwatch).
 
 ## Dashboard UI
 
@@ -52,9 +52,9 @@ A *row* is a logical divider within a dashboard. It is used to group panels toge
 
 Rows are always 12 “units” wide. These units are automatically scaled dependent on the horizontal resolution of your browser. You can control the relative width of panels within a row by setting their specific width.
 
-We use a unit abstraction so that Grafana looks great on all screen sizes.
+We use a unit abstraction so that Plutono looks great on all screen sizes.
 
- > **Note:** With MaxDataPoint functionality, Grafana can show you the perfect number of data points, regardless of resolution or time range.
+ > **Note:** With MaxDataPoint functionality, Plutono can show you the perfect number of data points, regardless of resolution or time range.
 
 Collapse a row by clicking on the row title. If you save a dashboard with a row collapsed, then it saves in that state and does not load those graphs until you expand the row.
 

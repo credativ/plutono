@@ -1,45 +1,45 @@
 +++
 title = "LDAP Authentication"
-description = "Grafana LDAP Authentication Guide "
-keywords = ["grafana", "configuration", "documentation", "ldap", "active directory"]
-aliases = ["/docs/grafana/latest/installation/ldap/"]
+description = "Plutono LDAP Authentication Guide "
+keywords = ["plutono", "configuration", "documentation", "ldap", "active directory"]
+aliases = ["/docs/plutono/latest/installation/ldap/"]
 weight = 300
 +++
 
 # LDAP Authentication
 
-The LDAP integration in Grafana allows your Grafana users to login with their LDAP credentials. You can also specify mappings between LDAP
-group memberships and Grafana Organization user roles.
+The LDAP integration in Plutono allows your Plutono users to login with their LDAP credentials. You can also specify mappings between LDAP
+group memberships and Plutono Organization user roles.
 
-> [Enhanced LDAP authentication]({{< relref "../enterprise/enhanced_ldap.md" >}}) is available in [Grafana Enterprise]({{< relref "../enterprise" >}}).
+> [Enhanced LDAP authentication]({{< relref "../enterprise/enhanced_ldap.md" >}}) is available in [Plutono Enterprise]({{< relref "../enterprise" >}}).
 
 ## Supported LDAP Servers
 
-Grafana uses a [third-party LDAP library](https://github.com/go-ldap/ldap) under the hood that supports basic LDAP v3 functionality.
+Plutono uses a [third-party LDAP library](https://github.com/go-ldap/ldap) under the hood that supports basic LDAP v3 functionality.
 This means that you should be able to configure LDAP integration using any compliant LDAPv3 server, for example [OpenLDAP](#openldap) or
 [Active Directory](#active-directory) among [others](https://en.wikipedia.org/wiki/Directory_service#LDAP_implementations).
 
 ## Enable LDAP
 
 In order to use LDAP integration you'll first need to enable LDAP in the [main config file]({{< relref "../administration/configuration.md" >}}) as well as specify the path to the LDAP
-specific configuration file (default: `/etc/grafana/ldap.toml`).
+specific configuration file (default: `/etc/plutono/ldap.toml`).
 
 ```bash
 [auth.ldap]
 # Set to `true` to enable LDAP integration (default: `false`)
 enabled = true
 
-# Path to the LDAP specific configuration file (default: `/etc/grafana/ldap.toml`)
-config_file = /etc/grafana/ldap.toml
+# Path to the LDAP specific configuration file (default: `/etc/plutono/ldap.toml`)
+config_file = /etc/plutono/ldap.toml
 
-# Allow sign up should almost always be true (default) to allow new Grafana users to be created (if LDAP authentication is ok). If set to
-# false only pre-existing Grafana users will be able to login (if LDAP authentication is ok).
+# Allow sign up should almost always be true (default) to allow new Plutono users to be created (if LDAP authentication is ok). If set to
+# false only pre-existing Plutono users will be able to login (if LDAP authentication is ok).
 allow_sign_up = true
 ```
 
-## Grafana LDAP Configuration
+## Plutono LDAP Configuration
 
-Depending on which LDAP server you're using and how that's configured your Grafana LDAP configuration may vary.
+Depending on which LDAP server you're using and how that's configured your Plutono LDAP configuration may vary.
 See [configuration examples](#configuration-examples) for more information.
 
 **LDAP specific configuration file (ldap.toml) example:**
@@ -62,21 +62,21 @@ ssl_skip_verify = false
 # client_key = "/path/to/client.key"
 
 # Search user bind dn
-bind_dn = "cn=admin,dc=grafana,dc=org"
+bind_dn = "cn=admin,dc=plutono,dc=org"
 # Search user bind password
 # If the password contains # or ; you have to wrap it with triple quotes. Ex """#password;"""
-bind_password = 'grafana'
+bind_password = 'plutono'
 
 # User search filter, for example "(cn=%s)" or "(sAMAccountName=%s)" or "(uid=%s)"
 # Allow login from email or username, example "(|(sAMAccountName=%s)(userPrincipalName=%s))"
 search_filter = "(cn=%s)"
 
 # An array of base dns to search through
-search_base_dns = ["dc=grafana,dc=org"]
+search_base_dns = ["dc=plutono,dc=org"]
 
 # group_search_filter = "(&(objectClass=posixGroup)(memberUid=%s))"
 # group_search_filter_user_attribute = "distinguishedName"
-# group_search_base_dns = ["ou=groups,dc=grafana,dc=org"]
+# group_search_base_dns = ["ou=groups,dc=plutono,dc=org"]
 
 # Specify names of the LDAP attributes your LDAP uses
 [servers.attributes]
@@ -94,9 +94,9 @@ bind_password = "${LDAP_ADMIN_PASSWORD}"
 
 ## LDAP Debug View
 
-> Only available in Grafana v6.4+
+> Only available in Plutono v6.4+
 
-Grafana has an LDAP debug view built-in which allows you to test your LDAP configuration directly within Grafana. At the moment of writing, only Grafana admins can use the LDAP debug view.
+Plutono has an LDAP debug view built-in which allows you to test your LDAP configuration directly within Plutono. At the moment of writing, only Plutono admins can use the LDAP debug view.
 
 Within this view, you'll be able to see which LDAP servers are currently reachable and test your current configuration.
 
@@ -116,11 +116,11 @@ To use the debug view:
 #### Bind and Bind Password
 
 By default the configuration expects you to specify a bind DN and bind password. This should be a read only user that can perform LDAP searches.
-When the user DN is found a second bind is performed with the user provided username and password (in the normal Grafana login form).
+When the user DN is found a second bind is performed with the user provided username and password (in the normal Plutono login form).
 
 ```bash
-bind_dn = "cn=admin,dc=grafana,dc=org"
-bind_password = "grafana"
+bind_dn = "cn=admin,dc=plutono,dc=org"
+bind_password = "plutono"
 ```
 
 #### Single Bind Example
@@ -129,10 +129,10 @@ If you can provide a single bind expression that matches all possible users, you
 This allows you to not specify a bind_password in the configuration file.
 
 ```bash
-bind_dn = "cn=%s,o=users,dc=grafana,dc=org"
+bind_dn = "cn=%s,o=users,dc=plutono,dc=org"
 ```
 
-In this case you skip providing a `bind_password` and instead provide a `bind_dn` value with a `%s` somewhere. This will be replaced with the username entered in on the Grafana login page.
+In this case you skip providing a `bind_password` and instead provide a `bind_dn` value with a `%s` somewhere. This will be replaced with the username entered in on the Plutono login page.
 The search filter and search bases settings are still needed to perform the LDAP search to retrieve the other LDAP information (like LDAP groups and email).
 
 ### POSIX schema
@@ -142,15 +142,15 @@ If your LDAP server does not support the memberOf attribute add these options:
 ## Group search filter, to retrieve the groups of which the user is a member (only set if memberOf attribute is not available)
 group_search_filter = "(&(objectClass=posixGroup)(memberUid=%s))"
 ## An array of the base DNs to search through for groups. Typically uses ou=groups
-group_search_base_dns = ["ou=groups,dc=grafana,dc=org"]
+group_search_base_dns = ["ou=groups,dc=plutono,dc=org"]
 ## the %s in the search filter will be replaced with the attribute defined below
 group_search_filter_user_attribute = "uid"
 ```
 
 ### Group Mappings
 
-In `[[servers.group_mappings]]` you can map an LDAP group to a Grafana organization and role.  These will be synced every time the user logs in, with LDAP being
-the authoritative source. So, if you change a user's role in the Grafana Org. Users page, this change will be reset the next time the user logs in. If you
+In `[[servers.group_mappings]]` you can map an LDAP group to a Plutono organization and role.  These will be synced every time the user logs in, with LDAP being
+the authoritative source. So, if you change a user's role in the Plutono Org. Users page, this change will be reset the next time the user logs in. If you
 change the LDAP groups of a user, the change will take effect the next time the user logs in.
 
 The first group mapping that an LDAP user is matched to will be used for the sync. If you have LDAP users that fit multiple mappings, the topmost mapping in the TOML configuration will be used.
@@ -161,16 +161,16 @@ The first group mapping that an LDAP user is matched to will be used for the syn
 # other settings omitted for clarity
 
 [[servers.group_mappings]]
-group_dn = "cn=superadmins,dc=grafana,dc=org"
+group_dn = "cn=superadmins,dc=plutono,dc=org"
 org_role = "Admin"
-grafana_admin = true # Available in Grafana v5.3 and above
+plutono_admin = true # Available in Plutono v5.3 and above
 
 [[servers.group_mappings]]
-group_dn = "cn=admins,dc=grafana,dc=org"
+group_dn = "cn=admins,dc=plutono,dc=org"
 org_role = "Admin"
 
 [[servers.group_mappings]]
-group_dn = "cn=users,dc=grafana,dc=org"
+group_dn = "cn=users,dc=plutono,dc=org"
 org_role = "Editor"
 
 [[servers.group_mappings]]
@@ -182,8 +182,8 @@ Setting | Required | Description | Default
 ------------ | ------------ | ------------- | -------------
 `group_dn` | Yes | LDAP distinguished name (DN) of LDAP group. If you want to match all (or no LDAP groups) then you can use wildcard (`"*"`) |
 `org_role` | Yes | Assign users of `group_dn` the organization role `"Admin"`, `"Editor"` or `"Viewer"` |
-`org_id` | No | The Grafana organization database id. Setting this allows for multiple group_dn's to be assigned to the same `org_role` provided the `org_id` differs | `1` (default org id)
-`grafana_admin` | No | When `true` makes user of `group_dn` Grafana server admin. A Grafana server admin has admin access over all organizations and users. Available in Grafana v5.3 and above | `false`
+`org_id` | No | The Plutono organization database id. Setting this allows for multiple group_dn's to be assigned to the same `org_role` provided the `org_id` differs | `1` (default org id)
+`plutono_admin` | No | When `true` makes user of `group_dn` Plutono server admin. A Plutono server admin has admin access over all organizations and users. Available in Plutono v5.3 and above | `false`
 
 ### Nested/recursive group membership
 
@@ -229,10 +229,10 @@ port = 389
 use_ssl = false
 start_tls = false
 ssl_skip_verify = false
-bind_dn = "cn=admin,dc=grafana,dc=org"
-bind_password = 'grafana'
+bind_dn = "cn=admin,dc=plutono,dc=org"
+bind_password = 'plutono'
 search_filter = "(cn=%s)"
-search_base_dns = ["dc=grafana,dc=org"]
+search_base_dns = ["dc=plutono,dc=org"]
 
 [servers.attributes]
 member_of = "memberOf"
@@ -243,7 +243,7 @@ email =  "email"
 
 ### Multiple LDAP servers
 
-Grafana does support receiving information from multiple LDAP servers.
+Plutono does support receiving information from multiple LDAP servers.
 
 **LDAP specific configuration file (ldap.toml):**
 ```bash
@@ -255,19 +255,19 @@ port = 389
 use_ssl = false
 start_tls = false
 ssl_skip_verify = false
-bind_dn = "cn=admin,dc=grafana,dc=org"
-bind_password = 'grafana'
+bind_dn = "cn=admin,dc=plutono,dc=org"
+bind_password = 'plutono'
 search_filter = "(cn=%s)"
-search_base_dns = ["ou=users,dc=grafana,dc=org"]
+search_base_dns = ["ou=users,dc=plutono,dc=org"]
 
 [servers.attributes]
 member_of = "memberOf"
 email =  "email"
 
 [[servers.group_mappings]]
-group_dn = "cn=admins,ou=groups,dc=grafana,dc=org"
+group_dn = "cn=admins,ou=groups,dc=plutono,dc=org"
 org_role = "Admin"
-grafana_admin = true
+plutono_admin = true
 
 # --- Second LDAP Server ---
 
@@ -278,17 +278,17 @@ use_ssl = false
 start_tls = false
 ssl_skip_verify = false
 
-bind_dn = "cn=admin,dc=grafana,dc=org"
-bind_password = 'grafana'
+bind_dn = "cn=admin,dc=plutono,dc=org"
+bind_password = 'plutono'
 search_filter = "(cn=%s)"
-search_base_dns = ["ou=users,dc=grafana,dc=org"]
+search_base_dns = ["ou=users,dc=plutono,dc=org"]
 
 [servers.attributes]
 member_of = "memberOf"
 email =  "email"
 
 [[servers.group_mappings]]
-group_dn = "cn=editors,ou=groups,dc=grafana,dc=org"
+group_dn = "cn=editors,ou=groups,dc=plutono,dc=org"
 org_role = "Editor"
 
 [[servers.group_mappings]]

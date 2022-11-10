@@ -10,7 +10,7 @@ import {
   createSuccessNotification,
   createWarningNotification,
 } from '../../copy/appNotification';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@credativ/plutono-data';
 
 export interface Props {
   appNotifications: AppNotification[];

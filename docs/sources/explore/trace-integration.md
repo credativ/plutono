@@ -7,13 +7,13 @@ weight = 20
 
 # Tracing in Explore
 
-Explore allows you to visualize traces from tracing data sources. This is available in Grafana v7.0+.
+Explore allows you to visualize traces from tracing data sources. This is available in Plutono v7.0+.
 
 Supported data sources are:
 
 - [Jaeger]({{< relref "../datasources/jaeger.md" >}})
 - [Tempo]({{< relref "../datasources/tempo.md" >}})
-- [X-Ray](https://grafana.com/grafana/plugins/grafana-x-ray-datasource)
+- [X-Ray](https://grafana.com/grafana/plugins/plutono-x-ray-datasource)
 - [Zipkin]({{< relref "../datasources/zipkin.md" >}})
 
 For information on how to configure queries for the data sources listed above, refer to the documentation for specific data source.
@@ -59,7 +59,7 @@ Clicking anywhere on the span row shows span details.
 
 ##### Trace to logs
 
-> **Note:** Available in Grafana 7.4 and later versions.
+> **Note:** Available in Plutono 7.4 and later versions.
 
 You can navigate from a span in a trace view directly to logs relevant for that span. This is available for Tempo, Jaeger and Zipkin data source at this moment.  their relevant documentation for instruction how to configure this feature.
 

@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { stripIndent, stripIndents } from 'common-tags';
-import { QueryEditorHelpProps } from '@grafana/data';
+import { QueryEditorHelpProps } from '@credativ/plutono-data';
 import Prism from 'prismjs';
 import tokenizer from '../syntax';
-import { flattenTokens } from '@grafana/ui/src/slate-plugins/slate-prism';
+import { flattenTokens } from '@credativ/plutono-ui/src/slate-plugins/slate-prism';
 import { css, cx } from 'emotion';
 import { CloudWatchLogsQuery } from '../types';
 

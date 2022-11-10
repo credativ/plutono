@@ -20,20 +20,20 @@ import (
 	"github.com/aws/aws-sdk-go/service/ec2/ec2iface"
 	"github.com/aws/aws-sdk-go/service/resourcegroupstaggingapi"
 	"github.com/aws/aws-sdk-go/service/resourcegroupstaggingapi/resourcegroupstaggingapiiface"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/tsdb"
 )
 
 const cloudWatchTSFormat = "2006-01-02 15:04:05.000"
 const defaultRegion = "default"
 
 // Constants also defined in datasource/cloudwatch/datasource.ts
-const logIdentifierInternal = "__log__grafana_internal__"
-const logStreamIdentifierInternal = "__logstream__grafana_internal__"
+const logIdentifierInternal = "__log__plutono_internal__"
+const logStreamIdentifierInternal = "__logstream__plutono_internal__"
 
 var plog = log.New("tsdb.cloudwatch")
 var aliasFormat = regexp.MustCompile(`\{\{\s*(.+?)\s*\}\}`)
@@ -342,7 +342,7 @@ func isTerminated(queryStatus string) bool {
 var NewCWClient = func(sess *session.Session) cloudwatchiface.CloudWatchAPI {
 	client := cloudwatch.New(sess)
 	client.Handlers.Send.PushFront(func(r *request.Request) {
-		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Plutono/%s", setting.BuildVersion))
 	})
 
 	return client
@@ -354,7 +354,7 @@ var NewCWClient = func(sess *session.Session) cloudwatchiface.CloudWatchAPI {
 var NewCWLogsClient = func(sess *session.Session) cloudwatchlogsiface.CloudWatchLogsAPI {
 	client := cloudwatchlogs.New(sess)
 	client.Handlers.Send.PushFront(func(r *request.Request) {
-		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+		r.HTTPRequest.Header.Set("User-Agent", fmt.Sprintf("Plutono/%s", setting.BuildVersion))
 	})
 
 	return client

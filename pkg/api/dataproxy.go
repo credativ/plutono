@@ -6,11 +6,11 @@ import (
 	"net/http"
 	"regexp"
 
-	"github.com/grafana/grafana/pkg/api/datasource"
-	"github.com/grafana/grafana/pkg/api/pluginproxy"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
+	"github.com/credativ/plutono/pkg/api/datasource"
+	"github.com/credativ/plutono/pkg/api/pluginproxy"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
 )
 
 // ProxyDataSourceRequest proxies datasource requests

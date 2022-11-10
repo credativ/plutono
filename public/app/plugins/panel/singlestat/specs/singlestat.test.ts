@@ -1,5 +1,5 @@
 import { SingleStatCtrl, ShowData } from '../module';
-import { dateTime, ReducerID, getFieldDisplayName, LegacyResponseData } from '@grafana/data';
+import { dateTime, ReducerID, getFieldDisplayName, LegacyResponseData } from '@credativ/plutono-data';
 import { LinkSrv } from 'app/features/panel/panellinks/link_srv';
 import { DashboardModel } from 'app/features/dashboard/state';
 

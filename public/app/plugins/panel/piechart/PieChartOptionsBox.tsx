@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { LegacyForms, InlineFormLabel, PieChartType } from '@grafana/ui';
-import { PanelEditorProps } from '@grafana/data';
+import { LegacyForms, InlineFormLabel, PieChartType } from '@credativ/plutono-ui';
+import { PanelEditorProps } from '@credativ/plutono-data';
 import { PieChartOptions } from './types';
 
 const { Select } = LegacyForms;

@@ -1,15 +1,15 @@
 +++
-title = "Grafana documentation"
+title = "Plutono documentation"
 description = "Guides, Installation and Feature Documentation"
-keywords = ["grafana", "installation", "documentation"]
-aliases = ["/docs/grafana/v1.1", "/docs/grafana/latest/guides/reference/admin", "/docs/grafana/v3.1"]
+keywords = ["plutono", "installation", "documentation"]
+aliases = ["/docs/plutono/v1.1", "/docs/plutono/latest/guides/reference/admin", "/docs/plutono/v3.1"]
 +++
 
-# Grafana documentation
+# Plutono documentation
 
-This is documentation for the latest stable release (7.5.x) version of Grafana. For the 8.0 beta documentation, click [here](https://grafana.com/docs/grafana/next/).
+This is documentation for the latest stable release (7.5.x) version of Plutono. For the 8.0 beta documentation, click [here](https://grafana.com/docs/grafana/next/).
 
-## Installing Grafana
+## Installing Plutono
 
 <div class="nav-cards">
     <a href="{{< relref "installation/debian.md" >}}" class="nav-cards__item nav-cards__item--install">
@@ -34,7 +34,7 @@ This is documentation for the latest stable release (7.5.x) version of Grafana. 
     <a href="https://grafana.com/docs/grafana-cloud/" class="nav-cards__item nav-cards__item--install">
         <div class="nav-cards__icon fa fa-cloud">
         </div>
-        <h5>Grafana Cloud</h5>
+        <h5>Plutono Cloud</h5>
     </a>
     <a href="https://grafana.com/grafana/download" class="nav-cards__item nav-cards__item--install">
         <div class="nav-cards__icon fa fa-moon-o">
@@ -48,14 +48,14 @@ This is documentation for the latest stable release (7.5.x) version of Grafana. 
 <div class="nav-cards">
     <a href="{{< relref "getting-started/getting-started.md" >}}" class="nav-cards__item nav-cards__item--guide">
         <h4>Getting started</h4>
-        <p>Learn the basics of using Grafana.</p>
+        <p>Learn the basics of using Plutono.</p>
     </a>
     <a href="{{< relref "basics/_index.md" >}}" class="nav-cards__item nav-cards__item--guide">
-        <h4>Grafana basics</h4>
+        <h4>Plutono basics</h4>
         <p>Learn basic observability.</p>
     </a>
     <a href="{{< relref "administration/configuration.md" >}}" class="nav-cards__item nav-cards__item--guide">
-        <h4>Configure Grafana</h4>
+        <h4>Configure Plutono</h4>
         <p>Review the configuration and setup options.</p>
     </a>
     <a href="{{< relref "basics/timeseries.md" >}}" class="nav-cards__item nav-cards__item--guide">
@@ -64,7 +64,7 @@ This is documentation for the latest stable release (7.5.x) version of Grafana. 
     </a>
     <a href="{{< relref "administration/provisioning.md" >}}" class="nav-cards__item nav-cards__item--guide">
         <h4>Provisioning</h4>
-        <p>Learn how to automate your Grafana configuration.</p>
+        <p>Learn how to automate your Plutono configuration.</p>
     </a>
     <a href="{{< relref "whatsnew/whats-new-in-v7-5.md" >}}" class="nav-cards__item nav-cards__item--guide">
         <h4>What's new in v7.5</h4>

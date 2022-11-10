@@ -30,7 +30,7 @@ import AccordianReferences from './AccordianReferences';
 import { autoColor, createStyle, Theme, useTheme } from '../../Theme';
 import { UIDivider } from '../../uiElementsContext';
 import { ubFlex, ubFlexAuto, ubItemsCenter, ubM0, ubMb1, ubMy1, ubTxRightAlign } from '../../uberUtilityStyles';
-import { DataLinkButton, TextArea } from '@grafana/ui';
+import { DataLinkButton, TextArea } from '@credativ/plutono-ui';
 import { CreateSpanLink } from '../types';
 
 const getStyles = createStyle((theme: Theme) => {

@@ -3,10 +3,10 @@ import { shallow } from 'enzyme';
 import { render, prettyDOM } from '@testing-library/react';
 import { TraceView } from './TraceView';
 import { TracePageHeader, TraceTimelineViewer } from '@jaegertracing/jaeger-ui-components';
-import { setDataSourceSrv } from '@grafana/runtime';
+import { setDataSourceSrv } from '@credativ/plutono-runtime';
 import { ExploreId } from 'app/types';
 import { TraceData, TraceSpanData } from '@jaegertracing/jaeger-ui-components/src/types/trace';
-import { MutableDataFrame } from '@grafana/data';
+import { MutableDataFrame } from '@credativ/plutono-data';
 
 jest.mock('react-redux', () => ({
   useSelector: jest.fn(() => undefined),

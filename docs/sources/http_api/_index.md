@@ -1,14 +1,14 @@
 +++
 title = "HTTP API"
-description = "Grafana HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "overview"]
-aliases = ["/docs/grafana/latest/overview"]
+description = "Plutono HTTP API"
+keywords = ["plutono", "http", "documentation", "api", "overview"]
+aliases = ["/docs/plutono/latest/overview"]
 weight = 170
 +++
 
 # HTTP API Reference
 
-The Grafana backend exposes an HTTP API, the same API is used by the frontend to do everything from saving
+The Plutono backend exposes an HTTP API, the same API is used by the frontend to do everything from saving
 dashboards, creating users and updating data sources.
 
 ## Supported HTTP APIs
@@ -34,7 +34,7 @@ dashboards, creating users and updating data sources.
 - [Preferences API]({{< relref "preferences.md" >}})
 - [Other API]({{< relref "other.md" >}})
 
-### Grafana Enterprise HTTP APIs
+### Plutono Enterprise HTTP APIs
 
 - [Data Source Permissions API]({{< relref "datasource_permissions.md" >}})
 - [External Group Sync API]({{< relref "external_group_sync.md" >}})

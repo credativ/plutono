@@ -1,6 +1,6 @@
 import React, { useCallback, useMemo } from 'react';
-import { FieldType, PanelProps, VizOrientation } from '@grafana/data';
-import { BarChart, BarChartOptions, GraphNGLegendEvent } from '@grafana/ui';
+import { FieldType, PanelProps, VizOrientation } from '@credativ/plutono-data';
+import { BarChart, BarChartOptions, GraphNGLegendEvent } from '@credativ/plutono-ui';
 import { changeSeriesColorConfigFactory } from '../timeseries/overrides/colorSeriesConfigFactory';
 import { hideSeriesConfigFactory } from '../timeseries/overrides/hideSeriesConfigFactory';
 

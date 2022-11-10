@@ -1,0 +1,28 @@
+#!/usr/bin/env bash
+DAEMON=plutono-server
+EXECUTABLE=/usr/local/bin/plutono-server
+CONFIG=/usr/local/etc/plutono/plutono.ini
+HOMEPATH=/usr/local/share/plutono
+LOGPATH=/usr/local/var/log/plutono
+DATAPATH=/usr/local/var/lib/plutono
+PLUGINPATH=/usr/local/var/lib/plutono/plugins
+DATASOURCECFGPATH=/usr/local/etc/plutono/datasources
+DASHBOARDSCFGPATH=/usr/local/etc/plutono/dashboards
+
+case "$1" in
+start)
+  $EXECUTABLE --config=$CONFIG --homepath=$HOMEPATH cfg:default.paths.datasources=$DATASOURCECFGPATH cfg:default.paths.dashboards=$DASHBOARDSCFGPATH cfg:default.paths.logs=$LOGPATH cfg:default.paths.data=$DATAPATH cfg:default.paths.plugins=$PLUGINPATH 2> /dev/null &
+  [ $? -eq 0 ] && echo "$DAEMON started"
+;;
+stop)
+  killall $DAEMON
+  [ $? -eq 0 ] && echo "$DAEMON stopped"
+;;
+restart)
+  $0 stop
+  $0 start
+;;
+*)
+  echo "Usage: $0 (start|stop|restart)"
+;;
+esac

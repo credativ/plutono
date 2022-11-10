@@ -1,7 +1,7 @@
 import React, { FC, ReactElement } from 'react';
-import { Icon, SegmentAsync } from '@grafana/ui';
+import { Icon, SegmentAsync } from '@credativ/plutono-ui';
 import { getDatasourceSrv } from '../../../plugins/datasource_srv';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 
 interface Props {
   datasource: string;

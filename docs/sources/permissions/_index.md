@@ -1,39 +1,39 @@
 +++
 title = "Permissions"
 description = "Permissions"
-keywords = ["grafana", "configuration", "documentation", "admin", "users", "datasources", "permissions"]
-aliases = ["/docs/grafana/latest/permissions/overview/"]
+keywords = ["plutono", "configuration", "documentation", "admin", "users", "datasources", "permissions"]
+aliases = ["/docs/plutono/latest/permissions/overview/"]
 weight = 50
 +++
 
 # Permissions
 
-What you can do in Grafana is defined by the _permissions_ associated with your user account.
+What you can do in Plutono is defined by the _permissions_ associated with your user account.
 
 There are three types of permissions:
-- Permissions granted as a Grafana Server Admin
+- Permissions granted as a Plutono Server Admin
 - Permissions associated with your role in an organization
 - Permissions granted to a specific folder or dashboard
 
 You can be granted permissions based on:
-- Grafana Server Admin status.
+- Plutono Server Admin status.
 - Organization role (Admin, Editor, or Viewer).
 - Folder or dashboard permissions assigned to your team (Admin, Editor, or Viewer).
 - Folder or dashboard permissions assigned to your user account (Admin, Editor, or Viewer).
-- (Grafana Enterprise) Data source permissions. For more information, refer to [Data source permissions]({{< relref "../enterprise/datasource_permissions.md" >}}) in [Grafana Enterprise]({{< relref "../enterprise" >}}).
-- (Grafana Cloud) Grafana Cloud has additional roles. For more information, refer to [Grafana Cloud roles and permissions](/docs/grafana-cloud/cloud-portal/cloud-roles/).
+- (Plutono Enterprise) Data source permissions. For more information, refer to [Data source permissions]({{< relref "../enterprise/datasource_permissions.md" >}}) in [Plutono Enterprise]({{< relref "../enterprise" >}}).
+- (Plutono Cloud) Plutono Cloud has additional roles. For more information, refer to [Plutono Cloud roles and permissions](/docs/plutono-cloud/cloud-portal/cloud-roles/).
 
-## Grafana Server Admin role
+## Plutono Server Admin role
 
-Grafana server administrators have the **Grafana Admin** flag enabled on their account. They can access the **Server Admin** menu and perform the following tasks:
+Plutono server administrators have the **Plutono Admin** flag enabled on their account. They can access the **Server Admin** menu and perform the following tasks:
 
 - Manage users and permissions.
 - Create, edit, and delete organizations.
 - View server-wide settings that are set in the [Configuration]({{< relref "../administration/configuration.md" >}}) file.
-- View Grafana server stats, including total users and active sessions.
-- Upgrade the server to Grafana Enterprise.
+- View Plutono server stats, including total users and active sessions.
+- Upgrade the server to Plutono Enterprise.
 
-> **Note:** This role does not exist in Grafana Cloud.
+> **Note:** This role does not exist in Plutono Cloud.
 
 ## Organization roles
 
@@ -48,4 +48,4 @@ Dashboard and folder permissions allow you to remove the default role based perm
 Per default, a data source in an organization can be queried by any user in that organization. For example a user with `Viewer` role can still
 issue any possible query to a data source, not just those queries that exist on dashboards he/she has access to.
 
-Data source permissions allows you to change the default permissions for data sources and restrict query permissions to specific **Users** and **Teams**. For more information, refer to [Data source permissions]({{< relref "../enterprise/datasource_permissions.md" >}}) in [Grafana Enterprise]({{< relref "../enterprise" >}}).
+Data source permissions allows you to change the default permissions for data sources and restrict query permissions to specific **Users** and **Teams**. For more information, refer to [Data source permissions]({{< relref "../enterprise/datasource_permissions.md" >}}) in [Plutono Enterprise]({{< relref "../enterprise" >}}).

@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { DataSourceSettings, NavModel } from '@grafana/data';
+import { DataSourceSettings, NavModel } from '@credativ/plutono-data';
 
 import { DataSourcesListPage, Props } from './DataSourcesListPage';
 import { LayoutModes } from '../../core/components/LayoutSelector/LayoutSelector';

@@ -4,12 +4,12 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/annotations"
-	"github.com/grafana/grafana/pkg/services/guardian"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/annotations"
+	"github.com/credativ/plutono/pkg/services/guardian"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 func GetAnnotations(c *models.ReqContext) response.Response {

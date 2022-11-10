@@ -1,4 +1,4 @@
-import { dateTime, DateTime, PanelProps, TimeRange } from '@grafana/data';
+import { dateTime, DateTime, PanelProps, TimeRange } from '@credativ/plutono-data';
 import { applyPanelTimeOverrides, calculateInnerPanelHeight } from 'app/features/dashboard/utils/panel';
 import { advanceTo, clear } from 'jest-date-mock';
 import { PanelModel } from '../state';

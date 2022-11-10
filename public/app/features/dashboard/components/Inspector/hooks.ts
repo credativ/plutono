@@ -1,6 +1,6 @@
-import { DataQueryError, DataSourceApi, PanelData, PanelPlugin } from '@grafana/data';
+import { DataQueryError, DataSourceApi, PanelData, PanelPlugin } from '@credativ/plutono-data';
 import useAsync from 'react-use/lib/useAsync';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { getDataSourceSrv } from '@credativ/plutono-runtime';
 import { DashboardModel } from 'app/features/dashboard/state';
 import { useMemo } from 'react';
 import { supportsDataQuery } from '../PanelEditor/utils';

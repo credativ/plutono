@@ -1,9 +1,9 @@
 import React, { useCallback, ReactNode } from 'react';
 import { get, groupBy } from 'lodash';
-import { Counter, Field, Label } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { Counter, Field, Label } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { updateDefaultFieldConfigValue } from './utils';
-import { FieldConfigPropertyItem, FieldConfigSource, VariableSuggestionsScope } from '@grafana/data';
+import { FieldConfigPropertyItem, FieldConfigSource, VariableSuggestionsScope } from '@credativ/plutono-data';
 import { getDataLinksVariableSuggestions } from '../../../panel/panellinks/link_srv';
 import { OptionsGroup } from './OptionsGroup';
 import { Props } from './types';

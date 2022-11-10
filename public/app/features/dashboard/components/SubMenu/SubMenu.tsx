@@ -8,7 +8,7 @@ import { DashboardLinks } from './DashboardLinks';
 import { Annotations } from './Annotations';
 import { SubMenuItems } from './SubMenuItems';
 import { DashboardLink } from '../../state/DashboardModel';
-import { AnnotationQuery } from '@grafana/data';
+import { AnnotationQuery } from '@credativ/plutono-data';
 
 interface OwnProps {
   dashboard: DashboardModel;

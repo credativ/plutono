@@ -2,7 +2,7 @@
 
 RELEASE_TYPE="${1:-}"
 RELEASE_TAG="${2:-}"
-GCP_REPO_BUCKET="${3:-grafana-repo}"
+GCP_REPO_BUCKET="${3:-plutono-repo}"
 
 REPO="rpm"
 
@@ -30,8 +30,8 @@ gsutil -m cp /rpm-repo/*.rpm "$BUCKET" # sync binaries first to avoid cache miss
 gsutil -m rsync -r -d /rpm-repo "$BUCKET"
 
 # usage:
-# [grafana]
-# name=grafana
+# [plutono]
+# name=plutono
 # baseurl=https://packages.grafana.com/oss/rpm
 # repo_gpgcheck=1
 # enabled=1

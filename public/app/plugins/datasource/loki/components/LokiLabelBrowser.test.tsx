@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, waitFor, waitForElementToBeRemoved } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 
-import { getTheme } from '@grafana/ui';
+import { getTheme } from '@credativ/plutono-ui';
 import {
   buildSelector,
   facetLabels,

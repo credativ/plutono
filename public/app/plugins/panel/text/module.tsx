@@ -1,4 +1,4 @@
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin } from '@credativ/plutono-data';
 
 import { TextPanel } from './TextPanel';
 import { TextOptions } from './types';

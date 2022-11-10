@@ -1,18 +1,18 @@
 +++
 title = "White labeling"
-description = "Change the look of Grafana to match your corporate brand"
-keywords = ["grafana", "white-labeling", "enterprise"]
-aliases = ["/docs/grafana/latest/enterprise/white-labeling/"]
+description = "Change the look of Plutono to match your corporate brand"
+keywords = ["plutono", "white-labeling", "enterprise"]
+aliases = ["/docs/plutono/latest/enterprise/white-labeling/"]
 weight = 700
 +++
 
 # White labeling
 
-White labeling allows you to replace the Grafana brand and logo with your own corporate brand and logo.
+White labeling allows you to replace the Plutono brand and logo with your own corporate brand and logo.
 
-> Only available in Grafana Enterprise v6.6+.
+> Only available in Plutono Enterprise v6.6+.
 
-Grafana Enterprise has white labeling options in the `grafana.ini` file. As with all configuration options, you can also set them with environment variables.
+Plutono Enterprise has white labeling options in the `plutono.ini` file. As with all configuration options, you can also set them with environment variables.
 
 You can change the following elements:
 
@@ -22,15 +22,15 @@ You can change the following elements:
 - Side menu top logo
 - Footer and help menu links
 - Fav icon (shown in browser tab)
-- Login title (will not appear if a login logo is set, Grafana v7.0+)
-- Login subtitle (will not appear if a login logo is set, Grafana v7.0+)
-- Login box background (Grafana v7.0+)
+- Login title (will not appear if a login logo is set, Plutono v7.0+)
+- Login subtitle (will not appear if a login logo is set, Plutono v7.0+)
+- Login box background (Plutono v7.0+)
 
-> You will have to host your logo and other images used by the white labeling feature separately. Make sure Grafana can access the URL where the assets are stored.
+> You will have to host your logo and other images used by the white labeling feature separately. Make sure Plutono can access the URL where the assets are stored.
 
 {{< figure src="/static/img/docs/v66/whitelabeling_1.png" max-width="800px" caption="White labeling example" >}}
 
-The configuration file in Grafana Enterprise contains the following options. Each option is defined in the file. For more information about configuring Grafana, refer to [Configuration]({{< relref "../administration/configuration.md">}}).
+The configuration file in Plutono Enterprise contains the following options. Each option is defined in the file. For more information about configuring Plutono, refer to [Configuration]({{< relref "../administration/configuration.md">}}).
 
 ```ini
 # Enterprise only
@@ -76,7 +76,7 @@ footer_links_extracustom_text = Custom text
 footer_links_extracustom_url = http://your.custom.site
 ```
 
-Here is the same example using environment variables instead of the custom.ini or grafana.ini file.
+Here is the same example using environment variables instead of the custom.ini or plutono.ini file.
 
 ```
 GF_WHITE_LABELING_FOOTER_LINKS=support guides extracustom
@@ -89,7 +89,7 @@ GF_WHITE_LABELING_FOOTER_LINKS_EXTRACUSTOM_URL=http://your.custom.site
 ```
 
 > **Note:** The following two links are always present in the footer:
-- Grafana edition
-- Grafana version with build number
+- Plutono edition
+- Plutono version with build number
 
 If you specify `footer_links` or `GF_WHITE_LABELING_FOOTER_LINKS`, then all other default links are removed from the footer and only what is specified is included.

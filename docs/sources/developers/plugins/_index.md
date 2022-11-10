@@ -1,6 +1,6 @@
 +++
 title = "Build a plugin"
-aliases = ["/docs/grafana/latest/plugins/developing/"]
+aliases = ["/docs/plutono/latest/plugins/developing/"]
 +++
 
 # Build a plugin
@@ -9,12 +9,12 @@ For more information on the types of plugins you can build, refer to the [Plugin
 
 ## Get started
 
-The easiest way to start developing Grafana plugins is to use the [Grafana Toolkit](https://www.npmjs.com/package/@grafana/toolkit).
+The easiest way to start developing Plutono plugins is to use the [Plutono Toolkit](https://www.npmjs.com/package/@credativ/plutono-toolkit).
 
 Open the terminal, and run the following command in your [plugin directory]({{< relref "../../administration/configuration.md#plugins" >}}):
 
 ```bash
-npx @grafana/toolkit plugin:create my-grafana-plugin
+npx @credativ/plutono-toolkit plugin:create my-plutono-plugin
 ```
 
 If you want a more guided introduction to plugin development, check out our tutorials:
@@ -60,7 +60,7 @@ Deepen your knowledge through a series of high-level overviews of plugin concept
 
 ### UI library
 
-Explore the many UI components in our [Grafana UI library](https://developers.grafana.com/ui).
+Explore the many UI components in our [Plutono UI library](https://developers.grafana.com/ui).
 
 ### Examples
 
@@ -68,7 +68,7 @@ For inspiration, check out our [plugin examples](https://github.com/grafana/graf
 
 ### API reference
 
-Learn more about Grafana options and packages.
+Learn more about Plutono options and packages.
 
 #### Metadata
 
@@ -76,12 +76,12 @@ Learn more about Grafana options and packages.
 
 #### Typescript
 
-- [Grafana Data]({{< relref "../../packages_api/data/_index.md" >}})
-- [Grafana Runtime]({{< relref "../../packages_api/runtime/_index.md" >}})
-- [Grafana UI]({{< relref "../../packages_api/ui/_index.md" >}})
+- [Plutono Data]({{< relref "../../packages_api/data/_index.md" >}})
+- [Plutono Runtime]({{< relref "../../packages_api/runtime/_index.md" >}})
+- [Plutono UI]({{< relref "../../packages_api/ui/_index.md" >}})
 
 #### Go
 
-- [Grafana Plugin SDK for Go]({{< relref "backend/grafana-plugin-sdk-for-go" >}})
+- [Plutono Plugin SDK for Go]({{< relref "backend/plutono-plugin-sdk-for-go" >}})
 
 

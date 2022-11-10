@@ -15,7 +15,7 @@ import './utils/outline';
 import './components/colorpicker/spectrum_picker';
 import './services/search_srv';
 import './services/ng_react';
-import { colors, JsonExplorer } from '@grafana/ui/';
+import { colors, JsonExplorer } from '@credativ/plutono-ui/';
 
 import { infoPopover } from './components/info_popover';
 import { arrayJoin } from './directives/array_join';
@@ -37,7 +37,7 @@ import { geminiScrollbar } from './components/scroll/scroll';
 import { profiler } from './profiler';
 import { registerAngularDirectives } from './angular_wrappers';
 import TimeSeries, { updateLegendValues } from './time_series2';
-import { NavModel } from '@grafana/data';
+import { NavModel } from '@credativ/plutono-data';
 
 export {
   profiler,

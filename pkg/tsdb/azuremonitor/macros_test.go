@@ -7,9 +7,9 @@ import (
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/stretchr/testify/require"
 )
 
@@ -112,8 +112,8 @@ func TestAzureLogAnalyticsMacros(t *testing.T) {
 				DataSource: &models.DataSource{},
 				Model:      simplejson.NewFromAny(map[string]interface{}{}),
 			},
-			kql:      `CounterPath in ($__escapeMulti('\\grafana-vm\Network(eth0)\Total','\\grafana-vm\Network(eth1)\Total'))`,
-			expected: `CounterPath in (@'\\grafana-vm\Network(eth0)\Total', @'\\grafana-vm\Network(eth1)\Total')`,
+			kql:      `CounterPath in ($__escapeMulti('\\plutono-vm\Network(eth0)\Total','\\plutono-vm\Network(eth1)\Total'))`,
+			expected: `CounterPath in (@'\\plutono-vm\Network(eth0)\Total', @'\\plutono-vm\Network(eth1)\Total')`,
 			Err:      require.NoError,
 		},
 		{
@@ -122,8 +122,8 @@ func TestAzureLogAnalyticsMacros(t *testing.T) {
 				DataSource: &models.DataSource{},
 				Model:      simplejson.NewFromAny(map[string]interface{}{}),
 			},
-			kql:      `$__escapeMulti('\\grafana-vm,\Network(eth0)\Total Bytes Received')`,
-			expected: `@'\\grafana-vm,\Network(eth0)\Total Bytes Received'`,
+			kql:      `$__escapeMulti('\\plutono-vm,\Network(eth0)\Total Bytes Received')`,
+			expected: `@'\\plutono-vm,\Network(eth0)\Total Bytes Received'`,
 			Err:      require.NoError,
 		},
 		{
@@ -132,7 +132,7 @@ func TestAzureLogAnalyticsMacros(t *testing.T) {
 				DataSource: &models.DataSource{},
 				Model:      simplejson.NewFromAny(map[string]interface{}{}),
 			},
-			kql:      `$__escapeMulti(\\grafana-vm,\Network(eth0)\Total Bytes Received)`,
+			kql:      `$__escapeMulti(\\plutono-vm,\Network(eth0)\Total Bytes Received)`,
 			expected: "",
 			Err:      require.Error,
 		},

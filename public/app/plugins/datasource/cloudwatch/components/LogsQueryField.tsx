@@ -13,7 +13,7 @@ import {
   SlatePrism,
   TypeaheadInput,
   TypeaheadOutput,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 
 // Utils & Services
 // dom also includes Element polyfills
@@ -22,7 +22,7 @@ import { Editor } from 'slate-react';
 import syntax from '../syntax';
 
 // Types
-import { AbsoluteTimeRange, AppEvents, ExploreQueryFieldProps, SelectableValue } from '@grafana/data';
+import { AbsoluteTimeRange, AppEvents, ExploreQueryFieldProps, SelectableValue } from '@credativ/plutono-data';
 import { CloudWatchJsonData, CloudWatchLogsQuery, CloudWatchQuery } from '../types';
 import { CloudWatchDatasource } from '../datasource';
 import { LanguageMap, languages as prismLanguages } from 'prismjs';
@@ -30,7 +30,7 @@ import { CloudWatchLanguageProvider } from '../language_provider';
 import { css } from 'emotion';
 import { ExploreId } from 'app/types';
 import { appEvents } from 'app/core/core';
-import { InputActionMeta } from '@grafana/ui/src/components/Select/types';
+import { InputActionMeta } from '@credativ/plutono-ui/src/components/Select/types';
 import { getStatsGroups } from '../utils/query/getStatsGroups';
 
 export interface CloudWatchLogsQueryFieldProps

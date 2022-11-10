@@ -1,6 +1,6 @@
 import React, { FormEvent, PropsWithChildren, ReactElement, useCallback } from 'react';
-import { InlineField, TextArea, useStyles } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { InlineField, TextArea, useStyles } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { css } from 'emotion';
 
 interface VariableTextAreaFieldProps<T> {
@@ -54,7 +54,7 @@ export function VariableTextAreaField({
   );
 }
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: PlutonoTheme) {
   return {
     textarea: css`
       white-space: pre-wrap;

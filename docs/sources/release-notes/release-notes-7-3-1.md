@@ -1,12 +1,12 @@
 +++
-title = "Release notes for Grafana 7.3.1"
+title = "Release notes for Plutono 7.3.1"
 [_build]
 list = false
 +++
 
 <!-- Auto generated do not edit -->
 
-# Release notes for Grafana 7.3.1
+# Release notes for Plutono 7.3.1
 
 ### Bug fixes
 * **Cloudwatch**: Fix duplicate metric data. [#28642](https://github.com/grafana/grafana/pull/28642), [@zoltanbedi](https://github.com/zoltanbedi)

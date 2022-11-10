@@ -7,8 +7,8 @@ import { PlaylistSrv } from 'app/features/playlist/playlist_srv';
 // Components
 import { DashNavButton } from './DashNavButton';
 import { DashNavTimeControls } from './DashNavTimeControls';
-import { ButtonGroup, ModalsController, ToolbarButton, PageToolbar } from '@grafana/ui';
-import { textUtil } from '@grafana/data';
+import { ButtonGroup, ModalsController, ToolbarButton, PageToolbar } from '@credativ/plutono-ui';
+import { textUtil } from '@credativ/plutono-data';
 // State
 import { updateLocation } from 'app/core/actions';
 import { updateTimeZoneForSession } from 'app/features/profile/state/reducers';

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Modal, stylesFactory } from '@grafana/ui';
+import { Modal, stylesFactory } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 
 import { OnRowOptionsUpdate, RowOptionsForm } from './RowOptionsForm';

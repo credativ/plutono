@@ -1,5 +1,5 @@
-import { MenuItem } from '@grafana/ui';
-import { FlotDataPoint } from '@grafana/data';
+import { MenuItem } from '@credativ/plutono-ui';
+import { FlotDataPoint } from '@credativ/plutono-data';
 
 export class GraphContextMenuCtrl {
   private source?: FlotDataPoint | null;

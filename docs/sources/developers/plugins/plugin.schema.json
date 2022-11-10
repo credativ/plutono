@@ -3,7 +3,7 @@
   "$schema": "http://json-schema.org/draft-07/schema",
   "type": "object",
   "title": "plugin.json",
-  "description": "The plugin.json file is required for all plugins. When Grafana starts, it scans the plugin folders and mounts every folder that contains a plugin.json file unless the folder contains a subfolder named dist. In that case, Grafana mounts the dist folder instead.",
+  "description": "The plugin.json file is required for all plugins. When Plutono starts, it scans the plugin folders and mounts every folder that contains a plugin.json file unless the folder contains a subfolder named dist. In that case, Plutono mounts the dist folder instead.",
   "required": ["type", "name", "id", "info", "dependencies"],
   "additionalProperties": false,
   "properties": {
@@ -44,7 +44,7 @@
     },
     "executable": {
       "type": "string",
-      "description": "The first part of the file name of the backend component executable. There can be multiple executables built for different operating system and architecture. Grafana will check for executables named `<executable>_<$GOOS>_<lower case $GOARCH><.exe for Windows>`, e.g. `plugin_linux_amd64`. Combination of $GOOS and $GOARCH can be found here: https://golang.org/doc/install/source#environment."
+      "description": "The first part of the file name of the backend component executable. There can be multiple executables built for different operating system and architecture. Plutono will check for executables named `<executable>_<$GOOS>_<lower case $GOARCH><.exe for Windows>`, e.g. `plugin_linux_amd64`. Combination of $GOOS and $GOARCH can be found here: https://golang.org/doc/install/source#environment."
     },
     "preload": {
       "type": "boolean",
@@ -129,17 +129,17 @@
     "dependencies": {
       "type": "object",
       "description": "Dependencies needed by the plugin.",
-      "required": ["grafanaDependency"],
+      "required": ["plutonoDependency"],
       "additionalProperties": false,
       "properties": {
-        "grafanaVersion": {
+        "plutonoVersion": {
           "type": "string",
-          "description": "(Deprecated) Required Grafana version for this plugin, e.g. `6.x.x 7.x.x` to denote plugin requires Grafana v6.x.x or v7.x.x.",
+          "description": "(Deprecated) Required Plutono version for this plugin, e.g. `6.x.x 7.x.x` to denote plugin requires Plutono v6.x.x or v7.x.x.",
           "pattern": "^([0-9]+)(\\.[0-9x]+)?(\\.[0-9x])?$"
         },
-        "grafanaDependency": {
+        "plutonoDependency": {
           "type": "string",
-          "description": "Required Grafana version for this plugin. Validated using https://github.com/npm/node-semver.",
+          "description": "Required Plutono version for this plugin. Validated using https://github.com/npm/node-semver.",
           "pattern": "^(<=|>=|<|>|=|~|\\^)?([0-9]+)(\\.[0-9x\\*]+)(\\.[0-9x\\*])?(\\s(<=|>=|<|=>)?([0-9]+)(\\.[0-9x]+)(\\.[0-9x]))?$"
         },
         "plugins": {
@@ -148,7 +148,7 @@
           "additionalItems": false,
           "items": {
             "type": "object",
-            "description": "Plugin dependency. Used to display information about plugin dependencies in the Grafana UI.",
+            "description": "Plugin dependency. Used to display information about plugin dependencies in the Plutono UI.",
             "required": ["id", "name", "type", "version"],
             "properties": {
               "id": {
@@ -172,7 +172,7 @@
     },
     "info": {
       "type": "object",
-      "description": "Metadata for the plugin. Some fields are used on the plugins page in Grafana and others on grafana.com if the plugin is published.",
+      "description": "Metadata for the plugin. Some fields are used on the plugins page in Plutono and others on grafana.com if the plugin is published.",
       "required": ["logos", "version", "updated", "keywords"],
       "additionalProperties": false,
       "properties": {
@@ -230,7 +230,7 @@
         },
         "description": {
           "type": "string",
-          "description": "Description of plugin. Used on the plugins page in Grafana and for search on grafana.com."
+          "description": "Description of plugin. Used on the plugins page in Plutono and for search on grafana.com."
         },
         "keywords": {
           "type": "array",

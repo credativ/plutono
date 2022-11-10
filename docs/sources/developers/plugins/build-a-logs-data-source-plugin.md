@@ -6,7 +6,7 @@ title = "Build a logs data source plugin"
 
 This guide explains how to build a logs data source plugin.
 
-Data sources in Grafana supports both metrics and log data. The steps to build a logs data source plugin are largely the same as for a metrics data source. This guide assumes that you're already familiar with how to [Build a data source plugin]({{< relref "/tutorials/build-a-data-source-plugin.md" >}}) for metrics.
+Data sources in Plutono supports both metrics and log data. The steps to build a logs data source plugin are largely the same as for a metrics data source. This guide assumes that you're already familiar with how to [Build a data source plugin]({{< relref "/tutorials/build-a-data-source-plugin.md" >}}) for metrics.
 
 ## Add logs support to your data source
 
@@ -18,7 +18,7 @@ To add logs support to an existing data source, you need to:
 
 ### Enable logs support
 
-Tell Grafana that your data source plugin can return log data, by adding `"logs": true` to the [plugin.json]({{< relref "metadata.md" >}}) file.
+Tell Plutono that your data source plugin can return log data, by adding `"logs": true` to the [plugin.json]({{< relref "metadata.md" >}}) file.
 
 ```json
 {
@@ -28,7 +28,7 @@ Tell Grafana that your data source plugin can return log data, by adding `"logs"
 
 ### Construct the log data
 
-Just like for metrics data, Grafana expects your plugin to return log data as a [data frame]({{< relref "data-frames.md" >}}).
+Just like for metrics data, Plutono expects your plugin to return log data as a [data frame]({{< relref "data-frames.md" >}}).
 
 To return log data, return a data frame with at least one time field and one text field from the data source's `query` method.
 
@@ -53,7 +53,7 @@ Congratulations, you just wrote your first logs data source plugin! Next, let's 
 
 ### (Optional) Add preferred visualisation type hint to the data frame
 
-To make sure Grafana recognizes data as logs and shows logs visualization automatically in Explore you have do set `meta.preferredVisualisationType` to `'logs'` in the returned data frame. See [Selecting preferred visualisation section]({{< relref "add-support-for-explore-queries.md#selecting-preferred-visualisation" >}})
+To make sure Plutono recognizes data as logs and shows logs visualization automatically in Explore you have do set `meta.preferredVisualisationType` to `'logs'` in the returned data frame. See [Selecting preferred visualisation section]({{< relref "add-support-for-explore-queries.md#selecting-preferred-visualisation" >}})
 
 **Example:**
 
@@ -95,9 +95,9 @@ frame.add({ time: 1589189406480, content: 'user logged in' });
 
 You can add additional information about each log line by adding more data frame fields.
 
-If a data frame has more than one text field, then Grafana assumes the first field in the data frame to be the actual log line. Any subsequent text fields are treated as [detected fields]({{< relref "../../explore/_index.md#labels-and-detected-fields" >}}).
+If a data frame has more than one text field, then Plutono assumes the first field in the data frame to be the actual log line. Any subsequent text fields are treated as [detected fields]({{< relref "../../explore/_index.md#labels-and-detected-fields" >}}).
 
-While you can add any number of custom fields to your data frame, Grafana comes with a couple of dedicated fields: `levels` and `id`. Let's have a closer look at each one.
+While you can add any number of custom fields to your data frame, Plutono comes with a couple of dedicated fields: `levels` and `id`. Let's have a closer look at each one.
 
 ### Levels
 
@@ -121,7 +121,7 @@ frame.add({ time: 1589189406480, content: 'unknown error', level: 'error' });
 
 ### Unique log lines
 
-By default, Grafana offers basic support for deduplicating log lines. You can improve the support by adding an `id` field to explicitly assign identifiers to each log line.
+By default, Plutono offers basic support for deduplicating log lines. You can improve the support by adding an `id` field to explicitly assign identifiers to each log line.
 
 **Example:**
 

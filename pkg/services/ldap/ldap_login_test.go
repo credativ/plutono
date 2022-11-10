@@ -7,8 +7,8 @@ import (
 	. "github.com/smartystreets/goconvey/convey"
 	"gopkg.in/ldap.v3"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 func TestLDAPLogin(t *testing.T) {
@@ -215,7 +215,7 @@ func TestLDAPLogin(t *testing.T) {
 			}
 			server := &Server{
 				Config: &ServerConfig{
-					BindDN:        "cn=%s,ou=users,dc=grafana,dc=org",
+					BindDN:        "cn=%s,ou=users,dc=plutono,dc=org",
 					SearchBaseDNs: []string{"BaseDNHere"},
 				},
 				Connection: connection,
@@ -226,7 +226,7 @@ func TestLDAPLogin(t *testing.T) {
 
 			So(err, ShouldBeNil)
 
-			So(authBindUser, ShouldEqual, "cn=user,ou=users,dc=grafana,dc=org")
+			So(authBindUser, ShouldEqual, "cn=user,ou=users,dc=plutono,dc=org")
 			So(authBindPassword, ShouldEqual, "pwd")
 			So(connection.BindCalled, ShouldBeTrue)
 		})

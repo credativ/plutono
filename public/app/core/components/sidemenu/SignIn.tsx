@@ -2,7 +2,7 @@ import React, { FC } from 'react';
 
 import { connectWithStore } from 'app/core/utils/connectWithReduxStore';
 import { StoreState } from 'app/types';
-import { Icon } from '@grafana/ui';
+import { Icon } from '@credativ/plutono-ui';
 import { getForcedLoginUrl } from './utils';
 
 export const SignIn: FC<any> = ({ url }) => {

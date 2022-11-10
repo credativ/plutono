@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/prometheus/client_golang/prometheus"
 	cw "github.com/weaveworks/common/middleware"
 	"gopkg.in/macaron.v1"
@@ -26,13 +26,13 @@ func init() {
 	httpRequestsInFlight = prometheus.NewGauge(
 		prometheus.GaugeOpts{
 			Name: "http_request_in_flight",
-			Help: "A gauge of requests currently being served by Grafana.",
+			Help: "A gauge of requests currently being served by Plutono.",
 		},
 	)
 
 	httpRequestDurationHistogram = prometheus.NewHistogramVec(
 		prometheus.HistogramOpts{
-			Namespace: "grafana",
+			Namespace: "plutono",
 			Name:      "http_request_duration_seconds",
 			Help:      "Histogram of latencies for HTTP requests.",
 			Buckets:   defBuckets,

@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import { setUsersSearchQuery } from './state/reducers';
 import { getInviteesCount, getUsersSearchQuery } from './state/selectors';
 import { FilterInput } from 'app/core/components/FilterInput/FilterInput';
-import { RadioButtonGroup, LinkButton } from '@grafana/ui';
+import { RadioButtonGroup, LinkButton } from '@credativ/plutono-ui';
 
 export interface Props {
   searchQuery: string;

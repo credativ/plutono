@@ -7,9 +7,9 @@ import {
   Field,
   FieldColorModeId,
   FieldConfigSource,
-  GrafanaTheme,
+  PlutonoTheme,
   TimeZone,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import {
   Collapse,
   DrawStyle,
@@ -21,7 +21,7 @@ import {
   useStyles,
   useTheme,
   ZoomPlugin,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import { defaultGraphConfig, getGraphFieldConfig } from 'app/plugins/panel/timeseries/config';
 import { hideSeriesConfigFactory } from 'app/plugins/panel/timeseries/overrides/hideSeriesConfigFactory';
 import { ContextMenuPlugin } from 'app/plugins/panel/timeseries/plugins/ContextMenuPlugin';
@@ -138,7 +138,7 @@ export function ExploreGraphNGPanel({
   );
 }
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: PlutonoTheme) => ({
   timeSeriesDisclaimer: css`
     label: time-series-disclaimer;
     width: 300px;

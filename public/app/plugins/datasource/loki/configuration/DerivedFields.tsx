@@ -1,12 +1,12 @@
 import React, { useState } from 'react';
 import { css } from 'emotion';
-import { Button, stylesFactory, useTheme } from '@grafana/ui';
-import { GrafanaTheme, VariableOrigin, DataLinkBuiltInVars } from '@grafana/data';
+import { Button, stylesFactory, useTheme } from '@credativ/plutono-ui';
+import { PlutonoTheme, VariableOrigin, DataLinkBuiltInVars } from '@credativ/plutono-data';
 import { DerivedFieldConfig } from '../types';
 import { DerivedField } from './DerivedField';
 import { DebugSection } from './DebugSection';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   infoText: css`
     padding-bottom: ${theme.spacing.md};
     color: ${theme.colors.textWeak};

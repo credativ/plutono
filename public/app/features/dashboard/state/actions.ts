@@ -1,5 +1,5 @@
 // Services & Utils
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { createSuccessNotification } from 'app/core/copy/appNotification';
 // Actions
 import { loadPluginDashboards } from '../../plugins/state/actions';

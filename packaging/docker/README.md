@@ -1,18 +1,18 @@
-# Grafana Docker image
+# Plutono Docker image
 
-This topic contains instructions for installing Grafana using the Docker image.
+This topic contains instructions for installing Plutono using the Docker image.
 
-## Run the Grafana Docker container
+## Run the Plutono Docker container
 
-Start the Docker container by binding Grafana to external port `3000`.
+Start the Docker container by binding Plutono to external port `3000`.
 
 ```bash
-docker run -d --name=grafana -p 3000:3000 grafana/grafana
+docker run -d --name=plutono -p 3000:3000 plutono/plutono
 ```
 
 Try it out, default admin user credentials are admin/admin.
 
-Further documentation can be found at http://docs.grafana.org/installation/docker/.
+Further documentation can be found at http://docs.plutono.org/installation/docker/.
 
 ## Changelog
 
@@ -47,7 +47,7 @@ Further documentation can be found at http://docs.grafana.org/installation/docke
 - Fixed file permissions incompatibility with previous versions.
   * user id changed from 104 to 472.
   * group id changed from 107 to 472.
-- Runs as the Grafana user by default (instead of root).
+- Runs as the Plutono user by default (instead of root).
 - Removed all default volumes.
 
 ### v4.2.0
@@ -56,7 +56,7 @@ Further documentation can be found at http://docs.grafana.org/installation/docke
 - Fixed bug caused by installing multiple plugins.
 
 ### v4.0.0-beta2
-- Plugins dir (`/var/lib/grafana/plugins`) is no longer a separate volume.
+- Plugins dir (`/var/lib/plutono/plugins`) is no longer a separate volume.
 
 ### v3.1.1
 - Made it possible to install specific plugin version https://github.com/grafana/grafana-docker/issues/59#issuecomment-260584026.

@@ -5,11 +5,11 @@ import (
 
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 // ExporterName is used as namespace for exposing prometheus metrics
-const ExporterName = "grafana"
+const ExporterName = "plutono"
 
 var (
 	// MInstanceStart is a metric counter for started instances
@@ -162,16 +162,16 @@ var (
 	// StatsTotalDataSources is a metric total number of defined datasources, labeled by pluginId
 	StatsTotalDataSources *prometheus.GaugeVec
 
-	// StatsTotalAnnotations is a metric of total number of annotations stored in Grafana.
+	// StatsTotalAnnotations is a metric of total number of annotations stored in Plutono.
 	StatsTotalAnnotations prometheus.Gauge
 
-	// StatsTotalDashboardVersions is a metric of total number of dashboard versions stored in Grafana.
+	// StatsTotalDashboardVersions is a metric of total number of dashboard versions stored in Plutono.
 	StatsTotalDashboardVersions prometheus.Gauge
 
-	// grafanaBuildVersion is a metric with a constant '1' value labeled by version, revision, branch, and goversion from which Grafana was built
-	grafanaBuildVersion *prometheus.GaugeVec
+	// plutonoBuildVersion is a metric with a constant '1' value labeled by version, revision, branch, and goversion from which Plutono was built
+	plutonoBuildVersion *prometheus.GaugeVec
 
-	grafanaPluginBuildInfoDesc *prometheus.GaugeVec
+	plutonoPluginBuildInfoDesc *prometheus.GaugeVec
 )
 
 func init() {
@@ -487,15 +487,15 @@ func init() {
 		Namespace: ExporterName,
 	}, []string{"plugin_id"})
 
-	grafanaBuildVersion = prometheus.NewGaugeVec(prometheus.GaugeOpts{
+	plutonoBuildVersion = prometheus.NewGaugeVec(prometheus.GaugeOpts{
 		Name:      "build_info",
-		Help:      "A metric with a constant '1' value labeled by version, revision, branch, and goversion from which Grafana was built",
+		Help:      "A metric with a constant '1' value labeled by version, revision, branch, and goversion from which Plutono was built",
 		Namespace: ExporterName,
 	}, []string{"version", "revision", "branch", "goversion", "edition"})
 
-	grafanaPluginBuildInfoDesc = prometheus.NewGaugeVec(prometheus.GaugeOpts{
+	plutonoPluginBuildInfoDesc = prometheus.NewGaugeVec(prometheus.GaugeOpts{
 		Name:      "plugin_build_info",
-		Help:      "A metric with a constant '1' value labeled by pluginId, pluginType and version from which Grafana plugin was built",
+		Help:      "A metric with a constant '1' value labeled by pluginId, pluginType and version from which Plutono plugin was built",
 		Namespace: ExporterName,
 	}, []string{"plugin_id", "plugin_type", "version"})
 
@@ -519,7 +519,7 @@ func SetBuildInformation(version, revision, branch string) {
 		edition = "enterprise"
 	}
 
-	grafanaBuildVersion.WithLabelValues(version, revision, branch, runtime.Version(), edition).Set(1)
+	plutonoBuildVersion.WithLabelValues(version, revision, branch, runtime.Version(), edition).Set(1)
 }
 
 // SetEnvironmentInformation exposes environment values provided by the operators as an `_info` metric.
@@ -529,21 +529,21 @@ func SetEnvironmentInformation(labels map[string]string) error {
 		return nil
 	}
 
-	grafanaEnvironmentInfo := prometheus.NewGauge(prometheus.GaugeOpts{
+	plutonoEnvironmentInfo := prometheus.NewGauge(prometheus.GaugeOpts{
 		Name:        "environment_info",
 		Help:        "A metric with a constant '1' value labeled by environment information about the running instance.",
 		Namespace:   ExporterName,
 		ConstLabels: labels,
 	})
 
-	prometheus.MustRegister(grafanaEnvironmentInfo)
+	prometheus.MustRegister(plutonoEnvironmentInfo)
 
-	grafanaEnvironmentInfo.Set(1)
+	plutonoEnvironmentInfo.Set(1)
 	return nil
 }
 
 func SetPluginBuildInformation(pluginID, pluginType, version string) {
-	grafanaPluginBuildInfoDesc.WithLabelValues(pluginID, pluginType, version).Set(1)
+	plutonoPluginBuildInfoDesc.WithLabelValues(pluginID, pluginType, version).Set(1)
 }
 
 func initMetricVars() {
@@ -596,8 +596,8 @@ func initMetricVars() {
 		StatsTotalActiveEditors,
 		StatsTotalActiveAdmins,
 		StatsTotalDataSources,
-		grafanaBuildVersion,
-		grafanaPluginBuildInfoDesc,
+		plutonoBuildVersion,
+		plutonoPluginBuildInfoDesc,
 		StatsTotalDashboardVersions,
 		StatsTotalAnnotations,
 	)

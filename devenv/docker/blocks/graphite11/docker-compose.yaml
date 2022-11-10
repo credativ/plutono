@@ -8,7 +8,7 @@
       - "8226:8126"
 
   fake-graphite11-data:
-    image: grafana/fake-data-gen
+    image: plutono/fake-data-gen
     network_mode: bridge
     environment:
       FD_DATASOURCE: graphite

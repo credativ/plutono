@@ -1,7 +1,7 @@
 +++
 title = "URL variables"
-keywords = ["grafana", "url variables", "documentation", "variables", "data link"]
-aliases = ["/docs/grafana/latest/variables/url-variables.md","/docs/grafana/latest/variables/variable-types/url-variables.md"]
+keywords = ["plutono", "url variables", "documentation", "variables", "data link"]
+aliases = ["/docs/plutono/latest/variables/url-variables.md","/docs/plutono/latest/variables/variable-types/url-variables.md"]
 weight = 400
 +++
 
@@ -11,7 +11,7 @@ You can use variables in data links to refer to series fields, labels, and value
 
 To see a list of available variables, type `$` in the data link **URL** field to see a list of variables that you can use.
 
-> **Note:** These variables changed in 6.4 so if you have an older version of Grafana, then use the version picker to select docs for an older version of Grafana.
+> **Note:** These variables changed in 6.4 so if you have an older version of Plutono, then use the version picker to select docs for an older version of Plutono.
 
 You can also use template variables in your data links URLs, refer to [Templates and variables]({{< relref "../variables/_index.md" >}}) for more information on template variables.
 

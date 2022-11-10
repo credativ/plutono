@@ -5,13 +5,13 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/grafana/grafana/pkg/components/securejsondata"
+	"github.com/credativ/plutono/pkg/components/securejsondata"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/null"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/null"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 // NotificationTestCommand initiates an test
@@ -80,7 +80,7 @@ func createTestEvalContext(cmd *NotificationTestCommand) *EvalContext {
 		DashboardID: 1,
 		PanelID:     1,
 		Name:        "Test notification",
-		Message:     "Someone is testing the alert notification within Grafana.",
+		Message:     "Someone is testing the alert notification within Plutono.",
 		State:       models.AlertStateAlerting,
 	}
 

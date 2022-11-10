@@ -1,14 +1,14 @@
 +++
 title = "Usage insights"
-description = "Understand how your Grafana instance is used"
-keywords = ["grafana", "usage-insights", "enterprise"]
-aliases = ["/docs/grafana/latest/enterprise/usage-insights/"]
+description = "Understand how your Plutono instance is used"
+keywords = ["plutono", "usage-insights", "enterprise"]
+aliases = ["/docs/plutono/latest/enterprise/usage-insights/"]
 weight = 100
 +++
 
 # Usage insights
 
-Usage insights allow you to have a better understanding of how your Grafana instance is used. 
+Usage insights allow you to have a better understanding of how your Plutono instance is used. 
 
 The usage insights feature collects a number of aggregated data and stores them in the database:
 - Dashboard views (aggregated and per user)

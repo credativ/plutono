@@ -1,19 +1,19 @@
 +++
 title = "Dashboard HTTP API "
-description = "Grafana Dashboard HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "dashboard"]
-aliases = ["/docs/grafana/latest/http_api/dashboard/"]
+description = "Plutono Dashboard HTTP API"
+keywords = ["plutono", "http", "documentation", "api", "dashboard"]
+aliases = ["/docs/plutono/latest/http_api/dashboard/"]
 +++
 
 # Dashboard API
 
 ## Identifier (id) vs unique identifier (uid)
 
-The identifier (id) of a dashboard is an auto-incrementing numeric value and is only unique per Grafana install.
+The identifier (id) of a dashboard is an auto-incrementing numeric value and is only unique per Plutono install.
 
-The unique identifier (uid) of a dashboard can be used for uniquely identify a dashboard between multiple Grafana installs.
+The unique identifier (uid) of a dashboard can be used for uniquely identify a dashboard between multiple Plutono installs.
 It's automatically generated if not provided when creating a dashboard. The uid allows having consistent URLs for accessing
-dashboards and when syncing dashboards between multiple Grafana installs, see [dashboard provisioning]({{< relref "../administration/provisioning.md#dashboards" >}})
+dashboards and when syncing dashboards between multiple Plutono installs, see [dashboard provisioning]({{< relref "../administration/provisioning.md#dashboards" >}})
 for more information. This means that changing the title of a dashboard will not break any bookmarked links to that dashboard.
 
 The uid can have a maximum length of 40 characters.
@@ -57,7 +57,7 @@ JSON Body schema:
 - **folderId** – The id of the folder to save the dashboard in.
 - **overwrite** – Set to true if you want to overwrite existing dashboard with newer version, same dashboard title in folder or same dashboard uid.
 - **message** - Set a commit message for the version history.
-- **refresh** - Set the dashboard refresh interval. If this is lower than [the minimum refresh interval]({{< relref "../administration/configuration.md#min_refresh_interval">}}), then Grafana will ignore it and will enforce the minimum refresh interval.
+- **refresh** - Set the dashboard refresh interval. If this is lower than [the minimum refresh interval]({{< relref "../administration/configuration.md#min_refresh_interval">}}), then Plutono will ignore it and will enforce the minimum refresh interval.
 
 For adding or updating an alert rule for a dashboard panel the user should declare a
 `dashboard.panels.alert` block.
@@ -229,7 +229,7 @@ Content-Length: 78
   "url":     "/d/cIBgcSjkk/production-overview",
   "status":  "success",
   "version": 1,
-  "slug":    "production-overview" //deprecated in Grafana v5.0
+  "slug":    "production-overview" //deprecated in Plutono v5.0
 }
 ```
 
@@ -298,7 +298,7 @@ Content-Type: application/json
   "meta": {
     "isStarred": false,
     "url": "/d/cIBgcSjkk/production-overview",
-    "slug": "production-overview" //deprecated in Grafana v5.0
+    "slug": "production-overview" //deprecated in Plutono v5.0
   }
 }
 ```
@@ -440,7 +440,7 @@ See [Folder/Dashboard Search API]({{< relref "folder_dashboard_search.md" >}}).
 Please note that these resource have been deprecated and will be removed in a future release.
 
 ### Get dashboard by slug
-**Deprecated starting from Grafana v5.0. Please update to use the new *Get dashboard by uid* resource instead**
+**Deprecated starting from Plutono v5.0. Please update to use the new *Get dashboard by uid* resource instead**
 
 `GET /api/dashboards/db/:slug`
 
@@ -475,7 +475,7 @@ Content-Type: application/json
   "meta": {
     "isStarred": false,
     "url": "/d/cIBgcSjkk/production-overview",
-    "slug": "production-overview" // deprecated in Grafana v5.0
+    "slug": "production-overview" // deprecated in Plutono v5.0
   }
 }
 ```
@@ -488,7 +488,7 @@ Status Codes:
 - **404** – Not found
 
 ### Delete dashboard by slug
-**Deprecated starting from Grafana v5.0. Please update to use the *Delete dashboard by uid* resource instead.**
+**Deprecated starting from Plutono v5.0. Please update to use the *Delete dashboard by uid* resource instead.**
 
 `DELETE /api/dashboards/db/:slug`
 

@@ -5,7 +5,7 @@ weight = 500
 
 # Configure variable value group tags
 
-> **Note:** This is an experimental feature that will be deprecated in Grafana v8.
+> **Note:** This is an experimental feature that will be deprecated in Plutono v8.
 
 Value groups/tags are a feature you can use to organize variable options. If you have many options in the dropdown for a multi-value variable, then you can use this feature to group the values into selectable tags.
 
@@ -13,7 +13,7 @@ Value groups/tags are a feature you can use to organize variable options. If you
 
 This feature is off by default. Click **Enabled** to turn the feature on.
 
-To see an example, check out [Templating value groups](https://play.grafana.org/d/000000024/templating-value-groups?orgId=1).
+To see an example, check out [Templating value groups](https://play.plutono.org/d/000000024/templating-value-groups?orgId=1).
 
 ## Tags query
 
@@ -23,7 +23,7 @@ For example, the tags query could be a list of regions (Europe, Asia, Americas),
 
 If you have a variable with a lot of values (say all the countries in the world), then this allows you to easily select a group of them. If the user selects the tag Europe, all the countries in Europe would be selected.
 
-In this [example dashboard](https://play.grafana.org/d/ZUPhFVGGk/graphite-with-experimental-tags?orgId=1), the server variable has tags enabled.
+In this [example dashboard](https://play.plutono.org/d/ZUPhFVGGk/graphite-with-experimental-tags?orgId=1), the server variable has tags enabled.
 
 ## Tag values query
 

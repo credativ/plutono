@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { map } from 'rxjs/operators';
-import { MetricFindValue, TimeRange } from '@grafana/data';
+import { MetricFindValue, TimeRange } from '@credativ/plutono-data';
 import { PrometheusDatasource } from './datasource';
 import { PromQueryRequest } from './types';
 import { getTimeSrv } from 'app/features/dashboard/services/TimeSrv';

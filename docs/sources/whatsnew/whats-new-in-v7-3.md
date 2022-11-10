@@ -1,16 +1,16 @@
 +++
-title = "What's New in Grafana v7.3"
-description = "Feature and improvement highlights for Grafana v7.3"
-keywords = ["grafana", "new", "documentation", "7.3", "release notes"]
-aliases = ["/docs/grafana/latest/guides/whats-new-in-v7-3/"]
+title = "What's New in Plutono v7.3"
+description = "Feature and improvement highlights for Plutono v7.3"
+keywords = ["plutono", "new", "documentation", "7.3", "release notes"]
+aliases = ["/docs/plutono/latest/guides/whats-new-in-v7-3/"]
 weight = -30
 [_build]
 list = false
 +++
 
-# What's new in Grafana v7.3
+# What's new in Plutono v7.3
 
-This topic includes the release notes for Grafana v7.3. For all details, read the full [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md) or the [Patch release notes](#patch-release-notes).
+This topic includes the release notes for Plutono v7.3. For all details, read the full [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md) or the [Patch release notes](#patch-release-notes).
 
 The main highlights are:
 
@@ -37,15 +37,15 @@ Another new feature that can be seen in the image above is the new image cell di
 A new standard field [color scheme]({{< relref "../panels/field-options/standard-field-options.md#color-scheme" >}}) option has been added. This new option will provide a unified way for all new panels to specify how colors should be assigned.
 
 - **Single color**: Specifies a single color. Useful in an override rule.
-- **From thresholds**: Informs Grafana to take color from the matching threshold.
-- **Classic palette**: Assigns a color by looking up a color in a palette by series index. Useful for Graphs and pie charts, and other categorical data visualizations in Grafana.
-- **Green-Yellow-Red (by value)**: A continuous color scheme where Grafana will interpolate a color based on the value assigned to the green, yellow, and red components. The value must be within the min & max limits.
+- **From thresholds**: Informs Plutono to take color from the matching threshold.
+- **Classic palette**: Assigns a color by looking up a color in a palette by series index. Useful for Graphs and pie charts, and other categorical data visualizations in Plutono.
+- **Green-Yellow-Red (by value)**: A continuous color scheme where Plutono will interpolate a color based on the value assigned to the green, yellow, and red components. The value must be within the min & max limits.
 - **Blue-Yellow-Red (by value)**: Same as above but different colors.
 - **Blues (by value)**: Same as above but color scheme go from panel background to blue.
 
 <div class="clearfix"></div>
 
-As you can see this adds new continuous color schemes where Grafana will interpolate colors. A great use of these new color schemes is the table panel where you can color the background and get a heatmap like effect.
+As you can see this adds new continuous color schemes where Plutono will interpolate colors. A great use of these new color schemes is the table panel where you can color the background and get a heatmap like effect.
 
 {{< figure src="/static/img/docs/v73/table_color_scheme.png" max-width="900px" caption="table color scheme" >}}
 
@@ -61,7 +61,7 @@ As this new option is a standard field option it works in every panel. Here is a
 
 In v7.0, we introduced a new table panel and inspect mode with Download CSV enabled. However, CSV export to Excel was removed. Due to a large number of inquiries and requests, this [community contribution from tomdaly](https://github.com/grafana/grafana/pull/27284) brought the feature back.
 
-For more information, refer to [Download raw query results as CSV]({{< relref "../panels/inspect-panel/#download-raw-query-results-as-csv" >}}) in the Grafana documentation.
+For more information, refer to [Download raw query results as CSV]({{< relref "../panels/inspect-panel/#download-raw-query-results-as-csv" >}}) in the Plutono documentation.
 
 ## Google Cloud monitoring out-of-the-box dashboards
 
@@ -83,21 +83,21 @@ This is an amazing new feature that was created in cooperation with one of our c
 
 ## SigV4 authentication for AWS users
 
-You can now configure your Elasticsearch data source to access your Amazon Elasticsearch Service domain directly from Grafana.
+You can now configure your Elasticsearch data source to access your Amazon Elasticsearch Service domain directly from Plutono.
 
 For more details, refer to the [Elasticsearch docs]({{<relref "../datasources/elasticsearch/#aws-signature-version-4-authentication">}}).
 
 ## Chaining pipeline aggregation in Elasticsearch
 
-Thanks to a contribution from a community member, it's now possible to chain multiple pipeline aggregations together and use the results of one pipeline aggregation as the input of another. This unleashes the full power of Elasticsearch's pipeline aggregations in Grafana, allowing users to perform high order derivatives or use a pipeline aggregation result as a variable for a Bucket Script Aggregation.
+Thanks to a contribution from a community member, it's now possible to chain multiple pipeline aggregations together and use the results of one pipeline aggregation as the input of another. This unleashes the full power of Elasticsearch's pipeline aggregations in Plutono, allowing users to perform high order derivatives or use a pipeline aggregation result as a variable for a Bucket Script Aggregation.
 
-## Grafana Enterprise features
+## Plutono Enterprise features
 
-These features are included in the Grafana Enterprise edition software.
+These features are included in the Plutono Enterprise edition software.
 
 ### Auditing
 
-Auditing tracks important changes to your Grafana instance to help you manage and mitigate suspicious activity and meet compliance requirements. Grafana logs events (as JSON) to file or directly to [loki](/oss/loki/).
+Auditing tracks important changes to your Plutono instance to help you manage and mitigate suspicious activity and meet compliance requirements. Plutono logs events (as JSON) to file or directly to [loki](/oss/loki/).
 
 Example of a login event:
 
@@ -109,7 +109,7 @@ Example of a login event:
     "orgId": 1,
     "isAnonymous": false
   },
-  "action": "login-grafana",
+  "action": "login-plutono",
   "result": {
     "statusType": "success",
     "statusCode": 200
@@ -117,7 +117,7 @@ Example of a login event:
   "requestUri": "/login",
   "ipAddress": "127.0.0.1:41324",
   "userAgent": "Chrome/86.0.4240.111",
-  "grafanaVersion": "7.3.0"
+  "plutonoVersion": "7.3.0"
 }
 ```
 
@@ -147,15 +147,15 @@ See [upgrade notes]({{< relref "../installation/upgrading.md" >}}).
 
 ## Changelog
 
-Check out [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md) for a complete list of new features, changes, and bug fixes.
+Check out [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md) for a complete list of new features, changes, and bug fixes.
 
 ## Patch release notes
 
-- [Grafana 7.3.0 release notes]({{< relref "../release-notes/release-notes-7-3-0.md" >}})
-- [Grafana 7.3.1 release notes]({{< relref "../release-notes/release-notes-7-3-1.md" >}})
-- [Grafana 7.3.2 release notes]({{< relref "../release-notes/release-notes-7-3-2.md" >}})
-- [Grafana 7.3.3 release notes]({{< relref "../release-notes/release-notes-7-3-3.md" >}})
-- [Grafana 7.3.4 release notes]({{< relref "../release-notes/release-notes-7-3-4.md" >}})
-- [Grafana 7.3.5 release notes]({{< relref "../release-notes/release-notes-7-3-5.md" >}})
-- [Grafana 7.3.6 release notes]({{< relref "../release-notes/release-notes-7-3-6.md" >}})
-- [Grafana 7.3.7 release notes]({{< relref "../release-notes/release-notes-7-3-7.md" >}})
+- [Plutono 7.3.0 release notes]({{< relref "../release-notes/release-notes-7-3-0.md" >}})
+- [Plutono 7.3.1 release notes]({{< relref "../release-notes/release-notes-7-3-1.md" >}})
+- [Plutono 7.3.2 release notes]({{< relref "../release-notes/release-notes-7-3-2.md" >}})
+- [Plutono 7.3.3 release notes]({{< relref "../release-notes/release-notes-7-3-3.md" >}})
+- [Plutono 7.3.4 release notes]({{< relref "../release-notes/release-notes-7-3-4.md" >}})
+- [Plutono 7.3.5 release notes]({{< relref "../release-notes/release-notes-7-3-5.md" >}})
+- [Plutono 7.3.6 release notes]({{< relref "../release-notes/release-notes-7-3-6.md" >}})
+- [Plutono 7.3.7 release notes]({{< relref "../release-notes/release-notes-7-3-7.md" >}})

@@ -1,7 +1,7 @@
 // Libraries
 import React, { PureComponent } from 'react';
 
-import { DataSourcePluginOptionsEditorProps } from '@grafana/data';
+import { DataSourcePluginOptionsEditorProps } from '@credativ/plutono-data';
 
 type Props = DataSourcePluginOptionsEditorProps<any>;
 

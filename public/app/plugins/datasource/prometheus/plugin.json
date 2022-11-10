@@ -17,8 +17,8 @@
     },
     {
       "type": "dashboard",
-      "name": "Grafana Stats",
-      "path": "dashboards/grafana_stats.json"
+      "name": "Plutono Stats",
+      "path": "dashboards/plutono_stats.json"
     }
   ],
   "metrics": true,

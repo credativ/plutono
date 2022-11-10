@@ -8,8 +8,8 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/util/errutil"
 	"github.com/jmespath/go-jmespath"
 )
 

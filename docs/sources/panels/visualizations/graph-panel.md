@@ -1,13 +1,13 @@
 +++
 title = "Graph panel"
-keywords = ["grafana", "graph panel", "documentation", "guide", "graph"]
-aliases = ["/docs/grafana/latest/reference/graph/", "/docs/grafana/latest/features/panels/graph/"]
+keywords = ["plutono", "graph panel", "documentation", "guide", "graph"]
+aliases = ["/docs/plutono/latest/reference/graph/", "/docs/plutono/latest/features/panels/graph/"]
 weight = 500
 +++
 
 # Graph panel
 
-This visualization is the most-used in the Grafana ecosystem. It can render as a line, a path of dots, or a series of bars. This type of graph is versatile enough to display almost any time-series data.
+This visualization is the most-used in the Plutono ecosystem. It can render as a line, a path of dots, or a series of bars. This type of graph is versatile enough to display almost any time-series data.
 
 ## Data and field options
 
@@ -41,16 +41,16 @@ Use these settings to refine your visualization.
   - **null -** (default) If there is a gap in the series, meaning a null value, then the line in the graph will be broken and show the gap.
   - **null as zero -** If there is a gap in the series, meaning  a null value, then it will be displayed as a zero value in the graph panel.
 
-> **Note:** If you are monitoring a server's CPU load and the load reaches 100%, then the server will lock up and the agent sending statistics will not be able to collect the load statistic. This leads to a gap in the metrics and having the default as _null_ means Grafana will show the gaps and indicate that something is wrong. If this is set to _connected_, then it would be easy to miss this signal.
+> **Note:** If you are monitoring a server's CPU load and the load reaches 100%, then the server will lock up and the agent sending statistics will not be able to collect the load statistic. This leads to a gap in the metrics and having the default as _null_ means Plutono will show the gaps and indicate that something is wrong. If this is set to _connected_, then it would be easy to miss this signal.
 
 ### Hover tooltip
 
 Use these settings to change the appearance of the tooltip that appears when you hover your cursor over the graph visualization.
 
 - **Mode**
-  - **All series -** The hover tooltip shows all series in the graph. Grafana highlights the series that you are hovering over in bold in the series list in the tooltip.
+  - **All series -** The hover tooltip shows all series in the graph. Plutono highlights the series that you are hovering over in bold in the series list in the tooltip.
   - **Single -** The hover tooltip shows only a single series, the one that you are hovering over on the graph.
-- **Sort order -** Sorts the order of series in the hover tooltip if you have selected **All series** mode. When you hover your cursor on a graph, Grafana displays the values associated with the lines. Generally users are most interested in the highest or lowest values. Sorting these values can make it much easier to find the data of interest.
+- **Sort order -** Sorts the order of series in the hover tooltip if you have selected **All series** mode. When you hover your cursor on a graph, Plutono displays the values associated with the lines. Generally users are most interested in the highest or lowest values. Sorting these values can make it much easier to find the data of interest.
   - **None -** The order of the series in the tooltip is determined by the sort order in your query. For example, they could be alphabetically sorted by series name.
   - **Increasing -** The series in the hover tooltip are sorted by value and in increasing order, with the lowest value at the top of the list.
   - **Decreasing -** The series in the hover tooltip are sorted by value and in decreasing order, with the highest value at the top of the list.
@@ -121,7 +121,7 @@ Options are identical for both Y-axes.
   - **Histogram -** Converts the graph into a histogram. A histogram is a kind of bar chart that groups numbers into ranges, often called buckets or bins. Taller bars show that more data falls in that range.
 
     For more information about histograms, refer to [Introduction to histograms and heatmaps]({{< relref "../../basics/intro-histograms.md" >}}).
-    - **Buckets -** The number of buckets to group the values by. If left empty, then Grafana tries to calculate a suitable number of buckets.
+    - **Buckets -** The number of buckets to group the values by. If left empty, then Plutono tries to calculate a suitable number of buckets.
     - **X-Min -** Filters out values from the histogram that are under this minimum limit.
     - **X-Max -** Filters out values that are greater than this maximum limit.
 
@@ -147,9 +147,9 @@ Additional values can be shown along-side the legend names:
 - **Total -** Sum of all values returned from the metric query.
 - **Decimals -** Controls how many decimals are displayed for legend values and graph hover tooltips.
 
-The legend values are calculated on the client side by Grafana and depend on what type of aggregation or point consolidation your metric query is using. All the above legend values cannot be correct at the same time.
+The legend values are calculated on the client side by Plutono and depend on what type of aggregation or point consolidation your metric query is using. All the above legend values cannot be correct at the same time.
 
-For example, if you plot a rate like requests/second, this is probably using average as an aggregator, then the Total in the legend will not represent the total number of requests. It is just the sum of all data points received by Grafana.
+For example, if you plot a rate like requests/second, this is probably using average as an aggregator, then the Total in the legend will not represent the total number of requests. It is just the sum of all data points received by Plutono.
 
 ### Hide series
 

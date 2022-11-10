@@ -4,7 +4,7 @@ RELEASE_TYPE="${1:-}"
 GPG_PASS="${2:-}"
 RELEASE_TAG="${3:-}"
 DIST_PATH="${4:-}"
-GCP_REPO_BUCKET="${5:-grafana-repo}"
+GCP_REPO_BUCKET="${5:-plutono-repo}"
 
 REPO="rpm"
 
@@ -34,7 +34,7 @@ gsutil -m rsync -r "$BUCKET" /rpm-repo
 
 # Add the new release to the repo
 cp "$DIST_PATH"/*.rpm /rpm-repo # adds to many files for enterprise
-rm /rpm-repo/grafana-latest-1*.rpm || true
+rm /rpm-repo/plutono-latest-1*.rpm || true
 createrepo /rpm-repo
 
 # Setup signing and sign the repo
@@ -46,8 +46,8 @@ rm /rpm-repo/repodata/repomd.xml.asc || true
 ./scripts/build/update_repo/sign-rpm-repo.sh "$GPG_PASS"
 
 # usage:
-# [grafana]
-# name=grafana
+# [plutono]
+# name=plutono
 # baseurl=https://packages.grafana.com/oss/rpm
 # repo_gpgcheck=1
 # enabled=1

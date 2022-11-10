@@ -1,8 +1,8 @@
 import React, { FC, MouseEvent, useCallback } from 'react';
 
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { css } from 'emotion';
-import { useStyles } from '@grafana/ui';
+import { useStyles } from '@credativ/plutono-ui';
 
 import { TagBadge } from '../../../core/components/TagFilter/TagBadge';
 
@@ -39,7 +39,7 @@ export const AnnotationListItemTags: FC<Props> = ({ tags, remove, onClick }) => 
   );
 };
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: PlutonoTheme) {
   return {
     pointer: css`
       label: pointer;

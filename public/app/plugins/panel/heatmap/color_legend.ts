@@ -5,7 +5,7 @@ import { contextSrv } from 'app/core/core';
 import { tickStep } from 'app/core/utils/ticks';
 import { getColorScale, getOpacityScale } from './color_scale';
 import coreModule from 'app/core/core_module';
-import { PanelEvents, getColorForTheme } from '@grafana/data';
+import { PanelEvents, getColorForTheme } from '@credativ/plutono-data';
 import { config } from 'app/core/config';
 
 const LEGEND_HEIGHT_PX = 6;

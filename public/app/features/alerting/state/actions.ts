@@ -5,8 +5,8 @@ import {
   base64StringToArrowTable,
   DataSourceApi,
   dateMath,
-} from '@grafana/data';
-import { config, getBackendSrv, getDataSourceSrv } from '@grafana/runtime';
+} from '@credativ/plutono-data';
+import { config, getBackendSrv, getDataSourceSrv } from '@credativ/plutono-runtime';
 import { appEvents } from 'app/core/core';
 import { updateLocation } from 'app/core/actions';
 import store from 'app/core/store';

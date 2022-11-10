@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { cx } from 'emotion';
-import { DataLink, PanelData } from '@grafana/data';
-import { Icon } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { DataLink, PanelData } from '@credativ/plutono-data';
+import { Icon } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import PanelHeaderCorner from './PanelHeaderCorner';
 import { DashboardModel } from 'app/features/dashboard/state/DashboardModel';

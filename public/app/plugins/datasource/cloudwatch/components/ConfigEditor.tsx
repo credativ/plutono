@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useState } from 'react';
-import { Input, InlineField } from '@grafana/ui';
-import { DataSourcePluginOptionsEditorProps, onUpdateDatasourceJsonDataOption } from '@grafana/data';
-import { ConnectionConfig } from '@grafana/aws-sdk';
+import { Input, InlineField } from '@credativ/plutono-ui';
+import { DataSourcePluginOptionsEditorProps, onUpdateDatasourceJsonDataOption } from '@credativ/plutono-data';
+import { ConnectionConfig } from '@credativ/plutono-aws-sdk';
 
 import { getDatasourceSrv } from 'app/features/plugins/datasource_srv';
 import { store } from 'app/store/store';
@@ -26,14 +26,14 @@ export const ConfigEditor: FC<Props> = (props: Props) => {
       .then((datasource: CloudWatchDatasource) => setDatasource(datasource));
 
     if (props.options.jsonData.authType === 'arn') {
-      addWarning('Since grafana 7.3 authentication type "arn" is deprecated, falling back to default SDK provider');
+      addWarning('Since plutono 7.3 authentication type "arn" is deprecated, falling back to default SDK provider');
     } else if (
       props.options.jsonData.authType === 'credentials' &&
       !props.options.jsonData.profile &&
       !props.options.jsonData.database
     ) {
       addWarning(
-        'As of grafana 7.3 authentication type "credentials" should be used only for shared file credentials. \
+        'As of plutono 7.3 authentication type "credentials" should be used only for shared file credentials. \
              If you don\'t have a credentials file, switch to the default SDK provider for extracting credentials \
              from environment variables or IAM roles'
       );

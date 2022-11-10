@@ -13,7 +13,7 @@ and sensor names in your metric queries, you can use variables in their place. V
 the dashboard. These dropdowns make it easy to change the data being displayed in your dashboard.
 {{< figure src="/static/img/docs/v50/variables_dashboard.png" >}}
 
-These can be especially useful for administrators who want to allow Grafana viewers to quickly adjust visualizations but do not want to give them full editing permissions. Grafana Viewers can use variables.
+These can be especially useful for administrators who want to allow Plutono viewers to quickly adjust visualizations but do not want to give them full editing permissions. Plutono Viewers can use variables.
 
 Variables and templates also allow you to single-source dashboards. If you have multiple identical data sources or servers, you can make one dashboard and use variables to change what you are viewing. This simplifies maintenance and upkeep enormously.
 

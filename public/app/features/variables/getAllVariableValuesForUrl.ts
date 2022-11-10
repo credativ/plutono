@@ -1,5 +1,5 @@
-import { ScopedVars } from '@grafana/data';
-import { getTemplateSrv } from '@grafana/runtime';
+import { ScopedVars } from '@credativ/plutono-data';
+import { getTemplateSrv } from '@credativ/plutono-runtime';
 import { variableAdapters } from './adapters';
 
 export function getAllVariableValuesForUrl(scopedVars?: ScopedVars) {

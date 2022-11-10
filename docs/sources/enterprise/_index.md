@@ -1,25 +1,25 @@
 +++
-title = "Grafana Enterprise"
-description = "Grafana Enterprise overview"
-keywords = ["grafana", "documentation", "datasource", "permissions", "ldap", "licensing", "enterprise", "insights", "reporting"]
+title = "Plutono Enterprise"
+description = "Plutono Enterprise overview"
+keywords = ["plutono", "documentation", "datasource", "permissions", "ldap", "licensing", "enterprise", "insights", "reporting"]
 weight = 150
 +++
 
-# Grafana Enterprise
+# Plutono Enterprise
 
-Grafana Enterprise is a commercial edition of Grafana that includes additional features not found in the open source version.
+Plutono Enterprise is a commercial edition of Plutono that includes additional features not found in the open source version.
 
-Building on everything you already know and love about Grafana open source, Grafana Enterprise includes [exclusive datasource plugins]({{< relref "#enterprise-plugins">}}) and [additional features]({{< relref "#enterprise-features">}}). On top of that you get 24x7x365 support and training from the core Grafana team.
+Building on everything you already know and love about Plutono open source, Plutono Enterprise includes [exclusive datasource plugins]({{< relref "#enterprise-plugins">}}) and [additional features]({{< relref "#enterprise-features">}}). On top of that you get 24x7x365 support and training from the core Plutono team.
 
-To learn more about Grafana Enterprise, refer to [our product page.](https://grafana.com/enterprise)
+To learn more about Plutono Enterprise, refer to [our product page.](https://grafana.com/enterprise)
 
 ## Authentication
 
-Grafana Enterprise includes integrations with more ways to authenticate your users and enhanced authentication capabilities.
+Plutono Enterprise includes integrations with more ways to authenticate your users and enhanced authentication capabilities.
 
 ### Team sync
 
-[Team sync]({{< relref "team-sync.md" >}}) allows you to set up synchronization between teams in Grafana and teams in your auth provider so that your users automatically end up in the right team.
+[Team sync]({{< relref "team-sync.md" >}}) allows you to set up synchronization between teams in Plutono and teams in your auth provider so that your users automatically end up in the right team.
 
 Supported auth providers:
 
@@ -33,45 +33,45 @@ Supported auth providers:
 
 ### Enhanced LDAP integration
 
-With Grafana Enterprise [enhanced LDAP]({{< relref "enhanced_ldap.md" >}}), you can set up active LDAP synchronization.
+With Plutono Enterprise [enhanced LDAP]({{< relref "enhanced_ldap.md" >}}), you can set up active LDAP synchronization.
 
 ### SAML authentication
 
-[SAML authentication]({{< relref "saml.md" >}}) enables your Grafana Enterprise users to authenticate with SAML.
+[SAML authentication]({{< relref "saml.md" >}}) enables your Plutono Enterprise users to authenticate with SAML.
 
 ## Enterprise features
 
-With Grafana Enterprise, you get access to new features, including:
+With Plutono Enterprise, you get access to new features, including:
 
 - [Data source permissions]({{< relref "datasource_permissions.md" >}}) to restrict query access to specific teams and users.
-- [Data source query caching]({{< relref "query-caching.md" >}}) to temporarily store query results in Grafana to reduce data source load and rate limiting.
+- [Data source query caching]({{< relref "query-caching.md" >}}) to temporarily store query results in Plutono to reduce data source load and rate limiting.
 - [Reporting]({{< relref "reporting.md" >}}) to generate a PDF report from any dashboard and set up a schedule to have it emailed to whoever you choose.
 - [Export dashboard as PDF]({{< relref "export-pdf.md" >}})
-- [White labeling]({{< relref "white-labeling.md" >}}) to customize Grafana from the brand and logo to the footer links.
-- [Usage insights]({{< relref "usage-insights/_index.md" >}}) to understand how your Grafana instance is used.
+- [White labeling]({{< relref "white-labeling.md" >}}) to customize Plutono from the brand and logo to the footer links.
+- [Usage insights]({{< relref "usage-insights/_index.md" >}}) to understand how your Plutono instance is used.
 - [Vault integration]({{< relref "vault.md" >}}) to manage your configuration or provisioning secrets with Vault.
-- [Auditing]({{< relref "auditing.md" >}}) tracks important changes to your Grafana instance to help you manage and mitigate suspicious activity and meet compliance requirements.
-- [Request security]({{< relref "request-security.md" >}}) makes it possible to restrict outgoing requests from the Grafana server.
+- [Auditing]({{< relref "auditing.md" >}}) tracks important changes to your Plutono instance to help you manage and mitigate suspicious activity and meet compliance requirements.
+- [Request security]({{< relref "request-security.md" >}}) makes it possible to restrict outgoing requests from the Plutono server.
 
 ## Enterprise data sources
 
-With a Grafana Enterprise license, you get access to premium data sources, including:
+With a Plutono Enterprise license, you get access to premium data sources, including:
 
 - [AppDynamics](https://grafana.com/plugins/dlopes7-appdynamics-datasource)
-- [DataDog](https://grafana.com/plugins/grafana-datadog-datasource)
-- [Dynatrace](https://grafana.com/plugins/grafana-dynatrace-datasource)
-- [Gitlab](https://grafana.com/grafana/plugins/grafana-gitlab-datasource)
-- [Jira](https://grafana.com/grafana/plugins/grafana-jira-datasource)
-- [MongoDB](https://grafana.com/grafana/plugins/grafana-mongodb-datasource)
-- [New Relic](https://grafana.com/plugins/grafana-newrelic-datasource)
-- [Oracle Database](https://grafana.com/plugins/grafana-oracle-datasource)
-- [ServiceNow](https://grafana.com/grafana/plugins/grafana-servicenow-datasource)
-- [Snowflake](https://grafana.com/grafana/plugins/grafana-snowflake-datasource)
-- [Splunk](https://grafana.com/plugins/grafana-splunk-datasource)
-- [Splunk Infrastructure monitoring (SignalFx)](https://grafana.com/grafana/plugins/grafana-splunk-monitoring-datasource)
-- [Wavefront](https://grafana.com/grafana/plugins/grafana-wavefront-datasource)
+- [DataDog](https://grafana.com/plugins/plutono-datadog-datasource)
+- [Dynatrace](https://grafana.com/plugins/plutono-dynatrace-datasource)
+- [Gitlab](https://grafana.com/grafana/plugins/plutono-gitlab-datasource)
+- [Jira](https://grafana.com/grafana/plugins/plutono-jira-datasource)
+- [MongoDB](https://grafana.com/grafana/plugins/plutono-mongodb-datasource)
+- [New Relic](https://grafana.com/plugins/plutono-newrelic-datasource)
+- [Oracle Database](https://grafana.com/plugins/plutono-oracle-datasource)
+- [ServiceNow](https://grafana.com/grafana/plugins/plutono-servicenow-datasource)
+- [Snowflake](https://grafana.com/grafana/plugins/plutono-snowflake-datasource)
+- [Splunk](https://grafana.com/plugins/plutono-splunk-datasource)
+- [Splunk Infrastructure monitoring (SignalFx)](https://grafana.com/grafana/plugins/plutono-splunk-monitoring-datasource)
+- [Wavefront](https://grafana.com/grafana/plugins/plutono-wavefront-datasource)
 
-## Try Grafana Enterprise
+## Try Plutono Enterprise
 
-To purchase or obtain a trial license contact the Grafana Labs [Sales Team](https://grafana.com/contact?about=support&topic=Grafana%20Enterprise).
+To purchase or obtain a trial license contact the Grafana Labs [Sales Team](https://grafana.com/contact?about=support&topic=Plutono%20Enterprise).
 

@@ -1,7 +1,7 @@
 import LanguageProvider from './language_provider';
 import { PromQuery } from '../prometheus/types';
 import { ElasticDatasource } from './datasource';
-import { DataSourceInstanceSettings } from '@grafana/data';
+import { DataSourceInstanceSettings } from '@credativ/plutono-data';
 import { ElasticsearchOptions, ElasticsearchQuery } from './types';
 import { TemplateSrv } from '../../../features/templating/template_srv';
 import { defaultBucketAgg } from './query_def';

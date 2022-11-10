@@ -2,8 +2,8 @@ import _ from 'lodash';
 import queryPart from './query_part';
 import kbn from 'app/core/utils/kbn';
 import { InfluxQuery, InfluxQueryTag } from './types';
-import { ScopedVars } from '@grafana/data';
-import { TemplateSrv } from '@grafana/runtime';
+import { ScopedVars } from '@credativ/plutono-data';
+import { TemplateSrv } from '@credativ/plutono-runtime';
 
 export default class InfluxQueryModel {
   target: InfluxQuery;

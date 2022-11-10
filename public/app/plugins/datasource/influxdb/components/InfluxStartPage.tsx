@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { QueryEditorHelpProps } from '@grafana/data';
+import { QueryEditorHelpProps } from '@credativ/plutono-data';
 import InfluxCheatSheet from './InfluxCheatSheet';
 
 export default class InfluxStartPage extends PureComponent<QueryEditorHelpProps> {

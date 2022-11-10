@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { css } from 'emotion';
-import { Button, DataLinkInput, stylesFactory, LegacyForms } from '@grafana/ui';
-import { VariableSuggestion } from '@grafana/data';
+import { Button, DataLinkInput, stylesFactory, LegacyForms } from '@credativ/plutono-ui';
+import { VariableSuggestion } from '@credativ/plutono-data';
 import { DerivedFieldConfig } from '../types';
 import { DataSourcePicker } from 'app/core/components/Select/DataSourcePicker';
 import { usePrevious } from 'react-use';

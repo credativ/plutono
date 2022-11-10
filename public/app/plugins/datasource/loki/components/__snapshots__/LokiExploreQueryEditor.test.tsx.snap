@@ -5,7 +5,7 @@ exports[`LokiExploreQueryEditor should render component 1`] = `
   data={
     Object {
       "request": Object {
-        "app": "Grafana",
+        "app": "Plutono",
         "dashboardId": 1,
         "interval": "1s",
         "intervalMs": 1000,

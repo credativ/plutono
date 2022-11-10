@@ -2,8 +2,8 @@ import _ from 'lodash';
 import React, { Component } from 'react';
 
 import { CloudWatchLogsQuery } from '../types';
-import { PanelData } from '@grafana/data';
-import { Icon } from '@grafana/ui';
+import { PanelData } from '@credativ/plutono-data';
+import { Icon } from '@credativ/plutono-ui';
 import { encodeUrl, AwsUrl } from '../aws_url';
 import { CloudWatchDatasource } from '../datasource';
 

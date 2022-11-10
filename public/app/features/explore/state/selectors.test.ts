@@ -1,5 +1,5 @@
 import { deduplicatedRowsSelector } from './selectors';
-import { LogLevel, LogsDedupStrategy } from '@grafana/data';
+import { LogLevel, LogsDedupStrategy } from '@credativ/plutono-data';
 import { ExploreItemState } from 'app/types';
 
 const state: any = {

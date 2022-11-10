@@ -1,12 +1,12 @@
 # Services
 
-A Grafana _service_ encapsulates and exposes application logic to the rest of the application, through a set of related operations. 
+A Plutono _service_ encapsulates and exposes application logic to the rest of the application, through a set of related operations. 
 
-Before a service can start communicating with the rest of Grafana, it needs to be registered in the _service registry_.
+Before a service can start communicating with the rest of Plutono, it needs to be registered in the _service registry_.
 
-The service registry keeps track of all available services during runtime. On start-up, Grafana uses the registry to build a dependency graph of services, a _service graph_.
+The service registry keeps track of all available services during runtime. On start-up, Plutono uses the registry to build a dependency graph of services, a _service graph_.
 
-Even though the services in Grafana do different things, they share a number of patterns. To better understand how a service works, let's build one from scratch!
+Even though the services in Plutono do different things, they share a number of patterns. To better understand how a service works, let's build one from scratch!
 
 ## Create a service
 
@@ -15,7 +15,7 @@ To start building a service:
 - Create a new Go package `mysvc` in the [pkg/services](/pkg/services) directory.
 - Create a `service.go` file inside your new directory.
 
-All services need to implement the [Service](https://godoc.org/github.com/grafana/grafana/pkg/registry#Service) interface:
+All services need to implement the [Service](https://godoc.org/github.com/credativ/plutono/pkg/registry#Service) interface:
 
 ```go
 type MyService struct {
@@ -26,7 +26,7 @@ func (s *MyService) Init() error {
 }
 ```
 
-The `Init` method is used to initialize and configure the service to make it ready to use. Services that return an error halt Grafana's startup process and cause the error to be logged as it exits.
+The `Init` method is used to initialize and configure the service to make it ready to use. Services that return an error halt Plutono's startup process and cause the error to be logged as it exits.
 
 ## Register a service
 
@@ -43,12 +43,12 @@ func init() {
 `init` functions are only run whenever a package is imported, so we also need to import the package in the application. In the `server.go` file under `pkg/server`, import the package we just created:
 
 ```go
-import _ "github.com/grafana/grafana/pkg/services/mysvc"
+import _ "github.com/credativ/plutono/pkg/services/mysvc"
 ```
 
 ## Dependencies
 
-Grafana uses the [inject](https://github.com/facebookgo/inject) package to inject dependencies during runtime. 
+Plutono uses the [inject](https://github.com/facebookgo/inject) package to inject dependencies during runtime. 
 
 For example, to access the [bus](communication.md), add it to the `MyService` struct:
 

@@ -1,27 +1,27 @@
 +++
 title = "Vault"
 description = ""
-keywords = ["grafana", "vault", "configuration"]
+keywords = ["plutono", "vault", "configuration"]
 weight = 700
 +++
 
 # Vault integration
 
-> Only available in Grafana Enterprise v7.1+.
+> Only available in Plutono Enterprise v7.1+.
 
 If you manage your secrets with [Hashicorp Vault](https://www.hashicorp.com/products/vault), you can use them for [Configuration]({{< relref "../administration/configuration.md" >}})
 and [Provisioning]({{< relref "../administration/provisioning.md" >}}).
 
-> **Note:** If you have Grafana [set up for high availability]({{< relref "../administration/set-up-for-high-availability.md" >}}), then we advise not to use dynamic secrets for provisioning files.
-> Each Grafana instance is responsible for renewing its own leases. Your data source leases might expire when one of your Grafana servers shuts down.
+> **Note:** If you have Plutono [set up for high availability]({{< relref "../administration/set-up-for-high-availability.md" >}}), then we advise not to use dynamic secrets for provisioning files.
+> Each Plutono instance is responsible for renewing its own leases. Your data source leases might expire when one of your Plutono servers shuts down.
 
 ## Configuration
 
 Before using Vault, you need to activate it by providing a URL, authentication method (currently only token),
-and a token for your Vault service. Grafana automatically renews the service token if it is renewable and
+and a token for your Vault service. Plutono automatically renews the service token if it is renewable and
 set up with a limited lifetime.
 
-If you're using short-lived leases, then you can also configure how often Grafana should renew the lease and for how long. We recommend keeping the defaults unless you run into problems.
+If you're using short-lived leases, then you can also configure how often Plutono should renew the lease and for how long. We recommend keeping the defaults unless you run into problems.
 
 ```ini
 [keystore.vault]
@@ -62,31 +62,31 @@ The argument to Vault consists of three parts separated by a colon:
 - The second part specifies which secret should be accessed.
 - The third part specifies which field of that secret should be used.
 
-For example, if you place a Key/Value secret for the Grafana admin user in _secret/grafana/admin_defaults_
-the syntax for accessing it's _password_ field would be `$__vault{kv:secret/grafana/admin_defaults:password}`.
+For example, if you place a Key/Value secret for the Plutono admin user in _secret/plutono/admin_defaults_
+the syntax for accessing it's _password_ field would be `$__vault{kv:secret/plutono/admin_defaults:password}`.
 
 ### Secrets engines
 
 Vault supports many secrets engines which represents different methods for storing or generating secrets when requested by an
-authorized user. Grafana supports a subset of these which are most likely to be relevant for a Grafana installation.
+authorized user. Plutono supports a subset of these which are most likely to be relevant for a Plutono installation.
 
 #### Key/Value
 
-Grafana supports Vault's [K/V version 2](https://www.vaultproject.io/docs/secrets/kv/kv-v2) storage engine which
+Plutono supports Vault's [K/V version 2](https://www.vaultproject.io/docs/secrets/kv/kv-v2) storage engine which
 is used to store and retrieve arbitrary secrets as `kv`.
 
 ```ini
-$__vault{kv:secret/grafana/smtp:username}
+$__vault{kv:secret/plutono/smtp:username}
 ```
 
 #### Databases
 
 The Vault [databases secrets engines](https://www.vaultproject.io/docs/secrets/databases) is a family of
 secret engines which shares a similar syntax and grants the user dynamic access to a database.
-You can use this both for setting up Grafana's own database access and for provisioning data sources.
+You can use this both for setting up Plutono's own database access and for provisioning data sources.
 
 ```ini
-$__vault{database:database/creds/grafana:username}
+$__vault{database:database/creds/plutono:username}
 ```
 
 ### Examples
@@ -95,22 +95,22 @@ The following examples show you how to set your [configuration]({{< relref "../a
 
 #### Configuration
 
-The following is a partial example for using Vault to set up a Grafana configuration file's email and database credentials.
+The following is a partial example for using Vault to set up a Plutono configuration file's email and database credentials.
 Refer to [Configuration]({{< relref "../administration/configuration.md" >}}) for more information.
 
 ```ini
 [smtp]
 enabled = true
-host = $__vault{kv:secret/grafana/smtp:hostname}:587
-user = $__vault{kv:secret/grafana/smtp:username}
-password = $__vault{kv:secret/grafana/smtp:password}
+host = $__vault{kv:secret/plutono/smtp:hostname}:587
+user = $__vault{kv:secret/plutono/smtp:username}
+password = $__vault{kv:secret/plutono/smtp:password}
 
 [database]
 type = mysql
 host = mysqlhost:3306
-name = grafana
-user = $__vault{database:database/creds/grafana:username}
-password = $__vault{database:database/creds/grafana:password}
+name = plutono
+user = $__vault{database:database/creds/plutono:username}
+password = $__vault{database:database/creds/plutono:password}
 ```
 
 #### Provisioning

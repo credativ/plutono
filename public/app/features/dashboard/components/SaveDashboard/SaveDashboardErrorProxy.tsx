@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { Button, ConfirmModal, HorizontalGroup, Modal, stylesFactory, useTheme } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { Button, ConfirmModal, HorizontalGroup, Modal, stylesFactory, useTheme } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { css } from 'emotion';
 import { DashboardModel } from 'app/features/dashboard/state';
 import { useDashboardSave } from './useDashboardSave';
@@ -118,7 +118,7 @@ const isHandledError = (errorStatus: string) => {
   }
 };
 
-const getConfirmPluginDashboardSaveModalStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getConfirmPluginDashboardSaveModalStyles = stylesFactory((theme: PlutonoTheme) => ({
   modal: css`
     width: 500px;
   `,

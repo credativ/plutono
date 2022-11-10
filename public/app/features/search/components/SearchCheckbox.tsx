@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
 import { css } from 'emotion';
-import { Checkbox, stylesFactory } from '@grafana/ui';
+import { Checkbox, stylesFactory } from '@credativ/plutono-ui';
 
 interface Props {
   checked?: boolean;

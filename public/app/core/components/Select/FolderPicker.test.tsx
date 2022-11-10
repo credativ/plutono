@@ -2,8 +2,8 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { FolderPicker } from './FolderPicker';
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@credativ/plutono-runtime', () => ({
+  ...((jest.requireActual('@credativ/plutono-runtime') as unknown) as object),
   getBackendSrv: () => ({
     search: jest.fn(() => [
       { title: 'Dash 1', id: 'A' },

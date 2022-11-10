@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 func TestApiKeyGen(t *testing.T) {

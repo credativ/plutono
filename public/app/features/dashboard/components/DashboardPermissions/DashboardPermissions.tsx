@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
-import { Tooltip, Icon, Button } from '@grafana/ui';
+import { Tooltip, Icon, Button } from '@credativ/plutono-ui';
 import { SlideDown } from 'app/core/components/Animations/SlideDown';
 import { StoreState } from 'app/types';
 import { DashboardAcl, PermissionLevel, NewDashboardAclItem } from 'app/types/acl';

@@ -1,6 +1,6 @@
 import { ThunkAction, ThunkDispatch as GenericThunkDispatch } from 'redux-thunk';
 import { PayloadAction } from '@reduxjs/toolkit';
-import { NavIndex } from '@grafana/data';
+import { NavIndex } from '@credativ/plutono-data';
 
 import { LocationState } from './location';
 import { AlertDefinitionState, AlertRulesState, NotificationChannelState } from './alerting';

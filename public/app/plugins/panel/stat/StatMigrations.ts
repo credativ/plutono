@@ -1,7 +1,7 @@
-import { sharedSingleStatPanelChangedHandler, BigValueGraphMode, BigValueColorMode } from '@grafana/ui';
-import { PanelModel } from '@grafana/data';
+import { sharedSingleStatPanelChangedHandler, BigValueGraphMode, BigValueColorMode } from '@credativ/plutono-ui';
+import { PanelModel } from '@credativ/plutono-data';
 import { StatPanelOptions } from './types';
-import { BigValueTextMode } from '@grafana/ui/src/components/BigValue/BigValue';
+import { BigValueTextMode } from '@credativ/plutono-ui/src/components/BigValue/BigValue';
 
 // This is called when the panel changes from another panel
 export const statPanelChangedHandler = (

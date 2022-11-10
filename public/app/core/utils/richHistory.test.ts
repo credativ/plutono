@@ -11,7 +11,7 @@ import {
   SortOrder,
 } from './richHistory';
 import store from 'app/core/store';
-import { dateTime, DataQuery } from '@grafana/data';
+import { dateTime, DataQuery } from '@credativ/plutono-data';
 
 const mock: any = {
   storedHistory: [
@@ -39,7 +39,7 @@ const mock: any = {
   testStarred: false,
 };
 
-const key = 'grafana.explore.richHistory';
+const key = 'plutono.explore.richHistory';
 
 describe('addToRichHistory', () => {
   beforeEach(() => {

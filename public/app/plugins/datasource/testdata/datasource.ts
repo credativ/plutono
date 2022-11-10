@@ -14,7 +14,7 @@ import {
   LiveChannelScope,
   LoadingState,
   TimeRange,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { Scenario, TestDataQuery } from './types';
 import {
   DataSourceWithBackend,
@@ -23,7 +23,7 @@ import {
   getTemplateSrv,
   TemplateSrv,
   toDataQueryError,
-} from '@grafana/runtime';
+} from '@credativ/plutono-runtime';
 import { queryMetricTree } from './metricTree';
 import { runStream } from './runStreams';
 import { getSearchFilterScopedVar } from 'app/features/variables/utils';
@@ -53,13 +53,13 @@ export class TestDataDataSource extends DataSourceWithBackend<TestDataQuery> {
 
       switch (target.scenarioId) {
         case 'live':
-          streams.push(runGrafanaLiveQuery(target, options));
+          streams.push(runPlutonoLiveQuery(target, options));
           break;
         case 'streaming_client':
           streams.push(runStream(target, options));
           break;
-        case 'grafana_api':
-          streams.push(runGrafanaAPI(target, options));
+        case 'plutono_api':
+          streams.push(runPlutonoAPI(target, options));
           break;
         case 'arrow':
           streams.push(runArrowFile(target, options));
@@ -194,7 +194,7 @@ function runArrowFile(target: TestDataQuery, req: DataQueryRequest<TestDataQuery
   return of({ state: LoadingState.Done, data, key: req.requestId + target.refId });
 }
 
-function runGrafanaAPI(target: TestDataQuery, req: DataQueryRequest<TestDataQuery>): Observable<DataQueryResponse> {
+function runPlutonoAPI(target: TestDataQuery, req: DataQueryRequest<TestDataQuery>): Observable<DataQueryResponse> {
   const url = `/api/${target.stringInput}`;
   return from(
     getBackendSrv()
@@ -211,7 +211,7 @@ function runGrafanaAPI(target: TestDataQuery, req: DataQueryRequest<TestDataQuer
 
 let liveQueryCounter = 1000;
 
-function runGrafanaLiveQuery(
+function runPlutonoLiveQuery(
   target: TestDataQuery,
   req: DataQueryRequest<TestDataQuery>
 ): Observable<DataQueryResponse> {
@@ -220,7 +220,7 @@ function runGrafanaLiveQuery(
   }
   return getLiveMeasurementsObserver(
     {
-      scope: LiveChannelScope.Grafana,
+      scope: LiveChannelScope.Plutono,
       namespace: 'testdata',
       path: target.channel,
     },

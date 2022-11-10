@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
-import { Input } from '@grafana/ui';
-import { ValueMatcherID, BasicValueMatcherOptions } from '@grafana/data';
+import { Input } from '@credativ/plutono-ui';
+import { ValueMatcherID, BasicValueMatcherOptions } from '@credativ/plutono-data';
 import { ValueMatcherEditorConfig, ValueMatcherUIProps, ValueMatcherUIRegistryItem } from './types';
 import { convertToType } from './utils';
 

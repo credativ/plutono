@@ -5,7 +5,7 @@ weight = 300
 
 # Transformation types and options
 
-Grafana comes with the following transformations:
+Plutono comes with the following transformations:
 
 - [Transformation types and options](#transformation-types-and-options)
   - [Reduce](#reduce)
@@ -81,7 +81,7 @@ Query B:
 
 ## Merge
 
-> **Note:** This transformation is available in Grafana 7.1+.
+> **Note:** This transformation is available in Plutono 7.1+.
 
 Use this transformation to combine the result from multiple queries into one single result. This is helpful when using the table panel visualization. Values that can be merged are combined into the same row. Values are mergeable if the shared fields contain the same data. For information, refer to [Table panel]({{< relref "../visualizations/table/_index.md" >}}).
 
@@ -112,7 +112,7 @@ Here is the result after applying the Merge transformation.
 
 Use this transformation to remove portions of the query results.
 
-Grafana displays the **Identifier** field, followed by the fields returned by your query.
+Plutono displays the **Identifier** field, followed by the fields returned by your query.
 
 You can apply filters in one of two ways:
 
@@ -137,7 +137,7 @@ Here is the same query using a Stat visualization.
 
 Use this transformation in panels that have multiple queries, if you want to hide one or more of the queries.
 
-Grafana displays the query identification letters in dark gray text. Click a query identifier to toggle filtering. If the query letter is white, then the results are displayed. If the query letter is dark, then the results are hidden.
+Plutono displays the query identification letters in dark gray text. Click a query identifier to toggle filtering. If the query letter is white, then the results are displayed. If the query letter is dark, then the results are hidden.
 
 In the example below, the panel has three queries (A, B, C). I removed the B query from the visualization.
 
@@ -151,7 +151,7 @@ Use this transformation to rename, reorder, or hide fields returned by the query
 
 > **Note:** This transformation only works in panels with a single query. If your panel has multiple queries, then you must either apply an Outer join transformation or remove the extra queries.
 
-Grafana displays a list of fields returned by the query. You can:
+Plutono displays a list of fields returned by the query. You can:
 
 - Change field order by hovering your cursor over a field. The cursor turns into a hand and then you can drag the field to its new place.
 - Hide or show a field by clicking the eye icon next to the field name.
@@ -244,14 +244,14 @@ After merge:
 
 ## Sort by
 
-> **Note:** This transformation is available in Grafana 7.4+.
+> **Note:** This transformation is available in Plutono 7.4+.
 
 This transformation will sort each frame by the configured field, When `reverse` is checked, the values will return in
 the opposite order.
 
 ## Group by
 
-> **Note:** This transformation is available in Grafana 7.2+.
+> **Note:** This transformation is available in Plutono 7.2+.
 
 This transformation groups the data by a specified field (column) value and processes calculations on each group. Click to see a list of calculation choices. For information about available calculations, refer to the [List of calculations]({{< relref "../calculations-list.md" >}}).
 
@@ -311,7 +311,7 @@ This transformation allows you to extract some key information out of your time 
 
 ## Concatenate fields
 
-> **Note:** This transformation is available in Grafana 7.3+.
+> **Note:** This transformation is available in Plutono 7.3+.
 
 This transformation combines all fields from all frames into one result. Consider:
 
@@ -335,7 +335,7 @@ After you concatenate the fields, the data frame would be:
 
 ## Series to rows
 
-> **Note:** This transformation is available in Grafana 7.1+.
+> **Note:** This transformation is available in Plutono 7.1+.
 
 Use this transformation to combine the result from multiple time series data queries into one single result. This is helpful when using the table panel visualization.
 
@@ -372,9 +372,9 @@ Here is the result after applying the Series to rows transformation.
 
 ## Filter data by value
 
-> **Note:** This transformation is available in Grafana 7.4+.
+> **Note:** This transformation is available in Plutono 7.4+.
 
-This transformation allows you to filter your data directly in Grafana and remove some data points from your query result. You have the option to include or exclude data that match one or more conditions you define. The conditions are applied on a selected field.
+This transformation allows you to filter your data directly in Plutono and remove some data points from your query result. You have the option to include or exclude data that match one or more conditions you define. The conditions are applied on a selected field.
 
 This transformation is very useful if your data source does not natively filter by values. You might also use this to narrow values to display if you are using a shared query.
 
@@ -435,7 +435,7 @@ Conditions that are invalid or incompletely configured are ignored.
 
 ## Rename by regex
 
-> **Note:** This transformation is available in Grafana 7.4+.
+> **Note:** This transformation is available in Plutono 7.4+.
 
 Use this transformation to rename parts of the query results using a regular expression and replacement pattern.
 
@@ -451,7 +451,7 @@ With the transformation applied, you can see we are left with just the remainder
 
 ## Prepare time series
 
-> **Note:** This transformation is available in Grafana 7.5.10+ and Grafana 8.0.6+.
+> **Note:** This transformation is available in Plutono 7.5.10+ and Plutono 8.0.6+.
 
 Prepare time series transformation is useful when a data source returns time series data in a format that isn't supported by the panel you want to use. [Read more about the different data frame formats here]({{< relref "../../developers/plugins/data-frames.md" >}}).
 

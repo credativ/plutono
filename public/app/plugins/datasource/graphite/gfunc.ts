@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import { isVersionGtOrEq } from 'app/core/utils/version';
-import { InterpolateFunction } from '@grafana/data';
+import { InterpolateFunction } from '@credativ/plutono-data';
 
 const index: any = {};
 

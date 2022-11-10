@@ -4,8 +4,8 @@ import template from 'lodash/template';
 import config from 'app/core/config';
 import { angularMocks, sinon } from '../lib/common';
 import { PanelModel } from 'app/features/dashboard/state/PanelModel';
-import { RawTimeRange, PanelPluginMeta, dateMath } from '@grafana/data';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { RawTimeRange, PanelPluginMeta, dateMath } from '@credativ/plutono-data';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 
 export function ControllerTestContext(this: any) {
   const self = this;
@@ -45,7 +45,7 @@ export function ControllerTestContext(this: any) {
   };
 
   this.createPanelController = (Ctrl: any) => {
-    return angularMocks.inject(($controller: any, $rootScope: GrafanaRootScope, $location: any, $browser: any) => {
+    return angularMocks.inject(($controller: any, $rootScope: PlutonoRootScope, $location: any, $browser: any) => {
       self.scope = $rootScope.$new();
       self.$location = $location;
       self.$browser = $browser;
@@ -77,7 +77,7 @@ export function ControllerTestContext(this: any) {
   };
 
   this.createControllerPhase = (controllerName: string) => {
-    return angularMocks.inject(($controller: any, $rootScope: GrafanaRootScope, $location: any, $browser: any) => {
+    return angularMocks.inject(($controller: any, $rootScope: PlutonoRootScope, $location: any, $browser: any) => {
       self.scope = $rootScope.$new();
       self.$location = $location;
       self.$browser = $browser;
@@ -126,7 +126,7 @@ export function ServiceTestContext(this: any) {
   this.createService = (name: string) => {
     // @ts-ignore
     return angularMocks.inject(
-      ($rootScope: GrafanaRootScope, $httpBackend: any, $injector: any, $location: any, $timeout: any) => {
+      ($rootScope: PlutonoRootScope, $httpBackend: any, $injector: any, $location: any, $timeout: any) => {
         self.$rootScope = $rootScope;
         self.$httpBackend = $httpBackend;
         self.$location = $location;
@@ -170,7 +170,7 @@ export class TimeSrvStub {
 }
 
 export class ContextSrvStub {
-  isGrafanaVisible = jest.fn();
+  isPlutonoVisible = jest.fn();
 
   getValidInterval() {
     return '10s';
@@ -201,7 +201,7 @@ export function TemplateSrvStub(this: any) {
   this.highlightVariablesAsHtml = (str: string) => {
     return str;
   };
-  this.setGrafanaVariable = function (name: string, value: string) {
+  this.setPlutonoVariable = function (name: string, value: string) {
     this.data[name] = value;
   };
 }

@@ -6,7 +6,7 @@ weight = 300
 
 # Apply transformations
 
-You can apply transformations from the Transform tab of the Grafana panel editor, which is located next to the Queries tab. See also, [Debug  transformations](#debug-transformations).
+You can apply transformations from the Transform tab of the Plutono panel editor, which is located next to the Queries tab. See also, [Debug  transformations](#debug-transformations).
 
 To apply a transformation:
 
@@ -30,5 +30,5 @@ To remove a transformation that is no longer needed, click the trash can icon.
 ## Debug transformations
 
 To see the input and the output result sets of the transformation, click the bug icon on the right side of the transformation row
-Grafana displays the transformation debug view below the transformation row.
+Plutono displays the transformation debug view below the transformation row.
 {{< figure src="/static/img/docs/transformations/debug-transformations-7-0.png" class="docs-image--no-shadow" max-width= "1100px" >}}

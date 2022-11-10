@@ -1,6 +1,6 @@
 import React from 'react';
-import { DataTransformerID, standardTransformers, TransformerRegistryItem, TransformerUIProps } from '@grafana/data';
-import { SeriesToRowsTransformerOptions } from '@grafana/data/src/transformations/transformers/seriesToRows';
+import { DataTransformerID, standardTransformers, TransformerRegistryItem, TransformerUIProps } from '@credativ/plutono-data';
+import { SeriesToRowsTransformerOptions } from '@credativ/plutono-data/src/transformations/transformers/seriesToRows';
 
 export const SeriesToRowsTransformerEditor: React.FC<TransformerUIProps<SeriesToRowsTransformerOptions>> = ({
   input,

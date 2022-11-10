@@ -1,10 +1,10 @@
 import React, { FC } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
-import { config } from '@grafana/runtime';
-import { LoadingPlaceholder } from '@grafana/ui';
+import { config } from '@credativ/plutono-runtime';
+import { LoadingPlaceholder } from '@credativ/plutono-ui';
 import { UserDTO, Team, UserOrg, UserSession, StoreState } from 'app/types';
-import { NavModel } from '@grafana/data';
+import { NavModel } from '@credativ/plutono-data';
 import { getNavModel } from 'app/core/selectors/navModel';
 import { UserProvider, UserAPI, LoadingStates } from 'app/core/utils/UserProvider';
 import Page from 'app/core/components/Page/Page';

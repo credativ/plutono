@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Button, Tooltip, Icon, Form, Input, Field, FieldSet } from '@grafana/ui';
+import { Button, Tooltip, Icon, Form, Input, Field, FieldSet } from '@credativ/plutono-ui';
 import { UserDTO } from 'app/types';
 import config from 'app/core/config';
 import { ProfileUpdateFields } from 'app/core/utils/UserProvider';

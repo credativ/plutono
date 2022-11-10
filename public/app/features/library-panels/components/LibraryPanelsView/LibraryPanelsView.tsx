@@ -1,8 +1,8 @@
 import React, { FormEvent, useMemo, useReducer } from 'react';
 import { useDebounce } from 'react-use';
 import { css, cx } from 'emotion';
-import { Button, Icon, Input, Pagination, stylesFactory, useStyles } from '@grafana/ui';
-import { DateTimeInput, GrafanaTheme, LoadingState } from '@grafana/data';
+import { Button, Icon, Input, Pagination, stylesFactory, useStyles } from '@credativ/plutono-ui';
+import { DateTimeInput, PlutonoTheme, LoadingState } from '@credativ/plutono-data';
 
 import { LibraryPanelCard } from '../LibraryPanelCard/LibraryPanelCard';
 import { LibraryPanelDTO } from '../../types';
@@ -100,7 +100,7 @@ export const LibraryPanelsView: React.FC<LibraryPanelViewProps> = ({
   );
 };
 
-const getPanelViewStyles = stylesFactory((theme: GrafanaTheme) => {
+const getPanelViewStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     container: css`
       display: flex;

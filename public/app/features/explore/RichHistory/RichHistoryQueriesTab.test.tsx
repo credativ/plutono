@@ -3,7 +3,7 @@ import { mount } from 'enzyme';
 import { ExploreId } from '../../../types/explore';
 import { SortOrder } from 'app/core/utils/richHistory';
 import { RichHistoryQueriesTab, Props } from './RichHistoryQueriesTab';
-import { RangeSlider } from '@grafana/ui';
+import { RangeSlider } from '@credativ/plutono-ui';
 
 jest.mock('../state/selectors', () => ({ getExploreDatasources: jest.fn() }));
 

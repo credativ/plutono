@@ -1,7 +1,7 @@
 # ldap-admin
-dn: cn=ldap-admin,ou=users,dc=grafana,dc=org
+dn: cn=ldap-admin,ou=users,dc=plutono,dc=org
 mail: ldap-admin@grafana.com
-userPassword: grafana
+userPassword: plutono
 objectClass: person
 objectClass: top
 objectClass: inetOrgPerson
@@ -9,9 +9,9 @@ objectClass: organizationalPerson
 sn: ldap-admin
 cn: ldap-admin
 
-dn: cn=ldap-editor,ou=users,dc=grafana,dc=org
+dn: cn=ldap-editor,ou=users,dc=plutono,dc=org
 mail: ldap-editor@grafana.com
-userPassword: grafana
+userPassword: plutono
 objectClass: person
 objectClass: top
 objectClass: inetOrgPerson
@@ -19,9 +19,9 @@ objectClass: organizationalPerson
 sn: ldap-editor
 cn: ldap-editor
 
-dn: cn=ldap-viewer,ou=users,dc=grafana,dc=org
+dn: cn=ldap-viewer,ou=users,dc=plutono,dc=org
 mail: ldap-viewer@grafana.com
-userPassword: grafana
+userPassword: plutono
 objectClass: person
 objectClass: top
 objectClass: inetOrgPerson
@@ -29,9 +29,9 @@ objectClass: organizationalPerson
 sn: ldap-viewer
 cn: ldap-viewer
 
-dn: cn=ldap-carl,ou=users,dc=grafana,dc=org
+dn: cn=ldap-carl,ou=users,dc=plutono,dc=org
 mail: ldap-carl@grafana.com
-userPassword: grafana
+userPassword: plutono
 objectClass: person
 objectClass: top
 objectClass: inetOrgPerson
@@ -39,9 +39,9 @@ objectClass: organizationalPerson
 sn: ldap-carl
 cn: ldap-carl
 
-dn: cn=ldap-daniel,ou=users,dc=grafana,dc=org
+dn: cn=ldap-daniel,ou=users,dc=plutono,dc=org
 mail: ldap-daniel@grafana.com
-userPassword: grafana
+userPassword: plutono
 objectClass: person
 objectClass: top
 objectClass: inetOrgPerson
@@ -49,9 +49,9 @@ objectClass: organizationalPerson
 sn: ldap-daniel
 cn: ldap-daniel
 
-dn: cn=ldap-leo,ou=users,dc=grafana,dc=org
+dn: cn=ldap-leo,ou=users,dc=plutono,dc=org
 mail: ldap-leo@grafana.com
-userPassword: grafana
+userPassword: plutono
 objectClass: person
 objectClass: top
 objectClass: inetOrgPerson
@@ -59,9 +59,9 @@ objectClass: organizationalPerson
 sn: ldap-leo
 cn: ldap-leo
 
-dn: cn=ldap-tobias,ou=users,dc=grafana,dc=org
+dn: cn=ldap-tobias,ou=users,dc=plutono,dc=org
 mail: ldap-tobias@grafana.com
-userPassword: grafana
+userPassword: plutono
 objectClass: person
 objectClass: top
 objectClass: inetOrgPerson
@@ -69,9 +69,9 @@ objectClass: organizationalPerson
 sn: ldap-tobias
 cn: ldap-tobias
 
-dn: cn=ldap-torkel,ou=users,dc=grafana,dc=org
+dn: cn=ldap-torkel,ou=users,dc=plutono,dc=org
 mail: ldap-torkel@grafana.com
-userPassword: grafana
+userPassword: plutono
 objectClass: person
 objectClass: top
 objectClass: inetOrgPerson
@@ -80,9 +80,9 @@ sn: ldap-torkel
 cn: ldap-torkel
 
 # admin for posix group (without support for memberOf attribute)
-dn: uid=ldap-posix-admin,ou=users,dc=grafana,dc=org
+dn: uid=ldap-posix-admin,ou=users,dc=plutono,dc=org
 mail: ldap-posix-admin@grafana.com
-userPassword: grafana
+userPassword: plutono
 objectclass: top
 objectclass: posixAccount
 objectclass: inetOrgPerson
@@ -94,9 +94,9 @@ uidnumber: 1
 gidnumber: 1
 
 # user for posix group (without support for memberOf attribute)
-dn: uid=ldap-posix,ou=users,dc=grafana,dc=org
+dn: uid=ldap-posix,ou=users,dc=plutono,dc=org
 mail: ldap-posix@grafana.com
-userPassword: grafana
+userPassword: plutono
 objectclass: top
 objectclass: posixAccount
 objectclass: inetOrgPerson

@@ -1,25 +1,25 @@
 +++
 title = "Add authentication for data source plugins"
-aliases = ["/docs/grafana/latest/plugins/developing/auth-for-datasources/", "/docs/grafana/latest/developers/plugins/authentication/"]
+aliases = ["/docs/plutono/latest/plugins/developing/auth-for-datasources/", "/docs/plutono/latest/developers/plugins/authentication/"]
 +++
 
 # Add authentication for data source plugins
 
-This page explains how to use the Grafana data source proxy to authenticate against a third-party API from a data source plugin.
+This page explains how to use the Plutono data source proxy to authenticate against a third-party API from a data source plugin.
 
-When a user saves a password or any other sensitive data as a data source option, Grafana encrypts the data and stores it in the Grafana database. Any encrypted data source options can only be decrypted on the Grafana server. This means that any data source that makes authenticated queries needs to request the decrypted data to be sent to the browser.
+When a user saves a password or any other sensitive data as a data source option, Plutono encrypts the data and stores it in the Plutono database. Any encrypted data source options can only be decrypted on the Plutono server. This means that any data source that makes authenticated queries needs to request the decrypted data to be sent to the browser.
 
-To minimize the amount of sensitive information sent to and from the browser, data source plugins can use the Grafana _data source proxy_. When using the data source proxy, any requests containing sensitive information go through the Grafana server. No sensitive data is sent to the browser after the data is saved.
+To minimize the amount of sensitive information sent to and from the browser, data source plugins can use the Plutono _data source proxy_. When using the data source proxy, any requests containing sensitive information go through the Plutono server. No sensitive data is sent to the browser after the data is saved.
 
 Some data sources, like [Prometheus]({{< relref "../../datasources/prometheus.md" >}}) and [InfluxDB]({{< relref "../../datasources/influxdb" >}}), allow users to configure whether to use the data source proxy, through a setting called _access modes_.
 
 ## Add a proxy route to your plugin
 
-To forward requests through the Grafana proxy, you need to configure one or more _routes_. A route specifies how the proxy transforms outgoing requests. All routes for a given plugin are defined in the [plugin.json]({{< relref "metadata.md" >}}) file.
+To forward requests through the Plutono proxy, you need to configure one or more _routes_. A route specifies how the proxy transforms outgoing requests. All routes for a given plugin are defined in the [plugin.json]({{< relref "metadata.md" >}}) file.
 
 Let's add a route to proxy requests to `https://api.example.com/foo/bar`.
 
-1. Add the route to `plugin.json`. Note that you need to reload the Grafana server every time you make a change to your `plugin.json` file.
+1. Add the route to `plugin.json`. Note that you need to reload the Plutono server every time you make a change to your `plugin.json` file.
 
    ```json
    "routes": [
@@ -89,7 +89,7 @@ Now you know how to define routes for your data source plugin. Next, let's look 
 
 ## Configure the authentication method for a route
 
-The Grafana proxy supports a number of different authentication methods. For more information on how to configure each authentication method, refer to [plugin.json]({{< relref "metadata.md" >}}).
+The Plutono proxy supports a number of different authentication methods. For more information on how to configure each authentication method, refer to [plugin.json]({{< relref "metadata.md" >}}).
 
 For any sensitive data, make sure that you encrypt data source options, and that you use `{{ .SecureJsonData.YOUR_OPTION_NAME }}` when using sensitive data source options in your routes.
 
@@ -152,7 +152,7 @@ To set the body content and length of proxied requests, use the `body` property.
 
 To enable token-based authentication for proxied requests, use the `tokenAuth` property.
 
-Grafana automatically renews the token when it expires.
+Plutono automatically renews the token when it expires.
 
 ```json
 "routes": [

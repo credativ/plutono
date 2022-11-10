@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { SelectableStrings } from '../types';
-import { SelectableValue } from '@grafana/data';
-import { Segment, Icon } from '@grafana/ui';
+import { SelectableValue } from '@credativ/plutono-data';
+import { Segment, Icon } from '@credativ/plutono-ui';
 
 export interface Props {
   values: string[];

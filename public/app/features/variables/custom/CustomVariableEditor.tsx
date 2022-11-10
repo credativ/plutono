@@ -4,7 +4,7 @@ import { SelectionOptionsEditor } from '../editor/SelectionOptionsEditor';
 import { OnPropChangeArguments, VariableEditorProps } from '../editor/types';
 import { connectWithStore } from 'app/core/utils/connectWithReduxStore';
 import { MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { VerticalGroup } from '@grafana/ui';
+import { VerticalGroup } from '@credativ/plutono-ui';
 import { StoreState } from 'app/types';
 import { changeVariableMultiValue } from '../state/actions';
 import { VariableSectionHeader } from '../editor/VariableSectionHeader';

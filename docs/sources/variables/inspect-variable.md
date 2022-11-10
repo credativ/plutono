@@ -1,7 +1,7 @@
 +++
 title = "Inspect variables"
-keywords = ["grafana", "templating", "documentation", "guide", "template", "variable"]
-aliases = ["/docs/grafana/latest/reference/templating"]
+keywords = ["plutono", "templating", "documentation", "guide", "template", "variable"]
+aliases = ["/docs/plutono/latest/reference/templating"]
 weight = 125
 +++
 
@@ -9,7 +9,7 @@ weight = 125
 
 The variables page lets you easily identify whether a variable is being referenced (or used) in other variables or dashboard. In addition, you can also [add]({{< relref "variable-types/_index.md" >}}) variables and [manage]({{< relref "manage-variable.md" >}}) existing variables from this page.
 
-> **Note:** This feature is available in Grafana 7.4 and later versions.
+> **Note:** This feature is available in Plutono 7.4 and later versions.
 
 ![Variables list](/static/img/docs/variables-templates/variables-list-7-4.png)
 

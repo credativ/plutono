@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { Subscription } from 'rxjs';
 // Components
 import { PanelHeader } from './PanelHeader/PanelHeader';
-import { ErrorBoundary } from '@grafana/ui';
+import { ErrorBoundary } from '@credativ/plutono-ui';
 // Utils & Services
 import { getTimeSrv, TimeSrv } from '../services/TimeSrv';
 import { applyPanelTimeOverrides } from 'app/features/dashboard/utils/panel';
@@ -23,8 +23,8 @@ import {
   PanelPluginMeta,
   toDataFrameDTO,
   toUtc,
-} from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+} from '@credativ/plutono-data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { loadSnapshotData } from '../utils/loadSnapshotData';
 import { RefreshEvent, RenderEvent } from 'app/types/events';
 

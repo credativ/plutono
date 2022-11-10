@@ -15,8 +15,8 @@ import {
   takeWhile,
   tap,
 } from 'rxjs/operators';
-import { getBackendSrv, getGrafanaLiveSrv, toDataQueryResponse } from '@grafana/runtime';
-import { RowContextOptions } from '@grafana/ui/src/components/Logs/LogRowContextProvider';
+import { getBackendSrv, getPlutonoLiveSrv, toDataQueryResponse } from '@credativ/plutono-runtime';
+import { RowContextOptions } from '@credativ/plutono-ui/src/components/Logs/LogRowContextProvider';
 import {
   DataFrame,
   DataQueryErrorType,
@@ -33,7 +33,7 @@ import {
   rangeUtil,
   ScopedVars,
   TimeRange,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import { notifyApp } from 'app/core/actions';
 import { createErrorNotification } from 'app/core/copy/appNotification';
@@ -68,8 +68,8 @@ import config from 'app/core/config';
 const TSDB_QUERY_ENDPOINT = '/api/tsdb/query';
 
 // Constants also defined in tsdb/cloudwatch/cloudwatch.go
-const LOG_IDENTIFIER_INTERNAL = '__log__grafana_internal__';
-const LOGSTREAM_IDENTIFIER_INTERNAL = '__logstream__grafana_internal__';
+const LOG_IDENTIFIER_INTERNAL = '__log__plutono_internal__';
+const LOGSTREAM_IDENTIFIER_INTERNAL = '__logstream__plutono_internal__';
 
 const displayAlert = (datasourceName: string, region: string) =>
   store.dispatch(
@@ -187,7 +187,7 @@ export class CloudWatchDatasource extends DataSourceApi<CloudWatchQuery, CloudWa
     return this.awsRequest(TSDB_QUERY_ENDPOINT, requestParams).pipe(
       mergeMap((response: TSDBResponse) => {
         const channelName: string = response.results['A'].meta.channelName;
-        const channel = getGrafanaLiveSrv().getChannel({
+        const channel = getPlutonoLiveSrv().getChannel({
           scope: LiveChannelScope.Plugin,
           namespace: 'cloudwatch',
           path: channelName,

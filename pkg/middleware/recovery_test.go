@@ -5,11 +5,11 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/remotecache"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/auth"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/remotecache"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/auth"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	macaron "gopkg.in/macaron.v1"
@@ -24,7 +24,7 @@ func TestRecoveryMiddleware(t *testing.T) {
 			sc.req.Header.Set("content-type", "application/json")
 
 			assert.Equal(t, 500, sc.resp.Code)
-			assert.Equal(t, "Internal Server Error - Check the Grafana server logs for the detailed error message.", sc.respJson["message"])
+			assert.Equal(t, "Internal Server Error - Check the Plutono server logs for the detailed error message.", sc.respJson["message"])
 			assert.True(t, strings.HasPrefix(sc.respJson["error"].(string), "Server Error"))
 		})
 	})
@@ -37,7 +37,7 @@ func TestRecoveryMiddleware(t *testing.T) {
 
 			assert.Equal(t, 500, sc.resp.Code)
 			assert.Equal(t, "text/html; charset=UTF-8", sc.resp.Header().Get("content-type"))
-			assert.Contains(t, sc.resp.Body.String(), "<title>Grafana - Error</title>")
+			assert.Contains(t, sc.resp.Body.String(), "<title>Plutono - Error</title>")
 		})
 	})
 }

@@ -1,16 +1,16 @@
 +++
-title = "What's New in Grafana v7.2"
-description = "Feature and improvement highlights for Grafana v7.2"
-keywords = ["grafana", "new", "documentation", "7.2", "release notes"]
-aliases = ["/docs/grafana/latest/guides/whats-new-in-v7-2/"]
+title = "What's New in Plutono v7.2"
+description = "Feature and improvement highlights for Plutono v7.2"
+keywords = ["plutono", "new", "documentation", "7.2", "release notes"]
+aliases = ["/docs/plutono/latest/guides/whats-new-in-v7-2/"]
 weight = -29
 [_build]
 list = false
 +++
 
-# What's new in Grafana v7.2
+# What's new in Plutono v7.2
 
-This topic includes the release notes for the Grafana v7.2. For all details, read the full [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md).
+This topic includes the release notes for the Plutono v7.2. For all details, read the full [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md).
 
 The main highlights are:
 
@@ -24,23 +24,23 @@ The main highlights are:
 - [**$__rate_interval for Prometheus**]({{< relref "#__rate_interval-for-prometheus" >}})
 - [**Toggle parsed log fields**]({{< relref "#toggle-parsed-log-fields" >}})
 - [**Sensitive alert channel settings are now encrypted**]({{< relref "#sensitive-alert-channel-settings-are-now-encrypted" >}})
-- [**Grafana Enterprise features**]({{< relref "#grafana-enterprise-features" >}})
+- [**Plutono Enterprise features**]({{< relref "#plutono-enterprise-features" >}})
   - [**Report time range**]({{< relref "#report-time-range" >}})
   - [**Organization-wide report settings**]({{< relref "#organization-wide-report-settings" >}})
   - [**Report grid layout**]({{< relref "#report-grid-layout" >}})
-- [**What's new in other parts of the Grafana ecosystem**]({{< relref "#whats-new-in-other-parts-of-the-grafana-ecosystem">}})
+- [**What's new in other parts of the Plutono ecosystem**]({{< relref "#whats-new-in-other-parts-of-the-plutono-ecosystem">}})
   - [**ADX (Azure Data Explorer) plugin**]({{< relref "#adx-azure-data-explorer-plugin">}})
   - [**X-Ray data source plugin**]({{< relref "#x-ray-data-source-plugin" >}})
 
 ## New date formatting options added
 
-You can now customize how dates are formatted in Grafana. Custom date formats apply to the time range picker, graphs, and other panel visualizations.
+You can now customize how dates are formatted in Plutono. Custom date formats apply to the time range picker, graphs, and other panel visualizations.
 
-This screenshot shows both a custom full date format with a 12 hour clock and am/pm suffix. The graph is also showing the same 12-hour clock format and a customized month and day format compared to the Grafana default `MM/DD` format.
+This screenshot shows both a custom full date format with a 12 hour clock and am/pm suffix. The graph is also showing the same 12-hour clock format and a customized month and day format compared to the Plutono default `MM/DD` format.
 
 {{< figure src="/static/img/docs/v72/date_formats.png" max-width="800px" caption="Custom date time formats" >}}
 
-Date formats are set for a Grafana instance by adjusting [server-wide settings]({{< relref "../administration/configuration.md#date_formats" >}}) in the Grafana configuration file. We hope to add org- and user-level settings in the future.
+Date formats are set for a Plutono instance by adjusting [server-wide settings]({{< relref "../administration/configuration.md#date_formats" >}}) in the Plutono configuration file. We hope to add org- and user-level settings in the future.
 
 ```
 [date_formats]
@@ -77,7 +77,7 @@ The [Field options]({{< relref "../panels/field-options/_index.md" >}}) content 
 
 ## New transformations and enhancements
 
-Grafana 7.2 includes the following transformation enhancements:
+Plutono 7.2 includes the following transformation enhancements:
 
 - A new [Group By]({{< relref "../panels/transformations/types-options.md#group-by">}}) transformation that allows you to group by multiple fields and add any number of aggregations for other fields.
 - The [Labels to fields]({{< relref "../panels/transformations/types-options.md#labels-to-fields">}}) transformation now allows you to pick one label and use that as the name of the value field.
@@ -115,9 +115,9 @@ Alert notification channels now store sensitive settings and secrets, such as AP
 
 Please read the [upgrade notes]({{< relref "../installation/upgrading.md#ensure-encryption-of-existing-alert-notification-channel-secrets" >}}) for more information and how to migrate.
 
-## Grafana Enterprise features
+## Plutono Enterprise features
 
-These features are included in the Grafana Enterprise edition software.
+These features are included in the Plutono Enterprise edition software.
 
 ### Report and export dashboards in grid layout
 
@@ -147,9 +147,9 @@ See [upgrade notes]({{< relref "../installation/upgrading.md" >}}).
 
 ## Changelog
 
-Check out [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md) for a complete list of new features, changes, and bug fixes.
+Check out [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md) for a complete list of new features, changes, and bug fixes.
 
-## What's new in other parts of the Grafana ecosystem
+## What's new in other parts of the Plutono ecosystem
 
 ### ADX (Azure Data Explorer) plugin
 
@@ -159,4 +159,4 @@ In collaboration with Microsoft, we have improved the usability of our ADX datas
 
 ### X-Ray data source plugin
 
-We are pleased to announce our very first version of our data source plugin for AWS X-Ray. You can use this plugin to visualize traces, look at analytics tables, and see insight summaries. For more information, refer to the [X-Ray data source](https://grafana.com/grafana/plugins/grafana-x-ray-datasource) plugin page.
+We are pleased to announce our very first version of our data source plugin for AWS X-Ray. You can use this plugin to visualize traces, look at analytics tables, and see insight summaries. For more information, refer to the [X-Ray data source](https://grafana.com/grafana/plugins/plutono-x-ray-datasource) plugin page.

@@ -2,7 +2,7 @@
 
 /*
  * Complex scripted dashboard
- * This script generates a dashboard object that Grafana can load. It also takes a number of user
+ * This script generates a dashboard object that Plutono can load. It also takes a number of user
  * supplied URL parameters (in the ARGS variable)
  *
  * Return a dashboard object, or a function
@@ -33,7 +33,7 @@ dashboard.title = 'Scripted dash';
 
 // Set default time
 // time can be overridden in the url using from/to parameters, but this is
-// handled automatically in grafana core during dashboard initialization
+// handled automatically in plutono core during dashboard initialization
 dashboard.time = {
   from: 'now-6h',
   to: 'now',

@@ -6,8 +6,8 @@ const getMock = jest.fn().mockResolvedValue({});
 const postMock = jest.fn().mockResolvedValue({});
 
 jest.mock('app/core/store');
-jest.mock('@grafana/runtime', () => {
-  const original = jest.requireActual('@grafana/runtime');
+jest.mock('@credativ/plutono-runtime', () => {
+  const original = jest.requireActual('@credativ/plutono-runtime');
 
   return {
     ...original,

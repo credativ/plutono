@@ -1,18 +1,18 @@
 +++
 title = "Provisioning"
 description = ""
-keywords = ["grafana", "provisioning"]
-aliases = ["/docs/grafana/latest/installation/provisioning"]
+keywords = ["plutono", "provisioning"]
+aliases = ["/docs/plutono/latest/installation/provisioning"]
 weight = 800
 +++
 
-# Provisioning Grafana
+# Provisioning Plutono
 
-In previous versions of Grafana, you could only use the API for provisioning data sources and dashboards. But that required the service to be running before you started creating dashboards and you also needed to set up credentials for the HTTP API. In v5.0 we decided to improve this experience by adding a new active provisioning system that uses config files. This will make GitOps more natural as data sources and dashboards can be defined via files that can be version controlled. We hope to extend this system to later add support for users, orgs and alerts as well.
+In previous versions of Plutono, you could only use the API for provisioning data sources and dashboards. But that required the service to be running before you started creating dashboards and you also needed to set up credentials for the HTTP API. In v5.0 we decided to improve this experience by adding a new active provisioning system that uses config files. This will make GitOps more natural as data sources and dashboards can be defined via files that can be version controlled. We hope to extend this system to later add support for users, orgs and alerts as well.
 
 ## Config File
 
-Check out the [configuration]({{< relref "configuration.md" >}}) page for more information on what you can configure in `grafana.ini`
+Check out the [configuration]({{< relref "configuration.md" >}}) page for more information on what you can configure in `plutono.ini`
 
 ### Config File Locations
 
@@ -20,9 +20,9 @@ Check out the [configuration]({{< relref "configuration.md" >}}) page for more i
 - Custom configuration from `$WORKING_DIR/conf/custom.ini`
 - The custom configuration file path can be overridden using the `--config` parameter
 
-> **Note:** If you have installed Grafana using the `deb` or `rpm`
+> **Note:** If you have installed Plutono using the `deb` or `rpm`
 > packages, then your configuration file is located at
-> `/etc/grafana/grafana.ini`. This path is specified in the Grafana
+> `/etc/plutono/plutono.ini`. This path is specified in the Plutono
 > init.d script using `--config` file parameter.
 
 ### Using Environment Variables
@@ -48,25 +48,25 @@ If you have a literal `$` in your value and want to avoid interpolation, `$$` ca
 
 ## Configuration Management Tools
 
-Currently we do not provide any scripts/manifests for configuring Grafana. Rather than spending time learning and creating scripts/manifests for each tool, we think our time is better spent making Grafana easier to provision. Therefore, we heavily rely on the expertise of the community.
+Currently we do not provide any scripts/manifests for configuring Plutono. Rather than spending time learning and creating scripts/manifests for each tool, we think our time is better spent making Plutono easier to provision. Therefore, we heavily rely on the expertise of the community.
 
 | Tool      | Project                                                                                                        |
 | --------- | -------------------------------------------------------------------------------------------------------------- |
-| Puppet    | [https://forge.puppet.com/puppet/grafana](https://forge.puppet.com/puppet/grafana)                             |
-| Ansible   | [https://github.com/cloudalchemy/ansible-grafana](https://github.com/cloudalchemy/ansible-grafana)             |
-| Chef      | [https://github.com/JonathanTron/chef-grafana](https://github.com/JonathanTron/chef-grafana)                   |
-| Saltstack | [https://github.com/salt-formulas/salt-formula-grafana](https://github.com/salt-formulas/salt-formula-grafana) |
+| Puppet    | [https://forge.puppet.com/puppet/plutono](https://forge.puppet.com/puppet/plutono)                             |
+| Ansible   | [https://github.com/cloudalchemy/ansible-plutono](https://github.com/cloudalchemy/ansible-plutono)             |
+| Chef      | [https://github.com/JonathanTron/chef-plutono](https://github.com/JonathanTron/chef-plutono)                   |
+| Saltstack | [https://github.com/salt-formulas/salt-formula-plutono](https://github.com/salt-formulas/salt-formula-plutono) |
 | Jsonnet   | [https://github.com/grafana/grafonnet-lib/](https://github.com/grafana/grafonnet-lib/)                         |
 
 ## Data sources
 
 > This feature is available from v5.0
 
-It's possible to manage data sources in Grafana by adding one or more YAML config files in the [`provisioning/datasources`](/administration/configuration/#provisioning) directory. Each config file can contain a list of `datasources` that will get added or updated during start up. If the data source already exists, then Grafana updates it to match the configuration file. The config file can also contain a list of data sources that should be deleted. That list is called `deleteDatasources`. Grafana will delete data sources listed in `deleteDatasources` before inserting/updating those in the `datasource` list.
+It's possible to manage data sources in Plutono by adding one or more YAML config files in the [`provisioning/datasources`](/administration/configuration/#provisioning) directory. Each config file can contain a list of `datasources` that will get added or updated during start up. If the data source already exists, then Plutono updates it to match the configuration file. The config file can also contain a list of data sources that should be deleted. That list is called `deleteDatasources`. Plutono will delete data sources listed in `deleteDatasources` before inserting/updating those in the `datasource` list.
 
-### Running Multiple Grafana Instances
+### Running Multiple Plutono Instances
 
-If you are running multiple instances of Grafana you might run into problems if they have different versions of the `datasource.yaml` configuration file. The best way to solve this problem is to add a version number to each datasource in the configuration and increase it when you update the config. Grafana will only update datasources with the same or lower version number than specified in the config. That way, old configs cannot overwrite newer configs if they restart at the same time.
+If you are running multiple instances of Plutono you might run into problems if they have different versions of the `datasource.yaml` configuration file. The best way to solve this problem is to add a version number to each datasource in the configuration and increase it when you update the config. Plutono will only update datasources with the same or lower version number than specified in the config. That way, old configs cannot overwrite newer configs if they restart at the same time.
 
 ### Example data source Config File
 
@@ -151,7 +151,7 @@ Since not all datasources have the same configuration settings we only have the 
 | graphiteVersion         | string  | Graphite                                                         | Graphite version                                                                            |
 | timeInterval            | string  | Prometheus, Elasticsearch, InfluxDB, MySQL, PostgreSQL and MSSQL | Lowest interval/step value that should be used for this data source.                        |
 | httpMode                | string  | Influxdb                                                         | HTTP Method. 'GET', 'POST', defaults to GET                                                 |
-| maxSeries               | number  | Influxdb                                                         | Max number of series/tables that Grafana processes                                          |
+| maxSeries               | number  | Influxdb                                                         | Max number of series/tables that Plutono processes                                          |
 | httpMethod              | string  | Prometheus                                                       | HTTP Method. 'GET', 'POST', defaults to GET                                                 |
 | customQueryParameters   | string  | Prometheus                                                       | Query parameters to add, as a URL-encoded string.                                                 |
 | esVersion               | number  | Elasticsearch                                                    | Elasticsearch version as a number (2/5/56/60/70)                                            |
@@ -175,21 +175,21 @@ Since not all datasources have the same configuration settings we only have the 
 | tsdbResolution          | string  | OpenTSDB                                                         | Resolution                                                                                  |
 | sslmode                 | string  | PostgreSQL                                                       | SSLmode. 'disable', 'require', 'verify-ca' or 'verify-full'                                 |
 | tlsConfigurationMethod  | string  | PostgreSQL                                        | SSL Certificate configuration, either by 'file-path' or 'file-content'                       |
-| sslRootCertFile         | string  | PostgreSQL                                                       | SSL server root certificate file, must be readable by the Grafana user                      |
-| sslCertFile             | string  | PostgreSQL                                                       | SSL client certificate file, must be readable by the Grafana user                           |
-| sslKeyFile              | string  | PostgreSQL                                                       | SSL client key file, must be readable by _only_ the Grafana user                            |
+| sslRootCertFile         | string  | PostgreSQL                                                       | SSL server root certificate file, must be readable by the Plutono user                      |
+| sslCertFile             | string  | PostgreSQL                                                       | SSL client certificate file, must be readable by the Plutono user                           |
+| sslKeyFile              | string  | PostgreSQL                                                       | SSL client key file, must be readable by _only_ the Plutono user                            |
 | encrypt                 | string  | MSSQL                                                            | Connection SSL encryption handling. 'disable', 'false' or 'true'                            |
 | postgresVersion         | number  | PostgreSQL                                                       | Postgres version as a number (903/904/905/906/1000) meaning v9.3, v9.4, ..., v10            |
 | timescaledb             | boolean | PostgreSQL                                                       | Enable usage of TimescaleDB extension                                                       |
-| maxOpenConns            | number  | MySQL, PostgreSQL and MSSQL                                      | Maximum number of open connections to the database (Grafana v5.4+)                          |
-| maxIdleConns            | number  | MySQL, PostgreSQL and MSSQL                                      | Maximum number of connections in the idle connection pool (Grafana v5.4+)                   |
-| connMaxLifetime         | number  | MySQL, PostgreSQL and MSSQL                                      | Maximum amount of time in seconds a connection may be reused (Grafana v5.4+)                |
+| maxOpenConns            | number  | MySQL, PostgreSQL and MSSQL                                      | Maximum number of open connections to the database (Plutono v5.4+)                          |
+| maxIdleConns            | number  | MySQL, PostgreSQL and MSSQL                                      | Maximum number of connections in the idle connection pool (Plutono v5.4+)                   |
+| connMaxLifetime         | number  | MySQL, PostgreSQL and MSSQL                                      | Maximum amount of time in seconds a connection may be reused (Plutono v5.4+)                |
 
 #### Secure Json Data
 
 `{"authType":"keys","defaultRegion":"us-west-2","timeField":"@timestamp"}`
 
-Secure json data is a map of settings that will be encrypted with [secret key]({{< relref "configuration.md#secret-key" >}}) from the Grafana config. The purpose of this is only to hide content from the users of the application. This should be used for storing TLS Cert and password that Grafana will append to the request on the server side. All of these settings are optional.
+Secure json data is a map of settings that will be encrypted with [secret key]({{< relref "configuration.md#secret-key" >}}) from the Plutono config. The purpose of this is only to hide content from the users of the application. This should be used for storing TLS Cert and password that Plutono will append to the request on the server side. All of these settings are optional.
 
 | Name              | Type   | Datasource | Description                             |
 | ----------------- | ------ | ---------- | --------------------------------------- |
@@ -205,7 +205,7 @@ Secure json data is a map of settings that will be encrypted with [secret key]({
 
 #### Custom HTTP headers for datasources
 
-Data sources managed by Grafanas provisioning can be configured to add HTTP headers to all requests
+Data sources managed by Plutonos provisioning can be configured to add HTTP headers to all requests
 going to that datasource. The header name is configured in the `jsonData` field and the header value should be
 configured in `secureJsonData`.
 
@@ -226,7 +226,7 @@ datasources:
 
 > This feature is available from v7.1
 
-You can manage plugins in Grafana by adding one or more YAML config files in the [`provisioning/plugins`]({{< relref "configuration.md#provisioning" >}}) directory. Each config file can contain a list of `apps` that will be updated during start up. Grafana updates each app to match the configuration file.
+You can manage plugins in Plutono by adding one or more YAML config files in the [`provisioning/plugins`]({{< relref "configuration.md#provisioning" >}}) directory. Each config file can contain a list of `apps` that will be updated during start up. Plutono updates each app to match the configuration file.
 
 ### Example plugin configuration file
 
@@ -254,7 +254,7 @@ apps:
 
 ## Dashboards
 
-You can manage dashboards in Grafana by adding one or more YAML config files in the [`provisioning/dashboards`]({{< relref "configuration.md" >}}) directory. Each config file can contain a list of `dashboards providers` that load dashboards into Grafana from the local filesystem.
+You can manage dashboards in Plutono by adding one or more YAML config files in the [`provisioning/dashboards`]({{< relref "configuration.md" >}}) directory. Each config file can contain a list of `dashboards providers` that load dashboards into Plutono from the local filesystem.
 
 The dashboard provider config file looks somewhat like this:
 
@@ -274,34 +274,34 @@ providers:
     type: file
     # <bool> disable dashboard deletion
     disableDeletion: false
-    # <int> how often Grafana will scan for changed dashboards
+    # <int> how often Plutono will scan for changed dashboards
     updateIntervalSeconds: 10
     # <bool> allow updating provisioned dashboards from the UI
     allowUiUpdates: false
     options:
       # <string, required> path to dashboard files on disk. Required when using the 'file' type
-      path: /var/lib/grafana/dashboards
-      # <bool> use folder names from filesystem to create folders in Grafana
+      path: /var/lib/plutono/dashboards
+      # <bool> use folder names from filesystem to create folders in Plutono
       foldersFromFilesStructure: true
 ```
 
-When Grafana starts, it will update/insert all dashboards available in the configured path. Then later on poll that path every **updateIntervalSeconds** and look for updated json files and update/insert those into the database.
+When Plutono starts, it will update/insert all dashboards available in the configured path. Then later on poll that path every **updateIntervalSeconds** and look for updated json files and update/insert those into the database.
 
 > **Note:** Dashboards are provisioned to the General folder if the `folder` option is missing or empty.
 
 #### Making changes to a provisioned dashboard
 
-It's possible to make changes to a provisioned dashboard in the Grafana UI. However, it is not possible to automatically save the changes back to the provisioning source.
-If `allowUiUpdates` is set to `true` and you make changes to a provisioned dashboard, you can `Save` the dashboard then changes will be persisted to the Grafana database.
+It's possible to make changes to a provisioned dashboard in the Plutono UI. However, it is not possible to automatically save the changes back to the provisioning source.
+If `allowUiUpdates` is set to `true` and you make changes to a provisioned dashboard, you can `Save` the dashboard then changes will be persisted to the Plutono database.
 
 > **Note:**
 > If a provisioned dashboard is saved from the UI and then later updated from the source, the dashboard stored in the database will always be overwritten. The `version` property in the JSON file will not affect this, even if it is lower than the existing dashboard.
 >
 > If a provisioned dashboard is saved from the UI and the source is removed, the dashboard stored in the database will be deleted unless the configuration option `disableDeletion` is set to true.
 
-If `allowUiUpdates` is configured to `false`, you are not able to make changes to a provisioned dashboard. When you click `Save`, Grafana brings up a _Cannot save provisioned dashboard_ dialog. The screenshot below illustrates this behavior.
+If `allowUiUpdates` is configured to `false`, you are not able to make changes to a provisioned dashboard. When you click `Save`, Plutono brings up a _Cannot save provisioned dashboard_ dialog. The screenshot below illustrates this behavior.
 
-Grafana offers options to export the JSON definition of a dashboard. Either `Copy JSON to Clipboard` or `Save JSON to file` can help you synchronize your dashboard changes back to the provisioning source.
+Plutono offers options to export the JSON definition of a dashboard. Either `Copy JSON to Clipboard` or `Save JSON to file` can help you synchronize your dashboard changes back to the provisioning source.
 
 Note: The JSON definition in the input field when using `Copy JSON to Clipboard` or `Save JSON to file` will have the `id` field automatically removed to aid the provisioning workflow.
 
@@ -309,19 +309,19 @@ Note: The JSON definition in the input field when using `Copy JSON to Clipboard`
 
 ### Reusable Dashboard URLs
 
-If the dashboard in the JSON file contains an [UID]({{< relref "../dashboards/json-model.md" >}}), Grafana forces insert/update on that UID. This allows you to migrate dashboards between Grafana instances and provisioning Grafana from configuration without breaking the URLs given because the new dashboard URL uses the UID as identifier.
-When Grafana starts, it updates/inserts all dashboards available in the configured folders. If you modify the file, then the dashboard is also updated.
-By default, Grafana deletes dashboards in the database if the file is removed. You can disable this behavior using the `disableDeletion` setting.
+If the dashboard in the JSON file contains an [UID]({{< relref "../dashboards/json-model.md" >}}), Plutono forces insert/update on that UID. This allows you to migrate dashboards between Plutono instances and provisioning Plutono from configuration without breaking the URLs given because the new dashboard URL uses the UID as identifier.
+When Plutono starts, it updates/inserts all dashboards available in the configured folders. If you modify the file, then the dashboard is also updated.
+By default, Plutono deletes dashboards in the database if the file is removed. You can disable this behavior using the `disableDeletion` setting.
 
 > **Note:** Provisioning allows you to overwrite existing dashboards
 > which leads to problems if you re-use settings that are supposed to be unique.
 > Be careful not to re-use the same `title` multiple times within a folder
 > or `uid` within the same installation as this will cause weird behaviors.
 
-### Provision folders structure from filesystem to Grafana
-If you already store your dashboards using folders in a git repo or on a filesystem, and also you want to have the same folder names in the Grafana menu, you can use `foldersFromFilesStructure` option.
+### Provision folders structure from filesystem to Plutono
+If you already store your dashboards using folders in a git repo or on a filesystem, and also you want to have the same folder names in the Plutono menu, you can use `foldersFromFilesStructure` option.
 
-For example, to replicate these dashboards structure from the filesystem to Grafana,
+For example, to replicate these dashboards structure from the filesystem to Plutono,
 ```
 /etc/dashboards
 ├── /server
@@ -343,7 +343,7 @@ providers:
     path: /etc/dashboards
     foldersFromFilesStructure: true
 ```
-`server` and `application` will become new folders in Grafana menu.
+`server` and `application` will become new folders in Plutono menu.
 
 > **Note:** `folder` and `folderUid` options should be empty or missing to make `foldersFromFilesStructure` work.
 
@@ -355,7 +355,7 @@ Alert Notification Channels can be provisioned by adding one or more YAML config
 
 Each config file can contain the following top-level fields:
 
-- `notifiers`, a list of alert notifications that will be added or updated during start up. If the notification channel already exists, Grafana will update it to match the configuration file.
+- `notifiers`, a list of alert notifications that will be added or updated during start up. If the notification channel already exists, Plutono will update it to match the configuration file.
 - `delete_notifiers`, a list of alert notifications to be deleted before inserting/updating those in the `notifiers` list.
 
 Provisioning looks up alert notifications by uid, and will update any existing notification with the provided uid.
@@ -399,9 +399,9 @@ notifiers:
     settings:
       recipient: 'XXX'
       uploadImage: true
-      token: 'xoxb' # legacy setting since Grafana v7.2 (stored non-encrypted)
-      url: https://slack.com # legacy setting since Grafana v7.2 (stored non-encrypted)
-    # Secure settings that will be encrypted in the database (supported since Grafana v7.2). See `Supported Settings` section for secure settings supported for each notifier.
+      token: 'xoxb' # legacy setting since Plutono v7.2 (stored non-encrypted)
+      url: https://slack.com # legacy setting since Plutono v7.2 (stored non-encrypted)
+    # Secure settings that will be encrypted in the database (supported since Plutono v7.2). See `Supported Settings` section for secure settings supported for each notifier.
     secure_settings:
       token: 'xoxb'
       url: https://slack.com
@@ -421,7 +421,7 @@ delete_notifiers:
 
 The following sections detail the supported settings and secure settings for each alert notification type. Secure settings are stored encrypted in the database and you add them to `secure_settings` in the YAML file instead of `settings`.
 
-> **Note:** Secure settings is supported since Grafana v7.2.
+> **Note:** Secure settings is supported since Plutono v7.2.
 
 #### Alert notification `pushover`
 

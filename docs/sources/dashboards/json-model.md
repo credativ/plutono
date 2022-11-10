@@ -1,13 +1,13 @@
 +++
 title = "JSON model"
-keywords = ["grafana", "dashboard", "documentation", "json", "model"]
-aliases = ["/docs/grafana/latest/reference/dashboard/"]
+keywords = ["plutono", "dashboard", "documentation", "json", "model"]
+aliases = ["/docs/plutono/latest/reference/dashboard/"]
 weight = 1200
 +++
 
 # Dashboard JSON model
 
-A dashboard in Grafana is represented by a JSON object, which stores metadata of its dashboard. Dashboard metadata includes dashboard properties, metadata from panels, template variables, panel queries, etc.
+A dashboard in Plutono is represented by a JSON object, which stores metadata of its dashboard. Dashboard metadata includes dashboard properties, metadata from panels, template variables, panel queries, etc.
 
 To view the JSON of a dashboard:
 
@@ -70,7 +70,7 @@ Each field in the dashboard JSON is explained below with its usage:
 | **templating**    | templating metadata, see [templating section](#templating) for details                                            |
 | **annotations**   | annotations metadata, see [annotations section](#annotations) for details                                         |
 | **refresh**       | auto-refresh interval                                                                                             |
-| **schemaVersion** | version of the JSON schema (integer), incremented each time a Grafana update brings changes to said schema        |
+| **schemaVersion** | version of the JSON schema (integer), incremented each time a Plutono update brings changes to said schema        |
 | **version**       | version of the dashboard (integer), incremented each time the dashboard is updated                                |
 | **panels**        | panels array, see below for detail.                                                                               |
 

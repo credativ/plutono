@@ -1,9 +1,9 @@
 package securejsondata
 
 import (
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 // SecureJsonData is used to store encrypted data (for example in data_source table). Only values are separately

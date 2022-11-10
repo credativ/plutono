@@ -198,7 +198,7 @@
 
     if (!selector) {
       selector = $this.attr('href')
-      // grafana backport fix from bootstrap 3
+      // plutono backport fix from bootstrap 3
       selector = selector && /#[A-Za-z]/.test(selector) && selector.replace(/.*(?=#[^\s]*$)/, '') //strip for ie7
     }
 
@@ -1243,7 +1243,7 @@
   , move: function (e) {
       if (!this.shown) return
 
-      // grafana change, shift+left parenthesis
+      // plutono change, shift+left parenthesis
       if (e.shiftKey && e.keyCode === 40) {
         return;
       }

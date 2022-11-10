@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useMemo, useReducer } from 'react';
-import { Button, HorizontalGroup, Modal, useStyles } from '@grafana/ui';
-import { LoadingState } from '@grafana/data';
+import { Button, HorizontalGroup, Modal, useStyles } from '@credativ/plutono-ui';
+import { LoadingState } from '@credativ/plutono-data';
 
 import { LibraryPanelDTO } from '../../types';
 import { asyncDispatcher } from '../LibraryPanelsView/actions';

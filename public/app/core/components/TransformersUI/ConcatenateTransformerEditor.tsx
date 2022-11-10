@@ -5,12 +5,12 @@ import {
   standardTransformers,
   TransformerRegistryItem,
   TransformerUIProps,
-} from '@grafana/data';
-import { Input, Select } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { Input, Select } from '@credativ/plutono-ui';
 import {
   ConcatenateFrameNameMode,
   ConcatenateTransformerOptions,
-} from '@grafana/data/src/transformations/transformers/concat';
+} from '@credativ/plutono-data/src/transformations/transformers/concat';
 
 interface ConcatenateTransformerEditorProps extends TransformerUIProps<ConcatenateTransformerOptions> {}
 

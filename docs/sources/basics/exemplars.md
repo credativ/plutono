@@ -1,7 +1,7 @@
 +++
 title = "Exemplars"
 description = "Exemplars"
-keywords = ["grafana", "concepts", "exemplars", "prometheus"]
+keywords = ["plutono", "concepts", "exemplars", "prometheus"]
 weight = 400
 +++
 
@@ -17,6 +17,6 @@ Use exemplars to help isolate problems within your data distribution by pinpoint
 
 Support for exemplars is available for the Prometheus data source only. Once you enable the functionality, exemplars data is available by default. For more information on exemplar configuration and how to enable exemplars, refer to [configuring exemplars in Prometheus data source]({{< relref "../datasources/prometheus.md#configuring-exemplars" >}}).
 
-Grafana shows exemplars alongside a metric in the Explore view and in dashboards. Each exemplar displays as a highlighted star. You can hover your cursor over an exemplar to view the unique traceID, which is a combination of a key value pair. To investigate further, click the blue button next to the `traceID` property.
+Plutono shows exemplars alongside a metric in the Explore view and in dashboards. Each exemplar displays as a highlighted star. You can hover your cursor over an exemplar to view the unique traceID, which is a combination of a key value pair. To investigate further, click the blue button next to the `traceID` property.
 
 {{< figure src="/static/img/docs/v74/exemplars.png" class="docs-image--no-shadow" max-width= "750px" caption="Screenshot showing the detail window of an Exemplar" >}}

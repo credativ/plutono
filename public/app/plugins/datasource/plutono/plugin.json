@@ -1,0 +1,9 @@
+{
+  "type": "datasource",
+  "name": "-- Plutono --",
+  "id": "plutono",
+
+  "builtIn": true,
+  "annotations": true,
+  "metrics": true
+}

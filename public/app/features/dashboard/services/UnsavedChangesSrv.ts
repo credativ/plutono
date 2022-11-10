@@ -2,12 +2,12 @@ import angular, { ILocationService } from 'angular';
 import { ChangeTracker } from './ChangeTracker';
 import { ContextSrv } from 'app/core/services/context_srv';
 import { DashboardSrv } from './DashboardSrv';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 
 /** @ngInject */
 export function unsavedChangesSrv(
   this: any,
-  $rootScope: GrafanaRootScope,
+  $rootScope: PlutonoRootScope,
   $location: ILocationService,
   $timeout: any,
   contextSrv: ContextSrv,
@@ -20,4 +20,4 @@ export function unsavedChangesSrv(
   };
 }
 
-angular.module('grafana.services').service('unsavedChangesSrv', unsavedChangesSrv);
+angular.module('plutono.services').service('unsavedChangesSrv', unsavedChangesSrv);

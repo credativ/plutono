@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/login"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/ldap"
-	"github.com/grafana/grafana/pkg/services/multildap"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/login"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/ldap"
+	"github.com/credativ/plutono/pkg/services/multildap"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 var (
@@ -46,7 +46,7 @@ type LDAPUserDTO struct {
 	Surname        *LDAPAttribute           `json:"surname"`
 	Email          *LDAPAttribute           `json:"email"`
 	Username       *LDAPAttribute           `json:"login"`
-	IsGrafanaAdmin *bool                    `json:"isGrafanaAdmin"`
+	IsPlutonoAdmin *bool                    `json:"isPlutonoAdmin"`
 	IsDisabled     bool                     `json:"isDisabled"`
 	OrgRoles       []LDAPRoleDTO            `json:"roles"`
 	Teams          []models.TeamOrgGroupDTO `json:"teams"`
@@ -150,7 +150,7 @@ func (hs *HTTPServer) GetLDAPStatus(c *models.ReqContext) response.Response {
 	return response.JSON(http.StatusOK, serverDTOs)
 }
 
-// PostSyncUserWithLDAP enables a single Grafana user to be synchronized against LDAP
+// PostSyncUserWithLDAP enables a single Plutono user to be synchronized against LDAP
 func (hs *HTTPServer) PostSyncUserWithLDAP(c *models.ReqContext) response.Response {
 	if !ldap.IsEnabled() {
 		return response.Error(http.StatusBadRequest, "LDAP is not enabled", nil)
@@ -187,8 +187,8 @@ func (hs *HTTPServer) PostSyncUserWithLDAP(c *models.ReqContext) response.Respon
 	user, _, err := ldapServer.User(query.Result.Login)
 	if err != nil {
 		if errors.Is(err, multildap.ErrDidNotFindUser) { // User was not in the LDAP server - we need to take action:
-			if hs.Cfg.AdminUser == query.Result.Login { // User is *the* Grafana Admin. We cannot disable it.
-				errMsg := fmt.Sprintf(`Refusing to sync grafana super admin "%s" - it would be disabled`, query.Result.Login)
+			if hs.Cfg.AdminUser == query.Result.Login { // User is *the* Plutono Admin. We cannot disable it.
+				errMsg := fmt.Sprintf(`Refusing to sync plutono super admin "%s" - it would be disabled`, query.Result.Login)
 				ldapLogger.Error(errMsg)
 				return response.Error(http.StatusBadRequest, errMsg, err)
 			}
@@ -230,7 +230,7 @@ func (hs *HTTPServer) PostSyncUserWithLDAP(c *models.ReqContext) response.Respon
 	return response.Success("User synced successfully")
 }
 
-// GetUserFromLDAP finds an user based on a username in LDAP. This helps illustrate how would the particular user be mapped in Grafana when synced.
+// GetUserFromLDAP finds an user based on a username in LDAP. This helps illustrate how would the particular user be mapped in Plutono when synced.
 func (hs *HTTPServer) GetUserFromLDAP(c *models.ReqContext) response.Response {
 	if !ldap.IsEnabled() {
 		return response.Error(http.StatusBadRequest, "LDAP is not enabled", nil)
@@ -264,7 +264,7 @@ func (hs *HTTPServer) GetUserFromLDAP(c *models.ReqContext) response.Response {
 		Surname:        &LDAPAttribute{serverConfig.Attr.Surname, surname},
 		Email:          &LDAPAttribute{serverConfig.Attr.Email, user.Email},
 		Username:       &LDAPAttribute{serverConfig.Attr.Username, user.Login},
-		IsGrafanaAdmin: user.IsGrafanaAdmin,
+		IsPlutonoAdmin: user.IsPlutonoAdmin,
 		IsDisabled:     user.IsDisabled,
 	}
 

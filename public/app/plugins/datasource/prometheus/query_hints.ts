@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { QueryHint, QueryFix } from '@grafana/data';
+import { QueryHint, QueryFix } from '@credativ/plutono-data';
 import { PrometheusDatasource } from './datasource';
 
 /**

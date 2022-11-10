@@ -16,7 +16,7 @@ Panels allow you to show your data in visual form. This topic walks you through 
 
 1. Click **Add an empty panel**.
 
-Grafana creates an empty graph panel with your default data source selected.
+Plutono creates an empty graph panel with your default data source selected.
 
 ## 2. Edit panel settings
 
@@ -37,7 +37,7 @@ Each panel needs at least one query to display a visualization. You write querie
 
 ## 4. Choose a visualization type
 
-In the Visualization section of the Panel tab, click a visualization type. Grafana displays a preview of your query results with that visualization applied.
+In the Visualization section of the Panel tab, click a visualization type. Plutono displays a preview of your query results with that visualization applied.
 
 For more information about individual visualizations, refer to [Visualizations]({{< relref "visualizations/_index.md" >}}).
 
@@ -49,7 +49,7 @@ Your options vary depending on the changes you made and whether or not it is a n
 
 ## What next?
 
-Our Grafana Fundamentals tutorial is a great place to start, or you can learn more about Grafana by reading one of the documentation topics linked below:
+Our Plutono Fundamentals tutorial is a great place to start, or you can learn more about Plutono by reading one of the documentation topics linked below:
 
 - Learn more about [panel editor]({{< relref "panel-editor.md" >}}) options.
 - Add more [queries]({{< relref "queries.md" >}}).

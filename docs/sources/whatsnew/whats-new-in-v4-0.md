@@ -1,14 +1,14 @@
 +++
-title = "What's new in Grafana v4.0"
-description = "Feature and improvement highlights for Grafana v4.0"
-keywords = ["grafana", "new", "documentation", "4.0", "release notes"]
-aliases = ["/docs/grafana/latest/guides/whats-new-in-v4/"]
+title = "What's new in Plutono v4.0"
+description = "Feature and improvement highlights for Plutono v4.0"
+keywords = ["plutono", "new", "documentation", "4.0", "release notes"]
+aliases = ["/docs/plutono/latest/guides/whats-new-in-v4/"]
 weight = -7
 [_build]
 list = false
 +++
 
-# What's new in Grafana v4.0
+# What's new in Plutono v4.0
 
 As usual this release contains a ton of minor new features, fixes and improved UX. But on top of the usual new goodies
 is a core new feature: Alerting! Read on below for a detailed description of what's new in v4.0.
@@ -17,10 +17,10 @@ is a core new feature: Alerting! Read on below for a detailed description of wha
 
 {{< figure class="float-right"  max-width="40%" src="/static/img/docs/v4/drag_handles_gif.gif" caption="Alerting overview" >}}
 
-Alerting is a really revolutionary feature for Grafana. It transforms Grafana from a
+Alerting is a really revolutionary feature for Plutono. It transforms Plutono from a
 visualization tool into a truly mission critical monitoring tool. The alert rules are very easy to
 configure using your existing graph panels and threshold levels can be set simply by dragging handles to
-the right side of the graph. The rules will continually be evaluated by grafana-server and
+the right side of the graph. The rules will continually be evaluated by plutono-server and
 notifications will be sent out when the rule conditions are met.
 
 This feature has been worked on for over a year with many iterations and rewrites
@@ -53,16 +53,16 @@ of another alert in your conditions, and `Time Of Day`.
 Alerting would not be very useful if there was no way to send notifications when rules trigger and change state. You
 can set up notifications of different types. We currently have `Slack`, `PagerDuty`, `Email` and `Webhook` with more in the
 pipe that will be added during beta period. The notifications can then be added to your alert rules.
-If you have configured an external image store in the grafana.ini config file (s3, webdav, and azure_blob options available)
+If you have configured an external image store in the plutono.ini config file (s3, webdav, and azure_blob options available)
 you can get very rich notifications with an image of the graph and the metric
 values all included in the notification.
 
 ### Annotations
 
-Alert state changes are recorded in a new annotation store that is built into Grafana. This store
-currently only supports storing annotations in Grafana's own internal database (mysql, postgres or sqlite).
-The Grafana annotation storage is currently only used for alert state changes but we hope to add the ability for users
-to add graph comments in the form of annotations directly from within Grafana in a future release.
+Alert state changes are recorded in a new annotation store that is built into Plutono. This store
+currently only supports storing annotations in Plutono's own internal database (mysql, postgres or sqlite).
+The Plutono annotation storage is currently only used for alert state changes but we hope to add the ability for users
+to add graph comments in the form of annotations directly from within Plutono in a future release.
 
 ### Alert List Panel
 
@@ -94,7 +94,7 @@ We always try to bring some UX/UI refinements and polish in every release.
 <div class="row">
   <div class="medium-6 columns">
     <p>
-      Grafana is so often used on wall mounted TVs that we figured a clean TV mode would be
+      Plutono is so often used on wall mounted TVs that we figured a clean TV mode would be
       really nice. In TV mode the top navbar, row and panel controls will all fade to transparent.
     </p>
 
@@ -132,7 +132,7 @@ The new row menu automatically slides out when you mouse over the edge of the ro
 to hover over the small green icon and then click it to expand the row menu.
 
 There are some minor improvements to drag and drop behavior. Now when dragging a panel from one row
-to another you will insert the panel and Grafana will automatically make room for it.
+to another you will insert the panel and Plutono will automatically make room for it.
 When you drag a panel within a row you will simply reorder the panels.
 
 If you look at the animation to the right you can see that you can drag and drop a new panel. This is not
@@ -146,7 +146,7 @@ We plan to further improve dashboard building in the future with a more rich gri
 
 {{< figure class="float-right"  max-width="40%" src="/static/img/docs/v4/shortcuts.png" caption="Shortcuts" >}}
 
-Grafana v4 introduces a number of really powerful keyboard shortcuts. You can now focus a panel
+Plutono v4 introduces a number of really powerful keyboard shortcuts. You can now focus a panel
 by hovering over it with your mouse. With a panel focused you can simply hit `e` to toggle panel
 edit mode, or `v` to toggle fullscreen mode. `p r` removes the panel. `p s` opens share
 modal.
@@ -161,16 +161,16 @@ Some nice navigation shortcuts are:
 
 ## Upgrade and Breaking changes
 
-There are no breaking changes. Old dashboards and features should work the same. Grafana-server will automatically upgrade its db
-schema on restart. It's advisable to do a backup of Grafana's database before updating.
+There are no breaking changes. Old dashboards and features should work the same. Plutono-server will automatically upgrade its db
+schema on restart. It's advisable to do a backup of Plutono's database before updating.
 
 If you are using plugins make sure to update your plugins as some might not work perfectly v4.
 
-You can update plugins using grafana-cli
+You can update plugins using plutono-cli
 
-    grafana-cli plugins update-all
+    plutono-cli plugins update-all
 
 ## Changelog
 
-Check out the [CHANGELOG.md](https://github.com/grafana/grafana/blob/master/CHANGELOG.md) file for a complete list
+Check out the [CHANGELOG.md](https://github.com/credativ/plutono/blob/master/CHANGELOG.md) file for a complete list
 of new features, changes, and bug fixes.

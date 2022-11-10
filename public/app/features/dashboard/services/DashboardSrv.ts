@@ -3,7 +3,7 @@ import { appEvents } from 'app/core/app_events';
 import { DashboardModel } from '../state/DashboardModel';
 import { removePanel } from '../utils/panel';
 import { CoreEvents, DashboardMeta } from 'app/types';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 import { backendSrv } from 'app/core/services/backend_srv';
 import { promiseToDigest } from '../../../core/utils/promiseToDigest';
 import { saveDashboard } from 'app/features/manage-dashboards/state/actions';
@@ -12,7 +12,7 @@ export class DashboardSrv {
   dashboard: DashboardModel;
 
   /** @ngInject */
-  constructor(private $rootScope: GrafanaRootScope) {
+  constructor(private $rootScope: PlutonoRootScope) {
     appEvents.on(CoreEvents.removePanel, this.onRemovePanel);
   }
 

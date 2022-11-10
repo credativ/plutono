@@ -1,18 +1,18 @@
 +++
 title = "Filter table columns"
-keywords = ["grafana", "table options", "documentation", "format tables", "table filter", "filter columns"]
+keywords = ["plutono", "table options", "documentation", "format tables", "table filter", "filter columns"]
 weight = 600
 +++
 
 # Filter table columns
 
-> **Note:** This feature is available in Grafana 7.2+.
+> **Note:** This feature is available in Plutono 7.2+.
 
 If you turn on the **Column filter** in [Table options]({{< relref "table-field-options.md" >}}), then you can filter table options.
 
 ## Turn on column filtering
 
-1. In Grafana, navigate to the dashboard with the table with the columns that you want to filter.
+1. In Plutono, navigate to the dashboard with the table with the columns that you want to filter.
 1. On the table panel you want to filter, [open the panel editor]({{< relref "../../panel-editor.md#open-the-panel-editor" >}}).
 1. Click the **Field** tab.
 1. In Table options, turn on the **Column filter** option.
@@ -23,7 +23,7 @@ A filter icon appears next to each column title.
 
 ## Filter column values
 
-To filter column values, click the filter (funnel) icon next to a column title. Grafana displays the filter options for that column.
+To filter column values, click the filter (funnel) icon next to a column title. Plutono displays the filter options for that column.
 
 {{< figure src="/static/img/docs/tables/filter-column-values.png" max-width="500px" caption="Filter column values" class="docs-image--no-shadow" >}}
 

@@ -1,7 +1,7 @@
 +++
 title = "Search"
-keywords = ["grafana", "dashboard", "documentation", "search"]
-aliases =["/docs/grafana/latest/reference/search/"]
+keywords = ["plutono", "dashboard", "documentation", "search"]
+aliases =["/docs/plutono/latest/reference/search/"]
 weight = 5
 +++
 
@@ -40,4 +40,4 @@ Alternately, to see a list of all available tags, click the tags dropdown menu. 
 
 When using only a keyboard: `tab` to focus on the *tags* link, `▼` down arrow key to find a tag and select with the `Enter` key.
 
-> **Note:** When multiple tags are selected, Grafana will show dashboards that include **all**.
+> **Note:** When multiple tags are selected, Plutono will show dashboards that include **all**.

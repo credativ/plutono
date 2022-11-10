@@ -1,4 +1,4 @@
-import { DataSourceInstanceSettings } from '@grafana/data';
+import { DataSourceInstanceSettings } from '@credativ/plutono-data';
 
 import { reducerTester } from '../../../../test/core/redux/reducerTester';
 import { VariablesState } from '../state/variablesReducer';

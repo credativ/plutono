@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 import { cx, css, keyframes } from 'emotion';
-import { useStyles } from '@grafana/ui';
+import { useStyles } from '@credativ/plutono-ui';
 import { Branding } from '../Branding/Branding';
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { Footer } from '../Footer/Footer';
 
 interface InnerBoxProps {
@@ -43,7 +43,7 @@ to{
   transform: translate(0px, 0px);
 }`;
 
-export const getLoginStyles = (theme: GrafanaTheme) => {
+export const getLoginStyles = (theme: PlutonoTheme) => {
   const bgColor = theme.isDark ? theme.palette.black : theme.palette.white;
   return {
     container: css`

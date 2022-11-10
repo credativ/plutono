@@ -10,11 +10,11 @@ import (
 	"path"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/tsdb/influxdb/flux"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/tsdb/influxdb/flux"
 )
 
 type InfluxDBExecutor struct {
@@ -150,7 +150,7 @@ func (e *InfluxDBExecutor) createRequest(ctx context.Context, dsInfo *models.Dat
 		return nil, ErrInvalidHttpMode
 	}
 
-	req.Header.Set("User-Agent", "Grafana")
+	req.Header.Set("User-Agent", "Plutono")
 
 	params := req.URL.Query()
 	params.Set("db", dsInfo.Database)

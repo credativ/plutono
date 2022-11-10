@@ -139,7 +139,7 @@ function joinEvalMatches(matches: any, separator: string) {
 }
 
 function getAlertAnnotationInfo(ah: any) {
-  // backward compatibility, can be removed in grafana 5.x
+  // backward compatibility, can be removed in plutono 5.x
   // old way stored evalMatches in data property directly,
   // new way stores it in evalMatches property on new data object
 

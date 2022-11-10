@@ -7,10 +7,10 @@ import (
 	"errors"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 var (
@@ -51,7 +51,7 @@ type CacheStorage interface {
 	Delete(key string) error
 }
 
-// RemoteCache allows Grafana to cache data outside its own process
+// RemoteCache allows Plutono to cache data outside its own process
 type RemoteCache struct {
 	log      log.Logger
 	client   CacheStorage

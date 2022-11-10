@@ -1,28 +1,28 @@
 ARG BASE_IMAGE=alpine:3.13
 FROM ${BASE_IMAGE}
 
-ARG GRAFANA_TGZ="grafana-latest.linux-x64-musl.tar.gz"
+ARG PLUTONO_TGZ="plutono-latest.linux-x64-musl.tar.gz"
 
 # Make sure we have Gnu tar
 RUN apk add --no-cache tar
 
-COPY ${GRAFANA_TGZ} /tmp/grafana.tar.gz
+COPY ${PLUTONO_TGZ} /tmp/plutono.tar.gz
 
 # Change to tar xfzv to make tar print every file it extracts
-RUN mkdir /tmp/grafana && tar xzf /tmp/grafana.tar.gz --strip-components=1 -C /tmp/grafana
+RUN mkdir /tmp/plutono && tar xzf /tmp/plutono.tar.gz --strip-components=1 -C /tmp/plutono
 
 FROM ${BASE_IMAGE}
 
 ARG GF_UID="472"
 ARG GF_GID="0"
 
-ENV PATH=/usr/share/grafana/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
-    GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
-    GF_PATHS_DATA="/var/lib/grafana" \
-    GF_PATHS_HOME="/usr/share/grafana" \
-    GF_PATHS_LOGS="/var/log/grafana" \
-    GF_PATHS_PLUGINS="/var/lib/grafana/plugins" \
-    GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
+ENV PATH=/usr/share/plutono/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
+    GF_PATHS_CONFIG="/etc/plutono/plutono.ini" \
+    GF_PATHS_DATA="/var/lib/plutono" \
+    GF_PATHS_HOME="/usr/share/plutono" \
+    GF_PATHS_LOGS="/var/log/plutono" \
+    GF_PATHS_PLUGINS="/var/lib/plutono/plugins" \
+    GF_PATHS_PROVISIONING="/etc/plutono/provisioning"
 
 WORKDIR $GF_PATHS_HOME
 
@@ -44,15 +44,15 @@ RUN if [ `arch` = "x86_64" ]; then \
       rm -f /etc/ld.so.cache; \
     fi
 
-COPY --from=0 /tmp/grafana "$GF_PATHS_HOME"
+COPY --from=0 /tmp/plutono "$GF_PATHS_HOME"
 
 RUN if [ ! $(getent group "$GF_GID") ]; then \
-      addgroup -S -g $GF_GID grafana; \
+      addgroup -S -g $GF_GID plutono; \
     fi
 
 RUN export GF_GID_NAME=$(getent group $GF_GID | cut -d':' -f1) && \
     mkdir -p "$GF_PATHS_HOME/.aws" && \
-    adduser -S -u $GF_UID -G "$GF_GID_NAME" grafana && \
+    adduser -S -u $GF_UID -G "$GF_GID_NAME" plutono && \
     mkdir -p "$GF_PATHS_PROVISIONING/datasources" \
              "$GF_PATHS_PROVISIONING/dashboards" \
              "$GF_PATHS_PROVISIONING/notifiers" \
@@ -61,8 +61,8 @@ RUN export GF_GID_NAME=$(getent group $GF_GID | cut -d':' -f1) && \
              "$GF_PATHS_PLUGINS" \
              "$GF_PATHS_DATA" && \
     cp "$GF_PATHS_HOME/conf/sample.ini" "$GF_PATHS_CONFIG" && \
-    cp "$GF_PATHS_HOME/conf/ldap.toml" /etc/grafana/ldap.toml && \
-    chown -R "grafana:$GF_GID_NAME" "$GF_PATHS_DATA" "$GF_PATHS_HOME/.aws" "$GF_PATHS_LOGS" "$GF_PATHS_PLUGINS" "$GF_PATHS_PROVISIONING" && \
+    cp "$GF_PATHS_HOME/conf/ldap.toml" /etc/plutono/ldap.toml && \
+    chown -R "plutono:$GF_GID_NAME" "$GF_PATHS_DATA" "$GF_PATHS_HOME/.aws" "$GF_PATHS_LOGS" "$GF_PATHS_PLUGINS" "$GF_PATHS_PROVISIONING" && \
     chmod -R 777 "$GF_PATHS_DATA" "$GF_PATHS_HOME/.aws" "$GF_PATHS_LOGS" "$GF_PATHS_PLUGINS" "$GF_PATHS_PROVISIONING"
 
 EXPOSE 3000

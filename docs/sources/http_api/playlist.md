@@ -1,8 +1,8 @@
 +++
 title = "Playlist HTTP API "
 description = "Playlist Admin HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "playlist"]
-aliases = ["/docs/grafana/latest/http_api/playlist/"]
+keywords = ["plutono", "http", "documentation", "api", "playlist"]
+aliases = ["/docs/plutono/latest/http_api/playlist/"]
 +++
 
 # Playlist API

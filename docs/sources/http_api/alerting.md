@@ -1,8 +1,8 @@
 +++
 title = "Alerting HTTP API "
-description = "Grafana Alerts HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "alerting", "alerts"]
-aliases = ["/docs/grafana/latest/http_api/alerting/"]
+description = "Plutono Alerts HTTP API"
+keywords = ["plutono", "http", "documentation", "api", "alerting", "alerts"]
+aliases = ["/docs/plutono/latest/http_api/alerting/"]
 +++
 
 # Alerting API

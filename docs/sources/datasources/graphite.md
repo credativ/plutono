@@ -1,18 +1,18 @@
 +++
 title = "Graphite"
-description = "Guide for using graphite in Grafana"
-keywords = ["grafana", "graphite", "guide"]
-aliases = ["/docs/grafana/latest/features/datasources/graphite"]
+description = "Guide for using graphite in Plutono"
+keywords = ["plutono", "graphite", "guide"]
+aliases = ["/docs/plutono/latest/features/datasources/graphite"]
 weight = 600
 +++
 
-# Using Graphite in Grafana
+# Using Graphite in Plutono
 
-Grafana has an advanced Graphite query editor that lets you quickly navigate the metric space, add functions,
+Plutono has an advanced Graphite query editor that lets you quickly navigate the metric space, add functions,
 change function parameters and much more. The editor can handle all types of graphite queries. It can even handle complex nested
 queries through the use of query references.
 
-Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Grafana. Only organization admins can add data sources. To learn more about the Graphite data source, refer to Graphite's [product documentation](https://graphite.readthedocs.io/en/stable/).
+Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Plutono. Only organization admins can add data sources. To learn more about the Graphite data source, refer to Graphite's [product documentation](https://graphite.readthedocs.io/en/stable/).
 
 ## Graphite settings
 
@@ -23,7 +23,7 @@ Name                  | Description
 `Name`                | The data source name. This is how you refer to the data source in panels and queries.
 `Default`             | Default data source means that it will be pre-selected for new panels.
 `URL`                 | The HTTP protocol, IP, and port of your graphite-web or graphite-api install.
-`Access`              | Server (default) = URL needs to be accessible from the Grafana backend/server, Browser = URL needs to be accessible from the browser.
+`Access`              | Server (default) = URL needs to be accessible from the Plutono backend/server, Browser = URL needs to be accessible from the browser.
 `Auth`                | Refer to [Authentication]({{< relref "../auth/_index.md" >}}) for more information.
 `Basic Auth`          | Enable basic authentication to the data source.
 `User`                | User name for basic authentication.
@@ -39,7 +39,7 @@ Access mode controls how requests to the data source will be handled. Server sho
 
 ### Server access mode (default)
 
-All requests will be made from the browser to Grafana backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the Grafana backend/server if you select this access mode.
+All requests will be made from the browser to Plutono backend/server which in turn will forward the requests to the data source and by that circumvent possible Cross-Origin Resource Sharing (CORS) requirements. The URL needs to be accessible from the Plutono backend/server if you select this access mode.
 
 ### Browser access mode
 
@@ -47,7 +47,7 @@ All requests will be made from the browser directly to the data source and may b
 
 ## Graphite query editor
 
-Grafana includes a Graphite-specific query editor to help you build your queries.
+Plutono includes a Graphite-specific query editor to help you build your queries.
 
 To see the raw text of the query that is sent to Graphite, click the **Toggle text edit mode** (pencil) icon.
 
@@ -90,7 +90,7 @@ To be more efficient one can use wildcards in your search, returning all the tim
 
 ### Modify the metric name in my tables or charts
 
-Use `alias` functions to change metric names on Grafana tables or graphs For example `aliasByNode()` or `aliasSub()`.
+Use `alias` functions to change metric names on Plutono tables or graphs For example `aliasByNode()` or `aliasSub()`.
 
 ## Point consolidation
 
@@ -98,7 +98,7 @@ All Graphite metrics are consolidated so that Graphite doesn't return more data 
 this consolidation is done using `avg` function. You can control how Graphite consolidates metrics by adding the Graphite consolidateBy function.
 
 > **Note:** This means that legend summary values (max, min, total) cannot all be correct at the same time. They are calculated
-> client-side by Grafana. And depending on your consolidation function, only one or two can be correct at the same time.
+> client-side by Plutono. And depending on your consolidation function, only one or two can be correct at the same time.
 
 ## Combine time series
 
@@ -111,7 +111,7 @@ In Graphite, _everything_ is a tag.
 When exploring data, previously-selected tags are used to filter the remaining result set. To select data, you use the
 `seriesByTag` function, which takes tag expressions (`=`, `!=`, `=~`, `!=~`) to filter timeseries.
 
-The Grafana query builder does this for you automatically when you select a tag.
+The Plutono query builder does this for you automatically when you select a tag.
 
 > **Tip:** The regular expression search can be quite slow on high-cardinality tags, so try to use other tags to reduce the scope first.
 Starting off with a particular name/namespace can help reduce the results.
@@ -124,7 +124,7 @@ being displayed in your dashboard.
 
 For more information, refer to [Variables and templates]({{< relref "../variables/_index.md" >}}).
 
-Graphite 1.1 introduced tags and Grafana added support for Graphite queries with tags in version 5.0. To create a variable using tag values, use the Grafana functions `tags` and `tag_values`.
+Graphite 1.1 introduced tags and Plutono added support for Graphite queries with tags in version 5.0. To create a variable using tag values, use the Plutono functions `tags` and `tag_values`.
 
 Query                                                       | Description
 ----------------------------------------------------------- | -------------
@@ -145,7 +145,7 @@ You can also create nested variables that use other variables in their definitio
 `apps.$app.servers.*` uses the variable `$app` in its query definition.
 
 #### Using `__searchFilter` to filter query variable results
-> Available from Grafana 6.5 and above
+> Available from Plutono 6.5 and above
 
 Using `__searchFilter` in the query field will filter the query result based on what the user types in the dropdown select box.
 When nothing has been entered by the user the default value for `__searchFilter` is `*` and `` when used as part of a regular expression.
@@ -176,11 +176,11 @@ Why two ways? The first syntax is easier to read and write but does not allow yo
 the second syntax in expressions like  `my.server${serverNumber}.count`.
 
 Example:
-[Graphite Templated Dashboard](https://play.grafana.org/dashboard/db/graphite-templated-nested)
+[Graphite Templated Dashboard](https://play.plutono.org/dashboard/db/graphite-templated-nested)
 
 ### Variable usage in tag queries
 
-Multi-value variables in tag queries use the advanced formatting syntax introduced in Grafana 5.0 for variables: `{var:regex}`. Non-tag queries will use the default glob formatting for multi-value variables.
+Multi-value variables in tag queries use the advanced formatting syntax introduced in Plutono 5.0 for variables: `{var:regex}`. Non-tag queries will use the default glob formatting for multi-value variables.
 
 Example of a tag expression with regex formatting and using the Equal Tilde operator, `=~`:
 
@@ -198,13 +198,13 @@ queries via the Dashboard menu / Annotations view.
 Graphite supports two ways to query annotations. A regular metric query, for this you use the `Graphite query` textbox. A Graphite events query, use the `Graphite event tags` textbox,
 specify a tag or wildcard (leave empty should also work)
 
-## Get Grafana metrics into Graphite
+## Get Plutono metrics into Graphite
 
-Grafana exposes metrics for Graphite on the `/metrics` endpoint. For detailed instructions, refer to [Internal Grafana metrics]({{< relref "../administration/view-server/internal-metrics.md">}}).
+Plutono exposes metrics for Graphite on the `/metrics` endpoint. For detailed instructions, refer to [Internal Plutono metrics]({{< relref "../administration/view-server/internal-metrics.md">}}).
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with Plutono's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source.
 

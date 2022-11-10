@@ -2,56 +2,56 @@
 
 set -e
 
-[ -f /etc/default/grafana-server ] && . /etc/default/grafana-server
+[ -f /etc/default/plutono-server ] && . /etc/default/plutono-server
 
 IS_UPGRADE=false
 
 
 case "$1" in
 	configure)
-	[ -z "$GRAFANA_USER" ] && GRAFANA_USER="grafana"
-	[ -z "$GRAFANA_GROUP" ] && GRAFANA_GROUP="grafana"
-	if ! getent group "$GRAFANA_GROUP" > /dev/null 2>&1 ; then
-	    addgroup --system "$GRAFANA_GROUP" --quiet
+	[ -z "$PLUTONO_USER" ] && PLUTONO_USER="plutono"
+	[ -z "$PLUTONO_GROUP" ] && PLUTONO_GROUP="plutono"
+	if ! getent group "$PLUTONO_GROUP" > /dev/null 2>&1 ; then
+	    addgroup --system "$PLUTONO_GROUP" --quiet
 	fi
-	if ! id $GRAFANA_USER > /dev/null 2>&1 ; then
-	    adduser --system --home /usr/share/grafana --no-create-home \
-		--ingroup "$GRAFANA_GROUP" --disabled-password --shell /bin/false \
-		"$GRAFANA_USER"
+	if ! id $PLUTONO_USER > /dev/null 2>&1 ; then
+	    adduser --system --home /usr/share/plutono --no-create-home \
+		--ingroup "$PLUTONO_GROUP" --disabled-password --shell /bin/false \
+		"$PLUTONO_USER"
 	fi
 
-	# Set user permissions on /var/log/grafana, /var/lib/grafana
-	mkdir -p /var/log/grafana /var/lib/grafana
-	chown -R $GRAFANA_USER:$GRAFANA_GROUP /var/log/grafana /var/lib/grafana
-	chmod 755 /var/log/grafana /var/lib/grafana
+	# Set user permissions on /var/log/plutono, /var/lib/plutono
+	mkdir -p /var/log/plutono /var/lib/plutono
+	chown -R $PLUTONO_USER:$PLUTONO_GROUP /var/log/plutono /var/lib/plutono
+	chmod 755 /var/log/plutono /var/lib/plutono
 
   # copy user config files
   if [ ! -f $CONF_FILE ]; then
-    cp /usr/share/grafana/conf/sample.ini $CONF_FILE
-    cp /usr/share/grafana/conf/ldap.toml /etc/grafana/ldap.toml
+    cp /usr/share/plutono/conf/sample.ini $CONF_FILE
+    cp /usr/share/plutono/conf/ldap.toml /etc/plutono/ldap.toml
   fi
 
   if [ ! -d $PROVISIONING_CFG_DIR ]; then
     mkdir -p $PROVISIONING_CFG_DIR/dashboards $PROVISIONING_CFG_DIR/datasources
-    cp /usr/share/grafana/conf/provisioning/dashboards/sample.yaml $PROVISIONING_CFG_DIR/dashboards/sample.yaml
-    cp /usr/share/grafana/conf/provisioning/datasources/sample.yaml $PROVISIONING_CFG_DIR/datasources/sample.yaml
+    cp /usr/share/plutono/conf/provisioning/dashboards/sample.yaml $PROVISIONING_CFG_DIR/dashboards/sample.yaml
+    cp /usr/share/plutono/conf/provisioning/datasources/sample.yaml $PROVISIONING_CFG_DIR/datasources/sample.yaml
   fi
 
   if [ ! -d $PROVISIONING_CFG_DIR/notifiers ]; then
     mkdir -p $PROVISIONING_CFG_DIR/notifiers
-    cp /usr/share/grafana/conf/provisioning/notifiers/sample.yaml $PROVISIONING_CFG_DIR/notifiers/sample.yaml
+    cp /usr/share/plutono/conf/provisioning/notifiers/sample.yaml $PROVISIONING_CFG_DIR/notifiers/sample.yaml
   fi
 
   if [ ! -d $PROVISIONING_CFG_DIR/plugins ]; then
     mkdir -p $PROVISIONING_CFG_DIR/plugins
-    cp /usr/share/grafana/conf/provisioning/plugins/sample.yaml $PROVISIONING_CFG_DIR/plugins/sample.yaml
+    cp /usr/share/plutono/conf/provisioning/plugins/sample.yaml $PROVISIONING_CFG_DIR/plugins/sample.yaml
   fi
 
-	# configuration files should not be modifiable by grafana user, as this can be a security issue
-	chown -Rh root:$GRAFANA_GROUP /etc/grafana/*
-	chmod 755 /etc/grafana
-	find /etc/grafana -type f -exec chmod 640 {} ';'
-	find /etc/grafana -type d -exec chmod 755 {} ';'
+	# configuration files should not be modifiable by plutono user, as this can be a security issue
+	chown -Rh root:$PLUTONO_GROUP /etc/plutono/*
+	chmod 755 /etc/plutono
+	find /etc/plutono -type f -exec chmod 640 {} ';'
+	find /etc/plutono -type d -exec chmod 755 {} ';'
 
   # If $1=configure and $2 is set, this is an upgrade
   if [ "$2" != "" ]; then
@@ -60,29 +60,29 @@ case "$1" in
 
   if [ "x$IS_UPGRADE" != "xtrue" ]; then
     if command -v systemctl >/dev/null; then
-      echo "### NOT starting on installation, please execute the following statements to configure grafana to start automatically using systemd"
+      echo "### NOT starting on installation, please execute the following statements to configure plutono to start automatically using systemd"
       echo " sudo /bin/systemctl daemon-reload"
-      echo " sudo /bin/systemctl enable grafana-server"
-      echo "### You can start grafana-server by executing"
-      echo " sudo /bin/systemctl start grafana-server"
+      echo " sudo /bin/systemctl enable plutono-server"
+      echo "### You can start plutono-server by executing"
+      echo " sudo /bin/systemctl start plutono-server"
     elif command -v update-rc.d >/dev/null; then
-      echo "### NOT starting grafana-server by default on bootup, please execute"
-      echo " sudo update-rc.d grafana-server defaults 95 10"
-      echo "### In order to start grafana-server, execute"
-      echo " sudo service grafana-server start"
+      echo "### NOT starting plutono-server by default on bootup, please execute"
+      echo " sudo update-rc.d plutono-server defaults 95 10"
+      echo "### In order to start plutono-server, execute"
+      echo " sudo service plutono-server start"
     fi
   elif [ "$RESTART_ON_UPGRADE" = "true" ]; then
 
-    echo -n "Restarting grafana-server service..."
+    echo -n "Restarting plutono-server service..."
 
     if command -v systemctl >/dev/null; then
       systemctl daemon-reload
-      systemctl restart grafana-server || true
-    elif [ -x /etc/init.d/grafana-server ]; then
+      systemctl restart plutono-server || true
+    elif [ -x /etc/init.d/plutono-server ]; then
       if command -v invoke-rc.d >/dev/null; then
-        invoke-rc.d grafana-server restart || true
+        invoke-rc.d plutono-server restart || true
       else
-        /etc/init.d/grafana-server restart || true
+        /etc/init.d/plutono-server restart || true
       fi
     fi
     echo " OK"

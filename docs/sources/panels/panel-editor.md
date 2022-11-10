@@ -5,7 +5,7 @@ weight = 200
 
 # Panel editor
 
-This page describes the parts of the Grafana panel editor and links to where you can find more information.
+This page describes the parts of the Plutono panel editor and links to where you can find more information.
 
 {{< figure src="/static/img/docs/panel-editor/panel-editor-7-0.png" class="docs-image--no-shadow" max-width="1500px" >}}
 

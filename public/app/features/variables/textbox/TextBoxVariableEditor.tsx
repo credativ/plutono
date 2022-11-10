@@ -1,11 +1,11 @@
 import React, { FormEvent, ReactElement, useCallback } from 'react';
-import { VerticalGroup } from '@grafana/ui';
+import { VerticalGroup } from '@credativ/plutono-ui';
 
 import { TextBoxVariableModel } from '../types';
 import { VariableEditorProps } from '../editor/types';
 import { VariableSectionHeader } from '../editor/VariableSectionHeader';
 import { VariableTextField } from '../editor/VariableTextField';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 export interface Props extends VariableEditorProps<TextBoxVariableModel> {}
 

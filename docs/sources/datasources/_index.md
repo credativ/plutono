@@ -1,12 +1,12 @@
 +++
 title = "Data sources"
-aliases = ["/docs/grafana/latest/datasources/overview/"]
+aliases = ["/docs/plutono/latest/datasources/overview/"]
 weight = 60
 +++
 
 # Data sources
 
-Grafana supports many different storage backends for your time series data (data source). Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Grafana. Only users with the organization admin role can add data sources.
+Plutono supports many different storage backends for your time series data (data source). Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Plutono. Only users with the organization admin role can add data sources.
 
 ## Querying
 
@@ -33,16 +33,16 @@ The following data sources are officially supported:
 - [Tempo]({{< relref "tempo.md" >}})
 - [Testdata]({{< relref "testdata.md" >}})
 
-In addition to the data sources that you have configured in your Grafana, there are three special data sources available:
+In addition to the data sources that you have configured in your Plutono, there are three special data sources available:
 
-- **Grafana -** A built-in data source that generates random walk data. Useful for testing visualizations and running experiments.
-- **Mixed -** Select this to query multiple data sources in the same panel. When this data source is selected, Grafana allows you to select a data source for every new query that you add.
+- **Plutono -** A built-in data source that generates random walk data. Useful for testing visualizations and running experiments.
+- **Mixed -** Select this to query multiple data sources in the same panel. When this data source is selected, Plutono allows you to select a data source for every new query that you add.
   - The first query will use the data source that was selected before you selected **Mixed**.
   - You cannot change an existing query to use the Mixed Data Source.
-  - Grafana Play example: [Mixed data sources](https://play.grafana.org/d/000000100/mixed-datasources?orgId=1)
+  - Plutono Play example: [Mixed data sources](https://play.plutono.org/d/000000100/mixed-datasources?orgId=1)
 - **Dashboard -** Select this to use a result set from another panel in the same dashboard.
 
 ## Data source plugins
 
-Since Grafana 3.0 you can install data sources as plugins. Check out [Grafana.com/plugins](https://grafana.com/plugins) for more data sources.
+Since Plutono 3.0 you can install data sources as plugins. Check out [Grafana.com/plugins](https://grafana.com/plugins) for more data sources.
 

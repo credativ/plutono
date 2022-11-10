@@ -1,8 +1,8 @@
 import React, { FC } from 'react';
 // @ts-ignore
 import Highlighter from 'react-highlight-words';
-import { FeatureState } from '@grafana/data';
-import { Card, FeatureBadge, Icon, LinkButton } from '@grafana/ui';
+import { FeatureState } from '@credativ/plutono-data';
+import { Card, FeatureBadge, Icon, LinkButton } from '@credativ/plutono-ui';
 import { AlertDefinition } from 'app/types';
 
 interface Props {

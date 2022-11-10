@@ -1,8 +1,8 @@
 package notifiers
 
 import (
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/services/provisioning/values"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/services/provisioning/values"
 )
 
 // notificationsAsConfig is normalized data object for notifications config data. Any config version should be mappable

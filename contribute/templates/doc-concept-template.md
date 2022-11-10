@@ -4,7 +4,7 @@ draft = "false"
 date = "yyyy-mm-dd"
 title = "Title in sentence case"
 description = "Description in title case"
-keywords = ["grafana", "enter", "keywords", "here"]
+keywords = ["plutono", "enter", "keywords", "here"]
 type = "docs"
 [menu.docs]
 name = "Name of topic"
@@ -23,13 +23,13 @@ Concepts are topic types for any information that doesn't involve task lists or 
 
 ## Idea
 
-Concept topics or sections explain *what* and *why*. They do not explain *how*. If you are a new user, you might look for concept information to learn about what Grafana is, why it might be useful to you, and what the general workflow is. 
+Concept topics or sections explain *what* and *why*. They do not explain *how*. If you are a new user, you might look for concept information to learn about what Plutono is, why it might be useful to you, and what the general workflow is. 
 
 ## Workflow
 
-Continuing the example in the previous section, here is a sample Grafana workflow. 
+Continuing the example in the previous section, here is a sample Plutono workflow. 
 
-1. Install Grafana. <link to task for installing Grafana>
+1. Install Plutono. <link to task for installing Plutono>
 1. Set up data sources. <link to data sources concept topic, which links to data source task topics>
 1. Create panels. <link to panel concept topic, which links to tasks>
 1. Create dashboards.  <link to panel concept topic, which links to tasks>

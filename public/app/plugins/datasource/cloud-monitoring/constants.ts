@@ -230,7 +230,7 @@ export const aggOptions = [
 ];
 
 export const alignmentPeriods = [
-  { text: 'grafana auto', value: 'grafana-auto' },
+  { text: 'plutono auto', value: 'plutono-auto' },
   { text: 'stackdriver auto', value: 'stackdriver-auto', hidden: true },
   { text: 'cloud monitoring auto', value: 'cloud-monitoring-auto' },
   { text: '1m', value: '+60s' },

@@ -1,4 +1,4 @@
-module github.com/grafana/grafana/scripts/go
+module github.com/credativ/plutono/scripts/go
 
 go 1.14
 

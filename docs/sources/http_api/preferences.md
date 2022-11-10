@@ -1,8 +1,8 @@
 +++
 title = "HTTP Preferences API "
-description = "Grafana HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "preferences"]
-aliases = ["/docs/grafana/latest/http_api/preferences/"]
+description = "Plutono HTTP API"
+keywords = ["plutono", "http", "documentation", "api", "preferences"]
+aliases = ["/docs/plutono/latest/http_api/preferences/"]
 +++
 
 # User and Org Preferences API

@@ -1,5 +1,5 @@
 import React, { Suspense } from 'react';
-import { PopoverController, Popover, ClickOutsideWrapper } from '@grafana/ui';
+import { PopoverController, Popover, ClickOutsideWrapper } from '@credativ/plutono-ui';
 import { FunctionDescriptor, FunctionEditorControls, FunctionEditorControlsProps } from './FunctionEditorControls';
 
 interface FunctionEditorProps extends FunctionEditorControlsProps {

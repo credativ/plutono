@@ -8,7 +8,7 @@ Dimensions: 5 Fields by 3 Rows
 | Labels:         | Labels:          | Labels:              | Labels:               | Labels:               |
 | Type: []*string | Type: []*string  | Type: []*string      | Type: []*string       | Type: []*int64        |
 +-----------------+------------------+----------------------+-----------------------+-----------------------+
-| grafana         | 059b46a59abab001 | 059b46a59abab000     | null                  | 604800000000000       |
+| plutono         | 059b46a59abab001 | 059b46a59abab000     | null                  | 604800000000000       |
 | _tasks          | 059b46a59abab002 | 059b46a59abab000     | null                  | 259200000000000       |
 | _monitoring     | 059b46a59abab003 | 059b46a59abab000     | null                  | 604800000000000       |
 +-----------------+------------------+----------------------+-----------------------+-----------------------+

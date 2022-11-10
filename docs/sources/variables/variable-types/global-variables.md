@@ -1,23 +1,23 @@
 +++
 title = "Global variables"
-keywords = ["grafana", "templating", "documentation", "guide", "template", "variable", "global", "standard"]
-aliases = ["/docs/grafana/latest/variables/global-variables.md"]
+keywords = ["plutono", "templating", "documentation", "guide", "template", "variable", "global", "standard"]
+aliases = ["/docs/plutono/latest/variables/global-variables.md"]
 weight = 900
 +++
 
 # Global variables
 
-Grafana has global built-in variables that can be used in expressions in the query editor. This topic lists them in alphabetical order and defines them. These variables are useful in queries, dashboard links, panel links, and data links.
+Plutono has global built-in variables that can be used in expressions in the query editor. This topic lists them in alphabetical order and defines them. These variables are useful in queries, dashboard links, panel links, and data links.
 
 ## $__dashboard
 
-> Only available in Grafana v6.7+. In Grafana 7.1, the variable changed from showing the UID of the current dashboard to the name of the current dashboard.
+> Only available in Plutono v6.7+. In Plutono 7.1, the variable changed from showing the UID of the current dashboard to the name of the current dashboard.
 
 This variable is the name of the current dashboard.
 
 ## $__from and $__to
 
-Grafana has two built in time range variables: `$__from` and `$__to`. They are currently always interpolated as epoch milliseconds by default but you can control date formatting.
+Plutono has two built in time range variables: `$__from` and `$__to`. They are currently always interpolated as epoch milliseconds by default but you can control date formatting.
 
 > This special formatting syntax is only available in Grafan a 7.1.2+
 
@@ -31,13 +31,13 @@ Grafana has two built in time range variables: `$__from` and `$__to`. They are c
 
 The above syntax works with `${__to}` as well.
 
-You can use this variable in URLs as well. For example, send a user to a dashboard that shows a time range from six hours ago until now: https://play.grafana.org/d/000000012/grafana-play-home?viewPanel=2&orgId=1?from=now-6h&to=now
+You can use this variable in URLs as well. For example, send a user to a dashboard that shows a time range from six hours ago until now: https://play.plutono.org/d/000000012/plutono-play-home?viewPanel=2&orgId=1?from=now-6h&to=now
 
 ## $__interval
 
 You can use the `$__interval` variable as a parameter to group by time (for InfluxDB, MySQL, Postgres, MSSQL), Date histogram interval (for Elasticsearch), or as a _summarize_ function parameter (for Graphite).
 
-Grafana automatically calculates an interval that can be used to group by time in queries. When there are more data points than can be shown on a graph then queries can be made more efficient by grouping by a larger interval. It is more efficient to group by 1 day than by 10s when looking at 3 months of data and the graph will look the same and the query will be faster. The `$__interval` is calculated using the time range and the width of the graph (the number of pixels).
+Plutono automatically calculates an interval that can be used to group by time in queries. When there are more data points than can be shown on a graph then queries can be made more efficient by grouping by a larger interval. It is more efficient to group by 1 day than by 10s when looking at 3 months of data and the graph will look the same and the query will be faster. The `$__interval` is calculated using the time range and the width of the graph (the number of pixels).
 
 Approximate Calculation: `(from - to) / resolution`
 
@@ -62,7 +62,7 @@ This variable is the ID of the current organization.
 
 ## $__user
 
-> Only available in Grafana v7.1+
+> Only available in Plutono v7.1+
 
 `${__user.id}` is the ID of the current user.
 `${__user.login}` is the login handle of the current user.
@@ -78,7 +78,7 @@ The `$timeFilter` variable returns the currently selected time range as an expre
 
 This is used in several places, including:
 
-- The WHERE clause for the InfluxDB data source. Grafana adds it automatically to InfluxDB queries when in Query Editor mode. You can add it manually in Text Editor mode: `WHERE $timeFilter`.
+- The WHERE clause for the InfluxDB data source. Plutono adds it automatically to InfluxDB queries when in Query Editor mode. You can add it manually in Text Editor mode: `WHERE $timeFilter`.
 - Log Analytics queries in the Azure Monitor data source.
 - SQL queries in MySQL, Postgres, and MSSQL.
 - The `$__timeFilter` variable is used in the MySQL data source.

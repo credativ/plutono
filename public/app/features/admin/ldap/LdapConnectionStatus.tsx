@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Alert, Icon } from '@grafana/ui';
+import { Alert, Icon } from '@credativ/plutono-ui';
 import { AppNotificationSeverity, LdapConnectionInfo, LdapServerInfo } from 'app/types';
 
 interface Props {

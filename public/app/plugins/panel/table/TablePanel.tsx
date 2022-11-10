@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 
-import { Select, Table } from '@grafana/ui';
-import { DataFrame, FieldMatcherID, getFrameDisplayName, PanelProps, SelectableValue } from '@grafana/data';
+import { Select, Table } from '@credativ/plutono-ui';
+import { DataFrame, FieldMatcherID, getFrameDisplayName, PanelProps, SelectableValue } from '@credativ/plutono-data';
 import { Options } from './types';
 import { css } from 'emotion';
 import { config } from 'app/core/config';
-import { FilterItem, TableSortByFieldState } from '@grafana/ui/src/components/Table/types';
+import { FilterItem, TableSortByFieldState } from '@credativ/plutono-ui/src/components/Table/types';
 import { dispatch } from '../../../store/store';
 import { applyFilterFromTable } from '../../../features/variables/adhoc/actions';
 import { getDashboardSrv } from '../../../features/dashboard/services/DashboardSrv';

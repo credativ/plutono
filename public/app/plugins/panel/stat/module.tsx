@@ -1,5 +1,5 @@
-import { BigValueTextMode, sharedSingleStatMigrationHandler } from '@grafana/ui';
-import { PanelPlugin } from '@grafana/data';
+import { BigValueTextMode, sharedSingleStatMigrationHandler } from '@credativ/plutono-ui';
+import { PanelPlugin } from '@credativ/plutono-data';
 import { addStandardDataReduceOptions, StatPanelOptions } from './types';
 import { StatPanel } from './StatPanel';
 import { statPanelChangedHandler } from './StatMigrations';

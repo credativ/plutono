@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { ClickOutsideWrapper } from '@grafana/ui';
+import { ClickOutsideWrapper } from '@credativ/plutono-ui';
 import { PanelHeaderMenuProvider } from './PanelHeaderMenuProvider';
 import { PanelHeaderMenu } from './PanelHeaderMenu';
 import { DashboardModel, PanelModel } from '../../state';

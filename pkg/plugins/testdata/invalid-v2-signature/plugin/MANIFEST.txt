@@ -4,8 +4,8 @@ Hash: SHA512
 
 {
   "manifestVersion": "2.0.0",
-  "signatureType": "grafana",
-  "signedByOrg": "grafana",
+  "signatureType": "plutono",
+  "signedByOrg": "plutono",
   "signedByOrgName": "Grafana Labs",
   "plugin": "test",
   "version": "1.0.0",

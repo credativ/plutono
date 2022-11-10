@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { InlineFormLabel, LegacyForms } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { InlineFormLabel, LegacyForms } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 const { Input, Switch } = LegacyForms;
 

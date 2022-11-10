@@ -1,18 +1,18 @@
 +++
 title = "AWS CloudWatch"
-description = "Guide for using CloudWatch in Grafana"
-keywords = ["grafana", "cloudwatch", "guide"]
-aliases = ["/docs/grafana/latest/datasources/cloudwatch"]
+description = "Guide for using CloudWatch in Plutono"
+keywords = ["plutono", "cloudwatch", "guide"]
+aliases = ["/docs/plutono/latest/datasources/cloudwatch"]
 weight = 200
 +++
 
 # AWS CloudWatch data source
 
-Grafana ships with built-in support for CloudWatch. Add it as a data source, then you are ready to build dashboards or use Explore with CloudWatch metrics and CloudWatch Logs.
+Plutono ships with built-in support for CloudWatch. Add it as a data source, then you are ready to build dashboards or use Explore with CloudWatch metrics and CloudWatch Logs.
 
-This topic explains options, variables, querying, and other options specific to this data source. Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Grafana. Only users with the organization admin role can add data sources.
+This topic explains options, variables, querying, and other options specific to this data source. Refer to [Add a data source]({{< relref "add-a-data-source.md" >}}) for instructions on how to add a data source to Plutono. Only users with the organization admin role can add data sources.
 
-> **Note:** If you have issues with getting this data source to work and Grafana is giving you undescriptive errors, then check your log file (try looking in /var/log/grafana/grafana.log).
+> **Note:** If you have issues with getting this data source to work and Plutono is giving you undescriptive errors, then check your log file (try looking in /var/log/plutono/plutono.log).
 
 ## Cloudwatch settings
 
@@ -41,15 +41,15 @@ There are three different authentication methods available. `AWS SDK Default` pe
 
 ### IAM roles
 
-Currently all access to CloudWatch is done server side by the Grafana backend using the official AWS SDK. Providing you have chosen the _AWS SDK Default_ authentication method, and your Grafana server is running on AWS, you can use IAM Roles to handle authentication automically.
+Currently all access to CloudWatch is done server side by the Plutono backend using the official AWS SDK. Providing you have chosen the _AWS SDK Default_ authentication method, and your Plutono server is running on AWS, you can use IAM Roles to handle authentication automically.
 
 See the AWS documentation on [IAM Roles](http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html)
 
 ### IAM policies
 
-Grafana needs permissions granted via IAM to be able to read CloudWatch metrics
+Plutono needs permissions granted via IAM to be able to read CloudWatch metrics
 and EC2 tags/instances/regions. You can attach these permissions to IAM roles and
-utilize Grafana's built-in support for assuming roles.
+utilize Plutono's built-in support for assuming roles.
 
 Here is a minimal policy example:
 
@@ -109,7 +109,7 @@ The `Endpoint` field allows you to specify a custom endpoint URL that overrides 
 
 ### EKS IAM roles for service accounts
 
-The Grafana process in the container runs as user 472 (called "grafana"). When Kubernetes mounts your projected credentials, they will by default only be available to the root user. In order to allow user 472 to access the credentials (and avoid it falling back to the IAM role attached to the EC2 instance), you will need to provide a [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) for your pod.
+The Plutono process in the container runs as user 472 (called "plutono"). When Kubernetes mounts your projected credentials, they will by default only be available to the root user. In order to allow user 472 to access the credentials (and avoid it falling back to the IAM role attached to the EC2 instance), you will need to provide a [security context](https://kubernetes.io/docs/tasks/configure-pod-container/security-context/) for your pod.
 
 ```yaml
 securityContext:
@@ -120,9 +120,9 @@ securityContext:
 
 ### AWS credentials file
 
-Create a file at `~/.aws/credentials`. That is the `HOME` path for user running grafana-server.
+Create a file at `~/.aws/credentials`. That is the `HOME` path for user running plutono-server.
 
-> **Note:** If you think you have the credentials file in the right place and it is still not working, you might try moving your .aws file to '/usr/share/grafana/' and make sure your credentials file has at most 0644 permissions.
+> **Note:** If you think you have the credentials file in the right place and it is still not working, you might try moving your .aws file to '/usr/share/plutono/' and make sure your credentials file has at most 0644 permissions.
 
 Example content:
 
@@ -146,9 +146,9 @@ To create a valid query, you need to specify the namespace, metric name and at l
 
 ### Dynamic queries using dimension wildcards
 
-> Only available in Grafana v6.5+.
+> Only available in Plutono v6.5+.
 
-In Grafana 6.5 or higher, you’re able to monitor a dynamic list of metrics by using the asterisk (\*) wildcard for one or more dimension values.
+In Plutono 6.5 or higher, you’re able to monitor a dynamic list of metrics by using the asterisk (\*) wildcard for one or more dimension values.
 
 {{< figure src="/static/img/docs/v65/cloudwatch-dimension-wildcard.png" max-width="800px" class="docs-image--right" caption="CloudWatch dimension wildcard" >}}
 
@@ -160,7 +160,7 @@ You can untoggle `Match Exact` to include metrics that have other dimensions def
 
 ### Multi-value template variables
 
-> Only available in Grafana v6.5+.
+> Only available in Plutono v6.5+.
 
 When defining dimension values based on multi-valued template variables, a search expression is used to query for the matching metrics. This enables the use of multiple template variables in one query and also allows you to use template variables for queries that have the `Match Exact` option disabled.
 
@@ -180,19 +180,19 @@ Please note that in the case you use the expression field to reference another q
 
 A period is the length of time associated with a specific Amazon CloudWatch statistic. Periods are defined in numbers of seconds, and valid values for period are 1, 5, 10, 30, or any multiple of 60.
 
-If the period field is left blank or set to `auto`, then it calculates automatically based on the time range. The formula used is `time range in seconds / 2000`, and then it snaps to the next higher value in an array of predefined periods `[60, 300, 900, 3600, 21600, 86400]`. By clicking `Show Query Preview` in the query editor, you can see what period Grafana used.
+If the period field is left blank or set to `auto`, then it calculates automatically based on the time range. The formula used is `time range in seconds / 2000`, and then it snaps to the next higher value in an array of predefined periods `[60, 300, 900, 3600, 21600, 86400]`. By clicking `Show Query Preview` in the query editor, you can see what period Plutono used.
 
-### Deep linking from Grafana panels to the CloudWatch console
+### Deep linking from Plutono panels to the CloudWatch console
 
 {{< figure src="/static/img/docs/v65/cloudwatch-deep-linking.png" max-width="500px" class="docs-image--right" caption="CloudWatch deep linking" >}}
 
-Left clicking a time series in the panel shows a context menu with a link to `View in CloudWatch console`. Clicking that link will open a new tab that will take you to the CloudWatch console and display all the metrics for that query. If you're not currently logged in to the CloudWatch console, the link will forward you to the login page. The provided link is valid for any account but will only display the right metrics if you're logged in to the account that corresponds to the selected data source in Grafana.
+Left clicking a time series in the panel shows a context menu with a link to `View in CloudWatch console`. Clicking that link will open a new tab that will take you to the CloudWatch console and display all the metrics for that query. If you're not currently logged in to the CloudWatch console, the link will forward you to the login page. The provided link is valid for any account but will only display the right metrics if you're logged in to the account that corresponds to the selected data source in Plutono.
 
 This feature is not available for metrics that are based on metric math expressions.
 
 ## Using the Logs Query Editor
 
-> **Note:** Available in Grafana v7.0+.
+> **Note:** Available in Plutono v7.0+.
 
 To query CloudWatch Logs, select the region and up to 20 log groups which you want to query. Use the main input area to write your query in [CloudWatch Logs Query Language](https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/CWL_QuerySyntax.html)
 
@@ -209,16 +209,16 @@ To the right of the query input field is a CloudWatch Logs Insights link that op
 As with several other data sources, the CloudWatch data source supports the use of template variables in queries.
 See the [Templating]({{< relref "../variables/_index.md" >}}) documentation for an introduction to the templating feature and the different types of template variables.
 
-### Deep linking from Grafana panels to the CloudWatch console
+### Deep linking from Plutono panels to the CloudWatch console
 
 {{< figure src="/static/img/docs/v70/cloudwatch-logs-deep-linking.png" max-width="500px" class="docs-image--right" caption="CloudWatch Logs deep linking" >}}
 If you'd like to view your query in the CloudWatch Logs Insights console, simply click the `CloudWatch Logs Insights` button next to the query editor.
-If you're not currently logged in to the CloudWatch console, the link will forward you to the login page. The provided link is valid for any account but will only display the right metrics if you're logged in to the account that corresponds to the selected data source in Grafana.
+If you're not currently logged in to the CloudWatch console, the link will forward you to the login page. The provided link is valid for any account but will only display the right metrics if you're logged in to the account that corresponds to the selected data source in Plutono.
 
 ### Alerting
 
 Since CloudWatch Logs queries can return numeric data, for example through the use of the `stats` command, alerts are supported.
-See the [Alerting]({{< relref "../alerting/_index.md" >}}) documentation for more on Grafana alerts.
+See the [Alerting]({{< relref "../alerting/_index.md" >}}) documentation for more on Plutono alerts.
 
 ## Curated dashboards
 
@@ -285,7 +285,7 @@ Example dimension queries which will return list of resources for individual AWS
 
 The `ec2_instance_attribute` query takes `filters` in JSON format.
 You can specify [pre-defined filters of ec2:DescribeInstances](http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeInstances.html).
-Note that the actual filtering takes place on Amazon's servers, not in Grafana.
+Note that the actual filtering takes place on Amazon's servers, not in Plutono.
 
 Filters syntax:
 
@@ -342,7 +342,7 @@ ec2_instance_attribute(us - east - 1, Tags.Name, { 'tag:Team': ['sysops'] });
 
 ## Using JSON format template variables
 
-Some queries accept filters in JSON format and Grafana supports the conversion of template variables to JSON.
+Some queries accept filters in JSON format and Plutono supports the conversion of template variables to JSON.
 
 If `env = 'production', 'staging'`, following query will return ARNs of EC2 instances which `Environment` tag is `production` or `staging`.
 
@@ -352,14 +352,14 @@ resource_arns(us-east-1, ec2:instance, {"Environment":${env:json}})
 
 ## Pricing
 
-The Amazon CloudWatch data source for Grafana uses the `ListMetrics` and `GetMetricData` CloudWatch API calls to list and retrieve metrics.
+The Amazon CloudWatch data source for Plutono uses the `ListMetrics` and `GetMetricData` CloudWatch API calls to list and retrieve metrics.
 Pricing for CloudWatch Logs is based on the amount of data ingested, archived, and analyzed via CloudWatch Logs Insights queries.
 Please see the [CloudWatch pricing page](https://aws.amazon.com/cloudwatch/pricing/) for more details.
 
-Every time you pick a dimension in the query editor Grafana will issue a ListMetrics request.
+Every time you pick a dimension in the query editor Plutono will issue a ListMetrics request.
 Whenever you make a change to the queries in the query editor, one new request to GetMetricData will be issued.
 
-Please note that for Grafana version 6.5 or higher, all API requests to GetMetricStatistics have been replaced with calls to GetMetricData. This change enables better support for CloudWatch metric math and enables the automatic generation of search expressions when using wildcards or disabling the `Match Exact` option. While GetMetricStatistics qualified for the CloudWatch API free tier, this is not the case for GetMetricData calls. For more information, please refer to the [CloudWatch pricing page](https://aws.amazon.com/cloudwatch/pricing/).
+Please note that for Plutono version 6.5 or higher, all API requests to GetMetricStatistics have been replaced with calls to GetMetricData. This change enables better support for CloudWatch metric math and enables the automatic generation of search expressions when using wildcards or disabling the `Match Exact` option. While GetMetricStatistics qualified for the CloudWatch API free tier, this is not the case for GetMetricData calls. For more information, please refer to the [CloudWatch pricing page](https://aws.amazon.com/cloudwatch/pricing/).
 
 ## Service quotas
 
@@ -369,25 +369,25 @@ To request a quota increase, visit the [AWS Service Quotas console](https://cons
 
 Please see the AWS documentation for [Service Quotas](https://docs.aws.amazon.com/servicequotas/latest/userguide/intro.html) and [CloudWatch limits](https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/cloudwatch_limits.html) for more information.
 
-## Configure the data source with grafana.ini
+## Configure the data source with plutono.ini
 
-In the Grafana [configuration]({{< relref "../administration/configuration.md#aws" >}}) file, there's an `AWS` section that allows you to customize the data source.
+In the Plutono [configuration]({{< relref "../administration/configuration.md#aws" >}}) file, there's an `AWS` section that allows you to customize the data source.
 
 ### allowed_auth_providers
 
-Specify which authentication providers are allowed for the CloudWatch data source. The following providers are enabled by default in OSS Grafana: `default` (AWS SDK default), keys (Access and secret key), credentials (Credentials file), ec2_IAM_role (EC2 IAM role).
+Specify which authentication providers are allowed for the CloudWatch data source. The following providers are enabled by default in OSS Plutono: `default` (AWS SDK default), keys (Access and secret key), credentials (Credentials file), ec2_IAM_role (EC2 IAM role).
 
 ### assume_role_enabled
 
-Allows you to disable `assume role (ARN)` in the CloudWatch data source. By default, assume role (ARN) is enabled for OSS Grafana.
+Allows you to disable `assume role (ARN)` in the CloudWatch data source. By default, assume role (ARN) is enabled for OSS Plutono.
 
 ### list_metrics_page_limit
 
-When a custom namespace is specified in the query editor, the [List Metrics API](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html) is used to populate the _Metrics_ field and the _Dimension_ fields. The API is paginated and returns up to 500 results per page. The CloudWatch data source also limits the number of pages to 500. However, you can change this limit using the `list_metrics_page_limit` variable in the [grafana configuration file](https://grafana.com/docs/grafana/latest/administration/configuration/#aws).
+When a custom namespace is specified in the query editor, the [List Metrics API](https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html) is used to populate the _Metrics_ field and the _Dimension_ fields. The API is paginated and returns up to 500 results per page. The CloudWatch data source also limits the number of pages to 500. However, you can change this limit using the `list_metrics_page_limit` variable in the [plutono configuration file](https://grafana.com/docs/grafana/latest/administration/configuration/#aws).
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with Plutono's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source.
 

@@ -1,6 +1,6 @@
 import React from 'react';
-import { dateMath, dateTime, SelectableValue } from '@grafana/data';
-import { Form, InlineField, InlineFieldRow, Input, InputControl, Select, Button } from '@grafana/ui';
+import { dateMath, dateTime, SelectableValue } from '@credativ/plutono-data';
+import { Form, InlineField, InlineFieldRow, Input, InputControl, Select, Button } from '@credativ/plutono-ui';
 import { EditorProps } from '../QueryEditor';
 import { NewPoint } from '../types';
 

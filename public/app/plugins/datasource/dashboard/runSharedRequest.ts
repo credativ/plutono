@@ -9,7 +9,7 @@ import {
   getDefaultTimeRange,
   LoadingState,
   PanelData,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 export function isSharedDashboardQuery(datasource: string | DataSourceApi | null) {
   if (!datasource) {

@@ -1,5 +1,5 @@
-import { PluginError, PluginMeta, PanelPlugin } from '@grafana/data';
-import { TemplateSrv } from '@grafana/runtime';
+import { PluginError, PluginMeta, PanelPlugin } from '@credativ/plutono-data';
+import { TemplateSrv } from '@credativ/plutono-runtime';
 
 export interface PluginDashboard {
   dashboardId: number;

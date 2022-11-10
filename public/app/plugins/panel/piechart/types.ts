@@ -1,4 +1,4 @@
-import { PieChartType, SingleStatBaseOptions, PieChartLabels, PieChartLegendOptions } from '@grafana/ui';
+import { PieChartType, SingleStatBaseOptions, PieChartLabels, PieChartLegendOptions } from '@credativ/plutono-ui';
 
 export interface PieChartOptions extends SingleStatBaseOptions {
   pieType: PieChartType;

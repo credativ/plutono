@@ -1,5 +1,5 @@
 import React, { ComponentProps } from 'react';
-import { FieldType } from '@grafana/data';
+import { FieldType } from '@credativ/plutono-data';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { InspectDataTab } from './InspectDataTab';

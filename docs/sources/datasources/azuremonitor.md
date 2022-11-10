@@ -1,8 +1,8 @@
 +++
 title = "Azure Monitor"
-description = "Guide for using Azure Monitor in Grafana"
-keywords = ["grafana", "microsoft", "azure", "monitor", "application", "insights", "log", "analytics", "guide"]
-aliases = ["/docs/grafana/latest/features/datasources/azuremonitor"]
+description = "Guide for using Azure Monitor in Plutono"
+keywords = ["plutono", "microsoft", "azure", "monitor", "application", "insights", "log", "analytics", "guide"]
+aliases = ["/docs/plutono/latest/features/datasources/azuremonitor"]
 weight = 300
 +++
 
@@ -23,9 +23,9 @@ The data source can access metrics from four different services. You can configu
 - [Guide to setting up an Azure Active Directory Application for Azure Monitor Logs.](https://dev.loganalytics.io/documentation/Authorization/AAD-Setup)
 - [Quickstart Guide for Application Insights.](https://dev.applicationinsights.io/quickstart/)
 
-1. Accessed from the Grafana main menu, newly installed data sources can be added immediately within the Data Sources section. Next, click the "Add data source" button in the upper right. The Azure Monitor data source will be available for selection in the Cloud section in the list of data sources.
+1. Accessed from the Plutono main menu, newly installed data sources can be added immediately within the Data Sources section. Next, click the "Add data source" button in the upper right. The Azure Monitor data source will be available for selection in the Cloud section in the list of data sources.
 
-1. In the name field, Grafana will automatically fill in a name for the data source - `Azure Monitor` or something like `Azure Monitor - 3`. If you are going to configure multiple data sources, then change the name to something more informative.
+1. In the name field, Plutono will automatically fill in a name for the data source - `Azure Monitor` or something like `Azure Monitor - 3`. If you are going to configure multiple data sources, then change the name to something more informative.
 
 1. If you are using Azure Monitor, you need 4 pieces of information from the Azure portal (see link above for detailed instructions):
 
@@ -72,9 +72,9 @@ In the query editor for a panel, after choosing your Azure Monitor data source, 
 
 The query editor changes depending on which one you pick. Metrics is the default.
 
-Starting in Grafana 7.1, Insights Analytics replaced the former edit mode from within Application Insights.
+Starting in Plutono 7.1, Insights Analytics replaced the former edit mode from within Application Insights.
 
-Starting in Grafana 7.4, the Azure Monitor query type was renamed to Metrics and Azure Logs Analytics was renamed to Logs.
+Starting in Plutono 7.4, the Azure Monitor query type was renamed to Metrics and Azure Logs Analytics was renamed to Logs.
 
 ## Query the Metrics service
 
@@ -90,7 +90,7 @@ Examples of metrics that you can get from the service are:
 
 {{< figure src="/static/img/docs/v60/azuremonitor-service-query-editor.png" class="docs-image--no-shadow" caption="Metrics Query Editor" >}}
 
-As of Grafana 7.1, the query editor allows you to query multiple dimensions for metrics that support them. Metrics that support multiple dimensions are those listed in the [Azure Monitor supported Metrics List](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/metrics-supported) that have one or more values listed in the "Dimension" column for the metric.
+As of Plutono 7.1, the query editor allows you to query multiple dimensions for metrics that support them. Metrics that support multiple dimensions are those listed in the [Azure Monitor supported Metrics List](https://docs.microsoft.com/en-us/azure/azure-monitor/platform/metrics-supported) that have one or more values listed in the "Dimension" column for the metric.
 
 ### Format legend keys with aliases for Metrics
 
@@ -98,7 +98,7 @@ The default legend formatting for the Metrics API is:
 
 `metricName{dimensionName=dimensionValue,dimensionTwoName=DimensionTwoValue}`
 
-> **Note:** Before Grafana 7.1, the formatting included the resource name in the default: `resourceName{dimensionName=dimensionValue}.metricName`. As of Grafana 7.1, the resource name has been removed from the default legend.
+> **Note:** Before Plutono 7.1, the formatting included the resource name in the default: `resourceName{dimensionName=dimensionValue}.metricName`. As of Plutono 7.1, the resource name has been removed from the default legend.
 
 These can be quite long, but this formatting can be changed by using aliases. In the **Legend Format** field, you can combine the aliases defined below any way you want.
 
@@ -144,7 +144,7 @@ Examples:
 - Resource Groups query: `ResourceGroups()`
 - Passing in metric name variable: `Namespaces(cosmo)`
 - Chaining template variables: `ResourceNames($rg, $ns)`
-- Do not quote parameters: `MetricNames(hg, Microsoft.Network/publicIPAddresses, grafanaIP)`
+- Do not quote parameters: `MetricNames(hg, Microsoft.Network/publicIPAddresses, plutonoIP)`
 
 {{< figure src="/static/img/docs/v60/azuremonitor-service-variables.png" class="docs-image--no-shadow" caption="Nested Azure Monitor Template Variables" >}}
 
@@ -153,11 +153,11 @@ types of template variables.
 
 ### List of supported Azure Monitor metrics
 
-Not all metrics returned by the Azure Monitor Metrics API have values. To make it easier for you when building a query, the Grafana data source has a list of supported metrics and ignores metrics which will never have values. This list is updated regularly as new services and metrics are added to the Azure cloud. For more information about the list of metrics, refer to [current supported namespaces](https://github.com/grafana/grafana/blob/master/public/app/plugins/datasource/grafana-azure-monitor-datasource/azure_monitor/supported_namespaces.ts).
+Not all metrics returned by the Azure Monitor Metrics API have values. To make it easier for you when building a query, the Plutono data source has a list of supported metrics and ignores metrics which will never have values. This list is updated regularly as new services and metrics are added to the Azure cloud. For more information about the list of metrics, refer to [current supported namespaces](https://github.com/credativ/plutono/blob/master/public/app/plugins/datasource/plutono-azure-monitor-datasource/azure_monitor/supported_namespaces.ts).
 
 ### Alerting
 
-Grafana alerting is supported for the Azure Monitor service. This is not Azure Alerts support. For more information about Grafana alerting, refer to [how alerting in Grafana works]({{< relref "../alerting/_index.md" >}}).
+Plutono alerting is supported for the Azure Monitor service. This is not Azure Alerts support. For more information about Plutono alerting, refer to [how alerting in Plutono works]({{< relref "../alerting/_index.md" >}}).
 
 {{< figure src="/static/img/docs/v60/azuremonitor-alerting.png" class="docs-image--no-shadow" caption="Azure Monitor Alerting" >}}
 
@@ -199,7 +199,7 @@ Perf
 | order by TimeGenerated asc
 ```
 
-> **Tip**: In the above query, the Kusto syntax `Samples=count()` and `["Avg Value"]=...` is used to rename those columns — the second syntax allowing for the space. This changes the name of the metric that Grafana uses, and as a result, things like series legends and table columns will match what you specify. Here `Samples` is displayed instead of `_count`.
+> **Tip**: In the above query, the Kusto syntax `Samples=count()` and `["Avg Value"]=...` is used to rename those columns — the second syntax allowing for the space. This changes the name of the metric that Plutono uses, and as a result, things like series legends and table columns will match what you specify. Here `Samples` is displayed instead of `_count`.
 
 {{< figure src="/static/img/docs/azuremonitor/logs_multi-value_multi-dim.png" class="docs-image--no-shadow" caption="Azure Logs query with multiple values and multiple dimensions" >}}
 
@@ -224,21 +224,21 @@ This can be customized by using the [display name field option]({{< relref "../p
 
 ### Logs macros
 
-To make writing queries easier there are several Grafana macros that can be used in the where clause of a query:
+To make writing queries easier there are several Plutono macros that can be used in the where clause of a query:
 
 - `$__timeFilter()` - Expands to
   `TimeGenerated ≥ datetime(2018-06-05T18:09:58.907Z) and`
-  `TimeGenerated ≤ datetime(2018-06-05T20:09:58.907Z)` where the from and to datetimes are from the Grafana time picker.
+  `TimeGenerated ≤ datetime(2018-06-05T20:09:58.907Z)` where the from and to datetimes are from the Plutono time picker.
 
 - `$__timeFilter(datetimeColumn)` - Expands to
   `datetimeColumn ≥ datetime(2018-06-05T18:09:58.907Z) and`
-  `datetimeColumn ≤ datetime(2018-06-05T20:09:58.907Z)` where the from and to datetimes are from the Grafana time picker.
+  `datetimeColumn ≤ datetime(2018-06-05T20:09:58.907Z)` where the from and to datetimes are from the Plutono time picker.
 
-- `$__timeFrom()` - Returns the From datetime from the Grafana picker. Example: `datetime(2018-06-05T18:09:58.907Z)`.
+- `$__timeFrom()` - Returns the From datetime from the Plutono picker. Example: `datetime(2018-06-05T18:09:58.907Z)`.
 
-- `$__timeTo()` - Returns the From datetime from the Grafana picker. Example: `datetime(2018-06-05T20:09:58.907Z)`.
+- `$__timeTo()` - Returns the From datetime from the Plutono picker. Example: `datetime(2018-06-05T20:09:58.907Z)`.
 
-- `$__escapeMulti($myVar)` - is to be used with multi-value template variables that contain illegal characters. If `$myVar` has the following two values as a string `'\\grafana-vm\Network(eth0)\Total','\\hello!'`, then it expands to: `@'\\grafana-vm\Network(eth0)\Total', @'\\hello!'`. If using single value variables there is no need for this macro, simply escape the variable inline instead - `@'\$myVar'`.
+- `$__escapeMulti($myVar)` - is to be used with multi-value template variables that contain illegal characters. If `$myVar` has the following two values as a string `'\\plutono-vm\Network(eth0)\Total','\\hello!'`, then it expands to: `@'\\plutono-vm\Network(eth0)\Total', @'\\hello!'`. If using single value variables there is no need for this macro, simply escape the variable inline instead - `@'\$myVar'`.
 
 - `$__contains(colName, $myVar)` - is to be used with multi-value template variables. If `$myVar` has the value `'value1','value2'`, it expands to: `colName in ('value1','value2')`.
 
@@ -246,13 +246,13 @@ To make writing queries easier there are several Grafana macros that can be used
 
 ### Logs builtin variables
 
-There are also some Grafana variables that can be used in Logs queries:
+There are also some Plutono variables that can be used in Logs queries:
 
-- `$__interval` - Grafana calculates the minimum time grain that can be used to group by time in queries. For more information about `$__interval`, refer to [interval variables]({{< relref "../variables/variable-types/_index.md#interval-variables" >}}). It returns a time grain like `5m` or `1h` that can be used in the bin function. E.g. `summarize count() by bin(TimeGenerated, $__interval)`
+- `$__interval` - Plutono calculates the minimum time grain that can be used to group by time in queries. For more information about `$__interval`, refer to [interval variables]({{< relref "../variables/variable-types/_index.md#interval-variables" >}}). It returns a time grain like `5m` or `1h` that can be used in the bin function. E.g. `summarize count() by bin(TimeGenerated, $__interval)`
 
 ### Templating with variables for Logs
 
-Any Log Analytics query that returns a list of values can be used in the `Query` field in the Variable edit view. There is also one Grafana function for Log Analytics that returns a list of workspaces.
+Any Log Analytics query that returns a list of values can be used in the `Query` field in the Variable edit view. There is also one Plutono function for Log Analytics that returns a list of workspaces.
 
 Refer to the [Variables]({{< relref "../variables/_index.md" >}}) documentation for an introduction to the templating feature and the different
 types of template variables.
@@ -289,13 +289,13 @@ Perf
 | order by TimeGenerated asc
 ```
 
-### Deep linking from Grafana panels to the Azure Metric Logs query editor in Azure Portal
+### Deep linking from Plutono panels to the Azure Metric Logs query editor in Azure Portal
 
-> Only available in Grafana v7.0+.
+> Only available in Plutono v7.0+.
 
 {{< figure src="/static/img/docs/v70/azure-log-analytics-deep-linking.png" max-width="500px" class="docs-image--right" caption="Logs deep linking" >}}
 
-Click on a time series in the panel to see a context menu with a link to `View in Azure Portal`. Clicking that link opens the Azure Metric Logs query editor in the Azure Portal and runs the query from the Grafana panel there.
+Click on a time series in the panel to see a context menu with a link to `View in Azure Portal`. Clicking that link opens the Azure Metric Logs query editor in the Azure Portal and runs the query from the Plutono panel there.
 
 If you're not currently logged in to the Azure Portal, then the link opens the login page. The provided link is valid for any account, but it only displays the query if your account has access to the Azure Metric Logs workspace specified in the query.
 
@@ -303,15 +303,15 @@ If you're not currently logged in to the Azure Portal, then the link opens the l
 
 ### Logs alerting
 
-> Only available in Grafana v7.0+.
+> Only available in Plutono v7.0+.
 
-Grafana alerting is supported for Application Insights. This is not Azure Alerts support. Read more about how alerting in Grafana works in [Alerting rules]({{< relref "../alerting/_index.md" >}}).
+Plutono alerting is supported for Application Insights. This is not Azure Alerts support. Read more about how alerting in Plutono works in [Alerting rules]({{< relref "../alerting/_index.md" >}}).
 
 ## Query Application Insights service
 
 {{< figure src="/static/img/docs/azuremonitor/insights_metrics_multi-dim.png" class="docs-image--no-shadow" caption="Application Insights Query Editor" >}}
 
-As of Grafana 7.1, you can select more than one group by dimension.
+As of Plutono 7.1, you can select more than one group by dimension.
 
 ### Format legend keys with aliases for Application Insights
 
@@ -365,7 +365,7 @@ Examples:
 
 ### Application Insights alerting
 
-Grafana alerting is supported for Application Insights. This is not Azure Alerts support. For more information about Grafana alerting, refer to [Alerts overview]({{< relref "../alerting/_index.md" >}}).
+Plutono alerting is supported for Application Insights. This is not Azure Alerts support. For more information about Plutono alerting, refer to [Alerts overview]({{< relref "../alerting/_index.md" >}}).
 
 {{< figure src="/static/img/docs/v60/azuremonitor-alerting.png" class="docs-image--no-shadow" caption="Azure Monitor Alerting" >}}
 
@@ -377,7 +377,7 @@ If you change the service type to **Insights Analytics**, then a similar editor 
 
 ## Configure the data source with provisioning
 
-It's now possible to configure data sources using config files with Grafana's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
+It's now possible to configure data sources using config files with Plutono's provisioning system. You can read more about how it works and all the settings you can set for data sources on the [provisioning docs page]({{< relref "../administration/provisioning/#datasources" >}})
 
 Here are some provisioning examples for this data source.
 
@@ -387,7 +387,7 @@ apiVersion: 1
 
 datasources:
   - name: Azure Monitor
-    type: grafana-azure-monitor-datasource
+    type: plutono-azure-monitor-datasource
     access: proxy
     jsonData:
       appInsightsAppId: <app-insights-app-id>
@@ -408,8 +408,8 @@ datasources:
 
 ## Deprecating Application Insights and Insights Analytics
 
-Application Insights and Insights Analytics are two ways to query the same Azure Application Insights data. That same data can also be queried from Metrics. In the upcoming Grafana 8.0 release, the Logs query type will be improved to allow querying of Application Insights data using KQL.
+Application Insights and Insights Analytics are two ways to query the same Azure Application Insights data. That same data can also be queried from Metrics. In the upcoming Plutono 8.0 release, the Logs query type will be improved to allow querying of Application Insights data using KQL.
 
-> **Note** In Grafana 8.0, Application Insights and Insights Analytics will be deprecated and made read-only in favor of querying this data through Metrics and Logs. Existing queries will continue to work, but you cannot edit them.
+> **Note** In Plutono 8.0, Application Insights and Insights Analytics will be deprecated and made read-only in favor of querying this data through Metrics and Logs. Existing queries will continue to work, but you cannot edit them.
 
 To prepare for this upcoming change, Application Insights queries can now be made in Metrics, under the "microsoft.insights/components" Namespace. Insights Analytics queries cannot be made within Logs with KQL at this time.

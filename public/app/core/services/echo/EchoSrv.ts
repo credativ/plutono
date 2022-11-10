@@ -1,4 +1,4 @@
-import { getEchoSrv, EchoEventType } from '@grafana/runtime';
+import { getEchoSrv, EchoEventType } from '@credativ/plutono-runtime';
 import { captureException } from '@sentry/browser';
 import { PerformanceEvent } from './backends/PerformanceBackend';
 

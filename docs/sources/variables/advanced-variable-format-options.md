@@ -1,6 +1,6 @@
 +++
 title = "Advanced variable format options"
-keywords = ["grafana", "templating", "documentation", "guide", "template", "variable"]
+keywords = ["plutono", "templating", "documentation", "guide", "template", "variable"]
 weight = 600
 +++
 
@@ -14,7 +14,7 @@ For example, the default for the MySql data source is to join multiple values as
 
 Syntax: `${var_name:option}`
 
-Test the formatting options on the [Grafana Play site](https://play.grafana.org/d/cJtIfcWiz/template-variable-formatting-options?orgId=1).
+Test the formatting options on the [Plutono Play site](https://play.plutono.org/d/cJtIfcWiz/template-variable-formatting-options?orgId=1).
 
 If any invalid formatting option is specified, then `glob` is the default/fallback option.
 

@@ -6,7 +6,7 @@ import { transformDataToTable } from './transformers';
 import { tablePanelEditor } from './editor';
 import { columnOptionsTab } from './column_options';
 import { TableRenderer } from './renderer';
-import { isTableData, PanelEvents, PanelPlugin, PanelProps } from '@grafana/data';
+import { isTableData, PanelEvents, PanelPlugin, PanelProps } from '@credativ/plutono-data';
 import { dispatch } from 'app/store/store';
 import { ComponentType } from 'react';
 import { applyFilterFromTable } from 'app/features/variables/adhoc/actions';

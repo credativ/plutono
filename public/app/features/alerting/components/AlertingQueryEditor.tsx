@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { RefreshPicker, stylesFactory } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { RefreshPicker, stylesFactory } from '@credativ/plutono-ui';
 
 import { config } from 'app/core/config';
 import { QueryGroup } from '../../query/components/QueryGroup';
@@ -69,7 +69,7 @@ class AlertingQueryEditorUnconnected extends PureComponent<Props> {
 
 export const AlertingQueryEditor = connector(AlertingQueryEditorUnconnected);
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     wrapper: css`
       padding-left: ${theme.spacing.md};

@@ -11,15 +11,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/infra/remotecache"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	"github.com/credativ/plutono/pkg/infra/remotecache"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 func init() {
@@ -98,7 +98,7 @@ func (rs *RenderingService) Run(ctx context.Context) error {
 	}
 
 	rs.log.Debug("No image renderer found/installed. " +
-		"For image rendering support please install the grafana-image-renderer plugin. " +
+		"For image rendering support please install the plutono-image-renderer plugin. " +
 		"Read more at https://grafana.com/docs/grafana/latest/administration/image_rendering/")
 
 	<-ctx.Done()
@@ -163,7 +163,7 @@ func (rs *RenderingService) render(ctx context.Context, opts Opts) (*RenderResul
 
 	if !rs.IsAvailable() {
 		rs.log.Warn("Could not render image, no image renderer found/installed. " +
-			"For image rendering support please install the grafana-image-renderer plugin. " +
+			"For image rendering support please install the plutono-image-renderer plugin. " +
 			"Read more at https://grafana.com/docs/grafana/latest/administration/image_rendering/")
 		return rs.renderUnavailableImage(), nil
 	}
@@ -221,7 +221,7 @@ func (rs *RenderingService) getURL(path string) string {
 	if rs.Cfg.RendererUrl != "" {
 		// The backend rendering service can potentially be remote.
 		// So we need to use the root_url to ensure the rendering service
-		// can reach this Grafana instance.
+		// can reach this Plutono instance.
 
 		// &render=1 signals to the legacy redirect layer to
 		return fmt.Sprintf("%s%s&render=1", rs.Cfg.RendererCallbackUrl, path)

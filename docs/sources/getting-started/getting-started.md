@@ -1,31 +1,31 @@
 +++
-title = "With Grafana"
-description = "Guide for getting started with Grafana"
-keywords = ["grafana", "intro", "guide", "started"]
-aliases = ["/docs/grafana/latest/guides/gettingstarted","/docs/grafana/latest/guides/getting_started"]
+title = "With Plutono"
+description = "Guide for getting started with Plutono"
+keywords = ["plutono", "intro", "guide", "started"]
+aliases = ["/docs/plutono/latest/guides/gettingstarted","/docs/plutono/latest/guides/getting_started"]
 weight = 200
 +++
 
-# Getting started with Grafana
+# Getting started with Plutono
 
-This topic helps you get started with Grafana and build your first dashboard. To learn more about Grafana, refer to [What is Grafana?]({{< relref "_index.md" >}}).
+This topic helps you get started with Plutono and build your first dashboard. To learn more about Plutono, refer to [What is Plutono?]({{< relref "_index.md" >}}).
 
-> **Note:** Grafana also offers a [free account with Grafana Cloud](https://grafana.com/signup/cloud/connect-account?pg=gsdocs) to help getting started even easier and faster. You can install Grafana to self-host or get a free Grafana Cloud account.
+> **Note:** Plutono also offers a [free account with Plutono Cloud](https://grafana.com/signup/cloud/connect-account?pg=gsdocs) to help getting started even easier and faster. You can install Plutono to self-host or get a free Plutono Cloud account.
 
-## Step 1: Install Grafana
+## Step 1: Install Plutono
 
-Grafana can be installed on many different operating systems. For a list of the minimum hardware and software requirements, as well as instructions on installing Grafana, refer to [Install Grafana]({{< relref "../installation/_index.md" >}}).
+Plutono can be installed on many different operating systems. For a list of the minimum hardware and software requirements, as well as instructions on installing Plutono, refer to [Install Plutono]({{< relref "../installation/_index.md" >}}).
 
 ## Step 2: Log in
 
-To log in to Grafana for the first time:
+To log in to Plutono for the first time:
 
-1. Open your web browser and go to http://localhost:3000/. The default HTTP port that Grafana listens to is `3000` unless you have configured a different port.
+1. Open your web browser and go to http://localhost:3000/. The default HTTP port that Plutono listens to is `3000` unless you have configured a different port.
 1. On the login page, enter `admin` for username and password.
 1. Click **Log In**. If login is successful, then you will see a prompt to change the password.
 1. Click **OK** on the prompt, then change your password.
 
-> **Note:** We strongly recommend that you follow Grafana's best practices and change the default administrator password. Don't forget to record your credentials!
+> **Note:** We strongly recommend that you follow Plutono's best practices and change the default administrator password. Don't forget to record your credentials!
 
 ## Step 3: Create a dashboard
 
@@ -33,7 +33,7 @@ To create your first dashboard:
 
 1. Click the **+** icon on the left panel, select **Create Dashboard**, and then click **Add an empty panel**.
 1. In the New Dashboard/Edit Panel view, go to the **Query** tab.
-1. Configure your [query]({{< relref "../panels/queries.md" >}}) by selecting ``-- Grafana --`` from the [data source selector]({{< relref "../panels/queries.md/#data-source-selector" >}}). This generates the Random Walk dashboard.
+1. Configure your [query]({{< relref "../panels/queries.md" >}}) by selecting ``-- Plutono --`` from the [data source selector]({{< relref "../panels/queries.md/#data-source-selector" >}}). This generates the Random Walk dashboard.
 1. Click the  **Save** icon in the top right corner of your screen to save the dashboard.
 1. Add a descriptive name, and then click **Save**.
 
@@ -50,10 +50,10 @@ To create your first dashboard:
 
 ### Admins
 
-The following topics are of interest to Grafana server admin users:
+The following topics are of interest to Plutono server admin users:
 
-- [Grafana configuration]({{< relref "../administration/configuration.md" >}})
+- [Plutono configuration]({{< relref "../administration/configuration.md" >}})
 - [Authentication]({{< relref "../auth/overview.md" >}})
 - [User permissions and roles]({{< relref "../permissions/_index.md" >}})
 - [Provisioning]({{< relref "../administration/provisioning.md" >}})
-- [Grafana CLI]({{< relref "../administration/cli.md" >}})
+- [Plutono CLI]({{< relref "../administration/cli.md" >}})

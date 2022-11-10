@@ -1,0 +1,5 @@
+{
+  "rules": {
+    "no-restricted-imports": ["error", { "patterns": ["@credativ/plutono-runtime", "@credativ/plutono-data/*", "@credativ/plutono-ui/*", "@credativ/plutono-e2e/*"] }]
+  }
+}

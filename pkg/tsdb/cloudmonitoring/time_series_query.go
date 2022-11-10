@@ -12,8 +12,8 @@ import (
 	"time"
 
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/opentracing/opentracing-go"
 	"golang.org/x/net/context/ctxhttp"
 )
@@ -319,7 +319,7 @@ func (timeSeriesQuery cloudMonitoringTimeSeriesQuery) buildDeepLink() string {
 
 	q := u.Query()
 	q.Set("project", timeSeriesQuery.ProjectName)
-	q.Set("Grafana_deeplink", "true")
+	q.Set("Plutono_deeplink", "true")
 
 	pageState := map[string]interface{}{
 		"xyChart": map[string]interface{}{

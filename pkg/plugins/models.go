@@ -5,9 +5,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 var (
@@ -40,7 +40,7 @@ const (
 type PluginSignatureType string
 
 const (
-	grafanaType PluginSignatureType = "grafana"
+	plutonoType PluginSignatureType = "plutono"
 	privateType PluginSignatureType = "private"
 )
 
@@ -98,8 +98,8 @@ type PluginBase struct {
 	SignatureType   PluginSignatureType `json:"-"`
 	SignatureOrg    string              `json:"-"`
 
-	GrafanaNetVersion   string `json:"-"`
-	GrafanaNetHasUpdate bool   `json:"-"`
+	PlutonoNetVersion   string `json:"-"`
+	PlutonoNetHasUpdate bool   `json:"-"`
 
 	Root *PluginBase
 }
@@ -117,8 +117,8 @@ func (pb *PluginBase) registerPlugin(base *PluginBase) error {
 		pb.Dependencies.Plugins = []PluginDependencyItem{}
 	}
 
-	if pb.Dependencies.GrafanaVersion == "" {
-		pb.Dependencies.GrafanaVersion = "*"
+	if pb.Dependencies.PlutonoVersion == "" {
+		pb.Dependencies.PlutonoVersion = "*"
 	}
 
 	for _, include := range pb.Includes {
@@ -138,7 +138,7 @@ func (pb *PluginBase) registerPlugin(base *PluginBase) error {
 }
 
 type PluginDependencies struct {
-	GrafanaVersion string                 `json:"grafanaVersion"`
+	PlutonoVersion string                 `json:"plutonoVersion"`
 	Plugins        []PluginDependencyItem `json:"plugins"`
 }
 

@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { MetricFindValue } from '@grafana/data';
+import { MetricFindValue } from '@credativ/plutono-data';
 
 interface TableResponse extends Record<string, any> {
   type: string;

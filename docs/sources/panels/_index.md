@@ -1,12 +1,12 @@
 +++
 title = "Panels"
-aliases = ["/docs/grafana/latest/features/panels/panels/"]
+aliases = ["/docs/plutono/latest/features/panels/panels/"]
 weight = 70
 +++
 
 # Panel overview
 
-The *panel* is the basic visualization building block in Grafana. Each panel has a query editor specific to the data source selected in the panel. The query editor allows you to extract the perfect visualization to display on the panel.
+The *panel* is the basic visualization building block in Plutono. Each panel has a query editor specific to the data source selected in the panel. The query editor allows you to extract the perfect visualization to display on the panel.
 
 There are a wide variety of styling and formatting options for each panel. Panels can be dragged and dropped and rearranged on the dashboard. They can also be resized.
 

@@ -1,4 +1,4 @@
-import { toUtc, AbsoluteTimeRange } from '@grafana/data';
+import { toUtc, AbsoluteTimeRange } from '@credativ/plutono-data';
 
 import { getShiftedTimeRange, getZoomedTimeRange } from './timePicker';
 

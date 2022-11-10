@@ -10,13 +10,13 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
-var usageStatsURL = "https://stats.grafana.org/grafana-usage-report"
+var usageStatsURL = "https://stats.plutono.org/plutono-usage-report"
 
 type UsageReport struct {
 	Version         string                 `json:"version"`

@@ -9,7 +9,7 @@ import {
   CSVReader,
   Field,
   LoadingState,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import { TestDataQuery, StreamingQuery } from './types';
 import { getRandomLine } from './LogIpsum';

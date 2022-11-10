@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { DataSourceApi, PanelData, PanelPlugin } from '@grafana/data';
-import { getTemplateSrv } from '@grafana/runtime';
-import { CustomScrollbar, Drawer, TabContent } from '@grafana/ui';
+import { DataSourceApi, PanelData, PanelPlugin } from '@credativ/plutono-data';
+import { getTemplateSrv } from '@credativ/plutono-runtime';
+import { CustomScrollbar, Drawer, TabContent } from '@credativ/plutono-ui';
 import { getPanelInspectorStyles } from 'app/features/inspector/styles';
 import { InspectMetadataTab } from 'app/features/inspector/InspectMetadataTab';
 import { InspectSubtitle } from 'app/features/inspector/InspectSubtitle';

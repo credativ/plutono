@@ -1,4 +1,4 @@
-import { DataSourcePlugin } from '@grafana/data';
+import { DataSourcePlugin } from '@credativ/plutono-data';
 import { JaegerDatasource } from './datasource';
 import { JaegerQueryField } from './QueryField';
 import { ConfigEditor } from './ConfigEditor';

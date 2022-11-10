@@ -9,7 +9,7 @@ import {
   standardFieldConfigEditorRegistry,
   StandardOptionConfig,
   ThresholdsMode,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { getPanelPlugin } from 'app/features/plugins/__mocks__/pluginMocks';
 import { mockStandardFieldConfigOptions } from 'test/helpers/fieldConfig';
 import { getPanelOptionsWithDefaults, restoreCustomOverrideRules } from './getPanelOptionsWithDefaults';

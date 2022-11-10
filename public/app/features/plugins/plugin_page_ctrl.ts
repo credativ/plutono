@@ -2,9 +2,9 @@ import angular from 'angular';
 import _ from 'lodash';
 
 import { getPluginSettings } from './PluginSettingsCache';
-import { PluginMeta, AppEvents } from '@grafana/data';
+import { PluginMeta, AppEvents } from '@credativ/plutono-data';
 import { NavModelSrv } from 'app/core/core';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 import { promiseToDigest } from '../../core/utils/promiseToDigest';
 
 export class AppPageCtrl {
@@ -14,7 +14,7 @@ export class AppPageCtrl {
   navModel: any;
 
   /** @ngInject */
-  constructor(private $routeParams: any, private $rootScope: GrafanaRootScope, private navModelSrv: NavModelSrv) {
+  constructor(private $routeParams: any, private $rootScope: PlutonoRootScope, private navModelSrv: NavModelSrv) {
     this.pluginId = $routeParams.pluginId;
 
     promiseToDigest($rootScope)(
@@ -59,4 +59,4 @@ export class AppPageCtrl {
   }
 }
 
-angular.module('grafana.controllers').controller('AppPageCtrl', AppPageCtrl);
+angular.module('plutono.controllers').controller('AppPageCtrl', AppPageCtrl);

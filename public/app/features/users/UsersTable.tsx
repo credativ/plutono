@@ -1,8 +1,8 @@
 import React, { FC, useState } from 'react';
 import { OrgUser } from 'app/types';
 import { OrgRolePicker } from '../admin/OrgRolePicker';
-import { Button, ConfirmModal } from '@grafana/ui';
-import { OrgRole } from '@grafana/data';
+import { Button, ConfirmModal } from '@credativ/plutono-ui';
+import { OrgRole } from '@credativ/plutono-data';
 
 export interface Props {
   users: OrgUser[];

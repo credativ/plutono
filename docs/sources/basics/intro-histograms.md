@@ -1,8 +1,8 @@
 +++
 title = "Histograms and heatmaps"
 description = "An introduction to histograms and heatmaps"
-keywords = ["grafana", "heatmap", "panel", "documentation", "histogram"]
-aliases = ["/docs/grafana/latest/getting-started/intro-histograms"]
+keywords = ["plutono", "heatmap", "panel", "documentation", "histogram"]
+aliases = ["/docs/plutono/latest/getting-started/intro-histograms"]
 weight = 700
 +++
 
@@ -46,7 +46,7 @@ is often already aggregated by your time series backend. Most time series querie
 but include a group by time interval or maxDataPoints limit coupled with an aggregation function (usually average).
 
 This all depends on the time range of your query of course. But the important point is to know that the histogram bucketing
-that Grafana performs might be done on already aggregated and averaged data. To get more accurate heatmaps it is better
+that Plutono performs might be done on already aggregated and averaged data. To get more accurate heatmaps it is better
 to do the bucketing during metric collection or store the data in Elasticsearch, or in the other data source which
 supports doing histogram bucketing on the raw data.
 

@@ -1,5 +1,5 @@
 import { AdHocVariableFilter } from 'app/features/variables/types';
-import { UrlQueryValue } from '@grafana/data';
+import { UrlQueryValue } from '@credativ/plutono-data';
 import { isArray, isString } from 'lodash';
 
 export const toUrl = (filters: AdHocVariableFilter[]): string[] => {

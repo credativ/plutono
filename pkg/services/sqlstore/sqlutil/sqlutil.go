@@ -11,7 +11,7 @@ type TestDB struct {
 }
 
 func SQLite3TestDB() TestDB {
-	// To run all tests in a local test database, set ConnStr to "grafana_test.db"
+	// To run all tests in a local test database, set ConnStr to "plutono_test.db"
 	return TestDB{
 		DriverName: "sqlite3",
 		// ConnStr specifies an In-memory database shared between connections.
@@ -30,7 +30,7 @@ func MySQLTestDB() TestDB {
 	}
 	return TestDB{
 		DriverName: "mysql",
-		ConnStr:    fmt.Sprintf("grafana:password@tcp(%s:%s)/grafana_tests?collation=utf8mb4_unicode_ci", host, port),
+		ConnStr:    fmt.Sprintf("plutono:password@tcp(%s:%s)/plutono_tests?collation=utf8mb4_unicode_ci", host, port),
 	}
 }
 
@@ -43,7 +43,7 @@ func PostgresTestDB() TestDB {
 	if port == "" {
 		port = "5432"
 	}
-	connStr := fmt.Sprintf("user=grafanatest password=grafanatest host=%s port=%s dbname=grafanatest sslmode=disable",
+	connStr := fmt.Sprintf("user=plutonotest password=plutonotest host=%s port=%s dbname=plutonotest sslmode=disable",
 		host, port)
 	return TestDB{
 		DriverName: "postgres",
@@ -62,6 +62,6 @@ func MSSQLTestDB() TestDB {
 	}
 	return TestDB{
 		DriverName: "mssql",
-		ConnStr:    fmt.Sprintf("server=%s;port=%s;database=grafanatest;user id=grafana;password=Password!", host, port),
+		ConnStr:    fmt.Sprintf("server=%s;port=%s;database=plutonotest;user id=plutono;password=Password!", host, port),
 	}
 }

@@ -32,7 +32,7 @@ export default (data) => {
 
   group('API key test', () => {
     if (__ITER === 0) {
-      group('user can access grafana instance with APIKey', () => {
+      group('user can access plutono instance with APIKey', () => {
         let res = client.datasources.getAll();
 
         check(res, {

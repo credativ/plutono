@@ -7,9 +7,9 @@
   updateIntervalSeconds: 15
   type: file
   options:
-    path: /var/lib/grafana/dashboards
+    path: /var/lib/plutono/dashboards
 
 - name: 'default'
   type: file
   options:
-    path: /var/lib/grafana/dashboards
+    path: /var/lib/plutono/dashboards

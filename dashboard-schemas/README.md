@@ -1,11 +1,11 @@
 # Dashboard Schemas
 
-Schema description documents for [Grafana Dashboard
+Schema description documents for [Plutono Dashboard
 JSON](https://grafana.com/docs/grafana/latest/reference/dashboard/) and core
 panels.
 
 > **Note:** This directory is experimental. The schemas are not currently
-> implemented or enforced in Grafana.
+> implemented or enforced in Plutono.
 
 Schemas are defined in [Cue](https://cuelang.org/). Cue was chosen because it
 strongly facilitates our primary use cases - [schema

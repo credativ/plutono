@@ -1,7 +1,7 @@
 +++
 title = "Troubleshoot queries"
-description = "Guide to troubleshooting Grafana queries"
-keywords = ["grafana", "troubleshooting", "documentation", "guide", "queries"]
+description = "Guide to troubleshooting Plutono queries"
+keywords = ["plutono", "troubleshooting", "documentation", "guide", "queries"]
 weight = 400
 +++
 
@@ -16,7 +16,7 @@ Function order is very important. Just like in math, the order that you place yo
 ## Inspect your query request and response
 
 The most common problems are related to the query and response from your data source. Even if it looks
-like a bug or visualization issue in Grafana, it is almost always a problem with the data source query or
+like a bug or visualization issue in Plutono, it is almost always a problem with the data source query or
 the data source response. Start by inspecting your panel query and response.
 
 For more information, refer to [Inspect a panel]({{< relref "../panels/inspect-panel.md" >}}).

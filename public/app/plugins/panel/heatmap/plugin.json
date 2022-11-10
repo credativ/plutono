@@ -4,7 +4,7 @@
   "id": "heatmap",
 
   "info": {
-    "description": "Heatmap Panel for Grafana",
+    "description": "Heatmap Panel for Plutono",
     "author": {
       "name": "Grafana Labs",
       "url": "https://grafana.com"

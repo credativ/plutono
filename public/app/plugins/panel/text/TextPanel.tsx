@@ -1,12 +1,12 @@
 // Libraries
 import React, { PureComponent } from 'react';
 import { debounce } from 'lodash';
-import { PanelProps, renderMarkdown, textUtil } from '@grafana/data';
+import { PanelProps, renderMarkdown, textUtil } from '@credativ/plutono-data';
 // Utils
 import config from 'app/core/config';
 // Types
 import { TextOptions } from './types';
-import { CustomScrollbar, stylesFactory } from '@grafana/ui';
+import { CustomScrollbar, stylesFactory } from '@credativ/plutono-ui';
 import { css, cx } from 'emotion';
 import DangerouslySetHtmlContent from 'dangerously-set-html-content';
 

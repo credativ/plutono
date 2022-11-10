@@ -1,4 +1,4 @@
-# Grafana load test
+# Plutono load test
 
 Runs load tests and checks using [k6](https://k6.io/).
 
@@ -7,7 +7,7 @@ Runs load tests and checks using [k6](https://k6.io/).
 Docker
 
 To run the auth proxy test you'll need to setup nginx proxy from docker block and
-enable auth proxy together with configuring Grafana for auth proxy.
+enable auth proxy together with configuring Plutono for auth proxy.
 
 ## Run
 
@@ -26,7 +26,7 @@ $ ./run.sh -d 10s
 Run load test for custom target url:
 
 ```bash
-$ ./run.sh -u http://grafana.loc
+$ ./run.sh -u http://plutono.loc
 ```
 
 Run load test for 10 virtual users:
@@ -84,7 +84,7 @@ Example output:
       █ user authenticates through ui with username and password
 
         ✓ response status is 200
-        ✓ response has cookie 'grafana_session' with 32 characters
+        ✓ response has cookie 'plutono_session' with 32 characters
 
       █ batch tsdb requests
 

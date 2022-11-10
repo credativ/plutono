@@ -13,7 +13,7 @@ If you turn this on, then the variable dropdown list allows users to select mult
 
 ## Include All option
 
-Grafana adds an `All` option to the variable dropdown list. If a user selects this option, then all variable options are selected.
+Plutono adds an `All` option to the variable dropdown list. If a user selects this option, then all variable options are selected.
 
 ## Custom all value
 

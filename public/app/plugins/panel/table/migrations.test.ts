@@ -1,4 +1,4 @@
-import { PanelModel } from '@grafana/data';
+import { PanelModel } from '@credativ/plutono-data';
 import { tablePanelChangedHandler } from './migrations';
 
 describe('Table Migrations', () => {

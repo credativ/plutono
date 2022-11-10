@@ -1,14 +1,14 @@
 +++
 title = "Legacy data source plugins"
-keywords = ["grafana", "plugins", "documentation"]
-aliases = ["/docs/grafana/latest/plugins/developing/datasources/"]
+keywords = ["plutono", "plugins", "documentation"]
+aliases = ["/docs/plutono/latest/plugins/developing/datasources/"]
 +++
 
 # Legacy data source plugins
 
 Data source plugins enable people to develop plugins for any database that
 communicates over HTTP. Its up to the plugin to transform the data into
-time series data so that any grafana panel can then show it.
+time series data so that any plutono panel can then show it.
 
 ## Data source development
 
@@ -20,7 +20,7 @@ time series data so that any grafana panel can then show it.
 > - [simple-datasource](https://github.com/grafana/simple-datasource)
 > - [simple-json-backend-datasource](https://github.com/grafana/simple-json-backend-datasource)
 
-To interact with the rest of grafana the plugins module file can export 4 different components.
+To interact with the rest of plutono the plugins module file can export 4 different components.
 
 - Datasource (Required)
 - QueryCtrl (Required)
@@ -157,7 +157,7 @@ Expected result from datasource.annotationQuery:
 [
   {
     "annotation": {
-      "name": "annotation name", //should match the annotation name in grafana
+      "name": "annotation name", //should match the annotation name in plutono
       "enabled": true,
       "datasource": "generic datasource"
      },

@@ -2,7 +2,7 @@ import _ from 'lodash';
 import Mousetrap from 'mousetrap';
 import 'mousetrap-global-bind';
 import { ILocationService, IRootScopeService, ITimeoutService } from 'angular';
-import { LegacyGraphHoverClearEvent, locationUtil } from '@grafana/data';
+import { LegacyGraphHoverClearEvent, locationUtil } from '@credativ/plutono-data';
 
 import coreModule from 'app/core/core_module';
 import appEvents from 'app/core/app_events';
@@ -10,7 +10,7 @@ import { getExploreUrl } from 'app/core/utils/explore';
 import { dispatch, store } from 'app/store/store';
 import { exitPanelEditor } from 'app/features/dashboard/components/PanelEditor/state/actions';
 import { AppEventEmitter, CoreEvents } from 'app/types';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 import { DashboardModel } from 'app/features/dashboard/state';
 import { ShareModal } from 'app/features/dashboard/components/ShareModal';
 import { SaveDashboardModalProxy } from 'app/features/dashboard/components/SaveDashboard/SaveDashboardModalProxy';
@@ -22,7 +22,7 @@ export class KeybindingSrv {
 
   /** @ngInject */
   constructor(
-    private $rootScope: GrafanaRootScope,
+    private $rootScope: PlutonoRootScope,
     private $location: ILocationService,
     private $timeout: ITimeoutService,
     private datasourceSrv: any,

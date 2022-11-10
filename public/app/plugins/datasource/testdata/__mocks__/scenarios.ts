@@ -31,8 +31,8 @@ export const scenarios = [
   },
   {
     description: '',
-    id: 'grafana_api',
-    name: 'Grafana API',
+    id: 'plutono_api',
+    name: 'Plutono API',
     stringInput: '',
   },
   {

@@ -5,10 +5,10 @@ import {
   standardTransformers,
   TransformerRegistryItem,
   TransformerUIProps,
-} from '@grafana/data';
-import { Select } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { Select } from '@credativ/plutono-ui';
 
-import { LabelsToFieldsOptions } from '@grafana/data/src/transformations/transformers/labelsToFields';
+import { LabelsToFieldsOptions } from '@credativ/plutono-data/src/transformations/transformers/labelsToFields';
 
 export const LabelsAsFieldsTransformerEditor: React.FC<TransformerUIProps<LabelsToFieldsOptions>> = ({
   input,

@@ -1,5 +1,5 @@
 import React, { FormEvent, PropsWithChildren, ReactElement } from 'react';
-import { InlineField, Input, PopoverContent } from '@grafana/ui';
+import { InlineField, Input, PopoverContent } from '@credativ/plutono-ui';
 
 interface VariableTextFieldProps {
   value: string;

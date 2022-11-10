@@ -1,4 +1,4 @@
-import { CircularDataFrame, FieldCache, FieldType, MutableDataFrame } from '@grafana/data';
+import { CircularDataFrame, FieldCache, FieldType, MutableDataFrame } from '@credativ/plutono-data';
 import {
   LokiStreamResult,
   LokiTailResponse,
@@ -8,7 +8,7 @@ import {
   LokiMatrixResult,
 } from './types';
 import * as ResultTransformer from './result_transformer';
-import { setTemplateSrv } from '@grafana/runtime';
+import { setTemplateSrv } from '@credativ/plutono-runtime';
 import { TemplateSrv } from 'app/features/templating/template_srv';
 
 const streamResult: LokiStreamResult[] = [
@@ -39,9 +39,9 @@ const lokiResponse: LokiStreamResponse = {
   },
 };
 
-jest.mock('@grafana/runtime', () => ({
+jest.mock('@credativ/plutono-runtime', () => ({
   // @ts-ignore
-  ...jest.requireActual('@grafana/runtime'),
+  ...jest.requireActual('@credativ/plutono-runtime'),
   getDataSourceSrv: () => {
     return {
       getInstanceSettings: () => {
@@ -145,13 +145,13 @@ describe('loki result transformer', () => {
         streams: [
           {
             stream: {
-              filename: '/var/log/grafana/grafana.log',
-              job: 'grafana',
+              filename: '/var/log/plutono/plutono.log',
+              job: 'plutono',
             },
             values: [
               [
                 '1581519914265798400',
-                't=2020-02-12T15:04:51+0000 lvl=info msg="Starting Grafana" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
+                't=2020-02-12T15:04:51+0000 lvl=info msg="Starting Plutono" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
               ],
             ],
           },
@@ -161,7 +161,7 @@ describe('loki result transformer', () => {
       const data = new CircularDataFrame({ capacity: 1 });
       data.addField({ name: 'ts', type: FieldType.time, config: { displayName: 'Time' } });
       data.addField({ name: 'tsNs', type: FieldType.time, config: { displayName: 'Time ns' } });
-      data.addField({ name: 'line', type: FieldType.string }).labels = { job: 'grafana' };
+      data.addField({ name: 'line', type: FieldType.string }).labels = { job: 'plutono' };
       data.addField({ name: 'labels', type: FieldType.other });
       data.addField({ name: 'id', type: FieldType.string });
 
@@ -170,8 +170,8 @@ describe('loki result transformer', () => {
         ts: '2020-02-12T15:05:14.265Z',
         tsNs: '1581519914265798400',
         line:
-          't=2020-02-12T15:04:51+0000 lvl=info msg="Starting Grafana" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
-        labels: { filename: '/var/log/grafana/grafana.log' },
+          't=2020-02-12T15:04:51+0000 lvl=info msg="Starting Plutono" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
+        labels: { filename: '/var/log/plutono/plutono.log' },
         id: '19e8e093d70122b3b53cb6e24efd6e2d',
       });
     });
@@ -181,8 +181,8 @@ describe('loki result transformer', () => {
         streams: [
           {
             stream: {
-              filename: '/var/log/grafana/grafana.log',
-              job: 'grafana',
+              filename: '/var/log/plutono/plutono.log',
+              job: 'plutono',
             },
             values: [
               ['1581519914265798400', 't=2020-02-12T15:04:51+0000 lvl=info msg="Dupplicated 1"'],
@@ -199,7 +199,7 @@ describe('loki result transformer', () => {
       const data = new CircularDataFrame({ capacity: 6 });
       data.addField({ name: 'ts', type: FieldType.time, config: { displayName: 'Time' } });
       data.addField({ name: 'tsNs', type: FieldType.time, config: { displayName: 'Time ns' } });
-      data.addField({ name: 'line', type: FieldType.string }).labels = { job: 'grafana' };
+      data.addField({ name: 'line', type: FieldType.string }).labels = { job: 'plutono' };
       data.addField({ name: 'labels', type: FieldType.other });
       data.addField({ name: 'id', type: FieldType.string });
       data.refId = 'C';

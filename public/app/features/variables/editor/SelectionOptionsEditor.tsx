@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FormEvent, FunctionComponent, useCallback } from 'react';
-import { InlineFieldRow, VerticalGroup } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { InlineFieldRow, VerticalGroup } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import { VariableWithMultiSupport } from '../types';
 import { VariableEditorProps } from './types';

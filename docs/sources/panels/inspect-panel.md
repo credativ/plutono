@@ -5,9 +5,9 @@ weight = 400
 
 # Inspect a panel
 
-> **Note:** This documentation refers to a feature only available in Grafana 7.0+.
+> **Note:** This documentation refers to a feature only available in Plutono 7.0+.
 
-The panel inspector helps you understand and troubleshoot your panels. You can inspect the raw data for any Grafana panel, export that data to a comma-separated values (CSV) file, view query requests, and export panel and data JSON.
+The panel inspector helps you understand and troubleshoot your panels. You can inspect the raw data for any Plutono panel, export that data to a comma-separated values (CSV) file, view query requests, and export panel and data JSON.
 
 ## Panel inspector UI
 
@@ -17,8 +17,8 @@ The panel inspector consists of four tabs:
 
 - **Data tab -** Shows the raw data returned by the query with transformations applied. Field options such as overrides and value mappings are not applied by default.
 - **Stats tab -** Shows how long your query takes and how much it returns.
-- **JSON tab -** Allows you to view and copy the panel JSON, panel data JSON, and data frame structure JSON. This is useful if you are provisioning or administering Grafana.
-- **Query tab -** Shows you the requests to the server sent when Grafana queries the data source.
+- **JSON tab -** Allows you to view and copy the panel JSON, panel data JSON, and data frame structure JSON. This is useful if you are provisioning or administering Plutono.
+- **Query tab -** Shows you the requests to the server sent when Plutono queries the data source.
 
 > **Note:** Not all panel types include all four tabs. For example, dashboard list panels do not have raw data to inspect, so they do not display the Stats, Data, or Query tabs.
 
@@ -29,7 +29,7 @@ Tasks you can perform in the panel inspector are described below.
 
 You can inspect any panel that you can view.
 
-1. In Grafana, navigate to the dashboard that contains the panel you want to inspect.
+1. In Plutono, navigate to the dashboard that contains the panel you want to inspect.
 1. Click the title of the panel you want to inspect and then click **Inspect**.
    Or
    Hover your cursor over the panel title and then press **i**.
@@ -53,7 +53,7 @@ View raw query results in a table. This is the data returned by the query with t
 
 ### Download raw query results as CSV
 
-Grafana generates a CSV file in your default browser download location. You can open it in the viewer of your choice.
+Plutono generates a CSV file in your default browser download location. You can open it in the viewer of your choice.
 
 1. Open the panel inspector.
 1. Inspect the raw query results as described above. Adjust settings until you see the raw data that you want to export.
@@ -86,4 +86,4 @@ Explore and export panel, panel data, and data frame JSON models.
 1. Open the panel inspector and then click the **Query** tab or in the panel menu click **Inspect > Query**.
 1. Click **Refresh**.
 
-Grafana sends a query to the server to collect information and then displays the result. You can now drill down on specific portions of the query, expand or collapse all of it, or copy the data to the clipboard to use in other applications.
+Plutono sends a query to the server to collect information and then displays the result. You can now drill down on specific portions of the query, expand or collapse all of it, or copy the data to the clipboard to use in other applications.

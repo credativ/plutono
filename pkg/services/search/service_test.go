@@ -3,8 +3,8 @@ package search
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -27,7 +27,7 @@ func TestSearch_SortedResults(t *testing.T) {
 	})
 
 	bus.AddHandler("test", func(query *models.GetSignedInUserQuery) error {
-		query.Result = &models.SignedInUser{IsGrafanaAdmin: true}
+		query.Result = &models.SignedInUser{IsPlutonoAdmin: true}
 		return nil
 	})
 
@@ -36,7 +36,7 @@ func TestSearch_SortedResults(t *testing.T) {
 	query := &Query{
 		Limit: 2000,
 		SignedInUser: &models.SignedInUser{
-			IsGrafanaAdmin: true,
+			IsPlutonoAdmin: true,
 		},
 	}
 

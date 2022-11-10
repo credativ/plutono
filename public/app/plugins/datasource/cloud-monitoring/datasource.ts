@@ -6,13 +6,13 @@ import {
   ScopedVars,
   SelectableValue,
   DataQueryResponse,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { getTemplateSrv, TemplateSrv } from 'app/features/templating/template_srv';
 import { getTimeSrv, TimeSrv } from 'app/features/dashboard/services/TimeSrv';
 
 import { CloudMonitoringOptions, CloudMonitoringQuery, Filter, MetricDescriptor, QueryType, EditorMode } from './types';
 import API from './api';
-import { DataSourceWithBackend, toDataQueryResponse } from '@grafana/runtime';
+import { DataSourceWithBackend, toDataQueryResponse } from '@credativ/plutono-runtime';
 import { CloudMonitoringVariableSupport } from './variables';
 import { catchError, map, mergeMap } from 'rxjs/operators';
 import { from, Observable, of, throwError } from 'rxjs';

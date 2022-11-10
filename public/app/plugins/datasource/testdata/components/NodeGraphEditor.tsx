@@ -1,5 +1,5 @@
 import React from 'react';
-import { Input, InlineFieldRow, InlineField, Select } from '@grafana/ui';
+import { Input, InlineFieldRow, InlineField, Select } from '@credativ/plutono-ui';
 import { NodesQuery, TestDataQuery } from '../types';
 
 export interface Props {

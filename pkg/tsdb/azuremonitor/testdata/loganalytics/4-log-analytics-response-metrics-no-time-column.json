@@ -14,15 +14,15 @@
       ],
       "rows": [
         [
-          "grafana-vm",
+          "plutono-vm",
           1.1
         ],
         [
-          "grafana-vm",
+          "plutono-vm",
           2.2
         ],
         [
-          "grafana-vm",
+          "plutono-vm",
           3.3
         ]
       ]

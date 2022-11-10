@@ -29,7 +29,7 @@ To display an error message to the user, `throw` an `Error` with the message you
 throw new Error('An error occurred');
 ```
 
-Grafana displays the error message in the top-left corner of the panel.
+Plutono displays the error message in the top-left corner of the panel.
 
 {{< figure src="/static/img/docs/panel_error.png" class="docs-image--no-shadow" max-width="850px" >}}
 
@@ -44,7 +44,7 @@ try {
 }
 ```
 
-> **Note:** Grafana displays the exception message in the UI as written, so we recommend using grammatically correct sentences. For more information, refer to the [Documentation style guide](https://github.com/grafana/grafana/blob/master/contribute/style-guides/documentation-style-guide.md).
+> **Note:** Plutono displays the exception message in the UI as written, so we recommend using grammatically correct sentences. For more information, refer to the [Documentation style guide](https://github.com/credativ/plutono/blob/master/contribute/style-guides/documentation-style-guide.md).
 
 Here are some examples of situations where you might want to display an error to the user.
 

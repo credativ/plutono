@@ -3,8 +3,8 @@ package opentsdb
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/stretchr/testify/require"
 )
 
@@ -84,7 +84,7 @@ func TestOpenTsdbExecutor(t *testing.T) {
 
 		tags := simplejson.New()
 		tags.Set("env", "prod")
-		tags.Set("app", "grafana")
+		tags.Set("app", "plutono")
 		query.Model.Set("tags", tags.MustMap())
 
 		metric := exec.buildMetric(query)
@@ -97,7 +97,7 @@ func TestOpenTsdbExecutor(t *testing.T) {
 		metricTags := metric["tags"].(map[string]interface{})
 		require.Len(t, metricTags, 2)
 		require.Equal(t, "prod", metricTags["env"])
-		require.Equal(t, "grafana", metricTags["app"])
+		require.Equal(t, "plutono", metricTags["app"])
 		require.Nil(t, metricTags["ip"])
 	})
 
@@ -114,7 +114,7 @@ func TestOpenTsdbExecutor(t *testing.T) {
 
 		tags := simplejson.New()
 		tags.Set("env", "prod")
-		tags.Set("app", "grafana")
+		tags.Set("app", "plutono")
 		query.Model.Set("tags", tags.MustMap())
 
 		metric := exec.buildMetric(query)
@@ -126,7 +126,7 @@ func TestOpenTsdbExecutor(t *testing.T) {
 		metricTags := metric["tags"].(map[string]interface{})
 		require.Len(t, metricTags, 2)
 		require.Equal(t, "prod", metricTags["env"])
-		require.Equal(t, "grafana", metricTags["app"])
+		require.Equal(t, "plutono", metricTags["app"])
 		require.Nil(t, metricTags["ip"])
 
 		require.True(t, metric["rate"].(bool))
@@ -148,7 +148,7 @@ func TestOpenTsdbExecutor(t *testing.T) {
 
 		tags := simplejson.New()
 		tags.Set("env", "prod")
-		tags.Set("app", "grafana")
+		tags.Set("app", "plutono")
 		query.Model.Set("tags", tags.MustMap())
 
 		metric := exec.buildMetric(query)
@@ -160,7 +160,7 @@ func TestOpenTsdbExecutor(t *testing.T) {
 		metricTags := metric["tags"].(map[string]interface{})
 		require.Len(t, metricTags, 2)
 		require.Equal(t, "prod", metricTags["env"])
-		require.Equal(t, "grafana", metricTags["app"])
+		require.Equal(t, "plutono", metricTags["app"])
 		require.Nil(t, metricTags["ip"])
 
 		require.True(t, metric["rate"].(bool))

@@ -1,4 +1,4 @@
-import { e2e } from '@grafana/e2e';
+import { e2e } from '@credativ/plutono-e2e';
 
 e2e.scenario({
   describeName: 'Gauge Panel',

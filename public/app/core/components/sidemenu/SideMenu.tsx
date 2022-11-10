@@ -5,7 +5,7 @@ import BottomSection from './BottomSection';
 import config from 'app/core/config';
 import { CoreEvents } from 'app/types';
 import { Branding } from 'app/core/components/Branding/Branding';
-import { Icon } from '@grafana/ui';
+import { Icon } from '@credativ/plutono-ui';
 
 const homeUrl = config.appSubUrl || '/';
 

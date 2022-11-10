@@ -1,14 +1,14 @@
 +++
 title = "Zipkin"
-description = "Guide for using Zipkin in Grafana"
-keywords = ["grafana", "zipkin", "guide", "tracing"]
-aliases = ["/docs/grafana/latest/datasources/zipkin"]
+description = "Guide for using Zipkin in Plutono"
+keywords = ["plutono", "zipkin", "guide", "tracing"]
+aliases = ["/docs/plutono/latest/datasources/zipkin"]
 weight = 1600
 +++
 
 # Zipkin data source
 
-Grafana ships with built-in support for Zipkin, an open source, distributed tracing system.
+Plutono ships with built-in support for Zipkin, an open source, distributed tracing system.
 Just add it as a data source and you are ready to query your traces in [Explore]({{< relref "../explore" >}}).
 
 ## Adding the data source
@@ -26,7 +26,7 @@ To access Zipkin settings, click the **Configuration** (gear) icon, then click *
 
 ### Trace to logs
 
-> **Note:** This feature is available in Grafana 7.4+.
+> **Note:** This feature is available in Plutono 7.4+.
 
 This is a configuration for the [trace to logs feature]({{< relref "../explore/trace-integration" >}}). Select target data source (at this moment limited to Loki data sources) and select which tags will be used in the logs query.
 

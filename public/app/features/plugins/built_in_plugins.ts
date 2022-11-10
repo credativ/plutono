@@ -8,8 +8,8 @@ const elasticsearchPlugin = async () =>
   await import(/* webpackChunkName: "elasticsearchPlugin" */ 'app/plugins/datasource/elasticsearch/module');
 const opentsdbPlugin = async () =>
   await import(/* webpackChunkName: "opentsdbPlugin" */ 'app/plugins/datasource/opentsdb/module');
-const grafanaPlugin = async () =>
-  await import(/* webpackChunkName: "grafanaPlugin" */ 'app/plugins/datasource/grafana/module');
+const plutonoPlugin = async () =>
+  await import(/* webpackChunkName: "plutonoPlugin" */ 'app/plugins/datasource/plutono/module');
 const influxdbPlugin = async () =>
   await import(/* webpackChunkName: "influxdbPlugin" */ 'app/plugins/datasource/influxdb/module');
 const lokiPlugin = async () => await import(/* webpackChunkName: "lokiPlugin" */ 'app/plugins/datasource/loki/module');
@@ -33,7 +33,7 @@ const cloudMonitoringPlugin = async () =>
   await import(/* webpackChunkName: "cloudMonitoringPlugin" */ 'app/plugins/datasource/cloud-monitoring/module');
 const azureMonitorPlugin = async () =>
   await import(
-    /* webpackChunkName: "azureMonitorPlugin" */ 'app/plugins/datasource/grafana-azure-monitor-datasource/module'
+    /* webpackChunkName: "azureMonitorPlugin" */ 'app/plugins/datasource/plutono-azure-monitor-datasource/module'
   );
 const tempoPlugin = async () =>
   await import(/* webpackChunkName: "tempoPlugin" */ 'app/plugins/datasource/tempo/module');
@@ -68,7 +68,7 @@ const builtInPlugins: any = {
   'app/plugins/datasource/dashboard/module': dashboardDSPlugin,
   'app/plugins/datasource/elasticsearch/module': elasticsearchPlugin,
   'app/plugins/datasource/opentsdb/module': opentsdbPlugin,
-  'app/plugins/datasource/grafana/module': grafanaPlugin,
+  'app/plugins/datasource/plutono/module': plutonoPlugin,
   'app/plugins/datasource/influxdb/module': influxdbPlugin,
   'app/plugins/datasource/loki/module': lokiPlugin,
   'app/plugins/datasource/jaeger/module': jaegerPlugin,
@@ -80,7 +80,7 @@ const builtInPlugins: any = {
   'app/plugins/datasource/prometheus/module': prometheusPlugin,
   'app/plugins/datasource/testdata/module': testDataDSPlugin,
   'app/plugins/datasource/cloud-monitoring/module': cloudMonitoringPlugin,
-  'app/plugins/datasource/grafana-azure-monitor-datasource/module': azureMonitorPlugin,
+  'app/plugins/datasource/plutono-azure-monitor-datasource/module': azureMonitorPlugin,
   'app/plugins/datasource/tempo/module': tempoPlugin,
 
   'app/plugins/panel/text/module': textPanel,

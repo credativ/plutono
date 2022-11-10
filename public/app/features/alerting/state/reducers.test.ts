@@ -1,4 +1,4 @@
-import { dateTime } from '@grafana/data';
+import { dateTime } from '@credativ/plutono-data';
 import {
   alertRulesReducer,
   initialChannelState,

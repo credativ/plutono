@@ -1,9 +1,9 @@
 import { css } from 'emotion';
 
-import { GrafanaTheme } from '@grafana/data';
-import { styleMixins, stylesFactory } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { styleMixins, stylesFactory } from '@credativ/plutono-ui';
 
-export const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+export const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   dashlistSectionHeader: css`
     margin-bottom: ${theme.spacing.d};
     color: ${theme.colors.textWeak};

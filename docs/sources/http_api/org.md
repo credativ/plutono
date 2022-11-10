@@ -1,8 +1,8 @@
 +++
 title = "Organization HTTP API "
-description = "Grafana Organization HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "organization"]
-aliases = ["/docs/grafana/latest/http_api/organization/"]
+description = "Plutono Organization HTTP API"
+keywords = ["plutono", "http", "documentation", "api", "organization"]
+aliases = ["/docs/plutono/latest/http_api/organization/"]
 +++
 
 
@@ -81,7 +81,7 @@ Content-Type: application/json
 
 Returns all org users within the current organization, but with less detailed information.
 Accessible to users with org admin role, admin in any folder or admin of any team.
-Mainly used by Grafana UI for providing list of users when adding team members and
+Mainly used by Plutono UI for providing list of users when adding team members and
 when editing folder/dashboard permissions.
 
 **Example Request**:
@@ -216,7 +216,7 @@ Content-Type: application/json
 The Admin Organizations HTTP API does not currently work with an API Token. API Tokens are currently
 only linked to an organization and an organization role. They cannot be given the permission of server
 admin, only users can be given that permission. So in order to use these API calls you will have to
-use Basic Auth and the Grafana user must have the Grafana Admin permission (The default admin user
+use Basic Auth and the Plutono user must have the Plutono Admin permission (The default admin user
 is called `admin` and has permission to use this API).
 
 ### Get Organization by Id

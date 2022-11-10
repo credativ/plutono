@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, FormEvent, useEffect, useState } from 'react';
-import { EventsWithValidation, Icon, InlineFormLabel, LegacyForms, ValidationEvents } from '@grafana/ui';
+import { EventsWithValidation, Icon, InlineFormLabel, LegacyForms, ValidationEvents } from '@credativ/plutono-ui';
 import { NewApiKey, OrgRole } from '../../types';
-import { rangeUtil } from '@grafana/data';
+import { rangeUtil } from '@credativ/plutono-data';
 import { SlideDown } from '../../core/components/Animations/SlideDown';
 
 const { Input } = LegacyForms;

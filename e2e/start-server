@@ -10,7 +10,7 @@ PACKAGE_FILE=${PACKAGE_FILE:-$DEFAULT_PACKAGE_FILE}
 
 mkdir $RUNDIR
 
-echo -e "Copying grafana backend files to temp dir..."
+echo -e "Copying plutono backend files to temp dir..."
 
 # Expand any wildcards
 pkgs=(${PACKAGE_FILE})
@@ -18,12 +18,12 @@ pkg=${pkgs[0]}
 if [[ -f ${pkg} ]]; then
   echo "Found package tar file ${pkg}, extracting..."
   tar zxf ${pkg} -C $RUNDIR
-  mv $RUNDIR/grafana-*/* $RUNDIR
+  mv $RUNDIR/plutono-*/* $RUNDIR
 else
   echo "Couldn't find package ${PACKAGE_FILE} - copying local dev files"
 
-  if [[ ! -f bin/grafana-server ]]; then
-    echo bin/grafana-server missing
+  if [[ ! -f bin/plutono-server ]]; then
+    echo bin/plutono-server missing
     exit 1
   fi
 
@@ -46,9 +46,9 @@ cp devenv/dashboards.yaml $PROV_DIR/dashboards
 
 cp -r devenv $RUNDIR
 
-echo -e "Starting Grafana Server port $PORT"
+echo -e "Starting Plutono Server port $PORT"
 
-$RUNDIR/bin/grafana-server \
+$RUNDIR/bin/plutono-server \
   --homepath=$RUNDIR \
   --pidfile=$RUNDIR/pid \
   cfg:server.http_port=$PORT \

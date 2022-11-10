@@ -26,21 +26,21 @@ datasources:
     type: influxdb
     access: proxy
     database: site
-    user: grafana
+    user: plutono
     url: http://localhost:8086
     jsonData:
       timeInterval: "15s"
     secureJsonData:
-      password: grafana
+      password: plutono
   
   - name: gdev-influxdb2
     type: influxdb
     access: proxy
     url: http://localhost:8087
-    user: grafana
+    user: plutono
     secureJsonData:
       token: mytoken
-      password: grafana12345
+      password: plutono12345
     jsonData:
       version: Flux
       organization: myorg
@@ -50,12 +50,12 @@ datasources:
     type: influxdb
     access: proxy
     database: telegraf
-    user: grafana
+    user: plutono
     url: http://localhost:8086
     jsonData:
       timeInterval: "10s"
     secureJsonData:
-      password: grafana
+      password: plutono
     
   - name: gdev-opentsdb
     type: opentsdb
@@ -183,40 +183,40 @@ datasources:
   - name: gdev-mysql
     type: mysql
     url: localhost:3306
-    database: grafana
-    user: grafana
+    database: plutono
+    user: plutono
     secureJsonData:
       password: password
 
   - name: gdev-mysql-ds-tests
     type: mysql
     url: localhost:3306
-    database: grafana_ds_tests
-    user: grafana
+    database: plutono_ds_tests
+    user: plutono
     secureJsonData:
       password: password
 
   - name: gdev-mssql
     type: mssql
     url: localhost:1433
-    database: grafana
-    user: grafana
+    database: plutono
+    user: plutono
     secureJsonData:
       password: Password!
 
   - name: gdev-mssql-ds-tests
     type: mssql
     url: localhost:1433
-    database: grafanatest
-    user: grafana
+    database: plutonotest
+    user: plutono
     secureJsonData:
       password: Password!
 
   - name: gdev-postgres
     type: postgres
     url: localhost:5432
-    database: grafana
-    user: grafana
+    database: plutono
+    user: plutono
     secureJsonData:
       password: password
     jsonData:
@@ -225,10 +225,10 @@ datasources:
   - name: gdev-postgres-ds-tests
     type: postgres
     url: localhost:5432
-    database: grafanadstest
-    user: grafanatest
+    database: plutonodstest
+    user: plutonotest
     secureJsonData:
-      password: grafanatest
+      password: plutonotest
     jsonData:
       sslmode: "disable"
 

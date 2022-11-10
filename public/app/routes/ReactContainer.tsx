@@ -8,8 +8,8 @@ import coreModule from 'app/core/core_module';
 import { store } from 'app/store/store';
 import { ContextSrv } from 'app/core/services/context_srv';
 import { provideTheme } from 'app/core/utils/ConfigProvider';
-import { ErrorBoundaryAlert, ModalRoot, ModalsProvider } from '@grafana/ui';
-import { GrafanaRootScope } from './GrafanaCtrl';
+import { ErrorBoundaryAlert, ModalRoot, ModalsProvider } from '@credativ/plutono-ui';
+import { PlutonoRootScope } from './PlutonoCtrl';
 
 export function WrapInProvider(store: any, Component: any, props: any) {
   return (
@@ -38,7 +38,7 @@ export function reactContainer(
   $route: any,
   $location: any,
   $injector: any,
-  $rootScope: GrafanaRootScope,
+  $rootScope: PlutonoRootScope,
   contextSrv: ContextSrv
 ) {
   return {

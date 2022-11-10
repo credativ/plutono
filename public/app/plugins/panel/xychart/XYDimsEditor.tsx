@@ -1,13 +1,13 @@
 import React, { FC, useMemo } from 'react';
 import { css } from 'emotion';
-import { IconButton, Label, Select, stylesFactory, useTheme } from '@grafana/ui';
+import { IconButton, Label, Select, stylesFactory, useTheme } from '@credativ/plutono-ui';
 import {
   SelectableValue,
   getFrameDisplayName,
-  GrafanaTheme,
+  PlutonoTheme,
   StandardEditorProps,
   getFieldDisplayName,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import { XYDimensionConfig, Options } from './types';
 import { getXYDimensions, isGraphable } from './dims';
@@ -141,7 +141,7 @@ export const XYDimsEditor: FC<StandardEditorProps<XYDimensionConfig, any, Option
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   sorter: css`
     margin-top: 10px;
     display: flex;

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { Icon, ModalsController } from '@grafana/ui';
+import { Icon, ModalsController } from '@credativ/plutono-ui';
 
 import { RowOptionsModal } from './RowOptionsModal';
 import { OnRowOptionsUpdate } from './RowOptionsForm';

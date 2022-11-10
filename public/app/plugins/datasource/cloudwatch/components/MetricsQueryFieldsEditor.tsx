@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { SelectableValue } from '@grafana/data';
-import { Segment, SegmentAsync } from '@grafana/ui';
+import { SelectableValue } from '@credativ/plutono-data';
+import { Segment, SegmentAsync } from '@credativ/plutono-ui';
 import { CloudWatchMetricsQuery, SelectableStrings } from '../types';
 import { CloudWatchDatasource } from '../datasource';
 import { Dimensions, QueryInlineField, Stats } from '.';

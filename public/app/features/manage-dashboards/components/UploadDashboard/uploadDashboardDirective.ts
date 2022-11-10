@@ -1,7 +1,7 @@
 import coreModule from 'app/core/core_module';
 import appEvents from 'app/core/app_events';
 import angular, { ILocationService } from 'angular';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@credativ/plutono-data';
 
 const template = `
 <input type="file" id="dashupload" name="dashupload" class="hide" onchange="angular.element(this).scope().file_selected"/>

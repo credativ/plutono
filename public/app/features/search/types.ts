@@ -1,6 +1,6 @@
 import { Dispatch } from 'react';
 import { Action } from 'redux';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 import { FolderInfo } from '../../types';
 
 export enum DashboardSearchItemType {

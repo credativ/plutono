@@ -1,33 +1,33 @@
 +++
-title = "Internal Grafana metrics"
-description = "Internal metrics exposed by Grafana"
-keywords = ["grafana", "metrics", "internal metrics"]
-aliases = ["/docs/grafana/latest/admin/metrics/"]
+title = "Internal Plutono metrics"
+description = "Internal metrics exposed by Plutono"
+keywords = ["plutono", "metrics", "internal metrics"]
+aliases = ["/docs/plutono/latest/admin/metrics/"]
 weight = 200
 +++
 
-# Internal Grafana metrics
+# Internal Plutono metrics
 
-Grafana collects some metrics about itself internally. Grafana supports pushing metrics to Graphite or exposing them to be scraped by Prometheus.
+Plutono collects some metrics about itself internally. Plutono supports pushing metrics to Graphite or exposing them to be scraped by Prometheus.
 
-For more information about configuration options related to Grafana metrics, refer to [metrics]({{< relref "../../administration/configuration/#metrics" >}}) and [metrics.graphite]({{< relref "../../administration/configuration/#metrics-graphite" >}}) in [Configuration]({{< relref "../../administration/configuration.md" >}}).
+For more information about configuration options related to Plutono metrics, refer to [metrics]({{< relref "../../administration/configuration/#metrics" >}}) and [metrics.graphite]({{< relref "../../administration/configuration/#metrics-graphite" >}}) in [Configuration]({{< relref "../../administration/configuration.md" >}}).
 
 ## Available metrics
 
-When enabled, Grafana exposes a number of metrics, including:
+When enabled, Plutono exposes a number of metrics, including:
 
-- Active Grafana instances
+- Active Plutono instances
 - Number of dashboards, users, and playlists
 - HTTP status codes
 - Requests by routing group
-- Grafana active alerts
-- Grafana performance
+- Plutono active alerts
+- Plutono performance
 
-## Pull metrics from Grafana into Prometheus
+## Pull metrics from Plutono into Prometheus
 
-These instructions assume you have already added Prometheus as a data source in Grafana.
+These instructions assume you have already added Prometheus as a data source in Plutono.
 
-1. Enable Prometheus to scrape metrics from Grafana. In your configuration file (`grafana.ini` or `custom.ini` depending on your operating system) remove the semicolon to enable the following configuration options:
+1. Enable Prometheus to scrape metrics from Plutono. In your configuration file (`plutono.ini` or `custom.ini` depending on your operating system) remove the semicolon to enable the following configuration options:
 
    ```
    # Metrics available at HTTP API Url /metrics
@@ -46,12 +46,12 @@ These instructions assume you have already added Prometheus as a data source in 
    basic_auth_password =
    ```
 
-1. Restart Grafana. Grafana now exposes metrics at http://localhost:3000/metrics.
+1. Restart Plutono. Plutono now exposes metrics at http://localhost:3000/metrics.
 1. Add the job to your prometheus.yml file.
    Example:
 
    ```
-   - job_name: 'grafana_metrics'
+   - job_name: 'plutono_metrics'
 
       scrape_interval: 15s
       scrape_timeout: 5s
@@ -60,15 +60,15 @@ These instructions assume you have already added Prometheus as a data source in 
         - targets: ['localhost:3000']
    ```
 1. Restart Prometheus. Your new job should appear on the Targets tab.
-1. In Grafana, hover your mouse over the **Configuration** (gear) icon on the left sidebar and then click **Data Sources**.
+1. In Plutono, hover your mouse over the **Configuration** (gear) icon on the left sidebar and then click **Data Sources**.
 1. Select the **Prometheus** data source.
-1. On the Dashboards tab, **Import** the Grafana metrics dashboard. All scraped Grafana metrics are available in the dashboard.
+1. On the Dashboards tab, **Import** the Plutono metrics dashboard. All scraped Plutono metrics are available in the dashboard.
 
-## View Grafana metrics in Graphite
+## View Plutono metrics in Graphite
 
-These instructions assume you have already added Graphite as a data source in Grafana.
+These instructions assume you have already added Graphite as a data source in Plutono.
 
-1. Enable sending metrics to Graphite. In your configuration file (`grafana.ini` or `custom.ini` depending on your operating system) remove the semicolon to enable the following configuration options:
+1. Enable sending metrics to Graphite. In your configuration file (`plutono.ini` or `custom.ini` depending on your operating system) remove the semicolon to enable the following configuration options:
 
    ```
    # Metrics available at HTTP API Url /metrics
@@ -86,7 +86,7 @@ These instructions assume you have already added Graphite as a data source in Gr
    [metrics.graphite]
    # Enable by setting the address setting (ex localhost:2003)
    address = <hostname or ip>:<port#>
-   prefix = prod.grafana.%(instance_name)s.
+   prefix = prod.plutono.%(instance_name)s.
    ```
 
-1. Restart Grafana. Grafana now exposes metrics at http://localhost:3000/metrics and sends them to the Graphite location you specified.
+1. Restart Plutono. Plutono now exposes metrics at http://localhost:3000/metrics and sends them to the Graphite location you specified.

@@ -5,19 +5,19 @@ weight = 200
 
 # Enable diagnostics
 
-You can set up the `grafana-server` process to enable certain diagnostics when it starts. This can be helpful
+You can set up the `plutono-server` process to enable certain diagnostics when it starts. This can be helpful
 when investigating certain performance problems. It's *not* recommended to have these enabled by default.
 
 ## Turn on profiling
 
-The `grafana-server` can be started with the arguments `-profile` to enable profiling and  `-profile-port` to override
+The `plutono-server` can be started with the arguments `-profile` to enable profiling and  `-profile-port` to override
 the default HTTP port (`6060`) where the `pprof` debugging endpoints are available, for example:
 
 ```bash
-./grafana-server -profile -profile-port=8080
+./plutono-server -profile -profile-port=8080
 ```
 
-Note that `pprof` debugging endpoints are served on a different port than the Grafana HTTP server.
+Note that `pprof` debugging endpoints are served on a different port than the Plutono HTTP server.
 
 You can configure or override profiling settings using environment variables:
 
@@ -30,10 +30,10 @@ Refer to [Go command pprof](https://golang.org/cmd/pprof/) for more information 
 
 ## Use tracing
 
-The `grafana-server` can be started with the arguments `-tracing` to enable tracing and `-tracing-file` to override the default trace file (`trace.out`) where trace result is written to. For example:
+The `plutono-server` can be started with the arguments `-tracing` to enable tracing and `-tracing-file` to override the default trace file (`trace.out`) where trace result is written to. For example:
 
 ```bash
-./grafana-server -tracing -tracing-file=/tmp/trace.out
+./plutono-server -tracing -tracing-file=/tmp/trace.out
 ```
 
 You can configure or override profiling settings using environment variables:

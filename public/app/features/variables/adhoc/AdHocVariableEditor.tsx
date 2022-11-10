@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
-import { Alert, InlineFieldRow, VerticalGroup } from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
+import { Alert, InlineFieldRow, VerticalGroup } from '@credativ/plutono-ui';
+import { SelectableValue } from '@credativ/plutono-data';
 
 import { AdHocVariableModel } from '../types';
 import { VariableEditorProps } from '../editor/types';

@@ -1,7 +1,7 @@
 import React, { FC, MouseEvent } from 'react';
 import { css, cx } from 'emotion';
-import { AnnotationEvent, DateTimeInput, GrafanaTheme, PanelProps } from '@grafana/data';
-import { styleMixins, Tooltip, useStyles } from '@grafana/ui';
+import { AnnotationEvent, DateTimeInput, PlutonoTheme, PanelProps } from '@credativ/plutono-data';
+import { styleMixins, Tooltip, useStyles } from '@credativ/plutono-ui';
 import { AnnoOptions } from './types';
 import { AnnotationListItemTags } from './AnnotationListItemTags';
 
@@ -96,7 +96,7 @@ const TimeStamp: FC<TimeStampProps> = ({ time, formatDate }) => {
   );
 };
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: PlutonoTheme) {
   return {
     pointer: css`
       label: pointer;

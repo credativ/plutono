@@ -7,8 +7,8 @@
 # download the zip, drop in to dist/enterprise-dist and do the same thing
 #
 # Expected paths and names
-# /tmp/dist/grafana-6.0.0-ca0bc2c5pre3.windows-amd64.zip
-# /tmp/enterprise-dist/grafana-enterprise-6.0.0-29b28127pre3.windows-amd64.zip
+# /tmp/dist/plutono-6.0.0-ca0bc2c5pre3.windows-amd64.zip
+# /tmp/enterprise-dist/plutono-enterprise-6.0.0-29b28127pre3.windows-amd64.zip
 #
 # Optionally (mainly for testing), pass arguments to pull a specific build
 #   -b,--build 5.4.3
@@ -18,11 +18,11 @@
 # When using the build option, the zip file is created in either dist or
 # dist-enterprise according to the -e flag toggle.
 #
-# https://s3-us-west-2.amazonaws.com/grafana-releases/release/
-#   grafana-{}.windows-amd64.zip
+# https://s3-us-west-2.amazonaws.com/plutono-releases/release/
+#   plutono-{}.windows-amd64.zip
 #
 # https://dl.grafana.com/enterprise/release/
-#   grafana-enterprise-{}.windows-amd64.zip
+#   plutono-enterprise-{}.windows-amd64.zip
 #
 import os
 import shutil
@@ -35,9 +35,9 @@ from utils import *
 # Constants - DO NOT CHANGE #
 #############################
 OSS_UPGRADE_VERSION = '35c7d2a9-6e23-4645-b975-e8693a1cef10'
-OSS_PRODUCT_NAME = 'Grafana OSS'
+OSS_PRODUCT_NAME = 'Plutono OSS'
 ENTERPRISE_UPGRADE_VERSION = 'd534ec50-476b-4edc-a25e-fe854c949f4f'
-ENTERPRISE_PRODUCT_NAME = 'Grafana Enterprise'
+ENTERPRISE_PRODUCT_NAME = 'Plutono Enterprise'
 
 #############################
 # CONSTANTS
@@ -56,47 +56,47 @@ DIST_LOCATION = '/tmp/dist'
 #############################
 #
 #############################
-grafana_oss = {
+plutono_oss = {
     'feature_component_group_refs': [
-        'GrafanaX64',
-        'GrafanaServiceX64',
-        'GrafanaFirewallExceptionsGroup'
+        'PlutonoX64',
+        'PlutonoServiceX64',
+        'PlutonoFirewallExceptionsGroup'
     ],
     'directory_refs': [
-        'GrafanaX64Dir'
+        'PlutonoX64Dir'
     ],
     'components': [
-        'grafana.wxs',
-        'grafana-service.wxs',
-        'grafana-firewall.wxs'
+        'plutono.wxs',
+        'plutono-service.wxs',
+        'plutono-firewall.wxs'
     ]
 }
 
 
 #
-# Grafana 6 includes new datasources with long paths
+# Plutono 6 includes new datasources with long paths
 #
 def remove_long_paths():
-    print('Removing long pathed files - these are not needed to run grafana')
+    print('Removing long pathed files - these are not needed to run plutono')
     long_files = [
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/app_insights/app_insights_querystring_builder.test.ts',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/app_insights/app_insights_querystring_builder.ts',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/azure_log_analytics/azure_log_analytics_datasource.test.ts',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/azure_log_analytics/azure_log_analytics_datasource.ts',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/azure_monitor/azure_monitor_datasource.test.ts',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/azure_monitor/azure_monitor_datasource.ts',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/app_insights/app_insights_datasource.ts',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/app_insights/app_insights_datasource.test.ts',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/insights_analytics/insights_analytics_datasource.ts',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/azure_monitor/azure_monitor_filter_builder.test.ts',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/azure_monitor/azure_monitor_filter_builder.ts',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/AnalyticsConfig.test.tsx',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/AzureCredentialsForm.test.tsx',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/InsightsConfig.test.tsx',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/__snapshots__/AnalyticsConfig.test.tsx.snap',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/__snapshots__/AzureCredentialsForm.test.tsx.snap',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/__snapshots__/InsightsConfig.test.tsx.snap',
-        '/tmp/a/grafana/public/app/plugins/datasource/grafana-azure-monitor-datasource/components/__snapshots__/ConfigEditor.test.tsx.snap'
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/app_insights/app_insights_querystring_builder.test.ts',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/app_insights/app_insights_querystring_builder.ts',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/azure_log_analytics/azure_log_analytics_datasource.test.ts',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/azure_log_analytics/azure_log_analytics_datasource.ts',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/azure_monitor/azure_monitor_datasource.test.ts',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/azure_monitor/azure_monitor_datasource.ts',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/app_insights/app_insights_datasource.ts',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/app_insights/app_insights_datasource.test.ts',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/insights_analytics/insights_analytics_datasource.ts',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/azure_monitor/azure_monitor_filter_builder.test.ts',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/azure_monitor/azure_monitor_filter_builder.ts',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/components/AnalyticsConfig.test.tsx',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/components/AzureCredentialsForm.test.tsx',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/components/InsightsConfig.test.tsx',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/components/__snapshots__/AnalyticsConfig.test.tsx.snap',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/components/__snapshots__/AzureCredentialsForm.test.tsx.snap',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/components/__snapshots__/InsightsConfig.test.tsx.snap',
+        '/tmp/a/plutono/public/app/plugins/datasource/plutono-azure-monitor-datasource/components/__snapshots__/ConfigEditor.test.tsx.snap'
     ]
     for file in long_files:
         if os.path.isfile(file):
@@ -106,7 +106,7 @@ def remove_long_paths():
             print('Skipped: {}'.format(file))
 
 
-def build_msi(zip_file, extracted_name, PRODUCT_VERSION, grafana_hash, config, features, is_enterprise):
+def build_msi(zip_file, extracted_name, PRODUCT_VERSION, plutono_hash, config, features, is_enterprise):
     # keep reference to source directory, will need to switch back and
     # forth during the process
     src_dir = os.getcwd()
@@ -119,9 +119,9 @@ def build_msi(zip_file, extracted_name, PRODUCT_VERSION, grafana_hash, config, f
     # the zip file contains a version, which will not work when upgrading,
     # and ends up with paths longer
     # than light.exe can parse (windows issue)
-    # Once extracted, rename it to grafana without the version included
+    # Once extracted, rename it to plutono without the version included
     zip_file_path = '{}/{}'.format(target_dir_name, extracted_name)
-    rename_to = '{}/grafana'.format(target_dir_name)
+    rename_to = '{}/plutono'.format(target_dir_name)
     print('Renaming extracted path {} to {}'.format(zip_file_path, rename_to))
     os.system('ls -al /tmp/a')
     print('Before:')
@@ -136,12 +136,12 @@ def build_msi(zip_file, extracted_name, PRODUCT_VERSION, grafana_hash, config, f
     # Collects the files from the path given and generates wxs file
     #
     print('Heat Harvesting')
-    cgname = 'GrafanaX64'
-    cgdir = 'GrafanaX64Dir'
+    cgname = 'PlutonoX64'
+    cgdir = 'PlutonoX64Dir'
     if not os.path.isdir('/tmp/scratch'):
         os.mkdir('/tmp/scratch')
     os.chdir('/tmp/scratch')
-    outfile = 'grafana-oss.wxs'
+    outfile = 'plutono-oss.wxs'
     # important flags
     # -srd - prevents the parent directory name from being included in the
     #        harvest
@@ -171,8 +171,8 @@ def build_msi(zip_file, extracted_name, PRODUCT_VERSION, grafana_hash, config, f
     extract_zip(nssm_file, target_dir_name + '/nssm')
     print('HARVEST COMPLETE')
     os.chdir(src_dir)
-    generate_firewall_wxs(env, PRODUCT_VERSION, '/tmp/scratch/grafana-firewall.wxs', target_dir_name)
-    generate_service_wxs(env, PRODUCT_VERSION, '/tmp/scratch/grafana-service.wxs', target_dir_name, NSSM_VERSION)
+    generate_firewall_wxs(env, PRODUCT_VERSION, '/tmp/scratch/plutono-firewall.wxs', target_dir_name)
+    generate_service_wxs(env, PRODUCT_VERSION, '/tmp/scratch/plutono-service.wxs', target_dir_name, NSSM_VERSION)
     generate_product_wxs(env, config, features, '/tmp/scratch/product.wxs', target_dir_name)
     print('GENERATE COMPLETE')
     copy_static_files(target_dir_name)
@@ -181,27 +181,27 @@ def build_msi(zip_file, extracted_name, PRODUCT_VERSION, grafana_hash, config, f
     # CANDLE needs to run in the scratch dir
     os.chdir('/tmp/scratch')
     try:
-        filename = 'grafana-service.wxs'
+        filename = 'plutono-service.wxs'
         cmd = '{} -ext WixFirewallExtension -ext WixUtilExtension -v -arch x64 {}'.format(CANDLE, filename)
         print(cmd)
         os.system(cmd)
-        shutil.copy2('grafana-service.wixobj', target_dir_name)
+        shutil.copy2('plutono-service.wixobj', target_dir_name)
         #
-        filename = 'grafana-firewall.wxs'
+        filename = 'plutono-firewall.wxs'
         cmd = '{} -ext WixFirewallExtension -ext WixUtilExtension -v -arch x64 {}'.format(
             CANDLE,
             filename)
         print(cmd)
         os.system(cmd)
-        shutil.copy2('grafana-firewall.wixobj', target_dir_name)
+        shutil.copy2('plutono-firewall.wixobj', target_dir_name)
         #
-        filename = 'grafana-oss.wxs'
+        filename = 'plutono-oss.wxs'
         cmd = '{} -ext WixFirewallExtension -ext WixUtilExtension -v -arch x64 {}'.format(
             CANDLE,
             filename)
         print(cmd)
         os.system(cmd)
-        shutil.copy2('grafana-oss.wixobj', target_dir_name)
+        shutil.copy2('plutono-oss.wixobj', target_dir_name)
         #
         filename = 'product.wxs'
         cmd = '{} -ext WixFirewallExtension -ext WixUtilExtension -v -arch x64 {}'.format(
@@ -224,54 +224,54 @@ def build_msi(zip_file, extracted_name, PRODUCT_VERSION, grafana_hash, config, f
           -cultures:en-US \
           -ext WixUIExtension.dll -ext WixFirewallExtension -ext WixUtilExtension \
           -v -sval -spdb \
-          grafana-service.wixobj \
-          grafana-firewall.wixobj \
-          grafana-oss.wixobj \
+          plutono-service.wixobj \
+          plutono-firewall.wixobj \
+          plutono-oss.wixobj \
           product.wixobj \
-          -out grafana.msi'''.strip().format(LIGHT)
+          -out plutono.msi'''.strip().format(LIGHT)
         print(cmd)
         os.system(cmd)
     except Exception as ex:
         print(ex)
 
     hash = ''
-    if grafana_hash:
-      hash = '-{}'.format(grafana_hash)
+    if plutono_hash:
+      hash = '-{}'.format(plutono_hash)
 
     # copy to scratch with version included
-    msi_filename = '/tmp/scratch/grafana-{}{}.windows-amd64.msi'.format(PRODUCT_VERSION, hash)
+    msi_filename = '/tmp/scratch/plutono-{}{}.windows-amd64.msi'.format(PRODUCT_VERSION, hash)
 
     if is_enterprise:
-      msi_filename = '/tmp/scratch/grafana-enterprise-{}{}.windows-amd64.msi'.format(PRODUCT_VERSION, hash)
+      msi_filename = '/tmp/scratch/plutono-enterprise-{}{}.windows-amd64.msi'.format(PRODUCT_VERSION, hash)
 
-    shutil.copy2('grafana.msi', msi_filename)
+    shutil.copy2('plutono.msi', msi_filename)
     os.system('ls -al /tmp/scratch')
     print('LIGHT COMPLETE')
     # finally cleanup
     # extract_dir.cleanup()
 
 
-def main(file_loader, env, grafana_version, grafana_hash, zip_file, extracted_name, is_enterprise):
+def main(file_loader, env, plutono_version, plutono_hash, zip_file, extracted_name, is_enterprise):
     UPGRADE_VERSION = OSS_UPGRADE_VERSION
-    GRAFANA_VERSION = grafana_version
+    PLUTONO_VERSION = plutono_version
     PRODUCT_TITLE = OSS_PRODUCT_NAME
-    PRODUCT_NAME = 'GrafanaOSS'
-    # PRODUCT_VERSION=GRAFANA_VERSION
+    PRODUCT_NAME = 'PlutonoOSS'
+    # PRODUCT_VERSION=PLUTONO_VERSION
     # MSI version cannot have anything other
     # than a x.x.x.x format, numbers only
-    PRODUCT_VERSION = GRAFANA_VERSION.split('-')[0]
+    PRODUCT_VERSION = PLUTONO_VERSION.split('-')[0]
     LICENSE = 'LICENSE.rtf'
 
 
     if is_enterprise:
       UPGRADE_VERSION = ENTERPRISE_UPGRADE_VERSION
       PRODUCT_TITLE = ENTERPRISE_PRODUCT_NAME
-      PRODUCT_NAME = 'GrafanaEnterprise'
+      PRODUCT_NAME = 'PlutonoEnterprise'
       LICENSE = 'EE_LICENSE.rtf'
 
 
     config = {
-        'grafana_version': PRODUCT_VERSION,
+        'plutono_version': PRODUCT_VERSION,
         'upgrade_code': UPGRADE_VERSION,
         'product_name': PRODUCT_NAME,
         'manufacturer': 'Grafana Labs',
@@ -283,30 +283,30 @@ def main(file_loader, env, grafana_version, grafana_hash, zip_file, extracted_na
             'title': PRODUCT_TITLE,
             'component_groups': [
                 {
-                    'ref_id': 'GrafanaX64',
-                    'directory': 'GrafanaX64Dir'
+                    'ref_id': 'PlutonoX64',
+                    'directory': 'PlutonoX64Dir'
                 }
             ]
         },
         {
-            'name': 'GrafanaService',
-            'title': 'Run Grafana as a Service',
+            'name': 'PlutonoService',
+            'title': 'Run Plutono as a Service',
             'component_groups': [
                 {
-                    'ref_id': 'GrafanaServiceX64',
-                    'directory': 'GrafanaServiceX64Dir'
+                    'ref_id': 'PlutonoServiceX64',
+                    'directory': 'PlutonoServiceX64Dir'
                 }
             ]
         }
     ]
-    build_msi(zip_file, extracted_name, PRODUCT_VERSION, grafana_hash, config, features, is_enterprise)
+    build_msi(zip_file, extracted_name, PRODUCT_VERSION, plutono_hash, config, features, is_enterprise)
 
 
 if __name__ == '__main__':
     print('MSI Generator Version: {}'.format(MSI_GENERATOR_VERSION))
 
     parser = argparse.ArgumentParser(
-        description='Grafana MSI Generator',
+        description='Plutono MSI Generator',
         formatter_class=lambda prog: argparse.HelpFormatter(prog, max_help_position=90, width=110), add_help=True)
     parser.add_argument(
         '-p',
@@ -317,40 +317,40 @@ if __name__ == '__main__':
     args = parser.parse_args()
     file_loader = FileSystemLoader('templates')
     env = Environment(loader=file_loader)
-    grafana_version = None
-    grafana_hash = None
+    plutono_version = None
+    plutono_hash = None
     is_enterprise = False
     if not os.path.isdir(DIST_LOCATION):
         os.mkdir(DIST_LOCATION)
     # if a build version is specified, pull it
     if args.build:
-        grafana_version = args.build
-        print('Version Specified: {}'.format(grafana_version))
+        plutono_version = args.build
+        print('Version Specified: {}'.format(plutono_version))
     else:
-        grafana_version, grafana_hash, is_enterprise = detect_version(DIST_LOCATION)
+        plutono_version, plutono_hash, is_enterprise = detect_version(DIST_LOCATION)
 
-    print('Detected Version: {}'.format(grafana_version))
-    if grafana_hash:
-        print('Detected Hash: {}'.format(grafana_hash))
+    print('Detected Version: {}'.format(plutono_version))
+    if plutono_hash:
+        print('Detected Hash: {}'.format(plutono_hash))
     print('Enterprise: {}'.format(is_enterprise))
     if is_enterprise:
-        if grafana_hash:
-            zip_file = '{}/grafana-enterprise-{}-{}.windows-amd64.zip'.format(DIST_LOCATION, grafana_version, grafana_hash)
-            extracted_name = 'grafana-{}-{}'.format(grafana_version, grafana_hash)
+        if plutono_hash:
+            zip_file = '{}/plutono-enterprise-{}-{}.windows-amd64.zip'.format(DIST_LOCATION, plutono_version, plutono_hash)
+            extracted_name = 'plutono-{}-{}'.format(plutono_version, plutono_hash)
         else:
-            zip_file = '{}/grafana-enterprise-{}.windows-amd64.zip'.format(DIST_LOCATION, grafana_version)
-            extracted_name = 'grafana-{}'.format(grafana_version)
+            zip_file = '{}/plutono-enterprise-{}.windows-amd64.zip'.format(DIST_LOCATION, plutono_version)
+            extracted_name = 'plutono-{}'.format(plutono_version)
     else:
         # the file can have a build hash
-        if grafana_hash:
-            zip_file = '{}/grafana-{}-{}.windows-amd64.zip'.format(DIST_LOCATION, grafana_version, grafana_hash)
-            extracted_name = 'grafana-{}-{}'.format(grafana_version, grafana_hash)
+        if plutono_hash:
+            zip_file = '{}/plutono-{}-{}.windows-amd64.zip'.format(DIST_LOCATION, plutono_version, plutono_hash)
+            extracted_name = 'plutono-{}-{}'.format(plutono_version, plutono_hash)
         else:
-            zip_file = '{}/grafana-{}.windows-amd64.zip'.format(DIST_LOCATION, grafana_version)
-            extracted_name = 'grafana-{}'.format(grafana_version)
+            zip_file = '{}/plutono-{}.windows-amd64.zip'.format(DIST_LOCATION, plutono_version)
+            extracted_name = 'plutono-{}'.format(plutono_version)
     print('ZipFile: {}'.format(zip_file))
     # check if file downloaded
 
     if not os.path.isfile(zip_file):
-        zip_file = get_zip(grafana_version, zip_file)
-    main(file_loader, env, grafana_version, grafana_hash, zip_file, extracted_name, is_enterprise)
+        zip_file = get_zip(plutono_version, zip_file)
+    main(file_loader, env, plutono_version, plutono_hash, zip_file, extracted_name, is_enterprise)

@@ -1,13 +1,13 @@
 +++
 title = "Datasource Permissions HTTP API "
 description = "Data Source Permissions API"
-keywords = ["grafana", "http", "documentation", "api", "datasource", "permission", "permissions", "acl", "enterprise"]
-aliases = ["/docs/grafana/latest/http_api/datasourcepermissions/"]
+keywords = ["plutono", "http", "documentation", "api", "datasource", "permission", "permissions", "acl", "enterprise"]
+aliases = ["/docs/plutono/latest/http_api/datasourcepermissions/"]
 +++
 
 # Data Source Permissions API
 
-> The Data Source Permissions is only available in Grafana Enterprise. Read more about [Grafana Enterprise]({{< relref "../enterprise" >}}).
+> The Data Source Permissions is only available in Plutono Enterprise. Read more about [Plutono Enterprise]({{< relref "../enterprise" >}}).
 
 This API can be used to enable, disable, list, add and remove permissions for a data source.
 

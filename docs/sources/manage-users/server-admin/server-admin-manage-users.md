@@ -1,30 +1,30 @@
 +++
 title = "Manage users"
 weight = 100
-aliases =["/docs/grafana/latest/manage-users/add-or-remove-user/","/docs/grafana/latest/manage-users/enable-or-disable-user/"]
+aliases =["/docs/plutono/latest/manage-users/add-or-remove-user/","/docs/plutono/latest/manage-users/enable-or-disable-user/"]
 +++
 
 # Manage users as a Server Admin
 
-This topic explains user management tasks performed by Grafana Server Admins.
+This topic explains user management tasks performed by Plutono Server Admins.
 
-In order to perform any of these tasks, you must be logged in to Grafana on an account with Grafana Server Admin permissions. For more information about Grafana Admin permissions, refer to [Grafana Server Admin role]({{< relref "../../permissions/_index.md#grafana-server-admin-role" >}}).
+In order to perform any of these tasks, you must be logged in to Plutono on an account with Plutono Server Admin permissions. For more information about Plutono Admin permissions, refer to [Plutono Server Admin role]({{< relref "../../permissions/_index.md#plutono-server-admin-role" >}}).
 
-> **Note:** The Grafana Server Admin role does not exist in Grafana Cloud. Grafana Cloud users cannot perform tasks listed in this section.
+> **Note:** The Plutono Server Admin role does not exist in Plutono Cloud. Plutono Cloud users cannot perform tasks listed in this section.
 
 ## View the server user account list
 
-See a complete list of users with accounts on your Grafana server.
+See a complete list of users with accounts on your Plutono server.
 
 {{< docs/shared "manage-users/view-server-user-list.md" >}}
 
-Grafana displays all user accounts on the server, listed in alphabetical order by user name. The following information is displayed:
+Plutono displays all user accounts on the server, listed in alphabetical order by user name. The following information is displayed:
 
 - **Login -** The value in the **Username** field of the account.
 - **Email -** The email associated with the user account.
 - **Name -** The value in the **Name** field of the account.
 - **Seen -** How long ago the user logged in. If they have never logged in, then the default longest time (10y) is displayed.
-- **Server Admin status -** If the user account has **Grafana Admin** option set, then a shield icon is displayed.
+- **Server Admin status -** If the user account has **Plutono Admin** option set, then a shield icon is displayed.
 - **Account status -** If the account is disabled, then the **Disabled** label is displayed.
 
 ![Server Admin user list](/static/img/docs/manage-users/server-user-list-7-3.png)
@@ -53,7 +53,7 @@ This section of the account contains basic user information. Users can change va
 
 ### Permissions
 
-This indicates whether the user account has the Grafana Admin flag applied or not. If it is **Yes**, then the user is a Grafana Server Admin.
+This indicates whether the user account has the Plutono Admin flag applied or not. If it is **Yes**, then the user is a Plutono Server Admin.
 
 ![Server Admin Permissions section](/static/img/docs/manage-users/server-admin-permissions-7-3.png)
 
@@ -84,7 +84,7 @@ Create a new user account at the server level.
   1. Click **Create user**.
 {{< /docs/list >}}
 
-The user can change all this information after they log in. For instructions, refer to [Grafana user account profile]({{< relref "../user-admin/user-profile.md" >}}) and [Change your password]({{< relref "../user-admin/change-your-password.md" >}}).
+The user can change all this information after they log in. For instructions, refer to [Plutono user account profile]({{< relref "../user-admin/user-profile.md" >}}) and [Change your password]({{< relref "../user-admin/change-your-password.md" >}}).
 
 ## Edit a user account
 
@@ -107,7 +107,7 @@ Users can change their own passwords, but Server Admins can change user password
 {{< docs/list >}}
 {{< docs/shared "manage-users/view-server-user-list-search.md" >}}
 1. In the User information section, click **Edit** next to the **Password** field.
-1. Enter the new value and then click **Save**. Grafana requires a value at least four characters long in this field.
+1. Enter the new value and then click **Save**. Plutono requires a value at least four characters long in this field.
 {{< /docs/list >}}
 
 ### Delete a user account
@@ -143,14 +143,14 @@ Reactivate a disabled user account.
 1. Click **Enable User**.
 {{< /docs/list >}}
 
-## Add/remove Grafana Admin flag
+## Add/remove Plutono Admin flag
 
-Give or remove the Grafana Server Admin role from a user account.
+Give or remove the Plutono Server Admin role from a user account.
 
 {{< docs/list >}}
 {{< docs/shared "manage-users/view-server-user-list-search.md" >}}
 1. In the Permissions section, click **Change**.
-1. Click **Yes** or **No**, depending on whether or not you want this user account to have the Grafana Server Admin role.
+1. Click **Yes** or **No**, depending on whether or not you want this user account to have the Plutono Server Admin role.
 1. Click **Change**.
 {{< /docs/list >}}
 
@@ -190,31 +190,31 @@ Change the organization role assigned to a user account.
 
 ## View and manage user sessions
 
-See when a user last logged in and information about how they logged in. You can also force the account to log out of Grafana.
+See when a user last logged in and information about how they logged in. You can also force the account to log out of Plutono.
 
 {{< docs/list >}}
 {{< docs/shared "manage-users/view-server-user-list-search.md" >}}
 1. Scroll down to the Sessions section to view sessions associated with this user account.
 {{< /docs/list >}}
 
-## Force a user to log out of Grafana
+## Force a user to log out of Plutono
 
-If you suspect a user account is compromised or is no longer authorized to access the Grafana server, then you can force logout the account.
+If you suspect a user account is compromised or is no longer authorized to access the Plutono server, then you can force logout the account.
 
 ### Force logout of one device
 
-Log the user account out of one specific device that is logged in to Grafana.
+Log the user account out of one specific device that is logged in to Plutono.
 
 {{< docs/list >}}
 {{< docs/shared "manage-users/view-server-user-list-search.md" >}}
 1. Scroll down to the Sessions section.
-1. Click **Force logout** next to the session entry that you want logged out of Grafana.
+1. Click **Force logout** next to the session entry that you want logged out of Plutono.
 1. Click **Confirm logout**.
 {{< /docs/list >}}
 
 ### Force logout of all devices
 
-Log the user account out of all devices that are logged in to Grafana.
+Log the user account out of all devices that are logged in to Plutono.
 
 {{< docs/list >}}
 {{< docs/shared "manage-users/view-server-user-list-search.md" >}}

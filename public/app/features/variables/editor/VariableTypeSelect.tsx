@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, useMemo } from 'react';
-import { SelectableValue, VariableType } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { SelectableValue, VariableType } from '@credativ/plutono-data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import { VariableSelectField } from '../editor/VariableSelectField';
 import { getVariableTypes } from '../utils';

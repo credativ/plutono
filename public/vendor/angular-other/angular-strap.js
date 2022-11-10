@@ -35,7 +35,7 @@ angular.module('$strap.directives').factory('$modal', [
           if (templateUrl) {
             id += templateUrl.replace('.html', '').replace(/[\/|\.|:]/g, '-');
           }
-          // grafana change, removed fade
+          // plutono change, removed fade
           var $modal = $('<div class="modal hide" tabindex="-1"></div>').attr('id', id).html(template);
           if (options.modalClass)
             $modal.addClass(options.modalClass);
@@ -100,7 +100,7 @@ angular.module('$strap.directives').directive('bsTooltip', [
             value = newValue;
           }
         });
-        // Grafana change, always hide other tooltips
+        // Plutono change, always hide other tooltips
         if (true) {
           element.on('show', function (ev) {
             $('.tooltip.in').each(function () {
@@ -116,7 +116,7 @@ angular.module('$strap.directives').directive('bsTooltip', [
             return angular.isFunction(value) ? value.apply(null, arguments) : value;
           },
           html: true,
-          container: 'body', // Grafana change
+          container: 'body', // Plutono change
         });
         var tooltip = element.data('tooltip');
         tooltip.show = function () {

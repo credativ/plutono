@@ -2,7 +2,7 @@ import React from 'react';
 import { shallow } from 'enzyme';
 import { DerivedField } from './DerivedField';
 import { DataSourcePicker } from '../../../../core/components/Select/DataSourcePicker';
-import { DataSourceInstanceSettings } from '@grafana/data';
+import { DataSourceInstanceSettings } from '@credativ/plutono-data';
 
 jest.mock('app/features/plugins/datasource_srv', () => ({
   getDatasourceSrv() {

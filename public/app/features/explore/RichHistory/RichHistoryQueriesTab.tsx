@@ -6,8 +6,8 @@ import { uniqBy, debounce } from 'lodash';
 import { RichHistoryQuery, ExploreId } from 'app/types/explore';
 
 // Utils
-import { stylesFactory, useTheme, RangeSlider, Select } from '@grafana/ui';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
+import { stylesFactory, useTheme, RangeSlider, Select } from '@credativ/plutono-ui';
+import { PlutonoTheme, SelectableValue } from '@credativ/plutono-data';
 
 import {
   SortOrder,
@@ -34,7 +34,7 @@ export interface Props {
   onSelectDatasourceFilters: (value: SelectableValue[]) => void;
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme, height: number) => {
+const getStyles = stylesFactory((theme: PlutonoTheme, height: number) => {
   const bgColor = theme.isLight ? theme.palette.gray5 : theme.palette.dark4;
 
   /* 134px is based on the width of the Query history tabs bar, so the content is aligned to right side of the tab */

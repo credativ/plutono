@@ -3,8 +3,8 @@ package dtos
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -25,7 +25,7 @@ func TestIsHiddenUser(t *testing.T) {
 			desc:      "non-server admin user should see non-hidden user",
 			userLogin: "user",
 			signedInUser: &models.SignedInUser{
-				IsGrafanaAdmin: false,
+				IsPlutonoAdmin: false,
 				Login:          "admin",
 			},
 			hiddenUsers: emptyHiddenUsers,
@@ -35,7 +35,7 @@ func TestIsHiddenUser(t *testing.T) {
 			desc:      "non-server admin user should not see hidden user",
 			userLogin: "user",
 			signedInUser: &models.SignedInUser{
-				IsGrafanaAdmin: false,
+				IsPlutonoAdmin: false,
 				Login:          "admin",
 			},
 			hiddenUsers: hiddenUser,
@@ -45,7 +45,7 @@ func TestIsHiddenUser(t *testing.T) {
 			desc:      "non-server admin user should see himself, even if he's hidden",
 			userLogin: "admin",
 			signedInUser: &models.SignedInUser{
-				IsGrafanaAdmin: false,
+				IsPlutonoAdmin: false,
 				Login:          "admin",
 			},
 			hiddenUsers: map[string]struct{}{
@@ -57,7 +57,7 @@ func TestIsHiddenUser(t *testing.T) {
 			desc:      "server admin user should see hidden user",
 			userLogin: "user",
 			signedInUser: &models.SignedInUser{
-				IsGrafanaAdmin: true,
+				IsPlutonoAdmin: true,
 				Login:          "admin",
 			},
 			hiddenUsers: hiddenUser,
@@ -67,7 +67,7 @@ func TestIsHiddenUser(t *testing.T) {
 			desc:      "server admin user should see non-hidden user",
 			userLogin: "user",
 			signedInUser: &models.SignedInUser{
-				IsGrafanaAdmin: true,
+				IsPlutonoAdmin: true,
 				Login:          "admin",
 			},
 			hiddenUsers: emptyHiddenUsers,

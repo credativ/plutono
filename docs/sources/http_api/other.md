@@ -1,8 +1,8 @@
 +++
 title = "Other HTTP API "
-description = "Grafana Other HTTP API"
-keywords = ["grafana", "http", "documentation", "api", "other"]
-aliases = ["/docs/grafana/latest/http_api/other/"]
+description = "Plutono Other HTTP API"
+keywords = ["plutono", "http", "documentation", "api", "other"]
+aliases = ["/docs/plutono/latest/http_api/other/"]
 +++
 
 
@@ -37,22 +37,22 @@ Content-Type: application/json
   },
   "datasources":{
     "datasourcename":{
-      "index":"grafana-dash",
+      "index":"plutono-dash",
       "meta":{
         "annotations":true,
-        "module":"plugins/datasource/grafana/datasource",
-        "name":"Grafana",
+        "module":"plugins/datasource/plutono/datasource",
+        "name":"Plutono",
         "partials":{
-          "annotations":"app/plugins/datasource/grafana/partials/annotations.editor.html",
-          "config":"app/plugins/datasource/grafana/partials/config.html"
+          "annotations":"app/plugins/datasource/plutono/partials/annotations.editor.html",
+          "config":"app/plugins/datasource/plutono/partials/config.html"
         },
         "pluginType":"datasource",
-        "serviceName":"Grafana",
-        "type":"grafanasearch"
+        "serviceName":"Plutono",
+        "type":"plutonosearch"
       }
     }
   },
-  "defaultDatasource": "Grafana"
+  "defaultDatasource": "Plutono"
 }
 ```
 
@@ -82,7 +82,7 @@ Content-Type: application/json
 
 # Health API
 
-## Returns health information about Grafana
+## Returns health information about Plutono
 
 `GET /api/health`
 

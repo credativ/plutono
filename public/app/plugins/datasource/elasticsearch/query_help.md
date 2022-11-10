@@ -5,6 +5,6 @@
 
 #### Documentation links
 
-[Grafana's Elasticsearch Documentation](http://docs.grafana.org/features/datasources/elasticsearch)
+[Plutono's Elasticsearch Documentation](http://docs.plutono.org/features/datasources/elasticsearch)
 
 [Official Elasticsearch Documentation](https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html)

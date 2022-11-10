@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import pick from 'lodash/pick';
-import { ExploreQueryFieldProps, ExploreMode } from '@grafana/data';
-import { Segment } from '@grafana/ui';
+import { ExploreQueryFieldProps, ExploreMode } from '@credativ/plutono-data';
+import { Segment } from '@credativ/plutono-ui';
 import { CloudWatchJsonData, CloudWatchQuery } from '../types';
 import { CloudWatchDatasource } from '../datasource';
 import { QueryInlineField } from './';

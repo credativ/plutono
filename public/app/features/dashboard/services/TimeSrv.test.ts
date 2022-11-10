@@ -1,6 +1,6 @@
 import { TimeSrv } from './TimeSrv';
 import { ContextSrvStub } from 'test/specs/helpers';
-import { isDateTime, dateTime } from '@grafana/data';
+import { isDateTime, dateTime } from '@credativ/plutono-data';
 
 jest.mock('app/core/core', () => ({
   appEvents: {

@@ -1,14 +1,14 @@
 +++
 title = "Bar gauge panel"
 description = "Bar gauge panel docs"
-keywords = ["grafana", "bar", "bar gauge"]
-aliases =["/docs/grafana/latest/features/panels/bar_gauge/"]
+keywords = ["plutono", "bar", "bar gauge"]
+aliases =["/docs/plutono/latest/features/panels/bar_gauge/"]
 weight = 200
 +++
 
 # Bar gauge panel
 
-The bar gauge simplifies your data by reducing every field to a single value. You choose how Grafana calculates the reduction.
+The bar gauge simplifies your data by reducing every field to a single value. You choose how Plutono calculates the reduction.
 
 This panel can show one or more bar gauges depending on how many series, rows, or columns your query returns.
 
@@ -26,12 +26,12 @@ Bar gauge visualizations allow you to apply:
 
 Use the following options to refine your visualization:
 
-- **Show -** Choose how Grafana displays your data.
+- **Show -** Choose how Plutono displays your data.
   - **Calculate -** Show a calculated value based on all rows. For a list of available calculations, refer to [List of calculations]({{< relref "../calculations-list.md" >}}).
   - **All values -** Show a separate stat for every row. If you select this option, then you can also select a **Limit**, or the maximum number of rows to display.
-- **Value -** Select a reducer function that Grafana will use to reduce many fields to a single value. Click the **Value** list to see functions and brief descriptions.
+- **Value -** Select a reducer function that Plutono will use to reduce many fields to a single value. Click the **Value** list to see functions and brief descriptions.
 - **Orientation -** Choose a stacking direction.
-  - **Auto -** Grafana selects what it thinks is the best orientation.
+  - **Auto -** Plutono selects what it thinks is the best orientation.
   - **Horizontal -** Bars stretch horizontally, left to right.
   - **Vertical -** Bars stretch vertically, top to bottom.
 - **Display mode -** Choose a display mode.

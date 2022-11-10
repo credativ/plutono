@@ -4,7 +4,7 @@ import { css, cx } from 'emotion';
 import { LokiQuery } from '../types';
 
 // Types
-import { InlineFormLabel, RadioButtonGroup, InlineField, Input } from '@grafana/ui';
+import { InlineFormLabel, RadioButtonGroup, InlineField, Input } from '@credativ/plutono-ui';
 
 export interface LokiOptionFieldsProps {
   lineLimitValue: string;

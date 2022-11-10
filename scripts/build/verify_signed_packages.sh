@@ -8,7 +8,7 @@ if [ -z "$_files" ]; then
 fi
 
 mkdir -p ~/.rpmdb/pubkeys
-curl -s https://packages.grafana.com/gpg.key > ~/.rpmdb/pubkeys/grafana.key
+curl -s https://packages.grafana.com/gpg.key > ~/.rpmdb/pubkeys/plutono.key
 
 ALL_SIGNED=0
 

@@ -13,8 +13,8 @@ import {
   ScopedVars,
   TIME_SERIES_TIME_FIELD_NAME,
   TIME_SERIES_VALUE_FIELD_NAME,
-} from '@grafana/data';
-import { FetchResponse, getDataSourceSrv, getTemplateSrv } from '@grafana/runtime';
+} from '@credativ/plutono-data';
+import { FetchResponse, getDataSourceSrv, getTemplateSrv } from '@credativ/plutono-runtime';
 import { descending, deviation } from 'd3';
 import {
   ExemplarTraceIdDestination,

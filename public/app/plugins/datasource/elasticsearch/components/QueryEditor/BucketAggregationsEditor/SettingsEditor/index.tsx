@@ -1,4 +1,4 @@
-import { InlineField, Input, Select } from '@grafana/ui';
+import { InlineField, Input, Select } from '@credativ/plutono-ui';
 import React, { ComponentProps, FunctionComponent } from 'react';
 import { useDispatch } from '../../../../hooks/useStatelessReducer';
 import { SettingsEditorContainer } from '../../SettingsEditorContainer';

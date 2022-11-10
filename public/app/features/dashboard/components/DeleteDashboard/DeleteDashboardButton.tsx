@@ -1,6 +1,6 @@
 import React from 'react';
 import { DeleteDashboardModal } from './DeleteDashboardModal';
-import { Button, ModalsController } from '@grafana/ui';
+import { Button, ModalsController } from '@credativ/plutono-ui';
 import { DashboardModel } from '../../state';
 
 type Props = {

@@ -1,6 +1,6 @@
 import { of } from 'rxjs';
 import { queryBuilder } from '../shared/testing/builders';
-import { FieldType, toDataFrame } from '@grafana/data';
+import { FieldType, toDataFrame } from '@credativ/plutono-data';
 import { initialQueryVariableModelState, updateVariableOptions, updateVariableTags } from './reducer';
 import { toVariablePayload } from '../state/types';
 import { VariableRefresh } from '../types';

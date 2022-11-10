@@ -1,14 +1,14 @@
 +++
 title = "Panel links"
 description = ""
-keywords = ["grafana", "linking", "create links", "link panels", "link dashboards", "navigate"]
-aliases = ["/docs/grafana/latest/features/navigation-links/"]
+keywords = ["plutono", "linking", "create links", "link panels", "link dashboards", "navigate"]
+aliases = ["/docs/plutono/latest/features/navigation-links/"]
 weight = 300
 +++
 
 # Panel links
 
-Each panel can have its own set of links that are shown in the upper left corner of the panel. You can link to any available URL, including dashboards, panels, or external sites. You can even control the time range to ensure the user is zoomed in on the right data in Grafana.
+Each panel can have its own set of links that are shown in the upper left corner of the panel. You can link to any available URL, including dashboards, panels, or external sites. You can even control the time range to ensure the user is zoomed in on the right data in Plutono.
 
 Click the icon on the top left corner of a panel to see available panel links.
 

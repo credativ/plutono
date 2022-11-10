@@ -1,12 +1,12 @@
 # Create a pull request
 
-We're excited that you're considering making a contribution to the Grafana project! This document guides you through the process of creating a [pull request](https://help.github.com/en/articles/about-pull-requests/).
+We're excited that you're considering making a contribution to the Plutono project! This document guides you through the process of creating a [pull request](https://help.github.com/en/articles/about-pull-requests/).
 
 ## Before you begin
 
 We know you're excited to create your first pull request. Before we get started, read these resources first:
 
-- Learn how to start [Contributing to Grafana](/CONTRIBUTING.md).
+- Learn how to start [Contributing to Plutono](/CONTRIBUTING.md).
 - Make sure your code follows the relevant [style guides](/contribute/style-guides).
 
 ## Your first pull request
@@ -61,7 +61,7 @@ A well-written pull request minimizes the time to get your change accepted. Thes
 
 ### Commit message format
 
-Grafana uses the guidelines for commit messages outlined in [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/), with the following additions:
+Plutono uses the guidelines for commit messages outlined in [How to Write a Git Commit Message](https://chris.beams.io/posts/git-commit/), with the following additions:
 
 - Subject line must begin with the _area_ of the commit.
 - A footer in the form of an optional [keyword and issue reference](https://help.github.com/en/articles/closing-issues-using-keywords).
@@ -92,7 +92,7 @@ For changes to panels, the area should be the name of the panel, suffixed with P
 
 ### Pull request titles
 
-The Grafana team _squashes_ all commits into one when we accept a pull request. The title of the pull request becomes the subject line of the squashed commit message. We still encourage contributors to write informative commit messages, as they becomes a part of the Git commit body.
+The Plutono team _squashes_ all commits into one when we accept a pull request. The title of the pull request becomes the subject line of the squashed commit message. We still encourage contributors to write informative commit messages, as they becomes a part of the Git commit body.
 
 We use the pull request title when we generate change logs for releases. As such, we strive to make the title as informative as possible.
 

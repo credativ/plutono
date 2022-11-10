@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { MapStateToProps, connect } from 'react-redux';
-import { NavModel } from '@grafana/data';
+import { NavModel } from '@credativ/plutono-data';
 import Page from 'app/core/components/Page/Page';
 import { getUrl } from 'app/core/selectors/location';
 import { StoreState } from 'app/types';

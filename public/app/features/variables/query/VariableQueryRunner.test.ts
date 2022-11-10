@@ -1,5 +1,5 @@
 import { of, throwError } from 'rxjs';
-import { getDefaultTimeRange, LoadingState, VariableSupportType } from '@grafana/data';
+import { getDefaultTimeRange, LoadingState, VariableSupportType } from '@credativ/plutono-data';
 import { delay } from 'rxjs/operators';
 
 import { UpdateOptionsResults, VariableQueryRunner } from './VariableQueryRunner';

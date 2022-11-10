@@ -1,6 +1,6 @@
 import React, { FC, useCallback, useState } from 'react';
 import { AdHocVariableFilter } from 'app/features/variables/types';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 import { AdHocFilterKey, REMOVE_FILTER_KEY } from './AdHocFilterKey';
 import { AdHocFilterRenderer } from './AdHocFilterRenderer';
 

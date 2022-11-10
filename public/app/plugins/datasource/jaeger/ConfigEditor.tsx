@@ -1,5 +1,5 @@
-import { DataSourcePluginOptionsEditorProps } from '@grafana/data';
-import { DataSourceHttpSettings } from '@grafana/ui';
+import { DataSourcePluginOptionsEditorProps } from '@credativ/plutono-data';
+import { DataSourceHttpSettings } from '@credativ/plutono-ui';
 import { TraceToLogsSettings } from 'app/core/components/TraceToLogsSettings';
 import React from 'react';
 

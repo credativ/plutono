@@ -1,16 +1,16 @@
-# Grafana frontend packages
+# Plutono frontend packages
 
-This document contains information about Grafana frontend package versioning and releases.
+This document contains information about Plutono frontend package versioning and releases.
 
 ## Versioning
 We use [Lerna](https://github.com/lerna/lerna) for packages versioning and releases.
 
-All packages are versioned according to the current Grafana version:
-- Grafana v6.3.0-alpha1 -> @grafana/* packages @ 6.3.0-alpha.1
-- Grafana v6.2.5 -> @grafana/* packages @ 6.2.5
-- Grafana - master branch version (based on package.json, i.e. 6.4.0-pre) -> @grafana/* packages @ 6.4.0-pre-<COMMIT-SHA> (see details below about packages publishing channels)
+All packages are versioned according to the current Plutono version:
+- Plutono v6.3.0-alpha1 -> @grafana/* packages @ 6.3.0-alpha.1
+- Plutono v6.2.5 -> @grafana/* packages @ 6.2.5
+- Plutono - master branch version (based on package.json, i.e. 6.4.0-pre) -> @grafana/* packages @ 6.4.0-pre-<COMMIT-SHA> (see details below about packages publishing channels)
 
-> Please note that @grafana/toolkit, @grafana/ui, @grafana/data, and @grafana/runtime packages are considered ALPHA even though they are not released as alpha versions.
+> Please note that @credativ/plutono-toolkit, @credativ/plutono-ui, @credativ/plutono-data, and @credativ/plutono-runtime packages are considered ALPHA even though they are not released as alpha versions.
 
 ### Stable releases
 > **Even though packages are released under a stable version, they are considered ALPHA until further notice!**
@@ -37,7 +37,7 @@ As mentioned above the `canary` releases are published to the Github package reg
 2. Create / modify your `~/.npmrc` file with the following:
 
 ```
-@grafana:registry=https://npm.pkg.github.com
+@credativ:registry=https://npm.pkg.github.com
 //npm.pkg.github.com/:_authToken={INSERT_GH_TOKEN_HERE}
 ```
 
@@ -47,21 +47,21 @@ As mentioned above the `canary` releases are published to the Github package reg
 // plugin's package.json
 {
   ...
-  "@grafana/data": "canary"
+  "@credativ/plutono-data": "canary"
 }
 ```
 
 ### Manual release
 
-> All of the steps below must be performed on a release branch, according to Grafana Release Guide.
+> All of the steps below must be performed on a release branch, according to Plutono Release Guide.
 
-> Make sure you are logged in to npm in your terminal and that you are a part of Grafana org on npm.
+> Make sure you are logged in to npm in your terminal and that you are a part of Plutono org on npm.
 
 1. Run `yarn packages:prepare` script from the root directory. This performs tests on the packages and prompts for the version of the packages. The version should be the same as the one being released.
    - Make sure you use semver convention. So, *place a dot between prerelease id and prerelease number*, i.e. 6.3.0-alpha.1
    - Make sure you confirm the version bump when prompted!
 2. Commit changes (lerna.json and package.json files) - *"Packages version update: \<VERSION\>"*
-3. Run `yarn packages:build` script that prepares distribution packages in `packages/grafana-*/dist`. These directories are going to be published to npm.
+3. Run `yarn packages:build` script that prepares distribution packages in `packages/plutono-*/dist`. These directories are going to be published to npm.
 4. Depending whether or not it's a prerelease:
    - When releasing a prerelease run `packages:publishNext` to publish new versions.
    - When releasing a stable version run `packages:publishLatest` to publish new versions.
@@ -72,7 +72,7 @@ As mentioned above the `canary` releases are published to the Github package reg
 To build individual packages, run:
 
 ```
-grafana-toolkit package:build --scope=<ui|toolkit|runtime|data>
+plutono-toolkit package:build --scope=<plutono-ui|plutono-toolkit|plutono-runtime|plutono-data>
 ```
 
 ### Setting up @grafana/* packages for local development
@@ -86,11 +86,11 @@ In this guide you will set up [Verdaccio](https://verdaccio.org/) registry local
 #### Setting up local npm registry
 
 From your terminal: 
-1. Modify `/etc/hosts` file and add the following entry: ```127.0.0.1       grafana-npm.local```
+1. Modify `/etc/hosts` file and add the following entry: ```127.0.0.1       plutono-npm.local```
 2. Navigate to `devenv/local-npm` directory. 
-3. Run `docker-compose up`. This will start your local npm registry, available at http://grafana-npm.local:4873/
-4. Run `npm login --registry=http://grafana-npm.local:4873 --scope=@grafana` . This will allow you to publish any @grafana/* package into the local registry.
-5. Run `npm config set @grafana:registry http://grafana-npm.local:4873`. This will config your npm to install @grafana scoped packages from your local registry.
+3. Run `docker-compose up`. This will start your local npm registry, available at http://plutono-npm.local:4873/
+4. Run `npm login --registry=http://plutono-npm.local:4873 --scope=@credativ` . This will allow you to publish any @grafana/* package into the local registry.
+5. Run `npm config set @credativ:registry http://plutono-npm.local:4873`. This will config your npm to install @grafana scoped packages from your local registry.
 
 #### Publishing packages to local npm registry
 
@@ -101,7 +101,7 @@ From your terminal:
 2. Commit changes in package.json and lerna.json files
 3. Build packages: `yarn packages:build`
 4. Run `yarn packages:publishDev`. 
-5. Navigate to http://grafana-npm.local:4873 and verify that version was published
+5. Navigate to http://plutono-npm.local:4873 and verify that version was published
 
 Locally published packages will be published under `dev` channel, so in your plugin package.json file you can use that channel. For  example:
 
@@ -110,6 +110,6 @@ Locally published packages will be published under `dev` channel, so in your plu
 
 {
   ...
-  "@grafana/data": "dev"
+  "@credativ/plutono-data": "dev"
 }
 ```

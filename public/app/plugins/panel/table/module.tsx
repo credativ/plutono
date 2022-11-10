@@ -1,8 +1,8 @@
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin } from '@credativ/plutono-data';
 import { TablePanel } from './TablePanel';
 import { CustomFieldConfig, Options } from './types';
 import { tableMigrationHandler, tablePanelChangedHandler } from './migrations';
-import { TableCellDisplayMode } from '@grafana/ui';
+import { TableCellDisplayMode } from '@credativ/plutono-ui';
 
 export const plugin = new PanelPlugin<Options, CustomFieldConfig>(TablePanel)
   .setPanelChangeHandler(tablePanelChangedHandler)

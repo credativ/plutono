@@ -2,22 +2,22 @@
 import _ from 'lodash';
 
 // Services & Utils
-import { DataQuery, DataSourceApi, dateTimeFormat, AppEvents, urlUtil, ExploreUrlState } from '@grafana/data';
+import { DataQuery, DataSourceApi, dateTimeFormat, AppEvents, urlUtil, ExploreUrlState } from '@credativ/plutono-data';
 import appEvents from 'app/core/app_events';
 import store from 'app/core/store';
 
 // Types
 import { RichHistoryQuery } from 'app/types/explore';
-import { serializeStateToUrlParam } from '@grafana/data/src/utils/url';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { serializeStateToUrlParam } from '@credativ/plutono-data/src/utils/url';
+import { getDataSourceSrv } from '@credativ/plutono-runtime';
 
-const RICH_HISTORY_KEY = 'grafana.explore.richHistory';
+const RICH_HISTORY_KEY = 'plutono.explore.richHistory';
 
 export const RICH_HISTORY_SETTING_KEYS = {
-  retentionPeriod: 'grafana.explore.richHistory.retentionPeriod',
-  starredTabAsFirstTab: 'grafana.explore.richHistory.starredTabAsFirstTab',
-  activeDatasourceOnly: 'grafana.explore.richHistory.activeDatasourceOnly',
-  datasourceFilters: 'grafana.explore.richHistory.datasourceFilters',
+  retentionPeriod: 'plutono.explore.richHistory.retentionPeriod',
+  starredTabAsFirstTab: 'plutono.explore.richHistory.starredTabAsFirstTab',
+  activeDatasourceOnly: 'plutono.explore.richHistory.activeDatasourceOnly',
+  datasourceFilters: 'plutono.explore.richHistory.datasourceFilters',
 };
 
 export enum SortOrder {

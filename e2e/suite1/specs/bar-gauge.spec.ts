@@ -1,5 +1,5 @@
-import { e2e } from '@grafana/e2e';
-import { selectors } from '@grafana/e2e-selectors';
+import { e2e } from '@credativ/plutono-e2e';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 e2e.scenario({
   describeName: 'Bar Gauge Panel',

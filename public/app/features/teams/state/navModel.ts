@@ -1,6 +1,6 @@
 import { Team, TeamPermissionLevel } from 'app/types';
 import config from 'app/core/config';
-import { NavModelItem, NavModel } from '@grafana/data';
+import { NavModelItem, NavModel } from '@credativ/plutono-data';
 
 export function buildNavModel(team: Team): NavModelItem {
   const navModel = {
