@@ -7,7 +7,7 @@ import { ExtensionSize, ZipFileInfo, GitLogInfo } from './types';
 const md5File = require('md5-file');
 
 export function getPlutonoVersions(): KeyValue<string> {
-  const dir = path.resolve(process.cwd(), 'node_modules', '@grafana');
+  const dir = path.resolve(process.cwd(), 'node_modules', '@credativ');
   const versions: KeyValue = {};
   try {
     fs.readdirSync(dir).forEach((file) => {
