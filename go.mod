@@ -1,4 +1,4 @@
-module github.com/grafana/grafana
+module github.com/credativ/plutono
 
 go 1.15
 
