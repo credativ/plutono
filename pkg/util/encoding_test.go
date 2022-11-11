@@ -10,7 +10,7 @@ import (
 func TestGetBasicAuthHeader_Encoding(t *testing.T) {
 	t.Run("generating base64 header", func(t *testing.T) {
 		result := GetBasicAuthHeader("plutono", "1234")
-		assert.Equal(t, "Basic Z3JhZmFuYToxMjM0", result)
+		assert.Equal(t, "Basic cGx1dG9ubzoxMjM0", result)
 	})
 
 	t.Run("decoding basic auth header", func(t *testing.T) {
