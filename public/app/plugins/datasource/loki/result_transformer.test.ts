@@ -172,7 +172,7 @@ describe('loki result transformer', () => {
         line:
           't=2020-02-12T15:04:51+0000 lvl=info msg="Starting Plutono" logger=server version=6.7.0-pre commit=6f09bc9fb4 branch=issue-21929 compiled=2020-02-11T20:43:28+0000',
         labels: { filename: '/var/log/plutono/plutono.log' },
-        id: '19e8e093d70122b3b53cb6e24efd6e2d',
+        id: 'ca82dc8a3d0185155673230058e18f2f',
       });
     });
 
@@ -205,12 +205,12 @@ describe('loki result transformer', () => {
       data.refId = 'C';
 
       ResultTransformer.appendResponseToBufferedData(tailResponse, data);
-      expect(data.get(0).id).toEqual('870e4d105741bdfc2c67904ee480d4f3_C');
-      expect(data.get(1).id).toEqual('870e4d105741bdfc2c67904ee480d4f3_1_C');
-      expect(data.get(2).id).toEqual('707e4ec2b842f389dbb993438505856d_C');
-      expect(data.get(3).id).toEqual('78f044015a58fad3e257a855b167d85e_C');
-      expect(data.get(4).id).toEqual('870e4d105741bdfc2c67904ee480d4f3_2_C');
-      expect(data.get(5).id).toEqual('707e4ec2b842f389dbb993438505856d_1_C');
+      expect(data.get(0).id).toEqual('4ac57e668b1d1057f501a80dff7698cc_C');
+      expect(data.get(1).id).toEqual('4ac57e668b1d1057f501a80dff7698cc_1_C');
+      expect(data.get(2).id).toEqual('08d5410e37f29abd3fe26b05049b5a76_C');
+      expect(data.get(3).id).toEqual('8ec1c2e5892e08fb8f9ea11614519b79_C');
+      expect(data.get(4).id).toEqual('4ac57e668b1d1057f501a80dff7698cc_2_C');
+      expect(data.get(5).id).toEqual('08d5410e37f29abd3fe26b05049b5a76_1_C');
     });
   });
 
