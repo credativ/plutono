@@ -14,7 +14,7 @@ func TestReadPluginManifest(t *testing.T) {
 Hash: SHA512
 
 {
-  "plugin": "plutono-googlesheets-datasource",
+  "plugin": "grafana-googlesheets-datasource",
   "version": "1.0.0-dev",
   "files": {
     "LICENSE": "7df059597099bb7dcf25d2a9aedfaf4465f72d8d",
@@ -46,7 +46,7 @@ NR7DnB0CCQHO+4FlSPtXFTzNepoc+CytQyDAeOLMLmf2Tqhk2YShk+G/YlVX
 
 		require.NoError(t, err)
 		require.NotNil(t, manifest)
-		assert.Equal(t, "plutono-googlesheets-datasource", manifest.Plugin)
+		assert.Equal(t, "grafana-googlesheets-datasource", manifest.Plugin)
 		assert.Equal(t, "1.0.0-dev", manifest.Version)
 		assert.Equal(t, int64(1586817677115), manifest.Time)
 		assert.Equal(t, "7e4d0c6a708866e7", manifest.KeyID)

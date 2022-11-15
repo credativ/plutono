@@ -40,7 +40,7 @@ const (
 type PluginSignatureType string
 
 const (
-	plutonoType PluginSignatureType = "plutono"
+	plutonoType PluginSignatureType = "grafana"
 	privateType PluginSignatureType = "private"
 )
 
