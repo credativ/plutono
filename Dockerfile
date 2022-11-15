@@ -19,7 +19,8 @@ COPY tools tools
 COPY scripts scripts
 COPY emails emails
 
-ENV NODE_ENV production
+ENV NODE_ENV=production \
+    NODE_OPTIONS="--max_old_space_size=4096"
 RUN yarn build
 
 FROM golang:1.16.1-alpine3.13 as go-builder
