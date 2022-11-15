@@ -118,7 +118,7 @@ func TestMiddlewareContext(t *testing.T) {
 			req.Header.Set("X-WEBAUTH-GROUPS", group)
 			cfg.AuthProxyHeaders = map[string]string{"Groups": "X-WEBAUTH-GROUPS"}
 		})
-		assert.Equal(t, "auth-proxy-sync-ttl:14f69b7023baa0ac98c96b31cec07bc0", key)
+		assert.Equal(t, "auth-proxy-sync-ttl:39b124f92fdd0543fa0b12ca57ca15e9", key)
 
 		gotID, err := auth.Login(logger, false)
 		require.NoError(t, err)
