@@ -1,6 +1,6 @@
 {
   "name": "@credativ/plutono-plugins-input-datasource",
-  "version": "7.5.17",
+  "version": "7.5.18-alpha.1",
   "description": "Input Datasource",
   "private": true,
   "repository": {

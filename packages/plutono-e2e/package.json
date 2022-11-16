@@ -2,7 +2,7 @@
   "author": "Grafana Labs",
   "license": "Apache-2.0",
   "name": "@credativ/plutono-e2e",
-  "version": "7.5.17",
+  "version": "7.5.18-alpha.1",
   "description": "Plutono End-to-End Test Library",
   "keywords": [
     "cli",
