@@ -1,4 +1,9 @@
-import { DynamicConfigValue, FieldConfigOptionsRegistry, FieldOverrideContext, PlutonoTheme } from '@credativ/plutono-data';
+import {
+  DynamicConfigValue,
+  FieldConfigOptionsRegistry,
+  FieldOverrideContext,
+  PlutonoTheme,
+} from '@credativ/plutono-data';
 import React from 'react';
 import { Counter, Field, HorizontalGroup, IconButton, Label, stylesFactory, useTheme } from '@credativ/plutono-ui';
 import { css, cx } from 'emotion';

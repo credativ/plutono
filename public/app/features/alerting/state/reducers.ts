@@ -1,5 +1,11 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { ApplyFieldOverrideOptions, DataFrame, DataTransformerConfig, dateTime, FieldColorModeId } from '@credativ/plutono-data';
+import {
+  ApplyFieldOverrideOptions,
+  DataFrame,
+  DataTransformerConfig,
+  dateTime,
+  FieldColorModeId,
+} from '@credativ/plutono-data';
 import alertDef from './alertDef';
 import {
   AlertDefinition,

@@ -5,7 +5,14 @@ import { QueryVariableModel } from '../types';
 import { ThunkDispatch } from '../../../types';
 import { toVariableIdentifier, toVariablePayload } from '../state/types';
 import { validateVariableSelectionState } from '../state/actions';
-import { DataSourceApi, FieldType, getFieldDisplayName, isDataFrame, MetricFindValue, PanelData } from '@credativ/plutono-data';
+import {
+  DataSourceApi,
+  FieldType,
+  getFieldDisplayName,
+  isDataFrame,
+  MetricFindValue,
+  PanelData,
+} from '@credativ/plutono-data';
 import { updateVariableOptions, updateVariableTags } from './reducer';
 import { getTimeSrv, TimeSrv } from '../../dashboard/services/TimeSrv';
 import { getLegacyQueryOptions, getTemplatedRegex } from '../utils';

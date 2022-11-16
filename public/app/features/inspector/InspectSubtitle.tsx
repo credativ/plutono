@@ -1,7 +1,13 @@
 import React, { FC } from 'react';
 import { css } from 'emotion';
 import { stylesFactory, useTheme, Tab, TabsBar } from '@credativ/plutono-ui';
-import { PlutonoTheme, SelectableValue, PanelData, getValueFormat, formattedValueToString } from '@credativ/plutono-data';
+import {
+  PlutonoTheme,
+  SelectableValue,
+  PanelData,
+  getValueFormat,
+  formattedValueToString,
+} from '@credativ/plutono-data';
 import { InspectTab } from '../inspector/types';
 
 interface Props {

@@ -1,5 +1,10 @@
 import React from 'react';
-import { FieldConfigEditorProps, ThresholdsConfig, ThresholdsMode, ThresholdsFieldConfigSettings } from '@credativ/plutono-data';
+import {
+  FieldConfigEditorProps,
+  ThresholdsConfig,
+  ThresholdsMode,
+  ThresholdsFieldConfigSettings,
+} from '@credativ/plutono-data';
 import { ThresholdsEditor } from '../ThresholdsEditorNew/ThresholdsEditor';
 
 export class ThresholdsValueEditor extends React.PureComponent<

@@ -1,5 +1,11 @@
 import React, { useCallback } from 'react';
-import { DataQuery, DataSourceApi, DataSourceJsonData, QueryEditorProps, StandardVariableQuery } from '@credativ/plutono-data';
+import {
+  DataQuery,
+  DataSourceApi,
+  DataSourceJsonData,
+  QueryEditorProps,
+  StandardVariableQuery,
+} from '@credativ/plutono-data';
 import { getTemplateSrv } from '@credativ/plutono-runtime';
 
 import { LegacyVariableQueryEditor } from './LegacyVariableQueryEditor';

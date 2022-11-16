@@ -22,11 +22,7 @@ export const WelcomeBanner: FC = () => {
         <div className={styles.helpLinks}>
           {helpOptions.map((option, index) => {
             return (
-              <a
-                key={`${option.label}-${index}`}
-                className={styles.helpLink}
-                href={`${option.href}`}
-              >
+              <a key={`${option.label}-${index}`} className={styles.helpLink} href={`${option.href}`}>
                 {option.label}
               </a>
             );

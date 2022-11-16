@@ -1,6 +1,13 @@
 import React, { PureComponent } from 'react';
 import { Unsubscribable, PartialObserver } from 'rxjs';
-import { FeatureInfoBox, stylesFactory, Button, JSONFormatter, CustomScrollbar, CodeEditor } from '@credativ/plutono-ui';
+import {
+  FeatureInfoBox,
+  stylesFactory,
+  Button,
+  JSONFormatter,
+  CustomScrollbar,
+  CodeEditor,
+} from '@credativ/plutono-ui';
 import {
   PlutonoTheme,
   PanelProps,

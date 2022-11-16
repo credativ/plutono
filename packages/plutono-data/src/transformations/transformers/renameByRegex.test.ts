@@ -1,4 +1,10 @@
-import { DataTransformerConfig, DataTransformerID, FieldType, toDataFrame, transformDataFrame } from '@credativ/plutono-data';
+import {
+  DataTransformerConfig,
+  DataTransformerID,
+  FieldType,
+  toDataFrame,
+  transformDataFrame,
+} from '@credativ/plutono-data';
 import { renameByRegexTransformer, RenameByRegexTransformerOptions } from './renameByRegex';
 import { mockTransformationsRegistry } from '../../utils/tests/mockTransformationsRegistry';
 

@@ -1,4 +1,10 @@
-import { DataFrameFieldIndex, FALLBACK_COLOR, FieldColorMode, PlutonoTheme, ThresholdsConfig } from '@credativ/plutono-data';
+import {
+  DataFrameFieldIndex,
+  FALLBACK_COLOR,
+  FieldColorMode,
+  PlutonoTheme,
+  ThresholdsConfig,
+} from '@credativ/plutono-data';
 import tinycolor from 'tinycolor2';
 import uPlot, { Series } from 'uplot';
 import {

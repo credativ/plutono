@@ -1,6 +1,13 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { DisplayValue, VizOrientation, ThresholdsMode, Field, FieldType, getDisplayProcessor } from '@credativ/plutono-data';
+import {
+  DisplayValue,
+  VizOrientation,
+  ThresholdsMode,
+  Field,
+  FieldType,
+  getDisplayProcessor,
+} from '@credativ/plutono-data';
 import {
   BarGauge,
   Props,

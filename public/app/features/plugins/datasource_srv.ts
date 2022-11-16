@@ -9,7 +9,13 @@ import {
   TemplateSrv,
 } from '@credativ/plutono-runtime';
 // Types
-import { AppEvents, DataSourceApi, DataSourceInstanceSettings, DataSourceSelectItem, ScopedVars } from '@credativ/plutono-data';
+import {
+  AppEvents,
+  DataSourceApi,
+  DataSourceInstanceSettings,
+  DataSourceSelectItem,
+  ScopedVars,
+} from '@credativ/plutono-data';
 import { auto } from 'angular';
 import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 // Pretend Datasource

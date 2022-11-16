@@ -9,7 +9,10 @@ import {
   TransformerUIProps,
 } from '@credativ/plutono-data';
 
-import { ReduceTransformerMode, ReduceTransformerOptions } from '@credativ/plutono-data/src/transformations/transformers/reduce';
+import {
+  ReduceTransformerMode,
+  ReduceTransformerOptions,
+} from '@credativ/plutono-data/src/transformations/transformers/reduce';
 import { selectors } from '@credativ/plutono-e2e-selectors';
 
 // TODO:  Minimal implementation, needs some <3

@@ -9,7 +9,16 @@ import {
   isSystemOverride as isSystemOverrideGuard,
   VariableSuggestionsScope,
 } from '@credativ/plutono-data';
-import { Field, fieldMatchersUI, HorizontalGroup, Icon, IconButton, Label, useStyles, ValuePicker } from '@credativ/plutono-ui';
+import {
+  Field,
+  fieldMatchersUI,
+  HorizontalGroup,
+  Icon,
+  IconButton,
+  Label,
+  useStyles,
+  ValuePicker,
+} from '@credativ/plutono-ui';
 import { DynamicConfigValueEditor } from './DynamicConfigValueEditor';
 
 import { getDataLinksVariableSuggestions } from '../../../panel/panellinks/link_srv';

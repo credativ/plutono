@@ -1,5 +1,10 @@
 import React from 'react';
-import { DataTransformerID, standardTransformers, TransformerRegistryItem, TransformerUIProps } from '@credativ/plutono-data';
+import {
+  DataTransformerID,
+  standardTransformers,
+  TransformerRegistryItem,
+  TransformerUIProps,
+} from '@credativ/plutono-data';
 import { MergeTransformerOptions } from '@credativ/plutono-data/src/transformations/transformers/merge';
 
 export const MergeTransformerEditor: React.FC<TransformerUIProps<MergeTransformerOptions>> = ({

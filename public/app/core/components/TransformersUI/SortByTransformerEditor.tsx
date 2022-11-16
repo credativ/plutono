@@ -1,5 +1,10 @@
 import React, { useCallback, useMemo } from 'react';
-import { DataTransformerID, standardTransformers, TransformerRegistryItem, TransformerUIProps } from '@credativ/plutono-data';
+import {
+  DataTransformerID,
+  standardTransformers,
+  TransformerRegistryItem,
+  TransformerUIProps,
+} from '@credativ/plutono-data';
 import { getAllFieldNamesFromDataFrames } from './OrganizeFieldsTransformerEditor';
 import { InlineField, InlineSwitch, InlineFieldRow, Select } from '@credativ/plutono-ui';
 

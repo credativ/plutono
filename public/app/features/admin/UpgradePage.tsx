@@ -69,11 +69,7 @@ const GetEnterprise: React.FC = () => {
 
 const CallToAction: React.FC = () => {
   return (
-    <LinkButton
-      variant="primary"
-      size="lg"
-      href="https://grafana.com/contact?about=plutono-enterprise"
-    >
+    <LinkButton variant="primary" size="lg" href="https://grafana.com/contact?about=plutono-enterprise">
       Contact us and get a free trial
     </LinkButton>
   );

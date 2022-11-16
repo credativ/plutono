@@ -1,5 +1,11 @@
 import _ from 'lodash';
-import { getValueFormat, ValueFormatter, stringToJsRegex, DecimalCount, formattedValueToString } from '@credativ/plutono-data';
+import {
+  getValueFormat,
+  ValueFormatter,
+  stringToJsRegex,
+  DecimalCount,
+  formattedValueToString,
+} from '@credativ/plutono-data';
 
 function matchSeriesOverride(aliasOrRegex: string, seriesAlias: string) {
   if (!aliasOrRegex) {

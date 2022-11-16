@@ -1,6 +1,14 @@
 import React, { PureComponent } from 'react';
 import memoizeOne from 'memoize-one';
-import { TimeZone, LogsDedupStrategy, LogRowModel, Field, LinkModel, LogsSortOrder, sortLogRows } from '@credativ/plutono-data';
+import {
+  TimeZone,
+  LogsDedupStrategy,
+  LogRowModel,
+  Field,
+  LinkModel,
+  LogsSortOrder,
+  sortLogRows,
+} from '@credativ/plutono-data';
 
 import { Themeable } from '../../types/theme';
 import { withTheme } from '../../themes/index';

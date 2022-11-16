@@ -1,5 +1,13 @@
 import React, { ChangeEvent } from 'react';
-import { Button, HorizontalGroup, Input, Label, LoadingPlaceholder, stylesFactory, withTheme } from '@credativ/plutono-ui';
+import {
+  Button,
+  HorizontalGroup,
+  Input,
+  Label,
+  LoadingPlaceholder,
+  stylesFactory,
+  withTheme,
+} from '@credativ/plutono-ui';
 import LokiLanguageProvider from '../language_provider';
 import { css, cx } from 'emotion';
 import store from 'app/core/store';

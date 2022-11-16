@@ -1,5 +1,12 @@
 import { PlutonoTheme } from '@credativ/plutono-data';
-import { IconButton, InlineFieldRow, InlineLabel, InlineSegmentGroup, stylesFactory, useTheme } from '@credativ/plutono-ui';
+import {
+  IconButton,
+  InlineFieldRow,
+  InlineLabel,
+  InlineSegmentGroup,
+  stylesFactory,
+  useTheme,
+} from '@credativ/plutono-ui';
 import { css } from 'emotion';
 import { noop } from 'lodash';
 import React, { FunctionComponent } from 'react';

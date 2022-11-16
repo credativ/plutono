@@ -1,6 +1,12 @@
 import React from 'react';
 import { FieldOverrideEditorProps, SelectableValue } from '@credativ/plutono-data';
-import { HorizontalGroup, RadioButtonGroup, ScaleDistribution, ScaleDistributionConfig, Select } from '@credativ/plutono-ui';
+import {
+  HorizontalGroup,
+  RadioButtonGroup,
+  ScaleDistribution,
+  ScaleDistributionConfig,
+  Select,
+} from '@credativ/plutono-ui';
 
 const DISTRIBUTION_OPTIONS: Array<SelectableValue<ScaleDistribution>> = [
   {

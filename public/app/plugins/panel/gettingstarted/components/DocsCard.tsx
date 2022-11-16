@@ -24,12 +24,7 @@ export const DocsCard: FC<Props> = ({ card }) => {
           </div>
         </a>
       </div>
-      <a
-        href={`${card.learnHref}`}
-        className={styles.url}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href={`${card.learnHref}`} className={styles.url} target="_blank" rel="noreferrer">
         Learn how in the docs <Icon name="external-link-alt" />
       </a>
     </div>

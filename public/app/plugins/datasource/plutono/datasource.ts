@@ -10,7 +10,12 @@ import {
 } from '@credativ/plutono-data';
 
 import { PlutonoQuery, PlutonoAnnotationQuery, PlutonoAnnotationType, PlutonoQueryType } from './types';
-import { getBackendSrv, getTemplateSrv, toDataQueryResponse, getLiveMeasurementsObserver } from '@credativ/plutono-runtime';
+import {
+  getBackendSrv,
+  getTemplateSrv,
+  toDataQueryResponse,
+  getLiveMeasurementsObserver,
+} from '@credativ/plutono-runtime';
 import { Observable, of, merge } from 'rxjs';
 import { map, catchError } from 'rxjs/operators';
 

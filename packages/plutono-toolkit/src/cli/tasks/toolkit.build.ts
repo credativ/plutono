@@ -118,4 +118,7 @@ const toolkitBuildTaskRunner: TaskRunner<ToolkitBuildOptions> = async () => {
   await copySassFiles();
 };
 
-export const toolkitBuildTask = new Task<ToolkitBuildOptions>('@credativ/plutono-toolkit build', toolkitBuildTaskRunner);
+export const toolkitBuildTask = new Task<ToolkitBuildOptions>(
+  '@credativ/plutono-toolkit build',
+  toolkitBuildTaskRunner
+);
