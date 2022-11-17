@@ -7,7 +7,7 @@
   "info": {
     "description": "Open source logging & analytics database",
     "author": {
-      "name": "Grafana Labs",
+      "name": "Plutono Team",
       "url": "https://grafana.com"
     },
     "keywords": ["elasticsearch"],

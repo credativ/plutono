@@ -169,7 +169,7 @@ function getPlutonoCloudPhantomPlugin(): DataSourcePluginMeta {
     info: {
       description: 'Hosted Graphite, Prometheus and Loki',
       logos: { small: 'public/img/plutono_icon.svg', large: 'asd' },
-      author: { name: 'Grafana Labs' },
+      author: { name: 'Plutono Team' },
       links: [
         {
           url: 'https://grafana.com/products/cloud/',
@@ -200,7 +200,7 @@ function getPhantomPlugin(options: GetPhantomPluginOptions): DataSourcePluginMet
     info: {
       description: options.description,
       logos: { small: options.imgUrl, large: options.imgUrl },
-      author: { name: 'Grafana Labs' },
+      author: { name: 'Plutono Team' },
       links: [
         {
           url: config.marketplaceUrl + options.id,

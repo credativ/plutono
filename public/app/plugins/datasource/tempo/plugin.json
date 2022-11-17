@@ -14,7 +14,7 @@
   "info": {
     "description": "High volume, minimal dependency trace storage.  OSS tracing solution from Grafana Labs.",
     "author": {
-      "name": "Grafana Labs",
+      "name": "Plutono Team",
       "url": "https://grafana.com"
     },
     "logos": {

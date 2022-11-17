@@ -7,7 +7,7 @@
   "info": {
     "description": "Data source for Microsoft Azure Monitor & Application Insights",
     "author": {
-      "name": "Grafana Labs",
+      "name": "Plutono Team",
       "url": "https://grafana.com"
     },
     "keywords": ["azure", "monitor", "Application Insights", "Log Analytics", "App Insights"],
