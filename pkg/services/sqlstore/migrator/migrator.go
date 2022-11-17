@@ -3,9 +3,9 @@ package migrator
 import (
 	"time"
 
-	_ "github.com/go-sql-driver/mysql"
 	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/credativ/plutono/pkg/util/errutil"
+	_ "github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"
 	_ "github.com/mattn/go-sqlite3"
 	"xorm.io/xorm"

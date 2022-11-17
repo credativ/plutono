@@ -5,11 +5,11 @@ import (
 	"os"
 	"runtime"
 
-	"github.com/fatih/color"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/commands"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/logger"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/services"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/utils"
+	"github.com/fatih/color"
 	"github.com/urfave/cli/v2"
 )
 

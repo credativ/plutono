@@ -10,9 +10,9 @@ import (
 	"time"
 
 	"cloud.google.com/go/storage"
-	"github.com/golang/mock/gomock"
 	"github.com/credativ/plutono/pkg/ifaces/gcsifaces"
 	"github.com/credativ/plutono/pkg/mocks/mock_gcsifaces"
+	"github.com/golang/mock/gomock"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"golang.org/x/oauth2/google"

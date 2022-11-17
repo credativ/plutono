@@ -10,13 +10,13 @@ import (
 	"testing"
 	"time"
 
-	"github.com/getsentry/sentry-go"
 	"github.com/credativ/plutono/pkg/api/frontendlogging"
 	"github.com/credativ/plutono/pkg/api/response"
 	"github.com/credativ/plutono/pkg/api/routing"
 	"github.com/credativ/plutono/pkg/models"
 	"github.com/credativ/plutono/pkg/plugins"
 	"github.com/credativ/plutono/pkg/setting"
+	"github.com/getsentry/sentry-go"
 	log "github.com/inconshreveable/log15"
 
 	"github.com/stretchr/testify/assert"

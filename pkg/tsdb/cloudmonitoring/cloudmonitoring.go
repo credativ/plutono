@@ -16,7 +16,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana-plugin-sdk-go/data"
 	"github.com/credativ/plutono/pkg/api/pluginproxy"
 	"github.com/credativ/plutono/pkg/components/simplejson"
 	"github.com/credativ/plutono/pkg/infra/log"
@@ -24,6 +23,7 @@ import (
 	"github.com/credativ/plutono/pkg/plugins"
 	"github.com/credativ/plutono/pkg/setting"
 	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/grafana/grafana-plugin-sdk-go/data"
 	"golang.org/x/oauth2/google"
 )
 

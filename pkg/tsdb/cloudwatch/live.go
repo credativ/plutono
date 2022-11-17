@@ -14,13 +14,13 @@ import (
 	"github.com/aws/aws-sdk-go/service/servicequotas"
 	"github.com/aws/aws-sdk-go/service/servicequotas/servicequotasiface"
 	"github.com/centrifugal/centrifuge"
-	"github.com/google/uuid"
-	"github.com/grafana/grafana-plugin-sdk-go/data"
 	"github.com/credativ/plutono/pkg/components/simplejson"
 	"github.com/credativ/plutono/pkg/models"
 	"github.com/credativ/plutono/pkg/setting"
 	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/credativ/plutono/pkg/util/retryer"
+	"github.com/google/uuid"
+	"github.com/grafana/grafana-plugin-sdk-go/data"
 	"golang.org/x/sync/errgroup"
 )
 

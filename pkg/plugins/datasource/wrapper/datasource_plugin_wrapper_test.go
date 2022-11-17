@@ -3,9 +3,9 @@ package wrapper
 import (
 	"testing"
 
-	"github.com/grafana/grafana-plugin-model/go/datasource"
 	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/grafana/grafana-plugin-model/go/datasource"
 	"github.com/stretchr/testify/require"
 )
 

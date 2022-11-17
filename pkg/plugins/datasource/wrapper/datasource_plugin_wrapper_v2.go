@@ -4,14 +4,14 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/grafana/grafana-plugin-sdk-go/backend/grpcplugin"
-	"github.com/grafana/grafana-plugin-sdk-go/genproto/pluginv2"
 	"github.com/credativ/plutono/pkg/components/simplejson"
 	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/credativ/plutono/pkg/models"
 	"github.com/credativ/plutono/pkg/services/oauthtoken"
 	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/grafana/grafana-plugin-sdk-go/backend"
+	"github.com/grafana/grafana-plugin-sdk-go/backend/grpcplugin"
+	"github.com/grafana/grafana-plugin-sdk-go/genproto/pluginv2"
 )
 
 func NewDatasourcePluginWrapperV2(log log.Logger, pluginId, pluginType string, client grpcplugin.DataClient) *DatasourcePluginWrapperV2 {

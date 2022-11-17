@@ -5,7 +5,6 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/fatih/color"
 	"github.com/credativ/plutono/pkg/bus"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/logger"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/utils"
@@ -13,6 +12,7 @@ import (
 	"github.com/credativ/plutono/pkg/services/sqlstore"
 	"github.com/credativ/plutono/pkg/util"
 	"github.com/credativ/plutono/pkg/util/errutil"
+	"github.com/fatih/color"
 )
 
 const AdminUserId = 1

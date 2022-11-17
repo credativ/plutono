@@ -3,8 +3,8 @@ package expr
 import (
 	"context"
 
-	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/credativ/plutono/pkg/setting"
+	"github.com/grafana/grafana-plugin-sdk-go/backend"
 )
 
 // DatasourceName is the string constant used as the datasource name in requests

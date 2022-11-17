@@ -4,8 +4,8 @@ import (
 	"context"
 	"encoding/json"
 
-	"github.com/fatih/color"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/logger"
+	"github.com/fatih/color"
 
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/utils"
 	"github.com/credativ/plutono/pkg/services/sqlstore"

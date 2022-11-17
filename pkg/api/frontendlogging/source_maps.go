@@ -11,9 +11,9 @@ import (
 
 	sourcemap "github.com/go-sourcemap/sourcemap"
 
-	"github.com/getsentry/sentry-go"
 	"github.com/credativ/plutono/pkg/plugins"
 	"github.com/credativ/plutono/pkg/setting"
+	"github.com/getsentry/sentry-go"
 )
 
 type sourceMapLocation struct {

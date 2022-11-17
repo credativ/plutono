@@ -11,9 +11,9 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/davecgh/go-spew/spew"
 	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/credativ/plutono/pkg/models"
+	"github.com/davecgh/go-spew/spew"
 	"gopkg.in/ldap.v3"
 )
 

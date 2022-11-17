@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/getsentry/sentry-go"
 	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/getsentry/sentry-go"
 	"github.com/inconshreveable/log15"
 )
 

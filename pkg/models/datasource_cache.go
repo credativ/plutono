@@ -13,9 +13,9 @@ import (
 
 	"github.com/credativ/plutono/pkg/services/validations"
 
-	"github.com/grafana/grafana-aws-sdk/pkg/sigv4"
 	"github.com/credativ/plutono/pkg/infra/metrics/metricutil"
 	"github.com/credativ/plutono/pkg/setting"
+	"github.com/grafana/grafana-aws-sdk/pkg/sigv4"
 	"github.com/mwitkow/go-conntrack"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"

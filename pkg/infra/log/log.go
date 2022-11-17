@@ -10,9 +10,9 @@ import (
 	"path/filepath"
 	"strings"
 
-	"github.com/go-stack/stack"
 	"github.com/credativ/plutono/pkg/util"
 	"github.com/credativ/plutono/pkg/util/errutil"
+	"github.com/go-stack/stack"
 	"github.com/inconshreveable/log15"
 	isatty "github.com/mattn/go-isatty"
 	"gopkg.in/ini.v1"

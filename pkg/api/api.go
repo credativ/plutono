@@ -4,7 +4,6 @@ package api
 import (
 	"time"
 
-	"github.com/go-macaron/binding"
 	"github.com/credativ/plutono/pkg/api/avatar"
 	"github.com/credativ/plutono/pkg/api/dtos"
 	"github.com/credativ/plutono/pkg/api/frontendlogging"
@@ -13,6 +12,7 @@ import (
 	"github.com/credativ/plutono/pkg/infra/metrics"
 	"github.com/credativ/plutono/pkg/middleware"
 	"github.com/credativ/plutono/pkg/models"
+	"github.com/go-macaron/binding"
 )
 
 var plog = log.New("api")

@@ -13,14 +13,14 @@ import (
 	"sync"
 	"time"
 
-	"github.com/grafana/grafana-aws-sdk/pkg/awsds"
-	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/credativ/plutono/pkg/models"
 	"github.com/credativ/plutono/pkg/registry"
 	"github.com/credativ/plutono/pkg/setting"
 	"github.com/credativ/plutono/pkg/util/errutil"
 	"github.com/credativ/plutono/pkg/util/proxyutil"
+	"github.com/grafana/grafana-aws-sdk/pkg/awsds"
+	"github.com/grafana/grafana-plugin-sdk-go/backend"
 )
 
 var (

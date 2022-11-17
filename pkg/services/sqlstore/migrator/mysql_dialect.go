@@ -7,8 +7,8 @@ import (
 	"strings"
 
 	"github.com/VividCortex/mysqlerr"
-	"github.com/go-sql-driver/mysql"
 	"github.com/credativ/plutono/pkg/util/errutil"
+	"github.com/go-sql-driver/mysql"
 	"xorm.io/xorm"
 )
 

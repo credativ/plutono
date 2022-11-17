@@ -3,11 +3,11 @@ package commands
 import (
 	"errors"
 
-	"github.com/fatih/color"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/logger"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/models"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/services"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/utils"
+	"github.com/fatih/color"
 )
 
 var ls_getPlugins func(path string) []models.InstalledPlugin = services.GetLocalPlugins

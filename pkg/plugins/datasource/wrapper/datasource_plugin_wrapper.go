@@ -5,12 +5,12 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/grafana/grafana-plugin-model/go/datasource"
 	"github.com/credativ/plutono/pkg/components/null"
 	"github.com/credativ/plutono/pkg/components/simplejson"
 	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/credativ/plutono/pkg/models"
 	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/grafana/grafana-plugin-model/go/datasource"
 )
 
 func NewDatasourcePluginWrapper(log log.Logger, plugin datasource.DatasourcePlugin) *DatasourcePluginWrapper {

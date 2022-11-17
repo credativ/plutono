@@ -9,9 +9,9 @@ import (
 
 	"github.com/credativ/plutono/pkg/setting"
 
+	"github.com/credativ/plutono/pkg/expr"
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/credativ/plutono/pkg/expr"
 )
 
 const alertingEvaluationTimeout = 30 * time.Second

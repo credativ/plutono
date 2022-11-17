@@ -3,8 +3,6 @@ package ngalert
 import (
 	"fmt"
 
-	"github.com/go-macaron/binding"
-	"github.com/grafana/grafana-plugin-sdk-go/data"
 	"github.com/credativ/plutono/pkg/api/response"
 	"github.com/credativ/plutono/pkg/api/routing"
 	"github.com/credativ/plutono/pkg/middleware"
@@ -14,6 +12,8 @@ import (
 	"github.com/credativ/plutono/pkg/setting"
 	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/credativ/plutono/pkg/util"
+	"github.com/go-macaron/binding"
+	"github.com/grafana/grafana-plugin-sdk-go/data"
 )
 
 type apiImpl struct {

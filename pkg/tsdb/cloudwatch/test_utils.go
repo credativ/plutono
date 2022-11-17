@@ -14,11 +14,11 @@ import (
 	"github.com/aws/aws-sdk-go/service/ec2/ec2iface"
 	"github.com/aws/aws-sdk-go/service/resourcegroupstaggingapi"
 	"github.com/aws/aws-sdk-go/service/resourcegroupstaggingapi/resourcegroupstaggingapiiface"
-	"github.com/grafana/grafana-aws-sdk/pkg/awsds"
 	"github.com/credativ/plutono/pkg/components/securejsondata"
 	"github.com/credativ/plutono/pkg/components/simplejson"
 	"github.com/credativ/plutono/pkg/models"
 	"github.com/credativ/plutono/pkg/setting"
+	"github.com/grafana/grafana-aws-sdk/pkg/awsds"
 )
 
 type fakeDataSourceCfg struct {

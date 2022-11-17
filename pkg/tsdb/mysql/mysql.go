@@ -12,11 +12,11 @@ import (
 	"github.com/VividCortex/mysqlerr"
 	"github.com/credativ/plutono/pkg/setting"
 
-	"github.com/go-sql-driver/mysql"
 	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/credativ/plutono/pkg/models"
 	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/credativ/plutono/pkg/tsdb/sqleng"
+	"github.com/go-sql-driver/mysql"
 	"xorm.io/core"
 )
 

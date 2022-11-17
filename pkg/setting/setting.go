@@ -21,10 +21,10 @@ import (
 	"github.com/prometheus/common/model"
 	ini "gopkg.in/ini.v1"
 
-	"github.com/grafana/grafana-aws-sdk/pkg/awsds"
 	"github.com/credativ/plutono/pkg/components/gtime"
 	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/credativ/plutono/pkg/util"
+	"github.com/grafana/grafana-aws-sdk/pkg/awsds"
 )
 
 type Scheme string

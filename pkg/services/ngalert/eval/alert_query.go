@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/credativ/plutono/pkg/expr"
+	"github.com/grafana/grafana-plugin-sdk-go/backend"
 )
 
 const defaultMaxDataPoints float64 = 100

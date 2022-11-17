@@ -10,7 +10,6 @@ import (
 	"strings"
 	"time"
 
-	"github.com/go-sql-driver/mysql"
 	"github.com/credativ/plutono/pkg/bus"
 	"github.com/credativ/plutono/pkg/infra/fs"
 	"github.com/credativ/plutono/pkg/infra/localcache"
@@ -25,6 +24,7 @@ import (
 	_ "github.com/credativ/plutono/pkg/tsdb/mssql"
 	"github.com/credativ/plutono/pkg/util"
 	"github.com/credativ/plutono/pkg/util/errutil"
+	"github.com/go-sql-driver/mysql"
 	_ "github.com/lib/pq"
 	"xorm.io/xorm"
 )

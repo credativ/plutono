@@ -3,11 +3,11 @@ package grpcplugin
 import (
 	"context"
 
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin"
 	datasourceV1 "github.com/grafana/grafana-plugin-model/go/datasource"
 	rendererV1 "github.com/grafana/grafana-plugin-model/go/renderer"
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/credativ/plutono/pkg/infra/log"
-	"github.com/credativ/plutono/pkg/plugins/backendplugin"
 	"github.com/hashicorp/go-plugin"
 )
 

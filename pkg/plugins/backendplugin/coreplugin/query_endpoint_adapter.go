@@ -4,11 +4,11 @@ import (
 	"context"
 	"time"
 
-	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/credativ/plutono/pkg/models"
 	"github.com/credativ/plutono/pkg/plugins/datasource/wrapper"
 	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/grafana/grafana-plugin-sdk-go/backend"
 )
 
 func newQueryEndpointAdapter(pluginID string, logger log.Logger, handler backend.QueryDataHandler) tsdb.TsdbQueryEndpoint {

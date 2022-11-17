@@ -6,11 +6,11 @@ import (
 
 	_ "github.com/beevik/etree"
 	_ "github.com/cortexproject/cortex/pkg/util"
-	_ "github.com/crewjam/saml"
-	_ "github.com/gobwas/glob"
 	"github.com/credativ/plutono/pkg/registry"
 	"github.com/credativ/plutono/pkg/services/licensing"
 	"github.com/credativ/plutono/pkg/services/validations"
+	_ "github.com/crewjam/saml"
+	_ "github.com/gobwas/glob"
 	_ "github.com/grafana/loki/pkg/logproto"
 	_ "github.com/grpc-ecosystem/go-grpc-middleware"
 	_ "github.com/jung-kurt/gofpdf"

@@ -6,8 +6,8 @@ import (
 	"fmt"
 	"time"
 
-	pluginModel "github.com/grafana/grafana-plugin-model/go/renderer"
 	"github.com/credativ/plutono/pkg/plugins/backendplugin/pluginextensionv2"
+	pluginModel "github.com/grafana/grafana-plugin-model/go/renderer"
 )
 
 func (rs *RenderingService) startPlugin(ctx context.Context) error {

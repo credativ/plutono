@@ -6,8 +6,8 @@ import (
 	"reflect"
 	"runtime"
 
-	"github.com/grafana/grafana-plugin-sdk-go/data"
 	"github.com/credativ/plutono/pkg/expr/mathexp/parse"
+	"github.com/grafana/grafana-plugin-sdk-go/data"
 )
 
 // Expr holds a parsed math command expression.

@@ -14,12 +14,12 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/cloudwatch/cloudwatchiface"
 	"github.com/aws/aws-sdk-go/service/cloudwatchlogs/cloudwatchlogsiface"
-	"github.com/grafana/grafana-plugin-sdk-go/data"
 	"github.com/credativ/plutono/pkg/models"
 	"github.com/credativ/plutono/pkg/services/sqlstore"
 	"github.com/credativ/plutono/pkg/tests/testinfra"
 	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/credativ/plutono/pkg/tsdb/cloudwatch"
+	"github.com/grafana/grafana-plugin-sdk-go/data"
 
 	cwapi "github.com/aws/aws-sdk-go/service/cloudwatch"
 	"github.com/credativ/plutono/pkg/api/dtos"

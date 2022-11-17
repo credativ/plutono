@@ -6,10 +6,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/gosimple/slug"
 	"github.com/credativ/plutono/pkg/components/simplejson"
 	"github.com/credativ/plutono/pkg/setting"
 	"github.com/credativ/plutono/pkg/util"
+	"github.com/gosimple/slug"
 )
 
 const RootFolderName = "General"

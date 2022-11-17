@@ -6,7 +6,6 @@ import (
 	"fmt"
 	"sort"
 
-	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/credativ/plutono/pkg/api/datasource"
 	"github.com/credativ/plutono/pkg/api/dtos"
 	"github.com/credativ/plutono/pkg/api/response"
@@ -16,6 +15,7 @@ import (
 	"github.com/credativ/plutono/pkg/plugins"
 	"github.com/credativ/plutono/pkg/plugins/datasource/wrapper"
 	"github.com/credativ/plutono/pkg/util"
+	"github.com/grafana/grafana-plugin-sdk-go/backend"
 )
 
 var datasourcesLogger = log.New("datasources")

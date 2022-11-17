@@ -1,11 +1,11 @@
 package commands
 
 import (
-	"github.com/fatih/color"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/logger"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/services"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/utils"
 	"github.com/credativ/plutono/pkg/util/errutil"
+	"github.com/fatih/color"
 )
 
 func (cmd Command) upgradeCommand(c utils.CommandLine) error {

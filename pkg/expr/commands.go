@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/credativ/plutono/pkg/components/gtime"
 	"github.com/credativ/plutono/pkg/expr/mathexp"
+	"github.com/grafana/grafana-plugin-sdk-go/backend"
 )
 
 // Command is an interface for all expression commands.

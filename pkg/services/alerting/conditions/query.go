@@ -10,7 +10,6 @@ import (
 
 	gocontext "context"
 
-	"github.com/grafana/grafana-plugin-sdk-go/data"
 	"github.com/credativ/plutono/pkg/bus"
 	"github.com/credativ/plutono/pkg/components/null"
 	"github.com/credativ/plutono/pkg/components/simplejson"
@@ -18,6 +17,7 @@ import (
 	"github.com/credativ/plutono/pkg/services/alerting"
 	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/credativ/plutono/pkg/util/errutil"
+	"github.com/grafana/grafana-plugin-sdk-go/data"
 )
 
 func init() {

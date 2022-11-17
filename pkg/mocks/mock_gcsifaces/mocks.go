@@ -9,8 +9,8 @@ import (
 	reflect "reflect"
 
 	storage "cloud.google.com/go/storage"
-	gomock "github.com/golang/mock/gomock"
 	gcsifaces "github.com/credativ/plutono/pkg/ifaces/gcsifaces"
+	gomock "github.com/golang/mock/gomock"
 	google "golang.org/x/oauth2/google"
 	jwt "golang.org/x/oauth2/jwt"
 )

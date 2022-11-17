@@ -13,9 +13,9 @@ import (
 	"runtime"
 	"strings"
 
-	"github.com/fatih/color"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/utils"
 	"github.com/credativ/plutono/pkg/util/errutil"
+	"github.com/fatih/color"
 
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/logger"
 	"github.com/credativ/plutono/pkg/cmd/plutono-cli/models"

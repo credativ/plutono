@@ -8,10 +8,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/gchaincl/sqlhooks"
-	"github.com/go-sql-driver/mysql"
 	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/credativ/plutono/pkg/services/sqlstore/migrator"
+	"github.com/gchaincl/sqlhooks"
+	"github.com/go-sql-driver/mysql"
 	"github.com/lib/pq"
 	"github.com/mattn/go-sqlite3"
 	"github.com/prometheus/client_golang/prometheus"

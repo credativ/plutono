@@ -1,11 +1,11 @@
 package api
 
 import (
-	"github.com/getsentry/sentry-go"
 	"github.com/credativ/plutono/pkg/api/frontendlogging"
 	"github.com/credativ/plutono/pkg/api/response"
 	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/credativ/plutono/pkg/models"
+	"github.com/getsentry/sentry-go"
 )
 
 var frontendLogger = log.New("frontend")
