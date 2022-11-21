@@ -7,8 +7,8 @@
       - "./dev-dashboards:/usr/share/plutono/devenv/dev-dashboards"
       - "./datasources_docker.yaml:/etc/plutono/provisioning/datasources/datasources.yaml"
     environment:
-      GF_RENDERING_SERVER_URL: http://renderer:8081/render
-      GF_RENDERING_CALLBACK_URL: http://plutono:3000/
+      PL_RENDERING_SERVER_URL: http://renderer:8081/render
+      PL_RENDERING_CALLBACK_URL: http://plutono:3000/
 
   renderer:
     image: plutono/plutono-image-renderer:latest

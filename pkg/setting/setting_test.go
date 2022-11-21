@@ -55,7 +55,7 @@ func TestLoadingSettings(t *testing.T) {
 		})
 
 		Convey("Should be able to override via environment variables", func() {
-			err := os.Setenv("GF_SECURITY_ADMIN_USER", "superduper")
+			err := os.Setenv("PL_SECURITY_ADMIN_USER", "superduper")
 			require.NoError(t, err)
 
 			cfg := NewCfg()
@@ -68,25 +68,25 @@ func TestLoadingSettings(t *testing.T) {
 		})
 
 		Convey("Should replace password when defined in environment", func() {
-			err := os.Setenv("GF_SECURITY_ADMIN_PASSWORD", "supersecret")
+			err := os.Setenv("PL_SECURITY_ADMIN_PASSWORD", "supersecret")
 			require.NoError(t, err)
 
 			cfg := NewCfg()
 			err = cfg.Load(&CommandLineArgs{HomePath: "../../"})
 			So(err, ShouldBeNil)
 
-			So(appliedEnvOverrides, ShouldContain, "GF_SECURITY_ADMIN_PASSWORD=*********")
+			So(appliedEnvOverrides, ShouldContain, "PL_SECURITY_ADMIN_PASSWORD=*********")
 		})
 
 		Convey("Should replace password in URL when url environment is defined", func() {
-			err := os.Setenv("GF_DATABASE_URL", "mysql://user:secret@localhost:3306/database")
+			err := os.Setenv("PL_DATABASE_URL", "mysql://user:secret@localhost:3306/database")
 			require.NoError(t, err)
 
 			cfg := NewCfg()
 			err = cfg.Load(&CommandLineArgs{HomePath: "../../"})
 			So(err, ShouldBeNil)
 
-			So(appliedEnvOverrides, ShouldContain, "GF_DATABASE_URL=mysql://user:xxxxx@localhost:3306/database")
+			So(appliedEnvOverrides, ShouldContain, "PL_DATABASE_URL=mysql://user:xxxxx@localhost:3306/database")
 		})
 
 		Convey("Should get property map from command line args array", func() {
@@ -184,23 +184,23 @@ func TestLoadingSettings(t *testing.T) {
 
 		Convey("Can use environment variables in config values", func() {
 			if runtime.GOOS == windows {
-				err := os.Setenv("GF_DATA_PATH", `c:\tmp\env_override`)
+				err := os.Setenv("PL_DATA_PATH", `c:\tmp\env_override`)
 				require.NoError(t, err)
 				cfg := NewCfg()
 				err = cfg.Load(&CommandLineArgs{
 					HomePath: "../../",
-					Args:     []string{"cfg:paths.data=${GF_DATA_PATH}"},
+					Args:     []string{"cfg:paths.data=${PL_DATA_PATH}"},
 				})
 				So(err, ShouldBeNil)
 
 				So(cfg.DataPath, ShouldEqual, `c:\tmp\env_override`)
 			} else {
-				err := os.Setenv("GF_DATA_PATH", "/tmp/env_override")
+				err := os.Setenv("PL_DATA_PATH", "/tmp/env_override")
 				require.NoError(t, err)
 				cfg := NewCfg()
 				err = cfg.Load(&CommandLineArgs{
 					HomePath: "../../",
-					Args:     []string{"cfg:paths.data=${GF_DATA_PATH}"},
+					Args:     []string{"cfg:paths.data=${PL_DATA_PATH}"},
 				})
 				So(err, ShouldBeNil)
 

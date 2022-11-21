@@ -37,10 +37,10 @@ func TestPluginSettings(t *testing.T) {
 
 		t.Run("Should return expected environment variables from plugin settings ", func(t *testing.T) {
 			ps := extractPluginSettings(cfg)
-			env := ps["plugin"].ToEnv("GF_PLUGIN", []string{"GF_VERSION=6.7.0"})
+			env := ps["plugin"].ToEnv("PL_PLUGIN", []string{"PL_VERSION=6.7.0"})
 			sort.Strings(env)
 			require.Len(t, env, 3)
-			require.EqualValues(t, []string{"GF_PLUGIN_KEY1=value1", "GF_PLUGIN_KEY2=value2", "GF_VERSION=6.7.0"}, env)
+			require.EqualValues(t, []string{"PL_PLUGIN_KEY1=value1", "PL_PLUGIN_KEY2=value2", "PL_VERSION=6.7.0"}, env)
 		})
 	})
 }
