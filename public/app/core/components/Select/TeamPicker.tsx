@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import _, { debounce } from 'lodash';
-import { AsyncSelect } from '@grafana/ui';
-import { getBackendSrv } from '@grafana/runtime';
+import { AsyncSelect } from '@credativ/plutono-ui';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 
 export interface Team {
   id: number;

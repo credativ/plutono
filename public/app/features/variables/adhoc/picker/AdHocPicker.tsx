@@ -2,7 +2,7 @@ import React, { PureComponent, ReactNode } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
 import { AdHocVariableFilter, AdHocVariableModel } from 'app/features/variables/types';
 import { VariablePickerProps } from '../../pickers/types';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 import { AdHocFilterBuilder } from './AdHocFilterBuilder';
 import { ConditionSegment } from './ConditionSegment';
 import { addFilter, changeFilter, removeFilter } from '../actions';

@@ -27,7 +27,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/cmd/grafana-cli/logger"
+	"github.com/credativ/plutono/pkg/cmd/plutono-cli/logger"
 	"github.com/prometheus/client_golang/prometheus"
 	dto "github.com/prometheus/client_model/go"
 	"github.com/prometheus/common/expfmt"
@@ -64,7 +64,7 @@ var metricCategoryPrefix = []string{
 	"go_",
 	"process_"}
 
-var trimMetricPrefix = []string{"grafana_"}
+var trimMetricPrefix = []string{"plutono_"}
 
 // Config defines the Graphite bridge config.
 type Config struct {

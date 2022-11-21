@@ -30,9 +30,9 @@ scrape_configs:
     static_configs:
       - targets: ['fake-prometheus-data:9091']
 
-  - job_name: 'grafana'
+  - job_name: 'plutono'
     static_configs:
-      - targets: ['grafana:3000']
+      - targets: ['plutono:3000']
 
   - job_name: 'prometheus-random-data'
     static_configs:

@@ -28,7 +28,7 @@ import {
   standardEditorsRegistry,
   standardFieldConfigEditorRegistry,
   standardTransformersRegistry,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import appEvents from 'app/core/app_events';
 import { checkBrowserCompatibility } from 'app/core/utils/browser';
 import { arrayMove } from 'app/core/utils/arrayMove';
@@ -36,13 +36,13 @@ import { importPluginModule } from 'app/features/plugins/plugin_loader';
 import { angularModules, coreModule } from 'app/core/core_module';
 import { contextSrv, registerAngularDirectives } from 'app/core/core';
 import { setupAngularRoutes } from 'app/routes/routes';
-import { registerEchoBackend, setEchoSrv } from '@grafana/runtime';
+import { registerEchoBackend, setEchoSrv } from '@credativ/plutono-runtime';
 import { Echo } from './core/services/echo/Echo';
 import { reportPerformance } from './core/services/echo/EchoSrv';
 import { PerformanceBackend } from './core/services/echo/backends/PerformanceBackend';
-import 'app/routes/GrafanaCtrl';
+import 'app/routes/PlutonoCtrl';
 import 'app/features/all';
-import { getScrollbarWidth, getStandardFieldConfigs, getStandardOptionEditors } from '@grafana/ui';
+import { getScrollbarWidth, getStandardFieldConfigs, getStandardOptionEditors } from '@credativ/plutono-ui';
 import { getDefaultVariableAdapters, variableAdapters } from './features/variables/adapters';
 import { initDevFeatures } from './dev';
 import { getStandardTransformers } from 'app/core/utils/standardTransformers';
@@ -64,7 +64,7 @@ if (process.env.NODE_ENV === 'development') {
   initDevFeatures();
 }
 
-export class GrafanaApp {
+export class PlutonoApp {
   registerFunctions: any;
   ngModuleDependencies: any[];
   preBootModules: any[] | null;
@@ -86,7 +86,7 @@ export class GrafanaApp {
   }
 
   init() {
-    const app = angular.module('grafana', []);
+    const app = angular.module('plutono', []);
 
     addClassIfNoOverlayScrollbar();
     setLocale(config.bootData.user.locale);
@@ -140,11 +140,11 @@ export class GrafanaApp {
     );
 
     this.ngModuleDependencies = [
-      'grafana.core',
+      'plutono.core',
       'ngRoute',
       'ngSanitize',
       '$strap.directives',
-      'grafana',
+      'plutono',
       'pasvaz.bindonce',
       'react',
     ];
@@ -238,4 +238,4 @@ function addClassIfNoOverlayScrollbar() {
   }
 }
 
-export default new GrafanaApp();
+export default new PlutonoApp();

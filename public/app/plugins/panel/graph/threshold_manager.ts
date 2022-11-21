@@ -1,7 +1,7 @@
 import 'vendor/flot/jquery.flot';
 import $ from 'jquery';
 import _ from 'lodash';
-import { getColorForTheme } from '@grafana/data';
+import { getColorForTheme } from '@credativ/plutono-data';
 import { CoreEvents } from 'app/types';
 import { PanelCtrl } from 'app/features/panel/panel_ctrl';
 import { config } from 'app/core/config';

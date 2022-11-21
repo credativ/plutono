@@ -1,6 +1,6 @@
 import { CSSProperties } from 'react';
 import { set as lodashSet, omit } from 'lodash';
-import { FieldConfigSource, PanelPlugin } from '@grafana/data';
+import { FieldConfigSource, PanelPlugin } from '@credativ/plutono-data';
 import { PanelModel } from '../../state/PanelModel';
 import { DisplayMode } from './types';
 import { GRID_CELL_HEIGHT, GRID_CELL_VMARGIN, GRID_COLUMN_COUNT } from 'app/core/constants';

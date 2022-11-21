@@ -7,7 +7,7 @@
       "resource": {
         "type": "global",
         "labels": {
-          "project_id": "grafana-demo"
+          "project_id": "plutono-demo"
         }
       },
       "metricKind": "DELTA",

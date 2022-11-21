@@ -1,6 +1,6 @@
 import React, { HTMLAttributes } from 'react';
-import { Badge, BadgeProps } from '@grafana/ui';
-import { PluginErrorCode, PluginSignatureStatus } from '@grafana/data';
+import { Badge, BadgeProps } from '@credativ/plutono-ui';
+import { PluginErrorCode, PluginSignatureStatus } from '@credativ/plutono-data';
 
 interface Props extends HTMLAttributes<HTMLDivElement> {
   status?: PluginSignatureStatus;
@@ -43,7 +43,7 @@ function getSignatureDisplayModel(signature?: PluginSignatureStatus): BadgeProps
 
   switch (signature) {
     case PluginSignatureStatus.internal:
-      return { text: 'Core', color: 'blue', tooltip: 'Core plugin that is bundled with Grafana' };
+      return { text: 'Core', color: 'blue', tooltip: 'Core plugin that is bundled with Plutono' };
     case PluginSignatureStatus.valid:
       return { text: 'Signed', icon: 'lock', color: 'green', tooltip: 'Signed and verified plugin' };
     case PluginSignatureStatus.invalid:

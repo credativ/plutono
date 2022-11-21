@@ -22,7 +22,7 @@ func TestIsEmail(t *testing.T) {
 		"please\x0Ano@example.org": {description: "new line", valid: false},
 
 		"abc@def.com":                 {description: "a simple valid email", valid: true},
-		"grapher+grafana@example.org": {description: "a gmail style alias", valid: true},
+		"grapher+plutono@example.org": {description: "a gmail style alias", valid: true},
 		"öhnej@example.se":            {description: "non-ASCII characters", valid: true},
 	}
 	for input, testcase := range emails {

@@ -1,4 +1,4 @@
-import { DataSourcePlugin } from '@grafana/data';
+import { DataSourcePlugin } from '@credativ/plutono-data';
 import { ZipkinDatasource } from './datasource';
 import { QueryField } from './QueryField';
 import { ConfigEditor } from './ConfigEditor';

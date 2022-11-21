@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from 'react';
 import { render, screen } from '@testing-library/react';
-import { EventsWithValidation } from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
+import { EventsWithValidation } from '@credativ/plutono-ui';
+import { SelectableValue } from '@credativ/plutono-data';
 import { getValueFromEventItem, promSettingsValidationEvents, PromSettings } from './PromSettings';
 import { createDefaultConfigOptions } from './mocks';
 

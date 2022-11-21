@@ -120,7 +120,7 @@ package panels
 	timeShift: string
 	// Tooltip settings.
 	tooltip: {
-		// * true - The hover tooltip shows all series in the graph.  Grafana
+		// * true - The hover tooltip shows all series in the graph.  Plutono
 		// highlights the series that you are hovering over in bold in the series
 		// list in the tooltip.
 		// * false - The hover tooltip shows only a single series, the one that you

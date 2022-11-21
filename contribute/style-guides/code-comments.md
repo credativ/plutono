@@ -1,6 +1,6 @@
-# Guidelines for code comments in grafana-* packages
+# Guidelines for code comments in plutono-* packages
 
-This document aims to give you some recommendation on how to add code comments to the exported code in the grafana packages.
+This document aims to give you some recommendation on how to add code comments to the exported code in the plutono packages.
 
 ## Table of Contents
 

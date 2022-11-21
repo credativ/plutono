@@ -1,14 +1,14 @@
 #!/bin/bash
 
 _circle_token=$1
-_grafana_version=$2
+_plutono_version=$2
 
-trigger_build_url="https://circleci.com/api/v1/project/grafana/grafana-docker/tree/master?circle-token=${_circle_token}"
+trigger_build_url="https://circleci.com/api/v1/project/plutono/plutono-docker/tree/master?circle-token=${_circle_token}"
 
 post_data=$(cat <<EOF
 {
   "build_parameters": {
-    "GRAFANA_VERSION": "${_grafana_version}"
+    "PLUTONO_VERSION": "${_plutono_version}"
   }
 }
 EOF

@@ -1,5 +1,5 @@
 import kbn from './kbn';
-import { DecimalCount, TimeZone } from '@grafana/data';
+import { DecimalCount, TimeZone } from '@credativ/plutono-data';
 
 interface ValueFormatTest {
   id: string;

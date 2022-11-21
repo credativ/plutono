@@ -1,8 +1,8 @@
 import { IScope } from 'angular';
 import _ from 'lodash';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@credativ/plutono-data';
 import { OrgRole, AppEventEmitter, CoreEvents } from 'app/types';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 
 import coreModule from '../../core/core_module';
 import config from '../../core/config';

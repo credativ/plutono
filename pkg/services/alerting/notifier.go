@@ -6,13 +6,13 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/imguploader"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/rendering"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/imguploader"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/rendering"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 // for stubbing in tests

@@ -1,5 +1,5 @@
-import { Field, PanelProps } from '@grafana/data';
-import { GraphNG, GraphNGLegendEvent, TooltipPlugin, ZoomPlugin } from '@grafana/ui';
+import { Field, PanelProps } from '@credativ/plutono-data';
+import { GraphNG, GraphNGLegendEvent, TooltipPlugin, ZoomPlugin } from '@credativ/plutono-ui';
 import { getFieldLinksForExplore } from 'app/features/explore/utils/links';
 import React, { useCallback } from 'react';
 import { changeSeriesColorConfigFactory } from './overrides/colorSeriesConfigFactory';

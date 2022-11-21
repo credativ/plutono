@@ -10,11 +10,11 @@ import (
 	"strings"
 	"time"
 
+	"github.com/credativ/plutono/pkg/components/null"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/util/errutil"
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/components/null"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/util/errutil"
 )
 
 const (
@@ -32,7 +32,7 @@ const (
 	predictableCSVWaveQuery           queryType = "predictable_csv_wave"
 	streamingClientQuery              queryType = "streaming_client"
 	liveQuery                         queryType = "live"
-	grafanaAPIQuery                   queryType = "grafana_api"
+	plutonoAPIQuery                   queryType = "plutono_api"
 	arrowQuery                        queryType = "arrow"
 	annotationsQuery                  queryType = "annotations"
 	tableStaticQuery                  queryType = "table_static"
@@ -137,13 +137,13 @@ Timestamps will line up evenly on timeStepSeconds (For example, 60 seconds means
 
 	p.registerScenario(&Scenario{
 		ID:      string(liveQuery),
-		Name:    "Grafana Live",
+		Name:    "Plutono Live",
 		handler: p.handleClientSideScenario,
 	})
 
 	p.registerScenario(&Scenario{
-		ID:      string(grafanaAPIQuery),
-		Name:    "Grafana API",
+		ID:      string(plutonoAPIQuery),
+		Name:    "Plutono API",
 		handler: p.handleClientSideScenario,
 	})
 

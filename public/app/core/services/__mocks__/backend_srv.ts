@@ -1,6 +1,6 @@
 import 'whatwg-fetch'; // fetch polyfill needed for Headers
 
-import { BackendSrvRequest, FetchResponse } from '@grafana/runtime';
+import { BackendSrvRequest, FetchResponse } from '@credativ/plutono-runtime';
 import { of } from 'rxjs';
 import { BackendSrv } from '../backend_srv';
 

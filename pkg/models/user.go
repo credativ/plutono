@@ -9,7 +9,7 @@ import (
 var (
 	ErrUserNotFound      = errors.New("user not found")
 	ErrUserAlreadyExists = errors.New("user already exists")
-	ErrLastGrafanaAdmin  = errors.New("cannot remove last grafana admin")
+	ErrLastPlutonoAdmin  = errors.New("cannot remove last plutono admin")
 )
 
 type Password string
@@ -88,7 +88,7 @@ type ChangeUserPasswordCommand struct {
 }
 
 type UpdateUserPermissionsCommand struct {
-	IsGrafanaAdmin bool
+	IsPlutonoAdmin bool
 	UserId         int64 `json:"-"`
 }
 
@@ -179,7 +179,7 @@ type SignedInUser struct {
 	Email          string
 	ApiKeyId       int64
 	OrgCount       int
-	IsGrafanaAdmin bool
+	IsPlutonoAdmin bool
 	IsAnonymous    bool
 	HelpFlags1     HelpFlags1
 	LastSeenAt     time.Time
@@ -205,7 +205,7 @@ type UpdateUserLastSeenAtCommand struct {
 }
 
 func (u *SignedInUser) HasRole(role RoleType) bool {
-	if u.IsGrafanaAdmin {
+	if u.IsPlutonoAdmin {
 		return true
 	}
 
@@ -223,7 +223,7 @@ type UserProfileDTO struct {
 	Login          string    `json:"login"`
 	Theme          string    `json:"theme"`
 	OrgId          int64     `json:"orgId"`
-	IsGrafanaAdmin bool      `json:"isGrafanaAdmin"`
+	IsPlutonoAdmin bool      `json:"isPlutonoAdmin"`
 	IsDisabled     bool      `json:"isDisabled"`
 	IsExternal     bool      `json:"isExternal"`
 	AuthLabels     []string  `json:"authLabels"`

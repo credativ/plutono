@@ -12,14 +12,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/remotecache"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/ldap"
-	"github.com/grafana/grafana/pkg/services/multildap"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/remotecache"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/ldap"
+	"github.com/credativ/plutono/pkg/services/multildap"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 const (
@@ -241,7 +241,7 @@ func (auth *AuthProxy) LoginViaLDAP() (int64, error) {
 		return 0, err
 	}
 
-	// Have to sync grafana and LDAP user during log in
+	// Have to sync plutono and LDAP user during log in
 	upsert := &models.UpsertUserCommand{
 		ReqContext:    auth.ctx,
 		SignupAllowed: auth.cfg.LDAPAllowSignup,

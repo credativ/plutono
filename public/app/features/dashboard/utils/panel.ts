@@ -4,7 +4,7 @@ import store from 'app/core/store';
 // Models
 import { DashboardModel } from 'app/features/dashboard/state/DashboardModel';
 import { PanelModel } from 'app/features/dashboard/state/PanelModel';
-import { TimeRange, AppEvents, rangeUtil, dateMath } from '@grafana/data';
+import { TimeRange, AppEvents, rangeUtil, dateMath } from '@credativ/plutono-data';
 
 // Utils
 import { isString as _isString } from 'lodash';
@@ -12,7 +12,7 @@ import appEvents from 'app/core/app_events';
 import config from 'app/core/config';
 
 // Services
-import { getTemplateSrv } from '@grafana/runtime';
+import { getTemplateSrv } from '@credativ/plutono-runtime';
 
 // Constants
 import { LS_PANEL_COPY_KEY, PANEL_BORDER } from 'app/core/constants';

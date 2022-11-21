@@ -9,7 +9,7 @@ import (
 
 var dateUnitPattern = regexp.MustCompile(`^(\d+)([dwMy])$`)
 
-// ParseInterval parses an interval with support for all units that Grafana uses.
+// ParseInterval parses an interval with support for all units that Plutono uses.
 // An interval is relative to the current wall time.
 func ParseInterval(inp string) (time.Duration, error) {
 	dur, period, err := parse(inp)
@@ -39,7 +39,7 @@ func ParseInterval(inp string) (time.Duration, error) {
 	return 0, fmt.Errorf("invalid interval %q", inp)
 }
 
-// ParseDuration parses a duration with support for all units that Grafana uses.
+// ParseDuration parses a duration with support for all units that Plutono uses.
 // Durations are independent of wall time.
 func ParseDuration(inp string) (time.Duration, error) {
 	dur, period, err := parse(inp)

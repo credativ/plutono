@@ -5,7 +5,7 @@ import { variableAdapters } from '../adapters';
 import { createTextBoxOptions } from './reducer';
 import { toVariableIdentifier, toVariablePayload, VariableIdentifier } from '../state/types';
 import { setOptionFromUrl } from '../state/actions';
-import { UrlQueryValue } from '@grafana/data';
+import { UrlQueryValue } from '@credativ/plutono-data';
 import { changeVariableProp } from '../state/sharedReducer';
 
 export const updateTextBoxVariableOptions = (identifier: VariableIdentifier): ThunkResult<void> => {

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { Card } from '../types';
-import { Icon, stylesFactory, useTheme } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { Icon, stylesFactory, useTheme } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { css } from 'emotion';
 import { cardContent, cardStyle, iconStyle } from './sharedStyles';
 
@@ -16,7 +16,7 @@ export const DocsCard: FC<Props> = ({ card }) => {
   return (
     <div className={styles.card}>
       <div className={cardContent}>
-        <a href={`${card.href}?utm_source=grafana_gettingstarted`}>
+        <a href={`${card.href}`}>
           <div className={styles.heading}>{card.done ? 'complete' : card.heading}</div>
           <h4 className={styles.title}>{card.title}</h4>
           <div>
@@ -24,19 +24,14 @@ export const DocsCard: FC<Props> = ({ card }) => {
           </div>
         </a>
       </div>
-      <a
-        href={`${card.learnHref}?utm_source=grafana_gettingstarted`}
-        className={styles.url}
-        target="_blank"
-        rel="noreferrer"
-      >
+      <a href={`${card.learnHref}`} className={styles.url} target="_blank" rel="noreferrer">
         Learn how in the docs <Icon name="external-link-alt" />
       </a>
     </div>
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme, complete: boolean) => {
+const getStyles = stylesFactory((theme: PlutonoTheme, complete: boolean) => {
   return {
     card: css`
       ${cardStyle(theme, complete)}

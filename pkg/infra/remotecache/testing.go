@@ -3,8 +3,8 @@ package remotecache
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/require"
 )
 

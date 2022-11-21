@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { LdapPermissions } from 'app/types';
-import { Icon } from '@grafana/ui';
+import { Icon } from '@credativ/plutono-ui';
 
 interface Props {
   permissions: LdapPermissions;
@@ -18,9 +18,9 @@ export const LdapUserPermissions: FC<Props> = ({ permissions }) => {
           </thead>
           <tbody>
             <tr>
-              <td className="width-16"> Grafana admin</td>
+              <td className="width-16"> Plutono admin</td>
               <td>
-                {permissions.isGrafanaAdmin ? (
+                {permissions.isPlutonoAdmin ? (
                   <>
                     <Icon name="shield" /> Yes
                   </>

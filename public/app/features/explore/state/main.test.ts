@@ -1,4 +1,4 @@
-import { serializeStateToUrlParam } from '@grafana/data/src/utils/url';
+import { serializeStateToUrlParam } from '@credativ/plutono-data/src/utils/url';
 import { exploreReducer, navigateToExplore, splitCloseAction } from './main';
 import { thunkTester } from 'test/core/thunk/thunkTester';
 import { PanelModel } from 'app/features/dashboard/state';
@@ -6,7 +6,7 @@ import { updateLocation } from '../../../core/actions';
 import { MockDataSourceApi } from '../../../../test/mocks/datasource_srv';
 import { ExploreId, ExploreItemState, ExploreState } from '../../../types';
 import { reducerTester } from '../../../../test/core/redux/reducerTester';
-import { ExploreUrlState } from '@grafana/data';
+import { ExploreUrlState } from '@credativ/plutono-data';
 
 const getNavigateToExploreContext = async (openInNewWindow?: (url: string) => void) => {
   const url = 'http://www.someurl.com';

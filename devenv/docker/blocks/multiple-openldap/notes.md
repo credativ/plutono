@@ -8,9 +8,9 @@ Any ldif files added to the prepopulate subdirectory will be automatically impor
 
 This blocks are here to help with testing multiple LDAP servers, for any other LDAP related development and testing "openldap" block should be used.
 
-## Enabling LDAP in Grafana
+## Enabling LDAP in Plutono
 
-Copy the ldap_dev.toml file in this folder into your `conf` folder (it is gitignored already). To enable it in the .ini file to get Grafana to use this block:
+Copy the ldap_dev.toml file in this folder into your `conf` folder (it is gitignored already). To enable it in the .ini file to get Plutono to use this block:
 
 ```ini
 [auth.ldap]

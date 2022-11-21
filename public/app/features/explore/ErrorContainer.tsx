@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { DataQueryError } from '@grafana/data';
-import { Icon } from '@grafana/ui';
+import { DataQueryError } from '@credativ/plutono-data';
+import { Icon } from '@credativ/plutono-ui';
 import { FadeIn } from 'app/core/components/Animations/FadeIn';
 
 export interface ErrorContainerProps {

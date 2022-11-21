@@ -5,14 +5,14 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/util/errutil"
 )
 
 // DashboardProvisioner is responsible for syncing dashboard from disk to
-// Grafana's database.
+// Plutono's database.
 type DashboardProvisioner interface {
 	Provision() error
 	PollChanges(ctx context.Context)
@@ -24,7 +24,7 @@ type DashboardProvisioner interface {
 // DashboardProvisionerFactory creates DashboardProvisioners based on input
 type DashboardProvisionerFactory func(string) (DashboardProvisioner, error)
 
-// Provisioner is responsible for syncing dashboard from disk to Grafana's database.
+// Provisioner is responsible for syncing dashboard from disk to Plutono's database.
 type Provisioner struct {
 	log         log.Logger
 	fileReaders []*FileReader

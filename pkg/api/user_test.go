@@ -6,10 +6,10 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -32,7 +32,7 @@ func TestUserAPIEndpoint_userLoggedIn(t *testing.T) {
 				Name:           "Daniel",
 				Login:          "danlee",
 				OrgId:          int64(2),
-				IsGrafanaAdmin: true,
+				IsPlutonoAdmin: true,
 				IsDisabled:     false,
 				IsExternal:     false,
 				UpdatedAt:      fakeNow,
@@ -60,7 +60,7 @@ func TestUserAPIEndpoint_userLoggedIn(t *testing.T) {
 				"login": "danlee",
 				"theme": "",
 				"orgId": 2,
-				"isGrafanaAdmin": true,
+				"isPlutonoAdmin": true,
 				"isDisabled": false,
 				"isExternal": true,
 				"authLabels": [
@@ -108,7 +108,7 @@ func TestUserAPIEndpoint_userLoggedIn(t *testing.T) {
 				"login": "danlee",
 				"theme": "light",
 				"orgId": 2,
-				"isGrafanaAdmin": true,
+				"isPlutonoAdmin": true,
 				"isDisabled": false,
 				"authLabels": null,
 				"isExternal": false,

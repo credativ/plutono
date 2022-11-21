@@ -10,21 +10,21 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/securejsondata"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/services/sqlstore/sqlutil"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/tsdb/sqleng"
+	"github.com/credativ/plutono/pkg/components/securejsondata"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/services/sqlstore/sqlutil"
+	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/tsdb/sqleng"
 	"xorm.io/xorm"
 
 	. "github.com/smartystreets/goconvey/convey"
 )
 
 // To run this test, set runMySqlTests=true
-// Or from the commandline: GRAFANA_TEST_DB=mysql go test -v ./pkg/tsdb/mysql
-// The tests require a MySQL db named grafana_ds_tests and a user/password grafana/password
+// Or from the commandline: PLUTONO_TEST_DB=mysql go test -v ./pkg/tsdb/mysql
+// The tests require a MySQL db named plutono_ds_tests and a user/password plutono/password
 // Use the docker/blocks/mysql_tests/docker-compose.yaml to spin up a
 // preconfigured MySQL server suitable for running these tests.
 // There is also a datasource and dashboard provisioned by devenv scripts that you can
@@ -1043,8 +1043,8 @@ func TestMySQL(t *testing.T) {
 
 func InitMySQLTestDB(t *testing.T) *xorm.Engine {
 	testDB := sqlutil.MySQLTestDB()
-	x, err := xorm.NewEngine(testDB.DriverName, strings.Replace(testDB.ConnStr, "/grafana_tests",
-		"/grafana_ds_tests", 1))
+	x, err := xorm.NewEngine(testDB.DriverName, strings.Replace(testDB.ConnStr, "/plutono_tests",
+		"/plutono_ds_tests", 1))
 	if err != nil {
 		t.Fatalf("Failed to init mysql db %v", err)
 	}

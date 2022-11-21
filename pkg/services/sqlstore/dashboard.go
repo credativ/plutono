@@ -4,15 +4,15 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/sqlstore/permissions"
-	"github.com/grafana/grafana/pkg/services/sqlstore/searchstore"
+	"github.com/credativ/plutono/pkg/services/sqlstore/permissions"
+	"github.com/credativ/plutono/pkg/services/sqlstore/searchstore"
 	"github.com/prometheus/client_golang/prometheus"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/search"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/search"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 var shadowSearchCounter = prometheus.NewCounterVec(

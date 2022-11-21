@@ -1,5 +1,5 @@
 import angular from 'angular';
-import { getTagColorsFromName } from '@grafana/ui';
+import { getTagColorsFromName } from '@credativ/plutono-ui';
 import $ from 'jquery';
 import coreModule from '../core_module';
 import 'vendor/tagsinput/bootstrap-tagsinput.js';

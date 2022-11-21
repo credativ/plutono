@@ -4,9 +4,9 @@ RELEASE_TYPE="${1:-}"
 GPG_PASS="${2:-}"
 RELEASE_TAG="${3:-}"
 DIST_PATH="${4:-}"
-GCP_DB_BUCKET="${5:-grafana-aptly-db}"
+GCP_DB_BUCKET="${5:-plutono-aptly-db}"
 
-REPO="grafana"
+REPO="plutono"
 
 if [ -z "$RELEASE_TYPE" ] || [ -z "$GPG_PASS" ] || [ -z "$DIST_PATH" ]; then
     echo "Both RELEASE_TYPE (arg 1), GPG_PASS (arg 2) and DIST_PATH (arg 4) has to be set"
@@ -36,7 +36,7 @@ gsutil -m rsync -r -d "gs://$GCP_DB_BUCKET/$RELEASE_TYPE" /deb-repo/db
 
 # Add the new release to the repo
 cp "$DIST_PATH"/*.deb /deb-repo/tmp
-rm /deb-repo/tmp/grafana_latest*.deb || true
+rm /deb-repo/tmp/plutono_latest*.deb || true
 aptly repo add "$REPO" /deb-repo/tmp #adds too many packages in enterprise
 
 # Setup signing and sign the repo
@@ -49,8 +49,8 @@ rm /tmp/sign-this.asc || true
 ./scripts/build/update_repo/unlock-gpg-key.sh "$GPG_PASS"
 rm /tmp/sign-this /tmp/sign-this.asc
 
-aptly publish update stable filesystem:repo:grafana
-aptly publish update beta filesystem:repo:grafana
+aptly publish update stable filesystem:repo:plutono
+aptly publish update beta filesystem:repo:plutono
 
 # usage:
 #

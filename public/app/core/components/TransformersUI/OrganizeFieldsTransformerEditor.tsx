@@ -4,16 +4,16 @@ import { DragDropContext, Draggable, Droppable, DropResult } from 'react-beautif
 import {
   DataFrame,
   DataTransformerID,
-  GrafanaTheme,
+  PlutonoTheme,
   standardTransformers,
   TransformerRegistryItem,
   TransformerUIProps,
   getFieldDisplayName,
-} from '@grafana/data';
-import { stylesFactory, useTheme, Input, IconButton, Icon } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { stylesFactory, useTheme, Input, IconButton, Icon } from '@credativ/plutono-ui';
 
-import { OrganizeFieldsTransformerOptions } from '@grafana/data/src/transformations/transformers/organize';
-import { createOrderFieldsComparer } from '@grafana/data/src/transformations/transformers/order';
+import { OrganizeFieldsTransformerOptions } from '@credativ/plutono-data/src/transformations/transformers/organize';
+import { createOrderFieldsComparer } from '@credativ/plutono-data/src/transformations/transformers/order';
 
 interface OrganizeFieldsTransformerEditorProps extends TransformerUIProps<OrganizeFieldsTransformerOptions> {}
 
@@ -162,7 +162,7 @@ const DraggableFieldName: React.FC<DraggableFieldProps> = ({
 
 DraggableFieldName.displayName = 'DraggableFieldName';
 
-const getFieldNameStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getFieldNameStyles = stylesFactory((theme: PlutonoTheme) => ({
   toggle: css`
     margin: 0 8px;
     color: ${theme.colors.textWeak};

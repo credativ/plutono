@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/validations"
+	"github.com/credativ/plutono/pkg/services/validations"
 
 	"github.com/stretchr/testify/require"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/models"
 	"github.com/stretchr/testify/assert"
 )
 

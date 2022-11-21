@@ -3,8 +3,8 @@ package ldap
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
 	. "github.com/smartystreets/goconvey/convey"
 	"gopkg.in/ldap.v3"
 )
@@ -146,7 +146,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 		})
 	})
 
-	Convey("validateGrafanaUser()", t, func() {
+	Convey("validatePlutonoUser()", t, func() {
 		Convey("Returns error when user does not belong in any of the specified LDAP groups", func() {
 			server := &Server{
 				Config: &ServerConfig{
@@ -163,7 +163,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 				Login: "markelog",
 			}
 
-			result := server.validateGrafanaUser(user)
+			result := server.validatePlutonoUser(user)
 
 			So(result, ShouldEqual, ErrInvalidCredentials)
 		})
@@ -180,7 +180,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 				Login: "markelog",
 			}
 
-			result := server.validateGrafanaUser(user)
+			result := server.validatePlutonoUser(user)
 
 			So(result, ShouldBeNil)
 		})
@@ -204,7 +204,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 				},
 			}
 
-			result := server.validateGrafanaUser(user)
+			result := server.validatePlutonoUser(user)
 
 			So(result, ShouldBeNil)
 		})
@@ -238,7 +238,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 		Convey("it should allow single bind", func() {
 			server := &Server{
 				Config: &ServerConfig{
-					BindDN: "cn=%s,dc=grafana,dc=org",
+					BindDN: "cn=%s,dc=plutono,dc=org",
 				},
 			}
 
@@ -249,7 +249,7 @@ func TestLDAPPrivateMethods(t *testing.T) {
 		Convey("it should not allow single bind", func() {
 			server := &Server{
 				Config: &ServerConfig{
-					BindDN: "cn=admin,dc=grafana,dc=org",
+					BindDN: "cn=admin,dc=plutono,dc=org",
 				},
 			}
 
@@ -262,12 +262,12 @@ func TestLDAPPrivateMethods(t *testing.T) {
 		Convey("it should allow single bind", func() {
 			server := &Server{
 				Config: &ServerConfig{
-					BindDN: "cn=%s,dc=grafana,dc=org",
+					BindDN: "cn=%s,dc=plutono,dc=org",
 				},
 			}
 
 			result := server.singleBindDN("test")
-			So(result, ShouldEqual, "cn=test,dc=grafana,dc=org")
+			So(result, ShouldEqual, "cn=test,dc=plutono,dc=org")
 		})
 	})
 }

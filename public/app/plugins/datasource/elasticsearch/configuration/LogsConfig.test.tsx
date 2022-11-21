@@ -2,7 +2,7 @@ import React from 'react';
 import { mount, shallow } from 'enzyme';
 import { LogsConfig } from './LogsConfig';
 import { createDefaultConfigOptions } from './mocks';
-import { LegacyForms } from '@grafana/ui';
+import { LegacyForms } from '@credativ/plutono-ui';
 const { FormField } = LegacyForms;
 
 describe('ElasticDetails', () => {

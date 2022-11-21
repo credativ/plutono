@@ -1,10 +1,10 @@
-import { GrafanaTheme } from '@grafana/data';
-import { Icon, InlineSegmentGroup, stylesFactory, useTheme } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { Icon, InlineSegmentGroup, stylesFactory, useTheme } from '@credativ/plutono-ui';
 import { css, cx } from 'emotion';
 import React, { FunctionComponent, useState } from 'react';
 import { segmentStyles } from './styles';
 
-const getStyles = stylesFactory((theme: GrafanaTheme, hidden: boolean) => {
+const getStyles = stylesFactory((theme: PlutonoTheme, hidden: boolean) => {
   return {
     wrapper: css`
       display: flex;

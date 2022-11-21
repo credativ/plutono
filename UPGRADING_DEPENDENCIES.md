@@ -5,22 +5,22 @@ Upgrading Go or Node.js requires making changes in many different files. See bel
 ## Go
 
 - CircleCi
-- `grafana/build-container`
+- `plutono/build-container`
 - Appveyor
 - Dockerfile
 
 ## Node.js
 
 - CircleCI
-- `grafana/build-container`
+- `plutono/build-container`
 - Appveyor
 - Dockerfile
 
 ## Go dependencies
 
-The Grafana project uses [Go modules](https://golang.org/cmd/go/#hdr-Modules__module_versions__and_more) to manage dependencies on external packages. This requires a working Go environment with version 1.11 or greater installed.
+The Plutono project uses [Go modules](https://golang.org/cmd/go/#hdr-Modules__module_versions__and_more) to manage dependencies on external packages. This requires a working Go environment with version 1.11 or greater installed.
 
-> **Note:** Since most developers of Grafana still use the `GOPATH` we need to specify `GO111MODULE=on` to make `go mod` and `got get` work as intended. If you have setup Grafana outside of the `GOPATH` on your machine you can skip `GO111MODULE=on` when running the commands below.
+> **Note:** Since most developers of Plutono still use the `GOPATH` we need to specify `GO111MODULE=on` to make `go mod` and `got get` work as intended. If you have setup Plutono outside of the `GOPATH` on your machine you can skip `GO111MODULE=on` when running the commands below.
 
 To add or update a new dependency, use the `go get` command:
 
@@ -62,13 +62,13 @@ Our builds run on CircleCI through our build script.
 
 - nodejs
 - golang
-- grafana/build-container (our custom docker build container)
+- plutono/build-container (our custom docker build container)
 
-### grafana/build-container
+### plutono/build-container
 
 The main build step (in CircleCI) is built using a custom build container that comes pre-baked with some of the necessary dependencies.
 
-Link: [grafana/build-container](https://github.com/grafana/grafana/tree/master/scripts/build/ci-build)
+Link: [plutono/build-container](https://github.com/credativ/plutono/tree/master/scripts/build/ci-build)
 
 #### Dependencies
 
@@ -92,7 +92,7 @@ Master and release builds trigger test runs on Appveyors build environment so th
 
 ### Dockerfile
 
-There is a Docker build for Grafana in the root of the project that allows anyone to build Grafana just using Docker.
+There is a Docker build for Plutono in the root of the project that allows anyone to build Plutono just using Docker.
 
 #### Files
 
@@ -105,4 +105,4 @@ There is a Docker build for Grafana in the root of the project that allows anyon
 
 ### Local developer environments
 
-Please send out a notice in the grafana-dev slack channel when updating Go or Node.js to make it easier for everyone to update their local developer environments.
+Please send out a notice in the plutono-dev slack channel when updating Go or Node.js to make it easier for everyone to update their local developer environments.

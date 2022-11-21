@@ -1,5 +1,5 @@
-import { PanelPlugin } from '@grafana/data';
-import { GraphFieldConfig } from '@grafana/ui';
+import { PanelPlugin } from '@credativ/plutono-data';
+import { GraphFieldConfig } from '@credativ/plutono-ui';
 import { TimeSeriesPanel } from './TimeSeriesPanel';
 import { graphPanelChangedHandler } from './migrations';
 import { Options } from './types';

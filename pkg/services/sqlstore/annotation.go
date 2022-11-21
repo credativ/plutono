@@ -7,8 +7,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/annotations"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/annotations"
 )
 
 // Update the item so that EpochEnd >= Epoch

@@ -1,5 +1,5 @@
 import { ThunkResult } from '../../../types';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { OrgUser } from 'app/types';
 import { inviteesLoaded, usersLoaded } from './reducers';
 

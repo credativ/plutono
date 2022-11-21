@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { coreModule } from 'app/core/core';
 import { MetricsPanelCtrl } from 'app/plugins/sdk';
-import { AnnotationEvent, dateTime } from '@grafana/data';
+import { AnnotationEvent, dateTime } from '@credativ/plutono-data';
 import { AnnotationsSrv } from './all';
 
 export class EventEditorCtrl {

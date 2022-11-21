@@ -3,7 +3,7 @@ import React, { FC, useEffect, useState, memo } from 'react';
 
 import { PrometheusDatasource } from '../datasource';
 import { PromQuery } from '../types';
-import { DataQueryRequest, PanelData, textUtil } from '@grafana/data';
+import { DataQueryRequest, PanelData, textUtil } from '@credativ/plutono-data';
 
 interface Props {
   datasource: PrometheusDatasource;

@@ -4,10 +4,10 @@ import config from 'app/core/config';
 import { updateLocation } from 'app/core/actions';
 import { connect } from 'react-redux';
 import { StoreState } from 'app/types';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { hot } from 'react-hot-loader';
 import appEvents from 'app/core/app_events';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@credativ/plutono-data';
 
 const isOauthEnabled = () => {
   return !!config.oauth && Object.keys(config.oauth).length > 0;
@@ -66,7 +66,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
       getBackendSrv()
         .put('/api/user/password', pw)
         .then(() => {
-          this.toGrafana();
+          this.toPlutono();
         })
         .catch((err: any) => console.error(err));
     }
@@ -80,7 +80,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
     getBackendSrv()
       .post('/api/user/password/reset', resetModel)
       .then(() => {
-        this.toGrafana();
+        this.toPlutono();
       });
   };
 
@@ -94,7 +94,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
       .then((result: any) => {
         this.result = result;
         if (formModel.password !== 'admin' || config.ldapEnabled || config.authProxyEnabled) {
-          this.toGrafana();
+          this.toPlutono();
           return;
         } else {
           this.changeView();
@@ -113,7 +113,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
     });
   };
 
-  toGrafana = () => {
+  toPlutono = () => {
     // Use window.location.href to force page reload
     if (this.result.redirectUrl) {
       if (config.appSubUrl !== '' && !this.result.redirectUrl.startsWith(config.appSubUrl)) {
@@ -129,7 +129,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
   render() {
     const { children } = this.props;
     const { isLoggingIn, isChangingPassword } = this.state;
-    const { login, toGrafana, changePassword } = this;
+    const { login, toPlutono, changePassword } = this;
     const { loginHint, passwordHint, disableLoginForm, ldapEnabled, authProxyEnabled, disableUserSignUp } = config;
 
     return (
@@ -145,7 +145,7 @@ export class LoginCtrl extends PureComponent<Props, State> {
           login,
           isLoggingIn,
           changePassword,
-          skipPasswordChange: toGrafana,
+          skipPasswordChange: toPlutono,
           isChangingPassword,
         })}
       </>

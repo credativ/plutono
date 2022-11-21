@@ -4,11 +4,11 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/alerting"
 )
 
 func init() {
@@ -97,15 +97,15 @@ func (sn *SensuNotifier) Notify(evalContext *alerting.EvalContext) error {
 	// Sensu alerts cannot have spaces in them
 	bodyJSON.Set("name", strings.ReplaceAll(evalContext.Rule.Name, " ", "_"))
 	// Sensu alerts require a source. We set it to the user-specified value (optional),
-	// else we fallback and use the grafana ruleID.
+	// else we fallback and use the plutono ruleID.
 	if sn.Source != "" {
 		bodyJSON.Set("source", sn.Source)
 	} else {
-		bodyJSON.Set("source", "grafana_rule_"+strconv.FormatInt(evalContext.Rule.ID, 10))
+		bodyJSON.Set("source", "plutono_rule_"+strconv.FormatInt(evalContext.Rule.ID, 10))
 	}
 	// Finally, sensu expects an output
 	// We set it to a default output
-	bodyJSON.Set("output", "Grafana Metric Condition Met")
+	bodyJSON.Set("output", "Plutono Metric Condition Met")
 	bodyJSON.Set("evalMatches", evalContext.EvalMatches)
 
 	switch evalContext.Rule.State {

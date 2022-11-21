@@ -1,7 +1,7 @@
-import { config } from '@grafana/runtime';
+import { config } from '@credativ/plutono-runtime';
 import { getTimeSrv } from 'app/features/dashboard/services/TimeSrv';
 import { createShortLink } from 'app/core/utils/shortLinks';
-import { PanelModel, dateTime, urlUtil } from '@grafana/data';
+import { PanelModel, dateTime, urlUtil } from '@credativ/plutono-data';
 
 export function buildParams(useCurrentTimeRange: boolean, selectedTheme?: string, panel?: PanelModel) {
   let params = urlUtil.getUrlSearchParams();

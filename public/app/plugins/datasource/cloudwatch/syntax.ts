@@ -1,5 +1,5 @@
 import { Grammar } from 'prismjs';
-import { CompletionItem } from '@grafana/ui';
+import { CompletionItem } from '@credativ/plutono-ui';
 
 export const QUERY_COMMANDS: CompletionItem[] = [
   {

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { LinkButton, VerticalGroup } from '@grafana/ui';
+import { LinkButton, VerticalGroup } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 import { getConfig } from 'app/core/config';
 
@@ -11,7 +11,7 @@ export const UserSignup: FC<{}> = () => {
         margin-top: 8px;
       `}
     >
-      <span>New to Grafana?</span>
+      <span>New to Plutono?</span>
       <LinkButton
         className={css`
           width: 100%;

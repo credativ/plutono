@@ -7,9 +7,9 @@ import {
   PanelPlugin,
   standardEditorsRegistry,
   standardFieldConfigEditorRegistry,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { mockStandardFieldConfigOptions } from '../../../../../test/helpers/fieldConfig';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 interface FakeFieldOptions {
   a: boolean;

@@ -1,4 +1,4 @@
-import { DataQuery, DataSourceJsonData, SelectableValue } from '@grafana/data';
+import { DataQuery, DataSourceJsonData, SelectableValue } from '@credativ/plutono-data';
 
 export enum AuthType {
   JWT = 'jwt',

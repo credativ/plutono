@@ -7,7 +7,7 @@ import (
 
 	. "github.com/smartystreets/goconvey/convey"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 type sqlStoreTest struct {

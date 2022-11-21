@@ -5,8 +5,8 @@ import {
   FieldMatcherID,
   FieldType,
   toDataFrame,
-} from '@grafana/data';
-import { GraphNGLegendEvent, GraphNGLegendEventMode } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { GraphNGLegendEvent, GraphNGLegendEventMode } from '@credativ/plutono-ui';
 import { hideSeriesConfigFactory } from './hideSeriesConfigFactory';
 
 describe('hideSeriesConfigFactory', () => {

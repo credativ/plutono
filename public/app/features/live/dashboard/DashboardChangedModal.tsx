@@ -1,10 +1,10 @@
 import React, { PureComponent } from 'react';
-import { Modal, stylesFactory } from '@grafana/ui';
+import { Modal, stylesFactory } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 import { dashboardWatcher } from './dashboardWatcher';
-import { config } from '@grafana/runtime';
+import { config } from '@credativ/plutono-runtime';
 import { DashboardEvent, DashboardEventAction } from './types';
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 
 interface Props {
   event?: DashboardEvent;
@@ -43,7 +43,7 @@ export class DashboardChangedModal extends PureComponent<Props, State> {
 
   acceptDelete: ActionInfo = {
     label: 'Discard Local changes',
-    description: 'view grafana homepage',
+    description: 'view plutono homepage',
     action: () => {
       // Navigate to the root URL
       document.location.href = config.appUrl;
@@ -96,7 +96,7 @@ export class DashboardChangedModal extends PureComponent<Props, State> {
   }
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     modal: css`
       width: 500px;

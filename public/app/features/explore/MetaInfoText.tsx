@@ -1,9 +1,9 @@
 import React, { memo, useContext } from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { stylesFactory, ThemeContext } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { stylesFactory, ThemeContext } from '@credativ/plutono-ui';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   metaContainer: css`
     flex: 1;
     color: ${theme.colors.textWeak};

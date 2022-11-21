@@ -1,8 +1,8 @@
-import { FieldColorModeId, FieldConfigProperty, PanelPlugin } from '@grafana/data';
+import { FieldColorModeId, FieldConfigProperty, PanelPlugin } from '@credativ/plutono-data';
 import { PieChartPanel } from './PieChartPanel';
 import { PieChartOptions } from './types';
 import { addStandardDataReduceOptions } from '../stat/types';
-import { LegendDisplayMode, PieChartType, PieChartLabels, PieChartLegendValues } from '@grafana/ui';
+import { LegendDisplayMode, PieChartType, PieChartLabels, PieChartLegendValues } from '@credativ/plutono-ui';
 import { PieChartPanelChangedHandler } from './migrations';
 
 export const plugin = new PanelPlugin<PieChartOptions>(PieChartPanel)

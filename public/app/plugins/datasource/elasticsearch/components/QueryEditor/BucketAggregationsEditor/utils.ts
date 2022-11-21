@@ -7,7 +7,7 @@ import {
   MetricAggregation,
   Percentiles,
 } from '../MetricAggregationsEditor/aggregations';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 
 export const bucketAggregationConfig: BucketsConfiguration = {
   terms: {

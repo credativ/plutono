@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { DataLinks } from './DataLinks';
-import { Button } from '@grafana/ui';
+import { Button } from '@credativ/plutono-ui';
 import { DataLink } from './DataLink';
 import { act } from 'react-dom/test-utils';
 

@@ -1,6 +1,6 @@
 import { FC, ReactElement, useEffect, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { PanelMenuItem } from '@grafana/data';
+import { PanelMenuItem } from '@credativ/plutono-data';
 
 import { DashboardModel, PanelModel } from '../../state';
 import { StoreState } from '../../../../types';

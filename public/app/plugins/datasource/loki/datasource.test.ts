@@ -1,7 +1,7 @@
 import { of, throwError } from 'rxjs';
 import { take } from 'rxjs/operators';
-import { AnnotationQueryRequest, CoreApp, DataFrame, dateTime, FieldCache, TimeSeries } from '@grafana/data';
-import { BackendSrvRequest, FetchResponse } from '@grafana/runtime';
+import { AnnotationQueryRequest, CoreApp, DataFrame, dateTime, FieldCache, TimeSeries } from '@credativ/plutono-data';
+import { BackendSrvRequest, FetchResponse } from '@credativ/plutono-runtime';
 
 import LokiDatasource from './datasource';
 import { LokiQuery, LokiResponse, LokiResultType } from './types';
@@ -13,9 +13,9 @@ import { initialCustomVariableModelState } from '../../../features/variables/cus
 import { makeMockLokiDatasource } from './mocks';
 import { createFetchResponse } from 'test/helpers/createFetchResponse';
 
-jest.mock('@grafana/runtime', () => ({
+jest.mock('@credativ/plutono-runtime', () => ({
   // @ts-ignore
-  ...jest.requireActual('@grafana/runtime'),
+  ...jest.requireActual('@credativ/plutono-runtime'),
   getBackendSrv: () => backendSrv,
 }));
 
@@ -90,7 +90,7 @@ describe('LokiDatasource', () => {
     });
 
     it('should use default intervalMs if one is not provided', () => {
-      const target = { expr: '{job="grafana"}', refId: 'B' };
+      const target = { expr: '{job="plutono"}', refId: 'B' };
       const raw = { from: 'now', to: 'now-1h' };
       const range = { from: dateTime(), to: dateTime(), raw: raw };
       const options = {
@@ -104,7 +104,7 @@ describe('LokiDatasource', () => {
     });
 
     it('should use provided intervalMs', () => {
-      const target = { expr: '{job="grafana"}', refId: 'B' };
+      const target = { expr: '{job="plutono"}', refId: 'B' };
       const raw = { from: 'now', to: 'now-1h' };
       const range = { from: dateTime(), to: dateTime(), raw: raw };
       const options = {
@@ -119,7 +119,7 @@ describe('LokiDatasource', () => {
     });
 
     it('should set the minimal step to 1ms', () => {
-      const target = { expr: '{job="grafana"}', refId: 'B' };
+      const target = { expr: '{job="plutono"}', refId: 'B' };
       const raw = { from: 'now', to: 'now-1h' };
       const range = { from: dateTime('2020-10-14T00:00:00'), to: dateTime('2020-10-14T00:00:01'), raw: raw };
       const options = {
@@ -202,8 +202,8 @@ describe('LokiDatasource', () => {
       return { ds, options };
     }
 
-    const metricsQuery = 'rate({job="grafana"}[10m])';
-    const logsQuery = '{job="grafana"} |= "foo"';
+    const metricsQuery = 'rate({job="plutono"}[10m])';
+    const logsQuery = '{job="plutono"} |= "foo"';
 
     it('should run logs instant if only instant is selected', async () => {
       const { ds, options } = setup(logsQuery, CoreApp.Explore, true, false);

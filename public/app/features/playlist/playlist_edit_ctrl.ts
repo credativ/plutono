@@ -1,10 +1,10 @@
 import _ from 'lodash';
 import coreModule from '../../core/core_module';
 import { ILocationService, IScope } from 'angular';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { NavModelSrv } from 'app/core/nav_model_srv';
 import { AppEventEmitter } from 'app/types';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@credativ/plutono-data';
 import { promiseToDigest } from '../../core/utils/promiseToDigest';
 
 export interface PlaylistItem {

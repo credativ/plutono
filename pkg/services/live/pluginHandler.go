@@ -2,11 +2,11 @@ package live
 
 import (
 	"github.com/centrifugal/centrifuge"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
 )
 
-// PluginHandler manages all the `grafana/dashboard/*` channels
+// PluginHandler manages all the `plutono/dashboard/*` channels
 type PluginHandler struct {
 	Plugin *plugins.PluginBase
 }

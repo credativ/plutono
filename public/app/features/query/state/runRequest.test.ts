@@ -7,12 +7,12 @@ import {
   LoadingState,
   PanelData,
   DataTopic,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { Observable, Subscriber, Subscription } from 'rxjs';
 import { runRequest } from './runRequest';
 import { deepFreeze } from '../../../../test/core/redux/reducerTester';
 import { DashboardModel } from '../../dashboard/state/DashboardModel';
-import { setEchoSrv } from '@grafana/runtime';
+import { setEchoSrv } from '@credativ/plutono-runtime';
 import { Echo } from '../../../core/services/echo/Echo';
 
 jest.mock('app/core/services/backend_srv');

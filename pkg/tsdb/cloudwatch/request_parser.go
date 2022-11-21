@@ -10,8 +10,8 @@ import (
 	"time"
 
 	"github.com/aws/aws-sdk-go/aws"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/tsdb"
 )
 
 // Parses the json queries and returns a requestQuery. The requestQuery has a 1 to 1 mapping to a query editor row
@@ -97,7 +97,7 @@ func parseRequestQuery(model *simplejson.Json, refId string, startTime time.Time
 	queryType := model.Get("type").MustString()
 	if queryType == "" {
 		// If no type is provided we assume we are called by alerting service, which requires to return data!
-		// Note, this is sort of a hack, but the official Grafana interfaces do not carry the information
+		// Note, this is sort of a hack, but the official Plutono interfaces do not carry the information
 		// who (which service) called the TsdbQueryEndpoint.Query(...) function.
 		returnData = true
 	}

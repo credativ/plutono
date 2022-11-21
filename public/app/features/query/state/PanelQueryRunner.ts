@@ -4,7 +4,7 @@ import { MonoTypeOperatorFunction, Observable, of, ReplaySubject, Unsubscribable
 import { map, mergeMap } from 'rxjs/operators';
 
 // Services & Utils
-import { getTemplateSrv } from '@grafana/runtime';
+import { getTemplateSrv } from '@credativ/plutono-runtime';
 import { getDatasourceSrv } from 'app/features/plugins/datasource_srv';
 import { preProcessPanelData, runRequest } from './runRequest';
 import { isSharedDashboardQuery, runSharedRequest } from '../../../plugins/datasource/dashboard';
@@ -26,7 +26,7 @@ import {
   TimeRange,
   TimeZone,
   transformDataFrame,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 export interface QueryRunnerOptions<
   TQuery extends DataQuery = DataQuery,

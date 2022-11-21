@@ -5,8 +5,8 @@
         - mysql_version=${mysql_version}
     environment:
       MYSQL_ROOT_PASSWORD: rootpass
-      MYSQL_DATABASE: grafana_tests
-      MYSQL_USER: grafana
+      MYSQL_DATABASE: plutono_tests
+      MYSQL_USER: plutono
       MYSQL_PASSWORD: password
     ports:
       - "3306:3306"

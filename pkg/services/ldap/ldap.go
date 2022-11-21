@@ -11,9 +11,9 @@ import (
 	"strconv"
 	"strings"
 
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
 	"github.com/davecgh/go-spew/spew"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
 	"gopkg.in/ldap.v3"
 )
 
@@ -157,11 +157,11 @@ func (server *Server) Close() {
 // Login the user.
 // There are several cases -
 // 1. "admin" user
-// Bind the "admin" user (defined in Grafana config file) which has the search privileges
+// Bind the "admin" user (defined in Plutono config file) which has the search privileges
 // in LDAP server, then we search the targeted user through that bind, then the second
 // perform the bind via passed login/password.
 // 2. Single bind
-// // If all the users meant to be used with Grafana have the ability to search in LDAP server
+// // If all the users meant to be used with Plutono have the ability to search in LDAP server
 // then we bind with LDAP server with targeted login/password
 // and then search for the said user in order to retrieve all the information about them
 // 3. Unauthenticated bind
@@ -213,7 +213,7 @@ func (server *Server) Login(query *models.LoginUserQuery) (
 	}
 
 	user := users[0]
-	if err := server.validateGrafanaUser(user); err != nil {
+	if err := server.validatePlutonoUser(user); err != nil {
 		return nil, err
 	}
 
@@ -331,10 +331,10 @@ func (server *Server) users(logins []string) (
 	return result.Entries, nil
 }
 
-// validateGrafanaUser validates user access.
+// validatePlutonoUser validates user access.
 // If there are no ldap group mappings access is true
 // otherwise a single group must match
-func (server *Server) validateGrafanaUser(user *models.ExternalUserInfo) error {
+func (server *Server) validatePlutonoUser(user *models.ExternalUserInfo) error {
 	if len(server.Config.Groups) > 0 && len(user.OrgRoles) < 1 {
 		server.log.Error(
 			"User does not belong in any of the specified LDAP groups",
@@ -394,8 +394,8 @@ func (server *Server) getSearchRequest(
 	return searchRequest
 }
 
-// buildGrafanaUser extracts info from UserInfo model to ExternalUserInfo
-func (server *Server) buildGrafanaUser(user *ldap.Entry) (*models.ExternalUserInfo, error) {
+// buildPlutonoUser extracts info from UserInfo model to ExternalUserInfo
+func (server *Server) buildPlutonoUser(user *ldap.Entry) (*models.ExternalUserInfo, error) {
 	memberOf, err := server.getMemberOf(user)
 	if err != nil {
 		return nil, err
@@ -426,8 +426,8 @@ func (server *Server) buildGrafanaUser(user *ldap.Entry) (*models.ExternalUserIn
 
 		if isMemberOf(memberOf, group.GroupDN) {
 			extUser.OrgRoles[group.OrgId] = group.OrgRole
-			if extUser.IsGrafanaAdmin == nil || !*extUser.IsGrafanaAdmin {
-				extUser.IsGrafanaAdmin = group.IsGrafanaAdmin
+			if extUser.IsPlutonoAdmin == nil || !*extUser.IsPlutonoAdmin {
+				extUser.IsPlutonoAdmin = group.IsPlutonoAdmin
 			}
 		}
 	}
@@ -562,7 +562,7 @@ func (server *Server) serializeUsers(
 	var serialized []*models.ExternalUserInfo
 
 	for _, user := range entries {
-		extUser, err := server.buildGrafanaUser(user)
+		extUser, err := server.buildPlutonoUser(user)
 		if err != nil {
 			return nil, err
 		}

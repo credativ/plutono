@@ -3,8 +3,8 @@ package middleware
 import (
 	"strings"
 
+	"github.com/credativ/plutono/pkg/infra/log"
 	"github.com/go-macaron/gzip"
-	"github.com/grafana/grafana/pkg/infra/log"
 	"gopkg.in/macaron.v1"
 )
 

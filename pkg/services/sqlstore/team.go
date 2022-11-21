@@ -6,8 +6,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 func init() {
@@ -27,7 +27,7 @@ func init() {
 
 func getFilteredUsers(signedInUser *models.SignedInUser, hiddenUsers map[string]struct{}) []string {
 	filteredUsers := make([]string, 0, len(hiddenUsers))
-	if signedInUser == nil || signedInUser.IsGrafanaAdmin {
+	if signedInUser == nil || signedInUser.IsPlutonoAdmin {
 		return filteredUsers
 	}
 

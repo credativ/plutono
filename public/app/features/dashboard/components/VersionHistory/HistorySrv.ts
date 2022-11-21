@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import coreModule from 'app/core/core_module';
 import { DashboardModel } from '../../state/DashboardModel';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 
 export interface HistoryListOpts {
   limit: number;

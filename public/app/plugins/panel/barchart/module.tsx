@@ -5,7 +5,7 @@ import {
   FieldType,
   PanelPlugin,
   VizOrientation,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { BarChartPanel } from './BarChartPanel';
 import {
   BarChartFieldConfig,
@@ -13,9 +13,9 @@ import {
   BarStackingMode,
   BarValueVisibility,
   graphFieldOptions,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import { addAxisConfig, addHideFrom, addLegendOptions } from '../timeseries/config';
-import { defaultBarChartFieldConfig } from '@grafana/ui/src/components/BarChart/types';
+import { defaultBarChartFieldConfig } from '@credativ/plutono-ui/src/components/BarChart/types';
 
 export const plugin = new PanelPlugin<BarChartOptions, BarChartFieldConfig>(BarChartPanel)
   .useFieldConfig({

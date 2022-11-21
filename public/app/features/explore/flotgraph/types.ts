@@ -1,5 +1,5 @@
-import { GraphTooltipOptions, LegendDisplayMode, LegendPlacement } from '@grafana/ui';
-import { YAxis } from '@grafana/data';
+import { GraphTooltipOptions, LegendDisplayMode, LegendPlacement } from '@credativ/plutono-ui';
+import { YAxis } from '@credativ/plutono-data';
 
 export interface SeriesOptions {
   color?: string;

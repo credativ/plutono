@@ -3,7 +3,7 @@ import React, { memo } from 'react';
 import { css, cx } from 'emotion';
 
 // Types
-import { InlineFormLabel, RadioButtonGroup } from '@grafana/ui';
+import { InlineFormLabel, RadioButtonGroup } from '@credativ/plutono-ui';
 import { PromQuery } from '../types';
 import { PromExemplarField } from './PromExemplarField';
 import { PrometheusDatasource } from '../datasource';

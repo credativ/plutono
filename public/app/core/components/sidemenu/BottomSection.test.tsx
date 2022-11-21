@@ -22,7 +22,7 @@ jest.mock('../../config', () => ({
   },
   user: {
     orgCount: 5,
-    orgName: 'Grafana',
+    orgName: 'Plutono',
   },
 }));
 
@@ -30,7 +30,7 @@ jest.mock('app/core/services/context_srv', () => ({
   contextSrv: {
     sidemenu: true,
     isSignedIn: false,
-    isGrafanaAdmin: false,
+    isPlutonoAdmin: false,
     hasEditPermissionFolders: false,
   },
 }));

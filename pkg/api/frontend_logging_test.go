@@ -10,13 +10,13 @@ import (
 	"testing"
 	"time"
 
+	"github.com/credativ/plutono/pkg/api/frontendlogging"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/api/routing"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/getsentry/sentry-go"
-	"github.com/grafana/grafana/pkg/api/frontendlogging"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
 	log "github.com/inconshreveable/log15"
 
 	"github.com/stretchr/testify/assert"
@@ -46,7 +46,7 @@ func logSentryEventScenario(t *testing.T, desc string, event frontendlogging.Fro
 
 		sc := setupScenarioContext(t, "/log")
 
-		cdnRootURL, e := url.Parse("https://storage.googleapis.com/grafana-static-assets")
+		cdnRootURL, e := url.Parse("https://storage.googleapis.com/plutono-static-assets")
 		require.NoError(t, e)
 
 		cfg := &setting.Cfg{
@@ -259,7 +259,7 @@ func TestFrontendLoggingEndpoint(t *testing.T) {
 								},
 								{
 									Function: "cdn",
-									Filename: "https://storage.googleapis.com/grafana-static-assets/grafana-oss/pre-releases/7.5.0-11925pre/public/build/foo.js", // source map found and mapped
+									Filename: "https://storage.googleapis.com/plutono-static-assets/plutono-oss/pre-releases/7.5.0-11925pre/public/build/foo.js", // source map found and mapped
 									Lineno:   3,
 									Colno:    10,
 								},

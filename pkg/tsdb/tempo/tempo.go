@@ -7,10 +7,10 @@ import (
 	"io/ioutil"
 	"net/http"
 
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/tsdb"
 
 	jaeger "github.com/jaegertracing/jaeger/model"
 	jaeger_json "github.com/jaegertracing/jaeger/model/converter/json"

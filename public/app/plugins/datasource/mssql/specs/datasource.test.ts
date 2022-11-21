@@ -1,5 +1,5 @@
 import { of } from 'rxjs';
-import { dateTime } from '@grafana/data';
+import { dateTime } from '@credativ/plutono-data';
 
 import { MssqlDatasource } from '../datasource';
 import { TimeSrvStub } from 'test/specs/helpers';
@@ -8,8 +8,8 @@ import { backendSrv } from 'app/core/services/backend_srv';
 import { initialCustomVariableModelState } from '../../../../features/variables/custom/reducer';
 import { createFetchResponse } from 'test/helpers/createFetchResponse';
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@credativ/plutono-runtime', () => ({
+  ...((jest.requireActual('@credativ/plutono-runtime') as unknown) as object),
   getBackendSrv: () => backendSrv,
 }));
 
@@ -294,7 +294,7 @@ describe('MSSQLDatasource', () => {
       avg(value) as value,
       hostname as metric
     FROM
-      grafana_metric
+      plutono_metric
     WHERE
       $__timeFilter(createdAt) AND
       measurement = 'logins.count' AND
@@ -317,7 +317,7 @@ describe('MSSQLDatasource', () => {
       avg(value) as value,
       hostname as metric
     FROM
-      grafana_metric
+      plutono_metric
     WHERE
       $__timeFilter(createdAt) AND
       measurement = 'logins.count'

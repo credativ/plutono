@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import UsersTable, { Props } from './UsersTable';
 import { OrgUser } from 'app/types';
 import { getMockUsers } from './__mocks__/userMocks';
-import { ConfirmModal } from '@grafana/ui';
+import { ConfirmModal } from '@credativ/plutono-ui';
 
 const setup = (propOverrides?: object) => {
   const props: Props = {

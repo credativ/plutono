@@ -1,9 +1,9 @@
 package api
 
 import (
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 func StarDashboard(c *models.ReqContext) response.Response {

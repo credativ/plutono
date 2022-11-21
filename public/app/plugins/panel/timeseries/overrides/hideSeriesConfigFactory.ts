@@ -8,8 +8,8 @@ import {
   getFieldDisplayName,
   isSystemOverrideWithRef,
   SystemConfigOverrideRule,
-} from '@grafana/data';
-import { GraphNGLegendEvent, GraphNGLegendEventMode } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { GraphNGLegendEvent, GraphNGLegendEventMode } from '@credativ/plutono-ui';
 
 const displayOverrideRef = 'hideSeriesFrom';
 const isHideSeriesOverride = isSystemOverrideWithRef(displayOverrideRef);

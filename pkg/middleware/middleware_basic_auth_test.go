@@ -4,12 +4,12 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/login"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/contexthandler"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/login"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/contexthandler"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -46,7 +46,7 @@ func TestMiddlewareBasicAuth(t *testing.T) {
 		const salt = "Salt"
 		const orgID int64 = 2
 
-		bus.AddHandler("grafana-auth", func(query *models.LoginUserQuery) error {
+		bus.AddHandler("plutono-auth", func(query *models.LoginUserQuery) error {
 			t.Log("Handling LoginUserQuery")
 			encoded, err := util.EncodePassword(password, salt)
 			if err != nil {

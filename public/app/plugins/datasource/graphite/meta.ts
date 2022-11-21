@@ -1,5 +1,5 @@
 import { MetricTankSeriesMeta } from './types';
-import { QueryResultMetaNotice } from '@grafana/data';
+import { QueryResultMetaNotice } from '@credativ/plutono-data';
 
 // https://github.com/grafana/metrictank/blob/master/scripts/config/storage-schemas.conf#L15-L46
 

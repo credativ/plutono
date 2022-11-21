@@ -6,8 +6,8 @@ import { uniqBy, debounce } from 'lodash';
 import { RichHistoryQuery, ExploreId } from 'app/types/explore';
 
 // Utils
-import { stylesFactory, useTheme, Select } from '@grafana/ui';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
+import { stylesFactory, useTheme, Select } from '@credativ/plutono-ui';
+import { PlutonoTheme, SelectableValue } from '@credativ/plutono-data';
 import { filterAndSortQueries, createDatasourcesList, SortOrder } from 'app/core/utils/richHistory';
 
 // Components
@@ -25,7 +25,7 @@ export interface Props {
   onSelectDatasourceFilters: (value: SelectableValue[]) => void;
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   const bgColor = theme.isLight ? theme.palette.gray5 : theme.palette.dark4;
   return {
     container: css`

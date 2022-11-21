@@ -3,7 +3,7 @@
 . e2e/variables
 
 if [ -f "$PIDFILE" ]; then
-  echo -e "Found pidfile, killing running grafana-server"
+  echo -e "Found pidfile, killing running plutono-server"
   kill -9 `cat $PIDFILE`
   rm $PIDFILE
 fi

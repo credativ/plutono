@@ -5,14 +5,14 @@ import (
 	"sync"
 
 	"github.com/centrifugal/centrifuge"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/live/features"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/tsdb/cloudwatch"
+	"github.com/credativ/plutono/pkg/api/routing"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/services/live/features"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/tsdb/cloudwatch"
 )
 
 var (
@@ -21,25 +21,25 @@ var (
 )
 
 func init() {
-	registry.RegisterService(&GrafanaLive{
+	registry.RegisterService(&PlutonoLive{
 		channels:   make(map[string]models.ChannelHandler),
 		channelsMu: sync.RWMutex{},
-		GrafanaScope: CoreGrafanaScope{
+		PlutonoScope: CorePlutonoScope{
 			Features: make(map[string]models.ChannelHandlerFactory),
 		},
 	})
 }
 
-// CoreGrafanaScope list of core features
-type CoreGrafanaScope struct {
+// CorePlutonoScope list of core features
+type CorePlutonoScope struct {
 	Features map[string]models.ChannelHandlerFactory
 
 	// The generic service to advertise dashboard changes
 	Dashboards models.DashboardActivityChannel
 }
 
-// GrafanaLive pretends to be the server
-type GrafanaLive struct {
+// PlutonoLive pretends to be the server
+type PlutonoLive struct {
 	Cfg           *setting.Cfg            `inject:""`
 	RouteRegister routing.RouteRegister   `inject:""`
 	LogsService   *cloudwatch.LogsService `inject:""`
@@ -53,16 +53,16 @@ type GrafanaLive struct {
 	channelsMu sync.RWMutex
 
 	// The core internal features
-	GrafanaScope CoreGrafanaScope
+	PlutonoScope CorePlutonoScope
 }
 
 // Init initializes the instance.
 // Required to implement the registry.Service interface.
-func (g *GrafanaLive) Init() error {
-	logger.Debug("GrafanaLive initialization")
+func (g *PlutonoLive) Init() error {
+	logger.Debug("PlutonoLive initialization")
 
 	if !g.IsEnabled() {
-		logger.Debug("GrafanaLive feature not enabled, skipping initialization")
+		logger.Debug("PlutonoLive feature not enabled, skipping initialization")
 		return nil
 	}
 
@@ -88,13 +88,13 @@ func (g *GrafanaLive) Init() error {
 		Publisher: g.Publish,
 	}
 
-	g.GrafanaScope.Dashboards = dash
-	g.GrafanaScope.Features["dashboard"] = dash
-	g.GrafanaScope.Features["testdata"] = &features.TestDataSupplier{
+	g.PlutonoScope.Dashboards = dash
+	g.PlutonoScope.Features["dashboard"] = dash
+	g.PlutonoScope.Features["testdata"] = &features.TestDataSupplier{
 		Publisher: g.Publish,
 	}
-	g.GrafanaScope.Features["broadcast"] = &features.BroadcastRunner{}
-	g.GrafanaScope.Features["measurements"] = &features.MeasurementsRunner{}
+	g.PlutonoScope.Features["broadcast"] = &features.BroadcastRunner{}
+	g.PlutonoScope.Features["measurements"] = &features.MeasurementsRunner{}
 
 	// Set ConnectHandler called when client successfully connected to Node. Your code
 	// inside handler must be synchronized since it will be called concurrently from
@@ -161,7 +161,7 @@ func (g *GrafanaLive) Init() error {
 }
 
 // GetChannelHandler gives threadsafe access to the channel
-func (g *GrafanaLive) GetChannelHandler(channel string) (models.ChannelHandler, error) {
+func (g *PlutonoLive) GetChannelHandler(channel string) (models.ChannelHandler, error) {
 	g.channelsMu.RLock()
 	c, ok := g.channels[channel]
 	g.channelsMu.RUnlock() // defer? but then you can't lock further down
@@ -200,9 +200,9 @@ func (g *GrafanaLive) GetChannelHandler(channel string) (models.ChannelHandler, 
 
 // GetChannelHandlerFactory gets a ChannelHandlerFactory for a namespace.
 // It gives threadsafe access to the channel.
-func (g *GrafanaLive) GetChannelHandlerFactory(scope string, name string) (models.ChannelHandlerFactory, error) {
-	if scope == "grafana" {
-		p, ok := g.GrafanaScope.Features[name]
+func (g *PlutonoLive) GetChannelHandlerFactory(scope string, name string) (models.ChannelHandlerFactory, error) {
+	if scope == "plutono" {
+		p, ok := g.PlutonoScope.Features[name]
 		if ok {
 			return p, nil
 		}
@@ -236,13 +236,13 @@ func (g *GrafanaLive) GetChannelHandlerFactory(scope string, name string) (model
 }
 
 // Publish sends the data to the channel without checking permissions etc
-func (g *GrafanaLive) Publish(channel string, data []byte) error {
+func (g *PlutonoLive) Publish(channel string, data []byte) error {
 	_, err := g.node.Publish(channel, data)
 	return err
 }
 
-// IsEnabled returns true if the Grafana Live feature is enabled.
-func (g *GrafanaLive) IsEnabled() bool {
+// IsEnabled returns true if the Plutono Live feature is enabled.
+func (g *PlutonoLive) IsEnabled() bool {
 	return g.Cfg.IsLiveEnabled()
 }
 

@@ -4,13 +4,13 @@ import (
 	"encoding/json"
 	"path/filepath"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin/grpcplugin"
-	"github.com/grafana/grafana/pkg/plugins/datasource/wrapper"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin/grpcplugin"
+	"github.com/credativ/plutono/pkg/plugins/datasource/wrapper"
+	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/util/errutil"
 )
 
 // DataSourcePlugin contains all metadata about a datasource plugin

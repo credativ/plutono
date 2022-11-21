@@ -4,10 +4,10 @@ import { FetchQueue, FetchQueueUpdate, FetchStatus } from './FetchQueue';
 import { ResponseQueue } from './ResponseQueue';
 import { FetchQueueWorker } from './FetchQueueWorker';
 import { expect } from '../../../test/lib/common';
-import { GrafanaBootConfig } from '@grafana/runtime';
+import { PlutonoBootConfig } from '@credativ/plutono-runtime';
 
 const getTestContext = (http2Enabled = false) => {
-  const config: GrafanaBootConfig = ({ http2Enabled } as unknown) as GrafanaBootConfig;
+  const config: PlutonoBootConfig = ({ http2Enabled } as unknown) as PlutonoBootConfig;
   const dataUrl = 'http://localhost:3000/api/ds/query?=abc';
   const apiUrl = 'http://localhost:3000/api/alerts?state=all';
   const updates: Subject<FetchQueueUpdate> = new Subject<FetchQueueUpdate>();

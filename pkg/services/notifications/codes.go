@@ -8,8 +8,8 @@ import (
 
 	"github.com/unknwon/com"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 const timeLimitCodeLength = 12 + 6 + 40

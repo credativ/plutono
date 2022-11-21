@@ -3,7 +3,7 @@ draft = "false"
 date = "yyyy-mm-dd"
 title = "Title in sentence case"
 description = "Description in title case"
-keywords = ["grafana", "enter", "keywords", "here"]
+keywords = ["plutono", "enter", "keywords", "here"]
 type = "docs"
 [menu.docs]
 name = "Name of topic"
@@ -14,7 +14,7 @@ weight = 100
 
 # Task
 
-A *task* topic is intended for a procedure that describes how to accomplish a task. It lists a series of steps that users follow to produce an intended outcome. It tells the reader *how* to do something. [Install Grafana plugins](https://grafana.com/docs/grafana/latest/plugins/installation/) and [Playlist](https://grafana.com/docs/grafana/latest/reference/playlist/) are examples of task topics. Playlist includes a small amount of concept information in the introduction, which is appropriate.
+A *task* topic is intended for a procedure that describes how to accomplish a task. It lists a series of steps that users follow to produce an intended outcome. It tells the reader *how* to do something. [Install Plutono plugins](https://grafana.com/docs/grafana/latest/plugins/installation/) and [Playlist](https://grafana.com/docs/grafana/latest/reference/playlist/) are examples of task topics. Playlist includes a small amount of concept information in the introduction, which is appropriate.
 
 Always include an introduction of a short paragraph or two to explain what the task is for, perhaps give the reader an idea of what the outcome will be.
 
@@ -48,10 +48,10 @@ Short tasks can be grouped. How short constitutes "short" is a judgment call bas
 
 If the task you are writing leads naturally to one or more other tasks, then include links after the task to help the reader figure out where to go next.
 
-Thanks to internet search engines, every page in the documentation could be page one. Pretend you are explaining your task to a new Grafana user who just walked in off the street.
+Thanks to internet search engines, every page in the documentation could be page one. Pretend you are explaining your task to a new Plutono user who just walked in off the street.
 
 ## Testing
 
-It is a good practice to have someone else test the task you have written. If they can successfully complete the task using *only* what the steps you have written, not guessing or using their inherent knowledge, then your task has passed the test. However, it is very common to find you have skipped steps, because *you* are very familiar with Grafana and the topic you are explaining.
+It is a good practice to have someone else test the task you have written. If they can successfully complete the task using *only* what the steps you have written, not guessing or using their inherent knowledge, then your task has passed the test. However, it is very common to find you have skipped steps, because *you* are very familiar with Plutono and the topic you are explaining.
 
 New users or people from other teams are very helpful for these tests.

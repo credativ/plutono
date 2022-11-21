@@ -3,7 +3,7 @@ import { PanelCtrl } from '../../../features/panel/panel_ctrl';
 import { auto, IScope } from 'angular';
 import { ContextSrv } from '../../../core/services/context_srv';
 import { CoreEvents } from 'app/types';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { promiseToDigest } from 'app/core/utils/promiseToDigest';
 
 class PluginListCtrl extends PanelCtrl {

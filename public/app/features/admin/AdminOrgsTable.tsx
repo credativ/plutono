@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react';
 import { Organization } from 'app/types';
-import { Button, ConfirmModal } from '@grafana/ui';
+import { Button, ConfirmModal } from '@credativ/plutono-ui';
 
 interface Props {
   orgs: Organization[];

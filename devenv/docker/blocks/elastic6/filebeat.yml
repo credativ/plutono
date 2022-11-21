@@ -408,34 +408,34 @@ filebeat.inputs:
 - type: log
   enabled: true
   paths:
-    - /var/log/grafana/grafana.log
+    - /var/log/plutono/plutono.log
   include_lines: ['lvl=info']
   fields:
-    app: grafana
+    app: plutono
     level: info
 - type: log
   enabled: true
   paths:
-    - /var/log/grafana/grafana.log
+    - /var/log/plutono/plutono.log
   include_lines: ['lvl=eror']
   fields:
-    app: grafana
+    app: plutono
     level: error
 - type: log
   enabled: true
   paths:
-    - /var/log/grafana/grafana.log
+    - /var/log/plutono/plutono.log
   include_lines: ['lvl=warn']
   fields:
-    app: grafana
+    app: plutono
     level: warning
 - type: log
   enabled: true
   paths:
-    - /var/log/grafana/grafana.log
+    - /var/log/plutono/plutono.log
   include_lines: ['lvl=dbug']
   fields:
-    app: grafana
+    app: plutono
     level: debug
 
 #- type: log

@@ -1,9 +1,9 @@
 import React, { PureComponent } from 'react';
 import { debounce } from 'lodash';
-import { AsyncSelect } from '@grafana/ui';
-import { AppEvents, SelectableValue } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
-import { selectors } from '@grafana/e2e-selectors';
+import { AsyncSelect } from '@credativ/plutono-ui';
+import { AppEvents, SelectableValue } from '@credativ/plutono-data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import appEvents from '../../app_events';
 import { contextSrv } from 'app/core/services/context_srv';

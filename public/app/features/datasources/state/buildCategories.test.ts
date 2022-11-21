@@ -1,6 +1,6 @@
 import { buildCategories } from './buildCategories';
 import { getMockPlugin } from '../../plugins/__mocks__/pluginMocks';
-import { DataSourcePluginMeta } from '@grafana/data';
+import { DataSourcePluginMeta } from '@credativ/plutono-data';
 
 const plugins: DataSourcePluginMeta[] = [
   {
@@ -39,7 +39,7 @@ describe('buildCategories', () => {
     expect(categories[1].plugins[0].id).toBe('loki');
   });
 
-  it('should add phantom plugin for Grafana cloud', () => {
+  it('should add phantom plugin for Plutono cloud', () => {
     expect(categories[2].title).toBe('Cloud');
     expect(categories[2].plugins.length).toBe(2);
     expect(categories[2].plugins[1].id).toBe('gcloud');

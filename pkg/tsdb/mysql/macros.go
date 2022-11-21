@@ -6,10 +6,10 @@ import (
 	"regexp"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/components/gtime"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/tsdb/sqleng"
+	"github.com/credativ/plutono/pkg/components/gtime"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/tsdb/sqleng"
 )
 
 const rsIdentifier = `([_a-zA-Z0-9]+)`
@@ -35,7 +35,7 @@ func (m *mySqlMacroEngine) Interpolate(query *tsdb.Query, timeRange *tsdb.TimeRa
 	matches := restrictedRegExp.FindAllStringSubmatch(sql, 1)
 	if len(matches) > 0 {
 		m.logger.Error("show grants, session_user(), current_user(), system_user() or user() not allowed in query")
-		return "", errors.New("invalid query - inspect Grafana server log for details")
+		return "", errors.New("invalid query - inspect Plutono server log for details")
 	}
 
 	rExp, _ := regexp.Compile(sExpr)

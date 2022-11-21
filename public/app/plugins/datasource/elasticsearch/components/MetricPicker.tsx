@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { css, cx } from 'emotion';
-import { SelectableValue } from '@grafana/data';
-import { Segment } from '@grafana/ui';
+import { SelectableValue } from '@credativ/plutono-data';
+import { Segment } from '@credativ/plutono-ui';
 import { describeMetric } from '../utils';
 import { MetricAggregation } from './QueryEditor/MetricAggregationsEditor/aggregations';
 

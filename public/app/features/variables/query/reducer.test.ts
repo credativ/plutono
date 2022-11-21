@@ -12,7 +12,7 @@ import { VariablesState } from '../state/variablesReducer';
 import { getVariableTestContext } from '../state/helpers';
 import { toVariablePayload } from '../state/types';
 import { createQueryVariableAdapter } from './adapter';
-import { MetricFindValue } from '@grafana/data';
+import { MetricFindValue } from '@credativ/plutono-data';
 
 describe('queryVariableReducer', () => {
   const adapter = createQueryVariableAdapter();

@@ -1,6 +1,6 @@
 import React, { ChangeEvent } from 'react';
 import { EditorProps } from '../QueryEditor';
-import { InlineField, InlineFieldRow, Input } from '@grafana/ui';
+import { InlineField, InlineFieldRow, Input } from '@credativ/plutono-ui';
 import { PulseWaveQuery } from '../types';
 
 const fields = [

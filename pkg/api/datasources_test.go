@@ -4,14 +4,14 @@ import (
 	"encoding/json"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/api/routing"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/grafana/grafana/pkg/bus"
+	"github.com/credativ/plutono/pkg/bus"
 )
 
 const (

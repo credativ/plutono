@@ -300,8 +300,8 @@ func TestParseAppURLAndSubURL(t *testing.T) {
 	}{
 		{rootURL: "http://localhost:3000/", expectedAppURL: "http://localhost:3000/"},
 		{rootURL: "http://localhost:3000", expectedAppURL: "http://localhost:3000/"},
-		{rootURL: "http://localhost:3000/grafana", expectedAppURL: "http://localhost:3000/grafana/", expectedAppSubURL: "/grafana"},
-		{rootURL: "http://localhost:3000/grafana/", expectedAppURL: "http://localhost:3000/grafana/", expectedAppSubURL: "/grafana"},
+		{rootURL: "http://localhost:3000/plutono", expectedAppURL: "http://localhost:3000/plutono/", expectedAppSubURL: "/plutono"},
+		{rootURL: "http://localhost:3000/plutono/", expectedAppURL: "http://localhost:3000/plutono/", expectedAppSubURL: "/plutono"},
 	}
 
 	for _, tc := range testCases {
@@ -388,13 +388,13 @@ func TestGetCDNPath(t *testing.T) {
 	cfg.CDNRootURL, err = url.Parse("http://cdn.grafana.com")
 	require.NoError(t, err)
 
-	require.Equal(t, "http://cdn.grafana.com/grafana-oss/v7.5.0-11124/", cfg.GetContentDeliveryURL("grafana-oss"))
-	require.Equal(t, "http://cdn.grafana.com/grafana/v7.5.0-11124/", cfg.GetContentDeliveryURL("grafana"))
+	require.Equal(t, "http://cdn.grafana.com/plutono-oss/v7.5.0-11124/", cfg.GetContentDeliveryURL("plutono-oss"))
+	require.Equal(t, "http://cdn.grafana.com/plutono/v7.5.0-11124/", cfg.GetContentDeliveryURL("plutono"))
 }
 
 func TestGetContentDeliveryURLWhenNoCDNRootURLIsSet(t *testing.T) {
 	cfg := NewCfg()
-	require.Equal(t, "", cfg.GetContentDeliveryURL("grafana-oss"))
+	require.Equal(t, "", cfg.GetContentDeliveryURL("plutono-oss"))
 }
 
 func TestGetCDNPathWithPreReleaseVersionAndSubPath(t *testing.T) {
@@ -403,8 +403,8 @@ func TestGetCDNPathWithPreReleaseVersionAndSubPath(t *testing.T) {
 	cfg.BuildVersion = "v7.5.0-11124pre"
 	cfg.CDNRootURL, err = url.Parse("http://cdn.grafana.com/sub")
 	require.NoError(t, err)
-	require.Equal(t, "http://cdn.grafana.com/sub/grafana-oss/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("grafana-oss"))
-	require.Equal(t, "http://cdn.grafana.com/sub/grafana/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("grafana"))
+	require.Equal(t, "http://cdn.grafana.com/sub/plutono-oss/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("plutono-oss"))
+	require.Equal(t, "http://cdn.grafana.com/sub/plutono/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("plutono"))
 }
 
 // Adding a case for this in case we switch to proper semver version strings
@@ -414,6 +414,6 @@ func TestGetCDNPathWithAlphaVersion(t *testing.T) {
 	cfg.BuildVersion = "v7.5.0-alpha.11124"
 	cfg.CDNRootURL, err = url.Parse("http://cdn.grafana.com")
 	require.NoError(t, err)
-	require.Equal(t, "http://cdn.grafana.com/grafana-oss/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("grafana-oss"))
-	require.Equal(t, "http://cdn.grafana.com/grafana/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("grafana"))
+	require.Equal(t, "http://cdn.grafana.com/plutono-oss/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("plutono-oss"))
+	require.Equal(t, "http://cdn.grafana.com/plutono/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("plutono"))
 }

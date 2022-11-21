@@ -20,7 +20,7 @@ const builtInWords = [
 // We want to extract all possible metrics and also keywords
 const metricsAndKeywordsRegexp = /([A-Za-z:][\w:]*)\b(?![\]{=!",])/g;
 // Safari currently doesn't support negative lookbehind. When it does, we should refactor this.
-// We are creating 2 matching groups. (\$) is for the Grafana's variables such as ${__rate_s}. We want to ignore
+// We are creating 2 matching groups. (\$) is for the Plutono's variables such as ${__rate_s}. We want to ignore
 // ${__rate_s} and not add variable to it.
 const selectorRegexp = /(\$)?{([^{]*)}/g;
 
@@ -58,7 +58,7 @@ export function addLabelToQuery(
     const prefix = query.slice(lastIndex, match.index);
     lastIndex = match.index + match[2].length + 2;
     suffix = query.slice(match.index + match[0].length);
-    // If we matched 1st group, we know it is Grafana's variable and we don't want to add labels
+    // If we matched 1st group, we know it is Plutono's variable and we don't want to add labels
     if (match[1]) {
       parts.push(prefix);
       parts.push(match[0]);

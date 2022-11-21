@@ -1,0 +1,39 @@
+#! /usr/bin/env bash
+
+# Wrapper for the plutono-cli binary
+# This file serves as a wrapper for the plutono-cli binary. It ensures we set
+# the system-wide Plutono configuration that was bundled with the package as we
+# use the binary.
+
+DEFAULT=/etc/default/plutono
+
+PLUTONO_HOME=/usr/share/plutono
+CONF_DIR=/etc/plutono
+DATA_DIR=/var/lib/plutono
+PLUGINS_DIR=/var/lib/plutono/plugins
+LOG_DIR=/var/log/plutono
+
+CONF_FILE=$CONF_DIR/plutono.ini
+PROVISIONING_CFG_DIR=$CONF_DIR/provisioning
+
+EXECUTABLE=$PLUTONO_HOME/bin/plutono-cli
+
+if [ ! -x $EXECUTABLE ]; then
+ echo "Program not installed or not executable"
+ exit 5
+fi
+
+# overwrite settings from default file
+if [ -f "$DEFAULT" ]; then
+  . "$DEFAULT"
+fi
+
+OPTS="--homepath=${PLUTONO_HOME} \
+      --config=${CONF_FILE} \
+      --pluginsDir=${PLUGINS_DIR} \
+      --configOverrides='cfg:default.paths.provisioning=$PROVISIONING_CFG_DIR \
+                        cfg:default.paths.data=${DATA_DIR} \
+                        cfg:default.paths.logs=${LOG_DIR} \
+                        cfg:default.paths.plugins=${PLUGINS_DIR}'"
+
+eval $EXECUTABLE "$OPTS" "$@"

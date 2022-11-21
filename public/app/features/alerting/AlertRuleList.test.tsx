@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { AlertRuleListUnconnected, Props } from './AlertRuleList';
 import { AlertRule } from '../../types';
 import appEvents from '../../core/app_events';
-import { NavModel } from '@grafana/data';
+import { NavModel } from '@credativ/plutono-data';
 import { CoreEvents } from 'app/types';
 import { updateLocation } from '../../core/actions';
 import { setSearchQuery } from './state/reducers';

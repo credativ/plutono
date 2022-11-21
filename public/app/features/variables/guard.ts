@@ -13,7 +13,7 @@ import {
   StandardVariableSupport,
   VariableModel,
   VariableSupportType,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import {
   AdHocVariableModel,

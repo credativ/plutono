@@ -4,15 +4,15 @@ package api
 import (
 	"time"
 
+	"github.com/credativ/plutono/pkg/api/avatar"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/api/frontendlogging"
+	"github.com/credativ/plutono/pkg/api/routing"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	"github.com/credativ/plutono/pkg/middleware"
+	"github.com/credativ/plutono/pkg/models"
 	"github.com/go-macaron/binding"
-	"github.com/grafana/grafana/pkg/api/avatar"
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/frontendlogging"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/middleware"
-	"github.com/grafana/grafana/pkg/models"
 )
 
 var plog = log.New("api")
@@ -22,7 +22,7 @@ func (hs *HTTPServer) registerRoutes() {
 	reqNoAuth := middleware.NoAuth()
 	reqSignedIn := middleware.ReqSignedIn
 	reqSignedInNoAnonymous := middleware.ReqSignedInNoAnonymous
-	reqGrafanaAdmin := middleware.ReqGrafanaAdmin
+	reqPlutonoAdmin := middleware.ReqPlutonoAdmin
 	reqEditorRole := middleware.ReqEditorRole
 	reqOrgAdmin := middleware.ReqOrgAdmin
 	reqCanAccessTeams := middleware.AdminOrEditorAndFeatureEnabled(hs.Cfg.EditorsCanAdmin)
@@ -49,7 +49,7 @@ func (hs *HTTPServer) registerRoutes() {
 	r.Get("/.well-known/change-password", redirectToChangePassword)
 	r.Get("/profile/switch-org/:id", reqSignedInNoAnonymous, hs.ChangeActiveOrgAndRedirectToHome)
 	r.Get("/org/", reqOrgAdmin, hs.Index)
-	r.Get("/org/new", reqGrafanaAdmin, hs.Index)
+	r.Get("/org/new", reqPlutonoAdmin, hs.Index)
 	r.Get("/datasources/", reqOrgAdmin, hs.Index)
 	r.Get("/datasources/new", reqOrgAdmin, hs.Index)
 	r.Get("/datasources/edit/*", reqOrgAdmin, hs.Index)
@@ -60,16 +60,16 @@ func (hs *HTTPServer) registerRoutes() {
 	r.Get("/org/teams/*", reqCanAccessTeams, hs.Index)
 	r.Get("/org/apikeys/", reqOrgAdmin, hs.Index)
 	r.Get("/dashboard/import/", reqSignedIn, hs.Index)
-	r.Get("/configuration", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/settings", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/users", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/users/create", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/users/edit/:id", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/orgs", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/orgs/edit/:id", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/stats", reqGrafanaAdmin, hs.Index)
-	r.Get("/admin/ldap", reqGrafanaAdmin, hs.Index)
+	r.Get("/configuration", reqPlutonoAdmin, hs.Index)
+	r.Get("/admin", reqPlutonoAdmin, hs.Index)
+	r.Get("/admin/settings", reqPlutonoAdmin, hs.Index)
+	r.Get("/admin/users", reqPlutonoAdmin, hs.Index)
+	r.Get("/admin/users/create", reqPlutonoAdmin, hs.Index)
+	r.Get("/admin/users/edit/:id", reqPlutonoAdmin, hs.Index)
+	r.Get("/admin/orgs", reqPlutonoAdmin, hs.Index)
+	r.Get("/admin/orgs/edit/:id", reqPlutonoAdmin, hs.Index)
+	r.Get("/admin/stats", reqPlutonoAdmin, hs.Index)
+	r.Get("/admin/ldap", reqPlutonoAdmin, hs.Index)
 
 	r.Get("/styleguide", reqSignedIn, hs.Index)
 
@@ -163,7 +163,7 @@ func (hs *HTTPServer) registerRoutes() {
 			usersRoute.Get("/lookup", routing.Wrap(GetUserByLoginOrEmail))
 			usersRoute.Put("/:id", bind(models.UpdateUserCommand{}), routing.Wrap(UpdateUser))
 			usersRoute.Post("/:id/using/:orgId", routing.Wrap(UpdateUserActiveOrg))
-		}, reqGrafanaAdmin)
+		}, reqPlutonoAdmin)
 
 		// team (admin permission required)
 		apiRoute.Group("/teams", func(teamsRoute routing.RouteRegister) {
@@ -218,7 +218,7 @@ func (hs *HTTPServer) registerRoutes() {
 		apiRoute.Post("/orgs", quota("org"), bind(models.CreateOrgCommand{}), routing.Wrap(CreateOrg))
 
 		// search all orgs
-		apiRoute.Get("/orgs", reqGrafanaAdmin, routing.Wrap(SearchOrgs))
+		apiRoute.Get("/orgs", reqPlutonoAdmin, routing.Wrap(SearchOrgs))
 
 		// orgs (admin routes)
 		apiRoute.Group("/orgs/:orgId", func(orgsRoute routing.RouteRegister) {
@@ -232,12 +232,12 @@ func (hs *HTTPServer) registerRoutes() {
 			orgsRoute.Delete("/users/:userId", routing.Wrap(RemoveOrgUser))
 			orgsRoute.Get("/quotas", routing.Wrap(GetOrgQuotas))
 			orgsRoute.Put("/quotas/:target", bind(models.UpdateOrgQuotaCmd{}), routing.Wrap(UpdateOrgQuota))
-		}, reqGrafanaAdmin)
+		}, reqPlutonoAdmin)
 
 		// orgs (admin routes)
 		apiRoute.Group("/orgs/name/:name", func(orgsRoute routing.RouteRegister) {
 			orgsRoute.Get("/", routing.Wrap(hs.GetOrgByName))
-		}, reqGrafanaAdmin)
+		}, reqPlutonoAdmin)
 
 		// auth api keys
 		apiRoute.Group("/auth/keys", func(keysRoute routing.RouteRegister) {
@@ -354,7 +354,7 @@ func (hs *HTTPServer) registerRoutes() {
 
 		// metrics
 		apiRoute.Post("/tsdb/query", bind(dtos.MetricRequest{}), routing.Wrap(hs.QueryMetrics))
-		apiRoute.Get("/tsdb/testdata/gensql", reqGrafanaAdmin, routing.Wrap(GenerateSQLTestData))
+		apiRoute.Get("/tsdb/testdata/gensql", reqPlutonoAdmin, routing.Wrap(GenerateSQLTestData))
 		apiRoute.Get("/tsdb/testdata/random-walk", routing.Wrap(GetTestDataRandomWalk))
 
 		// DataSource w/ expressions
@@ -430,12 +430,12 @@ func (hs *HTTPServer) registerRoutes() {
 		adminRoute.Post("/ldap/sync/:id", routing.Wrap(hs.PostSyncUserWithLDAP))
 		adminRoute.Get("/ldap/:username", routing.Wrap(hs.GetUserFromLDAP))
 		adminRoute.Get("/ldap/status", routing.Wrap(hs.GetLDAPStatus))
-	}, reqGrafanaAdmin)
+	}, reqPlutonoAdmin)
 
 	// rendering
 	r.Get("/render/*", reqSignedIn, hs.RenderToPng)
 
-	// grafana.net proxy
+	// plutono.net proxy
 	r.Any("/api/gnet/*", reqSignedIn, ProxyGnetRequest)
 
 	// Gravatar service.

@@ -3,7 +3,7 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": "-- Plutono --",
         "enable": false,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -694,7 +694,7 @@
       ],
       "thresholds": "0,10",
       "title": "World map panel",
-      "type": "grafana-worldmap-panel",
+      "type": "plutono-worldmap-panel",
       "unitPlural": "",
       "unitSingle": "",
       "valueName": "total"

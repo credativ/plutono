@@ -3,7 +3,7 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": "-- Plutono --",
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -320,7 +320,7 @@
         }
       ],
       "title": "Poor use of space",
-      "type": "grafana-polystat-panel",
+      "type": "plutono-polystat-panel",
       "unitFormats": [
         {
           "submenu": [
@@ -1431,7 +1431,7 @@
         }
       ],
       "title": "Composite crash",
-      "type": "grafana-polystat-panel",
+      "type": "plutono-polystat-panel",
       "unitFormats": [
         {
           "submenu": [
@@ -2514,7 +2514,7 @@
         }
       ],
       "title": "No Value in Sensor-C Bug",
-      "type": "grafana-polystat-panel",
+      "type": "plutono-polystat-panel",
       "unitFormats": [
         {
           "submenu": [

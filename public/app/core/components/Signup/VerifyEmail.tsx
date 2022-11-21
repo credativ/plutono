@@ -1,9 +1,9 @@
 import React, { FC, useState } from 'react';
-import { Form, Field, Input, Button, Legend, Container, HorizontalGroup, LinkButton } from '@grafana/ui';
+import { Form, Field, Input, Button, Legend, Container, HorizontalGroup, LinkButton } from '@credativ/plutono-ui';
 import { getConfig } from 'app/core/config';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import appEvents from 'app/core/app_events';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@credativ/plutono-data';
 
 interface EmailDTO {
   email: string;

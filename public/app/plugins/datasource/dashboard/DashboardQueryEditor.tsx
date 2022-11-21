@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { LegacyForms, VerticalGroup } from '@grafana/ui';
-import { DataQuery, PanelData, SelectableValue } from '@grafana/data';
+import { LegacyForms, VerticalGroup } from '@credativ/plutono-ui';
+import { DataQuery, PanelData, SelectableValue } from '@credativ/plutono-data';
 import { css } from 'emotion';
 
 import { DashboardQuery, ResultInfo, SHARED_DASHBODARD_QUERY } from './types';

@@ -1,6 +1,6 @@
 import { VariableModel } from '../types';
 import { VariablesState } from './variablesReducer';
-import { VariableType } from '@grafana/data';
+import { VariableType } from '@credativ/plutono-data';
 
 export const NEW_VARIABLE_ID = '00000000-0000-0000-0000-000000000000';
 export const ALL_VARIABLE_TEXT = 'All';

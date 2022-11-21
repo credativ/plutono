@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import config from 'app/core/config';
-import { Icon, IconName } from '@grafana/ui';
+import { Icon, IconName } from '@credativ/plutono-ui';
 
 export interface FooterLink {
   text: string;
@@ -14,19 +14,19 @@ export let getFooterLinks = (): FooterLink[] => {
     {
       text: 'Documentation',
       icon: 'document-info',
-      url: 'https://grafana.com/docs/grafana/latest/?utm_source=grafana_footer',
+      url: 'https://grafana.com/docs/grafana/latest/',
       target: '_blank',
     },
     {
       text: 'Support',
       icon: 'question-circle',
-      url: 'https://grafana.com/products/enterprise/?utm_source=grafana_footer',
+      url: 'https://grafana.com/products/enterprise/',
       target: '_blank',
     },
     {
       text: 'Community',
       icon: 'comments-alt',
-      url: 'https://community.grafana.com/?utm_source=grafana_footer',
+      url: 'https://community.grafana.com/',
       target: '_blank',
     },
   ];
@@ -49,7 +49,7 @@ export let getVersionLinks = (): FooterLink[] => {
     links.push({
       text: `New version available!`,
       icon: 'download-alt',
-      url: 'https://grafana.com/grafana/download?utm_source=grafana_footer',
+      url: 'https://grafana.com/grafana/download',
       target: '_blank',
     });
   }

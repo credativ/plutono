@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { DataSourceInstanceSettings } from '@grafana/data';
+import { DataSourceInstanceSettings } from '@credativ/plutono-data';
 
 import { DataSourceVariableModel, initialVariableModelState, VariableOption, VariableRefresh } from '../types';
 import { ALL_VARIABLE_TEXT, ALL_VARIABLE_VALUE, getInstanceState, VariablePayload } from '../state/types';

@@ -1,9 +1,9 @@
 import _ from 'lodash';
 import TableModel from 'app/core/table_model';
 import { TableRenderer } from '../renderer';
-import { ScopedVars, TimeZone } from '@grafana/data';
+import { ScopedVars, TimeZone } from '@credativ/plutono-data';
 import { ColumnRender } from '../types';
-import { getTheme } from '@grafana/ui';
+import { getTheme } from '@credativ/plutono-ui';
 
 const utc: TimeZone = 'utc';
 
@@ -136,7 +136,7 @@ describe('when rendering table', () => {
             },
             {
               value: 'HELLO WORLD',
-              text: 'HELLO GRAFANA',
+              text: 'HELLO PLUTONO',
             },
             {
               value: 'value1, value2',
@@ -342,7 +342,7 @@ describe('when rendering table', () => {
 
     it('string value should be mapped to text', () => {
       const html = renderer.renderCell(9, 0, 'HELLO WORLD');
-      expect(html).toBe('<td>HELLO GRAFANA</td>');
+      expect(html).toBe('<td>HELLO PLUTONO</td>');
     });
 
     it('array column value should be mapped to text', () => {

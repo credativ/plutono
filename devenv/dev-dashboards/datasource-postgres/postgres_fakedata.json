@@ -3,7 +3,7 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": "-- Plutono --",
         "enable": false,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -17,7 +17,7 @@
         "iconColor": "rgba(0, 211, 255, 1)",
         "limit": 100,
         "name": "Single",
-        "rawQuery": "SELECT\n  \"createdAt\" as time,\n  'single' as text,\n hostname as tags\nFROM\n   grafana_metric\nWHERE\n  $__timeFilter(\"createdAt\")\nORDER BY time\nLIMIT 1\n",
+        "rawQuery": "SELECT\n  \"createdAt\" as time,\n  'single' as text,\n hostname as tags\nFROM\n   plutono_metric\nWHERE\n  $__timeFilter(\"createdAt\")\nORDER BY time\nLIMIT 1\n",
         "showIn": 0,
         "tags": [],
         "type": "tags"
@@ -29,14 +29,14 @@
         "iconColor": "rgba(0, 211, 255, 1)",
         "limit": 100,
         "name": "Region",
-        "rawQuery": "SELECT\n  \"createdAt\" +  (interval '1 minute') as time,\n  \"createdAt\" +  (6 * interval '1 minute') as timeend,\n  'region' as text,\n hostname as tags\nFROM\n   grafana_metric\nWHERE\n  $__timeFilter(\"createdAt\")\nORDER BY time\nLIMIT 1\n",
+        "rawQuery": "SELECT\n  \"createdAt\" +  (interval '1 minute') as time,\n  \"createdAt\" +  (6 * interval '1 minute') as timeend,\n  'region' as text,\n hostname as tags\nFROM\n   plutono_metric\nWHERE\n  $__timeFilter(\"createdAt\")\nORDER BY time\nLIMIT 1\n",
         "showIn": 0,
         "tags": [],
         "type": "tags"
       }
     ]
   },
-  "description": "A dashboard visualizing data generated from grafana/fake-data-gen",
+  "description": "A dashboard visualizing data generated from plutono/fake-data-gen",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
@@ -100,7 +100,7 @@
           "hide": false,
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  $__timeGroup(\"createdAt\",'$summarize'),\n  avg(value) as \"value\",\n  hostname as \"metric\"\nFROM \n  grafana_metric\nWHERE\n  $__timeFilter(\"createdAt\") AND\n  measurement = 'logins.count' AND\n  hostname IN($host)\nGROUP BY time, metric\nORDER BY time",
+          "rawSql": "SELECT\n  $__timeGroup(\"createdAt\",'$summarize'),\n  avg(value) as \"value\",\n  hostname as \"metric\"\nFROM \n  plutono_metric\nWHERE\n  $__timeFilter(\"createdAt\") AND\n  measurement = 'logins.count' AND\n  hostname IN($host)\nGROUP BY time, metric\nORDER BY time",
           "refId": "A",
           "select": [
             [
@@ -126,7 +126,7 @@
           "group": [],
           "metricColumn": "none",
           "rawQuery": true,
-          "rawSql": "SELECT\n  $__timeGroup(\"createdAt\",'$summarize'),\n  min(value) as \"value\",\n  'total avg' as \"metric\"\nFROM \n  grafana_metric\nWHERE\n  $__timeFilter(\"createdAt\") AND\n  measurement = 'logins.count'\nGROUP BY time\nORDER BY time",
+          "rawSql": "SELECT\n  $__timeGroup(\"createdAt\",'$summarize'),\n  min(value) as \"value\",\n  'total avg' as \"metric\"\nFROM \n  plutono_metric\nWHERE\n  $__timeFilter(\"createdAt\") AND\n  measurement = 'logins.count'\nGROUP BY time\nORDER BY time",
           "refId": "B",
           "select": [
             [
@@ -231,14 +231,14 @@
         {
           "alias": "",
           "format": "time_series",
-          "rawSql": "SELECT\n  $__timeGroup(\"createdAt\",'$summarize'),\n  avg(value) as \"value\",\n  'started' as \"metric\"\nFROM \n  grafana_metric\nWHERE\n  $__timeFilter(\"createdAt\") AND\n  measurement = 'payment.started'\nGROUP BY time, metric\nORDER BY time",
+          "rawSql": "SELECT\n  $__timeGroup(\"createdAt\",'$summarize'),\n  avg(value) as \"value\",\n  'started' as \"metric\"\nFROM \n  plutono_metric\nWHERE\n  $__timeFilter(\"createdAt\") AND\n  measurement = 'payment.started'\nGROUP BY time, metric\nORDER BY time",
           "refId": "A",
           "target": ""
         },
         {
           "alias": "",
           "format": "time_series",
-          "rawSql": "SELECT\n  $__timeGroup(\"createdAt\",'$summarize'),\n  avg(value) as \"value\",\n  'ended' as \"metric\"\nFROM \n  grafana_metric\nWHERE\n  $__timeFilter(\"createdAt\") AND\n  measurement = 'payment.ended'\nGROUP BY time, metric\nORDER BY time",
+          "rawSql": "SELECT\n  $__timeGroup(\"createdAt\",'$summarize'),\n  avg(value) as \"value\",\n  'ended' as \"metric\"\nFROM \n  plutono_metric\nWHERE\n  $__timeFilter(\"createdAt\") AND\n  measurement = 'payment.ended'\nGROUP BY time, metric\nORDER BY time",
           "refId": "B"
         }
       ],
@@ -327,7 +327,7 @@
         {
           "alias": "",
           "format": "time_series",
-          "rawSql": "SELECT\n  $__timeGroup(\"createdAt\",'$summarize'),\n  max(value) as \"value\",\n  hostname as \"metric\"\nFROM \n  grafana_metric\nWHERE\n  $__timeFilter(\"createdAt\") AND\n  measurement = 'cpu' AND\n  hostname IN($host)\nGROUP BY time, metric\nORDER BY time",
+          "rawSql": "SELECT\n  $__timeGroup(\"createdAt\",'$summarize'),\n  max(value) as \"value\",\n  hostname as \"metric\"\nFROM \n  plutono_metric\nWHERE\n  $__timeFilter(\"createdAt\") AND\n  measurement = 'cpu' AND\n  hostname IN($host)\nGROUP BY time, metric\nORDER BY time",
           "refId": "A",
           "target": ""
         }
@@ -416,7 +416,7 @@
         {
           "alias": "",
           "format": "table",
-          "rawSql": "SELECT \"createdAt\" as \"Time\", source, datacenter, hostname, value FROM grafana_metric WHERE hostname in($host)",
+          "rawSql": "SELECT \"createdAt\" as \"Time\", source, datacenter, hostname, value FROM plutono_metric WHERE hostname in($host)",
           "refId": "A",
           "target": ""
         }
@@ -445,7 +445,7 @@
         "multi": false,
         "name": "datacenter",
         "options": [],
-        "query": "SELECT DISTINCT datacenter FROM grafana_metric",
+        "query": "SELECT DISTINCT datacenter FROM plutono_metric",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,
@@ -471,7 +471,7 @@
         "multi": true,
         "name": "host",
         "options": [],
-        "query": "SELECT DISTINCT hostname FROM grafana_metric WHERE datacenter='$datacenter'",
+        "query": "SELECT DISTINCT hostname FROM plutono_metric WHERE datacenter='$datacenter'",
         "refresh": 1,
         "regex": "",
         "skipUrlSync": false,

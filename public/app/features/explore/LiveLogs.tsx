@@ -2,12 +2,12 @@ import React, { PureComponent } from 'react';
 import { css, cx } from 'emotion';
 import tinycolor from 'tinycolor2';
 
-import { LogMessageAnsi, Themeable, withTheme, getLogRowStyles, Icon } from '@grafana/ui';
-import { GrafanaTheme, LogRowModel, TimeZone, dateTimeFormat } from '@grafana/data';
+import { LogMessageAnsi, Themeable, withTheme, getLogRowStyles, Icon } from '@credativ/plutono-ui';
+import { PlutonoTheme, LogRowModel, TimeZone, dateTimeFormat } from '@credativ/plutono-data';
 
 import { ElapsedTime } from './ElapsedTime';
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: PlutonoTheme) => ({
   logsRowsLive: css`
     label: logs-rows-live;
     font-family: ${theme.typography.fontFamily.monospace};

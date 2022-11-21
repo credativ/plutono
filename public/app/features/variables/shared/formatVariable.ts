@@ -1,4 +1,4 @@
-import { VariableModel } from '@grafana/data';
+import { VariableModel } from '@credativ/plutono-data';
 import { VariableWithOptions } from '../types';
 
 export const formatVariableLabel = (variable: VariableModel) => {

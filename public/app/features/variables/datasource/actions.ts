@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import { getTemplateSrv } from '@grafana/runtime';
-import { stringToJsRegex } from '@grafana/data';
+import { getTemplateSrv } from '@credativ/plutono-runtime';
+import { stringToJsRegex } from '@credativ/plutono-data';
 
 import { toVariablePayload, VariableIdentifier } from '../state/types';
 import { ThunkResult } from '../../../types';

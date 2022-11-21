@@ -1,6 +1,6 @@
 import React, { FormEvent, PureComponent } from 'react';
-import { RadioButtonGroup, Switch, Field, TextArea, ClipboardButton } from '@grafana/ui';
-import { SelectableValue, AppEvents } from '@grafana/data';
+import { RadioButtonGroup, Switch, Field, TextArea, ClipboardButton } from '@credativ/plutono-ui';
+import { SelectableValue, AppEvents } from '@credativ/plutono-data';
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
 import { appEvents } from 'app/core/core';
 import { buildIframeHtml } from './utils';
@@ -94,7 +94,7 @@ export class ShareEmbed extends PureComponent<Props, State> {
             <Field
               label="Embed html"
               description="The html code below can be pasted and included in another web page. Unless anonymous access is enabled, 
-                the user viewing that page need to be signed into grafana for the graph to load."
+                the user viewing that page need to be signed into plutono for the graph to load."
             >
               <TextArea rows={5} value={iframeHtml} onChange={this.onIframeHtmlChange}></TextArea>
             </Field>

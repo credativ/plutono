@@ -1,4 +1,4 @@
-jest.mock('@grafana/data/src/datetime/formatter', () => ({
+jest.mock('@credativ/plutono-data/src/datetime/formatter', () => ({
   dateTimeFormat: () => 'format() jest mocked',
   dateTimeFormatTimeAgo: (ts: any) => 'fromNow() jest mocked',
 }));
@@ -12,7 +12,7 @@ import {
   PanelData,
   TimeRange,
   toDataFrame,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import {
   decorateWithFrameTypeMetadata,

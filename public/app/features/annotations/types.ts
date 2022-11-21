@@ -1,4 +1,4 @@
-import { PanelData, AnnotationEvent, TimeRange } from '@grafana/data';
+import { PanelData, AnnotationEvent, TimeRange } from '@credativ/plutono-data';
 import { DashboardModel, PanelModel } from '../dashboard/state';
 
 export interface AnnotationQueryOptions {

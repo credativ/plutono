@@ -8,10 +8,10 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/services/sqlstore/migrator"
 	"github.com/gchaincl/sqlhooks"
 	"github.com/go-sql-driver/mysql"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrator"
 	"github.com/lib/pq"
 	"github.com/mattn/go-sqlite3"
 	"github.com/prometheus/client_golang/prometheus"
@@ -24,7 +24,7 @@ var (
 
 func init() {
 	databaseQueryHistogram = prometheus.NewHistogramVec(prometheus.HistogramOpts{
-		Namespace: "grafana",
+		Namespace: "plutono",
 		Name:      "database_queries_duration_seconds",
 		Help:      "Database query histogram",
 		Buckets:   prometheus.ExponentialBuckets(0.00001, 4, 10),

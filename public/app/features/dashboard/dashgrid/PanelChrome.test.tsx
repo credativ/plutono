@@ -3,7 +3,7 @@ import { ReplaySubject } from 'rxjs';
 import { Provider } from 'react-redux';
 import configureMockStore from 'redux-mock-store';
 import { act, render, screen } from '@testing-library/react';
-import { getDefaultTimeRange, LoadingState, PanelData, PanelPlugin, PanelProps } from '@grafana/data';
+import { getDefaultTimeRange, LoadingState, PanelData, PanelPlugin, PanelProps } from '@credativ/plutono-data';
 
 import { PanelChrome, Props } from './PanelChrome';
 import { DashboardModel, PanelModel } from '../state';

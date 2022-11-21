@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
 import { css, cx } from 'emotion';
-import { stylesFactory, useTheme, TextArea, Button, IconButton } from '@grafana/ui';
-import { getDataSourceSrv } from '@grafana/runtime';
-import { GrafanaTheme, AppEvents, DataSourceApi } from '@grafana/data';
+import { stylesFactory, useTheme, TextArea, Button, IconButton } from '@credativ/plutono-ui';
+import { getDataSourceSrv } from '@credativ/plutono-runtime';
+import { PlutonoTheme, AppEvents, DataSourceApi } from '@credativ/plutono-data';
 import { RichHistoryQuery, ExploreId } from 'app/types/explore';
 import { createUrlFromRichHistory, createQueryText } from 'app/core/utils/richHistory';
 import { createAndCopyShortLink } from 'app/core/utils/shortLinks';
@@ -27,7 +27,7 @@ export interface Props {
   datasourceInstance: DataSourceApi;
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme, isRemoved: boolean) => {
+const getStyles = stylesFactory((theme: PlutonoTheme, isRemoved: boolean) => {
   /* Hard-coded value so all buttons and icons on right side of card are aligned */
   const rigtColumnWidth = '240px';
   const rigtColumnContentWidth = '170px';

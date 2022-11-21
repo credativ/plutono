@@ -1,6 +1,6 @@
 import React from 'react';
-import { TabbedContainer, TabConfig } from '@grafana/ui';
-import { PanelData, TimeZone } from '@grafana/data';
+import { TabbedContainer, TabConfig } from '@credativ/plutono-ui';
+import { PanelData, TimeZone } from '@credativ/plutono-data';
 import { runQueries } from './state/query';
 import { StoreState, ExploreItemState, ExploreId } from 'app/types';
 import { hot } from 'react-hot-loader';

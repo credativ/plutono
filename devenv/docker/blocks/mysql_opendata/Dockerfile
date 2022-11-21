@@ -4,7 +4,7 @@ FROM mysql:latest
 
 ENV MYSQL_DATABASE="testdata" \
     MYSQL_ROOT_PASSWORD="rootpass" \
-    MYSQL_USER="grafana" \
+    MYSQL_USER="plutono" \
     MYSQL_PASSWORD="password"
 
 # Install requirement (wget)

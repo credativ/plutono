@@ -1,11 +1,11 @@
 import React from 'react';
-import { stylesFactory, useTheme } from '@grafana/ui';
+import { stylesFactory, useTheme } from '@credativ/plutono-ui';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 
 const title = { fontWeight: 500, fontSize: '26px', lineHeight: '123%' };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   const backgroundUrl = theme.isDark ? 'public/img/licensing/header_dark.svg' : 'public/img/licensing/header_light.svg';
   const footerBg = theme.isDark ? theme.palette.dark9 : theme.palette.gray6;
 
@@ -55,8 +55,8 @@ export const LicenseChrome: React.FC<Props> = ({ header, editionNotice, subheade
           }}
         >
           <img
-            src="public/img/grafana_icon.svg"
-            alt="Grafana"
+            src="public/img/plutono_icon.svg"
+            alt="Plutono"
             width="80px"
             style={{ position: 'absolute', left: '23px', top: '20px' }}
           />

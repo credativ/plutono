@@ -12,7 +12,7 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 var netTransport = &http.Transport{
@@ -55,7 +55,7 @@ func (rs *RenderingService) renderViaHttp(ctx context.Context, renderKey string,
 		return nil, err
 	}
 
-	req.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+	req.Header.Set("User-Agent", fmt.Sprintf("Plutono/%s", setting.BuildVersion))
 
 	for k, v := range opts.Headers {
 		req.Header[k] = v

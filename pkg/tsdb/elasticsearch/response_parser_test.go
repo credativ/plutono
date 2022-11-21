@@ -6,11 +6,11 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/null"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	es "github.com/grafana/grafana/pkg/tsdb/elasticsearch/client"
+	"github.com/credativ/plutono/pkg/components/null"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	es "github.com/credativ/plutono/pkg/tsdb/elasticsearch/client"
 
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/tsdb"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

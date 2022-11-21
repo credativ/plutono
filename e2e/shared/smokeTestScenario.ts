@@ -1,4 +1,4 @@
-import { e2e } from '@grafana/e2e';
+import { e2e } from '@credativ/plutono-e2e';
 
 export const smokeTestScenario = {
   describeName: 'Smoke tests',

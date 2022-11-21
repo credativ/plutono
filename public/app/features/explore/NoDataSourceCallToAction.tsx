@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { css } from 'emotion';
-import { ThemeContext, LinkButton, CallToActionCard, Icon } from '@grafana/ui';
+import { ThemeContext, LinkButton, CallToActionCard, Icon } from '@credativ/plutono-ui';
 
 export const NoDataSourceCallToAction = () => {
   const theme = useContext(ThemeContext);
@@ -12,7 +12,7 @@ export const NoDataSourceCallToAction = () => {
       <Icon name="rocket" />
       <> ProTip: You can also define data sources through configuration files. </>
       <a
-        href="http://docs.grafana.org/administration/provisioning/#datasources?utm_source=explore"
+        href="http://docs.plutono.org/administration/provisioning/#datasources"
         target="_blank"
         rel="noreferrer"
         className="text-link"

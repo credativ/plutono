@@ -1,6 +1,6 @@
 import memoizeOne from 'memoize-one';
-import { SelectableValue } from '@grafana/data';
-import { config } from '@grafana/runtime';
+import { SelectableValue } from '@credativ/plutono-data';
+import { config } from '@credativ/plutono-runtime';
 import { NotificationChannelDTO, NotificationChannelType } from 'app/types';
 
 export const defaultValues: NotificationChannelDTO = {

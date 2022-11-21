@@ -8,10 +8,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/securejsondata"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/securejsondata"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 func init() {

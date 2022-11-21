@@ -3,13 +3,13 @@ import InfluxDatasource from '../datasource';
 import { TemplateSrvStub } from 'test/specs/helpers';
 import { backendSrv } from 'app/core/services/backend_srv'; // will use the version in __mocks__
 import { of } from 'rxjs';
-import { FetchResponse } from '@grafana/runtime';
+import { FetchResponse } from '@credativ/plutono-runtime';
 
 //@ts-ignore
 const templateSrv = new TemplateSrvStub();
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@credativ/plutono-runtime', () => ({
+  ...((jest.requireActual('@credativ/plutono-runtime') as unknown) as object),
   getBackendSrv: () => backendSrv,
 }));
 

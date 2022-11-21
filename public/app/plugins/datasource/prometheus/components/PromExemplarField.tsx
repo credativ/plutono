@@ -1,5 +1,5 @@
-import { GrafanaTheme } from '@grafana/data';
-import { IconButton, InlineLabel, Tooltip, useStyles } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { IconButton, InlineLabel, Tooltip, useStyles } from '@credativ/plutono-ui';
 import { css, cx } from 'emotion';
 import React, { useEffect, useState } from 'react';
 import { PrometheusDatasource } from '../datasource';
@@ -50,7 +50,7 @@ export function PromExemplarField({ datasource, onChange, isEnabled }: Props) {
   );
 }
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: PlutonoTheme) {
   return {
     eyeIcon: css`
       margin-left: ${theme.spacing.md};

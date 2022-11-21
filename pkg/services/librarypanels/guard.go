@@ -1,9 +1,9 @@
 package librarypanels
 
 import (
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/dashboards"
-	"github.com/grafana/grafana/pkg/services/guardian"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/dashboards"
+	"github.com/credativ/plutono/pkg/services/guardian"
 )
 
 func isGeneralFolder(folderID int64) bool {

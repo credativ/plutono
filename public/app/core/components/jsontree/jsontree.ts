@@ -1,5 +1,5 @@
 import coreModule from 'app/core/core_module';
-import { JsonExplorer } from '@grafana/ui';
+import { JsonExplorer } from '@credativ/plutono-ui';
 
 coreModule.directive('jsonTree', [
   function jsonTreeDirective() {

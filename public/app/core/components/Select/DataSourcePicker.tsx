@@ -2,11 +2,11 @@
 import React, { PureComponent } from 'react';
 
 // Components
-import { HorizontalGroup, Select } from '@grafana/ui';
-import { DataSourceInstanceSettings, SelectableValue } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { HorizontalGroup, Select } from '@credativ/plutono-ui';
+import { DataSourceInstanceSettings, SelectableValue } from '@credativ/plutono-data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { isUnsignedPluginSignature, PluginSignatureBadge } from '../../../features/plugins/PluginSignatureBadge';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { getDataSourceSrv } from '@credativ/plutono-runtime';
 
 export interface Props {
   onChange: (ds: DataSourceInstanceSettings) => void;

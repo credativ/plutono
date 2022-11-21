@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
-import { Alert, DataSourceHttpSettings } from '@grafana/ui';
-import { DataSourcePluginOptionsEditorProps } from '@grafana/data';
+import { Alert, DataSourceHttpSettings } from '@credativ/plutono-ui';
+import { DataSourcePluginOptionsEditorProps } from '@credativ/plutono-data';
 import { ElasticsearchOptions } from '../types';
 import { defaultMaxConcurrentShardRequests, ElasticDetails } from './ElasticDetails';
 import { LogsConfig } from './LogsConfig';

@@ -1,4 +1,4 @@
-import { PanelMenuItem } from '@grafana/data';
+import { PanelMenuItem } from '@credativ/plutono-data';
 import { DashboardModel, PanelModel } from '../state';
 import { getPanelMenu } from './getPanelMenu';
 import { describe } from '../../../../test/lib/common';

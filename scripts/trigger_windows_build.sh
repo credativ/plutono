@@ -7,7 +7,7 @@ _buildType=$3
 post_data=$(cat <<EOF
 {
   "accountName": "Torkeldegaard",
-  "projectSlug": "grafana",
+  "projectSlug": "plutono",
   "branch": "master",
   "commitId": "${_commit}",
   "environmentVariables": {

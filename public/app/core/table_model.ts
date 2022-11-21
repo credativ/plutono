@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { Column, TableData, QueryResultMeta } from '@grafana/data';
+import { Column, TableData, QueryResultMeta } from '@credativ/plutono-data';
 
 /**
  * Extends the standard Column class with variables that get

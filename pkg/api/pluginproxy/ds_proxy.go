@@ -13,14 +13,14 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/api/datasource"
-	glog "github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/services/oauthtoken"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
-	"github.com/grafana/grafana/pkg/util/proxyutil"
+	"github.com/credativ/plutono/pkg/api/datasource"
+	glog "github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/services/oauthtoken"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
+	"github.com/credativ/plutono/pkg/util/proxyutil"
 	"github.com/opentracing/opentracing-go"
 )
 
@@ -225,7 +225,7 @@ func (proxy *DataSourceProxy) director(req *http.Request) {
 	proxyutil.ClearCookieHeader(req, keepCookieNames)
 	proxyutil.PrepareProxyRequest(req)
 
-	req.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+	req.Header.Set("User-Agent", fmt.Sprintf("Plutono/%s", setting.BuildVersion))
 
 	// Clear Origin and Referer to avoir CORS issues
 	req.Header.Del("Origin")

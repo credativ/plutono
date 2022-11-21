@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Select, Icon } from '@grafana/ui';
+import { Select, Icon } from '@credativ/plutono-ui';
 import { dashboardPermissionLevels } from 'app/types/acl';
 
 export interface Props {

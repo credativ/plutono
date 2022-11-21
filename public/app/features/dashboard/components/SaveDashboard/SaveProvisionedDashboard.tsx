@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal } from '@grafana/ui';
+import { Modal } from '@credativ/plutono-ui';
 import { SaveProvisionedDashboardForm } from './forms/SaveProvisionedDashboardForm';
 import { SaveDashboardModalProps } from './types';
 

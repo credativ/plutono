@@ -1,6 +1,6 @@
 import { from } from 'rxjs';
-import { getDataSourceSrv } from '@grafana/runtime';
-import { DataSourceInstanceSettings, LoadingState } from '@grafana/data';
+import { getDataSourceSrv } from '@credativ/plutono-runtime';
+import { DataSourceInstanceSettings, LoadingState } from '@credativ/plutono-data';
 
 import { DatasourceSrvMock, MockDataSourceApi } from 'test/mocks/datasource_srv';
 import { getQueryOptions } from 'test/helpers/getQueryOptions';
@@ -16,8 +16,8 @@ const datasourceSrv = new DatasourceSrvMock(defaultDS, {
   E: new MockDataSourceApi('DSE', { data: [] }, {}, 'syntax error near WHERE'),
 });
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@credativ/plutono-runtime', () => ({
+  ...((jest.requireActual('@credativ/plutono-runtime') as unknown) as object),
   getDataSourceSrv: () => {
     return datasourceSrv;
   },

@@ -10,7 +10,7 @@ import {
   PanelPlugin,
   ThresholdsConfig,
   ThresholdsMode,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { mergeWith, isArray, isObject, unset, isEqual } from 'lodash';
 
 export interface Props {

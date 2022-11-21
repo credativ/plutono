@@ -1,8 +1,8 @@
 import React, { FC, useCallback } from 'react';
 import { css } from 'emotion';
-import { selectors as e2eSelectors } from '@grafana/e2e-selectors';
-import { TagList, Card, useStyles, Icon, IconName } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { selectors as e2eSelectors } from '@credativ/plutono-e2e-selectors';
+import { TagList, Card, useStyles, Icon, IconName } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { DashboardSectionItem, OnToggleChecked } from '../types';
 import { SearchCheckbox } from './SearchCheckbox';
 import { SEARCH_ITEM_HEIGHT, SEARCH_ITEM_MARGIN } from '../constants';
@@ -72,7 +72,7 @@ export const SearchItem: FC<Props> = ({ item, editable, onToggleChecked, onTagSe
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => {
+const getStyles = (theme: PlutonoTheme) => {
   return {
     container: css`
       padding: ${theme.spacing.sm} ${theme.spacing.md};

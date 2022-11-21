@@ -8,12 +8,12 @@ import (
 
 	"gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/infra/remotecache"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/auth"
-	"github.com/grafana/grafana/pkg/services/contexthandler"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/infra/remotecache"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/auth"
+	"github.com/credativ/plutono/pkg/services/contexthandler"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/require"
 )
 

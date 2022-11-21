@@ -4,8 +4,8 @@ import (
 	"fmt"
 	"sync"
 
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/tsdb"
 )
 
 func init() {

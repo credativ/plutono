@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { SelectableValue } from '@grafana/data';
-import { Button, Checkbox, Field, FormAPI, Input } from '@grafana/ui';
+import { SelectableValue } from '@credativ/plutono-data';
+import { Button, Checkbox, Field, FormAPI, Input } from '@credativ/plutono-ui';
 import { OptionElement } from './OptionElement';
 import { NotificationChannelDTO, NotificationChannelOption, NotificationChannelSecureFields } from '../../../types';
 

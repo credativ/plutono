@@ -4,7 +4,7 @@ import (
 	"time"
 
 	"github.com/bradfitz/gomemcache/memcache"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 const memcachedCacheType = "memcached"

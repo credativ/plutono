@@ -6,13 +6,13 @@ import (
 	"net/http"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/remotecache"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/ldap"
-	"github.com/grafana/grafana/pkg/services/multildap"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/remotecache"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/ldap"
+	"github.com/credativ/plutono/pkg/services/multildap"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/macaron.v1"
@@ -106,7 +106,7 @@ func TestMiddlewareContext(t *testing.T) {
 
 	t.Run("When the cache key contains additional headers", func(t *testing.T) {
 		const id int64 = 33
-		const group = "grafana-core-team"
+		const group = "plutono-core-team"
 
 		h, err := HashCacheKey(hdrName + "-" + group)
 		require.NoError(t, err)
@@ -118,7 +118,7 @@ func TestMiddlewareContext(t *testing.T) {
 			req.Header.Set("X-WEBAUTH-GROUPS", group)
 			cfg.AuthProxyHeaders = map[string]string{"Groups": "X-WEBAUTH-GROUPS"}
 		})
-		assert.Equal(t, "auth-proxy-sync-ttl:14f69b7023baa0ac98c96b31cec07bc0", key)
+		assert.Equal(t, "auth-proxy-sync-ttl:39b124f92fdd0543fa0b12ca57ca15e9", key)
 
 		gotID, err := auth.Login(logger, false)
 		require.NoError(t, err)

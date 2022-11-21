@@ -1,4 +1,4 @@
-import { PanelModel } from '@grafana/data';
+import { PanelModel } from '@credativ/plutono-data';
 import { TextMode, TextOptions } from './types';
 
 export const textPanelMigrationHandler = (panel: PanelModel<TextOptions>): Partial<TextOptions> => {

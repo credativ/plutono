@@ -1,7 +1,7 @@
 import React, { useCallback } from 'react';
-import { PieChart, useTheme } from '@grafana/ui';
+import { PieChart, useTheme } from '@credativ/plutono-ui';
 import { PieChartOptions } from './types';
-import { getFieldDisplayValues, PanelProps } from '@grafana/data';
+import { getFieldDisplayValues, PanelProps } from '@credativ/plutono-data';
 import { changeSeriesColorConfigFactory } from '../timeseries/overrides/colorSeriesConfigFactory';
 
 interface Props extends PanelProps<PieChartOptions> {}

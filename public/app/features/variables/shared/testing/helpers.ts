@@ -1,4 +1,4 @@
-import { DataSourceInstanceSettings, DataSourceJsonData, DataSourcePluginMeta } from '@grafana/data';
+import { DataSourceInstanceSettings, DataSourceJsonData, DataSourcePluginMeta } from '@credativ/plutono-data';
 
 export function getDataSourceInstanceSetting(name: string, meta: DataSourcePluginMeta): DataSourceInstanceSettings {
   return {

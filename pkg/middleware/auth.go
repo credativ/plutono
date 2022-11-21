@@ -9,13 +9,13 @@ import (
 
 	macaron "gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/middleware/cookies"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/middleware/cookies"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 type AuthOptions struct {
-	ReqGrafanaAdmin bool
+	ReqPlutonoAdmin bool
 	ReqSignedIn     bool
 	ReqNoAnonynmous bool
 }
@@ -122,7 +122,7 @@ func Auth(options *AuthOptions) macaron.Handler {
 			return
 		}
 
-		if !c.IsGrafanaAdmin && options.ReqGrafanaAdmin {
+		if !c.IsPlutonoAdmin && options.ReqPlutonoAdmin {
 			accessForbidden(c)
 			return
 		}

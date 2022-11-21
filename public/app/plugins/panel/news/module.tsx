@@ -1,5 +1,5 @@
 import { isString } from 'lodash';
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin } from '@credativ/plutono-data';
 import { NewsPanel } from './NewsPanel';
 import { NewsOptions } from './types';
 import { DEFAULT_FEED_URL, PROXY_PREFIX } from './constants';

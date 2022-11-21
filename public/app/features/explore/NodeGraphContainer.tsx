@@ -1,6 +1,6 @@
 import React from 'react';
-import { Badge, NodeGraph, Collapse } from '@grafana/ui';
-import { DataFrame, TimeRange } from '@grafana/data';
+import { Badge, NodeGraph, Collapse } from '@credativ/plutono-ui';
+import { DataFrame, TimeRange } from '@credativ/plutono-data';
 import { ExploreId, StoreState } from '../../types';
 import { splitOpen } from './state/main';
 import { connect, ConnectedProps } from 'react-redux';

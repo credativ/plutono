@@ -2,8 +2,8 @@ import React, { FormEvent, PureComponent } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect, ConnectedProps } from 'react-redux';
 import { css } from 'emotion';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
-import { PageToolbar, stylesFactory, ToolbarButton } from '@grafana/ui';
+import { PlutonoTheme, SelectableValue } from '@credativ/plutono-data';
+import { PageToolbar, stylesFactory, ToolbarButton } from '@credativ/plutono-ui';
 
 import { config } from 'app/core/config';
 import { SplitPaneWrapper } from 'app/core/components/SplitPaneWrapper/SplitPaneWrapper';
@@ -174,7 +174,7 @@ class NextGenAlertingPageUnconnected extends PureComponent<Props> {
 
 export default hot(module)(connector(NextGenAlertingPageUnconnected));
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   wrapper: css`
     width: calc(100% - 55px);
     height: 100%;

@@ -1,6 +1,6 @@
 import { useEffect } from 'react';
 import useAsyncFn from 'react-use/lib/useAsyncFn';
-import { AppEvents, locationUtil } from '@grafana/data';
+import { AppEvents, locationUtil } from '@credativ/plutono-data';
 import { useDispatch, useSelector } from 'react-redux';
 import { SaveDashboardOptions } from './types';
 import { CoreEvents, StoreState } from 'app/types';

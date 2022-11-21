@@ -11,8 +11,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/tsdb"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -105,11 +105,11 @@ func TestCloudMonitoring(t *testing.T) {
 				})
 			})
 
-			Convey("and alignmentPeriod is set to grafana-auto", func() {
+			Convey("and alignmentPeriod is set to plutono-auto", func() {
 				Convey("and IntervalMs is larger than 60000", func() {
 					tsdbQuery.Queries[0].IntervalMs = 1000000
 					tsdbQuery.Queries[0].Model = simplejson.NewFromAny(map[string]interface{}{
-						"alignmentPeriod": "grafana-auto",
+						"alignmentPeriod": "plutono-auto",
 						"filters":         []interface{}{"key", "=", "value", "AND", "key2", "=", "value2"},
 					})
 
@@ -138,7 +138,7 @@ func TestCloudMonitoring(t *testing.T) {
 				Convey("and IntervalMs is less than 60000", func() {
 					tsdbQuery.Queries[0].IntervalMs = 30000
 					tsdbQuery.Queries[0].Model = simplejson.NewFromAny(map[string]interface{}{
-						"alignmentPeriod": "grafana-auto",
+						"alignmentPeriod": "plutono-auto",
 						"filters":         []interface{}{"key", "=", "value", "AND", "key2", "=", "value2"},
 					})
 
@@ -686,7 +686,7 @@ func TestCloudMonitoring(t *testing.T) {
 					So(labels["resource.label.zone"], ShouldContain, "us-east1-b")
 
 					So(len(labels["resource.label.project_id"]), ShouldEqual, 1)
-					So(labels["resource.label.project_id"][0], ShouldEqual, "grafana-prod")
+					So(labels["resource.label.project_id"][0], ShouldEqual, "plutono-prod")
 				})
 			})
 
@@ -941,7 +941,7 @@ func TestCloudMonitoring(t *testing.T) {
 		})
 		Convey("Parse cloud monitoring unit", func() {
 			Convey("when there is only one query", func() {
-				Convey("and cloud monitoring unit does not have a corresponding grafana unit", func() {
+				Convey("and cloud monitoring unit does not have a corresponding plutono unit", func() {
 					executors := []cloudMonitoringQueryExecutor{
 						&cloudMonitoringTimeSeriesFilter{Params: url.Values{}, ProjectName: "test-proj", Selector: "select_slo_compliance", Service: "test-service",
 							Slo: "test-slo", Unit: "megaseconds"},
@@ -950,7 +950,7 @@ func TestCloudMonitoring(t *testing.T) {
 					So(unit, ShouldEqual, "")
 				})
 
-				Convey("and cloud monitoring unit has a corresponding grafana unit", func() {
+				Convey("and cloud monitoring unit has a corresponding plutono unit", func() {
 					for key, element := range cloudMonitoringUnitMappings {
 						queries := []cloudMonitoringQueryExecutor{
 							&cloudMonitoringTimeSeriesFilter{Params: url.Values{}, ProjectName: "test-proj", Selector: "select_slo_compliance", Service: "test-service",
@@ -976,7 +976,7 @@ func TestCloudMonitoring(t *testing.T) {
 					}
 				})
 
-				Convey("and all target units are the same but does not have grafana mappings", func() {
+				Convey("and all target units are the same but does not have plutono mappings", func() {
 					queries := []cloudMonitoringQueryExecutor{
 						&cloudMonitoringTimeSeriesFilter{Params: url.Values{}, ProjectName: "test-proj", Selector: "select_slo_compliance", Service: "test-service1",
 							Slo: "test-slo", Unit: "megaseconds"},
@@ -1160,7 +1160,7 @@ func verifyDeepLink(dl string, expectedTimeSelection map[string]string, expected
 	params, err = url.ParseQuery(u.RawQuery)
 	So(err, ShouldBeNil)
 
-	deepLinkParam := params.Get("Grafana_deeplink")
+	deepLinkParam := params.Get("Plutono_deeplink")
 	So(deepLinkParam, ShouldNotBeEmpty)
 
 	pageStateStr := params.Get("pageState")

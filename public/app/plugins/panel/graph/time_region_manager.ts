@@ -1,6 +1,6 @@
 import 'vendor/flot/jquery.flot';
 import _ from 'lodash';
-import { getColorForTheme, dateTime, DateTime, AbsoluteTimeRange, GrafanaTheme } from '@grafana/data';
+import { getColorForTheme, dateTime, DateTime, AbsoluteTimeRange, PlutonoTheme } from '@credativ/plutono-data';
 import { config } from 'app/core/config';
 
 type TimeRegionColorDefinition = {
@@ -43,7 +43,7 @@ export function getColorModes() {
   });
 }
 
-function getColor(timeRegion: any, theme: GrafanaTheme): TimeRegionColorDefinition {
+function getColor(timeRegion: any, theme: PlutonoTheme): TimeRegionColorDefinition {
   if (Object.keys(colorModes).indexOf(timeRegion.colorMode) === -1) {
     timeRegion.colorMode = 'red';
   }

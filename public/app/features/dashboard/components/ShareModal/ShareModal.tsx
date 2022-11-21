@@ -1,5 +1,5 @@
 import React from 'react';
-import { Modal, ModalTabsHeader, TabContent } from '@grafana/ui';
+import { Modal, ModalTabsHeader, TabContent } from '@credativ/plutono-ui';
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
 import { ShareLink } from './ShareLink';
 import { ShareSnapshot } from './ShareSnapshot';

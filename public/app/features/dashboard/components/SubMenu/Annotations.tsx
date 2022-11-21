@@ -1,6 +1,6 @@
 import React, { FunctionComponent, useEffect, useState } from 'react';
-import { LegacyForms } from '@grafana/ui';
-import { AnnotationQuery } from '@grafana/data';
+import { LegacyForms } from '@credativ/plutono-ui';
+import { AnnotationQuery } from '@credativ/plutono-data';
 const { Switch } = LegacyForms;
 
 interface Props {

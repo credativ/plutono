@@ -1,8 +1,8 @@
-# This will proxy all requests for http://localhost:10081/grafana/ to
-# http://localhost:3000 (Grafana running locally)
+# This will proxy all requests for http://localhost:10081/plutono/ to
+# http://localhost:3000 (Plutono running locally)
 #
-# Please note that you'll need to change the root_url in the Grafana configuration:
-# root_url = %(protocol)s://%(domain)s:10081/grafana/
+# Please note that you'll need to change the root_url in the Plutono configuration:
+# root_url = %(protocol)s://%(domain)s:10081/plutono/
 
   apacheproxy:
     build: docker/blocks/apache_proxy

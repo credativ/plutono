@@ -32,11 +32,11 @@ build-go: ## Build all Go binaries.
 	@echo "build go files"
 	$(GO) run build.go build
 
-build-server: ## Build Grafana server.
+build-server: ## Build Plutono server.
 	@echo "build server"
 	$(GO) run build.go build-server
 
-build-cli: ## Build Grafana CLI application.
+build-cli: ## Build Plutono CLI application.
 	@echo "build in CI environment"
 	$(GO) run build.go build-cli
 
@@ -109,12 +109,12 @@ build-docker-dev: ## Build Docker image for development (fast).
 	@echo "build development container"
 	@echo "\033[92mInfo:\033[0m the frontend code is expected to be built already."
 	$(GO) run build.go -goos linux -pkg-arch amd64 ${OPT} build pkg-archive latest
-	cp dist/grafana-latest.linux-x64.tar.gz packaging/docker
-	cd packaging/docker && docker build --tag grafana/grafana:dev .
+	cp dist/plutono-latest.linux-x64.tar.gz packaging/docker
+	cd packaging/docker && docker build --tag plutono/plutono:dev .
 
 build-docker-full: ## Build Docker image for development.
 	@echo "build docker container"
-	docker build --tag grafana/grafana:dev .
+	docker build --tag plutono/plutono:dev .
 
 ##@ Services
 
@@ -143,7 +143,7 @@ devenv-down: ## Stop optional services.
 ##@ Helpers
 
 # We separate the protobuf generation because most development tasks on
-# Grafana do not involve changing protobuf files and protoc is not a
+# Plutono do not involve changing protobuf files and protoc is not a
 # go-gettable dependency and so getting it installed can be inconvenient.
 #
 # If you are working on changes to protobuf interfaces you may either use

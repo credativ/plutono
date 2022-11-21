@@ -4,7 +4,7 @@
 source "$(dirname "$0")/helpers/exit-if-fail.sh"
 
 echo "building backend with install to cache pkgs"
-exit_if_fail time go install ./pkg/cmd/grafana-server
+exit_if_fail time go install ./pkg/cmd/plutono-server
 
 echo "running go test"
 set -e

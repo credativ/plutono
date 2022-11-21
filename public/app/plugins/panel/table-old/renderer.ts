@@ -12,9 +12,9 @@ import {
   dateTimeFormatISO,
   dateTimeFormat,
   getColorForTheme,
-  GrafanaTheme,
-} from '@grafana/data';
-import { getTemplateSrv, TemplateSrv } from '@grafana/runtime';
+  PlutonoTheme,
+} from '@credativ/plutono-data';
+import { getTemplateSrv, TemplateSrv } from '@credativ/plutono-runtime';
 import { ColumnRender, TableRenderModel, ColumnStyle } from './types';
 import { ColumnOptionsCtrl } from './column_options';
 
@@ -28,7 +28,7 @@ export class TableRenderer {
     private timeZone: TimeZone,
     private sanitize: (v: any) => any,
     private templateSrv: TemplateSrv = getTemplateSrv(),
-    private theme: GrafanaTheme
+    private theme: PlutonoTheme
   ) {
     this.initColumns();
   }

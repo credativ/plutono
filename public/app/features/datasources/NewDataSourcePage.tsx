@@ -1,9 +1,9 @@
 import React, { FC, PureComponent } from 'react';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
-import { DataSourcePluginMeta, NavModel } from '@grafana/data';
-import { Button, LinkButton, List } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { DataSourcePluginMeta, NavModel } from '@credativ/plutono-data';
+import { Button, LinkButton, List } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import Page from 'app/core/components/Page/Page';
 import { DataSourcePluginCategory, StoreState } from 'app/types';
@@ -77,7 +77,7 @@ class NewDataSourcePage extends PureComponent<Props> {
         <div className="add-data-source-more">
           <LinkButton
             variant="secondary"
-            href="https://grafana.com/plugins?type=datasource&utm_source=grafana_add_ds"
+            href="https://grafana.com/plugins?type=datasource"
             target="_blank"
             rel="noopener"
           >
@@ -105,7 +105,7 @@ class NewDataSourcePage extends PureComponent<Props> {
                 <br />
                 <p>
                   Note that <strong>unsigned front-end datasource plugins</strong> are still usable, but this is subject
-                  to change in the upcoming releases of Grafana
+                  to change in the upcoming releases of Plutono
                 </p>
               </>
             </PluginsErrorsInfo>
@@ -144,7 +144,7 @@ const DataSourceTypeCard: FC<DataSourceTypeCardProps> = (props) => {
           {learnMoreLink && (
             <LinkButton
               variant="secondary"
-              href={`${learnMoreLink.url}?utm_source=grafana_add_ds`}
+              href={`${learnMoreLink.url}`}
               target="_blank"
               rel="noopener"
               onClick={onLearnMoreClick}

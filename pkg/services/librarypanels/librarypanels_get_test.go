@@ -6,7 +6,7 @@ import (
 	"github.com/google/go-cmp/cmp"
 	"github.com/stretchr/testify/require"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 func TestGetLibraryPanel(t *testing.T) {

@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import InfluxDatasource from '../datasource';
-import { InlineFormLabel, TextArea } from '@grafana/ui';
+import { InlineFormLabel, TextArea } from '@credativ/plutono-ui';
 import { FluxQueryEditor } from './FluxQueryEditor';
 
 interface Props {

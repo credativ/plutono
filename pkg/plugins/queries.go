@@ -1,8 +1,8 @@
 package plugins
 
 import (
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 func GetPluginSettings(orgId int64) (map[string]*models.PluginSettingInfoDTO, error) {

@@ -10,10 +10,10 @@ import { AlertDefinition, AlertRule, CoreEvents, StoreState } from 'app/types';
 import { getAlertRulesAsync, togglePauseAlertRule } from './state/actions';
 import { getAlertRuleItems, getSearchQuery } from './state/selectors';
 import { FilterInput } from 'app/core/components/FilterInput/FilterInput';
-import { SelectableValue } from '@grafana/data';
-import { config } from '@grafana/runtime';
+import { SelectableValue } from '@credativ/plutono-data';
+import { config } from '@credativ/plutono-runtime';
 import { setSearchQuery } from './state/reducers';
-import { Button, LinkButton, Select, VerticalGroup } from '@grafana/ui';
+import { Button, LinkButton, Select, VerticalGroup } from '@credativ/plutono-ui';
 import { AlertDefinitionItem } from './components/AlertDefinitionItem';
 
 function mapStateToProps(state: StoreState) {

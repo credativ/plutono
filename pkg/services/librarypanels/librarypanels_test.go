@@ -12,14 +12,14 @@ import (
 	"github.com/stretchr/testify/require"
 	"gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/dashboards"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/services/dashboards"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 const UserInDbName = "user_in_db"

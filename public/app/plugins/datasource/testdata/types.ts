@@ -1,4 +1,4 @@
-import { DataQuery } from '@grafana/data';
+import { DataQuery } from '@credativ/plutono-data';
 
 export interface Scenario {
   id: string;
@@ -25,7 +25,7 @@ export interface TestDataQuery extends DataQuery {
   labels?: string;
   lines?: number;
   levelColumn?: boolean;
-  channel?: string; // for grafana live
+  channel?: string; // for plutono live
   nodes?: NodesQuery;
 }
 

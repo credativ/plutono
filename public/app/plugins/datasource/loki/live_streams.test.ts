@@ -2,7 +2,7 @@ import { Observable, Subject, of, throwError, concat } from 'rxjs';
 import { mergeMap } from 'rxjs/operators';
 import * as rxJsWebSocket from 'rxjs/webSocket';
 import { LiveStreams } from './live_streams';
-import { DataFrame, DataFrameView, formatLabels, Labels } from '@grafana/data';
+import { DataFrame, DataFrameView, formatLabels, Labels } from '@credativ/plutono-data';
 import { noop } from 'lodash';
 import { LokiTailResponse } from './types';
 

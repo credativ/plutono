@@ -5,14 +5,14 @@
       ACCEPT_EULA: Y
       MSSQL_SA_PASSWORD: Password!
       MSSQL_PID: Developer
-      MSSQL_DATABASE: grafana
-      MSSQL_USER: grafana
+      MSSQL_DATABASE: plutono
+      MSSQL_USER: plutono
       MSSQL_PASSWORD: Password!
     ports:
       - "1433:1433"
 
   fake-mssql-data:
-    image: grafana/fake-data-gen
+    image: plutono/fake-data-gen
     network_mode: bridge
     environment:
       FD_DATASOURCE: mssql

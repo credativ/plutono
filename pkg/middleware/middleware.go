@@ -6,14 +6,14 @@ import (
 
 	macaron "gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 var (
-	ReqGrafanaAdmin = Auth(&AuthOptions{
+	ReqPlutonoAdmin = Auth(&AuthOptions{
 		ReqSignedIn:     true,
-		ReqGrafanaAdmin: true,
+		ReqPlutonoAdmin: true,
 	})
 	ReqSignedIn            = Auth(&AuthOptions{ReqSignedIn: true})
 	ReqSignedInNoAnonymous = Auth(&AuthOptions{ReqSignedIn: true, ReqNoAnonynmous: true})
@@ -22,7 +22,7 @@ var (
 )
 
 func HandleNoCacheHeader(ctx *models.ReqContext) {
-	ctx.SkipCache = ctx.Req.Header.Get("X-Grafana-NoCache") == "true"
+	ctx.SkipCache = ctx.Req.Header.Get("X-Plutono-NoCache") == "true"
 }
 
 func AddDefaultResponseHeaders(cfg *setting.Cfg) macaron.Handler {

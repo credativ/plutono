@@ -1,5 +1,5 @@
 import { combineReducers } from '@reduxjs/toolkit';
-import { LoadingState } from '@grafana/data';
+import { LoadingState } from '@credativ/plutono-data';
 
 import { NEW_VARIABLE_ID } from './types';
 import { VariableHide, VariableModel } from '../types';

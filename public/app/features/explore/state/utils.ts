@@ -7,7 +7,7 @@ import {
   LoadingState,
   LogsDedupStrategy,
   PanelData,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import { ExploreItemState } from 'app/types/explore';
 import { getDatasourceSrv } from '../../plugins/datasource_srv';
@@ -81,7 +81,7 @@ export async function loadAndInitDatasource(
     }
   }
 
-  const historyKey = `grafana.explore.history.${instance.meta?.id}`;
+  const historyKey = `plutono.explore.history.${instance.meta?.id}`;
   const history = store.getObject(historyKey, []);
   // Save last-used datasource
 

@@ -3,8 +3,8 @@ import _ from 'lodash';
 import config from 'app/core/config';
 import { DashboardModel } from '../../state/DashboardModel';
 import { PanelModel } from 'app/features/dashboard/state';
-import { PanelPluginMeta } from '@grafana/data';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { PanelPluginMeta } from '@credativ/plutono-data';
+import { getDataSourceSrv } from '@credativ/plutono-runtime';
 import { VariableOption, VariableRefresh } from '../../../variables/types';
 import { isConstant, isQuery } from '../../../variables/guard';
 
@@ -160,11 +160,11 @@ export class DashboardExporter {
       templateizeDatasourceUsage(annotationDef);
     }
 
-    // add grafana version
-    requires['grafana'] = {
-      type: 'grafana',
-      id: 'grafana',
-      name: 'Grafana',
+    // add plutono version
+    requires['plutono'] = {
+      type: 'plutono',
+      id: 'plutono',
+      name: 'Plutono',
       version: config.buildInfo.version,
     };
 

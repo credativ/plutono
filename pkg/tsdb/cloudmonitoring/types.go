@@ -5,7 +5,7 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/tsdb"
 )
 
 type (
@@ -68,7 +68,7 @@ type (
 		SloId            string
 	}
 
-	grafanaQuery struct {
+	plutonoQuery struct {
 		DatasourceId int
 		RefId        string
 		QueryType    string

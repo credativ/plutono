@@ -1,15 +1,25 @@
 import React, { FC, useState } from 'react';
-import { Form, Field, Input, Button, Legend, Container, useStyles, HorizontalGroup, LinkButton } from '@grafana/ui';
-import { getBackendSrv } from '@grafana/runtime';
+import {
+  Form,
+  Field,
+  Input,
+  Button,
+  Legend,
+  Container,
+  useStyles,
+  HorizontalGroup,
+  LinkButton,
+} from '@credativ/plutono-ui';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import config from 'app/core/config';
 
 interface EmailDTO {
   userOrEmail: string;
 }
 
-const paragraphStyles = (theme: GrafanaTheme) => css`
+const paragraphStyles = (theme: PlutonoTheme) => css`
   color: ${theme.colors.formDescription};
   font-size: ${theme.typography.size.sm};
   font-weight: ${theme.typography.weight.regular};
@@ -60,7 +70,7 @@ export const ForgottenPassword: FC = () => {
             </LinkButton>
           </HorizontalGroup>
 
-          <p className={styles}>Did you forget your username or email? Contact your Grafana administrator.</p>
+          <p className={styles}>Did you forget your username or email? Contact your Plutono administrator.</p>
         </>
       )}
     </Form>

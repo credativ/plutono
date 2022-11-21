@@ -1,6 +1,6 @@
 import { getDashboardSrv } from '../../dashboard/services/DashboardSrv';
-import { PanelData, LoadingState, DataSourceApi, CoreApp, urlUtil } from '@grafana/data';
-import { reportMetaAnalytics, MetaAnalyticsEventName, DataRequestEventPayload } from '@grafana/runtime';
+import { PanelData, LoadingState, DataSourceApi, CoreApp, urlUtil } from '@credativ/plutono-data';
+import { reportMetaAnalytics, MetaAnalyticsEventName, DataRequestEventPayload } from '@credativ/plutono-runtime';
 
 export function emitDataRequestEvent(datasource: DataSourceApi) {
   let done = false;

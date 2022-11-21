@@ -1,4 +1,4 @@
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin } from '@credativ/plutono-data';
 import { LiveChannelEditor } from './LiveChannelEditor';
 import { LivePanel } from './LivePanel';
 import { LivePanelOptions, MessageDisplayMode } from './types';

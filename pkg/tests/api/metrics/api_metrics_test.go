@@ -14,16 +14,16 @@ import (
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/cloudwatch/cloudwatchiface"
 	"github.com/aws/aws-sdk-go/service/cloudwatchlogs/cloudwatchlogsiface"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/tests/testinfra"
+	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/tsdb/cloudwatch"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/tests/testinfra"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/tsdb/cloudwatch"
 
 	cwapi "github.com/aws/aws-sdk-go/service/cloudwatch"
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/components/simplejson"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -31,7 +31,7 @@ import (
 func TestQueryCloudWatchMetrics(t *testing.T) {
 	grafDir, cfgPath := testinfra.CreateGrafDir(t)
 	sqlStore := setUpDatabase(t, grafDir)
-	addr := testinfra.StartGrafana(t, grafDir, cfgPath, sqlStore)
+	addr := testinfra.StartPlutono(t, grafDir, cfgPath, sqlStore)
 
 	origNewCWClient := cloudwatch.NewCWClient
 	t.Cleanup(func() {
@@ -103,7 +103,7 @@ func TestQueryCloudWatchMetrics(t *testing.T) {
 func TestQueryCloudWatchLogs(t *testing.T) {
 	grafDir, cfgPath := testinfra.CreateGrafDir(t)
 	sqlStore := setUpDatabase(t, grafDir)
-	addr := testinfra.StartGrafana(t, grafDir, cfgPath, sqlStore)
+	addr := testinfra.StartPlutono(t, grafDir, cfgPath, sqlStore)
 
 	origNewCWLogsClient := cloudwatch.NewCWLogsClient
 	t.Cleanup(func() {

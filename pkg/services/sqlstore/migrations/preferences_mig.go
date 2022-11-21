@@ -1,6 +1,6 @@
 package migrations
 
-import . "github.com/grafana/grafana/pkg/services/sqlstore/migrator"
+import . "github.com/credativ/plutono/pkg/services/sqlstore/migrator"
 
 func addPreferencesMigrations(mg *Migrator) {
 	mg.AddMigration("drop preferences table v2", NewDropTableMigration("preferences"))

@@ -7,18 +7,18 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/services/dashboards"
-	"github.com/grafana/grafana/pkg/services/live"
-	"github.com/grafana/grafana/pkg/services/provisioning"
-	"github.com/grafana/grafana/pkg/services/quota"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/api/routing"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/alerting"
+	"github.com/credativ/plutono/pkg/services/dashboards"
+	"github.com/credativ/plutono/pkg/services/live"
+	"github.com/credativ/plutono/pkg/services/provisioning"
+	"github.com/credativ/plutono/pkg/services/quota"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -1018,7 +1018,7 @@ func TestDashboardAPIEndpoint(t *testing.T) {
 			})
 
 			bus.AddHandler("test", func(query *models.GetProvisionedDashboardDataByIdQuery) error {
-				query.Result = &models.DashboardProvisioning{ExternalId: "/tmp/grafana/dashboards/test/dashboard1.json"}
+				query.Result = &models.DashboardProvisioning{ExternalId: "/tmp/plutono/dashboards/test/dashboard1.json"}
 				return nil
 			})
 
@@ -1055,7 +1055,7 @@ func TestDashboardAPIEndpoint(t *testing.T) {
 
 			mock := provisioning.NewProvisioningServiceMock()
 			mock.GetDashboardProvisionerResolvedPathFunc = func(name string) string {
-				return "/tmp/grafana/dashboards"
+				return "/tmp/plutono/dashboards"
 			}
 
 			dash := getDashboardShouldReturn200WithConfig(sc, mock)
@@ -1068,7 +1068,7 @@ func TestDashboardAPIEndpoint(t *testing.T) {
 
 			mock := provisioning.NewProvisioningServiceMock()
 			mock.GetDashboardProvisionerResolvedPathFunc = func(name string) string {
-				return "/tmp/grafana/dashboards"
+				return "/tmp/plutono/dashboards"
 			}
 			mock.GetAllowUIUpdatesFromConfigFunc = func(name string) bool {
 				return true
@@ -1187,7 +1187,7 @@ func postDashboardScenario(t *testing.T, desc string, url string, routePattern s
 			Bus:                 bus.GetBus(),
 			Cfg:                 cfg,
 			ProvisioningService: provisioning.NewProvisioningServiceMock(),
-			Live:                &live.GrafanaLive{Cfg: setting.NewCfg()},
+			Live:                &live.PlutonoLive{Cfg: setting.NewCfg()},
 			QuotaService: &quota.QuotaService{
 				Cfg: cfg,
 			},
@@ -1252,7 +1252,7 @@ func restoreDashboardVersionScenario(t *testing.T, desc string, url string, rout
 			Cfg:                 cfg,
 			Bus:                 bus.GetBus(),
 			ProvisioningService: provisioning.NewProvisioningServiceMock(),
-			Live:                &live.GrafanaLive{Cfg: cfg},
+			Live:                &live.PlutonoLive{Cfg: cfg},
 			QuotaService:        &quota.QuotaService{Cfg: cfg},
 		}
 

@@ -7,7 +7,7 @@
       "resource": {
         "type": "https_lb_rule",
         "labels": {
-          "project_id": "grafana-prod"
+          "project_id": "plutono-prod"
         }
       },
       "metricKind": "DELTA",

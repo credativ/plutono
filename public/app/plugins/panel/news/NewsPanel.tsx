@@ -2,14 +2,14 @@
 import React, { PureComponent } from 'react';
 
 // Utils & Services
-import { CustomScrollbar, stylesFactory } from '@grafana/ui';
+import { CustomScrollbar, stylesFactory } from '@credativ/plutono-ui';
 
 import config from 'app/core/config';
 import { feedToDataFrame } from './utils';
 import { loadRSSFeed } from './rss';
 
 // Types
-import { PanelProps, DataFrameView, dateTimeFormat, GrafanaTheme, textUtil } from '@grafana/data';
+import { PanelProps, DataFrameView, dateTimeFormat, PlutonoTheme, textUtil } from '@credativ/plutono-data';
 import { NewsOptions, NewsItem } from './types';
 import { DEFAULT_FEED_URL, PROXY_PREFIX } from './constants';
 import { css } from 'emotion';
@@ -95,7 +95,7 @@ export class NewsPanel extends PureComponent<Props, State> {
   }
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   container: css`
     height: 100%;
   `,

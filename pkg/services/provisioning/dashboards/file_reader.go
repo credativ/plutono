@@ -10,12 +10,12 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/dashboards"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/dashboards"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 var (
@@ -24,7 +24,7 @@ var (
 )
 
 // FileReader is responsible for reading dashboards from disk and
-// insert/update dashboards to the Grafana database using
+// insert/update dashboards to the Plutono database using
 // `dashboards.DashboardProvisioningService`.
 type FileReader struct {
 	Cfg                          *config
@@ -136,7 +136,7 @@ func (fr *FileReader) storeDashboardsInFolder(filesFoundOnDisk map[string]os.Fil
 }
 
 // storeDashboardsInFoldersFromFilesystemStructure saves dashboards from the filesystem on disk to the same folder
-// in Grafana as they are in on the filesystem.
+// in Plutono as they are in on the filesystem.
 func (fr *FileReader) storeDashboardsInFoldersFromFileStructure(filesFoundOnDisk map[string]os.FileInfo,
 	dashboardRefs map[string]*models.DashboardProvisioning, resolvedPath string, sanityChecker *provisioningSanityChecker) error {
 	for path, fileInfo := range filesFoundOnDisk {

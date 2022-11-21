@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { saveAs } from 'file-saver';
-import { Button, Field, Switch } from '@grafana/ui';
+import { Button, Field, Switch } from '@credativ/plutono-ui';
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
 import { DashboardExporter } from 'app/features/dashboard/components/DashExportModal';
 import { appEvents } from 'app/core/core';

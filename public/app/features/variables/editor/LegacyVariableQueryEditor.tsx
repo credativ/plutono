@@ -1,13 +1,13 @@
 import React, { FC, useCallback, useState } from 'react';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import { VariableQueryProps } from 'app/types/plugins';
 import { VariableTextAreaField } from './VariableTextAreaField';
-import { useStyles } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { useStyles } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { css } from 'emotion';
 
-export const LEGACY_VARIABLE_QUERY_EDITOR_NAME = 'Grafana-LegacyVariableQueryEditor';
+export const LEGACY_VARIABLE_QUERY_EDITOR_NAME = 'Plutono-LegacyVariableQueryEditor';
 
 export const LegacyVariableQueryEditor: FC<VariableQueryProps> = ({ onChange, query }) => {
   const styles = useStyles(getStyles);
@@ -43,7 +43,7 @@ export const LegacyVariableQueryEditor: FC<VariableQueryProps> = ({ onChange, qu
   );
 };
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: PlutonoTheme) {
   return {
     container: css`
       margin-bottom: ${theme.spacing.xs};

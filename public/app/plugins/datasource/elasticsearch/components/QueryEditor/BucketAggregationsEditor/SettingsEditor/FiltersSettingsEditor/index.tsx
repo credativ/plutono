@@ -1,4 +1,4 @@
-import { InlineField, Input, QueryField } from '@grafana/ui';
+import { InlineField, Input, QueryField } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 import React, { FunctionComponent, useEffect } from 'react';
 import { AddRemove } from '../../../../AddRemove';

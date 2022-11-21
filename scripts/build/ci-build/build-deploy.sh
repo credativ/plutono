@@ -2,7 +2,7 @@
 set -eo pipefail
 
 _version="1.4.1"
-_tag="grafana/build-container:${_version}"
+_tag="plutono/build-container:${_version}"
 
 _dpath=$(dirname "${BASH_SOURCE[0]}")
 cd "$_dpath"

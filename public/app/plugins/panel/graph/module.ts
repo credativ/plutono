@@ -12,7 +12,7 @@ import { axesEditorComponent } from './axes_editor';
 import config from 'app/core/config';
 import TimeSeries from 'app/core/time_series2';
 import { getProcessedDataFrames } from 'app/features/query/state/runRequest';
-import { DataFrame, FieldConfigProperty, getColorForTheme, PanelEvents, PanelPlugin } from '@grafana/data';
+import { DataFrame, FieldConfigProperty, getColorForTheme, PanelEvents, PanelPlugin } from '@credativ/plutono-data';
 
 import { GraphContextMenuCtrl } from './GraphContextMenuCtrl';
 import { graphPanelMigrationHandler } from './GraphMigrations';
@@ -21,7 +21,7 @@ import { DataWarning, GraphFieldConfig, GraphPanelOptions } from './types';
 import { auto } from 'angular';
 import { AnnotationsSrv } from 'app/features/annotations/all';
 import { CoreEvents } from 'app/types';
-import { getLocationSrv } from '@grafana/runtime';
+import { getLocationSrv } from '@credativ/plutono-runtime';
 import { getDataTimeRange } from './utils';
 import { changePanelPlugin } from 'app/features/dashboard/state/actions';
 import { dispatch } from 'app/store/store';

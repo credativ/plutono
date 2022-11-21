@@ -11,7 +11,7 @@ import {
 import { variableAdapters } from '../adapters';
 import { AddVariable, toVariableIdentifier, toVariablePayload, VariableIdentifier } from '../state/types';
 import cloneDeep from 'lodash/cloneDeep';
-import { VariableType } from '@grafana/data';
+import { VariableType } from '@credativ/plutono-data';
 import { addVariable, removeVariable } from '../state/sharedReducer';
 import { updateOptions } from '../state/actions';
 import { VariableModel } from '../types';
@@ -41,7 +41,7 @@ export const changeVariableName = (identifier: VariableIdentifier, newName: stri
   return (dispatch, getState) => {
     let errorText = null;
     if (!newName.match(/^(?!__).*$/)) {
-      errorText = "Template names cannot begin with '__', that's reserved for Grafana's global variables";
+      errorText = "Template names cannot begin with '__', that's reserved for Plutono's global variables";
     }
 
     if (!newName.match(/^\w+$/)) {

@@ -14,7 +14,7 @@ import { initDashboardPanel } from '../state/actions';
 // Types
 import { DashboardModel, PanelModel } from '../state';
 import { StoreState } from 'app/types';
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin } from '@credativ/plutono-data';
 
 export interface OwnProps {
   panel: PanelModel;

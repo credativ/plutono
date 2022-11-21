@@ -1,5 +1,5 @@
 import { AnyAction, createAction } from '@reduxjs/toolkit';
-import { DataSourcePluginMeta, DataSourceSettings } from '@grafana/data';
+import { DataSourcePluginMeta, DataSourceSettings } from '@credativ/plutono-data';
 
 import { DataSourcesState, DataSourceSettingsState } from 'app/types';
 import { LayoutMode, LayoutModes } from 'app/core/components/LayoutSelector/LayoutSelector';

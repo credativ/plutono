@@ -32,9 +32,9 @@ func TestLogTableToFrame(t *testing.T) {
 						pointer.Time(time.Date(2020, 4, 19, 19, 16, 26, 5e8, time.UTC)),
 					}),
 					data.NewField("Computer", nil, []*string{
-						pointer.String("grafana-vm"),
-						pointer.String("grafana-vm"),
-						pointer.String("grafana-vm"),
+						pointer.String("plutono-vm"),
+						pointer.String("plutono-vm"),
+						pointer.String("plutono-vm"),
 					}),
 					data.NewField("avg_CounterValue", nil, []*float64{
 						pointer.Float64(1.1),
@@ -59,9 +59,9 @@ func TestLogTableToFrame(t *testing.T) {
 						pointer.String("a2c1b44e-3e57-4410-b027-6cc0ae6dee67"),
 					}),
 					data.NewField("Computer", nil, []*string{
-						pointer.String("grafana-vm"),
-						pointer.String("grafana-vm"),
-						pointer.String("grafana-vm"),
+						pointer.String("plutono-vm"),
+						pointer.String("plutono-vm"),
+						pointer.String("plutono-vm"),
 					}),
 					data.NewField("ObjectName", nil, []*string{
 						pointer.String("Memory"),
@@ -105,7 +105,7 @@ func TestLogTableToFrame(t *testing.T) {
 			expectedFrame: func() *data.Frame {
 				frame := data.NewFrame("",
 					data.NewField("XBool", nil, []*bool{pointer.Bool(true)}),
-					data.NewField("XString", nil, []*string{pointer.String("Grafana")}),
+					data.NewField("XString", nil, []*string{pointer.String("Plutono")}),
 					data.NewField("XDateTime", nil, []*time.Time{pointer.Time(time.Date(2006, 1, 2, 22, 4, 5, 1*1e8, time.UTC))}),
 					data.NewField("XDynamic", nil, []*string{pointer.String(`[{"person":"Daniel"},{"cats":23},{"diagnosis":"cat problem"}]`)}),
 					data.NewField("XGuid", nil, []*string{pointer.String("74be27de-1e4e-49d9-b579-fe0b331d3642")}),

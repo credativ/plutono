@@ -1,4 +1,4 @@
-import { DataQuery } from '@grafana/data';
+import { DataQuery } from '@credativ/plutono-data';
 import { getNextRefIdChar } from './query';
 
 const dataQueries: DataQuery[] = [

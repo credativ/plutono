@@ -1,5 +1,5 @@
 import React from 'react';
-import { QueryEditorHelpProps, DataQuery } from '@grafana/data';
+import { QueryEditorHelpProps, DataQuery } from '@credativ/plutono-data';
 
 const CHEAT_SHEET_ITEMS = [
   {

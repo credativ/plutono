@@ -1,4 +1,4 @@
-import { DataSourcePluginMeta, DataSourceSelectItem } from '@grafana/data';
+import { DataSourcePluginMeta, DataSourceSelectItem } from '@credativ/plutono-data';
 
 import { variableAdapters } from '../adapters';
 import { createAdHocVariableAdapter } from './adapter';

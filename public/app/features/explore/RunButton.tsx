@@ -1,5 +1,5 @@
 import React from 'react';
-import { RefreshPicker, defaultIntervals } from '@grafana/ui';
+import { RefreshPicker, defaultIntervals } from '@credativ/plutono-ui';
 import { getTimeSrv } from 'app/features/dashboard/services/TimeSrv';
 
 export type Props = {

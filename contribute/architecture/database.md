@@ -1,14 +1,14 @@
 # Database
 
-Grafana uses a database to persist settings between restarts. In fact, if you don't specify one, Grafana creates a [SQLite3](https://www.sqlite.org/) database file on your local disk. This guide explains how to store and retrieve data from the database.
+Plutono uses a database to persist settings between restarts. In fact, if you don't specify one, Plutono creates a [SQLite3](https://www.sqlite.org/) database file on your local disk. This guide explains how to store and retrieve data from the database.
 
-Grafana supports the [following databases](https://grafana.com/docs/installation/requirements/#database):
+Plutono supports the [following databases](https://grafana.com/docs/installation/requirements/#database):
 
 - [MySQL](https://www.mysql.com/)
 - [PostgreSQL](https://www.postgresql.org/)
 - [SQLite3](https://www.sqlite.org/)
 
-Grafana uses the [XORM](https://xorm.io) framework for persisting objects to the database. For more information on how to use XORM, refer to the [documentation](https://gobook.io/read/gitea.com/xorm/manual-en-US/).
+Plutono uses the [XORM](https://xorm.io) framework for persisting objects to the database. For more information on how to use XORM, refer to the [documentation](https://gobook.io/read/gitea.com/xorm/manual-en-US/).
 
 [Services](services.md) don't use XORM directly. Instead, services use the _SQL store_, a special type of service that provides an abstraction for the database layer. There are two ways of using the `sqlstore`: using `sqlstore` handlers, and using the `SQLStore` instance.
 
@@ -73,7 +73,7 @@ For transactions, use the `WithTransactionalDbSession` method instead.
 
 ## Migrations
 
-As Grafana evolves, it becomes necessary to create _schema migrations_ for one or more database tables.
+As Plutono evolves, it becomes necessary to create _schema migrations_ for one or more database tables.
 
 To see all the types of migrations you can add, refer to [migrations.go](/pkg/services/sqlstore/migrator/migrations.go).
 
@@ -99,11 +99,11 @@ To add a migration:
 - In the `AddMigrations` function, find the `addXxxMigration` function for the service you want to create a migration for.
 - At the end of the `addXxxMigration` function, register your migration:
 
-[Example](https://github.com/grafana/grafana/blob/00d0640b6e778ddaca021670fe851fe00982acf2/pkg/services/sqlstore/migrations/migrations.go#L55-L70)
+[Example](https://github.com/credativ/plutono/blob/00d0640b6e778ddaca021670fe851fe00982acf2/pkg/services/sqlstore/migrations/migrations.go#L55-L70)
 
 ### Implement `DatabaseMigrator`
 
-During initialization, SQL store queries the service registry, and runs migrations for every service that implements the [DatabaseMigrator](https://github.com/grafana/grafana/blob/44c2007498c76c2dbb48e8366b4af410f1ee1b98/pkg/registry/registry.go#L101-L106) interface.
+During initialization, SQL store queries the service registry, and runs migrations for every service that implements the [DatabaseMigrator](https://github.com/credativ/plutono/blob/44c2007498c76c2dbb48e8366b4af410f1ee1b98/pkg/registry/registry.go#L101-L106) interface.
 
 To add a migration:
 

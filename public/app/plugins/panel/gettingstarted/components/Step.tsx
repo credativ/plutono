@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { stylesFactory, useTheme } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { stylesFactory, useTheme } from '@credativ/plutono-ui';
 import { TutorialCard } from './TutorialCard';
 import { Card, SetupStep, TutorialCardType } from '../types';
 import { DocsCard } from './DocsCard';
@@ -33,7 +33,7 @@ export const Step: FC<Props> = ({ step }) => {
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     setup: css`
       display: flex;

@@ -1,10 +1,10 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { PanelModel } from '../../../state/PanelModel';
-import { getDefaultTimeRange, LoadingState, PanelData } from '@grafana/data';
+import { getDefaultTimeRange, LoadingState, PanelData } from '@credativ/plutono-data';
 import { DisplayMode } from '../types';
 import store from '../../../../../core/store';
 
-export const PANEL_EDITOR_UI_STATE_STORAGE_KEY = 'grafana.dashboard.editor.ui';
+export const PANEL_EDITOR_UI_STATE_STORAGE_KEY = 'plutono.dashboard.editor.ui';
 
 export const DEFAULT_PANEL_EDITOR_UI_STATE: PanelEditorUIState = {
   isPanelOptionsVisible: true,

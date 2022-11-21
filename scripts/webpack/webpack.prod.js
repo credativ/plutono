@@ -14,8 +14,8 @@ module.exports = merge(common, {
   devtool: 'source-map',
 
   entry: {
-    dark: './public/sass/grafana.dark.scss',
-    light: './public/sass/grafana.light.scss',
+    dark: './public/sass/plutono.dark.scss',
+    light: './public/sass/plutono.light.scss',
   },
 
   module: {
@@ -101,7 +101,7 @@ module.exports = merge(common, {
       },
     }),
     new MiniCssExtractPlugin({
-      filename: 'grafana.[name].[hash].css',
+      filename: 'plutono.[name].[hash].css',
     }),
     new HtmlWebpackPlugin({
       filename: path.resolve(__dirname, '../../public/views/error.html'),

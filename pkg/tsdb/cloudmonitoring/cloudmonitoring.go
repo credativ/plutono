@@ -16,14 +16,14 @@ import (
 	"strings"
 	"time"
 
+	"github.com/credativ/plutono/pkg/api/pluginproxy"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/api/pluginproxy"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/tsdb"
 	"golang.org/x/oauth2/google"
 )
 
@@ -203,7 +203,7 @@ func (e *CloudMonitoringExecutor) buildQueryExecutors(tsdbQuery *tsdb.TsdbQuery)
 
 	for _, query := range tsdbQuery.Queries {
 		migrateLegacyQueryModel(query)
-		q := grafanaQuery{}
+		q := plutonoQuery{}
 		model, _ := query.Model.MarshalJSON()
 		if err := json.Unmarshal(model, &q); err != nil {
 			return nil, fmt.Errorf("could not unmarshal CloudMonitoringQuery json: %w", err)
@@ -369,7 +369,7 @@ func setSloAggParams(params *url.Values, query *sloQuery, durationSeconds int, i
 }
 
 func calculateAlignmentPeriod(alignmentPeriod string, intervalMs int64, durationSeconds int) string {
-	if alignmentPeriod == "grafana-auto" || alignmentPeriod == "" {
+	if alignmentPeriod == "plutono-auto" || alignmentPeriod == "" {
 		alignmentPeriodValue := int(math.Max(float64(intervalMs)/1000, 60.0))
 		alignmentPeriod = "+" + strconv.Itoa(alignmentPeriodValue) + "s"
 	}
@@ -506,7 +506,7 @@ func (e *CloudMonitoringExecutor) createRequest(ctx context.Context, dsInfo *mod
 	}
 
 	req.Header.Set("Content-Type", "application/json")
-	req.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+	req.Header.Set("User-Agent", fmt.Sprintf("Plutono/%s", setting.BuildVersion))
 
 	// find plugin
 	plugin, ok := plugins.DataSources[dsInfo.Type]

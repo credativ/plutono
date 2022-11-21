@@ -10,9 +10,9 @@ After adding ldif files to `prepopulate`:
 2. Build: `docker-compose build`
 3. `docker-compose up`
 
-## Enabling LDAP in Grafana
+## Enabling LDAP in Plutono
 
-If you want to use users/groups with `memberOf` support Copy the ldap_dev.toml file in this folder into your `conf` folder (it is gitignored already). To enable it in the .ini file to get Grafana to use this block:
+If you want to use users/groups with `memberOf` support Copy the ldap_dev.toml file in this folder into your `conf` folder (it is gitignored already). To enable it in the .ini file to get Plutono to use this block:
 
 ```ini
 [auth.ldap]

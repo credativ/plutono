@@ -4,8 +4,8 @@ import (
 	"errors"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/securejsondata"
-	"github.com/grafana/grafana/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/components/securejsondata"
+	"github.com/credativ/plutono/pkg/components/simplejson"
 )
 
 const (
@@ -25,9 +25,9 @@ const (
 	// Stackdriver was renamed Google Cloud monitoring 2020-05 but we keep
 	// "stackdriver" to avoid breaking changes in reporting.
 	DS_CLOUD_MONITORING = "stackdriver"
-	DS_AZURE_MONITOR    = "grafana-azure-monitor-datasource"
+	DS_AZURE_MONITOR    = "plutono-azure-monitor-datasource"
 	DS_LOKI             = "loki"
-	DS_ES_OPEN_DISTRO   = "grafana-es-open-distro-datasource"
+	DS_ES_OPEN_DISTRO   = "plutono-es-open-distro-datasource"
 )
 
 var (
@@ -110,11 +110,11 @@ var knownDatasourcePlugins = map[string]bool{
 	"gnocci":                                 true,
 	"zabbix":                                 true,
 	"newrelic-app":                           true,
-	"grafana-datadog-datasource":             true,
-	"grafana-simple-json":                    true,
-	"grafana-splunk-datasource":              true,
+	"plutono-datadog-datasource":             true,
+	"plutono-simple-json":                    true,
+	"plutono-splunk-datasource":              true,
 	"udoprog-heroic-datasource":              true,
-	"grafana-openfalcon-datasource":          true,
+	"plutono-openfalcon-datasource":          true,
 	"opennms-datasource":                     true,
 	"rackerlabs-blueflood-datasource":        true,
 	"crate-datasource":                       true,
@@ -122,9 +122,9 @@ var knownDatasourcePlugins = map[string]bool{
 	"monasca-datasource":                     true,
 	"vertamedia-clickhouse-datasource":       true,
 	"alexanderzobnin-zabbix-datasource":      true,
-	"grafana-influxdb-flux-datasource":       true,
+	"plutono-influxdb-flux-datasource":       true,
 	"doitintl-bigquery-datasource":           true,
-	"grafana-azure-data-explorer-datasource": true,
+	"plutono-azure-data-explorer-datasource": true,
 	"tempo":                                  true,
 }
 

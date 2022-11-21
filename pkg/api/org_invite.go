@@ -4,14 +4,14 @@ import (
 	"errors"
 	"fmt"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/events"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/events"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 func GetPendingOrgInvites(c *models.ReqContext) response.Response {
@@ -125,7 +125,7 @@ func inviteExistingUserToOrg(c *models.ReqContext, user *models.User, inviteDto 
 	}
 
 	return response.JSON(200, util.DynMap{
-		"message": fmt.Sprintf("Existing Grafana user %s added to org %s", user.NameOrFallback(), c.OrgName),
+		"message": fmt.Sprintf("Existing Plutono user %s added to org %s", user.NameOrFallback(), c.OrgName),
 		"userId":  user.Id,
 	})
 }

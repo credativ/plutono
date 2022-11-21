@@ -31,7 +31,7 @@
 import coreModule from 'app/core/core_module';
 import config from 'app/core/config';
 
-const DEFAULT_THEME_DARK = 'ace/theme/grafana-dark';
+const DEFAULT_THEME_DARK = 'ace/theme/plutono-dark';
 const DEFAULT_THEME_LIGHT = 'ace/theme/textmate';
 const DEFAULT_MODE = 'text';
 const DEFAULT_MAX_LINES = 10;
@@ -67,7 +67,7 @@ async function link(scope: any, elem: any, attrs: any) {
   await import('brace/snippets/json');
 
   // @ts-ignore
-  await import('./theme-grafana-dark');
+  await import('./theme-plutono-dark');
 
   const codeEditor = ace.edit(aceElem);
   const editorSession = codeEditor.getSession();

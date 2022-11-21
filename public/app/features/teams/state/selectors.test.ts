@@ -65,7 +65,7 @@ const setup = (configOverrides?: Partial<Config>) => {
     members: getMockTeamMembers(5, 5),
     signedInUser: {
       id: signedInUserId,
-      isGrafanaAdmin: false,
+      isPlutonoAdmin: false,
       orgRole: OrgRole.Viewer,
     } as User,
   };
@@ -85,12 +85,12 @@ describe('isSignedInUserTeamAdmin', () => {
   });
 
   describe('when feature toggle editorsCanAdmin is turned on', () => {
-    it('should return true if signed in user is grafanaAdmin', () => {
+    it('should return true if signed in user is plutonoAdmin', () => {
       const config = setup({
         editorsCanAdmin: true,
         signedInUser: {
           id: signedInUserId,
-          isGrafanaAdmin: true,
+          isPlutonoAdmin: true,
           orgRole: OrgRole.Viewer,
         } as User,
       });
@@ -105,7 +105,7 @@ describe('isSignedInUserTeamAdmin', () => {
         editorsCanAdmin: true,
         signedInUser: {
           id: signedInUserId,
-          isGrafanaAdmin: false,
+          isPlutonoAdmin: false,
           orgRole: OrgRole.Admin,
         } as User,
       });
@@ -121,7 +121,7 @@ describe('isSignedInUserTeamAdmin', () => {
         editorsCanAdmin: true,
         signedInUser: {
           id: signedInUserId,
-          isGrafanaAdmin: false,
+          isPlutonoAdmin: false,
           orgRole: OrgRole.Viewer,
         } as User,
       });
@@ -131,12 +131,12 @@ describe('isSignedInUserTeamAdmin', () => {
       expect(result).toBe(true);
     });
 
-    it('should return false if signed in user is not grafanaAdmin, org admin or team admin', () => {
+    it('should return false if signed in user is not plutonoAdmin, org admin or team admin', () => {
       const config = setup({
         editorsCanAdmin: true,
         signedInUser: {
           id: signedInUserId,
-          isGrafanaAdmin: false,
+          isPlutonoAdmin: false,
           orgRole: OrgRole.Viewer,
         } as User,
       });

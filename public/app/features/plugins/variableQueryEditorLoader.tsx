@@ -3,8 +3,8 @@ import { importDataSourcePlugin } from './plugin_loader';
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { LegacyVariableQueryEditor } from '../variables/editor/LegacyVariableQueryEditor';
-import { DataSourcePluginMeta } from '@grafana/data';
-import { TemplateSrv } from '@grafana/runtime';
+import { DataSourcePluginMeta } from '@credativ/plutono-data';
+import { TemplateSrv } from '@credativ/plutono-runtime';
 
 async function loadComponent(meta: DataSourcePluginMeta) {
   const dsPlugin = await importDataSourcePlugin(meta);

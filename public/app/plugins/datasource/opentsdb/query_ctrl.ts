@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import { QueryCtrl } from 'app/plugins/sdk';
 import { auto } from 'angular';
-import { textUtil, rangeUtil } from '@grafana/data';
+import { textUtil, rangeUtil } from '@credativ/plutono-data';
 
 export class OpenTsQueryCtrl extends QueryCtrl {
   static templateUrl = 'partials/query.editor.html';

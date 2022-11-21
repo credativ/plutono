@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import coreModule from 'app/core/core_module';
 import { InfluxQuery } from '../types';
-import { SelectableValue, QueryEditorProps } from '@grafana/data';
+import { SelectableValue, QueryEditorProps } from '@credativ/plutono-data';
 import { cx, css } from 'emotion';
 import {
   InlineFormLabel,
@@ -10,8 +10,8 @@ import {
   CodeEditor,
   CodeEditorSuggestionItem,
   CodeEditorSuggestionItemKind,
-} from '@grafana/ui';
-import { getTemplateSrv } from '@grafana/runtime';
+} from '@credativ/plutono-ui';
+import { getTemplateSrv } from '@credativ/plutono-runtime';
 import InfluxDatasource from '../datasource';
 
 // @ts-ignore -- complicated since the datasource is not really reactified yet!

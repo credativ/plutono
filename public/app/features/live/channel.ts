@@ -7,7 +7,7 @@ import {
   LiveChannelConnectionState,
   LiveChannelPresenceStatus,
   LiveChannelAddress,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import Centrifuge, {
   JoinLeaveContext,
   PublicationContext,
@@ -19,7 +19,7 @@ import Centrifuge, {
 import { Subject, of, merge } from 'rxjs';
 
 /**
- * Internal class that maps Centrifuge support to GrafanaLive
+ * Internal class that maps Centrifuge support to PlutonoLive
  */
 export class CentrifugeLiveChannel<TMessage = any, TPublish = any> implements LiveChannel<TMessage, TPublish> {
   readonly currentStatus: LiveChannelStatusEvent;

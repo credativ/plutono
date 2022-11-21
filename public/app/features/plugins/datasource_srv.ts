@@ -7,11 +7,17 @@ import {
   DataSourceSrv as DataSourceService,
   getDataSourceSrv as getDataSourceService,
   TemplateSrv,
-} from '@grafana/runtime';
+} from '@credativ/plutono-runtime';
 // Types
-import { AppEvents, DataSourceApi, DataSourceInstanceSettings, DataSourceSelectItem, ScopedVars } from '@grafana/data';
+import {
+  AppEvents,
+  DataSourceApi,
+  DataSourceInstanceSettings,
+  DataSourceSelectItem,
+  ScopedVars,
+} from '@credativ/plutono-data';
 import { auto } from 'angular';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 // Pretend Datasource
 import { expressionDatasource } from 'app/features/expressions/ExpressionDatasource';
 import { DataSourceVariableModel } from '../variables/types';
@@ -26,7 +32,7 @@ export class DatasourceSrv implements DataSourceService {
   /** @ngInject */
   constructor(
     private $injector: auto.IInjectorService,
-    private $rootScope: GrafanaRootScope,
+    private $rootScope: PlutonoRootScope,
     private templateSrv: TemplateSrv
   ) {}
 
@@ -153,7 +159,7 @@ export class DatasourceSrv implements DataSourceService {
 
   getList(filters: GetDataSourceListFilters = {}): DataSourceInstanceSettings[] {
     const base = Object.values(this.settingsMapByName).filter((x) => {
-      if (x.meta.id === 'grafana' || x.meta.id === 'mixed' || x.meta.id === 'dashboard') {
+      if (x.meta.id === 'plutono' || x.meta.id === 'mixed' || x.meta.id === 'dashboard') {
         return false;
       }
       if (filters.metrics && !x.meta.metrics) {
@@ -217,7 +223,7 @@ export class DatasourceSrv implements DataSourceService {
       }
 
       if (!filters.tracing) {
-        base.push(this.getInstanceSettings('-- Grafana --')!);
+        base.push(this.getInstanceSettings('-- Plutono --')!);
       }
     }
 

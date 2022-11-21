@@ -1,5 +1,5 @@
-import { DataSourceInstanceSettings, ScopedVars } from '@grafana/data';
-import { setDataSourceSrv, setTemplateSrv } from '@grafana/runtime';
+import { DataSourceInstanceSettings, ScopedVars } from '@credativ/plutono-data';
+import { setDataSourceSrv, setTemplateSrv } from '@credativ/plutono-runtime';
 import { createSpanLinkFactory } from './createSpanLink';
 
 describe('createSpanLinkFactory', () => {

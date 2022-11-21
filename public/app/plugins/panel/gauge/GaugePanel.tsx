@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { FieldDisplay, getFieldDisplayValues, PanelProps, VizOrientation } from '@grafana/data';
-import { DataLinksContextMenu, Gauge, VizRepeater, VizRepeaterRenderValueProps } from '@grafana/ui';
-import { DataLinksContextMenuApi } from '@grafana/ui/src/components/DataLinks/DataLinksContextMenu';
+import { FieldDisplay, getFieldDisplayValues, PanelProps, VizOrientation } from '@credativ/plutono-data';
+import { DataLinksContextMenu, Gauge, VizRepeater, VizRepeaterRenderValueProps } from '@credativ/plutono-ui';
+import { DataLinksContextMenuApi } from '@credativ/plutono-ui/src/components/DataLinks/DataLinksContextMenu';
 
 import { config } from 'app/core/config';
 import { GaugeOptions } from './types';

@@ -6,9 +6,9 @@ import (
 	"io"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/setting"
 
 	opentracing "github.com/opentracing/opentracing-go"
 	jaegercfg "github.com/uber/jaeger-client-go/config"
@@ -66,7 +66,7 @@ func (ts *TracingService) parseSettings() {
 
 func (ts *TracingService) initJaegerCfg() (jaegercfg.Configuration, error) {
 	cfg := jaegercfg.Configuration{
-		ServiceName: "grafana",
+		ServiceName: "plutono",
 		Disabled:    !ts.enabled,
 		Sampler: &jaegercfg.SamplerConfig{
 			Type:              ts.samplerType,

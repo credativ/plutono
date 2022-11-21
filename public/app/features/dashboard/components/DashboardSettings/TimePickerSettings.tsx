@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
-import { Input, TimeZonePicker, Field, Switch, CollapsableSection } from '@grafana/ui';
-import { rangeUtil, TimeZone } from '@grafana/data';
+import { Input, TimeZonePicker, Field, Switch, CollapsableSection } from '@credativ/plutono-ui';
+import { rangeUtil, TimeZone } from '@credativ/plutono-data';
 import isEmpty from 'lodash/isEmpty';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { AutoRefreshIntervals } from './AutoRefreshIntervals';
 
 interface Props {

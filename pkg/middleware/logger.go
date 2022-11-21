@@ -19,8 +19,8 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/prometheus/client_golang/prometheus"
 	cw "github.com/weaveworks/common/middleware"
 	"gopkg.in/macaron.v1"

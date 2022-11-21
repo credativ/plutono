@@ -2,10 +2,10 @@
 import React, { PureComponent } from 'react';
 
 // Services
-import { getAngularLoader, AngularComponent } from '@grafana/runtime';
+import { getAngularLoader, AngularComponent } from '@credativ/plutono-runtime';
 
 // Types
-import { DataQuery, TimeRange, EventBusExtended } from '@grafana/data';
+import { DataQuery, TimeRange, EventBusExtended } from '@credativ/plutono-data';
 import 'app/features/plugins/plugin_loader';
 
 interface QueryEditorProps {

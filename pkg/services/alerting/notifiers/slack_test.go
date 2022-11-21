@@ -3,9 +3,9 @@ package notifiers
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/components/securejsondata"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/components/securejsondata"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -63,7 +63,7 @@ func TestSlackNotifier(t *testing.T) {
                     {
                       "url": "http://google.com",
                       "recipient": "#ds-opentsdb",
-                      "username": "Grafana Alerts",
+                      "username": "Plutono Alerts",
                       "icon_emoji": ":smile:",
                       "icon_url": "https://grafana.com/img/fav32.png",
                       "mentionUsers": "user1, user2",
@@ -88,7 +88,7 @@ func TestSlackNotifier(t *testing.T) {
 				So(slackNotifier.Type, ShouldEqual, "slack")
 				So(slackNotifier.URL, ShouldEqual, "http://google.com")
 				So(slackNotifier.Recipient, ShouldEqual, "#ds-opentsdb")
-				So(slackNotifier.Username, ShouldEqual, "Grafana Alerts")
+				So(slackNotifier.Username, ShouldEqual, "Plutono Alerts")
 				So(slackNotifier.IconEmoji, ShouldEqual, ":smile:")
 				So(slackNotifier.IconURL, ShouldEqual, "https://grafana.com/img/fav32.png")
 				So(slackNotifier.MentionUsers, ShouldResemble, []string{"user1", "user2"})
@@ -102,7 +102,7 @@ func TestSlackNotifier(t *testing.T) {
                     {
                       "url": "http://google.com",
                       "recipient": "#ds-opentsdb",
-                      "username": "Grafana Alerts",
+                      "username": "Plutono Alerts",
                       "icon_emoji": ":smile:",
                       "icon_url": "https://grafana.com/img/fav32.png",
                       "mentionUsers": "user1, user2",
@@ -131,7 +131,7 @@ func TestSlackNotifier(t *testing.T) {
 				So(slackNotifier.Type, ShouldEqual, "slack")
 				So(slackNotifier.URL, ShouldEqual, "http://google.com")
 				So(slackNotifier.Recipient, ShouldEqual, "#ds-opentsdb")
-				So(slackNotifier.Username, ShouldEqual, "Grafana Alerts")
+				So(slackNotifier.Username, ShouldEqual, "Plutono Alerts")
 				So(slackNotifier.IconEmoji, ShouldEqual, ":smile:")
 				So(slackNotifier.IconURL, ShouldEqual, "https://grafana.com/img/fav32.png")
 				So(slackNotifier.MentionUsers, ShouldResemble, []string{"user1", "user2"})

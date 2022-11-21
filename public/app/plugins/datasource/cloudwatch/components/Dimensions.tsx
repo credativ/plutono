@@ -1,7 +1,7 @@
 import React, { FunctionComponent, Fragment, useState, useEffect } from 'react';
 import isEqual from 'lodash/isEqual';
-import { SelectableValue } from '@grafana/data';
-import { SegmentAsync, Icon } from '@grafana/ui';
+import { SelectableValue } from '@credativ/plutono-data';
+import { SegmentAsync, Icon } from '@credativ/plutono-ui';
 import { SelectableStrings } from '../types';
 
 export interface Props {

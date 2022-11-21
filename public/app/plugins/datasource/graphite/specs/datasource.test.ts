@@ -2,11 +2,11 @@ import { GraphiteDatasource } from '../datasource';
 import _ from 'lodash';
 
 import { TemplateSrv } from 'app/features/templating/template_srv';
-import { dateTime, getFrameDisplayName } from '@grafana/data';
+import { dateTime, getFrameDisplayName } from '@credativ/plutono-data';
 import { backendSrv } from 'app/core/services/backend_srv'; // will use the version in __mocks__
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@credativ/plutono-runtime', () => ({
+  ...((jest.requireActual('@credativ/plutono-runtime') as unknown) as object),
   getBackendSrv: () => backendSrv,
 }));
 

@@ -1,4 +1,4 @@
-import { DataSourcePlugin } from '@grafana/data';
+import { DataSourcePlugin } from '@credativ/plutono-data';
 import { ElasticDatasource } from './datasource';
 import { ConfigEditor } from './configuration/ConfigEditor';
 import { QueryEditor } from './components/QueryEditor';

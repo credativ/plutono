@@ -7,19 +7,19 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/tests/testinfra"
+	"github.com/credativ/plutono/pkg/tests/testinfra"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
 
-// TestIndexView tests the Grafana index view.
+// TestIndexView tests the Plutono index view.
 func TestIndexView(t *testing.T) {
 	t.Run("CSP enabled", func(t *testing.T) {
-		grafDir, cfgPath := testinfra.CreateGrafDir(t, testinfra.GrafanaOpts{
+		grafDir, cfgPath := testinfra.CreateGrafDir(t, testinfra.PlutonoOpts{
 			EnableCSP: true,
 		})
 		sqlStore := testinfra.SetUpDatabase(t, grafDir)
-		addr := testinfra.StartGrafana(t, grafDir, cfgPath, sqlStore)
+		addr := testinfra.StartPlutono(t, grafDir, cfgPath, sqlStore)
 
 		// nolint:bodyclose
 		resp, html := makeRequest(t, addr)
@@ -31,7 +31,7 @@ func TestIndexView(t *testing.T) {
 	t.Run("CSP disabled", func(t *testing.T) {
 		grafDir, cfgPath := testinfra.CreateGrafDir(t)
 		sqlStore := testinfra.SetUpDatabase(t, grafDir)
-		addr := testinfra.StartGrafana(t, grafDir, cfgPath, sqlStore)
+		addr := testinfra.StartPlutono(t, grafDir, cfgPath, sqlStore)
 
 		// nolint:bodyclose
 		resp, html := makeRequest(t, addr)

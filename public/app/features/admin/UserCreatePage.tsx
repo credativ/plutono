@@ -1,9 +1,9 @@
 import React, { useCallback } from 'react';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
-import { Form, Button, Input, Field } from '@grafana/ui';
-import { NavModel } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
+import { Form, Button, Input, Field } from '@credativ/plutono-ui';
+import { NavModel } from '@credativ/plutono-data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { StoreState } from '../../types';
 import { getNavModel } from '../../core/selectors/navModel';
 import Page from 'app/core/components/Page/Page';

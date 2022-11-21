@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import { toUtc } from '@grafana/data';
+import { toUtc } from '@credativ/plutono-data';
 
 import { LokiQueryEditor } from './LokiQueryEditor';
 import { LokiDatasource } from '../datasource';

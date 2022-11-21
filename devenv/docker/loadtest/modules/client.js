@@ -63,7 +63,7 @@ export const OrganizationsEndpoint = class OrganizationsEndpoint {
   }
 };
 
-export const GrafanaClient = class GrafanaClient {
+export const PlutonoClient = class PlutonoClient {
   constructor(httpClient) {
     httpClient.onBeforeRequest = this.onBeforeRequest;
     this.raw = httpClient;
@@ -83,7 +83,7 @@ export const GrafanaClient = class GrafanaClient {
   onBeforeRequest(params) {
     if (this.orgId && this.orgId > 0) {
       params = params.headers || {};
-      params.headers['X-Grafana-Org-Id'] = this.orgId;
+      params.headers['X-Plutono-Org-Id'] = this.orgId;
     }
   }
 };
@@ -201,13 +201,13 @@ export class BearerAuthClient extends BaseClient {
 }
 
 export const createClient = (url) => {
-  return new GrafanaClient(new BaseClient(url, ''));
+  return new PlutonoClient(new BaseClient(url, ''));
 };
 
 export const createBasicAuthClient = (url, username, password) => {
-  return new GrafanaClient(new BasicAuthClient(url, '', username, password));
+  return new PlutonoClient(new BasicAuthClient(url, '', username, password));
 };
 
 export const createBearerAuthClient = (url, token) => {
-  return new GrafanaClient(new BearerAuthClient(url, '', token));
+  return new PlutonoClient(new BearerAuthClient(url, '', token));
 };

@@ -14,7 +14,7 @@ import {
   RawTimeRange,
   TimeRange,
   EventBusExtended,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 export enum ExploreId {
   left = 'left',
@@ -57,7 +57,7 @@ export interface ExploreItemState {
    */
   datasourceMissing: boolean;
   /**
-   * Emitter to send events to the rest of Grafana.
+   * Emitter to send events to the rest of Plutono.
    */
   eventBridge: EventBusExtended;
   /**

@@ -6,8 +6,8 @@ import {
   RawTimeRange,
   sortLogsResult,
   TimeRange,
-} from '@grafana/data';
-import { RefreshPicker } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { RefreshPicker } from '@credativ/plutono-ui';
 
 import { getTimeRange, refreshIntervalToSortOrder, stopQueryState } from 'app/core/utils/explore';
 import { ExploreItemState, ThunkResult } from 'app/types';

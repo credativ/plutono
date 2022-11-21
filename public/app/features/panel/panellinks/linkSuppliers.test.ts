@@ -1,9 +1,9 @@
 import { getFieldLinksSupplier } from './linkSuppliers';
-import { applyFieldOverrides, DataFrameView, dateTime, FieldDisplay, toDataFrame } from '@grafana/data';
+import { applyFieldOverrides, DataFrameView, dateTime, FieldDisplay, toDataFrame } from '@credativ/plutono-data';
 import { getLinkSrv, LinkService, LinkSrv, setLinkSrv } from './link_srv';
 import { TemplateSrv } from '../../templating/template_srv';
 import { TimeSrv } from '../../dashboard/services/TimeSrv';
-import { getTheme } from '@grafana/ui';
+import { getTheme } from '@credativ/plutono-ui';
 
 describe('getFieldLinksSupplier', () => {
   let originalLinkSrv: LinkService;

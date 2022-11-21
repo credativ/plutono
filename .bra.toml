@@ -2,7 +2,7 @@
 init_cmds = [
   ["go", "run", "build.go", "-dev", "build-cli"],
   ["go", "run", "build.go", "-dev", "build-server"],
-  ["./bin/grafana-server", "-packaging=dev", "cfg:app_mode=development"]
+  ["./bin/plutono-server", "-packaging=dev", "cfg:app_mode=development"]
 ]
 watch_all = true
 follow_symlinks = true
@@ -15,5 +15,5 @@ watch_exts = [".go", ".ini", ".toml", ".template.html"]
 build_delay = 1500
 cmds = [
   ["go", "run", "build.go", "-dev", "build-server"],
-  ["./bin/grafana-server", "-packaging=dev", "cfg:app_mode=development"]
+  ["./bin/plutono-server", "-packaging=dev", "cfg:app_mode=development"]
 ]

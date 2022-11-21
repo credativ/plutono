@@ -1,7 +1,7 @@
 import React from 'react';
 import _ from 'lodash';
-import { DataSourceApi, DataQuery, DataSourceJsonData } from '@grafana/data';
-import { Icon } from '@grafana/ui';
+import { DataSourceApi, DataQuery, DataSourceJsonData } from '@credativ/plutono-data';
+import { Icon } from '@credativ/plutono-ui';
 import { AdHocFilter } from './AdHocFilter';
 export const DEFAULT_REMOVE_FILTER_VALUE = '-- remove filter --';
 

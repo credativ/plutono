@@ -6,7 +6,7 @@
       - '10300:9300'
 
   fake-elastic5-data:
-    image: grafana/fake-data-gen
+    image: plutono/fake-data-gen
     links:
       - elasticsearch5
     environment:

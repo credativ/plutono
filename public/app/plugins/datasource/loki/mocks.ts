@@ -1,5 +1,5 @@
 import { LokiDatasource, LOKI_ENDPOINT } from './datasource';
-import { AbsoluteTimeRange, DataSourceSettings } from '@grafana/data';
+import { AbsoluteTimeRange, DataSourceSettings } from '@credativ/plutono-data';
 import { LokiOptions } from './types';
 import { createDatasourceSettings } from '../../../features/datasources/mocks';
 

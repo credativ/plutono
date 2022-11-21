@@ -30,8 +30,8 @@ export default (data) => {
 
         check(res, {
           'response status is 200': (r) => r.status === 200,
-          "response has cookie 'grafana_session' with 32 characters": (r) =>
-            r.cookies.grafana_session[0].value.length === 32,
+          "response has cookie 'plutono_session' with 32 characters": (r) =>
+            r.cookies.plutono_session[0].value.length === 32,
         });
       });
     }

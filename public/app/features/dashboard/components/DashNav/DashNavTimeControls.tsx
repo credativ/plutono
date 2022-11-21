@@ -1,6 +1,6 @@
 // Libraries
 import React, { Component } from 'react';
-import { dateMath, GrafanaTheme, TimeZone, TimeRange } from '@grafana/data';
+import { dateMath, PlutonoTheme, TimeZone, TimeRange } from '@credativ/plutono-data';
 import { css } from 'emotion';
 
 // Types
@@ -8,7 +8,7 @@ import { DashboardModel } from '../../state';
 import { LocationState, CoreEvents } from 'app/types';
 
 // Components
-import { RefreshPicker, withTheme, stylesFactory, Themeable, defaultIntervals } from '@grafana/ui';
+import { RefreshPicker, withTheme, stylesFactory, Themeable, defaultIntervals } from '@credativ/plutono-ui';
 import { TimePickerWithHistory } from 'app/core/components/TimePicker/TimePickerWithHistory';
 
 // Utils & Services
@@ -117,7 +117,7 @@ class UnthemedDashNavTimeControls extends Component<Props> {
 
 export const DashNavTimeControls = withTheme(UnthemedDashNavTimeControls);
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     container: css`
       position: relative;

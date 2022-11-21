@@ -67,7 +67,7 @@ export const convertOrderByToMetricId = (orderBy: string): string | undefined =>
 /** Gets the actual script value for metrics that support inline scripts.
  *
  *  This is needed because the `script` is a bit polymorphic.
- *  when creating a query with Grafana < 7.4 it was stored as:
+ *  when creating a query with Plutono < 7.4 it was stored as:
  * ```json
  * {
  *    "settings": {

@@ -1,9 +1,9 @@
-import { GrafanaTheme } from '@grafana/data';
-import { Icon, InfoBox, stylesFactory, useTheme } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { Icon, InfoBox, stylesFactory, useTheme } from '@credativ/plutono-ui';
 import { css, cx } from 'emotion';
 import React, { useState } from 'react';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   infoBox: css`
     margin-top: ${theme.spacing.xs};
   `,

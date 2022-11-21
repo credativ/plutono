@@ -1,6 +1,6 @@
 # Documentation style guide
 
-This style guide applies to all documentation created for Grafana products.
+This style guide applies to all documentation created for Plutono products.
 
 For information about how to write technical documentation, refer to the following resources:
 
@@ -44,14 +44,14 @@ To describe relationships between nodes or processes, there are several options:
 
 Avoid _master_ or _slave_.
 
-## Grafana-specific style
+## Plutono-specific style
 
-The following guidelines are specific to Grafana documentation. For the most part, these are *guidelines* are not rigid rules. If you have questions, ask in the #docs channel of Grafana Slack.
+The following guidelines are specific to Plutono documentation. For the most part, these are *guidelines* are not rigid rules. If you have questions, ask in the #docs channel of Plutono Slack.
 
 ### General
 
 - Use active voice:
-  - Active: Grafana displays the heatmap visualization.
+  - Active: Plutono displays the heatmap visualization.
   - Passive: The heatmap visualization is displayed.
 - Write directly to the reader:
   - Use: "After you create a dashboard, you can add a panel to it."
@@ -63,7 +63,7 @@ The following guidelines are specific to Grafana documentation. For the most par
   - Use: "The panel opens."
   - Avoid: "The panel will open."
 - Do not use an ampersand (&) as an abbreviation for _and_.
-  - **Exceptions:** If an ampersand is used in the Grafana UI, then match the UI.
+  - **Exceptions:** If an ampersand is used in the Plutono UI, then match the UI.
 - Avoid using internal jargon or slang.
 - Do not use two spaces after a period; use one space after a sentence.
 - Remove any extra space characters at the end of a paragraph.
@@ -99,7 +99,7 @@ The following guidelines are specific to Grafana documentation. For the most par
 
 In most cases, headings should not be numbered steps.
 
-However, sometimes we need to use headings as numbered steps. This is mostly in cases where each step is complex or a series of other procedures. For example, in [Getting started with Grafana and Prometheus](https://grafana.com/docs/grafana/latest/getting-started/getting-started-prometheus/).
+However, sometimes we need to use headings as numbered steps. This is mostly in cases where each step is complex or a series of other procedures. For example, in [Getting started with Plutono and Prometheus](https://grafana.com/docs/grafana/latest/getting-started/getting-started-prometheus/).
 
 If that is the case, then use the following format for headings:
 
@@ -114,13 +114,13 @@ If that is the case, then use the following format for headings:
 - Assume all graphics will be exclusively viewed on the web.
 - Maximum image size is 3840px X 2160px.
 - Screenshots should be readable, but not too large.
-- _Do not_ use image shortcodes. Follow the guidance in the [Grafana markdown guide](https://github.com/grafana/grafana/blob/master/contribute/style-guides/documentation-markdown-guide.md#images).
+- _Do not_ use image shortcodes. Follow the guidance in the [Plutono markdown guide](https://github.com/credativ/plutono/blob/master/contribute/style-guides/documentation-markdown-guide.md#images).
 - Markdown image links are preferred. Only use the HTML image links if you need to style the image in ways unsupported in Markdown.
 - When you name a file, follow the [file naming conventions](#file-naming-conventions). Example: image-name-7-3.png
 
 ### Capitalization
 
-- Grafana, Loki, and Prometheus are always capitalized unless part of a code block.
+- Plutono, Loki, and Prometheus are always capitalized unless part of a code block.
 - API names are always Title Case, followed by "API"—for example, "Dashboard Permissions API"
 - Abbreviations are always capitalized (such as API, HTTP, ID, JSON, SQL, or URL) unless they are part of a code block.
 - Menu and submenu titles always use sentence case: capitalize the first word, and lowercase the rest.
@@ -129,7 +129,7 @@ If that is the case, then use the following format for headings:
 - Generic and plural versions are always lowercase.
   - Lowercase "dashboard" when referring to a dashboard generally.
   - Lowercase "dashboards" when referring to multiple dashboards.
-- **Exceptions:** If a term is lowercased in the Grafana UI, then match the UI.
+- **Exceptions:** If a term is lowercased in the Plutono UI, then match the UI.
 
 #### Git, GitHub
 
@@ -145,7 +145,7 @@ The first letter of the name of an integration is always capitalized, even if th
 - MySQL Integration
 - CockroachDB Integration
 - Etcd Integration
-- I installed an integration on my local Grafana.
+- I installed an integration on my local Plutono.
 
 #### Kubernetes objects
 
@@ -172,7 +172,7 @@ Refer to the [Documentation style guide](documentation-style-guide.md) for infor
 
 ### Notes, tips, cautions, and warnings
 
-Grafana documentation uses notes, tips, cautions, and warnings. Notes are the most common. The format for all of them is indented, bold, sentence case:
+Plutono documentation uses notes, tips, cautions, and warnings. Notes are the most common. The format for all of them is indented, bold, sentence case:
 
 ```
 > **Note:**
@@ -182,7 +182,7 @@ Grafana documentation uses notes, tips, cautions, and warnings. Notes are the mo
 
 Notes provide additional information that the user should be extra aware of. For example:
 
-> **Note:** This page describes a feature for Grafana 7.0 beta.
+> **Note:** This page describes a feature for Plutono 7.0 beta.
 
 #### Tips
 
@@ -192,27 +192,27 @@ Tips describe alternate or more efficient ways of doing things. Rarely used.
 
 Cautions warn the user that they should proceed with caution. Use cautions to emphasize the potential downside of a course of action.
 
-> **Caution:** If you turn off authentication requirements, then anyone can access your Grafana instance. This poses a considerable security risk.
+> **Caution:** If you turn off authentication requirements, then anyone can access your Plutono instance. This poses a considerable security risk.
 
 #### Warnings
 
 Warnings tell the user not to do something. For example:
 
-> **Warning:** Grafana does not back up your dashboards. If you delete a dashboard, then you might not be able to recover it.
+> **Warning:** Plutono does not back up your dashboards. If you delete a dashboard, then you might not be able to recover it.
 
 ### Command line examples
 
 - Do not assume everyone is using Linux. Make sure instructions include enough information for Windows and Mac users to successfully complete procedures.
 
 - Do not add `$` before commands. Make it easy for users to copy and paste commands.
-  - **Right:** `sudo yum install grafana`
-  - **Wrong:** `$ sudo yum install grafana`
+  - **Right:** `sudo yum install plutono`
+  - **Wrong:** `$ sudo yum install plutono`
 
 - Include `sudo` before commands that require `sudo` to work.
 
-For terminal examples and Grafana configuration, use a `bash` code block:
+For terminal examples and Plutono configuration, use a `bash` code block:
 ```bash
-sudo yum install grafana
+sudo yum install plutono
 ```
 For HTTP request/response, use an `http` code block:
 ```http
@@ -224,7 +224,7 @@ Authorization: Bearer eyJrIjoiT0tTcG1pUlY2RnVKZTFVaDFsNFZXdE9ZWmNrMkZYbk
 
 ### Word usage
 
-Grafana products has some words, abbreviations, and terms particular to the Grafana discourse community.
+Plutono products has some words, abbreviations, and terms particular to the Plutono discourse community.
 
 #### changelog
 
@@ -261,7 +261,7 @@ Two words, not one.
 #### display (verb)
 
 *Display* is a transitive verb, which means it always needs a direct object.
-- Correct, active voice: Grafana displays your list of active alarms.
+- Correct, active voice: Plutono displays your list of active alarms.
 - Correct, but passive voice: Your list of active alarms is displayed.
 - Incorrect: The list of active alarms displays.
 
@@ -313,4 +313,4 @@ Two words, not one.
 ### MS SQL Server
 Always use "MS SQL" when referring to MS SQL Server application.
 
-Incorrect UI spellings will be corrected in a later version of Grafana.
+Incorrect UI spellings will be corrected in a later version of Plutono.

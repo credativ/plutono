@@ -1,4 +1,4 @@
-import { GraphTooltipOptions } from '@grafana/ui';
+import { GraphTooltipOptions } from '@credativ/plutono-ui';
 import { OptionsWithLegend } from '../timeseries/types';
 
 export interface XYDimensionConfig {

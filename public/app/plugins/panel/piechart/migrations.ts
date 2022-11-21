@@ -1,5 +1,5 @@
-import { FieldColorModeId, FieldConfigProperty, FieldMatcherID, PanelModel } from '@grafana/data';
-import { LegendDisplayMode, PieChartLabels, PieChartLegendValues, PieChartType } from '@grafana/ui';
+import { FieldColorModeId, FieldConfigProperty, FieldMatcherID, PanelModel } from '@credativ/plutono-data';
+import { LegendDisplayMode, PieChartLabels, PieChartLegendValues, PieChartType } from '@credativ/plutono-ui';
 import { PieChartOptions } from './types';
 
 export const PieChartPanelChangedHandler = (
@@ -7,7 +7,7 @@ export const PieChartPanelChangedHandler = (
   prevPluginId: string,
   prevOptions: any
 ) => {
-  if (prevPluginId === 'grafana-piechart-panel' && prevOptions.angular) {
+  if (prevPluginId === 'plutono-piechart-panel' && prevOptions.angular) {
     const angular = prevOptions.angular;
     const overrides = [];
     let options: PieChartOptions = panel.options;

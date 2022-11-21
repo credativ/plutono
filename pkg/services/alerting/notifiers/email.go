@@ -3,20 +3,20 @@ package notifiers
 import (
 	"os"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/util"
 
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/services/alerting"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 func init() {
 	alerting.RegisterNotifier(&alerting.NotifierPlugin{
 		Type:        "email",
 		Name:        "Email",
-		Description: "Sends notifications using Grafana server configured SMTP settings",
+		Description: "Sends notifications using Plutono server configured SMTP settings",
 		Factory:     NewEmailNotifier,
 		Heading:     "Email settings",
 		Options: []alerting.NotifierOption{

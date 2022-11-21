@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { QueryResultMetaNotice } from '@grafana/data';
-import { Icon, Tooltip } from '@grafana/ui';
+import { QueryResultMetaNotice } from '@credativ/plutono-data';
+import { Icon, Tooltip } from '@credativ/plutono-ui';
 
 interface Props {
   notice: QueryResultMetaNotice;

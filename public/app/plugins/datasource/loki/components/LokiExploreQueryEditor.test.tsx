@@ -5,7 +5,7 @@ import LokiExploreQueryEditor from './LokiExploreQueryEditor';
 import { LokiOptionFields } from './LokiOptionFields';
 import { LokiDatasource } from '../datasource';
 import { LokiQuery } from '../types';
-import { ExploreMode, LoadingState, PanelData, toUtc, TimeRange } from '@grafana/data';
+import { ExploreMode, LoadingState, PanelData, toUtc, TimeRange } from '@credativ/plutono-data';
 import { makeMockLokiDatasource } from '../mocks';
 import LokiLanguageProvider from '../language_provider';
 
@@ -43,7 +43,7 @@ const setup = (renderMethod: any, propOverrides?: object) => {
       scopedVars: {},
       targets: [],
       timezone: 'GMT',
-      app: 'Grafana',
+      app: 'Plutono',
       startTime: 0,
     },
     timeRange: {

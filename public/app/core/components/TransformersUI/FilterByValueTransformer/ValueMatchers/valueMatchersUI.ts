@@ -1,4 +1,4 @@
-import { Registry } from '@grafana/data';
+import { Registry } from '@credativ/plutono-data';
 import { getBasicValueMatchersUI } from './BasicMatcherEditor';
 import { getNoopValueMatchersUI } from './NoopMatcherEditor';
 import { getRangeValueMatchersUI } from './RangeMatcherEditor';

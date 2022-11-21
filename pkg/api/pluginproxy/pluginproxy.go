@@ -6,12 +6,12 @@ import (
 	"net/http/httputil"
 	"net/url"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
-	"github.com/grafana/grafana/pkg/util/proxyutil"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
+	"github.com/credativ/plutono/pkg/util/proxyutil"
 )
 
 type templateData struct {
@@ -61,7 +61,7 @@ func NewApiPluginProxy(ctx *models.ReqContext, proxyPath string, route *plugins.
 			return
 		}
 
-		req.Header.Set("X-Grafana-Context", string(ctxJSON))
+		req.Header.Set("X-Plutono-Context", string(ctxJSON))
 
 		applyUserHeader(cfg.SendUserHeader, req, ctx.SignedInUser)
 

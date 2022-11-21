@@ -24,7 +24,7 @@
         ]
       },
       {
-        "title": "Welcome to Grafana",
+        "title": "Welcome to Plutono",
         "height": "210px",
         "collapse": false,
         "editable": true,
@@ -34,7 +34,7 @@
             "span": 6,
             "type": "text",
             "mode": "html",
-            "content": "<br/>\n\n<div class=\"row-fluid\">\n  <div class=\"span6\">\n    <ul>\n      <li>\n        <a href=\"http://grafana.org/docs#configuration\" target=\"_blank\">Configuration</a>\n      </li>\n      <li>\n        <a href=\"http://grafana.org/docs/troubleshooting\" target=\"_blank\">Troubleshooting</a>\n      </li>\n      <li>\n        <a href=\"http://grafana.org/docs/support\" target=\"_blank\">Support</a>\n      </li>\n      <li>\n        <a href=\"http://grafana.org/docs/features/intro\" target=\"_blank\">Getting started</a>  (Must read!)\n      </li>\n    </ul>\n  </div>\n  <div class=\"span6\">\n    <ul>\n      <li>\n        <a href=\"http://grafana.org/docs/features/graphing\" target=\"_blank\">Graphing</a>\n      </li>\n      <li>\n        <a href=\"http://grafana.org/docs/features/annotations\" target=\"_blank\">Annotations</a>\n      </li>\n      <li>\n        <a href=\"http://grafana.org/docs/features/graphite\" target=\"_blank\">Graphite</a>\n      </li>\n      <li>\n        <a href=\"http://grafana.org/docs/features/influxdb\" target=\"_blank\">InfluxDB</a>\n      </li>\n      <li>\n        <a href=\"http://grafana.org/docs/features/opentsdb\" target=\"_blank\">OpenTSDB</a>\n      </li>\n    </ul>\n  </div>\n</div>",
+            "content": "<br/>\n\n<div class=\"row-fluid\">\n  <div class=\"span6\">\n    <ul>\n      <li>\n        <a href=\"http://plutono.org/docs#configuration\" target=\"_blank\">Configuration</a>\n      </li>\n      <li>\n        <a href=\"http://plutono.org/docs/troubleshooting\" target=\"_blank\">Troubleshooting</a>\n      </li>\n      <li>\n        <a href=\"http://plutono.org/docs/support\" target=\"_blank\">Support</a>\n      </li>\n      <li>\n        <a href=\"http://plutono.org/docs/features/intro\" target=\"_blank\">Getting started</a>  (Must read!)\n      </li>\n    </ul>\n  </div>\n  <div class=\"span6\">\n    <ul>\n      <li>\n        <a href=\"http://plutono.org/docs/features/graphing\" target=\"_blank\">Graphing</a>\n      </li>\n      <li>\n        <a href=\"http://plutono.org/docs/features/annotations\" target=\"_blank\">Annotations</a>\n      </li>\n      <li>\n        <a href=\"http://plutono.org/docs/features/graphite\" target=\"_blank\">Graphite</a>\n      </li>\n      <li>\n        <a href=\"http://plutono.org/docs/features/influxdb\" target=\"_blank\">InfluxDB</a>\n      </li>\n      <li>\n        <a href=\"http://plutono.org/docs/features/opentsdb\" target=\"_blank\">OpenTSDB</a>\n      </li>\n    </ul>\n  </div>\n</div>",
             "style": {},
             "title": "Documentation Links"
           },

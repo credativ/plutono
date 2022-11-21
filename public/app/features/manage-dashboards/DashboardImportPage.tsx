@@ -1,8 +1,8 @@
 import React, { FormEvent, PureComponent } from 'react';
 import { MapDispatchToProps, MapStateToProps } from 'react-redux';
 import { css } from 'emotion';
-import { AppEvents, NavModel } from '@grafana/data';
-import { Button, stylesFactory, Input, TextArea, Field, Form, Legend, FileUpload } from '@grafana/ui';
+import { AppEvents, NavModel } from '@credativ/plutono-data';
+import { Button, stylesFactory, Input, TextArea, Field, Form, Legend, FileUpload } from '@credativ/plutono-ui';
 import Page from 'app/core/components/Page/Page';
 import { connectWithCleanUp } from 'app/core/components/connectWithCleanUp';
 import { ImportDashboardOverview } from './components/ImportDashboardOverview';
@@ -91,7 +91,7 @@ class DashboardImportUnConnected extends PureComponent<Props> {
                   placeholder="Grafana.com dashboard url or id"
                   type="text"
                   ref={register({
-                    required: 'A Grafana dashboard url or id is required',
+                    required: 'A Plutono dashboard url or id is required',
                     validate: validateGcomDashboard,
                   })}
                   addonAfter={<Button type="submit">Load</Button>}

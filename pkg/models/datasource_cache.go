@@ -11,11 +11,11 @@ import (
 	"sync"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/validations"
+	"github.com/credativ/plutono/pkg/services/validations"
 
+	"github.com/credativ/plutono/pkg/infra/metrics/metricutil"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/grafana/grafana-aws-sdk/pkg/sigv4"
-	"github.com/grafana/grafana/pkg/infra/metrics/metricutil"
-	"github.com/grafana/grafana/pkg/setting"
 	"github.com/mwitkow/go-conntrack"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
@@ -23,7 +23,7 @@ import (
 
 var datasourceRequestCounter = prometheus.NewCounterVec(
 	prometheus.CounterOpts{
-		Namespace: "grafana",
+		Namespace: "plutono",
 		Name:      "datasource_request_total",
 		Help:      "A counter for outgoing requests for a datasource",
 	},
@@ -32,27 +32,27 @@ var datasourceRequestCounter = prometheus.NewCounterVec(
 
 var datasourceRequestSummary = prometheus.NewSummaryVec(
 	prometheus.SummaryOpts{
-		Namespace:  "grafana",
+		Namespace:  "plutono",
 		Name:       "datasource_request_duration_seconds",
-		Help:       "summary of outgoing datasource requests sent from Grafana",
+		Help:       "summary of outgoing datasource requests sent from Plutono",
 		Objectives: map[float64]float64{0.5: 0.05, 0.9: 0.01, 0.99: 0.001},
 	}, []string{"datasource", "code", "method"},
 )
 
 var datasourceResponseSummary = prometheus.NewSummaryVec(
 	prometheus.SummaryOpts{
-		Namespace:  "grafana",
+		Namespace:  "plutono",
 		Name:       "datasource_response_size_bytes",
-		Help:       "summary of datasource response sizes returned to Grafana",
+		Help:       "summary of datasource response sizes returned to Plutono",
 		Objectives: map[float64]float64{0.5: 0.05, 0.9: 0.01, 0.99: 0.001},
 	}, []string{"datasource"},
 )
 
 var datasourceRequestsInFlight = prometheus.NewGaugeVec(
 	prometheus.GaugeOpts{
-		Namespace: "grafana",
+		Namespace: "plutono",
 		Name:      "datasource_request_in_flight",
-		Help:      "A gauge of outgoing datasource requests currently being sent by Grafana",
+		Help:      "A gauge of outgoing datasource requests currently being sent by Plutono",
 	},
 	[]string{"datasource"},
 )

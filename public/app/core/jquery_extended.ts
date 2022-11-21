@@ -16,7 +16,7 @@ $.fn.place_tt = (() => {
       const $tooltip = $(this);
       let width, height;
 
-      $tooltip.addClass('grafana-tooltip');
+      $tooltip.addClass('plutono-tooltip');
 
       $('#tooltip').remove();
       $tooltip.appendTo(document.body);

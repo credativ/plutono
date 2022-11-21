@@ -31,8 +31,8 @@ const datasource = {
   metricFindQuery: jest.fn(() => Promise.resolve([])),
 };
 
-jest.mock('@grafana/runtime', () => {
-  const original = jest.requireActual('@grafana/runtime');
+jest.mock('@credativ/plutono-runtime', () => {
+  const original = jest.requireActual('@credativ/plutono-runtime');
 
   return {
     ...original,

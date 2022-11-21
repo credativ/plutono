@@ -1,8 +1,8 @@
 import React from 'react';
-import { Button, InfoBox, Portal, stylesFactory, useTheme } from '@grafana/ui';
-import { getModalStyles } from '@grafana/ui/src/components/Modal/getModalStyles';
+import { Button, InfoBox, Portal, stylesFactory, useTheme } from '@credativ/plutono-ui';
+import { getModalStyles } from '@credativ/plutono-ui/src/components/Modal/getModalStyles';
 import { css, cx } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 
 interface Props {
   maxConcurrentSessions?: number;
@@ -50,7 +50,7 @@ export const TokenRevokedModal = (props: Props) => {
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     infobox: css`
       margin-bottom: 0;

@@ -9,7 +9,7 @@ import {
   getFieldDisplayName,
   LoadingState,
   toDataFrame,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import {
   alignRange,
@@ -26,9 +26,9 @@ import { QueryOptions } from 'app/types';
 const fetchMock = jest.fn().mockReturnValue(of(createDefaultPromResponse()));
 
 jest.mock('./metric_find_query');
-jest.mock('@grafana/runtime', () => ({
+jest.mock('@credativ/plutono-runtime', () => ({
   // @ts-ignore
-  ...jest.requireActual('@grafana/runtime'),
+  ...jest.requireActual('@credativ/plutono-runtime'),
   getBackendSrv: () => ({
     fetch: fetchMock,
   }),

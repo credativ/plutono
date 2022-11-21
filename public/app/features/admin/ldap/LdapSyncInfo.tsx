@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
-import { dateTimeFormat } from '@grafana/data';
-import { Spinner } from '@grafana/ui';
+import { dateTimeFormat } from '@credativ/plutono-data';
+import { Spinner } from '@credativ/plutono-ui';
 import { SyncInfo } from 'app/types';
 
 interface Props {

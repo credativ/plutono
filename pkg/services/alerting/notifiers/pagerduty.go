@@ -6,11 +6,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/alerting"
 )
 
 func init() {
@@ -130,7 +130,7 @@ func (pn *PagerdutyNotifier) buildEventPayload(evalContext *alerting.EvalContext
 	payloadJSON := simplejson.New()
 
 	// set default, override in following case switch if defined
-	payloadJSON.Set("component", "Grafana")
+	payloadJSON.Set("component", "Plutono")
 	payloadJSON.Set("severity", pn.Severity)
 	dedupKey := "alertId-" + strconv.FormatInt(evalContext.Rule.ID, 10)
 
@@ -198,7 +198,7 @@ func (pn *PagerdutyNotifier) buildEventPayload(evalContext *alerting.EvalContext
 	linkJSON := simplejson.New()
 	linkJSON.Set("href", ruleURL)
 	bodyJSON.Set("client_url", ruleURL)
-	bodyJSON.Set("client", "Grafana")
+	bodyJSON.Set("client", "Plutono")
 
 	links[0] = linkJSON
 	bodyJSON.Set("links", links)

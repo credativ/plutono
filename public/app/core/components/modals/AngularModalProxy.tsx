@@ -1,5 +1,5 @@
 import { connectWithProvider } from '../../utils/connectWithReduxStore';
-import { ModalRoot, ModalsProvider } from '@grafana/ui';
+import { ModalRoot, ModalsProvider } from '@credativ/plutono-ui';
 import React from 'react';
 
 /**

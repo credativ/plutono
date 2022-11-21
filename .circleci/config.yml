@@ -56,5 +56,5 @@ workflows:
       - scan-docker-image:
           matrix:
             parameters:
-              image: [grafana/grafana, grafana/grafana-enterprise]
+              image: [plutono/plutono, plutono/plutono-enterprise]
               tag: [latest, master, latest-ubuntu, master-ubuntu]

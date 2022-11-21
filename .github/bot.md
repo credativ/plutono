@@ -1,6 +1,6 @@
-# GitHub & grafanabot automation
+# GitHub & plutonobot automation
 
-The bot is configured via [commands.json](https://github.com/grafana/grafana/blob/master/.github/commands.json) and some other GitHub workflows [workflows](https://github.com/grafana/grafana/tree/master/.github/workflows).
+The bot is configured via [commands.json](https://github.com/credativ/plutono/blob/master/.github/commands.json) and some other GitHub workflows [workflows](https://github.com/credativ/plutono/tree/master/.github/workflows).
 
 Comment commands:
 
@@ -17,12 +17,12 @@ Label commands:
 
 ## Metrics
 
-Metrics are configured in [metrics-collector.json](https://github.com/grafana/grafana/blob/master/.github/metrics-collector.json) and are also defined in the 
+Metrics are configured in [metrics-collector.json](https://github.com/credativ/plutono/blob/master/.github/metrics-collector.json) and are also defined in the 
 [metrics-collector](https://github.com/grafana/grafana-github-actions/blob/main/metrics-collector/index.ts) GitHub action.
 
 ## Backport PR
 
-To automatically backport a PR to a release branch like v7.3.x add a label named `backport v7.3.x`. The label name should follow the pattern `backport <branch-name>`. Once merged grafanabot will automatically 
+To automatically backport a PR to a release branch like v7.3.x add a label named `backport v7.3.x`. The label name should follow the pattern `backport <branch-name>`. Once merged plutonobot will automatically 
 try to cherry-pick the PR merge commit into that branch and open a PR. It will sync the milestone with the source PR so make sure the source PR also is assigned the milestone for the patch release. If the PR is already merged you can still add this label and trigger the backport automation. 
 
 If there are merge conflicts the bot will write a comment on the source PR saying the cherry-pick failed. In this case you have to do the cherry pick and backport PR manually. 

@@ -1,7 +1,7 @@
 import React, { SyntheticEvent } from 'react';
-import { InlineFormLabel, LegacyForms } from '@grafana/ui';
+import { InlineFormLabel, LegacyForms } from '@credativ/plutono-ui';
 const { Select, Input } = LegacyForms;
-import { DataSourceSettings, SelectableValue } from '@grafana/data';
+import { DataSourceSettings, SelectableValue } from '@credativ/plutono-data';
 import { OpenTsdbOptions } from '../types';
 
 const tsdbVersions = [

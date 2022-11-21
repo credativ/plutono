@@ -2,7 +2,7 @@ import React from 'react';
 import renderer from 'react-test-renderer';
 import { mount } from 'enzyme';
 import { act } from 'react-dom/test-utils';
-import { DataSourceInstanceSettings } from '@grafana/data';
+import { DataSourceInstanceSettings } from '@credativ/plutono-data';
 import { TemplateSrv } from 'app/features/templating/template_srv';
 import { MetricsQueryEditor, normalizeQuery, Props } from './MetricsQueryEditor';
 import { CloudWatchDatasource } from '../datasource';

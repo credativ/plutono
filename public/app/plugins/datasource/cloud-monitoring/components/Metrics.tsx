@@ -1,10 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import _ from 'lodash';
 
-import { TemplateSrv } from '@grafana/runtime';
-import { SelectableValue } from '@grafana/data';
+import { TemplateSrv } from '@credativ/plutono-runtime';
+import { SelectableValue } from '@credativ/plutono-data';
 import CloudMonitoringDatasource from '../datasource';
-import { Segment } from '@grafana/ui';
+import { Segment } from '@credativ/plutono-ui';
 import { MetricDescriptor } from '../types';
 
 export interface Props {

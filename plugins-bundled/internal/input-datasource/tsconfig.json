@@ -1,5 +1,5 @@
 {
-  "extends": "../../../packages/grafana-toolkit/src/config/tsconfig.plugin.json",
+  "extends": "../../../packages/plutono-toolkit/src/config/tsconfig.plugin.json",
   "include": ["src", "types"],
   "compilerOptions": {
     "rootDir": "./src",

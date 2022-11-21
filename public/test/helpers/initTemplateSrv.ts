@@ -1,4 +1,4 @@
-import { TimeRange } from '@grafana/data';
+import { TimeRange } from '@credativ/plutono-data';
 import { convertToStoreState } from './convertToStoreState';
 import { TemplateSrv } from '../../app/features/templating/template_srv';
 import { getTemplateSrvDependencies } from './getTemplateSrvDependencies';

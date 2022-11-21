@@ -1,6 +1,6 @@
 import React, { FC, memo } from 'react';
 import { MapDispatchToProps, MapStateToProps } from 'react-redux';
-import { UrlQueryMap } from '@grafana/data';
+import { UrlQueryMap } from '@credativ/plutono-data';
 import { getLocationQuery } from 'app/core/selectors/location';
 import { updateLocation } from 'app/core/reducers/location';
 import { connectWithStore } from 'app/core/utils/connectWithReduxStore';

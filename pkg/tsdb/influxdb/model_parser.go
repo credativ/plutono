@@ -4,9 +4,9 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/tsdb"
 )
 
 type InfluxdbQueryParser struct{}

@@ -8,7 +8,7 @@
       - "11300:9300"
 
   fake-elastic6-data:
-    image: grafana/fake-data-gen
+    image: plutono/fake-data-gen
     links:
       - elasticsearch6 
     environment:
@@ -22,4 +22,4 @@
     volumes:
       - ./docker/blocks/elastic6/filebeat.yml:/usr/share/filebeat/filebeat.yml:ro
       - /var/log:/var/log:ro
-      - ../data/log:/var/log/grafana:ro
+      - ../data/log:/var/log/plutono:ro

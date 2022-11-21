@@ -4,7 +4,7 @@
   "interval": "PT1M",
   "value": [
     {
-      "id": "\/subscriptions\/xxx\/resourceGroups\/grafanastaging\/providers\/Microsoft.Compute\/virtualMachines\/grafana\/providers\/Microsoft.Insights\/metrics\/Percentage CPU",
+      "id": "\/subscriptions\/xxx\/resourceGroups\/plutonostaging\/providers\/Microsoft.Compute\/virtualMachines\/plutono\/providers\/Microsoft.Insights\/metrics\/Percentage CPU",
       "type": "Microsoft.Insights\/metrics",
       "name": {
         "value": "Percentage CPU",

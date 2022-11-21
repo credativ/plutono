@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, HorizontalGroup, Modal, VerticalGroup } from '@grafana/ui';
+import { Button, HorizontalGroup, Modal, VerticalGroup } from '@credativ/plutono-ui';
 import { SaveDashboardButton } from './SaveDashboardButton';
 import { DashboardModel } from '../../state';
 import { css } from 'emotion';

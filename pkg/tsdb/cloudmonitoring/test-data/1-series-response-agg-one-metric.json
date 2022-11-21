@@ -7,7 +7,7 @@
       "resource": {
         "type": "consumed_api",
         "labels": {
-          "project_id": "grafana-prod"
+          "project_id": "plutono-prod"
         }
       },
       "metricKind": "GAUGE",

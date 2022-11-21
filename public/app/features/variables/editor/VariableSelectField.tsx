@@ -1,6 +1,6 @@
 import React, { PropsWithChildren, ReactElement } from 'react';
-import { InlineFormLabel, Select, useStyles } from '@grafana/ui';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
+import { InlineFormLabel, Select, useStyles } from '@credativ/plutono-ui';
+import { PlutonoTheme, SelectableValue } from '@credativ/plutono-data';
 import { css } from 'emotion';
 
 interface VariableSelectFieldProps<T> {
@@ -44,7 +44,7 @@ export function VariableSelectField({
   );
 }
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: PlutonoTheme) {
   return {
     selectContainer: css`
       margin-right: ${theme.spacing.xs};

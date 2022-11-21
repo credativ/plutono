@@ -9,8 +9,8 @@ import {
   fieldReducers,
   NullValueMode,
   PanelModel,
-} from '@grafana/data';
-import { GraphFieldConfig, LegendDisplayMode } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { GraphFieldConfig, LegendDisplayMode } from '@credativ/plutono-ui';
 import {
   GraphGradientMode,
   AxisPlacement,
@@ -18,7 +18,7 @@ import {
   LineInterpolation,
   LineStyle,
   PointVisibility,
-} from '@grafana/ui/src/components/uPlot/config';
+} from '@credativ/plutono-ui/src/components/uPlot/config';
 import { Options } from './types';
 import omitBy from 'lodash/omitBy';
 import isNil from 'lodash/isNil';

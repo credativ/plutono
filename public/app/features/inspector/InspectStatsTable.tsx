@@ -3,12 +3,12 @@ import {
   FieldType,
   formattedValueToString,
   getDisplayProcessor,
-  GrafanaTheme,
+  PlutonoTheme,
   QueryResultMetaStat,
   TimeZone,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { config } from 'app/core/config';
-import { stylesFactory, useTheme } from '@grafana/ui';
+import { stylesFactory, useTheme } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 
 interface InspectStatsTableProps {
@@ -56,7 +56,7 @@ function formatStat(stat: QueryResultMetaStat, timeZone?: TimeZone): string {
   return formattedValueToString(display(stat.value));
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     wrapper: css`
       padding-bottom: ${theme.spacing.md};

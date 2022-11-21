@@ -1,8 +1,8 @@
 import React from 'react';
-import { GrafanaTheme, PanelPluginMeta, PluginState } from '@grafana/data';
-import { Badge, BadgeProps, styleMixins, stylesFactory, useTheme } from '@grafana/ui';
+import { PlutonoTheme, PanelPluginMeta, PluginState } from '@credativ/plutono-data';
+import { Badge, BadgeProps, styleMixins, stylesFactory, useTheme } from '@credativ/plutono-ui';
 import { css, cx } from 'emotion';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { isUnsignedPluginSignature, PluginSignatureBadge } from '../../../plugins/PluginSignatureBadge';
 
 interface Props {
@@ -45,7 +45,7 @@ const VizTypePickerPlugin: React.FC<Props> = ({ isCurrent, plugin, onClick, disa
 
 VizTypePickerPlugin.displayName = 'VizTypePickerPlugin';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     wrapper: css`
       position: relative;

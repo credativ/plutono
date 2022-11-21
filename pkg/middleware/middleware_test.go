@@ -14,22 +14,22 @@ import (
 	"github.com/stretchr/testify/require"
 	"gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/gtime"
-	"github.com/grafana/grafana/pkg/infra/fs"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/remotecache"
-	"github.com/grafana/grafana/pkg/login"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/auth"
-	"github.com/grafana/grafana/pkg/services/contexthandler"
-	"github.com/grafana/grafana/pkg/services/contexthandler/authproxy"
-	"github.com/grafana/grafana/pkg/services/rendering"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/gtime"
+	"github.com/credativ/plutono/pkg/infra/fs"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/remotecache"
+	"github.com/credativ/plutono/pkg/login"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/services/auth"
+	"github.com/credativ/plutono/pkg/services/contexthandler"
+	"github.com/credativ/plutono/pkg/services/contexthandler/authproxy"
+	"github.com/credativ/plutono/pkg/services/rendering"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 func fakeGetTime() func() time.Time {
@@ -359,7 +359,7 @@ func TestMiddlewareContext(t *testing.T) {
 		}
 
 		const hdrName = "markelog"
-		const group = "grafana-core-team"
+		const group = "plutono-core-team"
 
 		middlewareScenario(t, "Should not sync the user if it's in the cache", func(t *testing.T, sc *scenarioContext) {
 			bus.AddHandler("test", func(query *models.GetSignedInUserQuery) error {
@@ -545,7 +545,7 @@ func middlewareScenario(t *testing.T, desc string, fn scenarioFunc, cbs ...func(
 		loginMaxLifetime, err := gtime.ParseDuration("30d")
 		require.NoError(t, err)
 		cfg := setting.NewCfg()
-		cfg.LoginCookieName = "grafana_session"
+		cfg.LoginCookieName = "plutono_session"
 		cfg.LoginMaxLifetime = loginMaxLifetime
 		// Required when rendering errors
 		cfg.ErrTemplateName = "error-template"

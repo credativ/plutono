@@ -47,7 +47,7 @@
         "rows": [
           [
             true,
-            "Grafana",
+            "Plutono",
             "2006-01-02T22:04:05.1Z",
             "[{\"person\":\"Daniel\"},{\"cats\":23},{\"diagnosis\":\"cat problem\"}]",
             "74be27de-1e4e-49d9-b579-fe0b331d3642",

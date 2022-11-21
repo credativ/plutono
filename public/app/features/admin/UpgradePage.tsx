@@ -1,9 +1,9 @@
 import React from 'react';
 import { css } from 'emotion';
-import { NavModel } from '@grafana/data';
+import { NavModel } from '@credativ/plutono-data';
 import Page from '../../core/components/Page/Page';
 import { LicenseChrome } from './LicenseChrome';
-import { LinkButton } from '@grafana/ui';
+import { LinkButton } from '@credativ/plutono-ui';
 import { hot } from 'react-hot-loader';
 import { StoreState } from '../../types';
 import { getNavModel } from '../../core/selectors/navModel';
@@ -18,7 +18,7 @@ export const UpgradePage: React.FC<Props> = ({ navModel }) => {
     <Page navModel={navModel}>
       <Page.Contents>
         <UpgradeInfo
-          editionNotice="You are running the open-source version of Grafana.
+          editionNotice="You are running the open-source version of Plutono.
         You have to install the Enterprise edition in order enable Enterprise features."
         />
       </Page.Contents>
@@ -45,7 +45,7 @@ export const UpgradeInfo: React.FC<UpgradeInfoProps> = ({ editionNotice }) => {
   `;
 
   return (
-    <LicenseChrome header="Grafana Enterprise" subheader="Get your free trial" editionNotice={editionNotice}>
+    <LicenseChrome header="Plutono Enterprise" subheader="Get your free trial" editionNotice={editionNotice}>
       <div className={columnStyles}>
         <FeatureInfo />
         <ServiceInfo />
@@ -57,7 +57,7 @@ export const UpgradeInfo: React.FC<UpgradeInfoProps> = ({ editionNotice }) => {
 const GetEnterprise: React.FC = () => {
   return (
     <div style={{ marginTop: '40px', marginBottom: '30px' }}>
-      <h2 style={titleStyles}>Get Grafana Enterprise</h2>
+      <h2 style={titleStyles}>Get Plutono Enterprise</h2>
       <CallToAction />
       <p style={{ paddingTop: '12px' }}>
         You can use the trial version for free for <strong>30 days</strong>. We will remind you about it{' '}
@@ -69,11 +69,7 @@ const GetEnterprise: React.FC = () => {
 
 const CallToAction: React.FC = () => {
   return (
-    <LinkButton
-      variant="primary"
-      size="lg"
-      href="https://grafana.com/contact?about=grafana-enterprise&utm_source=grafana-upgrade-page"
-    >
+    <LinkButton variant="primary" size="lg" href="https://grafana.com/contact?about=plutono-enterprise">
       Contact us and get a free trial
     </LinkButton>
   );
@@ -103,7 +99,7 @@ const ServiceInfo: React.FC = () => {
       <div style={{ marginTop: '20px' }}>
         <strong>Also included:</strong>
         <br />
-        Indemnification, working with Grafana Labs on future prioritization, and training from the core Grafana team.
+        Indemnification, working with Grafana Labs on future prioritization, and training from the core Plutono team.
       </div>
 
       <GetEnterprise />
@@ -130,7 +126,7 @@ const FeatureListing: React.FC = () => {
       <Item title="Team Sync">LDAP, GitHub OAuth, Auth Proxy, Okta</Item>
       <Item title="White labeling" />
       <Item title="Auditing" />
-      <Item title="Grafana usage insights">
+      <Item title="Plutono usage insights">
         <List nested={true}>
           <Item title="Sort dashboards by popularity in search" />
           <Item title="Find unused dashboards" />

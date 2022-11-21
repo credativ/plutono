@@ -1,4 +1,4 @@
-import { Field, FieldType } from '@grafana/data';
+import { Field, FieldType } from '@credativ/plutono-data';
 import { isString, isUndefined } from 'lodash';
 
 export function convertToType(value: any, field: Field): any {

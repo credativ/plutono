@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"text/template"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
 )
 
 // interpolateString accepts template data and return a string with substitutions
@@ -60,10 +60,10 @@ func addQueryString(req *http.Request, route *plugins.AppPluginRoute, data templ
 	return nil
 }
 
-// Set the X-Grafana-User header if needed (and remove if not)
+// Set the X-Plutono-User header if needed (and remove if not)
 func applyUserHeader(sendUserHeader bool, req *http.Request, user *models.SignedInUser) {
-	req.Header.Del("X-Grafana-User")
+	req.Header.Del("X-Plutono-User")
 	if sendUserHeader && !user.IsAnonymous {
-		req.Header.Set("X-Grafana-User", user.Login)
+		req.Header.Set("X-Plutono-User", user.Login)
 	}
 }

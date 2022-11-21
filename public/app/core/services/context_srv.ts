@@ -1,11 +1,11 @@
 import config from '../../core/config';
 import _ from 'lodash';
 import coreModule from 'app/core/core_module';
-import { rangeUtil } from '@grafana/data';
+import { rangeUtil } from '@credativ/plutono-data';
 
 export class User {
   id: number;
-  isGrafanaAdmin: any;
+  isPlutonoAdmin: any;
   isSignedIn: any;
   orgRole: any;
   orgId: number;
@@ -30,7 +30,7 @@ export class ContextSrv {
   version: any;
   user: User;
   isSignedIn: any;
-  isGrafanaAdmin: any;
+  isPlutonoAdmin: any;
   isEditor: any;
   sidemenuSmallBreakpoint = false;
   hasEditPermissionInFolders: boolean;
@@ -43,7 +43,7 @@ export class ContextSrv {
 
     this.user = new User();
     this.isSignedIn = this.user.isSignedIn;
-    this.isGrafanaAdmin = this.user.isGrafanaAdmin;
+    this.isPlutonoAdmin = this.user.isPlutonoAdmin;
     this.isEditor = this.hasRole('Editor') || this.hasRole('Admin');
     this.hasEditPermissionInFolders = this.user.hasEditPermissionInFolders;
     this.minRefreshInterval = config.minRefreshInterval;
@@ -61,7 +61,7 @@ export class ContextSrv {
     return this.user.orgRole === role;
   }
 
-  isGrafanaVisible() {
+  isPlutonoVisible() {
     return !!(document.visibilityState === undefined || document.visibilityState === 'visible');
   }
 

@@ -1,4 +1,4 @@
-import { identityOverrideProcessor, ThresholdsMode } from '@grafana/data';
+import { identityOverrideProcessor, ThresholdsMode } from '@credativ/plutono-data';
 
 export function mockStandardFieldConfigOptions() {
   const unit = {

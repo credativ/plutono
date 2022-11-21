@@ -14,9 +14,9 @@ import {
   getTimeRangeFromUrl,
 } from './explore';
 import store from 'app/core/store';
-import { DataQueryError, dateTime, ExploreUrlState, LogsSortOrder } from '@grafana/data';
-import { RefreshPicker } from '@grafana/ui';
-import { serializeStateToUrlParam } from '@grafana/data/src/utils/url';
+import { DataQueryError, dateTime, ExploreUrlState, LogsSortOrder } from '@credativ/plutono-data';
+import { RefreshPicker } from '@credativ/plutono-ui';
+import { serializeStateToUrlParam } from '@credativ/plutono-data/src/utils/url';
 
 const DEFAULT_EXPLORE_STATE: ExploreUrlState = {
   datasource: '',
@@ -60,7 +60,7 @@ describe('state functions', () => {
     });
 
     it('should not return a query for mode in the url', () => {
-      // Previous versions of Grafana included "Explore mode" in the URL; this should not be treated as a query.
+      // Previous versions of Plutono included "Explore mode" in the URL; this should not be treated as a query.
       const paramValue =
         '["now-1h","now","x-ray-datasource",{"queryType":"getTraceSummaries"},{"mode":"Metrics"},{"ui":[true,true,true,"none"]}]';
       expect(parseUrlState(paramValue)).toMatchObject({
@@ -210,7 +210,7 @@ describe('getExploreUrl', () => {
 
 describe('updateHistory()', () => {
   const datasourceId = 'myDatasource';
-  const key = `grafana.explore.history.${datasourceId}`;
+  const key = `plutono.explore.history.${datasourceId}`;
 
   beforeEach(() => {
     clearHistory(datasourceId);

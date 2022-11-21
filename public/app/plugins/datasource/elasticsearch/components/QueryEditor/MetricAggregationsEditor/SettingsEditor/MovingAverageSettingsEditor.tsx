@@ -1,4 +1,4 @@
-import { Input, InlineField, Select, Switch } from '@grafana/ui';
+import { Input, InlineField, Select, Switch } from '@credativ/plutono-ui';
 import React, { FunctionComponent } from 'react';
 import { useDispatch } from '../../../../hooks/useStatelessReducer';
 import { movingAvgModelOptions } from '../../../../query_def';

@@ -10,19 +10,19 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/services/licensing"
+	"github.com/credativ/plutono/pkg/services/alerting"
+	"github.com/credativ/plutono/pkg/services/licensing"
 	"github.com/stretchr/testify/require"
 
 	"net/http"
 	"net/http/httptest"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/assert"
 )
 
@@ -208,7 +208,7 @@ func TestMetrics(t *testing.T) {
 			"azuread":       true,
 			"google":        true,
 			"generic_oauth": true,
-			"grafana_com":   true,
+			"plutono_com":   true,
 		}
 
 		err := uss.sendUsageStats(context.Background())
@@ -236,7 +236,7 @@ func TestMetrics(t *testing.T) {
 			setting.LDAPEnabled = true
 			setting.AuthProxyEnabled = true
 			setting.Packaging = "deb"
-			setting.ReportingDistributor = "hosted-grafana"
+			setting.ReportingDistributor = "hosted-plutono"
 
 			wg.Add(1)
 			err := uss.sendUsageStats(context.Background())
@@ -320,10 +320,10 @@ func TestMetrics(t *testing.T) {
 				assert.Equal(t, 1, metrics.Get("stats.auth_enabled.oauth_google.count").MustInt())
 				assert.Equal(t, 1, metrics.Get("stats.auth_enabled.oauth_azuread.count").MustInt())
 				assert.Equal(t, 1, metrics.Get("stats.auth_enabled.oauth_generic_oauth.count").MustInt())
-				assert.Equal(t, 1, metrics.Get("stats.auth_enabled.oauth_grafana_com.count").MustInt())
+				assert.Equal(t, 1, metrics.Get("stats.auth_enabled.oauth_plutono_com.count").MustInt())
 
 				assert.Equal(t, 1, metrics.Get("stats.packaging.deb.count").MustInt())
-				assert.Equal(t, 1, metrics.Get("stats.distributor.hosted-grafana.count").MustInt())
+				assert.Equal(t, 1, metrics.Get("stats.distributor.hosted-plutono.count").MustInt())
 
 				assert.Equal(t, 1, metrics.Get("stats.auth_token_per_user_le_3").MustInt())
 				assert.Equal(t, 2, metrics.Get("stats.auth_token_per_user_le_6").MustInt())

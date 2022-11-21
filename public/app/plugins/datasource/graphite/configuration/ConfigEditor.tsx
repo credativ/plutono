@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
-import { DataSourceHttpSettings, InlineFormLabel, LegacyForms } from '@grafana/ui';
+import { DataSourceHttpSettings, InlineFormLabel, LegacyForms } from '@credativ/plutono-ui';
 const { Select, Switch } = LegacyForms;
 import {
   DataSourcePluginOptionsEditorProps,
   onUpdateDatasourceJsonDataOptionSelect,
   onUpdateDatasourceJsonDataOptionChecked,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { GraphiteOptions, GraphiteType } from '../types';
 
 const graphiteVersions = [

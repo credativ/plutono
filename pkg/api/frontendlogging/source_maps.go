@@ -11,9 +11,9 @@ import (
 
 	sourcemap "github.com/go-sourcemap/sourcemap"
 
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/getsentry/sentry-go"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
 )
 
 type sourceMapLocation struct {
@@ -60,7 +60,7 @@ func NewSourceMapStore(cfg *setting.Cfg, readSourceMap ReadSourceMapFn) *SourceM
 /* guessSourceMapLocation will attempt to guess location of a source map on fs.
  * it does not read the source file or make any web requests,
  * just assumes that a [source filename].map file might exist in the same dir as the source file
- * and only considers sources coming from grafana core or plugins`
+ * and only considers sources coming from plutono core or plugins`
  */
 func (store *SourceMapStore) guessSourceMapLocation(sourceURL string) (*sourceMapLocation, error) {
 	u, err := url.Parse(sourceURL)
@@ -68,7 +68,7 @@ func (store *SourceMapStore) guessSourceMapLocation(sourceURL string) (*sourceMa
 		return nil, err
 	}
 
-	// determine if source comes from grafana core, locally or CDN, look in public build dir on fs
+	// determine if source comes from plutono core, locally or CDN, look in public build dir on fs
 	if strings.HasPrefix(u.Path, "/public/build/") || (store.cfg.CDNRootURL != nil && strings.HasPrefix(sourceURL, store.cfg.CDNRootURL.String()) && strings.Contains(u.Path, "/public/build/")) {
 		pathParts := strings.SplitN(u.Path, "/public/build/", 2)
 		if len(pathParts) == 2 {

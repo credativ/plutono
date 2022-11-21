@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
-import { PluginMeta } from '@grafana/data';
+import { PluginMeta } from '@credativ/plutono-data';
 import { PluginSignatureBadge } from './PluginSignatureBadge';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 interface Props {
   plugin: PluginMeta;

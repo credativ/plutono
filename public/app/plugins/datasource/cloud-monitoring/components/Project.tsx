@@ -1,6 +1,6 @@
 import React from 'react';
-import { SelectableValue } from '@grafana/data';
-import { SegmentAsync } from '@grafana/ui';
+import { SelectableValue } from '@credativ/plutono-data';
+import { SegmentAsync } from '@credativ/plutono-ui';
 import CloudMonitoringDatasource from '../datasource';
 
 export interface Props {

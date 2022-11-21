@@ -36,7 +36,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, '../../public/build'),
     filename: '[name].[hash].js',
-    // Keep publicPath relative for host.com/grafana/ deployments
+    // Keep publicPath relative for host.com/plutono/ deployments
     publicPath: 'public/build/',
   },
   resolve: {
@@ -49,13 +49,13 @@ module.exports = {
       // make sure to resolve only from the project: https://github.com/facebook/react/issues/13991#issuecomment-435587809
       react: path.resolve(__dirname, '../../node_modules/react'),
       // some of data source pluginis use global Prism object to add the language definition
-      // we want to have same Prism object in core and in grafana/ui
+      // we want to have same Prism object in core and in plutono/ui
       prismjs: path.resolve(__dirname, '../../node_modules/prismjs'),
     },
     modules: [
       'node_modules',
       path.resolve('public'),
-      // we need full path to root node_modules for grafana-enterprise symlink to work
+      // we need full path to root node_modules for plutono-enterprise symlink to work
       path.resolve('node_modules'),
     ],
   },

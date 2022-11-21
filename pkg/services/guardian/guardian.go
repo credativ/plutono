@@ -3,10 +3,10 @@ package guardian
 import (
 	"errors"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 var (
@@ -216,7 +216,7 @@ func (g *dashboardGuardianImpl) getTeams() ([]*models.TeamDTO, error) {
 
 func (g *dashboardGuardianImpl) GetHiddenACL(cfg *setting.Cfg) ([]*models.DashboardAcl, error) {
 	hiddenACL := make([]*models.DashboardAcl, 0)
-	if g.user.IsGrafanaAdmin {
+	if g.user.IsPlutonoAdmin {
 		return hiddenACL, nil
 	}
 

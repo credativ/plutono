@@ -13,34 +13,34 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/grafana/grafana/pkg/services/live"
-	"github.com/grafana/grafana/pkg/services/search"
-	"github.com/grafana/grafana/pkg/services/shorturls"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/services/live"
+	"github.com/credativ/plutono/pkg/services/search"
+	"github.com/credativ/plutono/pkg/services/shorturls"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
 
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin"
 
-	"github.com/grafana/grafana/pkg/api/routing"
-	httpstatic "github.com/grafana/grafana/pkg/api/static"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/localcache"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/remotecache"
-	"github.com/grafana/grafana/pkg/middleware"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/contexthandler"
-	"github.com/grafana/grafana/pkg/services/datasources"
-	"github.com/grafana/grafana/pkg/services/hooks"
-	"github.com/grafana/grafana/pkg/services/librarypanels"
-	"github.com/grafana/grafana/pkg/services/login"
-	"github.com/grafana/grafana/pkg/services/provisioning"
-	"github.com/grafana/grafana/pkg/services/quota"
-	"github.com/grafana/grafana/pkg/services/rendering"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/api/routing"
+	httpstatic "github.com/credativ/plutono/pkg/api/static"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/localcache"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/remotecache"
+	"github.com/credativ/plutono/pkg/middleware"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/services/contexthandler"
+	"github.com/credativ/plutono/pkg/services/datasources"
+	"github.com/credativ/plutono/pkg/services/hooks"
+	"github.com/credativ/plutono/pkg/services/librarypanels"
+	"github.com/credativ/plutono/pkg/services/login"
+	"github.com/credativ/plutono/pkg/services/provisioning"
+	"github.com/credativ/plutono/pkg/services/quota"
+	"github.com/credativ/plutono/pkg/services/rendering"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util/errutil"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promhttp"
 	macaron "gopkg.in/macaron.v1"
@@ -79,7 +79,7 @@ type HTTPServer struct {
 	PluginManager          *plugins.PluginManager             `inject:""`
 	SearchService          *search.SearchService              `inject:""`
 	ShortURLService        *shorturls.ShortURLService         `inject:""`
-	Live                   *live.GrafanaLive                  `inject:""`
+	Live                   *live.PlutonoLive                  `inject:""`
 	ContextHandler         *contexthandler.ContextHandler     `inject:""`
 	SQLStore               *sqlstore.SQLStore                 `inject:""`
 	LibraryPanelService    *librarypanels.LibraryPanelService `inject:""`
@@ -340,7 +340,7 @@ func (hs *HTTPServer) addMiddlewaresAndStaticRoutes() {
 		Delims:     macaron.Delims{Left: "[[", Right: "]]"},
 	}))
 
-	// These endpoints are used for monitoring the Grafana instance
+	// These endpoints are used for monitoring the Plutono instance
 	// and should not be redirected or rejected.
 	m.Use(hs.healthzHandler)
 	m.Use(hs.apiHealthHandler)
@@ -381,7 +381,7 @@ func (hs *HTTPServer) metricsEndpoint(ctx *macaron.Context) {
 		ServeHTTP(ctx.Resp, ctx.Req.Request)
 }
 
-// healthzHandler always return 200 - Ok if Grafana's web server is running
+// healthzHandler always return 200 - Ok if Plutono's web server is running
 func (hs *HTTPServer) healthzHandler(ctx *macaron.Context) {
 	notHeadOrGet := ctx.Req.Method != http.MethodGet && ctx.Req.Method != http.MethodHead
 	if notHeadOrGet || ctx.Req.URL.Path != "/healthz" {
@@ -395,7 +395,7 @@ func (hs *HTTPServer) healthzHandler(ctx *macaron.Context) {
 	}
 }
 
-// apiHealthHandler will return ok if Grafana's web server is running and it
+// apiHealthHandler will return ok if Plutono's web server is running and it
 // can access the database. If the database cannot be accessed it will return
 // http status code 503.
 func (hs *HTTPServer) apiHealthHandler(ctx *macaron.Context) {

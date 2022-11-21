@@ -1,5 +1,5 @@
 import React, { FC, useCallback, useState } from 'react';
-import { Button, Field, Form, HorizontalGroup, Input } from '@grafana/ui';
+import { Button, Field, Form, HorizontalGroup, Input } from '@credativ/plutono-ui';
 
 import { RepeatRowSelect } from '../RepeatRowSelect/RepeatRowSelect';
 

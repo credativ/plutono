@@ -25,21 +25,21 @@ while [ "$1" != "" ]; do
   esac
 done
 
-_grafana_tag=${1:-}
-_docker_repo=${2:-grafana/grafana}
+_plutono_tag=${1:-}
+_docker_repo=${2:-plutono/plutono}
 
 # If the tag starts with v, treat this as a official release
-if echo "$_grafana_tag" | grep -q "^v"; then
-  _grafana_version=$(echo "${_grafana_tag}" | cut -d "v" -f 2)
+if echo "$_plutono_tag" | grep -q "^v"; then
+  _plutono_version=$(echo "${_plutono_tag}" | cut -d "v" -f 2)
 else
-  _grafana_version=$_grafana_tag
+  _plutono_version=$_plutono_tag
 fi
 
-echo "Building ${_docker_repo}:${_grafana_version}${TAG_SUFFIX}"
+echo "Building ${_docker_repo}:${_plutono_version}${TAG_SUFFIX}"
 
 export DOCKER_CLI_EXPERIMENTAL=enabled
 
-# Build grafana image for a specific arch
+# Build plutono image for a specific arch
 docker_build () {
   arch=$1
 
@@ -67,12 +67,12 @@ docker_build () {
     base_image="${base_arch}ubuntu:20.04"
   fi
 
-  grafana_tgz="grafana-latest.linux-${arch}${libc}.tar.gz"
-  tag="${_docker_repo}${repo_arch}:${_grafana_version}${TAG_SUFFIX}"
+  plutono_tgz="plutono-latest.linux-${arch}${libc}.tar.gz"
+  tag="${_docker_repo}${repo_arch}:${_plutono_version}${TAG_SUFFIX}"
 
   docker build \
     --build-arg BASE_IMAGE=${base_image} \
-    --build-arg GRAFANA_TGZ=${grafana_tgz} \
+    --build-arg PLUTONO_TGZ=${plutono_tgz} \
     --tag "${tag}" \
     --no-cache=true \
     -f "${dockerfile}" \
@@ -81,7 +81,7 @@ docker_build () {
 
 docker_tag_linux_amd64 () {
   tag=$1
-  docker tag "${_docker_repo}:${_grafana_version}${TAG_SUFFIX}" "${_docker_repo}:${tag}${TAG_SUFFIX}"
+  docker tag "${_docker_repo}:${_plutono_version}${TAG_SUFFIX}" "${_docker_repo}:${tag}${TAG_SUFFIX}"
 }
 
 # Tag docker images of all architectures
@@ -89,8 +89,8 @@ docker_tag_all () {
   tag=$1
   docker_tag_linux_amd64 $1
   if [ $BUILD_FAST = "0" ]; then
-    docker tag "${_docker_repo}-arm32v7-linux:${_grafana_version}${TAG_SUFFIX}" "${_docker_repo}-arm32v7-linux:${tag}${TAG_SUFFIX}"
-    docker tag "${_docker_repo}-arm64v8-linux:${_grafana_version}${TAG_SUFFIX}" "${_docker_repo}-arm64v8-linux:${tag}${TAG_SUFFIX}"
+    docker tag "${_docker_repo}-arm32v7-linux:${_plutono_version}${TAG_SUFFIX}" "${_docker_repo}-arm32v7-linux:${tag}${TAG_SUFFIX}"
+    docker tag "${_docker_repo}-arm64v8-linux:${_plutono_version}${TAG_SUFFIX}" "${_docker_repo}-arm64v8-linux:${tag}${TAG_SUFFIX}"
   fi
 }
 
@@ -100,12 +100,12 @@ if [ $BUILD_FAST = "0" ]; then
   docker_build "arm64"
 fi
 
-# Tag as 'latest' for official release; otherwise tag as grafana/grafana:master
-if echo "$_grafana_tag" | grep -q "^v"; then
+# Tag as 'latest' for official release; otherwise tag as plutono/plutono:master
+if echo "$_plutono_tag" | grep -q "^v"; then
   docker_tag_all "latest"
   # Create the expected tag for running the end to end tests successfully
-  docker tag "${_docker_repo}:${_grafana_version}${TAG_SUFFIX}" "grafana/grafana-dev:${_grafana_tag}${TAG_SUFFIX}"
+  docker tag "${_docker_repo}:${_plutono_version}${TAG_SUFFIX}" "plutono/plutono-dev:${_plutono_tag}${TAG_SUFFIX}"
 else
   docker_tag_all "master"
-  docker tag "${_docker_repo}:${_grafana_version}${TAG_SUFFIX}" "grafana/grafana-dev:${_grafana_version}${TAG_SUFFIX}"
+  docker tag "${_docker_repo}:${_plutono_version}${TAG_SUFFIX}" "plutono/plutono-dev:${_plutono_version}${TAG_SUFFIX}"
 fi

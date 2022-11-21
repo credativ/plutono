@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
-import { ConfirmButton, RadioButtonGroup, Icon } from '@grafana/ui';
+import { ConfirmButton, RadioButtonGroup, Icon } from '@credativ/plutono-ui';
 import { cx } from 'emotion';
 
 interface Props {
-  isGrafanaAdmin: boolean;
+  isPlutonoAdmin: boolean;
 
-  onGrafanaAdminChange: (isGrafanaAdmin: boolean) => void;
+  onPlutonoAdminChange: (isPlutonoAdmin: boolean) => void;
 }
 
 interface State {
@@ -21,7 +21,7 @@ const adminOptions = [
 export class UserPermissions extends PureComponent<Props, State> {
   state = {
     isEditing: false,
-    currentAdminOption: this.props.isGrafanaAdmin ? 'YES' : 'NO',
+    currentAdminOption: this.props.isPlutonoAdmin ? 'YES' : 'NO',
   };
 
   onChangeClick = () => {
@@ -31,14 +31,14 @@ export class UserPermissions extends PureComponent<Props, State> {
   onCancelClick = () => {
     this.setState({
       isEditing: false,
-      currentAdminOption: this.props.isGrafanaAdmin ? 'YES' : 'NO',
+      currentAdminOption: this.props.isPlutonoAdmin ? 'YES' : 'NO',
     });
   };
 
-  onGrafanaAdminChange = () => {
+  onPlutonoAdminChange = () => {
     const { currentAdminOption } = this.state;
-    const newIsGrafanaAdmin = currentAdminOption === 'YES' ? true : false;
-    this.props.onGrafanaAdminChange(newIsGrafanaAdmin);
+    const newIsPlutonoAdmin = currentAdminOption === 'YES' ? true : false;
+    this.props.onPlutonoAdminChange(newIsPlutonoAdmin);
   };
 
   onAdminOptionSelect = (value: string) => {
@@ -46,7 +46,7 @@ export class UserPermissions extends PureComponent<Props, State> {
   };
 
   render() {
-    const { isGrafanaAdmin } = this.props;
+    const { isPlutonoAdmin } = this.props;
     const { isEditing, currentAdminOption } = this.state;
     const changeButtonContainerClass = cx('pull-right');
 
@@ -58,7 +58,7 @@ export class UserPermissions extends PureComponent<Props, State> {
             <table className="filter-table form-inline">
               <tbody>
                 <tr>
-                  <td className="width-16">Grafana Admin</td>
+                  <td className="width-16">Plutono Admin</td>
                   {isEditing ? (
                     <td colSpan={2}>
                       <RadioButtonGroup
@@ -69,7 +69,7 @@ export class UserPermissions extends PureComponent<Props, State> {
                     </td>
                   ) : (
                     <td colSpan={2}>
-                      {isGrafanaAdmin ? (
+                      {isPlutonoAdmin ? (
                         <>
                           <Icon name="shield" /> Yes
                         </>
@@ -83,7 +83,7 @@ export class UserPermissions extends PureComponent<Props, State> {
                       <ConfirmButton
                         className="pull-right"
                         onClick={this.onChangeClick}
-                        onConfirm={this.onGrafanaAdminChange}
+                        onConfirm={this.onPlutonoAdminChange}
                         onCancel={this.onCancelClick}
                         confirmText="Change"
                       >

@@ -5,8 +5,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/metrics/graphitebridge"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/infra/metrics/graphitebridge"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/prometheus/client_golang/prometheus"
 )
 
@@ -38,7 +38,7 @@ func (im *InternalMetricsService) parseGraphiteSettings() error {
 
 	bridgeCfg := &graphitebridge.Config{
 		URL:             address,
-		Prefix:          graphiteSection.Key("prefix").MustString("prod.grafana.%(instance_name)s"),
+		Prefix:          graphiteSection.Key("prefix").MustString("prod.plutono.%(instance_name)s"),
 		CountersAsDelta: true,
 		Gatherer:        prometheus.DefaultGatherer,
 		Interval:        time.Duration(im.intervalSeconds) * time.Second,
@@ -51,7 +51,7 @@ func (im *InternalMetricsService) parseGraphiteSettings() error {
 	prefix := graphiteSection.Key("prefix").Value()
 
 	if prefix == "" {
-		prefix = "prod.grafana.%(instance_name)s."
+		prefix = "prod.plutono.%(instance_name)s."
 	}
 
 	bridgeCfg.Prefix = strings.ReplaceAll(prefix, "%(instance_name)s", safeInstanceName)

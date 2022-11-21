@@ -13,7 +13,7 @@ import (
 
 	"golang.org/x/net/context/ctxhttp"
 
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 type Webhook struct {
@@ -62,7 +62,7 @@ func (ns *NotificationService) sendWebRequestSync(ctx context.Context, webhook *
 	}
 
 	request.Header.Set("Content-Type", webhook.ContentType)
-	request.Header.Set("User-Agent", "Grafana")
+	request.Header.Set("User-Agent", "Plutono")
 
 	if webhook.User != "" && webhook.Password != "" {
 		request.Header.Set("Authorization", util.GetBasicAuthHeader(webhook.User, webhook.Password))

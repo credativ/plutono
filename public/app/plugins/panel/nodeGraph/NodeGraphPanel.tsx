@@ -1,7 +1,7 @@
 import React from 'react';
-import { PanelProps } from '@grafana/data';
+import { PanelProps } from '@credativ/plutono-data';
 import { Options } from './types';
-import { NodeGraph } from '@grafana/ui';
+import { NodeGraph } from '@credativ/plutono-ui';
 import { useLinks } from '../../../features/explore/utils/links';
 
 export const NodeGraphPanel: React.FunctionComponent<PanelProps<Options>> = ({ width, height, data }) => {

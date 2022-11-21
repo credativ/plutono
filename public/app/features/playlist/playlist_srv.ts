@@ -7,8 +7,8 @@ import appEvents from 'app/core/app_events';
 
 import { store } from 'app/store/store';
 import { CoreEvents } from 'app/types';
-import { getBackendSrv } from '@grafana/runtime';
-import { locationUtil, urlUtil, rangeUtil } from '@grafana/data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
+import { locationUtil, urlUtil, rangeUtil } from '@credativ/plutono-data';
 
 export const queryParamsToPreserve: { [key: string]: boolean } = {
   kiosk: true,

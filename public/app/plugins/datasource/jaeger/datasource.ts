@@ -8,8 +8,8 @@ import {
   DateTime,
   FieldType,
   MutableDataFrame,
-} from '@grafana/data';
-import { BackendSrvRequest, getBackendSrv } from '@grafana/runtime';
+} from '@credativ/plutono-data';
+import { BackendSrvRequest, getBackendSrv } from '@credativ/plutono-runtime';
 import { from, Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 

@@ -19,7 +19,7 @@ export function geminiScrollbar() {
       let scrollRoot = elem.parent();
       const scroller = elem;
 
-      if (attrs.grafanaScrollbar && attrs.grafanaScrollbar === 'scrollonroot') {
+      if (attrs.plutonoScrollbar && attrs.plutonoScrollbar === 'scrollonroot') {
         scrollRoot = scroller;
       }
 
@@ -46,4 +46,4 @@ export function geminiScrollbar() {
   };
 }
 
-coreModule.directive('grafanaScrollbar', geminiScrollbar);
+coreModule.directive('plutonoScrollbar', geminiScrollbar);

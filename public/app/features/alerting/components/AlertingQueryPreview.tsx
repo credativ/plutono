@@ -2,8 +2,8 @@ import React, { FC, useMemo, useState } from 'react';
 import { useObservable } from 'react-use';
 import { css } from 'emotion';
 import AutoSizer from 'react-virtualized-auto-sizer';
-import { DataFrame, DataQuery, GrafanaTheme, PanelData } from '@grafana/data';
-import { Button, Icon, Tab, TabContent, TabsBar, useStyles } from '@grafana/ui';
+import { DataFrame, DataQuery, PlutonoTheme, PanelData } from '@credativ/plutono-data';
+import { Button, Icon, Tab, TabContent, TabsBar, useStyles } from '@credativ/plutono-ui';
 import { PanelQueryRunner } from '../../query/state/PanelQueryRunner';
 import { PreviewQueryTab } from './PreviewQueryTab';
 import { PreviewInstancesTab } from './PreviewInstancesTab';
@@ -98,7 +98,7 @@ export const AlertingQueryPreview: FC<Props> = ({ getInstances, onRunQueries, on
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => {
+const getStyles = (theme: PlutonoTheme) => {
   return {
     wrapper: css`
       label: alertDefinitionPreviewTabs;

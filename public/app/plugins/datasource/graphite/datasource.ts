@@ -9,10 +9,10 @@ import {
   ScopedVars,
   toDataFrame,
   TimeRange,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { isVersionGtOrEq, SemVersion } from 'app/core/utils/version';
 import gfunc from './gfunc';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { getTemplateSrv, TemplateSrv } from 'app/features/templating/template_srv';
 // Types
 import { GraphiteOptions, GraphiteQuery, GraphiteType, MetricTankRequestMeta } from './types';
@@ -56,7 +56,7 @@ export class GraphiteDatasource extends DataSourceApi<GraphiteQuery, GraphiteOpt
       links: [
         {
           text: 'Help',
-          url: 'http://docs.grafana.org/features/datasources/graphite/#using-graphite-in-grafana',
+          url: 'http://docs.plutono.org/features/datasources/graphite/#using-graphite-in-plutono',
         },
       ],
     };
@@ -127,7 +127,7 @@ export class GraphiteDatasource extends DataSourceApi<GraphiteQuery, GraphiteOpt
     for (let i = 0; i < series.length; i++) {
       const s = series[i];
 
-      // Disables Grafana own series naming
+      // Disables Plutono own series naming
       s.title = s.target;
 
       for (let y = 0; y < s.datapoints.length; y++) {

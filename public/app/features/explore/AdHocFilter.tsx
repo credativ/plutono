@@ -1,10 +1,10 @@
 import React, { useContext } from 'react';
-import { LegacyForms, ThemeContext } from '@grafana/ui';
+import { LegacyForms, ThemeContext } from '@credativ/plutono-ui';
 const { Select } = LegacyForms;
 import { css, cx } from 'emotion';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
+import { PlutonoTheme, SelectableValue } from '@credativ/plutono-data';
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: PlutonoTheme) => ({
   keyValueContainer: css`
     label: key-value-container;
     display: flex;

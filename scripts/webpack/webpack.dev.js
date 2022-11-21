@@ -17,8 +17,8 @@ module.exports = (env = {}) =>
 
     entry: {
       app: './public/app/index.ts',
-      dark: './public/sass/grafana.dark.scss',
-      light: './public/sass/grafana.light.scss',
+      dark: './public/sass/plutono.dark.scss',
+      light: './public/sass/plutono.light.scss',
     },
 
     // If we enabled watch option via CLI
@@ -103,7 +103,7 @@ module.exports = (env = {}) =>
             },
           }),
       new MiniCssExtractPlugin({
-        filename: 'grafana.[name].[hash].css',
+        filename: 'plutono.[name].[hash].css',
       }),
       new HtmlWebpackPlugin({
         filename: path.resolve(__dirname, '../../public/views/error.html'),

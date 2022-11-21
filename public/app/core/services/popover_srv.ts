@@ -2,10 +2,10 @@ import _ from 'lodash';
 import coreModule from 'app/core/core_module';
 // @ts-ignore
 import Drop from 'tether-drop';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 
 /** @ngInject */
-function popoverSrv(this: any, $compile: any, $rootScope: GrafanaRootScope, $timeout: any) {
+function popoverSrv(this: any, $compile: any, $rootScope: PlutonoRootScope, $timeout: any) {
   let openDrop: any = null;
 
   this.close = () => {

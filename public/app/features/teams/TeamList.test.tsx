@@ -4,7 +4,7 @@ import { Props, TeamList } from './TeamList';
 import { OrgRole, Team } from '../../types';
 import { getMockTeam, getMultipleMockTeams } from './__mocks__/teamMocks';
 import { User } from 'app/core/services/context_srv';
-import { NavModel } from '@grafana/data';
+import { NavModel } from '@credativ/plutono-data';
 import { mockToolkitActionCreator } from 'test/core/redux/mocks';
 import { setSearchQuery } from './state/reducers';
 

@@ -1,6 +1,6 @@
 import coreModule from '../core_module';
 import config from 'app/core/config';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { promiseToDigest } from '../utils/promiseToDigest';
 
 export class InvitedCtrl {
@@ -11,9 +11,9 @@ export class InvitedCtrl {
 
     $scope.navModel = {
       main: {
-        icon: 'grafana',
+        icon: 'plutono',
         text: 'Invite',
-        subTitle: 'Register your Grafana account',
+        subTitle: 'Register your Plutono account',
         breadcrumbs: [{ title: 'Login', url: 'login' }],
       },
     };

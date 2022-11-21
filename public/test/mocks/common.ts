@@ -1,4 +1,4 @@
-import { NavModel, NavModelItem } from '@grafana/data';
+import { NavModel, NavModelItem } from '@credativ/plutono-data';
 
 export const backendSrv = {
   get: jest.fn(),

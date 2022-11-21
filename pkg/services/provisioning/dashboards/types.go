@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/dashboards"
-	"github.com/grafana/grafana/pkg/services/provisioning/values"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/dashboards"
+	"github.com/credativ/plutono/pkg/services/provisioning/values"
 )
 
 type config struct {

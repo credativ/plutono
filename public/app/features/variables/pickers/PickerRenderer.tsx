@@ -1,8 +1,8 @@
 import React, { FunctionComponent, PropsWithChildren, ReactElement, useMemo } from 'react';
 import { VariableHide, VariableModel } from '../types';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { variableAdapters } from '../adapters';
-import { Tooltip } from '@grafana/ui';
+import { Tooltip } from '@credativ/plutono-ui';
 
 interface Props {
   variable: VariableModel;

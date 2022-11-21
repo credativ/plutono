@@ -1,7 +1,7 @@
 import React from 'react';
 import { css } from 'emotion';
 import sumBy from 'lodash/sumBy';
-import { Modal, ConfirmModal, HorizontalGroup, Button } from '@grafana/ui';
+import { Modal, ConfirmModal, HorizontalGroup, Button } from '@credativ/plutono-ui';
 import { DashboardModel, PanelModel } from '../../state';
 import { useDashboardDelete } from './useDashboardDelete';
 
@@ -62,7 +62,7 @@ const ProvisionedDeleteModal = ({ hideModal, provisionedId }: { hideModal(): voi
     `}
   >
     <p>
-      This dashboard is managed by Grafanas provisioning and cannot be deleted. Remove the dashboard from the config
+      This dashboard is managed by Plutonos provisioning and cannot be deleted. Remove the dashboard from the config
       file to delete it.
     </p>
     <p>
@@ -70,7 +70,7 @@ const ProvisionedDeleteModal = ({ hideModal, provisionedId }: { hideModal(): voi
         See{' '}
         <a
           className="external-link"
-          href="http://docs.grafana.org/administration/provisioning/#dashboards"
+          href="http://docs.plutono.org/administration/provisioning/#dashboards"
           target="_blank"
           rel="noreferrer"
         >

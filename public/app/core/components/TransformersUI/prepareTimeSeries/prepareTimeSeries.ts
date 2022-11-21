@@ -6,7 +6,7 @@ import {
   outerJoinDataFrames,
   fieldMatchers,
   FieldMatcherID,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { map } from 'rxjs/operators';
 
 /**

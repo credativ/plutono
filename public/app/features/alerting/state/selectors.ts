@@ -1,5 +1,5 @@
 import { AlertDefinition, AlertRule, AlertRulesState, NotificationChannelState, StoreState } from 'app/types';
-import { config } from '@grafana/runtime';
+import { config } from '@credativ/plutono-runtime';
 
 export const getSearchQuery = (state: AlertRulesState) => state.searchQuery;
 

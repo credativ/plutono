@@ -17,9 +17,9 @@ import (
 
 	gomail "gopkg.in/mail.v2"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util/errutil"
 	"github.com/prometheus/client_golang/prometheus"
 	"github.com/prometheus/client_golang/prometheus/promauto"
 )
@@ -32,14 +32,14 @@ var (
 func init() {
 	emailsSentTotal = promauto.NewCounter(prometheus.CounterOpts{
 		Name:      "emails_sent_total",
-		Help:      "Number of emails sent by Grafana",
-		Namespace: "grafana",
+		Help:      "Number of emails sent by Plutono",
+		Namespace: "plutono",
 	})
 
 	emailsSentFailed = promauto.NewCounter(prometheus.CounterOpts{
 		Name:      "emails_sent_failed",
-		Help:      "Number of emails Grafana failed to send",
-		Namespace: "grafana",
+		Help:      "Number of emails Plutono failed to send",
+		Namespace: "plutono",
 	})
 }
 

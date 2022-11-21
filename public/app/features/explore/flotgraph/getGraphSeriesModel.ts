@@ -1,4 +1,4 @@
-import { colors } from '@grafana/ui';
+import { colors } from '@credativ/plutono-ui';
 import {
   getFlotPairs,
   getDisplayProcessor,
@@ -17,7 +17,7 @@ import {
   FieldColorModeId,
   FieldConfigSource,
   getFieldDisplayName,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import { config } from 'app/core/config';
 import { SeriesOptions, GraphOptions, GraphLegendEditorLegendOptions } from './types';

@@ -5,13 +5,13 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/services/validations"
+	"github.com/credativ/plutono/pkg/services/validations"
 
+	"github.com/credativ/plutono/pkg/components/null"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/alerting"
 	"github.com/google/go-cmp/cmp"
-	"github.com/grafana/grafana/pkg/components/null"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -149,7 +149,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "Plutono",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",
@@ -159,7 +159,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 						},
 					},
 					"payload": map[string]interface{}{
-						"component": "Grafana",
+						"component": "Plutono",
 						"source":    "<<PRESENCE>>",
 						"custom_details": map[string]interface{}{
 							"state": "alerting",
@@ -216,7 +216,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "Plutono",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",
@@ -226,7 +226,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 						},
 					},
 					"payload": map[string]interface{}{
-						"component": "Grafana",
+						"component": "Plutono",
 						"source":    "<<PRESENCE>>",
 						"custom_details": map[string]interface{}{
 							"message": "someMessage",
@@ -287,7 +287,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "Plutono",
 					"client_url":   "",
 					"dedup_key":    "key-" + strings.Repeat("x", 250),
 					"event_action": "trigger",
@@ -366,7 +366,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "Plutono",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",
@@ -445,7 +445,7 @@ func TestPagerdutyNotifier(t *testing.T) {
 				So(err, ShouldBeNil)
 
 				diff := cmp.Diff(map[string]interface{}{
-					"client":       "Grafana",
+					"client":       "Plutono",
 					"client_url":   "",
 					"dedup_key":    "alertId-0",
 					"event_action": "trigger",

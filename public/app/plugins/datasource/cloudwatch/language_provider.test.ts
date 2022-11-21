@@ -1,5 +1,5 @@
 import { Value } from 'slate';
-import { TypeaheadOutput } from '@grafana/ui';
+import { TypeaheadOutput } from '@credativ/plutono-ui';
 import { CloudWatchDatasource } from './datasource';
 import { GetLogGroupFieldsResponse } from './types';
 import { CloudWatchLanguageProvider } from './language_provider';

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { MetricSelect } from './MetricSelect';
-import { LegacyForms } from '@grafana/ui';
+import { LegacyForms } from '@credativ/plutono-ui';
 import { expect } from '../../../../test/lib/common';
 
 const { Select } = LegacyForms;

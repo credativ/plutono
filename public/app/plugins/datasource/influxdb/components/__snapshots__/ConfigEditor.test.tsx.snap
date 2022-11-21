@@ -281,7 +281,7 @@ exports[`Render should disable basic auth password input 1`] = `
       <InlineField
         label="Max series"
         labelWidth={20}
-        tooltip="Limit the number of series/tables that Grafana will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
+        tooltip="Limit the number of series/tables that Plutono will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
       >
         <Input
           className="width-10"
@@ -577,7 +577,7 @@ exports[`Render should hide basic auth fields when switch off 1`] = `
       <InlineField
         label="Max series"
         labelWidth={20}
-        tooltip="Limit the number of series/tables that Grafana will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
+        tooltip="Limit the number of series/tables that Plutono will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
       >
         <Input
           className="width-10"
@@ -873,7 +873,7 @@ exports[`Render should hide white listed cookies input when browser access chose
       <InlineField
         label="Max series"
         labelWidth={20}
-        tooltip="Limit the number of series/tables that Grafana will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
+        tooltip="Limit the number of series/tables that Plutono will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
       >
         <Input
           className="width-10"
@@ -1169,7 +1169,7 @@ exports[`Render should render component 1`] = `
       <InlineField
         label="Max series"
         labelWidth={20}
-        tooltip="Limit the number of series/tables that Grafana will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
+        tooltip="Limit the number of series/tables that Plutono will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
       >
         <Input
           className="width-10"

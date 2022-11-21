@@ -13,14 +13,14 @@ import (
 	"strings"
 	"time"
 
+	"github.com/credativ/plutono/pkg/api/pluginproxy"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/util/errutil"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/api/pluginproxy"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/tsdb"
-	"github.com/grafana/grafana/pkg/util/errutil"
 	"github.com/opentracing/opentracing-go"
 	"golang.org/x/net/context/ctxhttp"
 )
@@ -232,7 +232,7 @@ func (e *ApplicationInsightsDatasource) createRequest(ctx context.Context, dsInf
 		return nil, errutil.Wrap("Failed to create request", err)
 	}
 
-	req.Header.Set("User-Agent", fmt.Sprintf("Grafana/%s", setting.BuildVersion))
+	req.Header.Set("User-Agent", fmt.Sprintf("Plutono/%s", setting.BuildVersion))
 
 	pluginproxy.ApplyRoute(ctx, req, proxyPass, appInsightsRoute, dsInfo)
 

@@ -5,12 +5,12 @@ import (
 	"encoding/json"
 	"path/filepath"
 
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin/grpcplugin"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin/pluginextensionv2"
+	"github.com/credativ/plutono/pkg/util/errutil"
 	pluginModel "github.com/grafana/grafana-plugin-model/go/renderer"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin/grpcplugin"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin/pluginextensionv2"
-	"github.com/grafana/grafana/pkg/util/errutil"
 )
 
 type RendererPlugin struct {

@@ -12,7 +12,7 @@
         "labels": {
           "instance_id": "1119268429530133111",
           "zone": "asia-east1-a",
-          "project_id": "grafana-prod"
+          "project_id": "plutono-prod"
         }
       },
       "metricKind": "DELTA",
@@ -59,7 +59,7 @@
         "labels": {
           "instance_id": "22241654114540837222",
           "zone": "europe-west1-b",
-          "project_id": "grafana-prod"
+          "project_id": "plutono-prod"
         }
       },
       "metricKind": "DELTA",
@@ -106,7 +106,7 @@
         "labels": {
           "instance_id": "3332264424035095333",
           "zone": "us-east1-b",
-          "project_id": "grafana-prod"
+          "project_id": "plutono-prod"
         }
       },
       "metricKind": "DELTA",

@@ -3,7 +3,7 @@
     "list": [
       {
         "builtIn": 1,
-        "datasource": "-- Grafana --",
+        "datasource": "-- Plutono --",
         "enable": true,
         "hide": true,
         "iconColor": "rgba(0, 211, 255, 1)",
@@ -966,7 +966,7 @@
       }
     },
     {
-      "content": "\n# Lazy Loading\n\nAs you scroll down you will see that Grafana only loads & issues queries for these panels as they are scrolled in to view. \nThis greatly reduces the load on your data source backends if you have many long dashboards with many panels. \n\n\n",
+      "content": "\n# Lazy Loading\n\nAs you scroll down you will see that Plutono only loads & issues queries for these panels as they are scrolled in to view. \nThis greatly reduces the load on your data source backends if you have many long dashboards with many panels. \n\n\n",
       "gridPos": {
         "h": 40,
         "w": 9,

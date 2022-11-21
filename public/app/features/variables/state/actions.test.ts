@@ -66,7 +66,7 @@ import { expect } from '../../../../test/lib/common';
 import { ConstantVariableModel, VariableRefresh } from '../types';
 import { updateVariableOptions } from '../query/reducer';
 import { setVariableQueryRunner, VariableQueryRunner } from '../query/VariableQueryRunner';
-import { setDataSourceSrv } from '@grafana/runtime';
+import { setDataSourceSrv } from '@credativ/plutono-runtime';
 import { LocationState } from 'app/types';
 
 variableAdapters.setInit(() => [
@@ -458,7 +458,7 @@ describe('shared actions', () => {
           .thenDispatchedActionsShouldEqual(
             changeVariableNameFailed({
               newName: '__newName',
-              errorText: "Template names cannot begin with '__', that's reserved for Grafana's global variables",
+              errorText: "Template names cannot begin with '__', that's reserved for Plutono's global variables",
             })
           );
       });

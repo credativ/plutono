@@ -1,6 +1,6 @@
 import _ from 'lodash';
 import coreModule from 'app/core/core_module';
-import { textUtil } from '@grafana/data';
+import { textUtil } from '@credativ/plutono-data';
 
 /** @ngInject */
 export function SeriesOverridesCtrl($scope: any, $element: JQuery, popoverSrv: any) {

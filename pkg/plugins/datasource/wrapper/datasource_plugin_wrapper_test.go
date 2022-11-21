@@ -3,9 +3,9 @@ package wrapper
 import (
 	"testing"
 
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/grafana/grafana-plugin-model/go/datasource"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/tsdb"
 	"github.com/stretchr/testify/require"
 )
 
@@ -65,10 +65,10 @@ func TestMappingRowValue(t *testing.T) {
 	require.True(t, ok)
 	require.Equal(t, int64(42), haveInt)
 
-	stringRowValue, _ := dpw.mapRowValue(&datasource.RowValue{Kind: datasource.RowValue_TYPE_STRING, StringValue: "grafana"})
+	stringRowValue, _ := dpw.mapRowValue(&datasource.RowValue{Kind: datasource.RowValue_TYPE_STRING, StringValue: "plutono"})
 	haveString, ok := stringRowValue.(string)
 	require.True(t, ok)
-	require.Equal(t, "grafana", haveString)
+	require.Equal(t, "plutono", haveString)
 
 	doubleRowValue, _ := dpw.mapRowValue(&datasource.RowValue{Kind: datasource.RowValue_TYPE_DOUBLE, DoubleValue: 1.5})
 	haveDouble, ok := doubleRowValue.(float64)

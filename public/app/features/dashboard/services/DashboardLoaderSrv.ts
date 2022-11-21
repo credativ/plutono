@@ -3,12 +3,12 @@ import moment from 'moment'; // eslint-disable-line no-restricted-imports
 import _ from 'lodash';
 import $ from 'jquery';
 import kbn from 'app/core/utils/kbn';
-import { AppEvents, dateMath, UrlQueryValue } from '@grafana/data';
+import { AppEvents, dateMath, UrlQueryValue } from '@credativ/plutono-data';
 import impressionSrv from 'app/core/services/impression_srv';
 import { backendSrv } from 'app/core/services/backend_srv';
 import { DashboardSrv } from './DashboardSrv';
 import DatasourceSrv from 'app/features/plugins/datasource_srv';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 
 export class DashboardLoaderSrv {
   /** @ngInject */
@@ -19,7 +19,7 @@ export class DashboardLoaderSrv {
     private $timeout: any,
     contextSrv: any,
     private $routeParams: any,
-    private $rootScope: GrafanaRootScope
+    private $rootScope: PlutonoRootScope
   ) {}
 
   _dashboardLoadFailed(title: string, snapshot?: boolean) {
@@ -136,4 +136,4 @@ export class DashboardLoaderSrv {
   }
 }
 
-angular.module('grafana.services').service('dashboardLoaderSrv', DashboardLoaderSrv);
+angular.module('plutono.services').service('dashboardLoaderSrv', DashboardLoaderSrv);

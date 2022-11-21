@@ -1,15 +1,15 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import { mergeMap } from 'rxjs/operators';
 import { css } from 'emotion';
-import { Icon, JSONFormatter, useStyles } from '@grafana/ui';
+import { Icon, JSONFormatter, useStyles } from '@credativ/plutono-ui';
 import {
   DataFrame,
   DataTransformerConfig,
-  GrafanaTheme,
+  PlutonoTheme,
   transformDataFrame,
   TransformerRegistryItem,
-} from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+} from '@credativ/plutono-data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import { TransformationsEditorTransformation } from './types';
 
@@ -95,7 +95,7 @@ export const TransformationEditor = ({
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => {
+const getStyles = (theme: PlutonoTheme) => {
   const debugBorder = theme.isLight ? theme.palette.gray85 : theme.palette.gray15;
 
   return {

@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { FormAPI, Input, InputControl, Select, TextArea } from '@grafana/ui';
+import { FormAPI, Input, InputControl, Select, TextArea } from '@credativ/plutono-ui';
 import { NotificationChannelOption } from '../../../types';
 
 interface Props extends Pick<FormAPI<any>, 'register' | 'control'> {

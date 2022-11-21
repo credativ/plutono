@@ -1,13 +1,13 @@
 import React, { useCallback, useState } from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme, PanelPlugin, PanelPluginMeta } from '@grafana/data';
-import { useTheme, stylesFactory, Icon, Input } from '@grafana/ui';
+import { PlutonoTheme, PanelPlugin, PanelPluginMeta } from '@credativ/plutono-data';
+import { useTheme, stylesFactory, Icon, Input } from '@credativ/plutono-ui';
 import { changePanelPlugin } from '../../state/actions';
 import { StoreState } from 'app/types';
 import { PanelModel } from '../../state/PanelModel';
 import { connect, MapStateToProps, MapDispatchToProps } from 'react-redux';
 import { VizTypePicker, getAllPanelPluginMeta, filterPluginList } from '../VizTypePicker/VizTypePicker';
-import { Field } from '@grafana/ui/src/components/Forms/Field';
+import { Field } from '@credativ/plutono-ui/src/components/Forms/Field';
 
 interface OwnProps {
   panel: PanelModel;
@@ -90,7 +90,7 @@ export const VisualizationTabUnconnected = React.forwardRef<HTMLInputElement, Pr
 
 VisualizationTabUnconnected.displayName = 'VisualizationTabUnconnected';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     icon: css`
       color: ${theme.palette.gray33};

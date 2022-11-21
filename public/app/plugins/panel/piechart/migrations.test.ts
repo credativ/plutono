@@ -1,5 +1,5 @@
-import { FieldColorModeId, FieldConfigProperty, FieldMatcherID, PanelModel } from '@grafana/data';
-import { LegendDisplayMode, PieChartLabels } from '@grafana/ui';
+import { FieldColorModeId, FieldConfigProperty, FieldMatcherID, PanelModel } from '@credativ/plutono-data';
+import { LegendDisplayMode, PieChartLabels } from '@credativ/plutono-ui';
 import { PieChartPanelChangedHandler } from './migrations';
 
 describe('PieChart -> PieChartV2 migrations', () => {
@@ -18,7 +18,7 @@ describe('PieChart -> PieChartV2 migrations', () => {
         aliasColors: { x: '#fff' },
       },
     };
-    PieChartPanelChangedHandler(panel, 'grafana-piechart-panel', oldPieChartOptions);
+    PieChartPanelChangedHandler(panel, 'plutono-piechart-panel', oldPieChartOptions);
     expect(panel.fieldConfig.overrides).toContainEqual({
       matcher: {
         id: FieldMatcherID.byName,
@@ -42,7 +42,7 @@ describe('PieChart -> PieChartV2 migrations', () => {
     const oldPieChartOptions = {
       angular: { valueName: 'total' },
     };
-    const options = PieChartPanelChangedHandler(panel, 'grafana-piechart-panel', oldPieChartOptions);
+    const options = PieChartPanelChangedHandler(panel, 'plutono-piechart-panel', oldPieChartOptions);
     expect(options).toMatchObject({ reduceOptions: { calcs: ['sum'] } });
   });
 
@@ -55,7 +55,7 @@ describe('PieChart -> PieChartV2 migrations', () => {
         legend: { values: true },
       },
     };
-    const options = PieChartPanelChangedHandler(panel, 'grafana-piechart-panel', oldPieChartOptions);
+    const options = PieChartPanelChangedHandler(panel, 'plutono-piechart-panel', oldPieChartOptions);
     expect(options).toMatchObject({ displayLabels: [PieChartLabels.Name, PieChartLabels.Value] });
   });
 
@@ -68,7 +68,7 @@ describe('PieChart -> PieChartV2 migrations', () => {
         legend: {},
       },
     };
-    const options = PieChartPanelChangedHandler(panel, 'grafana-piechart-panel', oldPieChartOptions);
+    const options = PieChartPanelChangedHandler(panel, 'plutono-piechart-panel', oldPieChartOptions);
     expect(options).toMatchObject({ legend: { displayMode: LegendDisplayMode.Hidden } });
   });
 });

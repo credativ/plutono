@@ -1,30 +1,30 @@
 import Centrifuge from 'centrifuge/dist/centrifuge.protobuf';
-import { GrafanaLiveSrv, setGrafanaLiveSrv, getGrafanaLiveSrv, config } from '@grafana/runtime';
+import { PlutonoLiveSrv, setPlutonoLiveSrv, getPlutonoLiveSrv, config } from '@credativ/plutono-runtime';
 import { BehaviorSubject } from 'rxjs';
-import { LiveChannel, LiveChannelScope, LiveChannelAddress } from '@grafana/data';
+import { LiveChannel, LiveChannelScope, LiveChannelAddress } from '@credativ/plutono-data';
 import { CentrifugeLiveChannel, getErrorChannel } from './channel';
 import {
-  GrafanaLiveScope,
-  grafanaLiveCoreFeatures,
-  GrafanaLiveDataSourceScope,
-  GrafanaLivePluginScope,
+  PlutonoLiveScope,
+  plutonoLiveCoreFeatures,
+  PlutonoLiveDataSourceScope,
+  PlutonoLivePluginScope,
 } from './scopes';
 import { registerLiveFeatures } from './features';
 
 export const sessionId =
-  (window as any)?.grafanaBootData?.user?.id +
+  (window as any)?.plutonoBootData?.user?.id +
   '/' +
   Date.now().toString(16) +
   '/' +
   Math.random().toString(36).substring(2, 15);
 
-export class CentrifugeSrv implements GrafanaLiveSrv {
+export class CentrifugeSrv implements PlutonoLiveSrv {
   readonly open = new Map<string, CentrifugeLiveChannel>();
 
   readonly centrifuge: Centrifuge;
   readonly connectionState: BehaviorSubject<boolean>;
   readonly connectionBlocker: Promise<void>;
-  readonly scopes: Record<LiveChannelScope, GrafanaLiveScope>;
+  readonly scopes: Record<LiveChannelScope, PlutonoLiveScope>;
 
   constructor() {
     // build live url replacing scheme in appUrl.
@@ -49,9 +49,9 @@ export class CentrifugeSrv implements GrafanaLiveSrv {
     });
 
     this.scopes = {
-      [LiveChannelScope.Grafana]: grafanaLiveCoreFeatures,
-      [LiveChannelScope.DataSource]: new GrafanaLiveDataSourceScope(),
-      [LiveChannelScope.Plugin]: new GrafanaLivePluginScope(),
+      [LiveChannelScope.Plutono]: plutonoLiveCoreFeatures,
+      [LiveChannelScope.DataSource]: new PlutonoLiveDataSourceScope(),
+      [LiveChannelScope.Plugin]: new PlutonoLivePluginScope(),
     };
 
     // Register global listeners
@@ -110,7 +110,7 @@ export class CentrifugeSrv implements GrafanaLiveSrv {
     return channel;
   }
 
-  private async initChannel(scope: GrafanaLiveScope, channel: CentrifugeLiveChannel): Promise<void> {
+  private async initChannel(scope: PlutonoLiveScope, channel: CentrifugeLiveChannel): Promise<void> {
     const { addr } = channel;
     const support = await scope.getChannelSupport(addr.namespace);
     if (!support) {
@@ -150,11 +150,11 @@ export class CentrifugeSrv implements GrafanaLiveSrv {
   }
 }
 
-export function getGrafanaLiveCentrifugeSrv() {
-  return getGrafanaLiveSrv() as CentrifugeSrv;
+export function getPlutonoLiveCentrifugeSrv() {
+  return getPlutonoLiveSrv() as CentrifugeSrv;
 }
 
-export function initGrafanaLive() {
-  setGrafanaLiveSrv(new CentrifugeSrv());
+export function initPlutonoLive() {
+  setPlutonoLiveSrv(new CentrifugeSrv());
   registerLiveFeatures();
 }

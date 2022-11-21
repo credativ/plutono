@@ -2,7 +2,7 @@ import angular from 'angular';
 import _ from 'lodash';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { FetchResponse, getBackendSrv } from '@grafana/runtime';
+import { FetchResponse, getBackendSrv } from '@credativ/plutono-runtime';
 import {
   AnnotationEvent,
   DataQueryRequest,
@@ -10,7 +10,7 @@ import {
   DataSourceApi,
   dateMath,
   ScopedVars,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import { getTemplateSrv, TemplateSrv } from 'app/features/templating/template_srv';
 import { OpenTsdbOptions, OpenTsdbQuery } from './types';

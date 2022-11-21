@@ -1,7 +1,7 @@
 import React, { Dispatch, FC, FormEvent, SetStateAction } from 'react';
 import { css } from 'emotion';
-import { HorizontalGroup, RadioButtonGroup, stylesFactory, useTheme, Checkbox } from '@grafana/ui';
-import { GrafanaTheme, SelectableValue } from '@grafana/data';
+import { HorizontalGroup, RadioButtonGroup, stylesFactory, useTheme, Checkbox } from '@credativ/plutono-ui';
+import { PlutonoTheme, SelectableValue } from '@credativ/plutono-data';
 import { SortPicker } from 'app/core/components/Select/SortPicker';
 import { TagFilter } from 'app/core/components/TagFilter/TagFilter';
 import { SearchSrv } from 'app/core/services/search_srv';
@@ -61,7 +61,7 @@ export const ActionRow: FC<Props> = ({
 
 ActionRow.displayName = 'ActionRow';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     actionRow: css`
       display: none;

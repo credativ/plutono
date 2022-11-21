@@ -1,5 +1,5 @@
 import { LayoutMode } from '../core/components/LayoutSelector/LayoutSelector';
-import { DataSourcePluginMeta, DataSourceSettings } from '@grafana/data';
+import { DataSourcePluginMeta, DataSourceSettings } from '@credativ/plutono-data';
 import { GenericDataSourcePlugin } from 'app/features/datasources/settings/PluginSettings';
 
 export interface DataSourcesState {

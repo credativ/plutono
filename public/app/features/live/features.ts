@@ -1,8 +1,8 @@
-import { LiveChannelConfig } from '@grafana/data';
-import { MeasurementCollector } from '@grafana/runtime';
+import { LiveChannelConfig } from '@credativ/plutono-data';
+import { MeasurementCollector } from '@credativ/plutono-runtime';
 import { getDashboardChannelsFeature } from './dashboard/dashboardWatcher';
 import { LiveMeasurementsSupport } from './measurements/measurementsSupport';
-import { grafanaLiveCoreFeatures } from './scopes';
+import { plutonoLiveCoreFeatures } from './scopes';
 
 export function registerLiveFeatures() {
   const random2s = new MeasurementCollector();
@@ -22,7 +22,7 @@ export function registerLiveFeatures() {
     },
   ];
 
-  grafanaLiveCoreFeatures.register({
+  plutonoLiveCoreFeatures.register({
     name: 'testdata',
     support: {
       getChannelConfig: (path: string) => {
@@ -39,7 +39,7 @@ export function registerLiveFeatures() {
     canPublish: () => true,
   };
 
-  grafanaLiveCoreFeatures.register({
+  plutonoLiveCoreFeatures.register({
     name: 'broadcast',
     support: {
       getChannelConfig: (path: string) => {
@@ -50,12 +50,12 @@ export function registerLiveFeatures() {
     description: 'Broadcast will send/receive any JSON object in a channel',
   });
 
-  grafanaLiveCoreFeatures.register({
+  plutonoLiveCoreFeatures.register({
     name: 'measurements',
     support: new LiveMeasurementsSupport(),
     description: 'These channels listen for measurements and produce DataFrames',
   });
 
   // dashboard/*
-  grafanaLiveCoreFeatures.register(getDashboardChannelsFeature());
+  plutonoLiveCoreFeatures.register(getDashboardChannelsFeature());
 }

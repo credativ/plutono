@@ -1,8 +1,8 @@
 package ngalert
 
 import (
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 // listAlertInstancesEndpoint handles GET /api/alert-instances.

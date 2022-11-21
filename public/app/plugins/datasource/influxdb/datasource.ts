@@ -13,7 +13,7 @@ import {
   AnnotationQueryRequest,
   AnnotationEvent,
   DataQueryError,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { v4 as uuidv4 } from 'uuid';
 import InfluxSeries from './influx_series';
 import InfluxQueryModel from './influx_query_model';
@@ -21,7 +21,7 @@ import ResponseParser from './response_parser';
 import { InfluxQueryBuilder } from './query_builder';
 import { InfluxQuery, InfluxOptions, InfluxVersion } from './types';
 import { getTemplateSrv, TemplateSrv } from 'app/features/templating/template_srv';
-import { getBackendSrv, DataSourceWithBackend, frameToMetricFindValue } from '@grafana/runtime';
+import { getBackendSrv, DataSourceWithBackend, frameToMetricFindValue } from '@credativ/plutono-runtime';
 import { Observable, throwError, of } from 'rxjs';
 import { FluxQueryEditor } from './components/FluxQueryEditor';
 import { catchError, map } from 'rxjs/operators';
@@ -154,7 +154,7 @@ export default class InfluxDatasource extends DataSourceWithBackend<InfluxQuery,
       timeFilter += ' AND ' + tmpQuery.renderAdhocFilters(adhocFilters);
     }
 
-    // replace grafana variables
+    // replace plutono variables
     scopedVars.timeFilter = { value: timeFilter };
 
     // replace templated variables

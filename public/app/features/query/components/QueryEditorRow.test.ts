@@ -1,4 +1,4 @@
-import { DataQueryRequest, dateTime, LoadingState, PanelData, toDataFrame } from '@grafana/data';
+import { DataQueryRequest, dateTime, LoadingState, PanelData, toDataFrame } from '@credativ/plutono-data';
 import { filterPanelDataToQuery } from './QueryEditorRow';
 
 function makePretendRequest(requestId: string, subRequests?: DataQueryRequest[]): DataQueryRequest {

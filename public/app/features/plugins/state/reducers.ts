@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
-import { PluginMeta, PanelPlugin, PluginError } from '@grafana/data';
+import { PluginMeta, PanelPlugin, PluginError } from '@credativ/plutono-data';
 import { PluginsState } from 'app/types';
 import { PluginDashboard } from '../../../types/plugins';
 

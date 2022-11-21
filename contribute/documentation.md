@@ -1,6 +1,6 @@
 # Contributing to documentation
 
-This documents guides you through the process of contributing to the Grafana documentation. Make sure you've read the guide for [Contributing to Grafana](/CONTRIBUTING.md).
+This documents guides you through the process of contributing to the Plutono documentation. Make sure you've read the guide for [Contributing to Plutono](/CONTRIBUTING.md).
 
 ## Your first contribution
 
@@ -19,15 +19,15 @@ On every page in the [documentation](https://grafana.com/docs/) are two links in
 
 ## Join our community
 
-For general discussions on documentation, you’re welcome to join the `#docs` channel on our [public Grafana Slack](http://slack.raintank.io) team.
+For general discussions on documentation, you’re welcome to join the `#docs` channel on our [public Plutono Slack](http://slack.raintank.io) team.
 
 ## Style and formatting
 
-All Grafana documentation is written using [Markdown](https://en.wikipedia.org/wiki/Markdown), and can be found in the [docs](/docs) directory in the [Grafana GitHub repository](https://github.com/grafana/grafana). The [documentation website](https://grafana.com/docs) is generated with [Hugo](https://gohugo.io) which uses [Blackfriday](https://github.com/russross/blackfriday) as its Markdown rendering engine.
+All Plutono documentation is written using [Markdown](https://en.wikipedia.org/wiki/Markdown), and can be found in the [docs](/docs) directory in the [Plutono GitHub repository](https://github.com/grafana/grafana). The [documentation website](https://grafana.com/docs) is generated with [Hugo](https://gohugo.io) which uses [Blackfriday](https://github.com/russross/blackfriday) as its Markdown rendering engine.
 
 ### Documentation structure
 
-The Grafana documentation is organized into topics, called _sections_. You can take a look at the current build at [grafana.com/docs/](https://grafana.com/docs/).
+The Plutono documentation is organized into topics, called _sections_. You can take a look at the current build at [grafana.com/docs/](https://grafana.com/docs/).
 
 Each top-level section is located under the [docs/sources](/docs/sources) directory. Subsections are added by creating a subdirectory in the directory of the parent section.
 
@@ -35,7 +35,7 @@ For each section, an `_index.md` file provides an overview of the topic.
 
 ### Style guide
 
-Refer to the [Documentation style guide](style-guides/documentation-style-guide.md) for information about Grafana style, word choice, and grammar conventions.
+Refer to the [Documentation style guide](style-guides/documentation-style-guide.md) for information about Plutono style, word choice, and grammar conventions.
 
 ### Spelling
 

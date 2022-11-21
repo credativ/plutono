@@ -8,7 +8,7 @@ import {
   MenuItemsGroup,
   Portal,
   useGraphNGContext,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import {
   DataFrame,
   DataFrameView,
@@ -16,7 +16,7 @@ import {
   getFieldDisplayName,
   InterpolateFunction,
   TimeZone,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { useClickAway } from 'react-use';
 import { getFieldLinksSupplier } from '../../../../features/panel/panellinks/linkSuppliers';
 

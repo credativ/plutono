@@ -1,9 +1,9 @@
 import React, { FC } from 'react';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
-import { LoadingPlaceholder } from '@grafana/ui';
-import { config } from '@grafana/runtime';
-import { NavModel } from '@grafana/data';
+import { LoadingPlaceholder } from '@credativ/plutono-ui';
+import { config } from '@credativ/plutono-runtime';
+import { NavModel } from '@credativ/plutono-data';
 import { UserProvider, UserAPI, LoadingStates } from 'app/core/utils/UserProvider';
 import { getNavModel } from 'app/core/selectors/navModel';
 import { UserDTO, Team, UserOrg, UserSession, StoreState } from 'app/types';

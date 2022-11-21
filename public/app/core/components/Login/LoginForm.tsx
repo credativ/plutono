@@ -1,8 +1,8 @@
 import React, { FC, ReactElement } from 'react';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import { FormModel } from './LoginCtrl';
-import { Button, Form, Input, Field } from '@grafana/ui';
+import { Button, Form, Input, Field } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 
 interface Props {

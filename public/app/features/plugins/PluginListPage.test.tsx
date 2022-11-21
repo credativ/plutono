@@ -1,18 +1,18 @@
 import React from 'react';
 import { PluginListPage, Props } from './PluginListPage';
-import { NavModel, PluginErrorCode, PluginMeta } from '@grafana/data';
+import { NavModel, PluginErrorCode, PluginMeta } from '@credativ/plutono-data';
 import { mockToolkitActionCreator } from 'test/core/redux/mocks';
 import { setPluginsSearchQuery } from './state/reducers';
 import { render, screen, waitFor } from '@testing-library/react';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { Provider } from 'react-redux';
 import { configureStore } from '../../store/configureStore';
 import { afterEach } from '../../../test/lib/common';
 
 let errorsReturnMock: any = [];
 
-jest.mock('@grafana/runtime', () => ({
-  ...(jest.requireActual('@grafana/runtime') as object),
+jest.mock('@credativ/plutono-runtime', () => ({
+  ...(jest.requireActual('@credativ/plutono-runtime') as object),
   getBackendSrv: () => ({
     get: () => {
       return errorsReturnMock as any;

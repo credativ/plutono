@@ -71,8 +71,8 @@ describe('addLabelToQuery()', () => {
   });
 
   it('should add label to query properly with Loki datasource', () => {
-    expect(addLabelToQuery('{job="grafana"} |= "foo-bar"', 'filename', 'test.txt', undefined, true)).toBe(
-      '{filename="test.txt",job="grafana"} |= "foo-bar"'
+    expect(addLabelToQuery('{job="plutono"} |= "foo-bar"', 'filename', 'test.txt', undefined, true)).toBe(
+      '{filename="test.txt",job="plutono"} |= "foo-bar"'
     );
   });
 

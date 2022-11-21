@@ -2,8 +2,8 @@ import React, { useCallback, useMemo } from 'react';
 
 import config from 'app/core/config';
 import VizTypePickerPlugin from './VizTypePickerPlugin';
-import { EmptySearchResult, stylesFactory, useTheme } from '@grafana/ui';
-import { GrafanaTheme, PanelPluginMeta, PluginState } from '@grafana/data';
+import { EmptySearchResult, stylesFactory, useTheme } from '@credativ/plutono-ui';
+import { PlutonoTheme, PanelPluginMeta, PluginState } from '@credativ/plutono-data';
 import { css } from 'emotion';
 
 export interface Props {
@@ -102,7 +102,7 @@ export const VizTypePicker: React.FC<Props> = ({ searchQuery, onTypeChange, curr
 
 VizTypePicker.displayName = 'VizTypePicker';
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     grid: css`
       max-width: 100%;

@@ -3,11 +3,11 @@ package search
 import (
 	"sort"
 
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/setting"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/registry"
 )
 
 func init() {

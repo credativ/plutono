@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { css, cx } from 'emotion';
-import { useTheme, stylesFactory } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { useTheme, stylesFactory } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 
 import { OptionProps } from 'react-select/src/components/Option';
 import { TagBadge } from './TagBadge';
@@ -24,7 +24,7 @@ export const TagOption: FC<ExtendedOptionProps> = ({ data, className, label, isF
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     option: css`
       padding: 8px;

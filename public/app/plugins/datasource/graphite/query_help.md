@@ -25,6 +25,6 @@ If a query is added only to be used as a parameter, hide it from the graph with 
 
 #### Documentation links:
 
-[Grafana's Graphite Documentation](http://docs.grafana.org/features/datasources/graphite)
+[Plutono's Graphite Documentation](http://docs.plutono.org/features/datasources/graphite)
 
 [Official Graphite Documentation](https://graphite.readthedocs.io)

@@ -5,10 +5,10 @@ import {
   standardTransformers,
   TransformerRegistryItem,
   TransformerUIProps,
-} from '@grafana/data';
-import { HorizontalGroup, FilterPill } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { HorizontalGroup, FilterPill } from '@credativ/plutono-ui';
 
-import { FilterFramesByRefIdTransformerOptions } from '@grafana/data/src/transformations/transformers/filterByRefId';
+import { FilterFramesByRefIdTransformerOptions } from '@credativ/plutono-data/src/transformations/transformers/filterByRefId';
 
 interface FilterByRefIdTransformerEditorProps extends TransformerUIProps<FilterFramesByRefIdTransformerOptions> {}
 

@@ -6,11 +6,11 @@ import (
 
 // ChannelAddress is the channel ID split by parts.
 type ChannelAddress struct {
-	// Scope is "grafana", "ds", or "plugin".
+	// Scope is "plutono", "ds", or "plugin".
 	Scope string `json:"scope,omitempty"`
 
 	// Namespace meaning depends on the scope.
-	// * when grafana, namespace is a "feature"
+	// * when plutono, namespace is a "feature"
 	// * when ds, namespace is the datasource id
 	// * when plugin, namespace is the plugin name
 	Namespace string `json:"namespace,omitempty"`

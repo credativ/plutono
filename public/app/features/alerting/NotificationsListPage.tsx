@@ -1,11 +1,11 @@
 import React, { useState, FC, useEffect } from 'react';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
 import Page from 'app/core/components/Page/Page';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { useAsyncFn } from 'react-use';
 import { appEvents } from 'app/core/core';
 import { useNavModel } from 'app/core/hooks/useNavModel';
-import { HorizontalGroup, Button, LinkButton } from '@grafana/ui';
+import { HorizontalGroup, Button, LinkButton } from '@credativ/plutono-ui';
 import { CoreEvents } from 'app/types';
 import { AlertNotification } from 'app/types/alerting';
 
@@ -107,7 +107,7 @@ const NotificationsListPage: FC = () => {
             buttonLink="alerting/notification/new"
             buttonTitle="Add channel"
             proTip="You can include images in your alert notifications."
-            proTipLink="http://docs.grafana.org/alerting/notifications/"
+            proTipLink="http://docs.plutono.org/alerting/notifications/"
             proTipLinkTitle="Learn more"
             proTipTarget="_blank"
           />

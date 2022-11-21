@@ -8,8 +8,8 @@ import OrgActionBar from 'app/core/components/OrgActionBar/OrgActionBar';
 import EmptyListCTA from 'app/core/components/EmptyListCTA/EmptyListCTA';
 import DataSourcesList from './DataSourcesList';
 // Types
-import { DataSourceSettings, NavModel } from '@grafana/data';
-import { IconName } from '@grafana/ui';
+import { DataSourceSettings, NavModel } from '@credativ/plutono-data';
+import { IconName } from '@credativ/plutono-ui';
 import { StoreState } from 'app/types';
 import { LayoutMode } from 'app/core/components/LayoutSelector/LayoutSelector';
 // Actions
@@ -42,7 +42,7 @@ const emptyListModel = {
   buttonLink: 'datasources/new',
   buttonTitle: 'Add data source',
   proTip: 'You can also define data sources through configuration files.',
-  proTipLink: 'http://docs.grafana.org/administration/provisioning/#datasources?utm_source=grafana_ds_list',
+  proTipLink: 'http://docs.plutono.org/administration/provisioning/#datasources',
   proTipLinkTitle: 'Learn more',
   proTipTarget: '_blank',
 };

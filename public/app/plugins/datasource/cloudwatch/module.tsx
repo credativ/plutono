@@ -1,5 +1,5 @@
 import './query_parameter_ctrl';
-import { DataSourcePlugin } from '@grafana/data';
+import { DataSourcePlugin } from '@credativ/plutono-data';
 import { ConfigEditor } from './components/ConfigEditor';
 import { CloudWatchDatasource } from './datasource';
 import { CloudWatchAnnotationsQueryCtrl } from './annotations_query_ctrl';

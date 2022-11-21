@@ -1,7 +1,7 @@
 import React, { FC, memo } from 'react';
 import { css } from 'emotion';
-import { useTheme, CustomScrollbar, stylesFactory, IconButton } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { useTheme, CustomScrollbar, stylesFactory, IconButton } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { useSearchQuery } from '../hooks/useSearchQuery';
 import { useDashboardSearch } from '../hooks/useDashboardSearch';
 import { SearchField } from './SearchField';
@@ -61,7 +61,7 @@ DashboardSearch.displayName = 'DashboardSearch';
 
 export default connectWithRouteParams(DashboardSearch);
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     overlay: css`
       left: 0;

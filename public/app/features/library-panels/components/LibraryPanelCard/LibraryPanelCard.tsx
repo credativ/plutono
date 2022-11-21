@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
-import { Card, Icon, IconButton, Tooltip, useStyles } from '@grafana/ui';
+import { Card, Icon, IconButton, Tooltip, useStyles } from '@credativ/plutono-ui';
 import { css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { LibraryPanelDTO } from '../../types';
 import { DeleteLibraryPanelModal } from '../DeleteLibraryPanelModal/DeleteLibraryPanelModal';
 
@@ -80,7 +80,7 @@ export const LibraryPanelCard: React.FC<LibraryPanelCardProps & { children?: JSX
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => {
+const getStyles = (theme: PlutonoTheme) => {
   return {
     tooltip: css`
       display: inline;

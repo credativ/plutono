@@ -7,12 +7,12 @@ import {
   PanelProps,
   standardEditorsRegistry,
   standardFieldConfigEditorRegistry,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { ComponentClass } from 'react';
 import { PanelQueryRunner } from '../../query/state/PanelQueryRunner';
 import { setTimeSrv } from '../services/TimeSrv';
 import { TemplateSrv } from '../../templating/template_srv';
-import { setTemplateSrv } from '@grafana/runtime';
+import { setTemplateSrv } from '@credativ/plutono-runtime';
 import { variableAdapters } from '../../variables/adapters';
 import { createQueryVariableAdapter } from '../../variables/query/adapter';
 import { mockStandardFieldConfigOptions } from '../../../../test/helpers/fieldConfig';

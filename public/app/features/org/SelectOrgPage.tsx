@@ -1,13 +1,13 @@
 import React, { FC, useState } from 'react';
 import Page from 'app/core/components/Page/Page';
-import { getBackendSrv, config } from '@grafana/runtime';
+import { getBackendSrv, config } from '@credativ/plutono-runtime';
 import { UserOrg } from 'app/types';
 import { useAsync } from 'react-use';
-import { Button, HorizontalGroup } from '@grafana/ui';
+import { Button, HorizontalGroup } from '@credativ/plutono-ui';
 
 const navModel = {
   main: {
-    icon: 'grafana',
+    icon: 'plutono',
     subTitle: 'Preferences',
     text: 'Select active organization',
   },

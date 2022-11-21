@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react';
 import { Observable } from 'rxjs';
 import { render, screen, fireEvent } from '@testing-library/react';
-import { TimeRange, LoadingState } from '@grafana/data';
+import { TimeRange, LoadingState } from '@credativ/plutono-data';
 import { ExploreId } from 'app/types';
 import { ExploreQueryInspector } from './ExploreQueryInspector';
 

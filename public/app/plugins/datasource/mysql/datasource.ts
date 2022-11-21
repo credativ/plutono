@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import { Observable, of } from 'rxjs';
 import { catchError, map, mapTo } from 'rxjs/operators';
-import { getBackendSrv } from '@grafana/runtime';
-import { ScopedVars } from '@grafana/data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
+import { ScopedVars } from '@credativ/plutono-data';
 import MysqlQuery from 'app/plugins/datasource/mysql/mysql_query';
 import ResponseParser, { MysqlResponse } from './response_parser';
 import { MysqlMetricFindValue, MysqlQueryForInterpolation } from './types';

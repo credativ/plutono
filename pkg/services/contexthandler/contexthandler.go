@@ -8,20 +8,20 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/apikeygen"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/network"
-	"github.com/grafana/grafana/pkg/infra/remotecache"
-	"github.com/grafana/grafana/pkg/middleware/cookies"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/contexthandler/authproxy"
-	"github.com/grafana/grafana/pkg/services/login"
-	"github.com/grafana/grafana/pkg/services/rendering"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/apikeygen"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/network"
+	"github.com/credativ/plutono/pkg/infra/remotecache"
+	"github.com/credativ/plutono/pkg/middleware/cookies"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/services/contexthandler/authproxy"
+	"github.com/credativ/plutono/pkg/services/login"
+	"github.com/credativ/plutono/pkg/services/rendering"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 	"gopkg.in/macaron.v1"
 )
 
@@ -69,7 +69,7 @@ func (h *ContextHandler) Middleware(c *macaron.Context) {
 		Logger:         log.New("context"),
 	}
 
-	const headerName = "X-Grafana-Org-Id"
+	const headerName = "X-Plutono-Org-Id"
 	orgID := int64(0)
 	orgIDHeader := ctx.Req.Header.Get(headerName)
 	if orgIDHeader != "" {

@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { TeamMember, TeamPermissionLevel } from '../../types';
 import { getMockTeamMember } from './__mocks__/teamMocks';
 import { TeamMemberRow, Props } from './TeamMemberRow';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 
 const setup = (propOverrides?: object) => {
   const props: Props = {

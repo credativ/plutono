@@ -1,6 +1,6 @@
 import React from 'react';
 import { EditorProps } from '../QueryEditor';
-import { InlineField, InlineFieldRow, Input } from '@grafana/ui';
+import { InlineField, InlineFieldRow, Input } from '@credativ/plutono-ui';
 
 const fields = [
   {

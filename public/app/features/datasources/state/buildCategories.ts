@@ -1,4 +1,4 @@
-import { DataSourcePluginMeta, PluginType } from '@grafana/data';
+import { DataSourcePluginMeta, PluginType } from '@credativ/plutono-data';
 import { DataSourcePluginCategory } from 'app/types';
 import { config } from '../../../core/config';
 
@@ -50,7 +50,7 @@ export function buildCategories(plugins: DataSourcePluginMeta[]): DataSourcePlug
   for (const category of categories) {
     // add phantom plugin
     if (category.id === 'cloud') {
-      category.plugins.push(getGrafanaCloudPhantomPlugin());
+      category.plugins.push(getPlutonoCloudPhantomPlugin());
     }
 
     // add phantom plugins
@@ -97,55 +97,55 @@ function sortPlugins(plugins: DataSourcePluginMeta[]) {
 function getEnterprisePhantomPlugins(): DataSourcePluginMeta[] {
   return [
     getPhantomPlugin({
-      id: 'grafana-splunk-datasource',
+      id: 'plutono-splunk-datasource',
       name: 'Splunk',
       description: 'Visualize & explore Splunk logs',
       imgUrl: 'public/img/plugins/splunk_logo_128.png',
     }),
     getPhantomPlugin({
-      id: 'grafana-oracle-datasource',
+      id: 'plutono-oracle-datasource',
       name: 'Oracle',
       description: 'Visualize & explore Oracle SQL',
       imgUrl: 'public/img/plugins/oracle.png',
     }),
     getPhantomPlugin({
-      id: 'grafana-dynatrace-datasource',
+      id: 'plutono-dynatrace-datasource',
       name: 'Dynatrace',
       description: 'Visualize & explore Dynatrace data',
       imgUrl: 'public/img/plugins/dynatrace.png',
     }),
     getPhantomPlugin({
-      id: 'grafana-servicenow-datasource',
+      id: 'plutono-servicenow-datasource',
       description: 'ServiceNow integration & data source',
       name: 'ServiceNow',
       imgUrl: 'public/img/plugins/servicenow.svg',
     }),
     getPhantomPlugin({
-      id: 'grafana-datadog-datasource',
+      id: 'plutono-datadog-datasource',
       description: 'DataDog integration & data source',
       name: 'DataDog',
       imgUrl: 'public/img/plugins/datadog.png',
     }),
     getPhantomPlugin({
-      id: 'grafana-newrelic-datasource',
+      id: 'plutono-newrelic-datasource',
       description: 'New Relic integration & data source',
       name: 'New Relic',
       imgUrl: 'public/img/plugins/newrelic.svg',
     }),
     getPhantomPlugin({
-      id: 'grafana-mongodb-datasource',
+      id: 'plutono-mongodb-datasource',
       description: 'MongoDB integration & data source',
       name: 'MongoDB',
       imgUrl: 'public/img/plugins/mongodb.svg',
     }),
     getPhantomPlugin({
-      id: 'grafana-snowflake-datasource',
+      id: 'plutono-snowflake-datasource',
       description: 'Snowflake integration & data source',
       name: 'Snowflake',
       imgUrl: 'public/img/plugins/snowflake.svg',
     }),
     getPhantomPlugin({
-      id: 'grafana-wavefront-datasource',
+      id: 'plutono-wavefront-datasource',
       description: 'Wavefront integration & data source',
       name: 'Wavefront',
       imgUrl: 'public/img/plugins/wavefront.svg',
@@ -159,17 +159,17 @@ function getEnterprisePhantomPlugins(): DataSourcePluginMeta[] {
   ];
 }
 
-function getGrafanaCloudPhantomPlugin(): DataSourcePluginMeta {
+function getPlutonoCloudPhantomPlugin(): DataSourcePluginMeta {
   return {
     id: 'gcloud',
-    name: 'Grafana Cloud',
+    name: 'Plutono Cloud',
     type: PluginType.datasource,
     module: 'phantom',
     baseUrl: '',
     info: {
       description: 'Hosted Graphite, Prometheus and Loki',
-      logos: { small: 'public/img/grafana_icon.svg', large: 'asd' },
-      author: { name: 'Grafana Labs' },
+      logos: { small: 'public/img/plutono_icon.svg', large: 'asd' },
+      author: { name: 'Plutono Team' },
       links: [
         {
           url: 'https://grafana.com/products/cloud/',
@@ -200,7 +200,7 @@ function getPhantomPlugin(options: GetPhantomPluginOptions): DataSourcePluginMet
     info: {
       description: options.description,
       logos: { small: options.imgUrl, large: options.imgUrl },
-      author: { name: 'Grafana Labs' },
+      author: { name: 'Plutono Team' },
       links: [
         {
           url: config.marketplaceUrl + options.id,

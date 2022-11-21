@@ -1,6 +1,6 @@
 import { toFilters, toUrl } from './urlParser';
 import { AdHocVariableFilter } from 'app/features/variables/types';
-import { UrlQueryValue } from '@grafana/data';
+import { UrlQueryValue } from '@credativ/plutono-data';
 
 describe('urlParser', () => {
   describe('parsing toUrl with no filters', () => {

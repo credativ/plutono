@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 
-import { Button, Checkbox, Form, HorizontalGroup, TextArea } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
+import { Button, Checkbox, Form, HorizontalGroup, TextArea } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import { SaveDashboardFormProps } from '../types';
 

@@ -1,4 +1,4 @@
-import { DataFrame, DataQuery, DataQueryError } from '@grafana/data';
+import { DataFrame, DataQuery, DataQueryError } from '@credativ/plutono-data';
 
 export const SHARED_DASHBODARD_QUERY = '-- Dashboard --';
 

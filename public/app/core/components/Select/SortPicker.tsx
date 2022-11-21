@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { useAsync } from 'react-use';
-import { Select, Icon, IconName } from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
+import { Select, Icon, IconName } from '@credativ/plutono-ui';
+import { SelectableValue } from '@credativ/plutono-data';
 import { DEFAULT_SORT } from 'app/features/search/constants';
 import { SearchSrv } from '../../services/search_srv';
 

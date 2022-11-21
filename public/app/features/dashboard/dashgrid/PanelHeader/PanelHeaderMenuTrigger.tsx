@@ -1,5 +1,5 @@
 import React, { FC, HTMLAttributes, MouseEvent, ReactElement, useCallback, useState } from 'react';
-import { CartesianCoords2D } from '@grafana/data';
+import { CartesianCoords2D } from '@credativ/plutono-data';
 
 interface PanelHeaderMenuTriggerApi {
   panelMenuOpen: boolean;

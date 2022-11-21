@@ -1,4 +1,4 @@
-import { setTemplateSrv } from '@grafana/runtime';
+import { setTemplateSrv } from '@credativ/plutono-runtime';
 import { variableAdapters } from './adapters';
 import { createQueryVariableAdapter } from './query/adapter';
 import { getAllVariableValuesForUrl } from './getAllVariableValuesForUrl';

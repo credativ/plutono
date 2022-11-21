@@ -3,13 +3,13 @@ package login
 import (
 	"errors"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/ldap"
-	"github.com/grafana/grafana/pkg/services/multildap"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/ldap"
+	"github.com/credativ/plutono/pkg/services/multildap"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util/errutil"
 )
 
 // getLDAPConfig gets LDAP config
@@ -71,9 +71,9 @@ var loginUsingLDAP = func(query *models.LoginUserQuery) (bool, error) {
 	return true, nil
 }
 
-// DisableExternalUser marks external user as disabled in Grafana db
+// DisableExternalUser marks external user as disabled in Plutono db
 func DisableExternalUser(username string) error {
-	// Check if external user exist in Grafana
+	// Check if external user exist in Plutono
 	userQuery := &models.GetExternalUserInfoByLoginQuery{
 		LoginOrEmail: username,
 	}
@@ -90,7 +90,7 @@ func DisableExternalUser(username string) error {
 			userQuery.Result.Login,
 		)
 
-		// Mark user as disabled in grafana db
+		// Mark user as disabled in plutono db
 		disableUserCmd := &models.DisableUserCommand{
 			UserId:     userQuery.Result.UserId,
 			IsDisabled: true,

@@ -257,9 +257,9 @@ Organize your code in a directory that encloses feature code:
 
 For code that needs to be used by external plugin:
 
-- Put components and types in `@grafana/ui`.
-- Put data models and data utilities in `@grafana/data`.
-- Put runtime services interfaces in `@grafana/runtime`.
+- Put components and types in `@credativ/plutono-ui`.
+- Put data models and data utilities in `@credativ/plutono-data`.
+- Put runtime services interfaces in `@credativ/plutono-runtime`.
 
 #### Exports
 
@@ -276,7 +276,7 @@ For code that needs to be used by external plugin:
 
 ### Linting
 
-Linting is performed using [@grafana/eslint-config](https://github.com/grafana/eslint-config-grafana).
+Linting is performed using [@grafana/eslint-config](https://github.com/grafana/eslint-config-plutono).
 
 ## React
 

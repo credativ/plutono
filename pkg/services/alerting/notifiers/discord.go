@@ -9,12 +9,12 @@ import (
 	"strconv"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/alerting"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/alerting"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 func init() {
@@ -79,7 +79,7 @@ func (dn *DiscordNotifier) Notify(evalContext *alerting.EvalContext) error {
 	}
 
 	bodyJSON := simplejson.New()
-	bodyJSON.Set("username", "Grafana")
+	bodyJSON.Set("username", "Plutono")
 
 	if dn.Content != "" {
 		bodyJSON.Set("content", dn.Content)
@@ -98,7 +98,7 @@ func (dn *DiscordNotifier) Notify(evalContext *alerting.EvalContext) error {
 	}
 
 	footer := map[string]interface{}{
-		"text":     "Grafana v" + setting.BuildVersion,
+		"text":     "Plutono v" + setting.BuildVersion,
 		"icon_url": "https://grafana.com/assets/img/fav32.png",
 	}
 

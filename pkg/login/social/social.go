@@ -12,9 +12,9 @@ import (
 
 	"golang.org/x/oauth2"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 )
 
 var (
@@ -59,13 +59,13 @@ func (e Error) Error() string {
 }
 
 const (
-	grafanaCom = "grafana_com"
+	plutonoCom = "plutono_com"
 )
 
 var (
 	SocialBaseUrl = "/login/"
 	SocialMap     = make(map[string]SocialConnector)
-	allOauthes    = []string{"github", "gitlab", "google", "generic_oauth", "grafananet", grafanaCom, "azuread", "okta"}
+	allOauthes    = []string{"github", "gitlab", "google", "generic_oauth", "plutononet", plutonoCom, "azuread", "okta"}
 )
 
 func newSocialBase(name string, config *oauth2.Config, info *setting.OAuthInfo) *SocialBase {
@@ -110,8 +110,8 @@ func NewOAuthService() {
 			continue
 		}
 
-		if name == "grafananet" {
-			name = grafanaCom
+		if name == "plutononet" {
+			name = plutonoCom
 		}
 
 		setting.OAuthService.OAuthInfos[name] = info
@@ -190,22 +190,22 @@ func NewOAuthService() {
 			}
 		}
 
-		if name == grafanaCom {
+		if name == plutonoCom {
 			config = oauth2.Config{
 				ClientID:     info.ClientId,
 				ClientSecret: info.ClientSecret,
 				Endpoint: oauth2.Endpoint{
-					AuthURL:   setting.GrafanaComUrl + "/oauth2/authorize",
-					TokenURL:  setting.GrafanaComUrl + "/api/oauth2/token",
+					AuthURL:   setting.PlutonoComUrl + "/oauth2/authorize",
+					TokenURL:  setting.PlutonoComUrl + "/api/oauth2/token",
 					AuthStyle: oauth2.AuthStyleInHeader,
 				},
 				RedirectURL: strings.TrimSuffix(setting.AppUrl, "/") + SocialBaseUrl + name,
 				Scopes:      info.Scopes,
 			}
 
-			SocialMap[grafanaCom] = &SocialGrafanaCom{
+			SocialMap[plutonoCom] = &SocialPlutonoCom{
 				SocialBase:           newSocialBase(name, &config, info),
-				url:                  setting.GrafanaComUrl,
+				url:                  setting.PlutonoComUrl,
 				allowedOrganizations: util.SplitString(sec.Key("allowed_organizations").String()),
 			}
 		}
@@ -221,8 +221,8 @@ var GetOAuthProviders = func(cfg *setting.Cfg) map[string]bool {
 	}
 
 	for _, name := range allOauthes {
-		if name == "grafananet" {
-			name = grafanaCom
+		if name == "plutononet" {
+			name = plutonoCom
 		}
 
 		sec := cfg.Raw.Section("auth." + name)

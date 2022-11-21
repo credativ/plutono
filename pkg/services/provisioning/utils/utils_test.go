@@ -3,8 +3,8 @@ package utils
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
 	. "github.com/smartystreets/goconvey/convey"
 )
 

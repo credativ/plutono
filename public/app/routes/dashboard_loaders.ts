@@ -1,5 +1,5 @@
 import coreModule from 'app/core/core_module';
-import { locationUtil, UrlQueryMap } from '@grafana/data';
+import { locationUtil, UrlQueryMap } from '@credativ/plutono-data';
 import { DashboardLoaderSrv } from 'app/features/dashboard/services/DashboardLoaderSrv';
 import { ILocationService } from 'angular';
 import { AppEventEmitter, Scope } from 'app/types';

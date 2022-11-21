@@ -6,14 +6,14 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/auth"
-	"github.com/grafana/grafana/pkg/services/ldap"
-	"github.com/grafana/grafana/pkg/services/multildap"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/api/routing"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/auth"
+	"github.com/credativ/plutono/pkg/services/ldap"
+	"github.com/credativ/plutono/pkg/services/multildap"
+	"github.com/credativ/plutono/pkg/setting"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -98,9 +98,9 @@ func TestGetUserFromLDAPAPIEndpoint_OrgNotfound(t *testing.T) {
 		Name:           "John Doe",
 		Email:          "john.doe@example.com",
 		Login:          "johndoe",
-		Groups:         []string{"cn=admins,ou=groups,dc=grafana,dc=org"},
+		Groups:         []string{"cn=admins,ou=groups,dc=plutono,dc=org"},
 		OrgRoles:       map[int64]models.RoleType{1: models.ROLE_ADMIN, 2: models.ROLE_VIEWER},
-		IsGrafanaAdmin: &isAdmin,
+		IsPlutonoAdmin: &isAdmin,
 	}
 
 	userSearchConfig = ldap.ServerConfig{
@@ -112,12 +112,12 @@ func TestGetUserFromLDAPAPIEndpoint_OrgNotfound(t *testing.T) {
 		},
 		Groups: []*ldap.GroupToOrgRole{
 			{
-				GroupDN: "cn=admins,ou=groups,dc=grafana,dc=org",
+				GroupDN: "cn=admins,ou=groups,dc=plutono,dc=org",
 				OrgId:   1,
 				OrgRole: models.ROLE_ADMIN,
 			},
 			{
-				GroupDN: "cn=admins,ou=groups,dc=grafana,dc=org",
+				GroupDN: "cn=admins,ou=groups,dc=plutono,dc=org",
 				OrgId:   2,
 				OrgRole: models.ROLE_VIEWER,
 			},
@@ -160,9 +160,9 @@ func TestGetUserFromLDAPAPIEndpoint(t *testing.T) {
 		Name:           "John Doe",
 		Email:          "john.doe@example.com",
 		Login:          "johndoe",
-		Groups:         []string{"cn=admins,ou=groups,dc=grafana,dc=org", "another-group-not-matched"},
+		Groups:         []string{"cn=admins,ou=groups,dc=plutono,dc=org", "another-group-not-matched"},
 		OrgRoles:       map[int64]models.RoleType{1: models.ROLE_ADMIN},
-		IsGrafanaAdmin: &isAdmin,
+		IsPlutonoAdmin: &isAdmin,
 	}
 
 	userSearchConfig = ldap.ServerConfig{
@@ -174,12 +174,12 @@ func TestGetUserFromLDAPAPIEndpoint(t *testing.T) {
 		},
 		Groups: []*ldap.GroupToOrgRole{
 			{
-				GroupDN: "cn=admins,ou=groups,dc=grafana,dc=org",
+				GroupDN: "cn=admins,ou=groups,dc=plutono,dc=org",
 				OrgId:   1,
 				OrgRole: models.ROLE_ADMIN,
 			},
 			{
-				GroupDN: "cn=admins2,ou=groups,dc=grafana,dc=org",
+				GroupDN: "cn=admins2,ou=groups,dc=plutono,dc=org",
 				OrgId:   1,
 				OrgRole: models.ROLE_ADMIN,
 			},
@@ -221,10 +221,10 @@ func TestGetUserFromLDAPAPIEndpoint(t *testing.T) {
 			"login": {
 				"cfgAttrValue": "ldap-username", "ldapValue": "johndoe"
 			},
-			"isGrafanaAdmin": true,
+			"isPlutonoAdmin": true,
 			"isDisabled": false,
 			"roles": [
-				{ "orgId": 1, "orgRole": "Admin", "orgName": "Main Org.", "groupDN": "cn=admins,ou=groups,dc=grafana,dc=org" },
+				{ "orgId": 1, "orgRole": "Admin", "orgName": "Main Org.", "groupDN": "cn=admins,ou=groups,dc=plutono,dc=org" },
 				{ "orgId": 0, "orgRole": "", "orgName": "", "groupDN": "another-group-not-matched" }
 			],
 			"teams": null
@@ -240,9 +240,9 @@ func TestGetUserFromLDAPAPIEndpoint_WithTeamHandler(t *testing.T) {
 		Name:           "John Doe",
 		Email:          "john.doe@example.com",
 		Login:          "johndoe",
-		Groups:         []string{"cn=admins,ou=groups,dc=grafana,dc=org"},
+		Groups:         []string{"cn=admins,ou=groups,dc=plutono,dc=org"},
 		OrgRoles:       map[int64]models.RoleType{1: models.ROLE_ADMIN},
-		IsGrafanaAdmin: &isAdmin,
+		IsPlutonoAdmin: &isAdmin,
 	}
 
 	userSearchConfig = ldap.ServerConfig{
@@ -254,7 +254,7 @@ func TestGetUserFromLDAPAPIEndpoint_WithTeamHandler(t *testing.T) {
 		},
 		Groups: []*ldap.GroupToOrgRole{
 			{
-				GroupDN: "cn=admins,ou=groups,dc=grafana,dc=org",
+				GroupDN: "cn=admins,ou=groups,dc=plutono,dc=org",
 				OrgId:   1,
 				OrgRole: models.ROLE_ADMIN,
 			},
@@ -301,10 +301,10 @@ func TestGetUserFromLDAPAPIEndpoint_WithTeamHandler(t *testing.T) {
 			"login": {
 				"cfgAttrValue": "ldap-username", "ldapValue": "johndoe"
 			},
-			"isGrafanaAdmin": true,
+			"isPlutonoAdmin": true,
 			"isDisabled": false,
 			"roles": [
-				{ "orgId": 1, "orgRole": "Admin", "orgName": "Main Org.", "groupDN": "cn=admins,ou=groups,dc=grafana,dc=org" }
+				{ "orgId": 1, "orgRole": "Admin", "orgName": "Main Org.", "groupDN": "cn=admins,ou=groups,dc=plutono,dc=org" }
 			],
 			"teams": []
 		}
@@ -485,7 +485,7 @@ func TestPostSyncUserWithLDAPAPIEndpoint_WhenUserNotFound(t *testing.T) {
 	assert.JSONEq(t, expected, sc.resp.Body.String())
 }
 
-func TestPostSyncUserWithLDAPAPIEndpoint_WhenGrafanaAdmin(t *testing.T) {
+func TestPostSyncUserWithLDAPAPIEndpoint_WhenPlutonoAdmin(t *testing.T) {
 	sc := postSyncUserWithLDAPContext(t, "/api/admin/ldap/sync/34", func(t *testing.T, sc *scenarioContext) {
 		getLDAPConfig = func(*setting.Cfg) (*ldap.Config, error) {
 			return &ldap.Config{}, nil
@@ -519,7 +519,7 @@ func TestPostSyncUserWithLDAPAPIEndpoint_WhenGrafanaAdmin(t *testing.T) {
 	expected := `
 	{
 		"error": "did not find a user",
-		"message": "Refusing to sync grafana super admin \"ldap-daniel\" - it would be disabled"
+		"message": "Refusing to sync plutono super admin \"ldap-daniel\" - it would be disabled"
 	}
 	`
 

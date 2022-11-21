@@ -9,15 +9,15 @@ import {
   Form,
   Field,
   InputControl,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import { getConfig } from 'app/core/config';
 import { OrgRole } from 'app/types';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { updateLocation } from 'app/core/actions';
 import { connect } from 'react-redux';
 import { hot } from 'react-hot-loader';
 import { appEvents } from 'app/core/core';
-import { AppEvents, locationUtil } from '@grafana/data';
+import { AppEvents, locationUtil } from '@credativ/plutono-data';
 
 const roles = [
   { label: 'Viewer', value: OrgRole.Viewer },

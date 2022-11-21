@@ -1,7 +1,7 @@
 import React, { forwardRef, HTMLAttributes } from 'react';
 import { cx, css } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { useTheme } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { useTheme } from '@credativ/plutono-ui';
 // @ts-ignore
 import Highlighter from 'react-highlight-words';
 
@@ -69,7 +69,7 @@ export const LokiLabel = forwardRef<HTMLElement, Props>(
 
 LokiLabel.displayName = 'LokiLabel';
 
-const getLabelStyles = (theme: GrafanaTheme) => ({
+const getLabelStyles = (theme: PlutonoTheme) => ({
   base: css`
     cursor: pointer;
     font-size: ${theme.typography.size.sm};

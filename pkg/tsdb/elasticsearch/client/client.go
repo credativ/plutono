@@ -13,11 +13,11 @@ import (
 	"strings"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/tsdb"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/models"
 	"golang.org/x/net/context/ctxhttp"
 )
 
@@ -182,7 +182,7 @@ func (c *baseClientImpl) executeRequest(method, uriPath, uriQuery string, body [
 		}
 	}
 
-	req.Header.Set("User-Agent", "Grafana")
+	req.Header.Set("User-Agent", "Plutono")
 	req.Header.Set("Content-Type", "application/json")
 
 	if c.ds.BasicAuth {

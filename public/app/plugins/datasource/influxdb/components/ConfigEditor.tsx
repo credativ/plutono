@@ -8,8 +8,8 @@ import {
   onUpdateDatasourceJsonDataOptionSelect,
   onUpdateDatasourceSecureJsonDataOption,
   updateDatasourcePluginJsonDataOption,
-} from '@grafana/data';
-import { DataSourceHttpSettings, InfoBox, InlineField, InlineFormLabel, LegacyForms } from '@grafana/ui';
+} from '@credativ/plutono-data';
+import { DataSourceHttpSettings, InfoBox, InlineField, InlineFormLabel, LegacyForms } from '@credativ/plutono-ui';
 const { Select, Input, SecretFormField } = LegacyForms;
 import { InfluxOptions, InfluxSecureJsonData, InfluxVersion } from '../types';
 
@@ -269,7 +269,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
 
         {options.jsonData.version === InfluxVersion.Flux && (
           <InfoBox>
-            <h5>Support for Flux in Grafana is currently in beta</h5>
+            <h5>Support for Flux in Plutono is currently in beta</h5>
             <p>
               Please report any issues to: <br />
               <a href="https://github.com/grafana/grafana/issues/new/choose">
@@ -295,7 +295,7 @@ export class ConfigEditor extends PureComponent<Props, State> {
             <InlineField
               labelWidth={20}
               label="Max series"
-              tooltip="Limit the number of series/tables that Grafana will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
+              tooltip="Limit the number of series/tables that Plutono will process. Lower this number to prevent abuse, and increase it if you have lots of small time series and not all are shown. Defaults to 1000."
             >
               <Input
                 placeholder="1000"

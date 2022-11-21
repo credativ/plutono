@@ -1,4 +1,4 @@
-import { EventBusSrv, EventBusExtended } from '@grafana/data';
+import { EventBusSrv, EventBusExtended } from '@credativ/plutono-data';
 
 export const appEvents: EventBusExtended = new EventBusSrv();
 

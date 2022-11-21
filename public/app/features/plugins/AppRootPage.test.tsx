@@ -7,7 +7,7 @@ import AppRootPage from './AppRootPage';
 import { getPluginSettings } from './PluginSettingsCache';
 import { importAppPlugin } from './plugin_loader';
 import { getMockPlugin } from './__mocks__/pluginMocks';
-import { AppPlugin, PluginType, AppRootProps, NavModelItem } from '@grafana/data';
+import { AppPlugin, PluginType, AppRootProps, NavModelItem } from '@credativ/plutono-data';
 import { updateLocation } from 'app/core/actions';
 import { createRootReducer } from 'app/core/reducers/root';
 import { createStore } from 'redux';

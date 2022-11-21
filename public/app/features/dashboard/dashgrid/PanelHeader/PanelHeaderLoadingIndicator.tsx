@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme, LoadingState } from '@grafana/data';
-import { Icon, Tooltip, useStyles } from '@grafana/ui';
+import { PlutonoTheme, LoadingState } from '@credativ/plutono-data';
+import { Icon, Tooltip, useStyles } from '@credativ/plutono-ui';
 
 interface Props {
   state: LoadingState;
@@ -32,7 +32,7 @@ export const PanelHeaderLoadingIndicator: FC<Props> = ({ state, onClick }) => {
   return null;
 };
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: PlutonoTheme) {
   return {
     streamIndicator: css`
       width: 10px;

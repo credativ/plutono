@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/tsdb"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/tsdb"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -181,7 +181,7 @@ func TestMacroEngine(t *testing.T) {
 
 			for _, tc := range tcs {
 				_, err := engine.Interpolate(nil, nil, tc)
-				So(err.Error(), ShouldEqual, "invalid query - inspect Grafana server log for details")
+				So(err.Error(), ShouldEqual, "invalid query - inspect Plutono server log for details")
 			}
 		})
 	})

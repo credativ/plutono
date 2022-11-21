@@ -3,26 +3,26 @@ package grpcplugin
 import (
 	"os/exec"
 
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin/pluginextensionv2"
 	datasourceV1 "github.com/grafana/grafana-plugin-model/go/datasource"
 	rendererV1 "github.com/grafana/grafana-plugin-model/go/renderer"
 	"github.com/grafana/grafana-plugin-sdk-go/backend/grpcplugin"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin/pluginextensionv2"
 	goplugin "github.com/hashicorp/go-plugin"
 )
 
 const (
 	// DefaultProtocolVersion is the protocol version assumed for legacy clients that don't specify
 	// a particular version or version 1 during their handshake. This is currently the version used
-	// since Grafana launched support for backend plugins.
+	// since Plutono launched support for backend plugins.
 	DefaultProtocolVersion = 1
 )
 
 // Handshake is the HandshakeConfig used to configure clients and servers.
 var handshake = goplugin.HandshakeConfig{
-	// The ProtocolVersion is the version that must match between Grafana core
-	// and Grafana plugins. This should be bumped whenever a (breaking) change
+	// The ProtocolVersion is the version that must match between Plutono core
+	// and Plutono plugins. This should be bumped whenever a (breaking) change
 	// happens in one or the other that makes it so that they can't safely communicate.
 	ProtocolVersion: DefaultProtocolVersion,
 

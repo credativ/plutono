@@ -2,7 +2,7 @@ import React from 'react';
 import { QueryField, useLoadOptions, useServices } from './QueryField';
 import { ZipkinDatasource, ZipkinQuery } from './datasource';
 import { shallow } from 'enzyme';
-import { ButtonCascader, CascaderOption } from '@grafana/ui';
+import { ButtonCascader, CascaderOption } from '@credativ/plutono-ui';
 import { renderHook, act } from '@testing-library/react-hooks';
 
 describe('QueryField', () => {

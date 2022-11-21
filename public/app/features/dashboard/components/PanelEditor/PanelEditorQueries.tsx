@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { QueryGroup } from 'app/features/query/components/QueryGroup';
 import { PanelModel } from '../../state';
-import { getLocationSrv } from '@grafana/runtime';
+import { getLocationSrv } from '@credativ/plutono-runtime';
 import { QueryGroupOptions } from 'app/types';
 
 interface Props {

@@ -4,7 +4,7 @@ import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
 // Types
 import { StoreState } from 'app/types';
-import { AppEvents, AppPlugin, AppPluginMeta, NavModel, PluginType, UrlQueryMap } from '@grafana/data';
+import { AppEvents, AppPlugin, AppPluginMeta, NavModel, PluginType, UrlQueryMap } from '@credativ/plutono-data';
 import { createHtmlPortalNode, InPortal, OutPortal, HtmlPortalNode } from 'react-reverse-portal';
 
 import Page from 'app/core/components/Page/Page';

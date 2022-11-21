@@ -1,4 +1,4 @@
-import { Button, InlineField, InlineSwitch, Input } from '@grafana/ui';
+import { Button, InlineField, InlineSwitch, Input } from '@credativ/plutono-ui';
 import { DataSourcePicker } from 'app/core/components/Select/DataSourcePicker';
 import { css } from 'emotion';
 import React, { useState } from 'react';

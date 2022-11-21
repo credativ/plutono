@@ -6,9 +6,9 @@ import (
 	"strings"
 	"time"
 
+	"github.com/credativ/plutono/pkg/components/gtime"
+	"github.com/credativ/plutono/pkg/expr/mathexp"
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/grafana/grafana/pkg/components/gtime"
-	"github.com/grafana/grafana/pkg/expr/mathexp"
 )
 
 // Command is an interface for all expression commands.
@@ -38,7 +38,7 @@ func NewMathCommand(refID, expr string) (*MathCommand, error) {
 	}, nil
 }
 
-// UnmarshalMathCommand creates a MathCommand from Grafana's frontend query.
+// UnmarshalMathCommand creates a MathCommand from Plutono's frontend query.
 func UnmarshalMathCommand(rn *rawNode) (*MathCommand, error) {
 	rawExpr, ok := rn.Query["expression"]
 	if !ok {
@@ -85,7 +85,7 @@ func NewReduceCommand(refID, reducer, varToReduce string) *ReduceCommand {
 	}
 }
 
-// UnmarshalReduceCommand creates a MathCMD from Grafana's frontend query.
+// UnmarshalReduceCommand creates a MathCMD from Plutono's frontend query.
 func UnmarshalReduceCommand(rn *rawNode) (*ReduceCommand, error) {
 	rawVar, ok := rn.Query["expression"]
 	if !ok {
@@ -160,7 +160,7 @@ func NewResampleCommand(refID, rawWindow, varToResample string, downsampler stri
 	}, nil
 }
 
-// UnmarshalResampleCommand creates a ResampleCMD from Grafana's frontend query.
+// UnmarshalResampleCommand creates a ResampleCMD from Plutono's frontend query.
 func UnmarshalResampleCommand(rn *rawNode) (*ResampleCommand, error) {
 	rawVar, ok := rn.Query["expression"]
 	if !ok {

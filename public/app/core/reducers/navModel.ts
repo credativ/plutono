@@ -1,5 +1,5 @@
 import { AnyAction, createAction } from '@reduxjs/toolkit';
-import { NavIndex, NavModel, NavModelItem } from '@grafana/data';
+import { NavIndex, NavModel, NavModelItem } from '@credativ/plutono-data';
 
 import config from 'app/core/config';
 

@@ -3,7 +3,7 @@ package alerting
 import (
 	"encoding/json"
 
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/models"
 )
 
 // DatasourceAlertUsage is a hash where the key represents the
@@ -12,19 +12,19 @@ import (
 type DatasourceAlertUsage map[string]int
 
 // UsageStats contains stats about alert rules configured in
-// Grafana.
+// Plutono.
 type UsageStats struct {
 	DatasourceUsage DatasourceAlertUsage
 }
 
 // UsageStatsQuerier returns usage stats about alert rules
-// configured in Grafana.
+// configured in Plutono.
 type UsageStatsQuerier interface {
 	QueryUsageStats() (*UsageStats, error)
 }
 
 // QueryUsageStats returns usage stats about alert rules
-// configured in Grafana.
+// configured in Plutono.
 func (e *AlertEngine) QueryUsageStats() (*UsageStats, error) {
 	cmd := &models.GetAllAlertsQuery{}
 	err := e.Bus.Dispatch(cmd)

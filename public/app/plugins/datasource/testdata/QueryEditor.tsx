@@ -3,9 +3,9 @@ import React, { ChangeEvent, FormEvent, useMemo } from 'react';
 import { useAsync } from 'react-use';
 
 // Components
-import { selectors as editorSelectors } from '@grafana/e2e-selectors';
-import { Input, InlineFieldRow, InlineField, Select, TextArea, InlineSwitch } from '@grafana/ui';
-import { QueryEditorProps, SelectableValue } from '@grafana/data';
+import { selectors as editorSelectors } from '@credativ/plutono-e2e-selectors';
+import { Input, InlineFieldRow, InlineField, Select, TextArea, InlineSwitch } from '@credativ/plutono-ui';
+import { QueryEditorProps, SelectableValue } from '@credativ/plutono-data';
 import { StreamingClientEditor, ManualEntryEditor, RandomWalkEditor } from './components';
 
 // Types
@@ -14,7 +14,7 @@ import { TestDataQuery, Scenario, NodesQuery } from './types';
 import { PredictablePulseEditor } from './components/PredictablePulseEditor';
 import { CSVWaveEditor } from './components/CSVWaveEditor';
 import { defaultQuery } from './constants';
-import { GrafanaLiveEditor } from './components/GrafanaLiveEditor';
+import { PlutonoLiveEditor } from './components/PlutonoLiveEditor';
 import { NodeGraphEditor } from './components/NodeGraphEditor';
 
 const showLabelsFor = ['random_walk', 'predictable_pulse', 'predictable_csv_wave'];
@@ -64,7 +64,7 @@ export const QueryEditor = ({ query, datasource, onChange, onRunQuery }: Props) 
       update.stringInput = scenario.stringInput;
     }
 
-    if (scenario.id === 'grafana_api') {
+    if (scenario.id === 'plutono_api') {
       update.stringInput = 'datasources';
     } else if (scenario.id === 'streaming_client') {
       update.stringInput = '';
@@ -191,7 +191,7 @@ export const QueryEditor = ({ query, datasource, onChange, onRunQuery }: Props) 
       {scenarioId === 'manual_entry' && <ManualEntryEditor onChange={onUpdate} query={query} onRunQuery={onRunQuery} />}
       {scenarioId === 'random_walk' && <RandomWalkEditor onChange={onInputChange} query={query} />}
       {scenarioId === 'streaming_client' && <StreamingClientEditor onChange={onStreamClientChange} query={query} />}
-      {scenarioId === 'live' && <GrafanaLiveEditor onChange={onUpdate} query={query} />}
+      {scenarioId === 'live' && <PlutonoLiveEditor onChange={onUpdate} query={query} />}
       {scenarioId === 'logs' && (
         <InlineFieldRow>
           <InlineField label="Lines" labelWidth={14}>
@@ -210,7 +210,7 @@ export const QueryEditor = ({ query, datasource, onChange, onRunQuery }: Props) 
         </InlineFieldRow>
       )}
 
-      {scenarioId === 'grafana_api' && (
+      {scenarioId === 'plutono_api' && (
         <InlineField labelWidth={14} label="Endpoint">
           <Select
             options={endpoints}

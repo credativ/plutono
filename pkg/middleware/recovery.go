@@ -25,9 +25,9 @@ import (
 
 	"gopkg.in/macaron.v1"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 var (
@@ -148,7 +148,7 @@ func Recovery(cfg *setting.Cfg) macaron.Handler {
 
 				if ok && ctx.IsApiRequest() {
 					resp := make(map[string]interface{})
-					resp["message"] = "Internal Server Error - Check the Grafana server logs for the detailed error message."
+					resp["message"] = "Internal Server Error - Check the Plutono server logs for the detailed error message."
 
 					if c.Data["ErrorMsg"] != nil {
 						resp["error"] = fmt.Sprintf("%v - %v", c.Data["Title"], c.Data["ErrorMsg"])

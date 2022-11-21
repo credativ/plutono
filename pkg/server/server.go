@@ -15,33 +15,33 @@ import (
 
 	"golang.org/x/sync/errgroup"
 
-	"github.com/grafana/grafana/pkg/api"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/bus"
-	_ "github.com/grafana/grafana/pkg/extensions"
-	"github.com/grafana/grafana/pkg/infra/localcache"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/infra/metrics"
-	_ "github.com/grafana/grafana/pkg/infra/remotecache"
-	_ "github.com/grafana/grafana/pkg/infra/serverlock"
-	_ "github.com/grafana/grafana/pkg/infra/tracing"
-	_ "github.com/grafana/grafana/pkg/infra/usagestats"
-	"github.com/grafana/grafana/pkg/login"
-	"github.com/grafana/grafana/pkg/login/social"
-	"github.com/grafana/grafana/pkg/middleware"
-	_ "github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/registry"
-	_ "github.com/grafana/grafana/pkg/services/alerting"
-	_ "github.com/grafana/grafana/pkg/services/auth"
-	_ "github.com/grafana/grafana/pkg/services/cleanup"
-	_ "github.com/grafana/grafana/pkg/services/librarypanels"
-	_ "github.com/grafana/grafana/pkg/services/ngalert"
-	_ "github.com/grafana/grafana/pkg/services/notifications"
-	_ "github.com/grafana/grafana/pkg/services/provisioning"
-	_ "github.com/grafana/grafana/pkg/services/rendering"
-	_ "github.com/grafana/grafana/pkg/services/search"
-	_ "github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/api"
+	"github.com/credativ/plutono/pkg/api/routing"
+	"github.com/credativ/plutono/pkg/bus"
+	_ "github.com/credativ/plutono/pkg/extensions"
+	"github.com/credativ/plutono/pkg/infra/localcache"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/metrics"
+	_ "github.com/credativ/plutono/pkg/infra/remotecache"
+	_ "github.com/credativ/plutono/pkg/infra/serverlock"
+	_ "github.com/credativ/plutono/pkg/infra/tracing"
+	_ "github.com/credativ/plutono/pkg/infra/usagestats"
+	"github.com/credativ/plutono/pkg/login"
+	"github.com/credativ/plutono/pkg/login/social"
+	"github.com/credativ/plutono/pkg/middleware"
+	_ "github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/registry"
+	_ "github.com/credativ/plutono/pkg/services/alerting"
+	_ "github.com/credativ/plutono/pkg/services/auth"
+	_ "github.com/credativ/plutono/pkg/services/cleanup"
+	_ "github.com/credativ/plutono/pkg/services/librarypanels"
+	_ "github.com/credativ/plutono/pkg/services/ngalert"
+	_ "github.com/credativ/plutono/pkg/services/notifications"
+	_ "github.com/credativ/plutono/pkg/services/provisioning"
+	_ "github.com/credativ/plutono/pkg/services/rendering"
+	_ "github.com/credativ/plutono/pkg/services/search"
+	_ "github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 // Config contains parameters for the New function.
@@ -120,7 +120,7 @@ func (s *Server) init() error {
 
 	s.loadConfiguration()
 	s.writePIDFile()
-	if err := metrics.SetEnvironmentInformation(s.cfg.MetricsGrafanaEnvironmentInfo); err != nil {
+	if err := metrics.SetEnvironmentInformation(s.cfg.MetricsPlutonoEnvironmentInfo); err != nil {
 		return err
 	}
 
@@ -281,7 +281,7 @@ func (s *Server) loadConfiguration() {
 	}
 
 	if err := s.cfg.Load(args); err != nil {
-		fmt.Fprintf(os.Stderr, "Failed to start grafana. error: %s\n", err.Error())
+		fmt.Fprintf(os.Stderr, "Failed to start plutono. error: %s\n", err.Error())
 		os.Exit(1)
 	}
 

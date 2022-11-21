@@ -9,12 +9,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/dashboards"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/dashboards"
+	"github.com/credativ/plutono/pkg/util"
 
-	"github.com/grafana/grafana/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/infra/log"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -62,9 +62,9 @@ func TestCreatingNewDashboardFileReader(t *testing.T) {
 		})
 
 		Convey("using full path", func() {
-			fullPath := "/var/lib/grafana/dashboards"
+			fullPath := "/var/lib/plutono/dashboards"
 			if runtime.GOOS == "windows" {
-				fullPath = `c:\var\lib\grafana`
+				fullPath = `c:\var\lib\plutono`
 			}
 
 			cfg.Options["folder"] = fullPath
@@ -136,7 +136,7 @@ func TestDashboardFileReader(t *testing.T) {
 
 				fakeService.getDashboard = append(fakeService.getDashboard, &models.Dashboard{
 					Updated: stat.ModTime().AddDate(0, 0, -1),
-					Slug:    "grafana",
+					Slug:    "plutono",
 				})
 
 				reader, err := NewDashboardFileReader(cfg, logger)
@@ -190,7 +190,7 @@ func TestDashboardFileReader(t *testing.T) {
 					switch title {
 					case "folderOne", "folderTwo":
 						So(d.Dashboard.IsFolder, ShouldBeTrue)
-					case "Grafana1", "Grafana2", "RootDashboard":
+					case "Plutono1", "Plutono2", "RootDashboard":
 						So(d.Dashboard.IsFolder, ShouldBeFalse)
 					default:
 						So(fmt.Errorf("unknown dashboard title %q", title), ShouldBeNil)

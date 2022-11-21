@@ -1,6 +1,6 @@
 import React, { useState, useCallback } from 'react';
-import { Icon, renderOrCallToRender, stylesFactory, useTheme } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { Icon, renderOrCallToRender, stylesFactory, useTheme } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { css } from 'emotion';
 import { useUpdateEffect } from 'react-use';
 import { Draggable } from 'react-beautiful-dnd';
@@ -116,7 +116,7 @@ export const QueryOperationRow: React.FC<QueryOperationRowProps> = ({
   );
 };
 
-const getQueryOperationRowStyles = stylesFactory((theme: GrafanaTheme) => {
+const getQueryOperationRowStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     wrapper: css`
       margin-bottom: ${theme.spacing.md};

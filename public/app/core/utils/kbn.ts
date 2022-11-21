@@ -9,7 +9,7 @@ import {
   TimeRange,
   ValueFormatterIndex,
   rangeUtil,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 const kbn = {
   valueFormats: {} as ValueFormatterIndex,
@@ -26,14 +26,14 @@ const kbn = {
   } as { [index: string]: number },
   regexEscape: (value: string) => value.replace(/[\\^$*+?.()|[\]{}\/]/g, '\\$&'),
 
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use plutono/data */
   roundInterval: (interval: number) => {
-    deprecationWarning('kbn.ts', 'kbn.roundInterval()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'kbn.roundInterval()', '@credativ/plutono-data');
     return rangeUtil.roundInterval(interval);
   },
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use plutono/data */
   secondsToHms: (s: number) => {
-    deprecationWarning('kbn.ts', 'kbn.secondsToHms()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'kbn.secondsToHms()', '@credativ/plutono-data');
     return rangeUtil.secondsToHms(s);
   },
   secondsToHhmmss: (seconds: number) => {
@@ -54,24 +54,24 @@ const kbn = {
     str = str.replace(/\0/g, '\\0');
     return str;
   },
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use plutono/data */
   describeInterval: (str: string) => {
-    deprecationWarning('kbn.ts', 'kbn.stringToJsRegex()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'kbn.stringToJsRegex()', '@credativ/plutono-data');
     return rangeUtil.describeInterval(str);
   },
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use plutono/data */
   intervalToSeconds: (str: string) => {
-    deprecationWarning('kbn.ts', 'rangeUtil.intervalToSeconds()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'rangeUtil.intervalToSeconds()', '@credativ/plutono-data');
     return rangeUtil.intervalToSeconds(str);
   },
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use plutono/data */
   intervalToMs: (str: string) => {
-    deprecationWarning('kbn.ts', 'rangeUtil.intervalToMs()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'rangeUtil.intervalToMs()', '@credativ/plutono-data');
     return rangeUtil.intervalToMs(str);
   },
-  /** @deprecated since 7.2, use grafana/data */
+  /** @deprecated since 7.2, use plutono/data */
   calculateInterval: (range: TimeRange, resolution: number, lowLimitInterval?: string) => {
-    deprecationWarning('kbn.ts', 'kbn.calculateInterval()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'kbn.calculateInterval()', '@credativ/plutono-data');
     return rangeUtil.calculateInterval(range, resolution, lowLimitInterval);
   },
   queryColorDot: (color: string, diameter: string) => {
@@ -87,9 +87,9 @@ const kbn = {
       .replace(/[^\w ]+/g, '')
       .replace(/ +/g, '-');
   },
-  /** @deprecated since 6.1, use grafana/data */
+  /** @deprecated since 6.1, use plutono/data */
   stringToJsRegex: (str: string) => {
-    deprecationWarning('kbn.ts', 'kbn.stringToJsRegex()', '@grafana/data');
+    deprecationWarning('kbn.ts', 'kbn.stringToJsRegex()', '@credativ/plutono-data');
     return stringToJsRegex(str);
   },
   toFixed: (value: number | null, decimals: number) => {

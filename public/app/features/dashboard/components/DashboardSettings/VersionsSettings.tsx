@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react';
-import { Spinner, HorizontalGroup } from '@grafana/ui';
+import { Spinner, HorizontalGroup } from '@credativ/plutono-ui';
 import { DashboardModel } from '../../state/DashboardModel';
 import { historySrv, RevisionsModel, CalculateDiffOptions } from '../VersionHistory/HistorySrv';
 import { VersionHistoryTable } from '../VersionHistory/VersionHistoryTable';

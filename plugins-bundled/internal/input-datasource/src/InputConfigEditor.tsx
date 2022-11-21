@@ -4,8 +4,8 @@ import React, { PureComponent } from 'react';
 // Types
 import { InputOptions } from './types';
 
-import { TableInputCSV } from '@grafana/ui';
-import { DataSourcePluginOptionsEditorProps, DataFrame, MutableDataFrame } from '@grafana/data';
+import { TableInputCSV } from '@credativ/plutono-ui';
+import { DataSourcePluginOptionsEditorProps, DataFrame, MutableDataFrame } from '@credativ/plutono-data';
 import { dataFrameToCSV } from './utils';
 
 interface Props extends DataSourcePluginOptionsEditorProps<InputOptions> {}
@@ -55,7 +55,7 @@ export class InputConfigEditor extends PureComponent<Props, State> {
           <TableInputCSV text={text} onSeriesParsed={this.onSeriesParsed} width={'100%'} height={200} />
         </div>
 
-        <div className="grafana-info-box">
+        <div className="plutono-info-box">
           This data is stored in the datasource json and is returned to every user in the initial request for any
           datasource. This is an appropriate place to enter a few values. Large datasets will perform better in other
           datasources.

@@ -1,8 +1,8 @@
 import React, { MouseEvent, useCallback, useEffect, useState } from 'react';
 import { VariableOption, VariableWithOptions } from '../types';
-import { selectors } from '@grafana/e2e-selectors';
-import { Button, InlineFieldRow, InlineLabel, useStyles, VerticalGroup } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
+import { Button, InlineFieldRow, InlineLabel, useStyles, VerticalGroup } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 import { css } from 'emotion';
 
 export interface VariableValuesPreviewProps {
@@ -57,7 +57,7 @@ export const VariableValuesPreview: React.FunctionComponent<VariableValuesPrevie
 };
 VariableValuesPreview.displayName = 'VariableValuesPreview';
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: PlutonoTheme) {
   return {
     optionContainer: css`
       margin-left: ${theme.spacing.xs};

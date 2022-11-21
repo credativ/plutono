@@ -3043,6 +3043,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@credativ/plutono-aws-sdk@0.0.4-alpha.1":
+  version "0.0.4-alpha.1"
+  resolved "https://npm.pkg.github.com/download/@credativ/plutono-aws-sdk/0.0.4-alpha.1/b54eb99fd2a2cb3395dcf111c1c6c707071f482c#b54eb99fd2a2cb3395dcf111c1c6c707071f482c"
+  integrity sha512-GME8KFq83SCFAlhQc1/t4un+AIViFXw5pPD5RGHdLa+AecrZpjA+Wd12/OZ9o+dEH2fn2pKnWfx+TG8C6t7mVQ==
+
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/@csstools/convert-colors/-/convert-colors-1.4.0.tgz#ad495dc41b12e75d588c6db8b9834f08fa131eb7"
@@ -3429,11 +3434,6 @@
     semver "~7.3.0"
     source-map "~0.6.1"
     typescript "~3.9.7"
-
-"@grafana/aws-sdk@0.0.3":
-  version "0.0.3"
-  resolved "https://registry.yarnpkg.com/@grafana/aws-sdk/-/aws-sdk-0.0.3.tgz#bc632c6c77971a5474acbe45847420503679fc75"
-  integrity sha512-V0PJLk+oU1C33knurXp8BkT5N2ctDu9b21zpK16vkJAs5aOiH/OaOhQ/IP9ipxYhB+b9PFjr8RXagV/8XJ8xwg==
 
 "@grafana/eslint-config@2.3.0":
   version "2.3.0"

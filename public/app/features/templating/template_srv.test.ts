@@ -1,4 +1,4 @@
-import { dateTime, TimeRange } from '@grafana/data';
+import { dateTime, TimeRange } from '@credativ/plutono-data';
 import { initTemplateSrv } from '../../../test/helpers/initTemplateSrv';
 import { silenceConsoleOutput } from '../../../test/core/utils/silenceConsoleOutput';
 import { VariableAdapter, variableAdapters } from '../variables/adapters';
@@ -510,11 +510,11 @@ describe('templateSrv', () => {
           current: { value: 'constructor', text: 'constructor' },
         },
       ]);
-      _templateSrv.setGrafanaVariable('$__auto_interval_interval', '13m');
+      _templateSrv.setPlutonoVariable('$__auto_interval_interval', '13m');
       _templateSrv.updateIndex();
     });
 
-    it('should replace with text except for grafanaVariables', () => {
+    it('should replace with text except for plutonoVariables', () => {
       const target = _templateSrv.replaceWithText('Server: $server, period: $period');
       expect(target).toBe('Server: All, period: 13m');
     });

@@ -1,8 +1,8 @@
 package notifications
 
 import (
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 // AttachedFile struct represents email attached files.

@@ -9,15 +9,15 @@ import (
 
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/plugins/datasource/wrapper"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin"
+	"github.com/credativ/plutono/pkg/plugins/datasource/wrapper"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util/errutil"
 )
 
 // ErrPluginNotFound is returned when an requested plugin is not installed.
@@ -106,8 +106,8 @@ func (hs *HTTPServer) GetPluginList(c *models.ReqContext) response.Response {
 			Type:          pluginDef.Type,
 			Category:      pluginDef.Category,
 			Info:          &pluginDef.Info,
-			LatestVersion: pluginDef.GrafanaNetVersion,
-			HasUpdate:     pluginDef.GrafanaNetHasUpdate,
+			LatestVersion: pluginDef.PlutonoNetVersion,
+			HasUpdate:     pluginDef.PlutonoNetHasUpdate,
 			DefaultNavUrl: pluginDef.DefaultNavUrl,
 			State:         pluginDef.State,
 			Signature:     pluginDef.Signature,
@@ -161,8 +161,8 @@ func GetPluginSettingByID(c *models.ReqContext) response.Response {
 		BaseUrl:       def.BaseUrl,
 		Module:        def.Module,
 		DefaultNavUrl: def.DefaultNavUrl,
-		LatestVersion: def.GrafanaNetVersion,
-		HasUpdate:     def.GrafanaNetHasUpdate,
+		LatestVersion: def.PlutonoNetVersion,
+		HasUpdate:     def.PlutonoNetHasUpdate,
 		State:         def.State,
 		Signature:     def.Signature,
 		SignatureType: def.SignatureType,

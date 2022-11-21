@@ -1,5 +1,5 @@
 import React, { FunctionComponent } from 'react';
-import { LoadingPlaceholder } from '@grafana/ui';
+import { LoadingPlaceholder } from '@credativ/plutono-ui';
 
 export const LoadingChunkPlaceHolder: FunctionComponent = React.memo(() => (
   <div className="preloader">

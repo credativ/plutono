@@ -7,7 +7,7 @@ RUN powershell Set-ExecutionPolicy RemoteSigned -Scope CurrentUser -Force
 RUN powershell Invoke-Expression (New-Object System.Net.WebClient).DownloadString('https://get.scoop.sh')
 RUN scoop install wixtoolset@3.11.2
 RUN powershell (New-Object Net.WebClient).DownloadFile(\
-  \"https://grafana-downloads.storage.googleapis.com/ci-dependencies/nssm-2.24.zip\", \
+  \"https://plutono-downloads.storage.googleapis.com/ci-dependencies/nssm-2.24.zip\", \
   \"nssm-2.24.zip\")
 RUN scoop install git@2.28.0.windows.1
 RUN scoop bucket add extras

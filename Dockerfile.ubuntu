@@ -19,7 +19,7 @@ RUN yarn build
 
 FROM golang:1.15.1 AS go-builder
 
-WORKDIR /src/grafana
+WORKDIR /src/plutono
 
 COPY go.mod go.sum ./
 
@@ -32,19 +32,19 @@ RUN go run build.go build
 
 FROM ubuntu:20.04
 
-LABEL maintainer="Grafana team <hello@grafana.com>"
+LABEL maintainer="Plutono team <hello@grafana.com>"
 EXPOSE 3000
 
 ARG GF_UID="472"
 ARG GF_GID="472"
 
-ENV PATH="/usr/share/grafana/bin:$PATH" \
-    GF_PATHS_CONFIG="/etc/grafana/grafana.ini" \
-    GF_PATHS_DATA="/var/lib/grafana" \
-    GF_PATHS_HOME="/usr/share/grafana" \
-    GF_PATHS_LOGS="/var/log/grafana" \
-    GF_PATHS_PLUGINS="/var/lib/grafana/plugins" \
-    GF_PATHS_PROVISIONING="/etc/grafana/provisioning"
+ENV PATH="/usr/share/plutono/bin:$PATH" \
+    GF_PATHS_CONFIG="/etc/plutono/plutono.ini" \
+    GF_PATHS_DATA="/var/lib/plutono" \
+    GF_PATHS_HOME="/usr/share/plutono" \
+    GF_PATHS_LOGS="/var/log/plutono" \
+    GF_PATHS_PLUGINS="/var/lib/plutono/plugins" \
+    GF_PATHS_PROVISIONING="/etc/plutono/provisioning"
 
 WORKDIR $GF_PATHS_HOME
 
@@ -54,8 +54,8 @@ COPY conf conf
 RUN apt-get update && apt-get install -y ca-certificates curl
 
 RUN mkdir -p "$GF_PATHS_HOME/.aws" && \
-  addgroup --system --gid $GF_GID grafana && \
-  adduser --uid $GF_UID --system --ingroup grafana grafana && \
+  addgroup --system --gid $GF_GID plutono && \
+  adduser --uid $GF_UID --system --ingroup plutono plutono && \
   mkdir -p "$GF_PATHS_PROVISIONING/datasources" \
              "$GF_PATHS_PROVISIONING/dashboards" \
              "$GF_PATHS_PROVISIONING/notifiers" \
@@ -64,15 +64,15 @@ RUN mkdir -p "$GF_PATHS_HOME/.aws" && \
              "$GF_PATHS_PLUGINS" \
              "$GF_PATHS_DATA" && \
     cp conf/sample.ini "$GF_PATHS_CONFIG" && \
-    cp conf/ldap.toml /etc/grafana/ldap.toml && \
-    chown -R grafana:grafana "$GF_PATHS_DATA" "$GF_PATHS_HOME/.aws" "$GF_PATHS_LOGS" "$GF_PATHS_PLUGINS" "$GF_PATHS_PROVISIONING" && \
+    cp conf/ldap.toml /etc/plutono/ldap.toml && \
+    chown -R plutono:plutono "$GF_PATHS_DATA" "$GF_PATHS_HOME/.aws" "$GF_PATHS_LOGS" "$GF_PATHS_PLUGINS" "$GF_PATHS_PROVISIONING" && \
     chmod -R 777 "$GF_PATHS_DATA" "$GF_PATHS_HOME/.aws" "$GF_PATHS_LOGS" "$GF_PATHS_PLUGINS" "$GF_PATHS_PROVISIONING"
 
-COPY --from=go-builder /src/grafana/bin/linux-amd64/grafana-server /src/grafana/bin/linux-amd64/grafana-cli bin/
+COPY --from=go-builder /src/plutono/bin/linux-amd64/plutono-server /src/plutono/bin/linux-amd64/plutono-cli bin/
 COPY --from=js-builder /usr/src/app/public public
 COPY --from=js-builder /usr/src/app/tools tools
 
 COPY packaging/docker/run.sh /
 
-USER grafana
+USER plutono
 ENTRYPOINT [ "/run.sh" ]

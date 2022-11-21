@@ -1,4 +1,4 @@
-import { FieldColorModeId, FieldConfigSource, FieldMatcherID } from '@grafana/data';
+import { FieldColorModeId, FieldConfigSource, FieldMatcherID } from '@credativ/plutono-data';
 import { changeSeriesColorConfigFactory } from './colorSeriesConfigFactory';
 
 describe('changeSeriesColorConfigFactory', () => {

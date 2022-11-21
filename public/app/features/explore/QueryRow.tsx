@@ -19,8 +19,8 @@ import {
   AbsoluteTimeRange,
   LoadingState,
   EventBusExtended,
-} from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+} from '@credativ/plutono-data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import { ExploreItemState, ExploreId } from 'app/types/explore';
 import { highlightLogsExpressionAction } from './state/explorePane';

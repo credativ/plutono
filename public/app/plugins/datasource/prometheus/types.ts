@@ -1,5 +1,5 @@
-import { DataQuery, DataSourceJsonData, QueryResultMeta, ScopedVars } from '@grafana/data';
-import { FetchError } from '@grafana/runtime';
+import { DataQuery, DataSourceJsonData, QueryResultMeta, ScopedVars } from '@credativ/plutono-data';
+import { FetchError } from '@credativ/plutono-runtime';
 
 export interface PromQuery extends DataQuery {
   expr: string;

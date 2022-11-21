@@ -9,12 +9,12 @@ import {
   RawTimeRange,
   TimeRange,
   toUtc,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 
 import coreModule from 'app/core/core_module';
 import { ContextSrv } from 'app/core/services/context_srv';
 import { DashboardModel } from '../state/DashboardModel';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 import { getShiftedTimeRange, getZoomedTimeRange } from 'app/core/utils/timePicker';
 import { appEvents } from '../../../core/core';
 import { CoreEvents } from '../../../types';
@@ -32,7 +32,7 @@ export class TimeSrv {
 
   /** @ngInject */
   constructor(
-    $rootScope: GrafanaRootScope,
+    $rootScope: PlutonoRootScope,
     private $timeout: ITimeoutService,
     private $location: ILocationService,
     private timer: any,
@@ -219,7 +219,7 @@ export class TimeSrv {
     this.refreshTimer = this.timer.register(
       this.$timeout(() => {
         this.startNextRefreshTimer(afterMs);
-        if (this.contextSrv.isGrafanaVisible()) {
+        if (this.contextSrv.isPlutonoVisible()) {
           this.refreshDashboard();
         } else {
           this.autoRefreshBlocked = true;

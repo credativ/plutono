@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { defaultIntervals } from '@grafana/ui';
+import { defaultIntervals } from '@credativ/plutono-ui';
 
 import { AutoRefreshIntervals, getValidIntervals, Props, validateIntervals } from './AutoRefreshIntervals';
 import { TimeSrv } from '../../services/TimeSrv';

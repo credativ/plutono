@@ -4,9 +4,9 @@
   "id": "graph",
 
   "info": {
-    "description": "Graph Panel for Grafana",
+    "description": "Graph Panel for Plutono",
     "author": {
-      "name": "Grafana Labs",
+      "name": "Plutono Team",
       "url": "https://grafana.com"
     },
     "logos": {

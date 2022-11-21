@@ -1,6 +1,6 @@
 import { getColorForValue } from '../module';
 
-describe('grafanaSingleStat', () => {
+describe('plutonoSingleStat', () => {
   describe('legacy thresholds', () => {
     describe('positive thresholds', () => {
       const data: any = {

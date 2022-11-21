@@ -6,10 +6,10 @@ import (
 	"fmt"
 	"time"
 
+	"github.com/credativ/plutono/pkg/expr/classic"
+	"github.com/credativ/plutono/pkg/expr/mathexp"
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/expr/classic"
-	"github.com/grafana/grafana/pkg/expr/mathexp"
 
 	"gonum.org/v1/gonum/graph/simple"
 )

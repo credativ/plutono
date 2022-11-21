@@ -1,7 +1,7 @@
 import React, { ReactElement } from 'react';
 import { css } from 'emotion';
-import { Icon, useStyles } from '@grafana/ui';
-import { GrafanaTheme } from '@grafana/data';
+import { Icon, useStyles } from '@credativ/plutono-ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
 
 import { ResultInfo } from './types';
 
@@ -30,7 +30,7 @@ export function DashboardQueryRow({ editURL, target }: Props): ReactElement {
   );
 }
 
-function getStyles(theme: GrafanaTheme) {
+function getStyles(theme: PlutonoTheme) {
   return {
     logo: css`
       label: logo;

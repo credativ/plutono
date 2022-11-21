@@ -1,7 +1,7 @@
 import React from 'react';
 import { css, cx } from 'emotion';
-import { GrafanaTheme } from '@grafana/data';
-import { stylesFactory, Button, HorizontalGroup, useTheme } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { stylesFactory, Button, HorizontalGroup, useTheme } from '@credativ/plutono-ui';
 
 type Props = {
   addQueryRowButtonDisabled?: boolean;
@@ -14,7 +14,7 @@ type Props = {
   onClickQueryInspectorButton: () => void;
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     containerMargin: css`
       margin-top: ${theme.spacing.md};

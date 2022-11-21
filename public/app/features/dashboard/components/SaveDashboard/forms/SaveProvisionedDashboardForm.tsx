@@ -1,10 +1,10 @@
 import React, { useCallback, useState } from 'react';
 import { css } from 'emotion';
 import { saveAs } from 'file-saver';
-import { Button, HorizontalGroup, stylesFactory, TextArea, useTheme, VerticalGroup } from '@grafana/ui';
+import { Button, HorizontalGroup, stylesFactory, TextArea, useTheme, VerticalGroup } from '@credativ/plutono-ui';
 import { CopyToClipboard } from 'app/core/components/CopyToClipboard/CopyToClipboard';
 import { SaveDashboardFormProps } from '../types';
-import { AppEvents, GrafanaTheme } from '@grafana/data';
+import { AppEvents, PlutonoTheme } from '@credativ/plutono-data';
 import appEvents from '../../../../../core/app_events';
 
 export const SaveProvisionedDashboardForm: React.FC<SaveDashboardFormProps> = ({ dashboard, onCancel }) => {
@@ -31,14 +31,14 @@ export const SaveProvisionedDashboardForm: React.FC<SaveDashboardFormProps> = ({
     <>
       <VerticalGroup spacing="lg">
         <small>
-          This dashboard cannot be saved from Grafana&apos;s UI since it has been provisioned from another source. Copy
+          This dashboard cannot be saved from Plutono&apos;s UI since it has been provisioned from another source. Copy
           the JSON or save it to a file below. Then you can update your dashboard in corresponding provisioning source.
           <br />
           <i>
             See{' '}
             <a
               className="external-link"
-              href="http://docs.grafana.org/administration/provisioning/#dashboards"
+              href="http://docs.plutono.org/administration/provisioning/#dashboards"
               target="_blank"
               rel="noreferrer"
             >
@@ -72,7 +72,7 @@ export const SaveProvisionedDashboardForm: React.FC<SaveDashboardFormProps> = ({
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     json: css`
       height: 400px;

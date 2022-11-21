@@ -1,12 +1,12 @@
 import React, { FC } from 'react';
-import { getBackendSrv } from '@grafana/runtime';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import Page from 'app/core/components/Page/Page';
-import { Button, Input, Field, Form } from '@grafana/ui';
+import { Button, Input, Field, Form } from '@credativ/plutono-ui';
 import { getConfig } from 'app/core/config';
 import { StoreState } from 'app/types';
 import { hot } from 'react-hot-loader';
 import { connect } from 'react-redux';
-import { NavModel } from '@grafana/data';
+import { NavModel } from '@credativ/plutono-data';
 import { getNavModel } from '../../core/selectors/navModel';
 
 const createOrg = async (newOrg: { name: string }) => {

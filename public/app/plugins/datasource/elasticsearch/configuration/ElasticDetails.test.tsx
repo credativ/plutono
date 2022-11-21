@@ -3,7 +3,7 @@ import { last } from 'lodash';
 import { mount } from 'enzyme';
 import { ElasticDetails } from './ElasticDetails';
 import { createDefaultConfigOptions } from './mocks';
-import { LegacyForms } from '@grafana/ui';
+import { LegacyForms } from '@credativ/plutono-ui';
 const { Select } = LegacyForms;
 
 describe('ElasticDetails', () => {

@@ -1,4 +1,4 @@
-import { getGrafanaLiveSrv, getLegacyAngularInjector } from '@grafana/runtime';
+import { getPlutonoLiveSrv, getLegacyAngularInjector } from '@credativ/plutono-runtime';
 import { getDashboardSrv } from '../../dashboard/services/DashboardSrv';
 import { appEvents } from 'app/core/core';
 import {
@@ -10,11 +10,11 @@ import {
   LiveChannelConnectionState,
   isLiveChannelStatusEvent,
   isLiveChannelMessageEvent,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { CoreEvents } from 'app/types';
 import { DashboardChangedModal } from './DashboardChangedModal';
 import { DashboardEvent, DashboardEventAction } from './types';
-import { CoreGrafanaLiveFeature } from '../scopes';
+import { CorePlutonoLiveFeature } from '../scopes';
 import { sessionId } from '../live';
 
 class DashboardWatcher {
@@ -43,14 +43,14 @@ class DashboardWatcher {
       sessionId,
       uid: this.uid!,
       action: this.editing ? DashboardEventAction.EditingStarted : DashboardEventAction.EditingCanceled,
-      message: (window as any).grafanaBootData?.user?.name,
+      message: (window as any).plutonoBootData?.user?.name,
       timestamp: Date.now(),
     };
     this.channel!.publish!(msg);
   }
 
   watch(uid: string) {
-    const live = getGrafanaLiveSrv();
+    const live = getPlutonoLiveSrv();
     if (!live) {
       return;
     }
@@ -59,7 +59,7 @@ class DashboardWatcher {
     if (uid !== this.uid) {
       this.leave();
       this.channel = live.getChannel({
-        scope: LiveChannelScope.Grafana,
+        scope: LiveChannelScope.Plutono,
         namespace: 'dashboard',
         path: `uid/${uid}`,
       });
@@ -162,7 +162,7 @@ class DashboardWatcher {
 
 export const dashboardWatcher = new DashboardWatcher();
 
-export function getDashboardChannelsFeature(): CoreGrafanaLiveFeature {
+export function getDashboardChannelsFeature(): CorePlutonoLiveFeature {
   const dashboardConfig: LiveChannelConfig = {
     path: '${uid}',
     description: 'Dashboard change events',

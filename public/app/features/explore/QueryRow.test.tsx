@@ -2,7 +2,7 @@ import React from 'react';
 import { QueryRow, QueryRowProps } from './QueryRow';
 import { shallow } from 'enzyme';
 import { ExploreId } from 'app/types/explore';
-import { DataSourceApi, TimeRange, AbsoluteTimeRange, PanelData, EventBusExtended } from '@grafana/data';
+import { DataSourceApi, TimeRange, AbsoluteTimeRange, PanelData, EventBusExtended } from '@credativ/plutono-data';
 
 const setup = (propOverrides?: object) => {
   const props: QueryRowProps = {

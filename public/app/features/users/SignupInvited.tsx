@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import { useSelector } from 'react-redux';
-import { getBackendSrv } from '@grafana/runtime';
-import { Button, Field, Form, Input } from '@grafana/ui';
+import { getBackendSrv } from '@credativ/plutono-runtime';
+import { Button, Field, Form, Input } from '@credativ/plutono-ui';
 import { useAsync } from 'react-use';
 
 import { StoreState } from 'app/types';
@@ -18,9 +18,9 @@ interface FormModel {
 
 const navModel = {
   main: {
-    icon: 'grafana',
+    icon: 'plutono',
     text: 'Invite',
-    subTitle: 'Register your Grafana account',
+    subTitle: 'Register your Plutono account',
     breadcrumbs: [{ title: 'Login', url: 'login' }],
   },
   node: {
@@ -60,7 +60,7 @@ export const SignupInvitedPage: FC = () => {
         <h3 className="page-sub-heading">Hello {greeting || 'there'}.</h3>
 
         <div className="modal-tagline p-b-2">
-          <em>{invitedBy || 'Someone'}</em> has invited you to join Grafana and the organization{' '}
+          <em>{invitedBy || 'Someone'}</em> has invited you to join Plutono and the organization{' '}
           <span className="highlight-word">{contextSrv.user.orgName}</span>
           <br />
           Please complete the following and choose a password to accept your invitation and continue:

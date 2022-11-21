@@ -1,5 +1,5 @@
 import React, { Fragment, FunctionComponent, useEffect } from 'react';
-import { Input, InlineLabel } from '@grafana/ui';
+import { Input, InlineLabel } from '@credativ/plutono-ui';
 import { MetricAggregationAction } from '../../state/types';
 import { changeMetricAttribute } from '../../state/actions';
 import { css } from 'emotion';

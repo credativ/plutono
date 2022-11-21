@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Button, Field, Input, Modal, useStyles } from '@grafana/ui';
+import { Button, Field, Input, Modal, useStyles } from '@credativ/plutono-ui';
 import { FolderPicker } from 'app/core/components/Select/FolderPicker';
 import { PanelModel } from '../../../dashboard/state';
 import { css } from 'emotion';

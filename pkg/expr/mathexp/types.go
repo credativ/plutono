@@ -1,8 +1,8 @@
 package mathexp
 
 import (
+	"github.com/credativ/plutono/pkg/expr/mathexp/parse"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/expr/mathexp/parse"
 )
 
 // Results is a container for Value interfaces.

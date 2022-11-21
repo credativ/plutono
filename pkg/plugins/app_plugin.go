@@ -5,12 +5,12 @@ import (
 	"path/filepath"
 	"strings"
 
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin/grpcplugin"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util/errutil"
 	"github.com/gosimple/slug"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin/grpcplugin"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
 )
 
 type AppPlugin struct {

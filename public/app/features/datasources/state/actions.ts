@@ -3,7 +3,7 @@ import { getBackendSrv } from 'app/core/services/backend_srv';
 import { getDatasourceSrv } from 'app/features/plugins/datasource_srv';
 import { updateLocation, updateNavIndex } from 'app/core/actions';
 import { buildNavModel } from './navModel';
-import { DataSourcePluginMeta, DataSourceSettings } from '@grafana/data';
+import { DataSourcePluginMeta, DataSourceSettings } from '@credativ/plutono-data';
 import { DataSourcePluginCategory, ThunkResult, ThunkDispatch } from 'app/types';
 import { getPluginSettings } from 'app/features/plugins/PluginSettingsCache';
 import { importDataSourcePlugin } from 'app/features/plugins/plugin_loader';
@@ -21,7 +21,7 @@ import {
 } from './reducers';
 import { buildCategories } from './buildCategories';
 import { getDataSource, getDataSourceMeta } from './selectors';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { getDataSourceSrv } from '@credativ/plutono-runtime';
 
 export interface DataSourceTypesLoadedPayload {
   plugins: DataSourcePluginMeta[];

@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
-import { Segment } from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
+import { Segment } from '@credativ/plutono-ui';
+import { SelectableValue } from '@credativ/plutono-data';
 
 interface Props {
   value: string;

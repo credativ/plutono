@@ -1,6 +1,6 @@
 # Markdown style guide
 
-This guide for Markdown style helps keep contributions consistent across all documentation created for Grafana products. Refer to the guide and update its sections as needed when a Subject Matter Expert answers a question on Markdown style, or a decision is made about how to apply Markdown.
+This guide for Markdown style helps keep contributions consistent across all documentation created for Plutono products. Refer to the guide and update its sections as needed when a Subject Matter Expert answers a question on Markdown style, or a decision is made about how to apply Markdown.
 
 ## Headers
 
@@ -128,7 +128,7 @@ Include images in a document using the following syntax:
 
 **Examples:** 
 
-- \!\[Grafana logo](/link/to/grafanalogo/logo.png)
+- \!\[Plutono logo](/link/to/plutonologo/logo.png)
 - \!\[Example](/img/docs/folder_name/alert_test_rule.png)
 
 This follows the format of "!", alt text wrapped in "[]" and the link URL wrapped in "()".

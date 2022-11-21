@@ -8,8 +8,8 @@ mkdir -p /deb-repo/db   \
          /deb-repo/repo \
          /deb-repo/tmp
 
-aptly repo create -distribution=stable -component=main grafana
+aptly repo create -distribution=stable -component=main plutono
 aptly repo create -distribution=beta -component=main beta
 
-aptly publish repo -architectures=amd64,i386,arm64,armhf grafana filesystem:repo:grafana
-aptly publish repo -architectures=amd64,i386,arm64,armhf beta filesystem:repo:grafana
+aptly publish repo -architectures=amd64,i386,arm64,armhf plutono filesystem:repo:plutono
+aptly publish repo -architectures=amd64,i386,arm64,armhf beta filesystem:repo:plutono

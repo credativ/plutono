@@ -358,7 +358,7 @@
       // Remove icon clicked
       self.$container.on('click', '[data-role=remove]', $.proxy(function(event) {
         self.remove($(event.target).closest('.tag').data('item'));
-        // Grafana mod, if tags input used in popover the click event will bubble up and hide popover
+        // Plutono mod, if tags input used in popover the click event will bubble up and hide popover
         event.stopPropagation();
       }, self));
 

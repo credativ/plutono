@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { OperatorSegment } from './OperatorSegment';
 import { AdHocVariableFilter } from 'app/features/variables/types';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 import { AdHocFilterKey } from './AdHocFilterKey';
 import { AdHocFilterValue } from './AdHocFilterValue';
 

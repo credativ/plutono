@@ -42,9 +42,9 @@ If I was writing content for a site called *Doggie handbook*, I might organize i
 
 ### Audience
 
-Write for an audience that is computer literate and has general technical knowledge, but is not necessarily familiar with Grafana or the finer points of observability. 
+Write for an audience that is computer literate and has general technical knowledge, but is not necessarily familiar with Plutono or the finer points of observability. 
 
-Pretend you are explaining your topic to a brand new Grafana user or developer.
+Pretend you are explaining your topic to a brand new Plutono user or developer.
 
 ### Self-contained
 

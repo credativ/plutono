@@ -6,8 +6,8 @@ import {
   PluginType,
   dateTime,
   ArrayVector,
-} from '@grafana/data';
-import { BackendSrv, BackendSrvRequest, getBackendSrv, setBackendSrv } from '@grafana/runtime';
+} from '@credativ/plutono-data';
+import { BackendSrv, BackendSrvRequest, getBackendSrv, setBackendSrv } from '@credativ/plutono-runtime';
 import { testResponse } from './testResponse';
 
 describe('JaegerDatasource', () => {

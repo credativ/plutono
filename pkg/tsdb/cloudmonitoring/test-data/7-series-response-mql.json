@@ -23,7 +23,7 @@
     {
       "labelValues": [
         {
-          "stringValue": "grafana-prod"
+          "stringValue": "plutono-prod"
         },
         {
           "stringValue": "asia-northeast1-c"

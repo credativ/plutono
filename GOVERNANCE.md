@@ -1,22 +1,22 @@
 # Governance
 
-This document describes the rules and governance of the project. It is meant to be followed by all the developers of the project and the Grafana community. Common terminology used in this governance document are listed below:
+This document describes the rules and governance of the project. It is meant to be followed by all the developers of the project and the Plutono community. Common terminology used in this governance document are listed below:
 
-- **Team members**: Any members of the private [grafana-team][team] Google group.
+- **Team members**: Any members of the private [plutono-team][team] Google group.
 
 - **Maintainers**: Maintainers lead an individual project or parts thereof ([`MAINTAINERS.md`][maintainers]).
 
-- **Projects**: A single repository in the Grafana GitHub organization and listed below is referred to as a project:
+- **Projects**: A single repository in the Plutono GitHub organization and listed below is referred to as a project:
 
   - clock-panel
   - devtools
   - gel-app
-  - grafana
-  - grafana-github-datasource
-  - grafana-image-renderer
-  - grafana-kiosk
-  - grafana-plugin-sdk-go
-  - grafana-polystat-panel
+  - plutono
+  - plutono-github-datasource
+  - plutono-image-renderer
+  - plutono-kiosk
+  - plutono-plugin-sdk-go
+  - plutono-polystat-panel
   - grafonnet-lib
   - kairosdb-datasource
   - piechart-panel
@@ -31,11 +31,11 @@ This document describes the rules and governance of the project. It is meant to 
   - tutorials
   - worldmap-panel
 
-- **The Grafana project**: The sum of all activities performed under this governance, concerning one or more repositories or the community.
+- **The Plutono project**: The sum of all activities performed under this governance, concerning one or more repositories or the community.
 
 ## Values
 
-The Grafana developers and community are expected to follow the values defined in the Grafana Code of Conduct. Furthermore, the Grafana community strives for kindness, giving feedback effectively, and building a welcoming environment. The Grafana developers generally decide by consensus and only resort to conflict resolution by a majority vote if consensus cannot be reached.
+The Plutono developers and community are expected to follow the values defined in the Plutono Code of Conduct. Furthermore, the Plutono community strives for kindness, giving feedback effectively, and building a welcoming environment. The Plutono developers generally decide by consensus and only resort to conflict resolution by a majority vote if consensus cannot be reached.
 
 ## Projects
 
@@ -45,11 +45,11 @@ Each project must have a [`MAINTAINERS.md`][maintainers] file with at least one 
 
 ### Team members
 
-Team member status may be given to those who have made ongoing contributions to the Grafana project for at least 3 months. This is usually in the form of code improvements and/or notable work on documentation, but organizing events or user support could also be taken into account.
+Team member status may be given to those who have made ongoing contributions to the Plutono project for at least 3 months. This is usually in the form of code improvements and/or notable work on documentation, but organizing events or user support could also be taken into account.
 
-New members may be proposed by any existing member by email to [grafana-team][team]. It is highly desirable to reach consensus about acceptance of a new member. However, the proposal is ultimately voted on by a formal [supermajority vote](#supermajority-vote).
+New members may be proposed by any existing member by email to [plutono-team][team]. It is highly desirable to reach consensus about acceptance of a new member. However, the proposal is ultimately voted on by a formal [supermajority vote](#supermajority-vote).
 
-If the new member proposal is accepted, the proposed team member should be contacted privately via email to confirm or deny their acceptance of team membership. This email will also be CC'd to [grafana-team][team] for record-keeping purposes.
+If the new member proposal is accepted, the proposed team member should be contacted privately via email to confirm or deny their acceptance of team membership. This email will also be CC'd to [plutono-team][team] for record-keeping purposes.
 
 If they choose to accept, the [onboarding](#onboarding) procedure is followed.
 
@@ -117,7 +117,7 @@ A project may have multiple maintainers, as long as the responsibilities are cle
 
 ### Technical decisions
 
-Technical decisions that only affect a single project are made informally by the maintainer of this project, and [rough consensus](#consensus) is assumed. Technical decisions that span multiple parts of the Grafana project should be discussed and made on the [Grafana developer mailing list][devs].
+Technical decisions that only affect a single project are made informally by the maintainer of this project, and [rough consensus](#consensus) is assumed. Technical decisions that span multiple parts of the Plutono project should be discussed and made on the [Plutono developer mailing list][devs].
 
 Decisions are usually made by [rough consensus](#consensus). If no consensus can be reached, the matter may be resolved by [majority vote](#majority-vote).
 
@@ -131,7 +131,7 @@ Any matter that needs a decision may be called to a vote by any member if they d
 
 ## Voting
 
-The Grafana project usually runs by informal consensus, however sometimes a formal decision must be made.
+The Plutono project usually runs by informal consensus, however sometimes a formal decision must be made.
 
 Depending on the subject matter, as laid out [above](#decision-making), different methods of voting are used.
 
@@ -145,7 +145,7 @@ For public discussions, anyone interested is encouraged to participate. Formal p
 
 ### Consensus
 
-The default decision making mechanism for the Grafana project is [rough][rough] consensus. This means that any decision on technical issues is considered supported by the [team][team] as long as nobody objects or the objection has been considered but not necessarily accommodated.
+The default decision making mechanism for the Plutono project is [rough][rough] consensus. This means that any decision on technical issues is considered supported by the [team][team] as long as nobody objects or the objection has been considered but not necessarily accommodated.
 
 Silence on any consensus decision is implicit agreement and equivalent to explicit agreement. Explicit agreement may be stated at will. Decisions may, but do not need to be called out and put up for decision on the [developers mailing list][devs] at any time and by anyone.
 
@@ -198,8 +198,8 @@ The ex-member is
 
 If needed, we reserve the right to publicly announce removal.
 
-[coc]: https://github.com/grafana/grafana/blob/master/CODE_OF_CONDUCT.md
-[devs]: https://groups.google.com/forum/#!forum/grafana-developers
-[maintainers]: https://github.com/grafana/grafana/blob/master/MAINTAINERS.md
+[coc]: https://github.com/credativ/plutono/blob/master/CODE_OF_CONDUCT.md
+[devs]: https://groups.google.com/forum/#!forum/plutono-developers
+[maintainers]: https://github.com/credativ/plutono/blob/master/MAINTAINERS.md
 [rough]: https://tools.ietf.org/html/rfc7282
-[team]: https://groups.google.com/forum/#!forum/grafana-team
+[team]: https://groups.google.com/forum/#!forum/plutono-team

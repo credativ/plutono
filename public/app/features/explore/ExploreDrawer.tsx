@@ -4,10 +4,10 @@ import { Resizable, ResizeCallback } from 're-resizable';
 import { css, cx, keyframes } from 'emotion';
 
 // Services & Utils
-import { stylesFactory, useTheme } from '@grafana/ui';
+import { stylesFactory, useTheme } from '@credativ/plutono-ui';
 
 // Types
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 
 const drawerSlide = keyframes`
   0% {
@@ -19,7 +19,7 @@ const drawerSlide = keyframes`
   }
 `;
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   const shadowColor = theme.isLight ? theme.palette.gray4 : theme.palette.black;
 
   return {

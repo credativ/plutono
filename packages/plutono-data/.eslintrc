@@ -1,0 +1,13 @@
+{
+  "rules": {
+    "no-restricted-imports": ["error", { "patterns": ["@credativ/plutono-runtime", "@credativ/plutono-ui", "@credativ/plutono-data", "@credativ/plutono-e2e/*"] }]
+  },
+  "overrides": [
+    {
+      "files": ["**/*.test.{ts,tsx}"],
+      "rules": {
+        "no-restricted-imports": "off"
+      }
+    }
+  ]
+}

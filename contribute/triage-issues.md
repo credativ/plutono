@@ -7,7 +7,7 @@ Triage helps ensure that issues resolve quickly by:
 - Lowering the issue count by preventing duplicate issues.
 - Streamlining the development process by preventing duplicate discussions.
 
-This document gives you some ideas on what you can do to help. For more information, read more about [how the core Grafana team triage issues](/ISSUE_TRIAGE.md).
+This document gives you some ideas on what you can do to help. For more information, read more about [how the core Plutono team triage issues](/ISSUE_TRIAGE.md).
 
 ## Improve issues
 

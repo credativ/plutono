@@ -8,8 +8,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -161,7 +161,7 @@ func TestAccountDataAccess(t *testing.T) {
 					So(query.Result.Login, ShouldEqual, "ac2")
 					So(query.Result.OrgRole, ShouldEqual, "Admin")
 					So(query.Result.OrgName, ShouldEqual, "ac2@test.com")
-					So(query.Result.IsGrafanaAdmin, ShouldBeTrue)
+					So(query.Result.IsPlutonoAdmin, ShouldBeTrue)
 				})
 
 				Convey("Can get user organizations", func() {

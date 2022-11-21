@@ -98,7 +98,7 @@ exports[`Render should render alpha info text 1`] = `
               "info": Object {
                 "author": Object {
                   "name": "Grafana Labs",
-                  "url": "url/to/GrafanaLabs",
+                  "url": "url/to/PlutonoLabs",
                 },
                 "description": "pretty decent plugin",
                 "links": Array [
@@ -375,7 +375,7 @@ exports[`Render should render is ready only message 1`] = `
               "info": Object {
                 "author": Object {
                   "name": "Grafana Labs",
-                  "url": "url/to/GrafanaLabs",
+                  "url": "url/to/PlutonoLabs",
                 },
                 "description": "pretty decent plugin",
                 "links": Array [

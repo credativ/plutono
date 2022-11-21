@@ -1,4 +1,4 @@
-// Check to see if browser is not supported by Grafana
+// Check to see if browser is not supported by Plutono
 export function checkBrowserCompatibility() {
   const isIE = navigator.userAgent.indexOf('MSIE') > -1;
   const isEdge = navigator.userAgent.indexOf('Edge/') > -1 || navigator.userAgent.indexOf('Edg/') > -1;

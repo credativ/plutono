@@ -3,10 +3,10 @@ import { connect, MapDispatchToProps } from 'react-redux';
 import { css, cx, keyframes } from 'emotion';
 import _ from 'lodash';
 import tinycolor from 'tinycolor2';
-import { LocationUpdate } from '@grafana/runtime';
-import { Icon, IconButton, styleMixins, useStyles } from '@grafana/ui';
-import { selectors } from '@grafana/e2e-selectors';
-import { DateTimeInput, GrafanaTheme } from '@grafana/data';
+import { LocationUpdate } from '@credativ/plutono-runtime';
+import { Icon, IconButton, styleMixins, useStyles } from '@credativ/plutono-ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
+import { DateTimeInput, PlutonoTheme } from '@credativ/plutono-data';
 
 import config from 'app/core/config';
 import store from 'app/core/store';
@@ -218,7 +218,7 @@ const AddPanelWidgetHandle: React.FC<AddPanelWidgetHandleProps> = ({ children, o
   );
 };
 
-const getStyles = (theme: GrafanaTheme) => {
+const getStyles = (theme: PlutonoTheme) => {
   const pulsate = keyframes`
     0% {box-shadow: 0 0 0 2px ${theme.colors.bodyBg}, 0 0 0px 4px ${theme.colors.formFocusOutline};}
     50% {box-shadow: 0 0 0 2px ${theme.colors.bodyBg}, 0 0 0px 4px ${tinycolor(theme.colors.formFocusOutline)

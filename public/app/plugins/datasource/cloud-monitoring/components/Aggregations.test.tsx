@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import { shallow } from 'enzyme';
-import { Segment } from '@grafana/ui';
+import { Segment } from '@credativ/plutono-ui';
 import { Aggregations, Props } from './Aggregations';
 import { ValueTypes, MetricKind } from '../constants';
 import { TemplateSrvStub } from 'test/specs/helpers';

@@ -3,8 +3,8 @@ package imguploader
 import (
 	"testing"
 
-	"github.com/grafana/grafana/pkg/components/imguploader/gcs"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/components/imguploader/gcs"
+	"github.com/credativ/plutono/pkg/setting"
 
 	. "github.com/smartystreets/goconvey/convey"
 )
@@ -125,7 +125,7 @@ func TestImageUploaderFactory(t *testing.T) {
 			So(err, ShouldBeNil)
 			_, err = gcpSec.NewKey("key_file", "/etc/secrets/project-79a52befa3f6.json")
 			So(err, ShouldBeNil)
-			_, err = gcpSec.NewKey("bucket", "project-grafana-east")
+			_, err = gcpSec.NewKey("bucket", "project-plutono-east")
 			So(err, ShouldBeNil)
 
 			uploader, err := NewImageUploader()
@@ -134,7 +134,7 @@ func TestImageUploaderFactory(t *testing.T) {
 			original, ok := uploader.(*gcs.Uploader)
 			So(ok, ShouldBeTrue)
 			So(original.KeyFile, ShouldEqual, "/etc/secrets/project-79a52befa3f6.json")
-			So(original.Bucket, ShouldEqual, "project-grafana-east")
+			So(original.Bucket, ShouldEqual, "project-plutono-east")
 		})
 
 		Convey("AzureBlobUploader config", func() {

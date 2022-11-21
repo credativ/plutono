@@ -9,18 +9,18 @@ import (
 	"path/filepath"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/infra/fs"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/server"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/infra/fs"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/server"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 	"gopkg.in/ini.v1"
 )
 
-// StartGrafana starts a Grafana server.
+// StartPlutono starts a Plutono server.
 // The server address is returned.
-func StartGrafana(t *testing.T, grafDir, cfgPath string, sqlStore *sqlstore.SQLStore) string {
+func StartPlutono(t *testing.T, grafDir, cfgPath string, sqlStore *sqlstore.SQLStore) string {
 	t.Helper()
 
 	origSQLStore := registry.GetService(sqlstore.ServiceName)
@@ -59,7 +59,7 @@ func StartGrafana(t *testing.T, grafDir, cfgPath string, sqlStore *sqlstore.SQLS
 		server.Shutdown("")
 	})
 
-	// Wait for Grafana to be ready
+	// Wait for Plutono to be ready
 	addr := listener.Addr().String()
 	resp, err := http.Get(fmt.Sprintf("http://%s/api/health", addr))
 	require.NoError(t, err)
@@ -70,12 +70,12 @@ func StartGrafana(t *testing.T, grafDir, cfgPath string, sqlStore *sqlstore.SQLS
 	})
 	require.Equal(t, 200, resp.StatusCode)
 
-	t.Logf("Grafana is listening on %s", addr)
+	t.Logf("Plutono is listening on %s", addr)
 
 	return addr
 }
 
-// SetUpDatabase sets up the Grafana database.
+// SetUpDatabase sets up the Plutono database.
 func SetUpDatabase(t *testing.T, grafDir string) *sqlstore.SQLStore {
 	t.Helper()
 
@@ -94,8 +94,8 @@ func SetUpDatabase(t *testing.T, grafDir string) *sqlstore.SQLStore {
 	return sqlStore
 }
 
-// CreateGrafDir creates the Grafana directory.
-func CreateGrafDir(t *testing.T, opts ...GrafanaOpts) (string, string) {
+// CreateGrafDir creates the Plutono directory.
+func CreateGrafDir(t *testing.T, opts ...PlutonoOpts) (string, string) {
 	t.Helper()
 
 	tmpDir, err := ioutil.TempDir("", "")
@@ -134,11 +134,11 @@ func CreateGrafDir(t *testing.T, opts ...GrafanaOpts) (string, string) {
 	viewsDir := filepath.Join(publicDir, "views")
 	err = fs.CopyRecursive(filepath.Join(rootDir, "public", "views"), viewsDir)
 	require.NoError(t, err)
-	// Copy index template to index.html, since Grafana will try to use the latter
+	// Copy index template to index.html, since Plutono will try to use the latter
 	err = fs.CopyFile(filepath.Join(rootDir, "public", "views", "index-template.html"),
 		filepath.Join(viewsDir, "index.html"))
 	require.NoError(t, err)
-	// Copy error template to error.html, since Grafana will try to use the latter
+	// Copy error template to error.html, since Plutono will try to use the latter
 	err = fs.CopyFile(filepath.Join(rootDir, "public", "views", "error-template.html"),
 		filepath.Join(viewsDir, "error.html"))
 	require.NoError(t, err)
@@ -207,6 +207,6 @@ func CreateGrafDir(t *testing.T, opts ...GrafanaOpts) (string, string) {
 	return tmpDir, cfgPath
 }
 
-type GrafanaOpts struct {
+type PlutonoOpts struct {
 	EnableCSP bool
 }

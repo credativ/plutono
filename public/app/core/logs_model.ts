@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { colors, ansicolor } from '@grafana/ui';
+import { colors, ansicolor } from '@credativ/plutono-ui';
 
 import {
   Labels,
@@ -29,10 +29,10 @@ import {
   dateTime,
   AbsoluteTimeRange,
   sortInAscendingOrder,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { getThemeColor } from 'app/core/utils/colors';
 
-import { SIPrefix } from '@grafana/data/src/valueFormats/symbolFormatters';
+import { SIPrefix } from '@credativ/plutono-data/src/valueFormats/symbolFormatters';
 
 export const LogLevelColor = {
   [LogLevel.critical]: colors[7],

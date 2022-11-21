@@ -5,7 +5,7 @@ import { connect } from 'react-redux';
 import { StoreState } from 'app/types';
 import { ExploreId } from 'app/types/explore';
 
-import { CustomScrollbar, ErrorBoundaryAlert } from '@grafana/ui';
+import { CustomScrollbar, ErrorBoundaryAlert } from '@credativ/plutono-ui';
 import { lastSavedUrl, resetExploreAction, richHistoryUpdatedAction } from './state/main';
 import { getRichHistory } from '../../core/utils/richHistory';
 import { ExplorePaneContainer } from './ExplorePaneContainer';

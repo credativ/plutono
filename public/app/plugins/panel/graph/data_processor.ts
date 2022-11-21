@@ -1,5 +1,5 @@
 import _ from 'lodash';
-import { colors } from '@grafana/ui';
+import { colors } from '@credativ/plutono-ui';
 import {
   DataFrame,
   dateTime,
@@ -9,7 +9,7 @@ import {
   getFieldDisplayName,
   getTimeField,
   TimeRange,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import TimeSeries from 'app/core/time_series2';
 import config from 'app/core/config';
 

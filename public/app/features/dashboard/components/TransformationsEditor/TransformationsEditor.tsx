@@ -12,19 +12,19 @@ import {
   withTheme,
   Input,
   IconButton,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import {
   DataFrame,
   DataTransformerConfig,
   DocsId,
-  GrafanaTheme,
+  PlutonoTheme,
   PanelData,
   SelectableValue,
   standardTransformersRegistry,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { Card, CardProps } from '../../../../core/components/Card/Card';
 import { css } from 'emotion';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 import { Unsubscribable } from 'rxjs';
 import { PanelModel } from '../../state';
 import { getDocsLink } from 'app/core/utils/docsLinks';
@@ -366,7 +366,7 @@ const TransformationCard: React.FC<CardProps> = (props) => {
   return <Card {...props} className={styles.card} />;
 };
 
-const getTransformationCardStyles = stylesFactory((theme: GrafanaTheme) => {
+const getTransformationCardStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     card: css`
       background: ${theme.colors.bg2};

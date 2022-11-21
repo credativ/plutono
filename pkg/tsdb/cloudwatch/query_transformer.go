@@ -8,8 +8,8 @@ import (
 	"strings"
 	"time"
 
+	"github.com/credativ/plutono/pkg/tsdb"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/tsdb"
 )
 
 // returns a map of queries with query id as key. In the case a q request query
@@ -140,7 +140,7 @@ func (e *cloudWatchExecutor) transformQueryResponsesToQueryResult(cloudwatchResp
 	return results, nil
 }
 
-// buildDeepLink generates a deep link from Grafana to the CloudWatch console. The link params are based on metric(s) for a given query row in the Query Editor.
+// buildDeepLink generates a deep link from Plutono to the CloudWatch console. The link params are based on metric(s) for a given query row in the Query Editor.
 func buildDeepLink(refID string, requestQueries []*requestQuery, executedQueries []executedQuery, startTime time.Time, endTime time.Time) (string, error) {
 	if isMathExpression(executedQueries) {
 		return "", nil

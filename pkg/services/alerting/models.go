@@ -3,7 +3,7 @@ package alerting
 import (
 	"sync"
 
-	"github.com/grafana/grafana/pkg/components/null"
+	"github.com/credativ/plutono/pkg/components/null"
 )
 
 // Job holds state about when the alert rule should be evaluated.

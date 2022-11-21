@@ -1,8 +1,8 @@
 import _ from 'lodash';
 import { Observable, of } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { getBackendSrv } from '@grafana/runtime';
-import { DataQueryResponse, ScopedVars } from '@grafana/data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
+import { DataQueryResponse, ScopedVars } from '@credativ/plutono-data';
 
 import ResponseParser from './response_parser';
 import PostgresQuery from 'app/plugins/datasource/postgres/postgres_query';

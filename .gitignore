@@ -25,7 +25,7 @@ vendor/
 /public/fonts/dejavu
 
 # Enterprise devenv
-/devenv/docker/blocks/grafana-enterprise
+/devenv/docker/blocks/plutono-enterprise
 
 /tmp
 tools/phantomjs/phantomjs
@@ -65,13 +65,13 @@ conf/custom.ini
 /conf/ldap_dev.toml
 /conf/ldap_freeipa.toml
 profile.cov
-/grafana
+/plutono
 /local
 .notouch
 /Makefile.local
-/pkg/cmd/grafana-cli/grafana-cli
-/pkg/cmd/grafana-server/grafana-server
-/pkg/cmd/grafana-server/debug
+/pkg/cmd/plutono-cli/plutono-cli
+/pkg/cmd/plutono-server/plutono-server
+/pkg/cmd/plutono-server/debug
 /pkg/extensions/*
 !/pkg/extensions/main.go
 /public/app/extensions
@@ -113,9 +113,9 @@ debug.test
 compilation-stats.json
 
 # e2e tests
-/packages/grafana-e2e/cypress/screenshots
-/packages/grafana-e2e/cypress/videos
-/packages/grafana-e2e/cypress/logs
+/packages/plutono-e2e/cypress/screenshots
+/packages/plutono-e2e/cypress/videos
+/packages/plutono-e2e/cypress/logs
 /e2e/server.log
 /e2e/**/screenshots
 !/e2e/**/screenshots/expected/*

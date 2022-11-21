@@ -1,5 +1,5 @@
 import React from 'react';
-import { ConfirmModal } from '@grafana/ui';
+import { ConfirmModal } from '@credativ/plutono-ui';
 import { useDashboardRestore } from './useDashboardRestore';
 export interface RevertDashboardModalProps {
   hideModal: () => void;

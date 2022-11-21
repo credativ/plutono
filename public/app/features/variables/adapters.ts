@@ -1,6 +1,6 @@
 import { ComponentType } from 'react';
 import { Reducer } from 'redux';
-import { Registry, UrlQueryValue, VariableType } from '@grafana/data';
+import { Registry, UrlQueryValue, VariableType } from '@credativ/plutono-data';
 
 import { VariableModel, VariableOption } from './types';
 import { VariableEditorProps } from './editor/types';

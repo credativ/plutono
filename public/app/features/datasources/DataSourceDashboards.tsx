@@ -17,7 +17,7 @@ import { getDataSource } from './state/selectors';
 
 // Types
 import { PluginDashboard, StoreState } from 'app/types';
-import { DataSourceSettings, NavModel } from '@grafana/data';
+import { DataSourceSettings, NavModel } from '@credativ/plutono-data';
 
 export interface Props {
   navModel: NavModel;

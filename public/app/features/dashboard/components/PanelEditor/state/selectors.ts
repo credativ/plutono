@@ -1,6 +1,6 @@
 import memoizeOne from 'memoize-one';
 import { LocationState } from 'app/types';
-import { PanelPlugin } from '@grafana/data';
+import { PanelPlugin } from '@credativ/plutono-data';
 import { PanelEditorTab, PanelEditorTabId } from '../types';
 import { getConfig } from 'app/core/config';
 

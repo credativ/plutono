@@ -3,11 +3,11 @@ package grpcplugin
 import (
 	"context"
 
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/plugins/backendplugin"
 	datasourceV1 "github.com/grafana/grafana-plugin-model/go/datasource"
 	rendererV1 "github.com/grafana/grafana-plugin-model/go/renderer"
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/plugins/backendplugin"
 	"github.com/hashicorp/go-plugin"
 )
 
@@ -18,7 +18,7 @@ type clientV1 struct {
 }
 
 func newClientV1(descriptor PluginDescriptor, logger log.Logger, rpcClient plugin.ClientProtocol) (pluginClient, error) {
-	logger.Warn("Plugin uses a deprecated version of Grafana's backend plugin system which will be removed in a future release. " +
+	logger.Warn("Plugin uses a deprecated version of Plutono's backend plugin system which will be removed in a future release. " +
 		"Consider upgrading to a newer plugin version or reach out to the plugin repository/developer and request an upgrade.")
 
 	raw, err := rpcClient.Dispense(descriptor.pluginID)

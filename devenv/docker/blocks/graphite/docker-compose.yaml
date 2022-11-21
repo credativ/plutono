@@ -8,7 +8,7 @@
       - /etc/timezone:/etc/timezone:ro
 
   fake-graphite-data:
-    image: grafana/fake-data-gen
+    image: plutono/fake-data-gen
     network_mode: bridge
     environment:
       FD_DATASOURCE: graphite

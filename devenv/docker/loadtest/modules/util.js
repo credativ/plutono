@@ -10,7 +10,7 @@ export const createTestOrgIfNotExists = (client) => {
     return res.json().orgId;
   }
 
-  // This can happen e.g. in Hosted Grafana instances, where even admins
+  // This can happen e.g. in Hosted Plutono instances, where even admins
   // cannot see organisations
   if (res.status !== 200) {
     console.info(`unable to get orgs from instance, continuing with default orgId ${orgId}`);

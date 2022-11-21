@@ -1,7 +1,13 @@
 import React, { PureComponent } from 'react';
 
-import { AnnotationEventMappings, DataQuery, LoadingState, DataSourceApi, AnnotationQuery } from '@grafana/data';
-import { Spinner, Icon, IconName, Button } from '@grafana/ui';
+import {
+  AnnotationEventMappings,
+  DataQuery,
+  LoadingState,
+  DataSourceApi,
+  AnnotationQuery,
+} from '@credativ/plutono-data';
+import { Spinner, Icon, IconName, Button } from '@credativ/plutono-ui';
 
 import { getDashboardSrv } from 'app/features/dashboard/services/DashboardSrv';
 import { getTimeSrv } from 'app/features/dashboard/services/TimeSrv';

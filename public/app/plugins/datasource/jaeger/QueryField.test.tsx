@@ -2,7 +2,7 @@ import React from 'react';
 import { JaegerQueryField } from './QueryField';
 import { shallow, mount } from 'enzyme';
 import { JaegerDatasource, JaegerQuery } from './datasource';
-import { ButtonCascader } from '@grafana/ui';
+import { ButtonCascader } from '@credativ/plutono-ui';
 
 describe('JaegerQueryField', function () {
   it('shows empty value if no services returned', function () {

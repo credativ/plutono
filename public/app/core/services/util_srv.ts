@@ -1,11 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 import coreModule from 'app/core/core_module';
 import appEvents from 'app/core/app_events';
 import { CoreEvents } from 'app/types';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 import { AngularModalProxy } from '../components/modals/AngularModalProxy';
 import { provideTheme } from '../utils/ConfigProvider';
 
@@ -15,7 +15,7 @@ export class UtilSrv {
   reactModalNode = document.createElement('div');
 
   /** @ngInject */
-  constructor(private $rootScope: GrafanaRootScope, private $modal: any) {
+  constructor(private $rootScope: PlutonoRootScope, private $modal: any) {
     this.reactModalNode.setAttribute('id', 'angular2ReactModalRoot');
   }
 

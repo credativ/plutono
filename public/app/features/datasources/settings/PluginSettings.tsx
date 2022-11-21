@@ -7,8 +7,8 @@ import {
   DataSourceApi,
   DataQuery,
   DataSourceJsonData,
-} from '@grafana/data';
-import { getAngularLoader, AngularComponent } from '@grafana/runtime';
+} from '@credativ/plutono-data';
+import { getAngularLoader, AngularComponent } from '@credativ/plutono-runtime';
 
 export type GenericDataSourcePlugin = DataSourcePlugin<DataSourceApi<DataQuery, DataSourceJsonData>>;
 

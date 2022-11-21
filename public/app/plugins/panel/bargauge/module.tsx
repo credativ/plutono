@@ -1,5 +1,5 @@
-import { sharedSingleStatPanelChangedHandler } from '@grafana/ui';
-import { PanelPlugin } from '@grafana/data';
+import { sharedSingleStatPanelChangedHandler } from '@credativ/plutono-ui';
+import { PanelPlugin } from '@credativ/plutono-data';
 import { BarGaugePanel } from './BarGaugePanel';
 import { BarGaugeOptions, displayModes } from './types';
 import { addStandardDataReduceOptions } from '../stat/types';

@@ -7,11 +7,11 @@ BUILD_MODE="${1-local}"
 
 if [ "local" == "$BUILD_MODE" ]
   then
-    # building grafana packages
-    echo "building grafana packages..."
+    # building plutono packages
+    echo "building plutono packages..."
     yarn packages:build
   else
-    echo "skip building grafana packages since it already built in previous steps..."
+    echo "skip building plutono packages since it already built in previous steps..."
 fi
 
 # extract packages api documentation json

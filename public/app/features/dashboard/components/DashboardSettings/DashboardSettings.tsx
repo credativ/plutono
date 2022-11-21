@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
 import { css, cx } from 'emotion';
-import { selectors } from '@grafana/e2e-selectors';
-import { Button, CustomScrollbar, Icon, IconName, PageToolbar, stylesFactory } from '@grafana/ui';
+import { selectors } from '@credativ/plutono-e2e-selectors';
+import { Button, CustomScrollbar, Icon, IconName, PageToolbar, stylesFactory } from '@credativ/plutono-ui';
 import config from 'app/core/config';
 import { contextSrv } from 'app/core/services/context_srv';
 import { dashboardWatcher } from 'app/features/live/dashboard/dashboardWatcher';
@@ -15,7 +15,7 @@ import { AnnotationsSettings } from './AnnotationsSettings';
 import { LinksSettings } from './LinksSettings';
 import { VersionsSettings } from './VersionsSettings';
 import { JsonEditorSettings } from './JsonEditorSettings';
-import { GrafanaTheme } from '@grafana/data';
+import { PlutonoTheme } from '@credativ/plutono-data';
 export interface Props {
   dashboard: DashboardModel;
   updateLocation: typeof updateLocation;
@@ -185,7 +185,7 @@ export class DashboardSettings extends PureComponent<Props> {
   }
 }
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => ({
+const getStyles = stylesFactory((theme: PlutonoTheme) => ({
   scrollInner: css`
     min-width: 100%;
     min-height: 100%;

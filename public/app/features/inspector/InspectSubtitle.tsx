@@ -1,7 +1,13 @@
 import React, { FC } from 'react';
 import { css } from 'emotion';
-import { stylesFactory, useTheme, Tab, TabsBar } from '@grafana/ui';
-import { GrafanaTheme, SelectableValue, PanelData, getValueFormat, formattedValueToString } from '@grafana/data';
+import { stylesFactory, useTheme, Tab, TabsBar } from '@credativ/plutono-ui';
+import {
+  PlutonoTheme,
+  SelectableValue,
+  PanelData,
+  getValueFormat,
+  formattedValueToString,
+} from '@credativ/plutono-data';
 import { InspectTab } from '../inspector/types';
 
 interface Props {
@@ -34,7 +40,7 @@ export const InspectSubtitle: FC<Props> = ({ tab, tabs, onSelectTab, data }) => 
   );
 };
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     tabsBar: css`
       padding-left: ${theme.spacing.md};

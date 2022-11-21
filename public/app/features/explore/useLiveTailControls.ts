@@ -1,6 +1,6 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
-import { RefreshPicker } from '@grafana/ui';
+import { RefreshPicker } from '@credativ/plutono-ui';
 
 import { changeRefreshInterval } from './state/time';
 import { setPausedStateAction, runQueries } from './state/query';

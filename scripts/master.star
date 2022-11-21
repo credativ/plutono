@@ -132,7 +132,7 @@ def master_pipelines(edition):
         ))
 
         pipelines.append(notify_pipeline(
-            name='notify-master', slack_channel='grafana-ci-notifications', trigger=trigger,
+            name='notify-master', slack_channel='plutono-ci-notifications', trigger=trigger,
             depends_on=['build-master', 'windows-master', 'publish-master'],
         ))
     else:
@@ -156,7 +156,7 @@ def master_pipelines(edition):
         ))
 
         pipelines.append(notify_pipeline(
-            name='notify-master-downstream', slack_channel='grafana-enterprise-ci-notifications', trigger=trigger,
+            name='notify-master-downstream', slack_channel='plutono-enterprise-ci-notifications', trigger=trigger,
             depends_on=['build-master-downstream', 'windows-master-downstream', 'publish-master-downstream'],
         ))
 

@@ -4,8 +4,8 @@ import { OpenTsdbQuery } from '../types';
 import { createFetchResponse } from '../../../../../test/helpers/createFetchResponse';
 import { of } from 'rxjs';
 
-jest.mock('@grafana/runtime', () => ({
-  ...((jest.requireActual('@grafana/runtime') as unknown) as object),
+jest.mock('@credativ/plutono-runtime', () => ({
+  ...((jest.requireActual('@credativ/plutono-runtime') as unknown) as object),
   getBackendSrv: () => backendSrv,
 }));
 

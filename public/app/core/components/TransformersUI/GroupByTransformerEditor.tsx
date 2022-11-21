@@ -7,15 +7,15 @@ import {
   standardTransformers,
   TransformerRegistryItem,
   TransformerUIProps,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { getAllFieldNamesFromDataFrames } from './OrganizeFieldsTransformerEditor';
-import { Select, StatsPicker, stylesFactory } from '@grafana/ui';
+import { Select, StatsPicker, stylesFactory } from '@credativ/plutono-ui';
 
 import {
   GroupByFieldOptions,
   GroupByOperationID,
   GroupByTransformerOptions,
-} from '@grafana/data/src/transformations/transformers/groupBy';
+} from '@credativ/plutono-data/src/transformations/transformers/groupBy';
 
 interface FieldProps {
   fieldName: string;

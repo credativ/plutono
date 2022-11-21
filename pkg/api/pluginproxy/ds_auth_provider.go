@@ -7,9 +7,9 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/plugins"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/plugins"
+	"github.com/credativ/plutono/pkg/util"
 	"golang.org/x/oauth2/google"
 )
 

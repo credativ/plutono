@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { useAsyncFn } from 'react-use';
-import { AppEvents, locationUtil } from '@grafana/data';
+import { AppEvents, locationUtil } from '@credativ/plutono-data';
 import appEvents from 'app/core/app_events';
 import { updateLocation } from 'app/core/reducers/location';
 import { dashboardWatcher } from 'app/features/live/dashboard/dashboardWatcher';

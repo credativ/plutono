@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { css } from 'emotion';
-import { CollapsableSection, Button, TagsInput, Select, Field, Input, Checkbox } from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
+import { CollapsableSection, Button, TagsInput, Select, Field, Input, Checkbox } from '@credativ/plutono-ui';
+import { SelectableValue } from '@credativ/plutono-data';
 import { LinkSettingsMode } from '../DashboardSettings/LinksSettings';
 import { DashboardLink, DashboardModel } from '../../state/DashboardModel';
 

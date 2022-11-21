@@ -1,0 +1,30 @@
+[Unit]
+Description=Plutono instance
+Documentation=http://docs.plutono.org
+Wants=network-online.target
+After=network-online.target
+After=postgresql.service mariadb.service mysqld.service
+
+[Service]
+EnvironmentFile=/etc/sysconfig/plutono-server
+User=plutono
+Group=plutono
+Type=notify
+Restart=on-failure
+WorkingDirectory=/usr/share/plutono
+RuntimeDirectory=plutono
+RuntimeDirectoryMode=0750
+ExecStart=/usr/sbin/plutono-server                                                  \
+                            --config=${CONF_FILE}                                   \
+                            --pidfile=${PID_FILE_DIR}/plutono-server.pid            \
+                            --packaging=rpm                                         \
+                            cfg:default.paths.logs=${LOG_DIR}                       \
+                            cfg:default.paths.data=${DATA_DIR}                      \
+                            cfg:default.paths.plugins=${PLUGINS_DIR}                \
+                            cfg:default.paths.provisioning=${PROVISIONING_CFG_DIR}  
+
+LimitNOFILE=10000
+TimeoutStopSec=20
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 20.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="351px"
+   height="365px"
+   viewBox="0 0 351 365"
+   style="enable-background:new 0 0 351 365;"
+   xml:space="preserve"
+   sodipodi:docname="plutono_icon.svg"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"><defs
+   id="defs190" /><sodipodi:namedview
+   id="namedview188"
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1.0"
+   inkscape:showpageshadow="2"
+   inkscape:pageopacity="0.0"
+   inkscape:pagecheckerboard="0"
+   inkscape:deskcolor="#d1d1d1"
+   showgrid="false"
+   inkscape:zoom="1.9372789"
+   inkscape:cx="-7.4847253"
+   inkscape:cy="262.73967"
+   inkscape:window-width="2560"
+   inkscape:window-height="1371"
+   inkscape:window-x="1920"
+   inkscape:window-y="32"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="Layer_1" />
+<g
+   id="Layer_1_1_">
+</g>
+<linearGradient
+   id="SVGID_1_"
+   gradientUnits="userSpaceOnUse"
+   x1="175.5"
+   y1="30%"
+   x2="175.5"
+   y2="99%">
+	<stop
+   offset="0"
+   style="stop-color:#F05A28"
+   id="stop180" />
+	<stop
+   offset="1"
+   style="stop-color:#FBCA0A"
+   id="stop182" />
+</linearGradient>
+
+<g
+   aria-label="P"
+   id="text227"
+   style="font-size:19.6036px;line-height:1.25;fill:#808080;stroke-width:0.49009"
+   transform="matrix(24.217522,0,0,24.217522,-24.484774,-8.0483756)"><path
+     d="m 7.4835124,0.8697177 q 2.7445036,0 3.9991346,1.078198 1.25463,1.0781979 1.25463,3.0385579 0,0.8625584 -0.294054,1.666306 -0.27445,0.7841439 -0.921369,1.4114591 Q 10.874935,8.6915539 9.7967371,9.0640223 8.7185392,9.4168871 7.1502512,9.4168871 H 5.542756 V 14.866688 H 3.7784321 V 0.8697177 Z M 7.3266836,2.3791949 H 5.542756 v 5.528215 h 1.4114592 q 1.3330448,0 2.2152067,-0.2744504 0.8821621,-0.294054 1.3134411,-0.9213691 0.431279,-0.6273152 0.431279,-1.6467024 0,-1.3526484 -0.862558,-2.0191708 Q 9.1890255,2.3791949 7.3266836,2.3791949 Z"
+     id="path167"
+     style="fill:#808080" /></g></svg>

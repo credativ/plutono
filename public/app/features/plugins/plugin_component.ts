@@ -4,16 +4,16 @@ import _ from 'lodash';
 import config from 'app/core/config';
 import coreModule from 'app/core/core_module';
 
-import { DataSourceApi, PanelEvents } from '@grafana/data';
+import { DataSourceApi, PanelEvents } from '@credativ/plutono-data';
 import { importPanelPlugin, importDataSourcePlugin, importAppPlugin } from './plugin_loader';
 import DatasourceSrv from './datasource_srv';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 
 /** @ngInject */
 function pluginDirectiveLoader(
   $compile: any,
   datasourceSrv: DatasourceSrv,
-  $rootScope: GrafanaRootScope,
+  $rootScope: PlutonoRootScope,
   $http: any,
   $templateCache: any,
   $timeout: any,
@@ -99,7 +99,7 @@ function pluginDirectiveLoader(
 
       PanelCtrl.templatePromise = getTemplate(PanelCtrl).then((template: any) => {
         PanelCtrl.templateUrl = null;
-        PanelCtrl.template = `<grafana-panel ctrl="ctrl" class="panel-height-helper">${template}</grafana-panel>`;
+        PanelCtrl.template = `<plutono-panel ctrl="ctrl" class="panel-height-helper">${template}</plutono-panel>`;
         return componentInfo;
       });
 

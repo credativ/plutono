@@ -1,6 +1,6 @@
 import React, { CSSProperties, useCallback, useState } from 'react';
 import Transition from 'react-transition-group/Transition';
-import { FieldConfigSource, GrafanaTheme, PanelPlugin, SelectableValue } from '@grafana/data';
+import { FieldConfigSource, PlutonoTheme, PanelPlugin, SelectableValue } from '@credativ/plutono-data';
 import { DashboardModel, PanelModel } from '../../state';
 import {
   CustomScrollbar,
@@ -13,13 +13,13 @@ import {
   TabsBar,
   ToolbarButton,
   useTheme,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import { OverrideFieldConfigEditor } from './OverrideFieldConfigEditor';
 import { DefaultFieldConfigEditor } from './DefaultFieldConfigEditor';
 import { css } from 'emotion';
 import { PanelOptionsTab } from './PanelOptionsTab';
 import { usePanelLatestData } from './usePanelLatestData';
-import { selectors } from '@grafana/e2e-selectors';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 interface Props {
   plugin: PanelPlugin;
@@ -247,7 +247,7 @@ const tabSelections: Array<SelectableValue<string>> = [
   },
 ];
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     wrapper: css`
       display: flex;

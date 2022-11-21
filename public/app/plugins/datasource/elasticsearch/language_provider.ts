@@ -1,5 +1,5 @@
 import { ElasticsearchQuery } from './types';
-import { DataQuery, LanguageProvider } from '@grafana/data';
+import { DataQuery, LanguageProvider } from '@credativ/plutono-data';
 
 import { ElasticDatasource } from './datasource';
 

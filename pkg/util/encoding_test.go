@@ -9,16 +9,16 @@ import (
 
 func TestGetBasicAuthHeader_Encoding(t *testing.T) {
 	t.Run("generating base64 header", func(t *testing.T) {
-		result := GetBasicAuthHeader("grafana", "1234")
-		assert.Equal(t, "Basic Z3JhZmFuYToxMjM0", result)
+		result := GetBasicAuthHeader("plutono", "1234")
+		assert.Equal(t, "Basic cGx1dG9ubzoxMjM0", result)
 	})
 
 	t.Run("decoding basic auth header", func(t *testing.T) {
-		header := GetBasicAuthHeader("grafana", "1234")
+		header := GetBasicAuthHeader("plutono", "1234")
 		username, password, err := DecodeBasicAuthHeader(header)
 		require.NoError(t, err)
 
-		assert.Equal(t, "grafana", username)
+		assert.Equal(t, "plutono", username)
 		assert.Equal(t, "1234", password)
 	})
 }

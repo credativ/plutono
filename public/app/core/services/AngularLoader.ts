@@ -6,12 +6,12 @@ import {
   AngularComponent,
   AngularLoader as AngularLoaderInterface,
   setAngularLoader as setAngularLoaderInterface,
-} from '@grafana/runtime';
-import { GrafanaRootScope } from 'app/routes/GrafanaCtrl';
+} from '@credativ/plutono-runtime';
+import { PlutonoRootScope } from 'app/routes/PlutonoCtrl';
 
 export class AngularLoader implements AngularLoaderInterface {
   /** @ngInject */
-  constructor(private $compile: any, private $rootScope: GrafanaRootScope) {}
+  constructor(private $compile: any, private $rootScope: PlutonoRootScope) {}
 
   load(elem: any, scopeProps: any, template: string): AngularComponent {
     const scope = this.$rootScope.$new();

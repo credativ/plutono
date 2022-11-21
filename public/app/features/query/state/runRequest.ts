@@ -19,8 +19,8 @@ import {
   PanelData,
   TimeRange,
   toDataFrame,
-} from '@grafana/data';
-import { toDataQueryError } from '@grafana/runtime';
+} from '@credativ/plutono-data';
+import { toDataQueryError } from '@credativ/plutono-runtime';
 import { emitDataRequestEvent } from './queryAnalytics';
 import { expressionDatasource, ExpressionDatasourceID } from 'app/features/expressions/ExpressionDatasource';
 import { ExpressionQuery } from 'app/features/expressions/types';

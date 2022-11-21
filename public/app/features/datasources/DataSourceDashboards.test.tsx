@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import { DataSourceDashboards, Props } from './DataSourceDashboards';
-import { DataSourceSettings, NavModel } from '@grafana/data';
+import { DataSourceSettings, NavModel } from '@credativ/plutono-data';
 import { PluginDashboard } from 'app/types';
 
 const setup = (propOverrides?: object) => {

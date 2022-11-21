@@ -1,6 +1,6 @@
 ---
 name: Enhancement request
-about: Suggest an enhancement or new feature for the Grafana project
+about: Suggest an enhancement or new feature for the Plutono project
 labels: 'type: feature request'
 ---
 

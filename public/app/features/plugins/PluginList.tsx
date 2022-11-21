@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import PluginListItem from './PluginListItem';
-import { PluginMeta } from '@grafana/data';
-import { selectors } from '@grafana/e2e-selectors';
+import { PluginMeta } from '@credativ/plutono-data';
+import { selectors } from '@credativ/plutono-e2e-selectors';
 
 interface Props {
   plugins: PluginMeta[];

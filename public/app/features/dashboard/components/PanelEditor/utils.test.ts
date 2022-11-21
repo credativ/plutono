@@ -1,4 +1,4 @@
-import { FieldConfig, FieldConfigSource, PanelPlugin, standardFieldConfigEditorRegistry } from '@grafana/data';
+import { FieldConfig, FieldConfigSource, PanelPlugin, standardFieldConfigEditorRegistry } from '@credativ/plutono-data';
 import { supportsDataQuery, updateDefaultFieldConfigValue } from './utils';
 
 describe('standardFieldConfigEditorRegistry', () => {

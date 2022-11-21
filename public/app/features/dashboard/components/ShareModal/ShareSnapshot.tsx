@@ -1,7 +1,7 @@
 import React, { PureComponent } from 'react';
-import { Button, ClipboardButton, Icon, Spinner, Select, Input, LinkButton, Field } from '@grafana/ui';
-import { AppEvents, SelectableValue } from '@grafana/data';
-import { getBackendSrv } from '@grafana/runtime';
+import { Button, ClipboardButton, Icon, Spinner, Select, Input, LinkButton, Field } from '@credativ/plutono-ui';
+import { AppEvents, SelectableValue } from '@credativ/plutono-data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
 import { DashboardModel, PanelModel } from 'app/features/dashboard/state';
 import { getTimeSrv } from 'app/features/dashboard/services/TimeSrv';
 import { appEvents } from 'app/core/core';

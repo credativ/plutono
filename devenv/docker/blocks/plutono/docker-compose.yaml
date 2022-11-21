@@ -1,0 +1,14 @@
+  plutono:
+    image: plutono/plutono:${plutono_version}
+    ports:
+      - "3001:3000"
+    volumes:
+      - "./dashboards.yaml:/etc/plutono/provisioning/dashboards/dashboards.yaml"
+      - "./dev-dashboards:/usr/share/plutono/devenv/dev-dashboards"
+      - "./datasources_docker.yaml:/etc/plutono/provisioning/datasources/datasources.yaml"
+    environment:
+      GF_RENDERING_SERVER_URL: http://renderer:8081/render
+      GF_RENDERING_CALLBACK_URL: http://plutono:3000/
+
+  renderer:
+    image: plutono/plutono-image-renderer:latest

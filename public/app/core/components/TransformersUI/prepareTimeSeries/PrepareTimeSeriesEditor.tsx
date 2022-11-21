@@ -1,8 +1,8 @@
 import React, { useCallback } from 'react';
 import { css } from 'emotion';
-import { GrafanaTheme, SelectableValue, TransformerRegistryItem, TransformerUIProps } from '@grafana/data';
+import { PlutonoTheme, SelectableValue, TransformerRegistryItem, TransformerUIProps } from '@credativ/plutono-data';
 import { prepareTimeSeriesTransformer, PrepareTimeSeriesOptions, timeSeriesFormat } from './prepareTimeSeries';
-import { InlineField, InlineFieldRow, Select, useStyles } from '@grafana/ui';
+import { InlineField, InlineFieldRow, Select, useStyles } from '@credativ/plutono-ui';
 
 const wideInfo = {
   label: 'Wide time series',
@@ -72,7 +72,7 @@ export function PrepareTimeSeriesEditor(props: TransformerUIProps<PrepareTimeSer
   );
 }
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: PlutonoTheme) => ({
   info: css`
     margin-left: 20px;
   `,

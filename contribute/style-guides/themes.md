@@ -1,12 +1,12 @@
-# Theming Grafana
+# Theming Plutono
 
 ## Overview
 
-**Themes are implemented in Typescript.** That's because our goal is to share variables between Grafana TypeScript and [Sass](https://sass-lang.com/) code. Theme definitions are located in the following files:
+**Themes are implemented in Typescript.** That's because our goal is to share variables between Plutono TypeScript and [Sass](https://sass-lang.com/) code. Theme definitions are located in the following files:
 
-- [packages/grafana-ui/src/themes/dark.ts](../../packages/grafana-ui/src/themes/dark.ts)
-- [packages/grafana-ui/src/themes/default.ts](../../packages/grafana-ui/src/themes/default.ts)
-- [packages/grafana-ui/src/themes/light.ts](../../packages/grafana-ui/src/themes/light.ts)
+- [packages/plutono-ui/src/themes/dark.ts](../../packages/plutono-ui/src/themes/dark.ts)
+- [packages/plutono-ui/src/themes/default.ts](../../packages/plutono-ui/src/themes/default.ts)
+- [packages/plutono-ui/src/themes/light.ts](../../packages/plutono-ui/src/themes/light.ts)
 
 The `default.ts` file holds common variables like typography and spacing definitions, while `[light|dark].ts` primarily specify colors used in themes.
 
@@ -16,7 +16,7 @@ This section provides usage guidelines.
 
 ### Using themes in React components
 
-Here's how to use Grafana themes in React components.
+Here's how to use Plutono themes in React components.
 
 #### useStyles hook
 
@@ -24,11 +24,11 @@ Here's how to use Grafana themes in React components.
 
 ```tsx
 import React, { FC } from 'react';
-import { GrafanaTheme } from '@grafana/data';
-import { useStyles } from '@grafana/ui';
+import { PlutonoTheme } from '@credativ/plutono-data';
+import { useStyles } from '@credativ/plutono-ui';
 import { css } from 'emotion';
 
-const getComponentStyles = (theme: GrafanaTheme) => css`
+const getComponentStyles = (theme: PlutonoTheme) => css`
   padding: ${theme.spacing.md};
 `;
 
@@ -43,7 +43,7 @@ const Foo: FC<FooProps> = () => {
 
 ```tsx
 import React, { FC } from 'react';
-import { useTheme } from '@grafana/ui';
+import { useTheme } from '@credativ/plutono-ui';
 
 const Foo: FC<FooProps> = () => {
   const theme = useTheme();
@@ -55,7 +55,7 @@ const Foo: FC<FooProps> = () => {
 #### Using `ThemeContext` directly
 
 ```tsx
-import { ThemeContext } from '@grafana/ui';
+import { ThemeContext } from '@credativ/plutono-ui';
 
 <ThemeContext.Consumer>{theme => <Foo theme={theme} />}</ThemeContext.Consumer>;
 ```
@@ -65,7 +65,7 @@ import { ThemeContext } from '@grafana/ui';
 With this method your component will be automatically wrapped in `ThemeContext.Consumer` and provided with current theme via `theme` prop. Components used with `withTheme` must implement the `Themeable` interface.
 
 ```ts
-import  { ThemeContext, Themeable } from '@grafana/ui';
+import  { ThemeContext, Themeable } from '@credativ/plutono-ui';
 
 interface FooProps extends Themeable {}
 
@@ -81,7 +81,7 @@ When implementing snapshot tests for components that use the `withTheme` HOC, th
 To make your snapshot theme independent, use the `mockThemeContext` helper function:
 
 ```tsx
-import { mockThemeContext } from '@grafana/ui';
+import { mockThemeContext } from '@credativ/plutono-ui';
 import { MyComponent } from './MyComponent';
 
 describe('MyComponent', () => {
@@ -89,7 +89,7 @@ describe('MyComponent', () => {
 
   beforeAll(() => {
     // Create ThemeContext mock before any snapshot test is executed
-    restoreThemeContext = mockThemeContext({ type: GrafanaThemeType.Dark });
+    restoreThemeContext = mockThemeContext({ type: PlutonoThemeType.Dark });
   });
 
   afterAll(() => {
@@ -119,19 +119,19 @@ This section provides insight into frequently-asked questions.
 
 #### If you need to modify a _Sass variable value_ you need to modify the corresponding Typescript file that is the source of the variables:
 
-- `_variables.generated.scss` - modify `grafana-ui/src/themes/default.ts`
-- `_variables.light.generated.scss` - modify `grafana-ui/src/themes/light.ts`
-- `_variables.dark.generated.scss` - modify `grafana-ui/src/themes/dark.ts`
+- `_variables.generated.scss` - modify `plutono-ui/src/themes/default.ts`
+- `_variables.light.generated.scss` - modify `plutono-ui/src/themes/light.ts`
+- `_variables.dark.generated.scss` - modify `plutono-ui/src/themes/dark.ts`
 
 #### If you need to _add new variable_ to Sass variables you need to modify corresponding template file:
 
-- `_variables.generated.scss` - modify `grafana-ui/src/themes/_variables.scss.tmpl.ts`
-- `_variables.light.generated.scss` - modify `grafana-ui/src/themes/_variables.light.scss.tmpl.ts`
-- `_variables.dark.generated.scss` - modify `grafana-ui/src/themes/_variables.dark.scss.tmpl.ts`
+- `_variables.generated.scss` - modify `plutono-ui/src/themes/_variables.scss.tmpl.ts`
+- `_variables.light.generated.scss` - modify `plutono-ui/src/themes/_variables.light.scss.tmpl.ts`
+- `_variables.dark.generated.scss` - modify `plutono-ui/src/themes/_variables.dark.scss.tmpl.ts`
 
 ## Limitations
 
-This section describes limitations with Grafana's theming system.
+This section describes limitations with Plutono's theming system.
 
 ### You must ensure `ThemeContext` provider is available in a React tree
 

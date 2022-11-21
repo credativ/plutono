@@ -2,7 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import cloneDeep from 'lodash/cloneDeep';
 import { default as lodashDefaults } from 'lodash/defaults';
 
-import { LoadingState, VariableType } from '@grafana/data';
+import { LoadingState, VariableType } from '@credativ/plutono-data';
 import { VariableModel, VariableOption, VariableWithOptions } from '../types';
 import { AddVariable, getInstanceState, VariablePayload } from './types';
 import { variableAdapters } from '../adapters';

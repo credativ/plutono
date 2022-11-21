@@ -9,12 +9,12 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/sqlstore"
-	"github.com/grafana/grafana/pkg/services/sqlstore/migrator"
-	"github.com/grafana/grafana/pkg/services/sqlstore/permissions"
-	"github.com/grafana/grafana/pkg/services/sqlstore/searchstore"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/services/sqlstore/migrator"
+	"github.com/credativ/plutono/pkg/services/sqlstore/permissions"
+	"github.com/credativ/plutono/pkg/services/sqlstore/searchstore"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )

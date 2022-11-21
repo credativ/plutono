@@ -1,10 +1,10 @@
-import { PanelModel } from '@grafana/data';
+import { PanelModel } from '@credativ/plutono-data';
 import { gaugePanelMigrationHandler, gaugePanelChangedHandler } from './GaugeMigrations';
 
 describe('Gauge Panel Migrations', () => {
   it('from 6.1.1', () => {
     const panel = {
-      datasource: '-- Grafana --',
+      datasource: '-- Plutono --',
       gridPos: {
         h: 9,
         w: 12,

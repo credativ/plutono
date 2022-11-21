@@ -1,7 +1,7 @@
 import React, { ComponentType, PureComponent } from 'react';
 import { connect, ConnectedProps } from 'react-redux';
-import { ClickOutsideWrapper } from '@grafana/ui';
-import { LoadingState } from '@grafana/data';
+import { ClickOutsideWrapper } from '@credativ/plutono-ui';
+import { LoadingState } from '@credativ/plutono-data';
 
 import { StoreState } from 'app/types';
 import { VariableInput } from '../shared/VariableInput';

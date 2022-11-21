@@ -1,6 +1,6 @@
 import React, { FunctionComponent } from 'react';
-import { SelectableValue } from '@grafana/data';
-import { Segment, Icon } from '@grafana/ui';
+import { SelectableValue } from '@credativ/plutono-data';
+import { Segment, Icon } from '@credativ/plutono-ui';
 import { labelsToGroupedOptions } from '../functions';
 import { systemLabels } from '../constants';
 

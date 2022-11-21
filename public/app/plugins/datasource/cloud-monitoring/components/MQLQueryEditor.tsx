@@ -1,5 +1,5 @@
 import React from 'react';
-import { TextArea } from '@grafana/ui';
+import { TextArea } from '@credativ/plutono-ui';
 
 export interface Props {
   onChange: (query: string) => void;

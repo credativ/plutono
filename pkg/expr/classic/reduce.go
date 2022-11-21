@@ -4,8 +4,8 @@ import (
 	"math"
 	"sort"
 
+	"github.com/credativ/plutono/pkg/expr/mathexp"
 	"github.com/grafana/grafana-plugin-sdk-go/data"
-	"github.com/grafana/grafana/pkg/expr/mathexp"
 )
 
 func nilOrNaN(f *float64) bool {

@@ -4,10 +4,10 @@ import (
 	"time"
 
 	"github.com/centrifugal/centrifuge"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/models"
 )
 
-// BroadcastRunner will simply broadcast all events to `grafana/broadcast/*` channels
+// BroadcastRunner will simply broadcast all events to `plutono/broadcast/*` channels
 // This assumes that data is a JSON object
 type BroadcastRunner struct{}
 

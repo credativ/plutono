@@ -101,8 +101,8 @@ provision() {
 
 	requiresJsonnet
 
-	find grafana/provisioning/dashboards/alerts -maxdepth 1 -name 'alert*.json' -delete
-	jsonnet -m grafana/provisioning/dashboards/alerts grafana/provisioning/alerts.jsonnet --ext-code alerts=$alerts --ext-code condition=$condition
+	find plutono/provisioning/dashboards/alerts -maxdepth 1 -name 'alert*.json' -delete
+	jsonnet -m plutono/provisioning/dashboards/alerts plutono/provisioning/alerts.jsonnet --ext-code alerts=$alerts --ext-code condition=$condition
 }
 
 pause() {

@@ -1,4 +1,4 @@
-import { DataFrame, ReducerID, reduceField, AbsoluteTimeRange, FieldType } from '@grafana/data';
+import { DataFrame, ReducerID, reduceField, AbsoluteTimeRange, FieldType } from '@credativ/plutono-data';
 
 /**
  * Find the min and max time that covers all data

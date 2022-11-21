@@ -1,5 +1,5 @@
 import React from 'react';
-import { LegacyForms } from '@grafana/ui';
+import { LegacyForms } from '@credativ/plutono-ui';
 const { FormField } = LegacyForms;
 
 type Props = {

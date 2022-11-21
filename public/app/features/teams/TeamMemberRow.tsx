@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
 import { connect } from 'react-redux';
-import { LegacyForms, DeleteButton } from '@grafana/ui';
+import { LegacyForms, DeleteButton } from '@credativ/plutono-ui';
 const { Select } = LegacyForms;
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 
 import { TeamMember, teamsPermissionLevels, TeamPermissionLevel } from 'app/types';
 import { WithFeatureToggle } from 'app/core/components/WithFeatureToggle';

@@ -1,5 +1,5 @@
 import React from 'react';
-import { HorizontalGroup, Tooltip, Button } from '@grafana/ui';
+import { HorizontalGroup, Tooltip, Button } from '@credativ/plutono-ui';
 
 type VersionsButtonsType = {
   hasMore: boolean;

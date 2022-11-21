@@ -1,7 +1,7 @@
 import Plain from 'slate-plain-serializer';
 
 import LanguageProvider, { LokiHistoryItem } from './language_provider';
-import { TypeaheadInput } from '@grafana/ui';
+import { TypeaheadInput } from '@credativ/plutono-ui';
 
 import { makeMockLokiDatasource } from './mocks';
 import LokiDatasource from './datasource';

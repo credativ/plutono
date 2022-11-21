@@ -1,7 +1,7 @@
 // Libraries
 import _ from 'lodash';
 // Utils
-import { getTemplateSrv } from '@grafana/runtime';
+import { getTemplateSrv } from '@credativ/plutono-runtime';
 import { getNextRefIdChar } from 'app/core/utils/query';
 // Types
 import {
@@ -17,7 +17,7 @@ import {
   PanelPlugin,
   ScopedVars,
   urlUtil,
-} from '@grafana/data';
+} from '@credativ/plutono-data';
 import { EDIT_PANEL_ID } from 'app/core/constants';
 import config from 'app/core/config';
 import { PanelQueryRunner } from '../../query/state/PanelQueryRunner';

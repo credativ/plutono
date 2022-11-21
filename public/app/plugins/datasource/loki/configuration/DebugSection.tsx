@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 import { css } from 'emotion';
 import cx from 'classnames';
-import { LegacyForms } from '@grafana/ui';
+import { LegacyForms } from '@credativ/plutono-ui';
 const { FormField } = LegacyForms;
 import { DerivedFieldConfig } from '../types';
-import { ArrayVector, Field, FieldType, LinkModel } from '@grafana/data';
+import { ArrayVector, Field, FieldType, LinkModel } from '@credativ/plutono-data';
 import { getFieldLinksForExplore } from '../../../../features/explore/utils/links';
 
 type Props = {

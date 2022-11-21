@@ -1,7 +1,7 @@
 import _ from 'lodash';
 import React, { PureComponent } from 'react';
 import { TimeSeries } from 'app/core/core';
-import { CustomScrollbar, Icon } from '@grafana/ui';
+import { CustomScrollbar, Icon } from '@credativ/plutono-ui';
 import { LegendItem, LEGEND_STATS } from './LegendSeriesItem';
 
 type Sort = 'min' | 'max' | 'avg' | 'current' | 'total';

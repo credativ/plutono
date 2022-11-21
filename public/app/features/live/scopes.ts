@@ -1,9 +1,9 @@
-import { LiveChannelScope, LiveChannelSupport, SelectableValue } from '@grafana/data';
-import { getDataSourceSrv } from '@grafana/runtime';
+import { LiveChannelScope, LiveChannelSupport, SelectableValue } from '@credativ/plutono-data';
+import { getDataSourceSrv } from '@credativ/plutono-runtime';
 import { config } from 'app/core/config';
 import { loadPlugin } from '../plugins/PluginPage';
 
-export abstract class GrafanaLiveScope {
+export abstract class PlutonoLiveScope {
   constructor(protected scope: LiveChannelScope) {}
 
   /**
@@ -17,21 +17,21 @@ export abstract class GrafanaLiveScope {
   abstract listNamespaces(): Promise<Array<SelectableValue<string>>>;
 }
 
-export interface CoreGrafanaLiveFeature {
+export interface CorePlutonoLiveFeature {
   name: string;
   support: LiveChannelSupport;
   description: string;
 }
 
-class GrafanaLiveCoreScope extends GrafanaLiveScope {
+class PlutonoLiveCoreScope extends PlutonoLiveScope {
   readonly features = new Map<string, LiveChannelSupport>();
   readonly namespaces: Array<SelectableValue<string>> = [];
 
   constructor() {
-    super(LiveChannelScope.Grafana);
+    super(LiveChannelScope.Plutono);
   }
 
-  register(feature: CoreGrafanaLiveFeature) {
+  register(feature: CorePlutonoLiveFeature) {
     this.features.set(feature.name, feature.support);
     this.namespaces.push({
       value: feature.name,
@@ -58,9 +58,9 @@ class GrafanaLiveCoreScope extends GrafanaLiveScope {
     return Promise.resolve(this.namespaces);
   }
 }
-export const grafanaLiveCoreFeatures = new GrafanaLiveCoreScope();
+export const plutonoLiveCoreFeatures = new PlutonoLiveCoreScope();
 
-export class GrafanaLiveDataSourceScope extends GrafanaLiveScope {
+export class PlutonoLiveDataSourceScope extends PlutonoLiveScope {
   names?: Array<SelectableValue<string>>;
 
   constructor() {
@@ -106,7 +106,7 @@ export class GrafanaLiveDataSourceScope extends GrafanaLiveScope {
   }
 }
 
-export class GrafanaLivePluginScope extends GrafanaLiveScope {
+export class PlutonoLivePluginScope extends PlutonoLiveScope {
   names?: Array<SelectableValue<string>>;
 
   constructor() {

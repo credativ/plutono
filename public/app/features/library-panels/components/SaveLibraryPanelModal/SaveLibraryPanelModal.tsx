@@ -1,5 +1,5 @@
 import React, { useCallback, useState } from 'react';
-import { Button, HorizontalGroup, Icon, Input, Modal, useStyles } from '@grafana/ui';
+import { Button, HorizontalGroup, Icon, Input, Modal, useStyles } from '@credativ/plutono-ui';
 import { useAsync, useDebounce } from 'react-use';
 import { getBackendSrv } from 'app/core/services/backend_srv';
 import { usePanelSave } from '../../utils/usePanelSave';

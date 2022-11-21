@@ -1,11 +1,11 @@
 import React, { PureComponent } from 'react';
-import { LoadingPlaceholder, JSONFormatter, Icon } from '@grafana/ui';
+import { LoadingPlaceholder, JSONFormatter, Icon } from '@credativ/plutono-ui';
 
 import appEvents from 'app/core/app_events';
 import { CopyToClipboard } from 'app/core/components/CopyToClipboard/CopyToClipboard';
 import { DashboardModel, PanelModel } from '../dashboard/state';
-import { getBackendSrv } from '@grafana/runtime';
-import { AppEvents } from '@grafana/data';
+import { getBackendSrv } from '@credativ/plutono-runtime';
+import { AppEvents } from '@credativ/plutono-data';
 
 export interface Props {
   dashboard: DashboardModel;

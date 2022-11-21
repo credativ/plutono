@@ -1,6 +1,6 @@
-import { ArrayVector, FieldType, MutableDataFrame } from '@grafana/data';
+import { ArrayVector, FieldType, MutableDataFrame } from '@credativ/plutono-data';
 import { nodes, edges } from './testData/serviceMapResponse';
-import { NodeGraphDataFrameFieldNames } from '@grafana/ui';
+import { NodeGraphDataFrameFieldNames } from '@credativ/plutono-ui';
 
 export function generateRandomNodes(count = 10) {
   const nodes = [];

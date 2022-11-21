@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { css } from 'emotion';
-import { ConfirmButton, ConfirmModal, Button } from '@grafana/ui';
+import { ConfirmButton, ConfirmModal, Button } from '@credativ/plutono-ui';
 import { UserSession } from 'app/types';
 
 interface Props {

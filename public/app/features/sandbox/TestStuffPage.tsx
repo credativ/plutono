@@ -1,5 +1,11 @@
-import { ApplyFieldOverrideOptions, DataTransformerConfig, dateMath, FieldColorModeId, PanelData } from '@grafana/data';
-import { GraphNG, LegendDisplayMode, Table } from '@grafana/ui';
+import {
+  ApplyFieldOverrideOptions,
+  DataTransformerConfig,
+  dateMath,
+  FieldColorModeId,
+  PanelData,
+} from '@credativ/plutono-data';
+import { GraphNG, LegendDisplayMode, Table } from '@credativ/plutono-ui';
 import { config } from 'app/core/config';
 import React, { FC, useMemo, useState } from 'react';
 import { useObservable } from 'react-use';

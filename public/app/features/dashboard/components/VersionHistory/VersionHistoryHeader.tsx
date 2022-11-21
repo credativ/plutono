@@ -1,6 +1,6 @@
 import React from 'react';
 import noop from 'lodash/noop';
-import { Icon } from '@grafana/ui';
+import { Icon } from '@credativ/plutono-ui';
 
 type VersionHistoryHeaderProps = {
   isComparing?: boolean;

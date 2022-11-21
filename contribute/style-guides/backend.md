@@ -1,6 +1,6 @@
 # Backend style guide
 
-Grafana's backend has been developed for a long time with a mix of code styles. This guide explains how we want to write Go code in the future.
+Plutono's backend has been developed for a long time with a mix of code styles. This guide explains how we want to write Go code in the future.
 
 Unless stated otherwise, use the guidelines listed in the following articles:
 
@@ -20,7 +20,7 @@ We use the standard following linters:
 
 In addition to the standard linters, we also use:
 
-- [revive](https://revive.run/) with a [custom config](https://github.com/grafana/grafana/blob/master/conf/revive.toml)
+- [revive](https://revive.run/) with a [custom config](https://github.com/credativ/plutono/blob/master/conf/revive.toml)
 - [GolangCI-Lint](https://github.com/golangci/golangci-lint)
 - [gosec](https://github.com/securego/gosec)
 
@@ -61,7 +61,7 @@ function you call it in. It will always execute after the test is over in revers
 ## Globals
 
 As a general rule of thumb, avoid using global variables, since they make the code difficult to maintain and reason
-about, and to write tests for. The Grafana codebase currently does use a lot of global variables, especially when
+about, and to write tests for. The Plutono codebase currently does use a lot of global variables, especially when
 it comes to configuration, but that is a problem we're trying to solve.
 
 ## Pointers
@@ -82,7 +82,7 @@ In database related code, we follow certain patterns.
 
 ### Foreign keys
 
-While they can be useful, we don't generally use foreign key constraints in Grafana, for historical and
+While they can be useful, we don't generally use foreign key constraints in Plutono, for historical and
 technical reasons. See this [comment](https://github.com/grafana/grafana/issues/3269#issuecomment-383328548) by Torkel 
 for context.
 

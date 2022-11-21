@@ -55,7 +55,7 @@ exports[`DashboardGrid Can render dashboard grid Should render 1`] = `
             "list": Array [
               Object {
                 "builtIn": 1,
-                "datasource": "-- Grafana --",
+                "datasource": "-- Plutono --",
                 "enable": true,
                 "hide": true,
                 "iconColor": "rgba(0, 211, 255, 1)",
@@ -279,7 +279,7 @@ exports[`DashboardGrid Can render dashboard grid Should render 1`] = `
             "list": Array [
               Object {
                 "builtIn": 1,
-                "datasource": "-- Grafana --",
+                "datasource": "-- Plutono --",
                 "enable": true,
                 "hide": true,
                 "iconColor": "rgba(0, 211, 255, 1)",
@@ -503,7 +503,7 @@ exports[`DashboardGrid Can render dashboard grid Should render 1`] = `
             "list": Array [
               Object {
                 "builtIn": 1,
-                "datasource": "-- Grafana --",
+                "datasource": "-- Plutono --",
                 "enable": true,
                 "hide": true,
                 "iconColor": "rgba(0, 211, 255, 1)",
@@ -727,7 +727,7 @@ exports[`DashboardGrid Can render dashboard grid Should render 1`] = `
             "list": Array [
               Object {
                 "builtIn": 1,
-                "datasource": "-- Grafana --",
+                "datasource": "-- Plutono --",
                 "enable": true,
                 "hide": true,
                 "iconColor": "rgba(0, 211, 255, 1)",

@@ -10,19 +10,19 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/api/dtos"
-	"github.com/grafana/grafana/pkg/api/response"
-	"github.com/grafana/grafana/pkg/api/routing"
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/login"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/services/auth"
-	"github.com/grafana/grafana/pkg/services/hooks"
-	"github.com/grafana/grafana/pkg/services/licensing"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util"
+	"github.com/credativ/plutono/pkg/api/dtos"
+	"github.com/credativ/plutono/pkg/api/response"
+	"github.com/credativ/plutono/pkg/api/routing"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/login"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/services/auth"
+	"github.com/credativ/plutono/pkg/services/hooks"
+	"github.com/credativ/plutono/pkg/services/licensing"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util"
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 )
@@ -102,7 +102,7 @@ func TestLoginErrorCookieAPIEndpoint(t *testing.T) {
 		hs.LoginView(c)
 	})
 
-	cfg.LoginCookieName = "grafana_session"
+	cfg.LoginCookieName = "plutono_session"
 	setting.SecretKey = "login_testing"
 
 	origOAuthService := setting.OAuthService
@@ -173,45 +173,45 @@ func TestLoginViewRedirect(t *testing.T) {
 
 	redirectCases := []redirectCase{
 		{
-			desc:        "grafana relative url without subpath",
+			desc:        "plutono relative url without subpath",
 			url:         "/profile",
 			redirectURL: "/profile",
 			appURL:      "http://localhost:3000/",
 			status:      302,
 		},
 		{
-			desc:        "grafana invalid relative url starting with the subpath",
-			url:         "/grafanablah",
-			redirectURL: "/grafana/",
+			desc:        "plutono invalid relative url starting with the subpath",
+			url:         "/plutonoblah",
+			redirectURL: "/plutono/",
 			appURL:      "http://localhost:3000/",
-			appSubURL:   "/grafana",
+			appSubURL:   "/plutono",
 			status:      302,
 		},
 		{
-			desc:        "grafana relative url with subpath with leading slash",
-			url:         "/grafana/profile",
-			redirectURL: "/grafana/profile",
+			desc:        "plutono relative url with subpath with leading slash",
+			url:         "/plutono/profile",
+			redirectURL: "/plutono/profile",
 			appURL:      "http://localhost:3000",
-			appSubURL:   "/grafana",
+			appSubURL:   "/plutono",
 			status:      302,
 		},
 		{
 			desc:        "relative url with missing subpath",
 			url:         "/profile",
-			redirectURL: "/grafana/",
+			redirectURL: "/plutono/",
 			appURL:      "http://localhost:3000/",
-			appSubURL:   "/grafana",
+			appSubURL:   "/plutono",
 			status:      302,
 		},
 		{
-			desc:        "grafana absolute url",
+			desc:        "plutono absolute url",
 			url:         "http://localhost:3000/profile",
 			redirectURL: "/",
 			appURL:      "http://localhost:3000/",
 			status:      302,
 		},
 		{
-			desc:        "non grafana absolute url",
+			desc:        "non plutono absolute url",
 			url:         "http://example.com",
 			redirectURL: "/",
 			appURL:      "http://localhost:3000/",
@@ -225,14 +225,14 @@ func TestLoginViewRedirect(t *testing.T) {
 			status:      302,
 		},
 		{
-			desc:        "non-Grafana URL without scheme",
+			desc:        "non-Plutono URL without scheme",
 			url:         "example.com",
 			redirectURL: "/",
 			appURL:      "http://localhost:3000/",
 			status:      302,
 		},
 		{
-			desc:        "non-Grafana URL without scheme",
+			desc:        "non-Plutono URL without scheme",
 			url:         "www.example.com",
 			redirectURL: "/",
 			appURL:      "http://localhost:3000/",
@@ -345,7 +345,7 @@ func TestLoginPostRedirect(t *testing.T) {
 		return hs.LoginPost(c, cmd)
 	})
 
-	bus.AddHandler("grafana-auth", func(query *models.LoginUserQuery) error {
+	bus.AddHandler("plutono-auth", func(query *models.LoginUserQuery) error {
 		query.User = &models.User{
 			Id:    42,
 			Email: "",
@@ -355,38 +355,38 @@ func TestLoginPostRedirect(t *testing.T) {
 
 	redirectCases := []redirectCase{
 		{
-			desc:   "grafana relative url without subpath",
+			desc:   "plutono relative url without subpath",
 			url:    "/profile",
 			appURL: "https://localhost:3000/",
 		},
 		{
-			desc:      "grafana relative url with subpath with leading slash",
-			url:       "/grafana/profile",
+			desc:      "plutono relative url with subpath with leading slash",
+			url:       "/plutono/profile",
 			appURL:    "https://localhost:3000/",
-			appSubURL: "/grafana",
+			appSubURL: "/plutono",
 		},
 		{
-			desc:      "grafana invalid relative url starting with subpath",
-			url:       "/grafanablah",
+			desc:      "plutono invalid relative url starting with subpath",
+			url:       "/plutonoblah",
 			appURL:    "https://localhost:3000/",
-			appSubURL: "/grafana",
+			appSubURL: "/plutono",
 			err:       login.ErrInvalidRedirectTo,
 		},
 		{
 			desc:      "relative url with missing subpath",
 			url:       "/profile",
 			appURL:    "https://localhost:3000/",
-			appSubURL: "/grafana",
+			appSubURL: "/plutono",
 			err:       login.ErrInvalidRedirectTo,
 		},
 		{
-			desc:   "grafana absolute url",
+			desc:   "plutono absolute url",
 			url:    "http://localhost:3000/profile",
 			appURL: "http://localhost:3000/",
 			err:    login.ErrAbsoluteRedirectTo,
 		},
 		{
-			desc:   "non grafana absolute url",
+			desc:   "non plutono absolute url",
 			url:    "http://example.com",
 			appURL: "https://localhost:3000/",
 			err:    login.ErrAbsoluteRedirectTo,
@@ -398,13 +398,13 @@ func TestLoginPostRedirect(t *testing.T) {
 			err:    login.ErrInvalidRedirectTo,
 		},
 		{
-			desc:   "non-Grafana URL without scheme",
+			desc:   "non-Plutono URL without scheme",
 			url:    "example.com",
 			appURL: "http://localhost:3000/",
 			err:    login.ErrForbiddenRedirectTo,
 		},
 		{
-			desc:   "non-Grafana URL without scheme",
+			desc:   "non-Plutono URL without scheme",
 			url:    "www.example.com",
 			appURL: "http://localhost:3000/",
 			err:    login.ErrForbiddenRedirectTo,
@@ -567,14 +567,14 @@ func TestAuthProxyLoginWithEnableLoginToken(t *testing.T) {
 	assert.Equal(t, "/", location[0])
 	setCookie := sc.resp.Header()["Set-Cookie"]
 	require.NotNil(t, setCookie, "Set-Cookie should exist")
-	assert.Equal(t, "grafana_session=; Path=/; Max-Age=0; HttpOnly", setCookie[0])
+	assert.Equal(t, "plutono_session=; Path=/; Max-Age=0; HttpOnly", setCookie[0])
 }
 
 func setupAuthProxyLoginTest(t *testing.T, enableLoginToken bool) *scenarioContext {
 	fakeSetIndexViewData(t)
 
 	sc := setupScenarioContext(t, "/login")
-	sc.cfg.LoginCookieName = "grafana_session"
+	sc.cfg.LoginCookieName = "plutono_session"
 	hs := &HTTPServer{
 		Cfg:              sc.cfg,
 		License:          &licensing.OSSLicensingService{},
@@ -662,11 +662,11 @@ func TestLoginPostRunLokingHook(t *testing.T) {
 			},
 		},
 		{
-			desc:       "valid Grafana user",
+			desc:       "valid Plutono user",
 			authUser:   testUser,
-			authModule: "grafana",
+			authModule: "plutono",
 			info: models.LoginInfo{
-				AuthModule: "grafana",
+				AuthModule: "plutono",
 				User:       testUser,
 				HTTPStatus: 200,
 			},
@@ -685,7 +685,7 @@ func TestLoginPostRunLokingHook(t *testing.T) {
 
 	for _, c := range testCases {
 		t.Run(c.desc, func(t *testing.T) {
-			bus.AddHandler("grafana-auth", func(query *models.LoginUserQuery) error {
+			bus.AddHandler("plutono-auth", func(query *models.LoginUserQuery) error {
 				query.User = c.authUser
 				query.AuthModule = c.authModule
 				return c.authErr

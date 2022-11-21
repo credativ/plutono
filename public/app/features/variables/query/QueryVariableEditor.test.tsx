@@ -1,7 +1,7 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { DataSourceApi } from '@grafana/data';
+import { DataSourceApi } from '@credativ/plutono-data';
 
 import { Props, QueryVariableEditorUnConnected } from './QueryVariableEditor';
 import { initialQueryVariableModelState } from './reducer';
@@ -9,7 +9,7 @@ import { initialVariableEditorState } from '../editor/reducer';
 import { describe, expect } from '../../../../test/lib/common';
 import { NEW_VARIABLE_ID } from '../state/types';
 import { LegacyVariableQueryEditor } from '../editor/LegacyVariableQueryEditor';
-import { setDataSourceSrv } from '@grafana/runtime';
+import { setDataSourceSrv } from '@credativ/plutono-runtime';
 
 const setupTestContext = (options: Partial<Props>) => {
   const defaults: Props = {

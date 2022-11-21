@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"strings"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 )
 
 func getDashboardURLBySlug(orgID int64, slug string) (string, error) {
@@ -33,7 +33,7 @@ func RedirectFromLegacyDashboardURL() func(c *models.ReqContext) {
 	}
 }
 
-// In Grafana v7.0 we changed panel edit & view query parameters.
+// In Plutono v7.0 we changed panel edit & view query parameters.
 // This middleware tries to detect those old url parameters and direct to the new url query params
 func RedirectFromLegacyPanelEditURL(cfg *setting.Cfg) func(c *models.ReqContext) {
 	return func(c *models.ReqContext) {

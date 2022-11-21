@@ -1,7 +1,7 @@
 import React, { FC, useCallback, useMemo } from 'react';
 import { useSelector } from 'react-redux';
-import { Select } from '@grafana/ui';
-import { SelectableValue } from '@grafana/data';
+import { Select } from '@credativ/plutono-ui';
+import { SelectableValue } from '@credativ/plutono-data';
 
 import { getVariables } from '../../../variables/state/selectors';
 import { StoreState } from '../../../../types';

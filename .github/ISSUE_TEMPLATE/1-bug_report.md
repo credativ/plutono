@@ -1,6 +1,6 @@
 ---
 name: Bug report
-about: Report a bug you found when using Grafana
+about: Report a bug you found when using Plutono
 labels: 'type: bug'
 ---
 
@@ -23,9 +23,9 @@ PROTIP: record your screen and attach it as a gif to showcase the issue.
 **Anything else we need to know?**:
 
 **Environment**:
-- Grafana version:
+- Plutono version:
 - Data source type & version:
-- OS Grafana is installed on:
+- OS Plutono is installed on:
 - User OS & Browser:
-- Grafana plugins:
+- Plutono plugins:
 - Others:

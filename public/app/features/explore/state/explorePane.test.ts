@@ -1,7 +1,7 @@
-import { DataQuery, DefaultTimeZone, EventBusExtended, serializeStateToUrlParam, toUtc } from '@grafana/data';
+import { DataQuery, DefaultTimeZone, EventBusExtended, serializeStateToUrlParam, toUtc } from '@credativ/plutono-data';
 import { ExploreId } from 'app/types';
 import { refreshExplore } from './explorePane';
-import { setDataSourceSrv } from '@grafana/runtime';
+import { setDataSourceSrv } from '@credativ/plutono-runtime';
 import { configureStore } from '../../../store/configureStore';
 import { of } from 'rxjs';
 

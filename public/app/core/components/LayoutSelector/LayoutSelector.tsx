@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { RadioButtonGroup } from '@grafana/ui';
+import { RadioButtonGroup } from '@credativ/plutono-ui';
 
 export type LayoutMode = LayoutModes.Grid | LayoutModes.List;
 

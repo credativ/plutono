@@ -1,7 +1,7 @@
 import React from 'react';
 import { mount } from 'enzyme';
 import { DerivedFields } from './DerivedFields';
-import { Button } from '@grafana/ui';
+import { Button } from '@credativ/plutono-ui';
 import { DerivedField } from './DerivedField';
 import { act } from 'react-dom/test-utils';
 

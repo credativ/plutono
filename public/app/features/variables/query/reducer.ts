@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import _ from 'lodash';
-import { DataSourceApi, MetricFindValue, stringToJsRegex } from '@grafana/data';
+import { DataSourceApi, MetricFindValue, stringToJsRegex } from '@credativ/plutono-data';
 
 import {
   initialVariableModelState,

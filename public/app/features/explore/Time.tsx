@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { toDuration } from '@grafana/data';
+import { toDuration } from '@credativ/plutono-data';
 
 export interface TimeProps {
   timeInMs: number;

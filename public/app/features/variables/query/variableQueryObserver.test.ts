@@ -1,5 +1,5 @@
 import { variableQueryObserver } from './variableQueryObserver';
-import { LoadingState } from '@grafana/data';
+import { LoadingState } from '@credativ/plutono-data';
 import { VariableIdentifier } from '../state/types';
 import { UpdateOptionsResults } from './VariableQueryRunner';
 

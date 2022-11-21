@@ -1,6 +1,6 @@
 import React from 'react';
-import { DataSourcePluginOptionsEditorProps, DataSourceSettings } from '@grafana/data';
-import { DataSourceHttpSettings } from '@grafana/ui';
+import { DataSourcePluginOptionsEditorProps, DataSourceSettings } from '@credativ/plutono-data';
+import { DataSourceHttpSettings } from '@credativ/plutono-ui';
 import { LokiOptions } from '../types';
 import { MaxLinesField } from './MaxLinesField';
 import { DerivedFields } from './DerivedFields';

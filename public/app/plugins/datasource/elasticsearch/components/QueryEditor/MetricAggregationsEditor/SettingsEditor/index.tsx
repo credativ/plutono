@@ -1,4 +1,4 @@
-import { InlineField, Input, InlineSwitch } from '@grafana/ui';
+import { InlineField, Input, InlineSwitch } from '@credativ/plutono-ui';
 import React, { FunctionComponent, ComponentProps, useState } from 'react';
 import { extendedStats } from '../../../../query_def';
 import { useDispatch } from '../../../../hooks/useStatelessReducer';

@@ -45,8 +45,8 @@ var (
 	workingDir            string
 	includeBuildId        bool     = true
 	buildId               string   = "0"
-	serverBinary          string   = "grafana-server"
-	cliBinary             string   = "grafana-cli"
+	serverBinary          string   = "plutono-server"
+	cliBinary             string   = "plutono-cli"
 	binaries              []string = []string{serverBinary, cliBinary}
 	isDev                 bool     = false
 	enterprise            bool     = false
@@ -71,12 +71,12 @@ func main() {
 	flag.StringVar(&pkgArch, "pkg-arch", "", "PKG ARCH")
 	flag.BoolVar(&race, "race", race, "Use race detector")
 	flag.BoolVar(&includeBuildId, "includeBuildId", includeBuildId, "IncludeBuildId in package name")
-	flag.BoolVar(&enterprise, "enterprise", enterprise, "Build enterprise version of Grafana")
+	flag.BoolVar(&enterprise, "enterprise", enterprise, "Build enterprise version of Plutono")
 	flag.StringVar(&buildIdRaw, "buildId", "0", "Build ID from CI system")
 	flag.BoolVar(&isDev, "dev", isDev, "optimal for development, skips certain steps")
 	flag.BoolVar(&skipRpmGen, "skipRpm", skipRpmGen, "skip rpm package generation (default: false)")
 	flag.BoolVar(&skipDebGen, "skipDeb", skipDebGen, "skip deb package generation (default: false)")
-	flag.BoolVar(&printGenVersion, "gen-version", printGenVersion, "generate Grafana version and output (default: false)")
+	flag.BoolVar(&printGenVersion, "gen-version", printGenVersion, "generate Plutono version and output (default: false)")
 	flag.Parse()
 
 	buildId = shortenBuildId(buildIdRaw)
@@ -112,11 +112,11 @@ func main() {
 
 		case "build-srv", "build-server":
 			clean()
-			doBuild("grafana-server", "./pkg/cmd/grafana-server", buildTags)
+			doBuild("plutono-server", "./pkg/cmd/plutono-server", buildTags)
 
 		case "build-cli":
 			clean()
-			doBuild("grafana-cli", "./pkg/cmd/grafana-cli", buildTags)
+			doBuild("plutono-cli", "./pkg/cmd/plutono-cli", buildTags)
 
 		case "build":
 			//clean()
@@ -149,15 +149,15 @@ func makeLatestDistCopies() {
 	}
 
 	latestMapping := map[string]string{
-		"_amd64.deb":               "dist/grafana_latest_amd64.deb",
-		".x86_64.rpm":              "dist/grafana-latest-1.x86_64.rpm",
-		".linux-amd64.tar.gz":      "dist/grafana-latest.linux-x64.tar.gz",
-		".linux-amd64-musl.tar.gz": "dist/grafana-latest.linux-x64-musl.tar.gz",
-		".linux-armv7.tar.gz":      "dist/grafana-latest.linux-armv7.tar.gz",
-		".linux-armv7-musl.tar.gz": "dist/grafana-latest.linux-armv7-musl.tar.gz",
-		".linux-armv6.tar.gz":      "dist/grafana-latest.linux-armv6.tar.gz",
-		".linux-arm64.tar.gz":      "dist/grafana-latest.linux-arm64.tar.gz",
-		".linux-arm64-musl.tar.gz": "dist/grafana-latest.linux-arm64-musl.tar.gz",
+		"_amd64.deb":               "dist/plutono_latest_amd64.deb",
+		".x86_64.rpm":              "dist/plutono-latest-1.x86_64.rpm",
+		".linux-amd64.tar.gz":      "dist/plutono-latest.linux-x64.tar.gz",
+		".linux-amd64-musl.tar.gz": "dist/plutono-latest.linux-x64-musl.tar.gz",
+		".linux-armv7.tar.gz":      "dist/plutono-latest.linux-armv7.tar.gz",
+		".linux-armv7-musl.tar.gz": "dist/plutono-latest.linux-armv7-musl.tar.gz",
+		".linux-armv6.tar.gz":      "dist/plutono-latest.linux-armv6.tar.gz",
+		".linux-arm64.tar.gz":      "dist/plutono-latest.linux-arm64.tar.gz",
+		".linux-arm64-musl.tar.gz": "dist/plutono-latest.linux-arm64-musl.tar.gz",
 	}
 
 	for _, file := range files {
@@ -223,7 +223,7 @@ func setup() {
 	if goos == windows {
 		args = append(args, "-buildmode=exe")
 	}
-	args = append(args, "./pkg/cmd/grafana-server")
+	args = append(args, "./pkg/cmd/plutono-server")
 	runPrint("go", args...)
 }
 

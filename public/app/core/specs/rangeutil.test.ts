@@ -1,4 +1,4 @@
-import { rangeUtil, dateTime } from '@grafana/data';
+import { rangeUtil, dateTime } from '@credativ/plutono-data';
 import _ from 'lodash';
 
 describe('rangeUtil', () => {

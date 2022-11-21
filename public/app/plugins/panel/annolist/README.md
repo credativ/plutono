@@ -1,6 +1,6 @@
 # Annotation List Panel -  Native Plugin
 
-This Annotations List panel is **included** with Grafana.
+This Annotations List panel is **included** with Plutono.
 
-However, it is presently in alpha and is not accessible unless alpha panels are [enabled in Grafana settings](https://grafana.com/docs/grafana/latest/administration/configuration/#enable_alpha)
+However, it is presently in alpha and is not accessible unless alpha panels are [enabled in Plutono settings](https://grafana.com/docs/grafana/latest/administration/configuration/#enable_alpha)
 

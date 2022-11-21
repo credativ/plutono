@@ -1,5 +1,5 @@
 import React, { InputHTMLAttributes, FunctionComponent } from 'react';
-import { InlineFormLabel } from '@grafana/ui';
+import { InlineFormLabel } from '@credativ/plutono-ui';
 
 export interface Props extends InputHTMLAttributes<HTMLInputElement> {
   label: string;

@@ -1,6 +1,6 @@
 import angular from 'angular';
 import castArray from 'lodash/castArray';
-import { DataQuery, LoadingState, TimeRange, UrlQueryMap, UrlQueryValue } from '@grafana/data';
+import { DataQuery, LoadingState, TimeRange, UrlQueryMap, UrlQueryValue } from '@credativ/plutono-data';
 
 import {
   DashboardVariableModel,

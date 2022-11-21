@@ -1,4 +1,4 @@
-import { DataFrameView, FieldCache, KeyValue, MutableDataFrame } from '@grafana/data';
+import { DataFrameView, FieldCache, KeyValue, MutableDataFrame } from '@credativ/plutono-data';
 import { ElasticResponse } from '../elastic_response';
 import flatten from 'app/core/utils/flatten';
 import { ElasticsearchQuery } from '../types';

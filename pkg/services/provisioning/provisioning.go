@@ -5,14 +5,14 @@ import (
 	"path/filepath"
 	"sync"
 
-	"github.com/grafana/grafana/pkg/infra/log"
-	"github.com/grafana/grafana/pkg/registry"
-	"github.com/grafana/grafana/pkg/services/provisioning/dashboards"
-	"github.com/grafana/grafana/pkg/services/provisioning/datasources"
-	"github.com/grafana/grafana/pkg/services/provisioning/notifiers"
-	"github.com/grafana/grafana/pkg/services/provisioning/plugins"
-	"github.com/grafana/grafana/pkg/setting"
-	"github.com/grafana/grafana/pkg/util/errutil"
+	"github.com/credativ/plutono/pkg/infra/log"
+	"github.com/credativ/plutono/pkg/registry"
+	"github.com/credativ/plutono/pkg/services/provisioning/dashboards"
+	"github.com/credativ/plutono/pkg/services/provisioning/datasources"
+	"github.com/credativ/plutono/pkg/services/provisioning/notifiers"
+	"github.com/credativ/plutono/pkg/services/provisioning/plugins"
+	"github.com/credativ/plutono/pkg/setting"
+	"github.com/credativ/plutono/pkg/util/errutil"
 )
 
 type ProvisioningService interface {

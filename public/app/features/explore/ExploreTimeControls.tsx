@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 
 // Types
 import { ExploreId } from 'app/types';
-import { TimeRange, TimeZone, RawTimeRange, dateTimeForTimeZone, dateMath } from '@grafana/data';
+import { TimeRange, TimeZone, RawTimeRange, dateTimeForTimeZone, dateMath } from '@credativ/plutono-data';
 
 // State
 

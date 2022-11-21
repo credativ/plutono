@@ -50,11 +50,11 @@
       <info-popover mode="right-absolute">
         This option determines how TLS/SSL certifications are configured. Selecting <i>File system path</i> will allow
         you to configure certificates by specifying paths to existing certificates on the local file system where
-        Grafana is running. Be sure that the file is readable by the user executing the Grafana process.<br><br>
+        Plutono is running. Be sure that the file is readable by the user executing the Plutono process.<br><br>
 
         Selecting <i>Certificate content</i> will allow you to configure certificates by specifying its content.
-        The content will be stored encrypted in Grafana's database. When connecting to the database the certificates
-        will be written as files to Grafana's configured data path on the local file system.
+        The content will be stored encrypted in Plutono's database. When connecting to the database the certificates
+        will be written as files to Plutono's configured data path on the local file system.
       </info-popover>
     </div>
   </div>
@@ -78,7 +78,7 @@
       placeholder="TLS/SSL client cert file"></input>
     <info-popover mode="right-absolute">
       To authenticate with an TLS/SSL client certificate, provide the path to the file here.
-      Be sure that the file is readable by the user executing the grafana process.
+      Be sure that the file is readable by the user executing the plutono process.
     </info-popover>
   </div>
   <div class="gf-form max-width-30">
@@ -87,7 +87,7 @@
       placeholder="TLS/SSL client key file"></input>
     <info-popover mode="right-absolute">
       To authenticate with a client TLS/SSL certificate, provide the path to the corresponding key file here.
-      Be sure that the file is <i>only</i> readable by the user executing the grafana process.
+      Be sure that the file is <i>only</i> readable by the user executing the plutono process.
     </info-popover>
   </div>
 </div>
@@ -171,11 +171,11 @@
       </info-popover>
     </div>
   </div>
-  <div class="grafana-info-box alert alert-info" ng-show="ctrl.showTimescaleDBHelp">
+  <div class="plutono-info-box alert alert-info" ng-show="ctrl.showTimescaleDBHelp">
     <div class="alert-body">
       <p>
         <a href="https://github.com/timescale/timescaledb" class="pointer" target="_blank">TimescaleDB</a> is a
-        time-series database built as a PostgreSQL extension. If enabled, Grafana will use <code>time_bucket</code> in
+        time-series database built as a PostgreSQL extension. If enabled, Plutono will use <code>time_bucket</code> in
         the <code>$__timeGroup</code> macro and display TimescaleDB specific aggregate functions in the query builder.
       </p>
     </div>
@@ -183,11 +183,11 @@
 </div>
 
 <div class="gf-form-group">
-  <div class="grafana-info-box">
+  <div class="plutono-info-box">
     <h5>User Permission</h5>
     <p>
       The database user should only be granted SELECT permissions on the specified database &amp; tables you want to query.
-      Grafana does not validate that queries are safe so queries can contain any SQL statement. For example, statements
+      Plutono does not validate that queries are safe so queries can contain any SQL statement. For example, statements
       like <code>DELETE FROM user;</code> and <code>DROP TABLE user;</code> would be executed. To protect against this we
       <strong>Highly</strong> recommmend you create a specific PostgreSQL user with restricted permissions.
     </p>

@@ -20,7 +20,7 @@ describe('ThresholdManager', () => {
         ctx.panel.thresholds = thresholds;
         const manager = new ThresholdManager(ctx.panelCtrl);
         if (data !== undefined) {
-          const element = angular.element('<div grafana-graph><div>');
+          const element = angular.element('<div plutono-graph><div>');
           manager.prepare(element, data);
         }
         manager.addFlotOptions(ctx.options, ctx.panel);

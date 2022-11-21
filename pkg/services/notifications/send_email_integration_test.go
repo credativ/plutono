@@ -4,9 +4,9 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/grafana/grafana/pkg/bus"
-	"github.com/grafana/grafana/pkg/models"
-	"github.com/grafana/grafana/pkg/setting"
+	"github.com/credativ/plutono/pkg/bus"
+	"github.com/credativ/plutono/pkg/models"
+	"github.com/credativ/plutono/pkg/setting"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -21,7 +21,7 @@ func TestEmailIntegrationTest(t *testing.T) {
 		ns.Cfg.Smtp.Enabled = true
 		ns.Cfg.Smtp.TemplatesPattern = "emails/*.html"
 		ns.Cfg.Smtp.FromAddress = "from@address.com"
-		ns.Cfg.Smtp.FromName = "Grafana Admin"
+		ns.Cfg.Smtp.FromName = "Plutono Admin"
 
 		err := ns.Init()
 		So(err, ShouldBeNil)
@@ -59,7 +59,7 @@ func TestEmailIntegrationTest(t *testing.T) {
 			So(err, ShouldBeNil)
 
 			sentMsg := <-ns.mailQueue
-			So(sentMsg.From, ShouldEqual, "Grafana Admin <from@address.com>")
+			So(sentMsg.From, ShouldEqual, "Plutono Admin <from@address.com>")
 			So(sentMsg.To[0], ShouldEqual, "asdf@asdf.com")
 			err = ioutil.WriteFile("../../../tmp/test_email.html", []byte(sentMsg.Body), 0777)
 			So(err, ShouldBeNil)

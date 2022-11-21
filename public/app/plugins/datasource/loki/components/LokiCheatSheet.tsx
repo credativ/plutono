@@ -1,6 +1,6 @@
 import React, { PureComponent } from 'react';
 import { shuffle } from 'lodash';
-import { QueryEditorHelpProps, DataQuery } from '@grafana/data';
+import { QueryEditorHelpProps, DataQuery } from '@credativ/plutono-data';
 import LokiLanguageProvider from '../language_provider';
 
 const DEFAULT_EXAMPLES = ['{job="default/prometheus"}'];

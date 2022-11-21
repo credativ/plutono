@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/grafana/grafana/pkg/services/sqlstore"
+	"github.com/credativ/plutono/pkg/services/sqlstore"
 )
 
 func (s *UserAuthTokenService) Run(ctx context.Context) error {

@@ -1,6 +1,6 @@
 import _ from 'lodash';
-import { TemplateSrv } from '@grafana/runtime';
-import { ScopedVars } from '@grafana/data';
+import { TemplateSrv } from '@credativ/plutono-runtime';
+import { ScopedVars } from '@credativ/plutono-data';
 
 export default class PostgresQuery {
   target: any;

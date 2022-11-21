@@ -8,4 +8,4 @@ apiVersion: 1
 #   folderUid: ''
 #   type: file
 #   options:
-#     path: /var/lib/grafana/dashboards
+#     path: /var/lib/plutono/dashboards

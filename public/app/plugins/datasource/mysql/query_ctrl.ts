@@ -7,9 +7,9 @@ import MysqlQuery from './mysql_query';
 import sqlPart from './sql_part';
 import { auto } from 'angular';
 import { CoreEvents } from 'app/types';
-import { PanelEvents, QueryResultMeta } from '@grafana/data';
+import { PanelEvents, QueryResultMeta } from '@credativ/plutono-data';
 import { VariableWithMultiSupport } from 'app/features/variables/types';
-import { TemplateSrv } from '@grafana/runtime';
+import { TemplateSrv } from '@credativ/plutono-runtime';
 
 const defaultQuery = `SELECT
   UNIX_TIMESTAMP(<time_column>) as time_sec,

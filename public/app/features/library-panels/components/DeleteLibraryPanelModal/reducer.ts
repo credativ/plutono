@@ -1,5 +1,5 @@
 import { DashboardSearchHit } from 'app/features/search/types';
-import { LoadingState } from '@grafana/data';
+import { LoadingState } from '@credativ/plutono-data';
 import { AnyAction } from 'redux';
 import { createAction } from '@reduxjs/toolkit';
 

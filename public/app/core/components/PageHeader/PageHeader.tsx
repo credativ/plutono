@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import { css } from 'emotion';
-import { Tab, TabsBar, Icon, IconName, useStyles } from '@grafana/ui';
-import { NavModel, NavModelItem, NavModelBreadcrumb, GrafanaTheme } from '@grafana/data';
+import { Tab, TabsBar, Icon, IconName, useStyles } from '@credativ/plutono-ui';
+import { NavModel, NavModelItem, NavModelBreadcrumb, PlutonoTheme } from '@credativ/plutono-data';
 import { PanelHeaderMenuItem } from 'app/features/dashboard/dashgrid/PanelHeader/PanelHeaderMenuItem';
 
 export interface Props {
@@ -94,7 +94,7 @@ export const PageHeader: FC<Props> = ({ model }) => {
 };
 
 function renderHeaderTitle(main: NavModelItem) {
-  const marginTop = main.icon === 'grafana' ? 12 : 14;
+  const marginTop = main.icon === 'plutono' ? 12 : 14;
 
   return (
     <div className="page-header__inner">
@@ -137,7 +137,7 @@ function renderTitle(title: string, breadcrumbs: NavModelBreadcrumb[]) {
   return <h1 className="page-header__title">{breadcrumbsResult}</h1>;
 }
 
-const getStyles = (theme: GrafanaTheme) => ({
+const getStyles = (theme: PlutonoTheme) => ({
   headerCanvas: css`
     background: ${theme.colors.bg2};
     border-bottom: 1px solid ${theme.colors.border1};

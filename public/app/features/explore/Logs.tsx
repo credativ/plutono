@@ -18,8 +18,8 @@ import {
   GraphSeriesXY,
   LinkModel,
   Field,
-  GrafanaTheme,
-} from '@grafana/data';
+  PlutonoTheme,
+} from '@credativ/plutono-data';
 import {
   LogLabels,
   RadioButtonGroup,
@@ -32,17 +32,17 @@ import {
   stylesFactory,
   Icon,
   Tooltip,
-} from '@grafana/ui';
+} from '@credativ/plutono-ui';
 import store from 'app/core/store';
 import { ExploreGraphPanel } from './ExploreGraphPanel';
 import { MetaInfoText } from './MetaInfoText';
-import { RowContextOptions } from '@grafana/ui/src/components/Logs/LogRowContextProvider';
-import { MAX_CHARACTERS } from '@grafana/ui/src/components/Logs/LogRowMessage';
+import { RowContextOptions } from '@credativ/plutono-ui/src/components/Logs/LogRowContextProvider';
+import { MAX_CHARACTERS } from '@credativ/plutono-ui/src/components/Logs/LogRowMessage';
 
 const SETTINGS_KEYS = {
-  showLabels: 'grafana.explore.logs.showLabels',
-  showTime: 'grafana.explore.logs.showTime',
-  wrapLogMessage: 'grafana.explore.logs.wrapLogMessage',
+  showLabels: 'plutono.explore.logs.showLabels',
+  showTime: 'plutono.explore.logs.showTime',
+  wrapLogMessage: 'plutono.explore.logs.wrapLogMessage',
 };
 
 function renderMetaItem(value: any, kind: LogsMetaKind) {
@@ -65,7 +65,7 @@ interface Props {
   dedupedRows?: LogRowModel[];
   visibleRange?: AbsoluteTimeRange;
   width: number;
-  theme: GrafanaTheme;
+  theme: PlutonoTheme;
   highlighterExpressions?: string[];
   loading: boolean;
   absoluteRange: AbsoluteTimeRange;
@@ -436,7 +436,7 @@ export class UnthemedLogs extends PureComponent<Props, State> {
 
 export const Logs = withTheme(UnthemedLogs);
 
-const getStyles = stylesFactory((theme: GrafanaTheme) => {
+const getStyles = stylesFactory((theme: PlutonoTheme) => {
   return {
     noData: css`
       > * {

@@ -3,7 +3,7 @@ import Clipboard from 'clipboard';
 import coreModule from '../core_module';
 import kbn from 'app/core/utils/kbn';
 import { appEvents } from 'app/core/core';
-import { AppEvents } from '@grafana/data';
+import { AppEvents } from '@credativ/plutono-data';
 
 /** @ngInject */
 function tip($compile: any) {
@@ -11,7 +11,7 @@ function tip($compile: any) {
     restrict: 'E',
     link: (scope: any, elem: any, attrs: any) => {
       let _t =
-        '<i class="grafana-tip fa fa-' +
+        '<i class="plutono-tip fa fa-' +
         (attrs.icon || 'question-circle') +
         '" bs-tooltip="\'' +
         kbn.addSlashes(elem.text()) +

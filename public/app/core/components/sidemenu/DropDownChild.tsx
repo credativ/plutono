@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import { css } from 'emotion';
-import { Icon, IconName, useTheme } from '@grafana/ui';
+import { Icon, IconName, useTheme } from '@credativ/plutono-ui';
 
 export interface Props {
   child: any;

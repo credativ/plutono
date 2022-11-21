@@ -6,8 +6,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/grafana/grafana/pkg/components/simplejson"
-	"github.com/grafana/grafana/pkg/models"
+	"github.com/credativ/plutono/pkg/components/simplejson"
+	"github.com/credativ/plutono/pkg/models"
 	. "github.com/smartystreets/goconvey/convey"
 )
 
@@ -45,7 +45,7 @@ func TestDashboardProvisioningTest(t *testing.T) {
 				DashboardCmd: saveDashboardCmd,
 				DashboardProvisioning: &models.DashboardProvisioning{
 					Name:       "default",
-					ExternalId: "/var/grafana.json",
+					ExternalId: "/var/plutono.json",
 					Updated:    now.Unix(),
 				},
 			}
@@ -69,7 +69,7 @@ func TestDashboardProvisioningTest(t *testing.T) {
 					},
 					DashboardProvisioning: &models.DashboardProvisioning{
 						Name:       "another_reader",
-						ExternalId: "/var/grafana.json",
+						ExternalId: "/var/plutono.json",
 						Updated:    now.Unix(),
 					},
 				}

@@ -3,8 +3,8 @@
 cp Dockerfile ../../dist
 cd ../../dist
 
-docker build --tag "grafana/debtest" .
+docker build --tag "plutono/debtest" .
 
 rm Dockerfile
 
-docker run -i -t grafana/debtest /bin/bash
+docker run -i -t plutono/debtest /bin/bash

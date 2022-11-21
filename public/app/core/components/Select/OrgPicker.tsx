@@ -1,8 +1,8 @@
 import React, { PureComponent } from 'react';
-import { AsyncSelect } from '@grafana/ui';
+import { AsyncSelect } from '@credativ/plutono-ui';
 import { getBackendSrv } from 'app/core/services/backend_srv';
 import { Organization } from 'app/types';
-import { SelectableValue } from '@grafana/data';
+import { SelectableValue } from '@credativ/plutono-data';
 
 export interface OrgSelectItem {
   id: number;

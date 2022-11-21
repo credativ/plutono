@@ -1,5 +1,5 @@
 import { ComponentType } from 'react';
-import { LoadingState } from '@grafana/data';
+import { LoadingState } from '@credativ/plutono-data';
 
 import { initialVariableModelState, SystemVariable, VariableHide } from '../types';
 import { VariableAdapter } from '../adapters';

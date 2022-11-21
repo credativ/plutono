@@ -1,7 +1,7 @@
 import React, { ChangeEvent } from 'react';
-import { LegacyForms } from '@grafana/ui';
+import { LegacyForms } from '@credativ/plutono-ui';
 const { Switch } = LegacyForms;
-import { PanelData } from '@grafana/data';
+import { PanelData } from '@credativ/plutono-data';
 import { AnnotationQuery } from '../types';
 import { CloudWatchDatasource } from '../datasource';
 import { QueryField, PanelQueryEditor } from './';
