@@ -93,14 +93,14 @@ func (m *manager) Register(pluginID string, factory PluginFactoryFunc) error {
 	}
 
 	hostEnv := []string{
-		fmt.Sprintf("GF_VERSION=%s", m.Cfg.BuildVersion),
-		fmt.Sprintf("GF_EDITION=%s", m.License.Edition()),
+		fmt.Sprintf("PL_VERSION=%s", m.Cfg.BuildVersion),
+		fmt.Sprintf("PL_EDITION=%s", m.License.Edition()),
 	}
 
 	if m.License.HasLicense() {
 		hostEnv = append(
 			hostEnv,
-			fmt.Sprintf("GF_ENTERPRISE_LICENSE_PATH=%s", m.Cfg.EnterpriseLicensePath),
+			fmt.Sprintf("PL_ENTERPRISE_LICENSE_PATH=%s", m.Cfg.EnterpriseLicensePath),
 		)
 
 		if envProvider, ok := m.License.(models.LicenseEnvironment); ok {
@@ -112,7 +112,7 @@ func (m *manager) Register(pluginID string, factory PluginFactoryFunc) error {
 
 	hostEnv = append(hostEnv, m.getAWSEnvironmentVariables()...)
 
-	env := pluginSettings.ToEnv("GF_PLUGIN", hostEnv)
+	env := pluginSettings.ToEnv("PL_PLUGIN", hostEnv)
 
 	pluginLogger := m.logger.New("pluginId", pluginID)
 	plugin, err := factory(pluginID, pluginLogger, env)

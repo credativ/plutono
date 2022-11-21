@@ -32,19 +32,19 @@ func main() {
 				Name:    "pluginsDir",
 				Usage:   "Path to the Plutono plugin directory",
 				Value:   utils.GetPlutonoPluginDir(runtime.GOOS),
-				EnvVars: []string{"GF_PLUGIN_DIR"},
+				EnvVars: []string{"PL_PLUGIN_DIR"},
 			},
 			&cli.StringFlag{
 				Name:    "repo",
 				Usage:   "URL to the plugin repository",
 				Value:   "https://grafana.com/api/plugins",
-				EnvVars: []string{"GF_PLUGIN_REPO"},
+				EnvVars: []string{"PL_PLUGIN_REPO"},
 			},
 			&cli.StringFlag{
 				Name:    "pluginUrl",
 				Usage:   "Full url to the plugin zip file instead of downloading the plugin from grafana.com/api",
 				Value:   "",
-				EnvVars: []string{"GF_PLUGIN_URL"},
+				EnvVars: []string{"PL_PLUGIN_URL"},
 			},
 			&cli.BoolFlag{
 				Name:  "insecure",

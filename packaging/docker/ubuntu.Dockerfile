@@ -13,46 +13,46 @@ EXPOSE 3000
 
 # Set DEBIAN_FRONTEND=noninteractive in environment at build-time
 ARG DEBIAN_FRONTEND=noninteractive
-ARG GF_UID="472"
-ARG GF_GID="0"
+ARG PL_UID="472"
+ARG PL_GID="0"
 
 ENV PATH=/usr/share/plutono/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin \
-    GF_PATHS_CONFIG="/etc/plutono/plutono.ini" \
-    GF_PATHS_DATA="/var/lib/plutono" \
-    GF_PATHS_HOME="/usr/share/plutono" \
-    GF_PATHS_LOGS="/var/log/plutono" \
-    GF_PATHS_PLUGINS="/var/lib/plutono/plugins" \
-    GF_PATHS_PROVISIONING="/etc/plutono/provisioning"
+    PL_PATHS_CONFIG="/etc/plutono/plutono.ini" \
+    PL_PATHS_DATA="/var/lib/plutono" \
+    PL_PATHS_HOME="/usr/share/plutono" \
+    PL_PATHS_LOGS="/var/log/plutono" \
+    PL_PATHS_PLUGINS="/var/lib/plutono/plugins" \
+    PL_PATHS_PROVISIONING="/etc/plutono/provisioning"
 
-WORKDIR $GF_PATHS_HOME
+WORKDIR $PL_PATHS_HOME
 
 # Install dependencies
 # We need curl in the image
 RUN apt-get update && apt-get install -y ca-certificates curl tzdata && \
     apt-get autoremove -y && rm -rf /var/lib/apt/lists/*;
 
-COPY --from=plutono-builder /tmp/plutono "$GF_PATHS_HOME"
+COPY --from=plutono-builder /tmp/plutono "$PL_PATHS_HOME"
 
-RUN if [ ! $(getent group "$GF_GID") ]; then \
-      addgroup --system --gid $GF_GID plutono; \
+RUN if [ ! $(getent group "$PL_GID") ]; then \
+      addgroup --system --gid $PL_GID plutono; \
     fi
 
-RUN export GF_GID_NAME=$(getent group $GF_GID | cut -d':' -f1) && \
-    mkdir -p "$GF_PATHS_HOME/.aws" && \
-    adduser --system --uid $GF_UID --ingroup "$GF_GID_NAME" plutono && \
-    mkdir -p "$GF_PATHS_PROVISIONING/datasources" \
-             "$GF_PATHS_PROVISIONING/dashboards" \
-             "$GF_PATHS_PROVISIONING/notifiers" \
-             "$GF_PATHS_PROVISIONING/plugins" \
-             "$GF_PATHS_LOGS" \
-             "$GF_PATHS_PLUGINS" \
-             "$GF_PATHS_DATA" && \
-    cp "$GF_PATHS_HOME/conf/sample.ini" "$GF_PATHS_CONFIG" && \
-    cp "$GF_PATHS_HOME/conf/ldap.toml" /etc/plutono/ldap.toml && \
-    chown -R "plutono:$GF_GID_NAME" "$GF_PATHS_DATA" "$GF_PATHS_HOME/.aws" "$GF_PATHS_LOGS" "$GF_PATHS_PLUGINS" "$GF_PATHS_PROVISIONING" && \
-    chmod -R 777 "$GF_PATHS_DATA" "$GF_PATHS_HOME/.aws" "$GF_PATHS_LOGS" "$GF_PATHS_PLUGINS" "$GF_PATHS_PROVISIONING"
+RUN export PL_GID_NAME=$(getent group $PL_GID | cut -d':' -f1) && \
+    mkdir -p "$PL_PATHS_HOME/.aws" && \
+    adduser --system --uid $PL_UID --ingroup "$PL_GID_NAME" plutono && \
+    mkdir -p "$PL_PATHS_PROVISIONING/datasources" \
+             "$PL_PATHS_PROVISIONING/dashboards" \
+             "$PL_PATHS_PROVISIONING/notifiers" \
+             "$PL_PATHS_PROVISIONING/plugins" \
+             "$PL_PATHS_LOGS" \
+             "$PL_PATHS_PLUGINS" \
+             "$PL_PATHS_DATA" && \
+    cp "$PL_PATHS_HOME/conf/sample.ini" "$PL_PATHS_CONFIG" && \
+    cp "$PL_PATHS_HOME/conf/ldap.toml" /etc/plutono/ldap.toml && \
+    chown -R "plutono:$PL_GID_NAME" "$PL_PATHS_DATA" "$PL_PATHS_HOME/.aws" "$PL_PATHS_LOGS" "$PL_PATHS_PLUGINS" "$PL_PATHS_PROVISIONING" && \
+    chmod -R 777 "$PL_PATHS_DATA" "$PL_PATHS_HOME/.aws" "$PL_PATHS_LOGS" "$PL_PATHS_PLUGINS" "$PL_PATHS_PROVISIONING"
 
 COPY ./run.sh /run.sh
 
-USER "$GF_UID"
+USER "$PL_UID"
 ENTRYPOINT [ "/run.sh" ]

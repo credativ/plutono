@@ -7,15 +7,15 @@ USER root
 # Set DEBIAN_FRONTEND=noninteractive in environment at build-time
 ARG DEBIAN_FRONTEND=noninteractive
 
-ARG GF_INSTALL_IMAGE_RENDERER_PLUGIN="false"
+ARG PL_INSTALL_IMAGE_RENDERER_PLUGIN="false"
 
-ARG GF_GID="0"
-ENV GF_PATHS_PLUGINS="/var/lib/plutono-plugins"
+ARG PL_GID="0"
+ENV PL_PATHS_PLUGINS="/var/lib/plutono-plugins"
 
-RUN mkdir -p "$GF_PATHS_PLUGINS" && \
-    chown -R plutono:${GF_GID} "$GF_PATHS_PLUGINS"
+RUN mkdir -p "$PL_PATHS_PLUGINS" && \
+    chown -R plutono:${PL_GID} "$PL_PATHS_PLUGINS"
 
-RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
+RUN if [ $PL_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y gdebi-core && \
@@ -28,22 +28,22 @@ fi
 
 USER plutono
 
-ENV GF_RENDERER_PLUGIN_CHROME_BIN="/usr/bin/google-chrome"
+ENV PL_RENDERER_PLUGIN_CHROME_BIN="/usr/bin/google-chrome"
 
-RUN if [ $GF_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
+RUN if [ $PL_INSTALL_IMAGE_RENDERER_PLUGIN = "true" ]; then \
     plutono-cli \
-        --pluginsDir "$GF_PATHS_PLUGINS" \
+        --pluginsDir "$PL_PATHS_PLUGINS" \
         --pluginUrl https://github.com/grafana/grafana-image-renderer/releases/latest/download/plugin-linux-x64-glibc-no-chromium.zip \
         plugins install plutono-image-renderer; \
 fi
 
-ARG GF_INSTALL_PLUGINS=""
+ARG PL_INSTALL_PLUGINS=""
 
-RUN if [ ! -z "${GF_INSTALL_PLUGINS}" ]; then \
+RUN if [ ! -z "${PL_INSTALL_PLUGINS}" ]; then \
     OLDIFS=$IFS; \
         IFS=','; \
-    for plugin in ${GF_INSTALL_PLUGINS}; do \
+    for plugin in ${PL_INSTALL_PLUGINS}; do \
         IFS=$OLDIFS; \
-        plutono-cli --pluginsDir "$GF_PATHS_PLUGINS" plugins install ${plugin}; \
+        plutono-cli --pluginsDir "$PL_PATHS_PLUGINS" plugins install ${plugin}; \
     done; \
 fi

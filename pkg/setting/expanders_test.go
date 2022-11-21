@@ -14,7 +14,7 @@ import (
 )
 
 func TestExpandVar_EnvSuccessful(t *testing.T) {
-	const key = "GF_TEST_SETTING_EXPANDER_ENV"
+	const key = "PL_TEST_SETTING_EXPANDER_ENV"
 	const expected = "aurora borealis"
 	err := os.Setenv(key, expected)
 	require.NoError(t, err)

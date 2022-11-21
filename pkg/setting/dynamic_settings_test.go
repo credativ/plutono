@@ -10,7 +10,7 @@ import (
 func TestDynamicSettingsSupport_Override(t *testing.T) {
 	cfg := NewCfg()
 
-	envKey := "GF_FOO_BAR"
+	envKey := "PL_FOO_BAR"
 	sectionName := "foo"
 	keyName := "bar"
 	expected := "dynamic value"

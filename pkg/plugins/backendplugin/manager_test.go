@@ -60,7 +60,7 @@ func TestManager(t *testing.T) {
 
 				t.Run("Should provide expected host environment variables", func(t *testing.T) {
 					require.Len(t, ctx.env, 4)
-					require.EqualValues(t, []string{"GF_VERSION=7.0.0", "GF_EDITION=Open Source", fmt.Sprintf("%s=true", awsds.AssumeRoleEnabledEnvVarKeyName), fmt.Sprintf("%s=keys,credentials", awsds.AllowedAuthProvidersEnvVarKeyName)}, ctx.env)
+					require.EqualValues(t, []string{"PL_VERSION=7.0.0", "PL_EDITION=Open Source", fmt.Sprintf("%s=true", awsds.AssumeRoleEnabledEnvVarKeyName), fmt.Sprintf("%s=keys,credentials", awsds.AllowedAuthProvidersEnvVarKeyName)}, ctx.env)
 				})
 
 				t.Run("When manager runs should start and stop plugin", func(t *testing.T) {
@@ -269,7 +269,7 @@ func TestManager(t *testing.T) {
 
 			t.Run("Should provide expected host environment variables", func(t *testing.T) {
 				require.Len(t, ctx.env, 6)
-				require.EqualValues(t, []string{"GF_VERSION=7.0.0", "GF_EDITION=Enterprise", "GF_ENTERPRISE_LICENSE_PATH=/license.txt", "GF_ENTERPRISE_LICENSE_TEXT=testtoken", fmt.Sprintf("%s=true", awsds.AssumeRoleEnabledEnvVarKeyName), fmt.Sprintf("%s=keys,credentials", awsds.AllowedAuthProvidersEnvVarKeyName)}, ctx.env)
+				require.EqualValues(t, []string{"PL_VERSION=7.0.0", "PL_EDITION=Enterprise", "PL_ENTERPRISE_LICENSE_PATH=/license.txt", "PL_ENTERPRISE_LICENSE_TEXT=testtoken", fmt.Sprintf("%s=true", awsds.AssumeRoleEnabledEnvVarKeyName), fmt.Sprintf("%s=keys,credentials", awsds.AllowedAuthProvidersEnvVarKeyName)}, ctx.env)
 			})
 		})
 	})
@@ -430,7 +430,7 @@ func (t *testLicensingService) HasValidLicense() bool {
 }
 
 func (t *testLicensingService) Environment() map[string]string {
-	return map[string]string{"GF_ENTERPRISE_LICENSE_TEXT": t.tokenRaw}
+	return map[string]string{"PL_ENTERPRISE_LICENSE_TEXT": t.tokenRaw}
 }
 
 type testPluginRequestValidator struct{}

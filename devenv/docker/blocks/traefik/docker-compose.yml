@@ -15,5 +15,5 @@ services:
   plutono-subpath:
     image: plutono/plutono:latest
     environment:
-      - GF_SERVER_ROOT_URL=/plutono
-      - GF_SERVER_SERVE_FROM_SUB_PATH=true
+      - PL_SERVER_ROOT_URL=/plutono
+      - PL_SERVER_SERVE_FROM_SUB_PATH=true

@@ -7,10 +7,10 @@ import (
 )
 
 const (
-	profilingEnabledEnvName = "GF_DIAGNOSTICS_PROFILING_ENABLED"
-	profilingPortEnvName    = "GF_DIAGNOSTICS_PROFILING_PORT"
-	tracingEnabledEnvName   = "GF_DIAGNOSTICS_TRACING_ENABLED"
-	tracingFileEnvName      = "GF_DIAGNOSTICS_TRACING_FILE"
+	profilingEnabledEnvName = "PL_DIAGNOSTICS_PROFILING_ENABLED"
+	profilingPortEnvName    = "PL_DIAGNOSTICS_PROFILING_PORT"
+	tracingEnabledEnvName   = "PL_DIAGNOSTICS_TRACING_ENABLED"
+	tracingFileEnvName      = "PL_DIAGNOSTICS_TRACING_FILE"
 )
 
 type profilingDiagnostics struct {
