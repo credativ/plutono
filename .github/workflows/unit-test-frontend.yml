@@ -37,5 +37,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --pure-lockfile --no-progress --network-concurrency 1
 
+      - name: Type check
+        run: yarn typecheck
+
+      - name: Linter
+        run: yarn lint
+
       - name: Test
         run: yarn test:ci
