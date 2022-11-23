@@ -1,22 +1,16 @@
 package usagestats
 
 import (
-	"bytes"
 	"context"
-	"encoding/json"
 	"fmt"
-	"net/http"
 	"runtime"
 	"strings"
-	"time"
 
 	"github.com/credativ/plutono/pkg/infra/metrics"
 	"github.com/credativ/plutono/pkg/models"
 	"github.com/credativ/plutono/pkg/plugins"
 	"github.com/credativ/plutono/pkg/setting"
 )
-
-var usageStatsURL = "https://stats.plutono.org/plutono-usage-report"
 
 type UsageReport struct {
 	Version         string                 `json:"version"`
@@ -122,7 +116,7 @@ func (uss *UsageStatsService) GetUsageReport(ctx context.Context) (UsageReport, 
 	}
 
 	metrics["stats.packaging."+setting.Packaging+".count"] = 1
-	metrics["stats.distributor."+setting.ReportingDistributor+".count"] = 1
+	metrics["stats.distributor.plutono-labs.count"] = 1
 
 	// Alerting stats
 	alertingUsageStats, err := uss.AlertingUsageStats.QueryUsageStats()
@@ -237,39 +231,6 @@ func (uss *UsageStatsService) registerExternalMetrics(metrics map[string]interfa
 
 func (uss *UsageStatsService) RegisterMetric(name string, fn MetricFunc) {
 	uss.externalMetrics[name] = fn
-}
-
-func (uss *UsageStatsService) sendUsageStats(ctx context.Context) error {
-	if !setting.ReportingEnabled {
-		return nil
-	}
-
-	metricsLogger.Debug(fmt.Sprintf("Sending anonymous usage stats to %s", usageStatsURL))
-
-	report, err := uss.GetUsageReport(ctx)
-	if err != nil {
-		return err
-	}
-
-	out, err := json.MarshalIndent(report, "", " ")
-	if err != nil {
-		return err
-	}
-	data := bytes.NewBuffer(out)
-
-	client := http.Client{Timeout: 5 * time.Second}
-	go func() {
-		resp, err := client.Post(usageStatsURL, "application/json", data)
-		if err != nil {
-			metricsLogger.Error("Failed to send usage stats", "err", err)
-			return
-		}
-		if err := resp.Body.Close(); err != nil {
-			metricsLogger.Warn("Failed to close response body", "err", err)
-		}
-	}()
-
-	return nil
 }
 
 func (uss *UsageStatsService) updateTotalStats() {
