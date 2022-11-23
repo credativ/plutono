@@ -360,13 +360,6 @@ export function setupAngularRoutes($routeProvider: route.IRouteProvider, $locati
           SafeDynamicImport(import(/* webpackChunkName: "AdminSettings" */ 'app/features/admin/AdminSettings')),
       },
     })
-    .when('/admin/upgrading', {
-      template: '<react-container />',
-      reloadOnSearch: false,
-      resolve: {
-        component: () => SafeDynamicImport(import('app/features/admin/UpgradePage')),
-      },
-    })
     .when('/admin/users', {
       template: '<react-container />',
       reloadOnSearch: false,
