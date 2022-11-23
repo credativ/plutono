@@ -255,24 +255,6 @@ func TestManager(t *testing.T) {
 			})
 		})
 	})
-
-	newManagerScenario(t, true, func(t *testing.T, ctx *managerScenarioCtx) {
-		t.Run("Plugin registration scenario when Plutono is licensed", func(t *testing.T) {
-			ctx.license.edition = "Enterprise"
-			ctx.license.hasLicense = true
-			ctx.license.tokenRaw = "testtoken"
-			ctx.cfg.BuildVersion = "7.0.0"
-			ctx.cfg.EnterpriseLicensePath = "/license.txt"
-
-			err := ctx.manager.Register(testPluginID, ctx.factory)
-			require.NoError(t, err)
-
-			t.Run("Should provide expected host environment variables", func(t *testing.T) {
-				require.Len(t, ctx.env, 6)
-				require.EqualValues(t, []string{"PL_VERSION=7.0.0", "PL_EDITION=Enterprise", "PL_ENTERPRISE_LICENSE_PATH=/license.txt", "PL_ENTERPRISE_LICENSE_TEXT=testtoken", fmt.Sprintf("%s=true", awsds.AssumeRoleEnabledEnvVarKeyName), fmt.Sprintf("%s=keys,credentials", awsds.AllowedAuthProvidersEnvVarKeyName)}, ctx.env)
-			})
-		})
-	})
 }
 
 type managerScenarioCtx struct {

@@ -97,19 +97,6 @@ func (m *manager) Register(pluginID string, factory PluginFactoryFunc) error {
 		fmt.Sprintf("PL_EDITION=%s", m.License.Edition()),
 	}
 
-	if m.License.HasLicense() {
-		hostEnv = append(
-			hostEnv,
-			fmt.Sprintf("PL_ENTERPRISE_LICENSE_PATH=%s", m.Cfg.EnterpriseLicensePath),
-		)
-
-		if envProvider, ok := m.License.(models.LicenseEnvironment); ok {
-			for k, v := range envProvider.Environment() {
-				hostEnv = append(hostEnv, fmt.Sprintf("%s=%s", k, v))
-			}
-		}
-	}
-
 	hostEnv = append(hostEnv, m.getAWSEnvironmentVariables()...)
 
 	env := pluginSettings.ToEnv("PL_PLUGIN", hostEnv)
