@@ -37,7 +37,7 @@ export let getVersionLinks = (): FooterLink[] => {
   const links: FooterLink[] = [];
   const stateInfo = licenseInfo.stateInfo ? ` (${licenseInfo.stateInfo})` : '';
 
-  links.push({ text: `${buildInfo.edition}${stateInfo}`, url: licenseInfo.licenseUrl });
+  links.push({ text: `${buildInfo.edition}${stateInfo}` });
 
   if (buildInfo.hideVersion) {
     return links;

@@ -11,7 +11,6 @@ import (
 	"time"
 
 	"github.com/credativ/plutono/pkg/infra/log"
-	"github.com/credativ/plutono/pkg/models"
 	"github.com/credativ/plutono/pkg/setting"
 	"github.com/grafana/grafana-aws-sdk/pkg/awsds"
 	"github.com/grafana/grafana-plugin-sdk-go/backend"
@@ -400,10 +399,6 @@ func (t *testLicensingService) StateInfo() string {
 }
 
 func (t *testLicensingService) ContentDeliveryPrefix() string {
-	return ""
-}
-
-func (t *testLicensingService) LicenseURL(user *models.SignedInUser) string {
 	return ""
 }
 
