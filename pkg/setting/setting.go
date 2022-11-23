@@ -263,7 +263,6 @@ type Cfg struct {
 	PluginsAllowUnsigned     []string
 	MarketplaceURL           string
 	DisableSanitizeHtml      bool
-	EnterpriseLicensePath    string
 
 	// Metrics
 	MetricsEndpointEnabled           bool
@@ -957,9 +956,6 @@ func (cfg *Cfg) Load(args *CommandLineArgs) error {
 
 	imageUploadingSection := iniFile.Section("external_image_storage")
 	ImageUploadProvider = valueAsString(imageUploadingSection, "provider", "")
-
-	enterprise := iniFile.Section("enterprise")
-	cfg.EnterpriseLicensePath = valueAsString(enterprise, "license_path", filepath.Join(cfg.DataPath, "license.jwt"))
 
 	cacheServer := iniFile.Section("remote_cache")
 	dbName := valueAsString(cacheServer, "type", "database")

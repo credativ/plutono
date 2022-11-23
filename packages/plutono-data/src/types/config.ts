@@ -61,7 +61,6 @@ export interface FeatureToggles {
 export interface LicenseInfo {
   hasLicense: boolean;
   expiry: number;
-  licenseUrl: string;
   stateInfo: string;
   hasValidLicense: boolean;
   edition: PlutonoEdition;
