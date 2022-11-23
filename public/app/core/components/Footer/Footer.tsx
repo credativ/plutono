@@ -10,26 +10,7 @@ export interface FooterLink {
 }
 
 export let getFooterLinks = (): FooterLink[] => {
-  return [
-    {
-      text: 'Documentation',
-      icon: 'document-info',
-      url: 'https://grafana.com/docs/grafana/latest/',
-      target: '_blank',
-    },
-    {
-      text: 'Support',
-      icon: 'question-circle',
-      url: 'https://grafana.com/products/enterprise/',
-      target: '_blank',
-    },
-    {
-      text: 'Community',
-      icon: 'comments-alt',
-      url: 'https://community.grafana.com/',
-      target: '_blank',
-    },
-  ];
+  return [];
 };
 
 export let getVersionLinks = (): FooterLink[] => {
