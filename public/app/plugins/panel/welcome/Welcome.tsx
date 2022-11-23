@@ -4,31 +4,12 @@ import { PlutonoTheme } from '@credativ/plutono-data';
 import { stylesFactory, useTheme } from '@credativ/plutono-ui';
 import lightBackground from './img/background_light.svg';
 
-const helpOptions = [
-  { value: 0, label: 'Documentation', href: 'https://grafana.com/docs/grafana/latest' },
-  { value: 1, label: 'Tutorials', href: 'https://grafana.com/tutorials' },
-  { value: 2, label: 'Community', href: 'https://community.grafana.com' },
-  { value: 3, label: 'Public Slack', href: 'http://slack.grafana.com' },
-];
-
 export const WelcomeBanner: FC = () => {
   const styles = getStyles(useTheme());
 
   return (
     <div className={styles.container}>
       <h1 className={styles.title}>Welcome to Plutono</h1>
-      <div className={styles.help}>
-        <h3 className={styles.helpText}>Need help?</h3>
-        <div className={styles.helpLinks}>
-          {helpOptions.map((option, index) => {
-            return (
-              <a key={`${option.label}-${index}`} className={styles.helpLink} href={`${option.href}`}>
-                {option.label}
-              </a>
-            );
-          })}
-        </div>
-      </div>
     </div>
   );
 };
