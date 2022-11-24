@@ -11,7 +11,6 @@ import (
 	"reflect"
 	"runtime"
 	"strings"
-	"time"
 
 	"github.com/credativ/plutono/pkg/infra/fs"
 	"github.com/credativ/plutono/pkg/infra/log"
@@ -155,19 +154,8 @@ func (pm *PluginManager) Init() error {
 
 func (pm *PluginManager) Run(ctx context.Context) error {
 	pm.updateAppDashboards()
-	pm.checkForUpdates()
 
-	ticker := time.NewTicker(time.Minute * 10)
-	run := true
-
-	for run {
-		select {
-		case <-ticker.C:
-			pm.checkForUpdates()
-		case <-ctx.Done():
-			run = false
-		}
-	}
+	<-ctx.Done()
 
 	return ctx.Err()
 }
