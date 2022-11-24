@@ -1,3 +1,4 @@
+//go:build ignore
 // +build ignore
 
 package main
@@ -323,7 +324,7 @@ func clean() {
 
 	rmr("dist")
 	rmr("tmp")
-	rmr(filepath.Join(build.Default.GOPATH, fmt.Sprintf("pkg/%s_%s/github.com/grafana", goos, goarch)))
+	rmr(filepath.Join(build.Default.GOPATH, fmt.Sprintf("pkg/%s_%s/github.com/credativ", goos, goarch)))
 }
 
 func setBuildEnv() {
