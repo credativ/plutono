@@ -7,7 +7,7 @@ import { Button } from '../Button';
 import { IconButton } from '../IconButton/IconButton';
 import { TagList } from '../Tags/TagList';
 
-const logo = 'https://grafana.com/static/assets/img/apple-touch-icon.png';
+const logo = 'https://raw.githubusercontent.com/credativ/plutono/main/public/img/apple-touch-icon.png';
 
 export default {
   title: 'General/Card',
