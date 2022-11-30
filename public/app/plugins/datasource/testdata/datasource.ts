@@ -110,7 +110,7 @@ export class TestDataDataSource extends DataSourceWithBackend<TestDataQuery> {
     for (let i = 0; i < count; i++) {
       events.push({
         time: timeWalker,
-        text: 'This is the text, <a href="https://grafana.com">Grafana.com</a>',
+        text: 'This is the text, <a href="https://github.com/credativ/plutono">Plutono</a>',
         tags: ['text', 'server'],
       });
       timeWalker += step;

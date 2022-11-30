@@ -7,7 +7,7 @@ describe('Tooltip', () => {
     const tree = renderer
       .create(
         <Tooltip placement="auto" content="Tooltip text">
-          <a className="test-class" href="http://www.grafana.com">
+          <a className="test-class" href="https://github.com/credativ/plutono">
             Link with tooltip
           </a>
         </Tooltip>

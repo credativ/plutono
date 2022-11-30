@@ -31,7 +31,7 @@ export default {
 const defaultProps: FeatureInfoBoxProps = {
   title: 'A title',
   severity: 'info',
-  url: 'http://www.grafana.com',
+  url: 'https://github.com/credativ/plutono',
   featureState: FeatureState.beta,
 
   children: (
