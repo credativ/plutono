@@ -16,9 +16,9 @@ import (
 func setUpGetTeamMembersHandler() {
 	bus.AddHandler("test", func(query *models.GetTeamMembersQuery) error {
 		query.Result = []*models.TeamMemberDTO{
-			{Email: "testUser@grafana.com", Login: testUserLogin},
-			{Email: "user1@grafana.com", Login: "user1"},
-			{Email: "user2@grafana.com", Login: "user2"},
+			{Email: "testUser@example.com", Login: testUserLogin},
+			{Email: "user1@example.com", Login: "user1"},
+			{Email: "user2@example.com", Login: "user2"},
 		}
 		return nil
 	})

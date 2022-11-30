@@ -75,7 +75,7 @@ func mockSDK(ctx context.Context, t *testing.T, content []byte, bucket string, s
 			JSON: []byte(`{}`),
 		}
 		conf := &jwt.Config{
-			Email:      "test@grafana.com",
+			Email:      "test@example.com",
 			PrivateKey: []byte("private"),
 		}
 		suOpts := &storage.SignedURLOptions{

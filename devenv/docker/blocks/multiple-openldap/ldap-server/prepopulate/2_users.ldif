@@ -1,5 +1,5 @@
 dn: cn=ldap-editor,ou=users,dc=plutono,dc=org
-mail: ldap-editor@grafana.com
+mail: ldap-editor@example.com
 userPassword: plutono
 objectClass: person
 objectClass: top
@@ -9,7 +9,7 @@ sn: ldap-editor
 cn: ldap-editor
 
 dn: cn=ldap-viewer,ou=users,dc=plutono,dc=org
-mail: ldap-viewer@grafana.com
+mail: ldap-viewer@example.com
 userPassword: plutono
 objectClass: person
 objectClass: top
@@ -19,7 +19,7 @@ sn: ldap-viewer
 cn: ldap-viewer
 
 dn: cn=ldap-carl,ou=users,dc=plutono,dc=org
-mail: ldap-carl@grafana.com
+mail: ldap-carl@example.com
 userPassword: plutono
 objectClass: person
 objectClass: top
@@ -29,7 +29,7 @@ sn: ldap-carl
 cn: ldap-carl
 
 dn: cn=ldap-daniel,ou=users,dc=plutono,dc=org
-mail: ldap-daniel@grafana.com
+mail: ldap-daniel@example.com
 userPassword: plutono
 objectClass: person
 objectClass: top
@@ -39,7 +39,7 @@ sn: ldap-daniel
 cn: ldap-daniel
 
 dn: cn=ldap-leo,ou=users,dc=plutono,dc=org
-mail: ldap-leo@grafana.com
+mail: ldap-leo@example.com
 userPassword: plutono
 objectClass: person
 objectClass: top
@@ -49,7 +49,7 @@ sn: ldap-leo
 cn: ldap-leo
 
 dn: cn=ldap-tobias,ou=users,dc=plutono,dc=org
-mail: ldap-tobias@grafana.com
+mail: ldap-tobias@example.com
 userPassword: plutono
 objectClass: person
 objectClass: top

@@ -28,7 +28,7 @@ func TestUserAPIEndpoint_userLoggedIn(t *testing.T) {
 		bus.AddHandler("test", func(query *models.GetUserProfileQuery) error {
 			query.Result = models.UserProfileDTO{
 				Id:             int64(1),
-				Email:          "daniel@grafana.com",
+				Email:          "daniel@example.com",
 				Name:           "Daniel",
 				Login:          "danlee",
 				OrgId:          int64(2),
@@ -49,13 +49,13 @@ func TestUserAPIEndpoint_userLoggedIn(t *testing.T) {
 		})
 
 		sc.handlerFunc = GetUserByID
-		avatarUrl := dtos.GetGravatarUrl("daniel@grafana.com")
+		avatarUrl := dtos.GetGravatarUrl("daniel@example.com")
 		sc.fakeReqWithParams("GET", sc.url, map[string]string{}).exec()
 
 		expected := fmt.Sprintf(`
 			{
 				"id": 1,
-				"email": "daniel@grafana.com",
+				"email": "daniel@example.com",
 				"name": "Daniel",
 				"login": "danlee",
 				"theme": "",
@@ -83,7 +83,7 @@ func TestUserAPIEndpoint_userLoggedIn(t *testing.T) {
 
 			query.Result = &models.User{
 				Id:         int64(1),
-				Email:      "daniel@grafana.com",
+				Email:      "daniel@example.com",
 				Name:       "Daniel",
 				Login:      "danlee",
 				Theme:      "light",
@@ -103,7 +103,7 @@ func TestUserAPIEndpoint_userLoggedIn(t *testing.T) {
 		expected := `
 			{
 				"id": 1,
-				"email": "daniel@grafana.com",
+				"email": "daniel@example.com",
 				"name": "Daniel",
 				"login": "danlee",
 				"theme": "light",
