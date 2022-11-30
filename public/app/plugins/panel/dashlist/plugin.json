@@ -9,7 +9,7 @@
     "description": "List of dynamic links to other dashboards",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "logos": {
       "small": "img/icn-dashlist-panel.svg",

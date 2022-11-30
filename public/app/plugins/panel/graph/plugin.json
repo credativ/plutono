@@ -7,7 +7,7 @@
     "description": "Graph Panel for Plutono",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "logos": {
       "small": "img/icn-graph-panel.svg",

@@ -11,7 +11,7 @@
     "description": "Data source that supports manual table & CSV input",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "logos": {
       "small": "img/input.svg",

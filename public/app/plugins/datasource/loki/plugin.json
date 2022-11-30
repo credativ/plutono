@@ -15,10 +15,10 @@
   },
 
   "info": {
-    "description": "Like Prometheus but for logs. OSS logging solution from Grafana Labs",
+    "description": "Like Prometheus but for logs.",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "logos": {
       "small": "img/loki_icon.svg",

@@ -7,7 +7,7 @@
     "description": "Table Panel for Plutono",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "logos": {
       "small": "img/icn-table-panel.svg",

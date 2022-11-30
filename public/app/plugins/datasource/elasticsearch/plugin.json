@@ -8,7 +8,7 @@
     "description": "Open source logging & analytics database",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "keywords": ["elasticsearch"],
     "logos": {
