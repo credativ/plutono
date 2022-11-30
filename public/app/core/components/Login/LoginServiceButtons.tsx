@@ -30,12 +30,6 @@ const loginServices: () => LoginServices = () => {
       enabled: oauthEnabled && config.oauth.gitlab,
       name: 'GitLab',
     },
-    plutonocom: {
-      enabled: oauthEnabled && config.oauth.plutono_com,
-      name: 'Grafana.com',
-      hrefName: 'plutono_com',
-      icon: 'plutono_com',
-    },
     okta: {
       enabled: oauthEnabled && config.oauth.okta,
       name: 'Okta',

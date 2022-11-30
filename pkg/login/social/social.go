@@ -58,14 +58,10 @@ func (e Error) Error() string {
 	return e.s
 }
 
-const (
-	plutonoCom = "plutono_com"
-)
-
 var (
 	SocialBaseUrl = "/login/"
 	SocialMap     = make(map[string]SocialConnector)
-	allOauthes    = []string{"github", "gitlab", "google", "generic_oauth", "plutononet", plutonoCom, "azuread", "okta"}
+	allOauthes    = []string{"github", "gitlab", "google", "generic_oauth", "azuread", "okta"}
 )
 
 func newSocialBase(name string, config *oauth2.Config, info *setting.OAuthInfo) *SocialBase {
@@ -108,10 +104,6 @@ func NewOAuthService() {
 
 		if !info.Enabled {
 			continue
-		}
-
-		if name == "plutononet" {
-			name = plutonoCom
 		}
 
 		setting.OAuthService.OAuthInfos[name] = info
@@ -189,26 +181,6 @@ func NewOAuthService() {
 				allowedOrganizations: util.SplitString(sec.Key("allowed_organizations").String()),
 			}
 		}
-
-		if name == plutonoCom {
-			config = oauth2.Config{
-				ClientID:     info.ClientId,
-				ClientSecret: info.ClientSecret,
-				Endpoint: oauth2.Endpoint{
-					AuthURL:   setting.PlutonoComUrl + "/oauth2/authorize",
-					TokenURL:  setting.PlutonoComUrl + "/api/oauth2/token",
-					AuthStyle: oauth2.AuthStyleInHeader,
-				},
-				RedirectURL: strings.TrimSuffix(setting.AppUrl, "/") + SocialBaseUrl + name,
-				Scopes:      info.Scopes,
-			}
-
-			SocialMap[plutonoCom] = &SocialPlutonoCom{
-				SocialBase:           newSocialBase(name, &config, info),
-				url:                  setting.PlutonoComUrl,
-				allowedOrganizations: util.SplitString(sec.Key("allowed_organizations").String()),
-			}
-		}
 	}
 }
 
@@ -221,10 +193,6 @@ var GetOAuthProviders = func(cfg *setting.Cfg) map[string]bool {
 	}
 
 	for _, name := range allOauthes {
-		if name == "plutononet" {
-			name = plutonoCom
-		}
-
 		sec := cfg.Raw.Section("auth." + name)
 		if sec == nil {
 			continue
