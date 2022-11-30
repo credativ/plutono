@@ -62,13 +62,6 @@ export class ErrorPage extends PureComponent<Props> {
                         </a>{' '}
                         and try again.
                       </p>
-                      <p>
-                        If the error persists, seek help on the{' '}
-                        <a href="https://community.grafana.com" target="_blank" rel="noreferrer" className="error-link">
-                          community site
-                        </a>
-                        .
-                      </p>
                     </div>
                   </div>
                 </div>
