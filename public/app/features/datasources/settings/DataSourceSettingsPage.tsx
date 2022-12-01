@@ -29,7 +29,6 @@ import PluginStateinfo from 'app/features/plugins/PluginStateInfo';
 import { dataSourceLoaded, setDataSourceName, setIsDefault } from '../state/reducers';
 import { connectWithCleanUp } from 'app/core/components/connectWithCleanUp';
 import { selectors } from '@credativ/plutono-e2e-selectors';
-import { CloudInfoBox } from './CloudInfoBox';
 
 export interface Props {
   navModel: NavModel;
@@ -186,8 +185,6 @@ export class DataSourceSettingsPage extends PureComponent<Props> {
             </label>
           </div>
         )}
-
-        <CloudInfoBox dataSource={dataSource} />
 
         <BasicSettings
           dataSourceName={dataSource.name}
