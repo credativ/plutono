@@ -27,13 +27,13 @@ import (
 	_ "github.com/credativ/plutono/pkg/tsdb/elasticsearch"
 	_ "github.com/credativ/plutono/pkg/tsdb/graphite"
 	_ "github.com/credativ/plutono/pkg/tsdb/influxdb"
-	_ "github.com/credativ/plutono/pkg/tsdb/vali"
 	_ "github.com/credativ/plutono/pkg/tsdb/mysql"
 	_ "github.com/credativ/plutono/pkg/tsdb/opentsdb"
 	_ "github.com/credativ/plutono/pkg/tsdb/postgres"
 	_ "github.com/credativ/plutono/pkg/tsdb/prometheus"
 	_ "github.com/credativ/plutono/pkg/tsdb/tempo"
 	_ "github.com/credativ/plutono/pkg/tsdb/testdatasource"
+	_ "github.com/credativ/plutono/pkg/tsdb/vali"
 )
 
 // The following variables cannot be constants, since they can be overridden through the -X link flag
