@@ -385,11 +385,11 @@ func TestGetCDNPath(t *testing.T) {
 	var err error
 	cfg := NewCfg()
 	cfg.BuildVersion = "v7.5.0-11124"
-	cfg.CDNRootURL, err = url.Parse("http://cdn.grafana.com")
+	cfg.CDNRootURL, err = url.Parse("http://cdn.example.com")
 	require.NoError(t, err)
 
-	require.Equal(t, "http://cdn.grafana.com/plutono-oss/v7.5.0-11124/", cfg.GetContentDeliveryURL("plutono-oss"))
-	require.Equal(t, "http://cdn.grafana.com/plutono/v7.5.0-11124/", cfg.GetContentDeliveryURL("plutono"))
+	require.Equal(t, "http://cdn.example.com/plutono-oss/v7.5.0-11124/", cfg.GetContentDeliveryURL("plutono-oss"))
+	require.Equal(t, "http://cdn.example.com/plutono/v7.5.0-11124/", cfg.GetContentDeliveryURL("plutono"))
 }
 
 func TestGetContentDeliveryURLWhenNoCDNRootURLIsSet(t *testing.T) {
@@ -401,10 +401,10 @@ func TestGetCDNPathWithPreReleaseVersionAndSubPath(t *testing.T) {
 	var err error
 	cfg := NewCfg()
 	cfg.BuildVersion = "v7.5.0-11124pre"
-	cfg.CDNRootURL, err = url.Parse("http://cdn.grafana.com/sub")
+	cfg.CDNRootURL, err = url.Parse("http://cdn.example.com/sub")
 	require.NoError(t, err)
-	require.Equal(t, "http://cdn.grafana.com/sub/plutono-oss/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("plutono-oss"))
-	require.Equal(t, "http://cdn.grafana.com/sub/plutono/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("plutono"))
+	require.Equal(t, "http://cdn.example.com/sub/plutono-oss/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("plutono-oss"))
+	require.Equal(t, "http://cdn.example.com/sub/plutono/pre-releases/v7.5.0-11124pre/", cfg.GetContentDeliveryURL("plutono"))
 }
 
 // Adding a case for this in case we switch to proper semver version strings
@@ -412,8 +412,8 @@ func TestGetCDNPathWithAlphaVersion(t *testing.T) {
 	var err error
 	cfg := NewCfg()
 	cfg.BuildVersion = "v7.5.0-alpha.11124"
-	cfg.CDNRootURL, err = url.Parse("http://cdn.grafana.com")
+	cfg.CDNRootURL, err = url.Parse("http://cdn.example.com")
 	require.NoError(t, err)
-	require.Equal(t, "http://cdn.grafana.com/plutono-oss/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("plutono-oss"))
-	require.Equal(t, "http://cdn.grafana.com/plutono/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("plutono"))
+	require.Equal(t, "http://cdn.example.com/plutono-oss/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("plutono-oss"))
+	require.Equal(t, "http://cdn.example.com/plutono/pre-releases/v7.5.0-alpha.11124/", cfg.GetContentDeliveryURL("plutono"))
 }
