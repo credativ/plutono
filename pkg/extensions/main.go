@@ -11,7 +11,7 @@ import (
 	"github.com/credativ/plutono/pkg/services/validations"
 	_ "github.com/crewjam/saml"
 	_ "github.com/gobwas/glob"
-	_ "github.com/grafana/loki/pkg/logproto"
+	_ "github.com/credativ/vali/pkg/logproto"
 	_ "github.com/grpc-ecosystem/go-grpc-middleware"
 	_ "github.com/jung-kurt/gofpdf"
 	_ "github.com/linkedin/goavro/v2"

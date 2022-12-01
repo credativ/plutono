@@ -20,7 +20,7 @@ import {
   UnitPicker,
 } from '@credativ/plutono-ui';
 import { FunctionEditor } from 'app/plugins/datasource/graphite/FunctionEditor';
-import { LokiAnnotationsQueryEditor } from '../plugins/datasource/loki/components/AnnotationsQueryEditor';
+import { ValiAnnotationsQueryEditor } from '../plugins/datasource/vali/components/AnnotationsQueryEditor';
 import { HelpModal } from './components/help/HelpModal';
 import { Footer } from './components/Footer/Footer';
 import { FolderPicker } from 'app/core/components/Select/FolderPicker';
@@ -159,7 +159,7 @@ export function registerAngularDirectives() {
     ['onChange', { watchDepth: 'reference', wrapApply: true }],
   ]);
 
-  react2AngularDirective('lokiAnnotationsQueryEditor', LokiAnnotationsQueryEditor, [
+  react2AngularDirective('valiAnnotationsQueryEditor', ValiAnnotationsQueryEditor, [
     'expr',
     'maxLines',
     'instant',

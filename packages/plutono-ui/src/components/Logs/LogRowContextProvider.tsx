@@ -87,7 +87,7 @@ export const getRowContexts = async (
         // Filter out the row that is the one used as a focal point for the context as we will get it in one of the
         // requests.
         if (idField) {
-          // For Loki this means we filter only the one row. Issue is we could have other rows logged at the same
+          // For Vali this means we filter only the one row. Issue is we could have other rows logged at the same
           // ns which came before but they come in the response that search for logs after. This means right now
           // we will show those as if they came after. This is not strictly correct but seems better than losing them
           // and making this correct would mean quite a bit of complexity to shuffle things around and messing up
@@ -96,7 +96,7 @@ export const getRowContexts = async (
             continue;
           }
         } else {
-          // Fallback to timestamp. This should not happen right now as this feature is implemented only for loki
+          // Fallback to timestamp. This should not happen right now as this feature is implemented only for vali
           // and that has ID. Later this branch could be used in other DS but mind that this could also filter out
           // logs which were logged in the same timestamp and that can be a problem depending on the precision.
           if (parseInt(timestampField.values.get(fieldIndex), 10) === row.timeEpochMs) {

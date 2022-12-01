@@ -251,7 +251,7 @@ const response: TraceData & { spans: TraceSpanData[] } = {
   ],
   processes: {
     p1: {
-      serviceName: 'loki-all',
+      serviceName: 'vali-all',
       tags: [
         { key: 'client-uuid', type: 'string', value: '2a59d08899ef6a8a' },
         { key: 'hostname', type: 'string', value: '0080b530fae3' },
@@ -281,7 +281,7 @@ const frameNew = new MutableDataFrame({
     { name: 'spanID', values: ['1ed38015486087ca', '3fb050342773d333', '35118c298fc91f68'] },
     { name: 'parentSpanID', values: [undefined, '1ed38015486087ca', '3fb050342773d333'] },
     { name: 'operationName', values: ['HTTP POST - api_prom_push', '/logproto.Pusher/Push', '/logproto.Pusher/Push'] },
-    { name: 'serviceName', values: ['loki-all', 'loki-all', 'loki-all'] },
+    { name: 'serviceName', values: ['vali-all', 'vali-all', 'vali-all'] },
     {
       name: 'serviceTags',
       values: [

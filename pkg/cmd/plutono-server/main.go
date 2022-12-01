@@ -27,7 +27,7 @@ import (
 	_ "github.com/credativ/plutono/pkg/tsdb/elasticsearch"
 	_ "github.com/credativ/plutono/pkg/tsdb/graphite"
 	_ "github.com/credativ/plutono/pkg/tsdb/influxdb"
-	_ "github.com/credativ/plutono/pkg/tsdb/loki"
+	_ "github.com/credativ/plutono/pkg/tsdb/vali"
 	_ "github.com/credativ/plutono/pkg/tsdb/mysql"
 	_ "github.com/credativ/plutono/pkg/tsdb/opentsdb"
 	_ "github.com/credativ/plutono/pkg/tsdb/postgres"

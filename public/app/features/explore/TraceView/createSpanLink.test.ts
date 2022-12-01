@@ -14,8 +14,8 @@ describe('createSpanLinkFactory', () => {
       setDataSourceSrv({
         getInstanceSettings(uid: string): DataSourceInstanceSettings | undefined {
           return {
-            uid: 'loki1',
-            name: 'loki1',
+            uid: 'vali1',
+            name: 'vali1',
           } as any;
         },
       } as any);
@@ -29,7 +29,7 @@ describe('createSpanLinkFactory', () => {
 
     it('with default keys when tags not configured', () => {
       const splitOpenFn = jest.fn();
-      const createLink = createSpanLinkFactory(splitOpenFn, { datasourceUid: 'lokiUid' });
+      const createLink = createSpanLinkFactory(splitOpenFn, { datasourceUid: 'valiUid' });
       expect(createLink).toBeDefined();
       const linkDef = createLink!({
         startTime: new Date('2020-10-14T01:00:00Z').valueOf() * 1000,
@@ -59,13 +59,13 @@ describe('createSpanLinkFactory', () => {
       } as any);
 
       expect(linkDef.href).toBe(
-        `/explore?left={"range":{"from":"20201014T000000","to":"20201014T010006"},"datasource":"loki1","queries":[{"expr":"{cluster=\\"cluster1\\", hostname=\\"hostname1\\"}","refId":""}]}`
+        `/explore?left={"range":{"from":"20201014T000000","to":"20201014T010006"},"datasource":"vali1","queries":[{"expr":"{cluster=\\"cluster1\\", hostname=\\"hostname1\\"}","refId":""}]}`
       );
     });
 
     it('with tags that passed in and without tags that are not in the span', () => {
       const splitOpenFn = jest.fn();
-      const createLink = createSpanLinkFactory(splitOpenFn, { datasourceUid: 'lokiUid', tags: ['ip', 'newTag'] });
+      const createLink = createSpanLinkFactory(splitOpenFn, { datasourceUid: 'valiUid', tags: ['ip', 'newTag'] });
       expect(createLink).toBeDefined();
       const linkDef = createLink!({
         startTime: new Date('2020-10-14T01:00:00Z').valueOf() * 1000,
@@ -91,14 +91,14 @@ describe('createSpanLinkFactory', () => {
       } as any);
 
       expect(linkDef.href).toBe(
-        `/explore?left={"range":{"from":"20201014T000000","to":"20201014T010006"},"datasource":"loki1","queries":[{"expr":"{ip=\\"192.168.0.1\\"}","refId":""}]}`
+        `/explore?left={"range":{"from":"20201014T000000","to":"20201014T010006"},"datasource":"vali1","queries":[{"expr":"{ip=\\"192.168.0.1\\"}","refId":""}]}`
       );
     });
 
     it('from tags and process tags as well', () => {
       const splitOpenFn = jest.fn();
       const createLink = createSpanLinkFactory(splitOpenFn, {
-        datasourceUid: 'lokiUid',
+        datasourceUid: 'valiUid',
         tags: ['ip', 'host'],
       });
       expect(createLink).toBeDefined();
@@ -126,7 +126,7 @@ describe('createSpanLinkFactory', () => {
       } as any);
 
       expect(linkDef.href).toBe(
-        `/explore?left={"range":{"from":"20201014T000000","to":"20201014T010006"},"datasource":"loki1","queries":[{"expr":"{ip=\\"192.168.0.1\\", host=\\"host\\"}","refId":""}]}`
+        `/explore?left={"range":{"from":"20201014T000000","to":"20201014T010006"},"datasource":"vali1","queries":[{"expr":"{ip=\\"192.168.0.1\\", host=\\"host\\"}","refId":""}]}`
       );
     });
   });

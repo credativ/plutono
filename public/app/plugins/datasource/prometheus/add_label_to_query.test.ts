@@ -70,7 +70,7 @@ describe('addLabelToQuery()', () => {
     expect(addLabelToQuery('{x="y"} |="yy" !~"xx"', 'bar', 'baz')).toBe('{bar="baz",x="y"} |="yy" !~"xx"');
   });
 
-  it('should add label to query properly with Loki datasource', () => {
+  it('should add label to query properly with Vali datasource', () => {
     expect(addLabelToQuery('{job="plutono"} |= "foo-bar"', 'filename', 'test.txt', undefined, true)).toBe(
       '{filename="test.txt",job="plutono"} |= "foo-bar"'
     );

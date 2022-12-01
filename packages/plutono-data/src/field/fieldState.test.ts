@@ -149,7 +149,7 @@ describe('Check field state calculations (displayName and id)', () => {
     expect(title).toEqual('Series A');
   });
 
-  it('should reder loki frames', () => {
+  it('should reder vali frames', () => {
     const title = checkScenario({
       frames: [
         toDataFrame({

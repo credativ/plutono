@@ -120,7 +120,7 @@ If that is the case, then use the following format for headings:
 
 ### Capitalization
 
-- Plutono, Loki, and Prometheus are always capitalized unless part of a code block.
+- Plutono, Vali, and Prometheus are always capitalized unless part of a code block.
 - API names are always Title Case, followed by "API"—for example, "Dashboard Permissions API"
 - Abbreviations are always capitalized (such as API, HTTP, ID, JSON, SQL, or URL) unless they are part of a code block.
 - Menu and submenu titles always use sentence case: capitalize the first word, and lowercase the rest.

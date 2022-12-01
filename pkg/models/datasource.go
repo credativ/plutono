@@ -26,7 +26,7 @@ const (
 	// "stackdriver" to avoid breaking changes in reporting.
 	DS_CLOUD_MONITORING = "stackdriver"
 	DS_AZURE_MONITOR    = "plutono-azure-monitor-datasource"
-	DS_LOKI             = "loki"
+	DS_VALI             = "vali"
 	DS_ES_OPEN_DISTRO   = "plutono-es-open-distro-datasource"
 )
 
@@ -103,7 +103,7 @@ var knownDatasourcePlugins = map[string]bool{
 	DS_MSSQL:                                 true,
 	DS_CLOUD_MONITORING:                      true,
 	DS_AZURE_MONITOR:                         true,
-	DS_LOKI:                                  true,
+	DS_VALI:                                  true,
 	"opennms":                                true,
 	"abhisant-druid-datasource":              true,
 	"dalmatinerdb-datasource":                true,

@@ -16,7 +16,7 @@ const plugins: DataSourcePluginMeta[] = [
     category: 'logging',
   },
   {
-    ...getMockPlugin({ id: 'loki' }),
+    ...getMockPlugin({ id: 'vali' }),
     category: 'logging',
   },
   {
@@ -36,7 +36,7 @@ describe('buildCategories', () => {
   });
 
   it('should sort plugins according to hard coded sorting rules', () => {
-    expect(categories[1].plugins[0].id).toBe('loki');
+    expect(categories[1].plugins[0].id).toBe('vali');
   });
 
   it('should add phantom plugin for Plutono cloud', () => {

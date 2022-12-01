@@ -1,0 +1,14 @@
+  # datasource URL: http://localhost:3100/
+  vali:
+    image: ghcr.io/credativ/vali:main
+    ports:
+      - "3100:3100"
+    command: -config.file=/etc/vali/local-config.yaml
+  promtail:
+    image: plutono/promtail:master
+    volumes:
+      - ./docker/blocks/vali/config.yaml:/etc/promtail/docker-config.yaml
+      - /var/log:/var/log
+      - ../data/log:/var/log/plutono
+    command:
+      -config.file=/etc/promtail/docker-config.yaml
