@@ -45,7 +45,7 @@ export const getMockInvitees = (amount: number) => {
       emailSent: true,
       emailSentOn: '2018-10-02',
       id: i,
-      invitedByEmail: 'admin@grafana.com',
+      invitedByEmail: 'admin@example.com',
       invitedByLogin: 'admin',
       invitedByName: 'admin',
       name: `invitee-${i}`,

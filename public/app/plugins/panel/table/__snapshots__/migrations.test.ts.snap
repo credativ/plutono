@@ -97,7 +97,7 @@ Object {
               Object {
                 "targetBlank": true,
                 "title": "",
-                "url": "http://www.grafana.com",
+                "url": "https://github.com/credativ/plutono",
               },
             ],
           },

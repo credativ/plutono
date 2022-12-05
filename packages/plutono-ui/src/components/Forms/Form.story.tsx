@@ -75,7 +75,7 @@ const renderForm = (defaultValues?: Partial<FormDTO>) => (
           </Field>
 
           <Field label="Email" invalid={!!errors.email} error="E-mail is required">
-            <Input id="email" name="email" placeholder="roger.waters@grafana.com" ref={register({ required: true })} />
+            <Input id="email" name="email" placeholder="roger.waters@example.com" ref={register({ required: true })} />
           </Field>
 
           <Field label="Username">

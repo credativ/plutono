@@ -3,7 +3,7 @@
 exports[`Tooltip renders correctly 1`] = `
 <a
   className="test-class"
-  href="http://www.grafana.com"
+  href="https://github.com/credativ/plutono"
   onMouseEnter={[Function]}
   onMouseLeave={[Function]}
 >

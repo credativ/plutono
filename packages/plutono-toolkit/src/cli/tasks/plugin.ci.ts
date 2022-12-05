@@ -8,7 +8,6 @@ import execa = require('execa');
 import path = require('path');
 import fs from 'fs-extra';
 import { getPackageDetails, getPlutonoVersions, readGitLog } from '../../plugins/utils';
-import { buildManifest, signManifest, saveManifest } from '../../plugins/manifest';
 import {
   getJobFolder,
   writeJobStats,
@@ -155,21 +154,6 @@ const packagePluginRunner: TaskRunner<PluginCIOptions> = async ({ signatureType,
   const pluginInfo = getPluginJson(pluginJsonFile);
   pluginInfo.info.build = await getPluginBuildInfo();
   fs.writeFileSync(pluginJsonFile, JSON.stringify(pluginInfo, null, 2), { encoding: 'utf-8' });
-
-  // Write a MANIFEST.txt file in the dist folder
-  try {
-    const manifest = await buildManifest(distContentDir);
-    if (signatureType) {
-      manifest.signatureType = signatureType;
-    }
-    if (rootUrls) {
-      manifest.rootUrls = rootUrls;
-    }
-    const signedManifest = await signManifest(manifest);
-    await saveManifest(distContentDir, signedManifest);
-  } catch (err) {
-    console.warn(`Error signing manifest: ${distContentDir}`, err);
-  }
 
   console.log('Building ZIP');
   let zipName = pluginInfo.id + '-' + pluginInfo.info.version + '.zip';

@@ -23,7 +23,7 @@ func main() {
 		Authors: []*cli.Author{
 			{
 				Name:  "Plutono Project",
-				Email: "hello@grafana.com",
+				Email: "hello@example.com",
 			},
 		},
 		Version: version,

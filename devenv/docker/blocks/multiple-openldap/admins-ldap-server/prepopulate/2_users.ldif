@@ -1,6 +1,6 @@
 # ldap-admin
 dn: cn=ldap-admin,ou=users,dc=plutono,dc=org
-mail: ldap-admin@grafana.com
+mail: ldap-admin@example.com
 userPassword: plutono
 objectClass: person
 objectClass: top
@@ -10,7 +10,7 @@ sn: ldap-admin
 cn: ldap-admin
 
 dn: cn=ldap-torkel,ou=users,dc=plutono,dc=org
-mail: ldap-torkel@grafana.com
+mail: ldap-torkel@example.com
 userPassword: plutono
 objectClass: person
 objectClass: top

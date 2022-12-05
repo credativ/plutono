@@ -353,8 +353,6 @@ func GetAuthProviderLabel(authModule string) string {
 		return "AzureAD"
 	case "oauth_gitlab":
 		return "GitLab"
-	case "oauth_plutono_com", "oauth_plutononet":
-		return "grafana.com"
 	case "auth.saml":
 		return "SAML"
 	case "ldap", "":

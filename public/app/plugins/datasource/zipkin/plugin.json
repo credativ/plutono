@@ -15,7 +15,7 @@
     "description": "Placeholder for the distributed tracing system.",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "logos": {
       "small": "img/zipkin-logo.svg",

@@ -15,7 +15,7 @@
     "description": "Open source, end-to-end distributed tracing",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "logos": {
       "small": "img/jaeger_logo.svg",

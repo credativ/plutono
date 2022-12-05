@@ -266,7 +266,7 @@ func (sn *SlackNotifier) Notify(evalContext *alerting.EvalContext) error {
 		"fallback":    evalContext.GetNotificationTitle(),
 		"fields":      fields,
 		"footer":      "Plutono v" + setting.BuildVersion,
-		"footer_icon": "https://grafana.com/assets/img/fav32.png",
+		"footer_icon": "https://raw.githubusercontent.com/credativ/plutono/main/public/img/fav32.png",
 		"ts":          time.Now().Unix(),
 	}
 	if sn.NeedsImage() && imageURL != "" {

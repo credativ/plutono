@@ -2,21 +2,21 @@ import client from './client';
 import _ from 'lodash;';
 
 export const editor = {
-  email: 'api-test-editor@grafana.com',
+  email: 'api-test-editor@example.comm',
   login: 'api-test-editor',
   password: 'password',
   name: 'Api Test Editor',
 };
 
 export const admin = {
-  email: 'api-test-admin@grafana.com',
+  email: 'api-test-admin@example.com',
   login: 'api-test-admin',
   password: 'password',
   name: 'Api Test Super',
 };
 
 export const viewer = {
-  email: 'api-test-viewer@grafana.com',
+  email: 'api-test-viewer@example.com',
   login: 'api-test-viewer',
   password: 'password',
   name: 'Api Test Viewer',

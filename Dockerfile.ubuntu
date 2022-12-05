@@ -32,7 +32,6 @@ RUN go run build.go build
 
 FROM ubuntu:20.04
 
-LABEL maintainer="Plutono team <hello@grafana.com>"
 EXPOSE 3000
 
 ARG PL_UID="472"

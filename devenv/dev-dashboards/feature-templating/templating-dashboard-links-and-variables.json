@@ -25,7 +25,7 @@
       "title": "Plutono",
       "tooltip": "",
       "type": "link",
-      "url": "http://www.grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     {
       "asDropdown": true,

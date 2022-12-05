@@ -18,7 +18,6 @@ import { pluginUpdateTask } from './tasks/plugin.update';
 import { ciBuildPluginDocsTask, ciBuildPluginTask, ciPackagePluginTask, ciPluginReportTask } from './tasks/plugin.ci';
 import { buildPackageTask } from './tasks/package.build';
 import { pluginCreateTask } from './tasks/plugin.create';
-import { pluginSignTask } from './tasks/plugin.sign';
 import { bundleManagedTask } from './tasks/plugin/bundle.managed';
 import { componentCreateTask } from './tasks/component.create';
 import { nodeVersionCheckerTask } from './tasks/nodeVersionChecker';
@@ -189,19 +188,6 @@ export const run = (includeInternalScripts = false) => {
         testPathPattern: cmd.testPathPattern,
         testNamePattern: cmd.testNamePattern,
         maxWorkers: cmd.maxWorkers,
-        silent: true,
-      });
-    });
-
-  program
-    .command('plugin:sign')
-    .option('--signatureType <type>', 'Signature Type')
-    .option('--rootUrls <urls...>', 'Root URLs')
-    .description('Create a plugin signature')
-    .action(async (cmd) => {
-      await execTask(pluginSignTask)({
-        signatureType: cmd.signatureType,
-        rootUrls: cmd.rootUrls,
         silent: true,
       });
     });

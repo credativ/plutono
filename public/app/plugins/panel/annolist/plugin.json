@@ -10,7 +10,7 @@
     "description": "List annotations",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "logos": {
       "small": "img/icn-annolist-panel.svg",

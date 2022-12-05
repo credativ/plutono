@@ -9,7 +9,7 @@
     "description": "Shows list of alerts and their current status",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "logos": {
       "small": "img/icn-singlestat-panel.svg",

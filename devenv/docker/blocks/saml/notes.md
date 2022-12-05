@@ -9,8 +9,8 @@ See docker container docs on how to use this service - https://github.com/kristo
 ## Groups & Users
 
 admins
-  saml-admin (saml-admin@grafana.com)
+  saml-admin (saml-admin@example.com)
 editors
-  saml-editor (saml-editor@grafana.com)
+  saml-editor (saml-editor@example.com)
 no groups
-  saml-viewer (saml-viewer@grafana.com)
+  saml-viewer (saml-viewer@example.com)

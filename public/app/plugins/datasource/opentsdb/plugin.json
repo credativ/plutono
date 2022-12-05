@@ -13,7 +13,7 @@
     "description": "Open source time series database",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "logos": {
       "small": "img/opentsdb_logo.png",

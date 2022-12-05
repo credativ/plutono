@@ -8,7 +8,7 @@
     "description": "Data source for Microsoft Azure Monitor & Application Insights",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "keywords": ["azure", "monitor", "Application Insights", "Log Analytics", "App Insights"],
     "logos": {

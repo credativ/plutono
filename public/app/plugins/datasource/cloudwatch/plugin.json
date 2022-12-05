@@ -23,7 +23,7 @@
     "description": "Data source for Amazon AWS monitoring service",
     "author": {
       "name": "Plutono Team",
-      "url": "https://grafana.com"
+      "url": "https://github.com/credativ/plutono"
     },
     "logos": {
       "small": "img/amazon-web-services.png",
