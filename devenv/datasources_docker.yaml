@@ -238,8 +238,8 @@ datasources:
       authType: credentials
       defaultRegion: eu-west-2
 
-  - name: gdev-loki
-    type: loki
+  - name: gdev-vali
+    type: vali
     access: proxy
-    url: http://loki:3100
+    url: http://vali:3100
     editable: false

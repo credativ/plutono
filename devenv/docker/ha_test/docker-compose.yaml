@@ -96,20 +96,20 @@ services:
     ports:
       - 9090
 
-  loki:
-    image: plutono/loki:master
+  vali:
+    image: ghcr.io/credativ/vali:main
     environment:
-      - VIRTUAL_HOST=loki.loc
+      - VIRTUAL_HOST=vali.loc
     ports:
       - 3100
-    command: -config.file=/etc/loki/local-config.yaml
+    command: -config.file=/etc/vali/local-config.yaml
 
   fluentd:
-    image: plutono/fluent-plugin-loki:master
+    image: plutono/fluent-plugin-vali:master
     volumes:
       - ./fluentd/fluentd.conf:/fluentd/etc/fluentd.conf
     links:
-      - loki
+      - vali
     ports:
       - "24224:24224"
       - "24224:24224/udp"

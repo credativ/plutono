@@ -18,8 +18,8 @@ import { selectors } from '@credativ/plutono-e2e-selectors';
 import { setTimeSrv } from '../dashboard/services/TimeSrv';
 import { from, Observable } from 'rxjs';
 import { updateLocation } from '../../core/reducers/location';
-import { LokiDatasource } from '../../plugins/datasource/loki/datasource';
-import { LokiQuery } from '../../plugins/datasource/loki/types';
+import { ValiDatasource } from '../../plugins/datasource/vali/datasource';
+import { ValiQuery } from '../../plugins/datasource/vali/types';
 import { fromPairs } from 'lodash';
 import { EnhancedStore } from '@reduxjs/toolkit';
 import userEvent from '@testing-library/user-event';
@@ -52,15 +52,15 @@ describe('Wrapper', () => {
     // At this point url should be initialised to some defaults
     expect(store.getState().location.query).toEqual({
       orgId: '1',
-      left: JSON.stringify(['now-1h', 'now', 'loki', {}]),
+      left: JSON.stringify(['now-1h', 'now', 'vali', {}]),
     });
-    expect(datasources.loki.query).not.toBeCalled();
+    expect(datasources.vali.query).not.toBeCalled();
   });
 
   it('runs query when url contains query and renders results', async () => {
-    const query = { left: JSON.stringify(['now-1h', 'now', 'loki', { expr: '{ label="value"}' }]) };
+    const query = { left: JSON.stringify(['now-1h', 'now', 'vali', { expr: '{ label="value"}' }]) };
     const { datasources, store } = setup({ query });
-    (datasources.loki.query as Mock).mockReturnValueOnce(makeLogsQueryResponse());
+    (datasources.vali.query as Mock).mockReturnValueOnce(makeLogsQueryResponse());
 
     // Make sure we render the logs panel
     await screen.findByText(/^Logs$/i);
@@ -69,7 +69,7 @@ describe('Wrapper', () => {
     await screen.findByText(/custom log line/i);
 
     // And that the editor gets the expr from the url
-    await screen.findByText(`loki Editor input: { label="value"}`);
+    await screen.findByText(`vali Editor input: { label="value"}`);
 
     // We did not change the url
     expect(store.getState().location.query).toEqual({
@@ -79,45 +79,45 @@ describe('Wrapper', () => {
 
     expect(store.getState().explore.richHistory[0]).toMatchObject({
       datasourceId: '1',
-      datasourceName: 'loki',
+      datasourceName: 'vali',
       queries: [{ expr: '{ label="value"}' }],
     });
 
     // We called the data source query method once
-    expect(datasources.loki.query).toBeCalledTimes(1);
-    expect((datasources.loki.query as Mock).mock.calls[0][0]).toMatchObject({
+    expect(datasources.vali.query).toBeCalledTimes(1);
+    expect((datasources.vali.query as Mock).mock.calls[0][0]).toMatchObject({
       targets: [{ expr: '{ label="value"}' }],
     });
   });
 
   it('handles url change and runs the new query', async () => {
-    const query = { left: JSON.stringify(['now-1h', 'now', 'loki', { expr: '{ label="value"}' }]) };
+    const query = { left: JSON.stringify(['now-1h', 'now', 'vali', { expr: '{ label="value"}' }]) };
     const { datasources, store } = setup({ query });
-    (datasources.loki.query as Mock).mockReturnValueOnce(makeLogsQueryResponse());
+    (datasources.vali.query as Mock).mockReturnValueOnce(makeLogsQueryResponse());
     // Wait for rendering the logs
     await screen.findByText(/custom log line/i);
 
-    (datasources.loki.query as Mock).mockReturnValueOnce(makeLogsQueryResponse('different log'));
+    (datasources.vali.query as Mock).mockReturnValueOnce(makeLogsQueryResponse('different log'));
     store.dispatch(
       updateLocation({
         path: '/explore',
-        query: { left: JSON.stringify(['now-1h', 'now', 'loki', { expr: '{ label="different"}' }]) },
+        query: { left: JSON.stringify(['now-1h', 'now', 'vali', { expr: '{ label="different"}' }]) },
       })
     );
 
     // Editor renders the new query
-    await screen.findByText(`loki Editor input: { label="different"}`);
+    await screen.findByText(`vali Editor input: { label="different"}`);
     // Renders new response
     await screen.findByText(/different log/i);
   });
 
   it('handles url change and runs the new query with different datasource', async () => {
-    const query = { left: JSON.stringify(['now-1h', 'now', 'loki', { expr: '{ label="value"}' }]) };
+    const query = { left: JSON.stringify(['now-1h', 'now', 'vali', { expr: '{ label="value"}' }]) };
     const { datasources, store } = setup({ query });
-    (datasources.loki.query as Mock).mockReturnValueOnce(makeLogsQueryResponse());
+    (datasources.vali.query as Mock).mockReturnValueOnce(makeLogsQueryResponse());
     // Wait for rendering the logs
     await screen.findByText(/custom log line/i);
-    await screen.findByText(`loki Editor input: { label="value"}`);
+    await screen.findByText(`vali Editor input: { label="value"}`);
 
     (datasources.elastic.query as Mock).mockReturnValueOnce(makeMetricsQueryResponse());
     store.dispatch(
@@ -134,9 +134,9 @@ describe('Wrapper', () => {
   });
 
   it('handles changing the datasource manually', async () => {
-    const query = { left: JSON.stringify(['now-1h', 'now', 'loki', { expr: '{ label="value"}' }]) };
+    const query = { left: JSON.stringify(['now-1h', 'now', 'vali', { expr: '{ label="value"}' }]) };
     const { datasources, store } = setup({ query });
-    (datasources.loki.query as Mock).mockReturnValueOnce(makeLogsQueryResponse());
+    (datasources.vali.query as Mock).mockReturnValueOnce(makeLogsQueryResponse());
     // Wait for rendering the editor
     await screen.findByText(/Editor/i);
     await changeDatasource('elastic');
@@ -155,19 +155,19 @@ describe('Wrapper', () => {
     const splitButton = await screen.findByText(/split/i);
     fireEvent.click(splitButton);
     await waitFor(() => {
-      const editors = screen.getAllByText('loki Editor input:');
+      const editors = screen.getAllByText('vali Editor input:');
       expect(editors.length).toBe(2);
     });
   });
 
   it('inits with two panes if specified in url', async () => {
     const query = {
-      left: JSON.stringify(['now-1h', 'now', 'loki', { expr: '{ label="value"}' }]),
+      left: JSON.stringify(['now-1h', 'now', 'vali', { expr: '{ label="value"}' }]),
       right: JSON.stringify(['now-1h', 'now', 'elastic', { expr: 'error' }]),
     };
 
     const { datasources, store } = setup({ query });
-    (datasources.loki.query as Mock).mockReturnValueOnce(makeLogsQueryResponse());
+    (datasources.vali.query as Mock).mockReturnValueOnce(makeLogsQueryResponse());
     (datasources.elastic.query as Mock).mockReturnValueOnce(makeLogsQueryResponse());
 
     // Make sure we render the logs panel
@@ -181,7 +181,7 @@ describe('Wrapper', () => {
     expect(logsLines.length).toBe(2);
 
     // And that the editor gets the expr from the url
-    await screen.findByText(`loki Editor input: { label="value"}`);
+    await screen.findByText(`vali Editor input: { label="value"}`);
     await screen.findByText(`elastic Editor input: error`);
 
     // We did not change the url
@@ -191,8 +191,8 @@ describe('Wrapper', () => {
     });
 
     // We called the data source query method once
-    expect(datasources.loki.query).toBeCalledTimes(1);
-    expect((datasources.loki.query as Mock).mock.calls[0][0]).toMatchObject({
+    expect(datasources.vali.query).toBeCalledTimes(1);
+    expect((datasources.vali.query as Mock).mock.calls[0][0]).toMatchObject({
       targets: [{ expr: '{ label="value"}' }],
     });
 
@@ -204,7 +204,7 @@ describe('Wrapper', () => {
 
   it('can close a pane from a split', async () => {
     const query = {
-      left: JSON.stringify(['now-1h', 'now', 'loki', {}]),
+      left: JSON.stringify(['now-1h', 'now', 'vali', {}]),
       right: JSON.stringify(['now-1h', 'now', 'elastic', {}]),
     };
     setup({ query });
@@ -219,38 +219,38 @@ describe('Wrapper', () => {
 
   it('handles url change to split view', async () => {
     const query = {
-      left: JSON.stringify(['now-1h', 'now', 'loki', { expr: '{ label="value"}' }]),
+      left: JSON.stringify(['now-1h', 'now', 'vali', { expr: '{ label="value"}' }]),
     };
     const { datasources, store } = setup({ query });
-    (datasources.loki.query as Mock).mockReturnValue(makeLogsQueryResponse());
+    (datasources.vali.query as Mock).mockReturnValue(makeLogsQueryResponse());
     (datasources.elastic.query as Mock).mockReturnValue(makeLogsQueryResponse());
 
     store.dispatch(
       updateLocation({
         path: '/explore',
         query: {
-          left: JSON.stringify(['now-1h', 'now', 'loki', { expr: '{ label="value"}' }]),
+          left: JSON.stringify(['now-1h', 'now', 'vali', { expr: '{ label="value"}' }]),
           right: JSON.stringify(['now-1h', 'now', 'elastic', { expr: 'error' }]),
         },
       })
     );
 
     // Editor renders the new query
-    await screen.findByText(`loki Editor input: { label="value"}`);
+    await screen.findByText(`vali Editor input: { label="value"}`);
     await screen.findByText(`elastic Editor input: error`);
   });
 
   it('handles opening split with split open func', async () => {
     const query = {
-      left: JSON.stringify(['now-1h', 'now', 'loki', { expr: '{ label="value"}' }]),
+      left: JSON.stringify(['now-1h', 'now', 'vali', { expr: '{ label="value"}' }]),
     };
     const { datasources, store } = setup({ query });
-    (datasources.loki.query as Mock).mockReturnValue(makeLogsQueryResponse());
+    (datasources.vali.query as Mock).mockReturnValue(makeLogsQueryResponse());
     (datasources.elastic.query as Mock).mockReturnValue(makeLogsQueryResponse());
 
     // This is mainly to wait for render so that the left pane state is initialized as that is needed for splitOpen
     // to work
-    await screen.findByText(`loki Editor input: { label="value"}`);
+    await screen.findByText(`vali Editor input: { label="value"}`);
 
     store.dispatch(
       splitOpen<any>({ datasourceUid: 'elastic', query: { expr: 'error' } }) as any
@@ -258,7 +258,7 @@ describe('Wrapper', () => {
 
     // Editor renders the new query
     await screen.findByText(`elastic Editor input: error`);
-    await screen.findByText(`loki Editor input: { label="value"}`);
+    await screen.findByText(`vali Editor input: { label="value"}`);
   });
 });
 
@@ -321,7 +321,7 @@ function setup(options?: SetupOptions): { datasources: { [name: string]: DataSou
   return { datasources: fromPairs(dsSettings.map((d) => [d.api.name, d.api])), store };
 }
 
-function makeDatasourceSetup({ name = 'loki', id = 1 }: { name?: string; id?: number } = {}): DatasourceSetup {
+function makeDatasourceSetup({ name = 'vali', id = 1 }: { name?: string; id?: number } = {}): DatasourceSetup {
   const meta: any = {
     info: {
       logos: {
@@ -341,7 +341,7 @@ function makeDatasourceSetup({ name = 'loki', id = 1 }: { name?: string; id?: nu
     },
     api: {
       components: {
-        QueryEditor(props: QueryEditorProps<LokiDatasource, LokiQuery>) {
+        QueryEditor(props: QueryEditorProps<ValiDatasource, ValiQuery>) {
           return (
             <div>
               {name} Editor input: {props.query.expr}

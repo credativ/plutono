@@ -52,7 +52,7 @@ export class SentryEchoBackend implements EchoBackend<SentryEchoEvent, SentryEch
   };
 
   // backend will log events to stdout, and at least in case of hosted plutono they will be
-  // ingested into Loki. Due to Loki limitations logs cannot be backdated,
+  // ingested into Vali. Due to Vali limitations logs cannot be backdated,
   // so not using buffering for this backend to make sure that events are logged as close
   // to their context as possible
   flush = () => {};

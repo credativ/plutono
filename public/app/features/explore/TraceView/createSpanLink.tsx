@@ -5,7 +5,7 @@ import { SplitOpen } from 'app/types/explore';
 import { TraceToLogsOptions } from 'app/core/components/TraceToLogsSettings';
 import { getDatasourceSrv } from 'app/features/plugins/datasource_srv';
 import React from 'react';
-import { LokiQuery } from '../../../plugins/datasource/loki/types';
+import { ValiQuery } from '../../../plugins/datasource/vali/types';
 import { TraceSpan } from '@jaegertracing/jaeger-ui-components';
 
 /**
@@ -31,14 +31,14 @@ export function createSpanLinkFactory(splitOpenFn: SplitOpen, traceToLogsOptions
     // inside a single field) so the dataLinks as config of that dataFrame abstraction breaks down a bit and we do
     // it manually here instead of leaving it for the data source to supply the config.
 
-    const dataLink: DataLink<LokiQuery> = {
+    const dataLink: DataLink<ValiQuery> = {
       title: dataSourceSettings.name,
       url: '',
       internal: {
         datasourceUid: dataSourceSettings.uid,
         datasourceName: dataSourceSettings.name,
         query: {
-          expr: getLokiQueryFromSpan(span, traceToLogsOptions.tags),
+          expr: getValiQueryFromSpan(span, traceToLogsOptions.tags),
           refId: '',
         },
       },
@@ -67,7 +67,7 @@ export function createSpanLinkFactory(splitOpenFn: SplitOpen, traceToLogsOptions
  */
 const defaultKeys = ['cluster', 'hostname', 'namespace', 'pod'];
 
-function getLokiQueryFromSpan(span: TraceSpan, keys?: string[]): string {
+function getValiQueryFromSpan(span: TraceSpan, keys?: string[]): string {
   const keysToCheck = keys?.length ? keys : defaultKeys;
   const tags = [...span.process.tags, ...span.tags].reduce((acc, tag) => {
     if (keysToCheck.includes(tag.key)) {

@@ -67,8 +67,8 @@ export interface QueryResultMeta {
    * Legacy data source specific, should be moved to custom
    * */
   alignmentPeriod?: number; // used by cloud monitoring
-  searchWords?: string[]; // used by log models and loki
-  limit?: number; // used by log models and loki
+  searchWords?: string[]; // used by log models and vali
+  limit?: number; // used by log models and vali
   json?: boolean; // used to keep track of old json doc values
   instant?: boolean;
 }

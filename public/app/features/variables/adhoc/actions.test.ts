@@ -364,7 +364,7 @@ describe('adhoc actions', () => {
       const datasources = [
         { ...createDatasource('default', true), value: null },
         createDatasource('elasticsearch-v1'),
-        createDatasource('loki', false),
+        createDatasource('vali', false),
         createDatasource('influx'),
         createDatasource('google-sheets', false),
         createDatasource('elasticsearch-v7'),

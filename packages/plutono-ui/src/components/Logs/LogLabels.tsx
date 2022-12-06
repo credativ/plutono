@@ -6,7 +6,7 @@ import { stylesFactory } from '../../themes';
 import { Themeable } from '../../types/theme';
 import { withTheme } from '../../themes/ThemeContext';
 
-// Levels are already encoded in color, filename is a Loki-ism
+// Levels are already encoded in color, filename is a Vali-ism
 const HIDDEN_LABELS = ['level', 'lvl', 'filename'];
 
 const getStyles = stylesFactory((theme: PlutonoTheme) => {

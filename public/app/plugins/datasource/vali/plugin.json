@@ -1,0 +1,38 @@
+{
+  "type": "datasource",
+  "name": "Vali",
+  "id": "vali",
+  "category": "logging",
+
+  "logs": true,
+  "metrics": true,
+  "alerting": true,
+  "annotations": true,
+  "streaming": true,
+
+  "queryOptions": {
+    "maxDataPoints": true
+  },
+
+  "info": {
+    "description": "Like Prometheus but for logs.",
+    "author": {
+      "name": "Plutono Team",
+      "url": "https://github.com/credativ/plutono"
+    },
+    "logos": {
+      "small": "img/vali_icon.svg",
+      "large": "img/vali_icon.svg"
+    },
+    "links": [
+      {
+        "name": "Learn more",
+        "url": "https://github.com/credativ/vali"
+      },
+      {
+        "name": "GitHub Project",
+        "url": "https://github.com/credativ/vali"
+      }
+    ]
+  }
+}

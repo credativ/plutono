@@ -34,7 +34,7 @@ export function TraceToLogsSettings({ options, onOptionsChange }: Props) {
       <div className="gf-form">
         <InlineFormLabel tooltip="The data source the trace is going to navigate to">Data source</InlineFormLabel>
         <DataSourcePicker
-          pluginId="loki"
+          pluginId="vali"
           current={options.jsonData.tracesToLogs?.datasourceUid}
           noDefault={true}
           onChange={(ds) =>
@@ -47,7 +47,7 @@ export function TraceToLogsSettings({ options, onOptionsChange }: Props) {
       </div>
 
       <div className="gf-form">
-        <InlineFormLabel tooltip="Tags that will be used in the Loki query. Default tags: 'cluster', 'hostname', 'namespace', 'pod'">
+        <InlineFormLabel tooltip="Tags that will be used in the Vali query. Default tags: 'cluster', 'hostname', 'namespace', 'pod'">
           Tags
         </InlineFormLabel>
         <TagsInput

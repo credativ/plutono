@@ -228,7 +228,7 @@ export function cancelQueries(exploreId: ExploreId): ThunkResult<void> {
 }
 
 /**
- * Import queries from previous datasource if possible eg Loki and Prometheus have similar query language so the
+ * Import queries from previous datasource if possible eg Vali and Prometheus have similar query language so the
  * labels part can be reused to get similar data.
  * @param exploreId
  * @param queries
@@ -332,11 +332,11 @@ export const runQueries = (exploreId: ExploreId, options?: { replaceUrl?: boolea
     const queryOptions: QueryOptions = {
       minInterval,
       // maxDataPoints is used in:
-      // Loki - used for logs streaming for buffer size, with undefined it falls back to datasource config if it supports that.
+      // Vali - used for logs streaming for buffer size, with undefined it falls back to datasource config if it supports that.
       // Elastic - limits the number of datapoints for the counts query and for logs it has hardcoded limit.
       // Influx - used to correctly display logs in graph
       // TODO:unification
-      // maxDataPoints: mode === ExploreMode.Logs && datasourceId === 'loki' ? undefined : containerWidth,
+      // maxDataPoints: mode === ExploreMode.Logs && datasourceId === 'vali' ? undefined : containerWidth,
       maxDataPoints: containerWidth,
       liveStreaming: live,
     };

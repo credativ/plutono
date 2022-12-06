@@ -11,7 +11,10 @@ e2e.scenario({
   scenario: () => {
     // @ts-ignore some typing issue
     e2e().on('uncaught:exception', (err) => {
-      if (err.stack?.indexOf("TypeError: Cannot read property 'getText' of null") !== -1) {
+      if (
+        err.stack?.indexOf("TypeError: Cannot read property 'getText' of null") !== -1 ||
+        err.stack?.indexOf("TypeError: Cannot read properties of null (reading 'getText')") !== -1
+      ) {
         // On occasion monaco editor will not have the time to be properly unloaded when we change the tab
         // and then the e2e test fails with the uncaught:exception:
         // TypeError: Cannot read property 'getText' of null

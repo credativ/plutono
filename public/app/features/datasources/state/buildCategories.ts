@@ -73,7 +73,7 @@ function sortPlugins(plugins: DataSourcePluginMeta[]) {
   const sortingRules: { [id: string]: number } = {
     prometheus: 100,
     graphite: 95,
-    loki: 90,
+    vali: 90,
     mysql: 80,
     jaeger: 100,
     postgres: 79,
@@ -167,7 +167,7 @@ function getPlutonoCloudPhantomPlugin(): DataSourcePluginMeta {
     module: 'phantom',
     baseUrl: '',
     info: {
-      description: 'Hosted Graphite, Prometheus and Loki',
+      description: 'Hosted Graphite, Prometheus and Vali',
       logos: { small: 'public/img/plutono_icon.svg', large: 'asd' },
       author: { name: 'Plutono Team' },
       links: [

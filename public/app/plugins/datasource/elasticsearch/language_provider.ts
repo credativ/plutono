@@ -106,12 +106,12 @@ export default class ElasticsearchLanguageProvider extends LanguageProvider {
   }
 
   /**
-   * The current implementation only supports switching from Prometheus/Loki queries.
+   * The current implementation only supports switching from Prometheus/Vali queries.
    * For them we transform the query to an ES Logs query since it's the behaviour most users expect.
    * For every other datasource we just copy the refId and let the query editor initialize a default query.
    * */
   importQueries(queries: DataQuery[], datasourceType: string): ElasticsearchQuery[] {
-    if (datasourceType === 'prometheus' || datasourceType === 'loki') {
+    if (datasourceType === 'prometheus' || datasourceType === 'vali') {
       return queries.map((query) => {
         let prometheusQuery = query as PromQuery;
         const expr = getElasticsearchQuery(extractPrometheusLabels(prometheusQuery.expr));

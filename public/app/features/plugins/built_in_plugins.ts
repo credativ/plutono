@@ -12,7 +12,7 @@ const plutonoPlugin = async () =>
   await import(/* webpackChunkName: "plutonoPlugin" */ 'app/plugins/datasource/plutono/module');
 const influxdbPlugin = async () =>
   await import(/* webpackChunkName: "influxdbPlugin" */ 'app/plugins/datasource/influxdb/module');
-const lokiPlugin = async () => await import(/* webpackChunkName: "lokiPlugin" */ 'app/plugins/datasource/loki/module');
+const valiPlugin = async () => await import(/* webpackChunkName: "valiPlugin" */ 'app/plugins/datasource/vali/module');
 const jaegerPlugin = async () =>
   await import(/* webpackChunkName: "jaegerPlugin" */ 'app/plugins/datasource/jaeger/module');
 const zipkinPlugin = async () =>
@@ -70,7 +70,7 @@ const builtInPlugins: any = {
   'app/plugins/datasource/opentsdb/module': opentsdbPlugin,
   'app/plugins/datasource/plutono/module': plutonoPlugin,
   'app/plugins/datasource/influxdb/module': influxdbPlugin,
-  'app/plugins/datasource/loki/module': lokiPlugin,
+  'app/plugins/datasource/vali/module': valiPlugin,
   'app/plugins/datasource/jaeger/module': jaegerPlugin,
   'app/plugins/datasource/zipkin/module': zipkinPlugin,
   'app/plugins/datasource/mixed/module': mixedPlugin,

@@ -128,8 +128,8 @@ func addDataSourceMigration(mg *Migrator) {
 		Name: "read_only", Type: DB_Bool, Nullable: true,
 	}))
 
-	const migrateLoggingToLoki = `UPDATE data_source SET type = 'loki' WHERE type = 'logging'`
-	mg.AddMigration("Migrate logging ds to loki ds", NewRawSQLMigration(migrateLoggingToLoki))
+	const migrateLoggingToVali = `UPDATE data_source SET type = 'vali' WHERE type = 'logging'`
+	mg.AddMigration("Migrate logging ds to vali ds", NewRawSQLMigration(migrateLoggingToVali))
 
 	const setEmptyJSONWhereNullJSON = `UPDATE data_source SET json_data = '{}' WHERE json_data is null`
 	mg.AddMigration("Update json_data with nulls", NewRawSQLMigration(setEmptyJSONWhereNullJSON))

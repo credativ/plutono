@@ -3,18 +3,18 @@
     ports:
       - "6831:6831"
       - "16686:16686"
-  # Additional loki to generate some traces
+  # Additional vali to generate some traces
   # datasource URL: http://localhost:3100/
-  loki:
-    image: plutono/loki:master
+  vali:
+    image: ghcr.io/credativ/vali:main
     ports:
       - "3100:3100"
-    command: -config.file=/etc/loki/local-config.yaml
-    # For this to work you need to install the logging driver see https://github.com/grafana/loki/tree/master/cmd/docker-driver#plugin-installation
+    command: -config.file=/etc/vali/local-config.yaml
+    # For this to work you need to install the logging driver see https://github.com/credativ/vali/tree/main/cmd/docker-driver#plugin-installation
     logging:
-      driver: loki
+      driver: vali
       options:
-        loki-url: "http://localhost:3100/loki/api/v1/push"
+        vali-url: "http://localhost:3100/vali/api/v1/push"
     # Optional jaeger tracing
     environment:
       - JAEGER_AGENT_HOST=jaeger
@@ -24,7 +24,7 @@
   promtail:
     image: plutono/promtail:master
     volumes:
-      - ./docker/blocks/loki/config.yaml:/etc/promtail/docker-config.yaml
+      - ./docker/blocks/vali/config.yaml:/etc/promtail/docker-config.yaml
       - /var/log:/var/log
       - ../data/log:/var/log/plutono
     command:

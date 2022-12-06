@@ -172,7 +172,7 @@ Installing and configuring databases can be a tricky business. Plutono uses [Doc
 In the root directory of your Plutono repository, run the following command:
 
 ```
-make devenv sources=influxdb,loki
+make devenv sources=influxdb,vali
 ```
 
 The script generates a Docker Compose file with the databases you specify as `sources`, and runs them in the background.
