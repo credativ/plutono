@@ -16,7 +16,7 @@ describe('news', () => {
       'https://grafana.com/blog/2019/12/13/meet-the-plutono-labs-team-aengus-rooney/',
       'https://grafana.com/blog/2019/12/12/register-now-plutonocon-2020-is-coming-to-amsterdam-may-13-14/',
       'https://grafana.com/blog/2019/12/10/pro-tips-dashboard-navigation-using-links/',
-      'https://grafana.com/blog/2019/12/09/how-to-do-automatic-annotations-with-plutono-and-vali/',
+      'https://grafana.com/blog/2019/12/09/how-to-do-automatic-annotations-with-plutono-and-loki/',
       'https://grafana.com/blog/2019/12/06/meet-the-plutono-labs-team-ward-bekker/',
     ]);
   });
@@ -44,8 +44,8 @@ const plutono20191216 = {
         '\n\n<p>Great dashboards answer a limited set of related questions. If you try to answer too many questions in a single dashboard, it can become overly complex. ...',
     },
     {
-      title: 'How to Do Automatic Annotations with Plutono and Vali',
-      link: 'https://grafana.com/blog/2019/12/09/how-to-do-automatic-annotations-with-plutono-and-vali/',
+      title: 'How to Do Automatic Annotations with Plutono and Loki',
+      link: 'https://grafana.com/blog/2019/12/09/how-to-do-automatic-annotations-with-plutono-and-loki/',
       pubDate: 'Mon, 09 Dec 2019 00:00:00 +0000',
       content:
         '\n\n<p>Plutono annotations are great! They clearly mark the occurrence of an event to help operators and devs correlate events with metrics. You may not be aware of this, but Plutono can automatically annotate graphs by ...',
