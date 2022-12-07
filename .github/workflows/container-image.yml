@@ -44,8 +44,6 @@ jobs:
         with:
           context: .
           push: true
-          secrets: |
-            NODE_AUTH_TOKEN=${{ secrets.PERSONAL_ACCESS_TOKEN }}
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
 
@@ -70,9 +68,6 @@ jobs:
           cache: yarn
           registry-url: 'https://npm.pkg.github.com'
           scope: '@credativ'
-          always-auth: true
-        env:
-          NODE_AUTH_TOKEN: '${{ secrets.PERSONAL_ACCESS_TOKEN }}'
 
       - name: Install dependencies
         run: yarn install --pure-lockfile --no-progress --network-concurrency 1
