@@ -7,7 +7,9 @@ WORKDIR /usr/src/app/
 COPY package.json yarn.lock ./
 COPY packages packages
 
-RUN echo "@credativ:registry=https://npm.pkg.github.com" >> .npmrc && \
+RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
+    echo "//npm.pkg.github.com/:_authToken=$(cat /run/secrets/NODE_AUTH_TOKEN)" > .npmrc && \
+    echo "@credativ:registry=https://npm.pkg.github.com" >> .npmrc && \
     yarn install --pure-lockfile --no-progress --network-concurrency 1 && \
     rm .npmrc
 
