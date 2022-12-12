@@ -73,28 +73,6 @@ var cmd Command = Command{
 
 var pluginCommands = []*cli.Command{
 	{
-		Name:   "install",
-		Usage:  "install <plugin id> <plugin version (optional)>",
-		Action: runPluginCommand(cmd.installCommand),
-	}, {
-		Name:   "list-remote",
-		Usage:  "list remote available plugins",
-		Action: runPluginCommand(cmd.listRemoteCommand),
-	}, {
-		Name:   "list-versions",
-		Usage:  "list-versions <plugin id>",
-		Action: runPluginCommand(cmd.listVersionsCommand),
-	}, {
-		Name:    "update",
-		Usage:   "update <plugin id>",
-		Aliases: []string{"upgrade"},
-		Action:  runPluginCommand(cmd.upgradeCommand),
-	}, {
-		Name:    "update-all",
-		Aliases: []string{"upgrade-all"},
-		Usage:   "update all your installed plugins",
-		Action:  runPluginCommand(cmd.upgradeAllCommand),
-	}, {
 		Name:   "ls",
 		Usage:  "list all installed plugins",
 		Action: runPluginCommand(cmd.lsCommand),
