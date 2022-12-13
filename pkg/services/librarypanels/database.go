@@ -23,8 +23,8 @@ SELECT DISTINCT
 	, u2.email AS updated_by_email
 	, (SELECT COUNT(dashboard_id) FROM library_panel_dashboard WHERE librarypanel_id = lp.id) AS connected_dashboards
 FROM library_panel AS lp
-	LEFT JOIN user AS u1 ON lp.created_by = u1.id
-	LEFT JOIN user AS u2 ON lp.updated_by = u2.id
+	LEFT JOIN "user" AS u1 ON lp.created_by = u1.id
+	LEFT JOIN "user" AS u2 ON lp.updated_by = u2.id
 `
 )
 
@@ -147,7 +147,7 @@ func (lps *LibraryPanelService) internalConnectDashboard(session *sqlstore.DBSes
 	}
 	if _, err := session.Insert(&libraryPanelDashboard); err != nil {
 		if lps.SQLStore.Dialect.IsUniqueConstraintViolation(err) {
-			return nil
+			return session.Rollback()
 		}
 		return err
 	}
@@ -256,7 +256,10 @@ func (lps *LibraryPanelService) deleteLibraryPanelsInFolder(c *models.ReqContext
 		var folderUIDs []struct {
 			ID int64 `xorm:"id"`
 		}
-		err := session.SQL("SELECT id from dashboard WHERE uid=? AND org_id=? AND is_folder=1", folderUID, c.SignedInUser.OrgId).Find(&folderUIDs)
+		err := session.SQL(
+			"SELECT id from dashboard WHERE uid=? AND org_id=? AND is_folder=?",
+			folderUID, c.SignedInUser.OrgId, lps.SQLStore.Dialect.BooleanStr(true),
+		).Find(&folderUIDs)
 		if err != nil {
 			return err
 		}
