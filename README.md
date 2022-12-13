@@ -12,6 +12,19 @@ Plutono allows you to query, visualize, alert on and understand your metrics no 
 - **Alerting:** Visually define alert rules for your most important metrics. Plutono will continuously evaluate and send notifications to systems like Slack, PagerDuty, VictorOps, OpsGenie.
 - **Mixed Data Sources:** Mix different data sources in the same graph! You can specify a data source on a per-query basis. This works for even custom datasources.
 
+
+## About this fork
+
+Assuming that you want to switch from using Grafana to Plutono, you may need to change the name of images, executables, configurations files, their paths, and in some cases configuration items.
+For example, the config file `/etc/plutono/plutono.ini` of this fork contains the section `plugin.plutono-image-renderer`.
+
+- Occurences of `grafana` in any letter case are replaced by `plutono` in the same case.
+- Occurences of `loki` in any letter case are replaced by `vali` in the same case.
+- Environment variable prefix changed from `GF_` to `PL_`. (e4af9b88eb4a47d405c57b24e8b8131254ca20a4)
+
+Plutono does not suppport Grafana Plugins or Loki due to internal renaming. You may use [Vali](https://github.com/credativ/vali) as a replacement for Loki.
+
+
 ## License
 
 Plutono is distributed under the [Apache 2.0 License](https://github.com/credativ/plutono/blob/master/LICENSE).
