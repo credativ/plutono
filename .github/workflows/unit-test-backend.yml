@@ -18,6 +18,34 @@ jobs:
     permissions:
       contents: read
       packages: read
+    services:
+      postgres:
+        image: postgres:15.1-alpine
+        env:
+          POSTGRES_DB: plutonotest
+          POSTGRES_PASSWORD: plutonotest
+          POSTGRES_USER: plutonotest
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 5432:5432
+      mysql:
+        image: mysql:5.7.40
+        env:
+          MYSQL_DATABASE: plutono_tests
+          MYSQL_PASSWORD: password
+          MYSQL_ROOT_PASSWORD: rootpass
+          MYSQL_USER: plutono
+        options: >-
+          --health-cmd "mysqladmin ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        ports:
+          - 3306:3306
 
     steps:
       - name: Checkout repository
@@ -37,3 +65,29 @@ jobs:
 
       - name: Test
         run: go test -v -covermode=atomic -tags=integration ./pkg/...
+
+      - name: Test PostgreSQL integration
+        run: |
+          psql -p 5432 -h localhost -U plutonotest -d plutonotest -f devenv/docker/blocks/postgres_tests/setup.sql
+          go clean -testcache
+          for d in $(go list ./pkg/...); do go test -tags=integration "$d"; done
+        env:
+          PLUTONO_TEST_DB: postgres
+          PGPASSWORD: plutonotest
+          POSTGRES_HOST: localhost
+
+      - name: Test MySQL integration
+        run: |
+          cat devenv/docker/blocks/mysql_tests/setup.sql | mysql -h 127.0.0.1 -P 3306 -u root -prootpass
+          go clean -testcache
+          # run only integration tests
+          go test -tags=integration ./pkg/infra/serverlock -test.run="TestServerLok"
+          go test -tags=integration ./pkg/services/alerting -test.run="TestEngineTimeouts"
+          go test -tags=integration ./pkg/services/ngalert -test.run="TestCreatingAlertDefinition|TestCreatingConflictionAlertDefinition|TestUpdatingAlertDefinition|TestUpdatingConflictingAlertDefinition|TestDeletingAlertDefinition|TestAlertInstanceOperations"
+          go test -tags=integration ./pkg/services/sqlstore -test.run="TestAlertNotificationSQLAccess|TestAlertingDataAccess|TestPausingAlerts|TestAnnotations|TestApiKeyDataAccess|TestApiKeyErrors|TestDashboardAclDataAccess|TestDashboardFolderDataAccess|TestDashboardProvisioningTest|TestIntegratedDashboardService|TestDashboardSnapshotDBAccess|TestDeleteExpiredSnapshots|TestDashboardDataAccess|TestDashboard_SortingOptions|TestGetDashboardVersion|TestGetDashboardVersions|TestDeleteExpiredVersions|TestDataAccess|TestGetDefaultDataSource|TestGetDBHealthQuery|TestLoginAttempts|TestAccountDataAccess|TestPlaylistDataAccess|TestPreferencesDataAccess|TestQuotaCommandsAndQueries|TestSQLBuilder|TestSQLConnectionString|TestUserStarsDataAccess|TestIntegration_GetAdminStats|TestStatsDataAccess|TestSavingTags|TestTeamCommandsAndQueries|TestTempUserCommandsAndQueries|TestTransaction"
+          go test -tags=integration ./pkg/services/sqlstore/searchstore -test.run="TestBuilder_EqualResults_Basic|TestBuilder_Pagination|TestBuilder_Permissions"
+          go test -tags=integration ./pkg/tsdb/mysql -test.run="TestMySQL"
+          go test -tags=integration ./pkg/tsdb/postgres -test.run="TestGenerateConnectionString|TestPostgres"
+        env:
+          PLUTONO_TEST_DB: mysql
+          MYSQL_HOST: "127.0.0.1"
