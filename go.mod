@@ -54,7 +54,7 @@ require (
 	github.com/influxdata/influxdb-client-go/v2 v2.2.0
 	github.com/jaegertracing/jaeger v1.22.1-0.20210304164023-2fff3ca58910
 	github.com/jmespath/go-jmespath v0.4.0
-	github.com/json-iterator/go v1.1.10
+	github.com/json-iterator/go v1.1.12
 	github.com/jung-kurt/gofpdf v1.16.2
 	github.com/lib/pq v1.9.0
 	github.com/linkedin/goavro/v2 v2.10.0
