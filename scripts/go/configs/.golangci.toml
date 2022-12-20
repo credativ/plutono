@@ -25,7 +25,9 @@ enable = [
   "errcheck",
   # "gochecknoinits",
   "goconst",
-  "gocritic",
+  # disabled because of a bug in the linter:
+  # ruleguard: execution error: used Run() with an empty rule set; forgot to call Load() first? (gocritic)
+  # "gocritic",
   "goimports",
   "goprintffuncname",
   "gosec",
