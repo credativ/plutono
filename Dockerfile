@@ -23,7 +23,7 @@ ENV NODE_ENV=production \
     NODE_OPTIONS="--max_old_space_size=4096"
 RUN yarn build
 
-FROM golang:1.16.1-alpine3.13 as go-builder
+FROM golang:1.19.4-alpine3.17 as go-builder
 
 RUN apk add --no-cache gcc g++
 
@@ -36,7 +36,7 @@ RUN go mod verify
 RUN go run build.go build
 
 # Final stage
-FROM alpine:3.13
+FROM alpine:3.17
 
 ARG PL_UID="472"
 ARG PL_GID="0"
