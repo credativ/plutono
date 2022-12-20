@@ -91,7 +91,7 @@ func (e *ValiExecutor) Query(ctx context.Context, dsInfo *models.DataSource, tsd
 	return result, nil
 }
 
-//If legend (using of name or pattern instead of time series name) is used, use that name/pattern for formatting
+// If legend (using of name or pattern instead of time series name) is used, use that name/pattern for formatting
 func formatLegend(metric model.Metric, query *ValiQuery) string {
 	if query.LegendFormat == "" {
 		return metric.String()
