@@ -18,6 +18,7 @@ Plutono allows you to query, visualize, alert on and understand your metrics no 
 Assuming that you want to switch from using Grafana to Plutono, you may need to change the name of images, executables, configurations files, their paths, and in some cases configuration items.
 For example, the config file `/etc/plutono/plutono.ini` of this fork contains the section `plugin.plutono-image-renderer`.
 
+- The container image path changes from `[docker.io/]grafana/grafana` to `ghcr.io/credativ/plutono:<version>`. Use version `main` for the latest development snapshot.
 - Occurences of `grafana` in any letter case are replaced by `plutono` in the same case.
 - Occurences of `loki` in any letter case are replaced by `vali` in the same case.
 - Environment variable prefix changed from `GF_` to `PL_`. (e4af9b88eb4a47d405c57b24e8b8131254ca20a4)
