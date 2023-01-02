@@ -73,6 +73,8 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --pure-lockfile --no-progress --network-concurrency 1
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Install cypress
         run: node_modules/cypress/bin/cypress install
