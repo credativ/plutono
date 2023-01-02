@@ -355,6 +355,11 @@ func setBuildEnv() {
 }
 
 func getGitBranch() string {
+	// use SOURCE_GIT_BRANCH if set.
+	if s := os.Getenv("SOURCE_GIT_BRANCH"); s != "" {
+		return s
+	}
+
 	v, err := runError("git", "rev-parse", "--abbrev-ref", "HEAD")
 	if err != nil {
 		return "master"
@@ -363,6 +368,11 @@ func getGitBranch() string {
 }
 
 func getGitSha() string {
+	// use SOURCE_GIT_REV_SHORT if set.
+	if s := os.Getenv("SOURCE_GIT_REV_SHORT"); s != "" {
+		return s
+	}
+
 	v, err := runError("git", "rev-parse", "--short", "HEAD")
 	if err != nil {
 		return "unknown-dev"
