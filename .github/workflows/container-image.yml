@@ -39,11 +39,17 @@ jobs:
         with:
           images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
 
+      - name: Set SOURCE_SHA_SHORT variable
+        run: echo "SOURCE_SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
       - name: Build and push Docker image
         uses: docker/build-push-action@v3
         with:
           context: .
           push: true
+          build-args: |
+            SOURCE_GIT_BRANCH=${{ github.ref_name }}
+            SOURCE_GIT_REV_SHORT=${{ env.SOURCE_SHA_SHORT }}
           secrets: |
             NODE_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }}
           tags: ${{ steps.meta.outputs.tags }}

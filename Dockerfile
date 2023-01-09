@@ -32,6 +32,11 @@ WORKDIR $GOPATH/src/github.com/credativ/plutono
 COPY go.mod go.sum build.go package.json ./
 COPY pkg pkg
 
+ARG SOURCE_GIT_BRANCH=""
+ENV SOURCE_GIT_BRANCH=$SOURCE_GIT_BRANCH
+ARG SOURCE_GIT_REV_SHORT=""
+ENV SOURCE_GIT_REV_SHORT=$SOURCE_GIT_REV_SHORT
+
 RUN go mod verify
 RUN go run build.go build
 
