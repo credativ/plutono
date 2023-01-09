@@ -96,6 +96,8 @@ func (rs *RenderingService) renderViaHttp(ctx context.Context, renderKey string,
 			resp.Status)
 	}
 
+	// nolint:gosec
+	// We can ignore the gosec G304 warning on this one because `filePath` comes from rs.Cfg.ImagesDir
 	out, err := os.Create(filePath)
 	if err != nil {
 		return nil, err

@@ -27,7 +27,9 @@ import (
 
 const (
 	InvalidUsernamePassword = "invalid username or password"
-	InvalidAPIKey           = "invalid API key"
+	// nolint:gosec
+	// ignore G101, no read API key
+	InvalidAPIKey = "invalid API key"
 )
 
 const ServiceName = "ContextHandler"

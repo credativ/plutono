@@ -56,6 +56,7 @@ var engineCache = engineCacheType{
 var sqlIntervalCalculator = tsdb.NewIntervalCalculator(nil)
 
 // NewXormEngine is an xorm.Engine factory, that can be stubbed by tests.
+//
 //nolint:gocritic
 var NewXormEngine = func(driverName string, connectionString string) (*xorm.Engine, error) {
 	return xorm.NewEngine(driverName, connectionString)
@@ -569,7 +570,7 @@ func ConvertSqlTimeColumnToEpochMs(values tsdb.RowValues, timeIndex int) {
 }
 
 // ConvertSqlValueColumnToFloat converts timeseries value column to float.
-//nolint: gocyclo
+// nolint: gocyclo
 func ConvertSqlValueColumnToFloat(columnName string, columnValue interface{}) (null.Float, error) {
 	var value null.Float
 

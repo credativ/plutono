@@ -20,7 +20,8 @@ type ChannelAddress struct {
 }
 
 // ParseChannelAddress parses the parts from a channel ID:
-//   ${scope} / ${namespace} / ${path}.
+//
+//	${scope} / ${namespace} / ${path}.
 func ParseChannelAddress(id string) ChannelAddress {
 	addr := ChannelAddress{}
 	parts := strings.SplitN(id, "/", 3)

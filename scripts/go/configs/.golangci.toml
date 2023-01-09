@@ -20,15 +20,15 @@ rules = "pkg/ruleguard.rules.go"
 disable-all = true
 enable = [
   "bodyclose",
-  "deadcode",
   "depguard",
   "dogsled",
   "errcheck",
   # "gochecknoinits",
   "goconst",
-  "gocritic",
+  # disabled because of a bug in the linter:
+  # ruleguard: execution error: used Run() with an empty rule set; forgot to call Load() first? (gocritic)
+  # "gocritic",
   "goimports",
-  "golint",
   "goprintffuncname",
   "gosec",
   "gosimple",
@@ -39,12 +39,10 @@ enable = [
   "rowserrcheck",
   "exportloopref",
   "staticcheck",
-  "structcheck",
   "stylecheck",
   "typecheck",
   "unconvert",
   "unused",
-  "varcheck",
   "whitespace",
   "gocyclo",
   "exhaustive",

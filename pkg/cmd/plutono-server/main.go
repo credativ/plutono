@@ -88,6 +88,8 @@ func main() {
 		fmt.Println("diagnostics: pprof profiling enabled", "port", profileDiagnostics.port)
 		runtime.SetBlockProfileRate(1)
 		go func() {
+			// nolint:gosec
+			// We can ignore gosec G114 warning because it is only a local diagnostic http server
 			err := http.ListenAndServe(fmt.Sprintf("localhost:%d", profileDiagnostics.port), nil)
 			if err != nil {
 				panic(err)

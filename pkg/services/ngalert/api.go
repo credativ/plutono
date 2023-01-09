@@ -64,7 +64,7 @@ func (api *apiImpl) conditionEvalEndpoint(c *models.ReqContext, cmd evalAlertCon
 	}
 
 	evaluator := eval.Evaluator{Cfg: api.Cfg}
-	evalResults, err := evaluator.ConditionEval(&evalCond, timeNow())
+	evalResults, err := evaluator.ConditionEval(&evalCond, now)
 	if err != nil {
 		return response.Error(400, "Failed to evaluate conditions", err)
 	}

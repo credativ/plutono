@@ -6,7 +6,6 @@ warningCode = 1
 
 [rule.context-as-argument]
 [rule.error-return]
-[rule.package-comments]
 [rule.range]
 [rule.superfluous-else]
 [rule.modifies-parameter]
