@@ -1,3 +1,13 @@
+<!-- 7.5.18 START -->
+
+# 7.5.18 (2023-01-11)
+
+Initial release of rebranding to Plutono.
+
+Note that this includes API incompatible changes (see the README).
+
+<!-- 7.5.18 END -->
+
 <!-- 7.5.17 START -->
 
 # 7.5.17 (2022-09-26)
