@@ -3043,10 +3043,10 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
-"@credativ/plutono-aws-sdk@0.0.4-alpha.1":
-  version "0.0.4-alpha.1"
-  resolved "https://npm.pkg.github.com/download/@credativ/plutono-aws-sdk/0.0.4-alpha.1/b54eb99fd2a2cb3395dcf111c1c6c707071f482c#b54eb99fd2a2cb3395dcf111c1c6c707071f482c"
-  integrity sha512-GME8KFq83SCFAlhQc1/t4un+AIViFXw5pPD5RGHdLa+AecrZpjA+Wd12/OZ9o+dEH2fn2pKnWfx+TG8C6t7mVQ==
+"@credativ/plutono-aws-sdk@0.0.4":
+  version "0.0.4"
+  resolved "https://npm.pkg.github.com/download/@credativ/plutono-aws-sdk/0.0.4/9b5492f3833e8233de67a05c675a5a62e9b7ca6b#9b5492f3833e8233de67a05c675a5a62e9b7ca6b"
+  integrity sha512-VxnS3oHbhRc3aPqA0fUcZB9lqauiqdi+wYHcxnXjv7ZyFAFSqT95R9PMvcWyERcCFzmsA9I657s4RHD60I7IMw==
 
 "@csstools/convert-colors@^1.4.0":
   version "1.4.0"
