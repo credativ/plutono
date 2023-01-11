@@ -3,7 +3,7 @@
   "license": "Apache-2.0",
   "private": true,
   "name": "plutono",
-  "version": "7.5.18-alpha.1",
+  "version": "7.5.18",
   "repository": "github:credativ/plutono",
   "scripts": {
     "api-tests": "jest --notify --watch --config=devenv/e2e-api-tests/jest.js",
@@ -203,7 +203,7 @@
   },
   "dependencies": {
     "@emotion/core": "10.0.27",
-    "@credativ/plutono-aws-sdk": "0.0.4-alpha.1",
+    "@credativ/plutono-aws-sdk": "0.0.4",
     "@popperjs/core": "2.5.4",
     "@reduxjs/toolkit": "1.5.0",
     "@sentry/browser": "5.25.0",
