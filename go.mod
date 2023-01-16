@@ -21,7 +21,7 @@ require (
 	github.com/bradfitz/gomemcache v0.0.0-20190913173617-a41fca850d0b
 	github.com/centrifugal/centrifuge v0.13.0
 	github.com/cortexproject/cortex v1.8.1
-	github.com/credativ/vali v0.0.0-20221201085031-0a0dd1998cd4
+	github.com/credativ/vali v0.0.0-20230110160559-f901784265d0
 	github.com/crewjam/saml v0.4.6-0.20201227203850-bca570abb2ce
 	github.com/davecgh/go-spew v1.1.1
 	github.com/denisenkom/go-mssqldb v0.0.0-20200910202707-1e08a3fab204
@@ -50,7 +50,6 @@ require (
 	github.com/grpc-ecosystem/go-grpc-middleware v1.2.2
 	github.com/hashicorp/go-hclog v0.15.0
 	github.com/hashicorp/go-plugin v1.4.0
-	github.com/hashicorp/go-version v1.2.1
 	github.com/inconshreveable/log15 v0.0.0-20180818164646-67afb5ed74ec
 	github.com/influxdata/influxdb-client-go/v2 v2.2.0
 	github.com/jaegertracing/jaeger v1.22.1-0.20210304164023-2fff3ca58910
