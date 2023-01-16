@@ -104,9 +104,7 @@ type UpdateDashboardAclCommand struct {
 	Items       []*DashboardAcl
 }
 
-//
 // QUERIES
-//
 type GetDashboardAclInfoListQuery struct {
 	DashboardID int64
 	OrgID       int64
