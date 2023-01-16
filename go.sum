@@ -343,6 +343,8 @@ github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ3
 github.com/creack/pty v1.1.11/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/credativ/vali v0.0.0-20221201085031-0a0dd1998cd4 h1:2l9Jw8Aq8G0H5agdwiD/NxgepjxefyhntLqj/HaDeR8=
 github.com/credativ/vali v0.0.0-20221201085031-0a0dd1998cd4/go.mod h1:qJOAPLgUNC/vXAwh5Vq8RQJQRpEJxwWL0etS2YgB6Xg=
+github.com/credativ/vali v0.0.0-20230110160559-f901784265d0 h1:Uij6U3yXETEluRrUm8IvuQHocC2tfRsJJfK2Kk0KB+A=
+github.com/credativ/vali v0.0.0-20230110160559-f901784265d0/go.mod h1:qJOAPLgUNC/vXAwh5Vq8RQJQRpEJxwWL0etS2YgB6Xg=
 github.com/crewjam/httperr v0.0.0-20190612203328-a946449404da/go.mod h1:+rmNIXRvYMqLQeR4DHyTvs6y0MEMymTz4vyFpFkKTPs=
 github.com/crewjam/saml v0.4.6-0.20201227203850-bca570abb2ce h1:pAuTpLhCqC20s2RLhUirfw606jReW+8z2U5EvG+0S7E=
 github.com/crewjam/saml v0.4.6-0.20201227203850-bca570abb2ce/go.mod h1:/gCaeLf13J8/621RNZ6TaExji/8xCWcn6UmdJ57wURQ=
