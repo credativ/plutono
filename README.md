@@ -1,6 +1,6 @@
 # Plutono
 
-Plutono is a fork of [Grafana](https://github.com/grafana/grafana) 7.5 under the Apache 2.0 License.
+Plutono is a fork of [Grafana](https://github.com/grafana/grafana) 7.5.17 under the Apache 2.0 License.
 It is currently limited to maintenance and security updates.
 
 Plutono allows you to query, visualize, alert on and understand your metrics no matter where they are stored. Create, explore, and share dashboards with your team and foster a data driven culture:
