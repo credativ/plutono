@@ -1,3 +1,12 @@
+<!-- 7.5.19 START -->
+
+# 7.5.19 (2023-01-17)
+
+- Upgrade Go to 1.19
+- Build images for arm64 in addition to amd64
+
+<!-- 7.5.19 END -->
+
 <!-- 7.5.18 START -->
 
 # 7.5.18 (2023-01-11)
