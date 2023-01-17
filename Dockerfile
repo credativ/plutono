@@ -38,7 +38,9 @@ ARG SOURCE_GIT_REV_SHORT=""
 ENV SOURCE_GIT_REV_SHORT=$SOURCE_GIT_REV_SHORT
 
 RUN go mod verify
-RUN go run build.go build
+RUN go run build.go build && \
+    mv /go/src/github.com/credativ/plutono/bin/linux-$(go env GOARCH)/plutono-server /go/src/github.com/credativ/plutono/bin/ && \
+    mv /go/src/github.com/credativ/plutono/bin/linux-$(go env GOARCH)/plutono-cli /go/src/github.com/credativ/plutono/bin/
 
 # Final stage
 FROM alpine:3.17
@@ -80,7 +82,7 @@ RUN export PL_GID_NAME=$(getent group $PL_GID | cut -d':' -f1) && \
     chown -R "plutono:$PL_GID_NAME" "$PL_PATHS_DATA" "$PL_PATHS_HOME/.aws" "$PL_PATHS_LOGS" "$PL_PATHS_PLUGINS" "$PL_PATHS_PROVISIONING" && \
     chmod -R 777 "$PL_PATHS_DATA" "$PL_PATHS_HOME/.aws" "$PL_PATHS_LOGS" "$PL_PATHS_PLUGINS" "$PL_PATHS_PROVISIONING"
 
-COPY --from=go-builder /go/src/github.com/credativ/plutono/bin/linux-amd64/plutono-server /go/src/github.com/credativ/plutono/bin/linux-amd64/plutono-cli ./bin/
+COPY --from=go-builder /go/src/github.com/credativ/plutono/bin/plutono-server /go/src/github.com/credativ/plutono/bin/plutono-cli ./bin/
 COPY --from=js-builder /usr/src/app/public ./public
 COPY --from=js-builder /usr/src/app/tools ./tools
 
