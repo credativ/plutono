@@ -1,0 +1,92 @@
+name: Run E2E tests
+
+on:
+  push:
+    branches:
+      - "main"
+    tags:
+      - "v*"
+  pull_request:
+
+env:
+  REGISTRY: ghcr.io
+  IMAGE_NAME: ${{ github.repository }}
+
+jobs:
+  e2e-tests:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
+    env:
+      HOST: localhost
+      PORT: "3000"
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v3
+
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      - name: Extract metadata (tags, labels) for Docker
+        id: meta
+        uses: docker/metadata-action@v4
+        with:
+          images: ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}
+
+      - name: Set SOURCE_SHA_SHORT variable
+        run: echo "SOURCE_SHA_SHORT=$(git rev-parse --short HEAD)" >> $GITHUB_ENV
+
+      - name: Build Docker image
+        uses: docker/build-push-action@v3
+        with:
+          context: .
+          push: false
+          build-args: |
+            SOURCE_GIT_BRANCH=${{ github.ref_name }}
+            SOURCE_GIT_REV_SHORT=${{ env.SOURCE_SHA_SHORT }}
+          secrets: |
+            NODE_AUTH_TOKEN=${{ secrets.GITHUB_TOKEN }}
+          tags: ${{ steps.meta.outputs.tags }}
+          labels: ${{ steps.meta.outputs.labels }}
+
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: 14.15.5
+          cache: yarn
+          registry-url: 'https://npm.pkg.github.com'
+          scope: '@credativ'
+
+      - name: Install dependencies
+        run: yarn install --pure-lockfile --no-progress --network-concurrency 1
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Install cypress
+        run: node_modules/cypress/bin/cypress install
+
+      - name: Start server
+        run: >
+          docker run --detach
+          -p 3000:3000
+          -e PL_SECURITY_ADMIN_USER=admin -e PL_SECURITY_ADMIN_PASSWORD=admin
+          -v $(pwd)/devenv/datasources.yaml:/etc/plutono/provisioning/datasources/datasources.yaml:ro
+          -v $(pwd)/devenv/dashboards.yaml:/etc/plutono/provisioning/dashboards/dashboards.yaml:ro
+          -v $(pwd)/devenv:/usr/share/plutono/devenv:ro
+          ${{ env.REGISTRY }}/${{ env.IMAGE_NAME }}:${{ steps.meta.outputs.version }}
+
+      - name: Wait for server
+        run: e2e/wait-for-plutono
+
+      - name: Run E2E test
+        run: e2e/run-suite
+
+      - name: Upload E2E test recordings
+        uses: actions/upload-artifact@v3
+        with:
+          name: e2e-test-recordings
+          path: e2e/suite1/videos
+          retention-days: 1
+        if: success() || failure()
