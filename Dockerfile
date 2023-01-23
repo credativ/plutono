@@ -39,6 +39,7 @@ ENV SOURCE_GIT_REV_SHORT=$SOURCE_GIT_REV_SHORT
 
 RUN go mod verify
 RUN go run build.go build
+RUN GOARCH=arm64 go run build.go build
 
 # Final stage
 FROM alpine:3.17
