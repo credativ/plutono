@@ -76,6 +76,7 @@ func (timeSeriesQuery cloudMonitoringTimeSeriesQuery) run(ctx context.Context, t
 		return queryResult, cloudMonitoringResponse{}, "", nil
 	}
 
+	// nolint:bodyclose // Body is closed in unmarshalResponse
 	res, err := ctxhttp.Do(ctx, e.httpClient, req)
 	if err != nil {
 		queryResult.Error = err

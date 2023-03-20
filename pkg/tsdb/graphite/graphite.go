@@ -115,6 +115,7 @@ func (e *GraphiteExecutor) Query(ctx context.Context, dsInfo *models.DataSource,
 		return nil, err
 	}
 
+	// nolint:bodyclose // Body is closed in parseResponse
 	res, err := ctxhttp.Do(ctx, httpClient, req)
 	if err != nil {
 		return nil, err
