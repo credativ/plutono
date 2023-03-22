@@ -152,6 +152,7 @@ func (e *AzureLogAnalyticsDatasource) executeQuery(ctx context.Context, query *A
 	}
 
 	azlog.Debug("AzureLogAnalytics", "Request ApiURL", req.URL.String())
+	// nolint:bodyclose // Body is closed in unmarshalResponse
 	res, err := ctxhttp.Do(ctx, e.httpClient, req)
 	if err != nil {
 		return queryResultErrorWithExecuted(err)
