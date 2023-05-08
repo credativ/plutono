@@ -13,7 +13,6 @@
 // limitations under the License.
 
 import * as React from 'react';
-import jsonMarkup from 'json-markup';
 import { css } from 'emotion';
 import cx from 'classnames';
 
@@ -24,6 +23,9 @@ import { TraceKeyValuePair, TraceLink } from '../../types/trace';
 import { UIDropdown, UIIcon, UIMenu, UIMenuItem } from '../../uiElementsContext';
 import { autoColor, createStyle, Theme, useTheme } from '../../Theme';
 import { ubInlineBlock, uWidth100 } from '../../uberUtilityStyles';
+
+// @ts-ignore
+import jsonMarkup from './jsonMarkup';
 
 export const getStyles = createStyle((theme: Theme) => {
   const copyIcon = css`
