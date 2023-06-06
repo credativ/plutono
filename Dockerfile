@@ -7,6 +7,7 @@ WORKDIR /usr/src/app/
 
 COPY package.json yarn.lock ./
 COPY packages packages
+COPY patches patches
 
 RUN --mount=type=secret,id=NODE_AUTH_TOKEN \
     echo "//npm.pkg.github.com/:_authToken=$(cat /run/secrets/NODE_AUTH_TOKEN)" > .npmrc && \
