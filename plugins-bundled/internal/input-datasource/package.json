@@ -1,6 +1,6 @@
 {
   "name": "@credativ/plutono-plugins-input-datasource",
-  "version": "7.5.21",
+  "version": "7.5.22",
   "description": "Input Datasource",
   "private": true,
   "repository": {
@@ -16,9 +16,9 @@
   "author": "Plutono Team",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@credativ/plutono-data": "7.5.21",
-    "@credativ/plutono-toolkit": "7.5.21",
-    "@credativ/plutono-ui": "7.5.21"
+    "@credativ/plutono-data": "7.5.22",
+    "@credativ/plutono-toolkit": "7.5.22",
+    "@credativ/plutono-ui": "7.5.22"
   },
   "volta": {
     "node": "12.16.2"
