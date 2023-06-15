@@ -1,3 +1,15 @@
+<!-- 7.5.22 START -->
+
+# 7.5.22 (2023-06-15)
+
+- Upgrade Go to 1.20.5
+- Upgrade Alpine to 3.18
+- Remove left over loading logo #43
+- Add fix against xss in traceview panel (CVE-2023-0594) #44 
+- Fix UX issues in query field on Chromium #45
+
+<!-- 7.5.22 END -->
+
 <!-- 7.5.21 START -->
 
 # 7.5.21 (2023-04-05)
