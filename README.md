@@ -26,6 +26,11 @@ For example, the config file `/etc/plutono/plutono.ini` of this fork contains th
 Plutono does not suppport Grafana Plugins or Loki due to internal renaming. You may use [Vali](https://github.com/credativ/vali) as a replacement for Loki.
 
 
+## Installation
+
+See [INSTALL.md](INSTALL.md)
+
+
 ## License
 
 Plutono is distributed under the [Apache 2.0 License](https://github.com/credativ/plutono/blob/master/LICENSE).
