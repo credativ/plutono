@@ -26,7 +26,7 @@ ENV NODE_ENV=production \
 RUN yarn build
 
 # Backend builder stage
-FROM docker.io/library/golang:1.21.1-alpine3.18 as go-builder
+FROM docker.io/library/golang:1.21.3-alpine3.18 as go-builder
 
 RUN apk add --no-cache gcc g++
 
