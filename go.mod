@@ -21,7 +21,7 @@ require (
 	github.com/bradfitz/gomemcache v0.0.0-20190913173617-a41fca850d0b
 	github.com/centrifugal/centrifuge v0.13.0
 	github.com/cortexproject/cortex v1.8.1
-	github.com/credativ/vali v0.0.0-20231004075841-dd1155be2fce
+	github.com/credativ/vali v0.0.0-20231107104733-01599efdacc6
 	github.com/crewjam/saml v0.4.6-0.20201227203850-bca570abb2ce
 	github.com/davecgh/go-spew v1.1.1
 	github.com/denisenkom/go-mssqldb v0.0.0-20200910202707-1e08a3fab204
