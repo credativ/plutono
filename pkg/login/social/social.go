@@ -126,6 +126,7 @@ func NewOAuthService() {
 				SocialBase:           newSocialBase(name, &config, info),
 				apiUrl:               info.ApiUrl,
 				teamIds:              sec.Key("team_ids").Ints(","),
+				roleAttributePath:    info.RoleAttributePath,
 				allowedOrganizations: util.SplitString(sec.Key("allowed_organizations").String()),
 			}
 		}
