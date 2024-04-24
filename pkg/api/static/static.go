@@ -131,6 +131,7 @@ func staticHandler(ctx *macaron.Context, log *log.Logger, opt StaticOptions) boo
 	}
 
 	f, err := opt.FileSystem.Open(file)
+	fResponse := f
 	if err != nil {
 		return false
 	}
@@ -154,17 +155,18 @@ func staticHandler(ctx *macaron.Context, log *log.Logger, opt StaticOptions) boo
 		}
 
 		file = path.Join(file, opt.IndexFile)
-		f, err = opt.FileSystem.Open(file)
+		fIndex, err := opt.FileSystem.Open(file)
+		fResponse = fIndex
 		if err != nil {
 			return false // Discard error.
 		}
 		defer func() {
-			if err := f.Close(); err != nil {
+			if err := fIndex.Close(); err != nil {
 				log.Printf("Failed to close file: %s", err)
 			}
 		}()
 
-		fi, err = f.Stat()
+		fi, err = fIndex.Stat()
 		if err != nil || fi.IsDir() {
 			return true
 		}
@@ -179,7 +181,7 @@ func staticHandler(ctx *macaron.Context, log *log.Logger, opt StaticOptions) boo
 		opt.AddHeaders(ctx)
 	}
 
-	http.ServeContent(ctx.Resp, ctx.Req.Request, file, fi.ModTime(), f)
+	http.ServeContent(ctx.Resp, ctx.Req.Request, file, fi.ModTime(), fResponse)
 	return true
 }
 
