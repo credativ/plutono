@@ -17,6 +17,7 @@ type SocialGithub struct {
 	allowedOrganizations []string
 	apiUrl               string
 	teamIds              []int
+	roleAttributePath    string
 }
 
 type GithubTeam struct {
@@ -26,6 +27,10 @@ type GithubTeam struct {
 	Organization struct {
 		Login string `json:"login"`
 	} `json:"organization"`
+}
+
+type TeamGroupsJson struct {
+	Groups []string `json:"groups"`
 }
 
 var (
@@ -201,12 +206,18 @@ func (s *SocialGithub) UserInfo(client *http.Client, token *oauth2.Token) (*Basi
 
 	teams := convertToGroupList(teamMemberships)
 
+	role, err := s.extractRole(teams)
+	if err != nil {
+		return nil, fmt.Errorf("Error extracting role: %s", err)
+	}
+
 	userInfo := &BasicUserInfo{
 		Name:   data.Login,
 		Login:  data.Login,
 		Id:     fmt.Sprintf("%d", data.Id),
 		Email:  data.Email,
 		Groups: teams,
+		Role:   role,
 	}
 
 	organizationsUrl := fmt.Sprintf(s.apiUrl + "/orgs")
@@ -227,6 +238,27 @@ func (s *SocialGithub) UserInfo(client *http.Client, token *oauth2.Token) (*Basi
 	}
 
 	return userInfo, nil
+}
+
+func (s *SocialGithub) extractRole(teams []string) (string, error) {
+	if s.roleAttributePath == "" {
+		return "", nil
+	}
+
+	teamsObj := TeamGroupsJson{
+		Groups: teams,
+	}
+	teamsJson, err := json.Marshal(teamsObj)
+	if err != nil {
+		return "", err
+	}
+
+	role, err := s.searchJSONForAttr(s.roleAttributePath, teamsJson)
+	if err != nil {
+		return "", err
+	}
+
+	return role, nil
 }
 
 func (t *GithubTeam) GetShorthand() (string, error) {
