@@ -17,8 +17,8 @@ import (
 	"github.com/credativ/plutono/pkg/setting"
 	"github.com/credativ/plutono/pkg/util/errutil"
 
-	"github.com/ProtonMail/go-crypto/openpgp"
-	"github.com/ProtonMail/go-crypto/openpgp/clearsign"
+	"golang.org/x/crypto/openpgp"
+	"golang.org/x/crypto/openpgp/clearsign"
 )
 
 // Soon we can fetch keys from:
