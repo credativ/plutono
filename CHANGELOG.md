@@ -4,6 +4,9 @@
 
 - New release
 - Upgrade Go to 1.22.3
+- #63 - New Feature: Added the roleAttributePath to GitHub Social Authentication for automated permission provisioning based on GitHub team membership
+- #66 - Bugfix: For the null pointer references when access /public/ context
+- #71 - Security: Bump crewjam/saml to v0.4.14 (CVE-2022-41912)
 
 <!-- 7.5.30 END -->
 
