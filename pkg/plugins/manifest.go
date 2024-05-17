@@ -17,7 +17,9 @@ import (
 	"github.com/credativ/plutono/pkg/setting"
 	"github.com/credativ/plutono/pkg/util/errutil"
 
+	//nolint:staticcheck
 	"golang.org/x/crypto/openpgp"
+	//nolint:staticcheck
 	"golang.org/x/crypto/openpgp/clearsign"
 )
 
