@@ -348,8 +348,8 @@ github.com/cpuguy83/go-md2man/v2 v2.0.0/go.mod h1:maD7wRr/U5Z6m/iR4s+kqSMx2CaBsr
 github.com/creack/pty v1.1.7/go.mod h1:lj5s0c3V2DBrqTV7llrYr5NG6My20zk30Fl46Y7DoTY=
 github.com/creack/pty v1.1.9/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
 github.com/creack/pty v1.1.11/go.mod h1:oKZEueFk5CKHvIhNR5MUki03XCEU+Q6VDXinZuGJ33E=
-github.com/credativ/vali v0.0.0-20240517084608-1003fffa2fe9 h1:sZIr5x+VbPYhn39xxo/+cjnCC9pGshoNfZNCz0fpwFk=
-github.com/credativ/vali v0.0.0-20240517084608-1003fffa2fe9/go.mod h1:N2kBFZ91qaBBif79xrLtVNCUzMzqH5BEl+kLuaLU9AA=
+github.com/credativ/vali v0.0.0-20240613093210-23c4edd121ab h1:NEcTbdpcFySrT6PxHDWgJg8h46GcZwGpbVK+bQko7PY=
+github.com/credativ/vali v0.0.0-20240613093210-23c4edd121ab/go.mod h1:N2kBFZ91qaBBif79xrLtVNCUzMzqH5BEl+kLuaLU9AA=
 github.com/crewjam/httperr v0.2.0/go.mod h1:Jlz+Sg/XqBQhyMjdDiC+GNNRzZTD7x39Gu3pglZ5oH4=
 github.com/crewjam/saml v0.4.14 h1:g9FBNx62osKusnFzs3QTN5L9CVA/Egfgm+stJShzw/c=
 github.com/crewjam/saml v0.4.14/go.mod h1:UVSZCf18jJkk6GpWNVqcyQJMD5HsRugBPf4I1nl2mME=
