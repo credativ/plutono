@@ -1,4 +1,12 @@
-<!-- 7.5.30 START -->
+<!-- 7.5.31 START -->
+
+# 7.5.31 (2024-06-13)
+
+- New release
+- Upgrade Go to 1.22.4
+- Upgrade Alpine to 3.20
+
+<!-- 7.5.31 END -->
 
 # 7.5.30 (2024-05-17)
 
