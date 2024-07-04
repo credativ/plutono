@@ -1,0 +1,11 @@
+apiVersion: v2
+name: plutono
+description: A plutono Helm chart for Kubernetes
+home: https://github.com/credativ/plutono
+type: application
+sources:
+  - https://github.com/credativ/plutono
+maintainers:
+  - name: credativ
+version: 0.1.0
+appVersion: main
