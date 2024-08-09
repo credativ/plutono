@@ -2,7 +2,7 @@
   "author": "Plutono Team",
   "license": "Apache-2.0",
   "name": "@credativ/plutono-ui",
-  "version": "7.5.32",
+  "version": "7.5.33",
   "description": "Plutono Components Library",
   "keywords": [
     "plutono",
@@ -27,8 +27,8 @@
   },
   "dependencies": {
     "@credativ/plutono-aws-sdk": "0.0.4",
-    "@credativ/plutono-data": "7.5.32",
-    "@credativ/plutono-e2e-selectors": "7.5.32",
+    "@credativ/plutono-data": "7.5.33",
+    "@credativ/plutono-e2e-selectors": "7.5.33",
     "@emotion/core": "10.0.27",
     "@grafana/tsconfig": "^1.0.0-rc1",
     "@iconscout/react-unicons": "1.1.4",
