@@ -108,7 +108,7 @@ func (pm *PluginManager) Init() error {
 		return err
 	}
 	if !exists {
-		if err = os.MkdirAll(pm.Cfg.PluginsPath, os.ModePerm); err != nil {
+		if err = os.MkdirAll(pm.Cfg.PluginsPath, 0o750); err != nil {
 			pm.log.Error("failed to create external plugins directory", "dir", pm.Cfg.PluginsPath, "error", err)
 		} else {
 			pm.log.Info("External plugins directory created", "directory", pm.Cfg.PluginsPath)

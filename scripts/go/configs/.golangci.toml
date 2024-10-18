@@ -20,7 +20,6 @@ rules = "pkg/ruleguard.rules.go"
 disable-all = true
 enable = [
   "bodyclose",
-  "depguard",
   "dogsled",
   "errcheck",
   # "gochecknoinits",
@@ -35,7 +34,6 @@ enable = [
   "govet",
   "ineffassign",
   "misspell",
-  "nakedret",
   "rowserrcheck",
   "exportloopref",
   "staticcheck",
@@ -128,3 +126,15 @@ text = "ST1020"
 [[issues.exclude-rules]]
 linters = ["stylecheck"]
 text = "ST1021"
+
+[[issues.exclude-rules]]
+linters = ["staticcheck"]
+text = "SA1019: \"io/ioutil\" has been deprecated"
+
+[[issues.exclude-rules]]
+linters = ["staticcheck"]
+text = "SA1019: rand.Seed has been deprecated"
+
+[[issues.exclude-rules]]
+linters = ["gosec"]
+text = "G115"

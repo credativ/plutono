@@ -175,7 +175,7 @@ func (c *QueryCondition) executeQuery(context *alerting.EvalContext, timeRange *
 		}
 
 		// If there are dataframes but no series on the result
-		useDataframes := v.Dataframes != nil && (v.Series == nil || len(v.Series) == 0)
+		useDataframes := v.Dataframes != nil && len(v.Series) == 0
 
 		if useDataframes { // convert the dataframes to tsdb.TimeSeries
 			frames, err := v.Dataframes.Decoded()

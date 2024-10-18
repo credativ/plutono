@@ -38,7 +38,8 @@ func makeSeriesNullableTime(name string, labels data.Labels, points ...nullTimeT
 
 func makeSeries(name string, labels data.Labels, points ...tp) Series {
 	newSeries := NewSeries(name, labels, 0, false, 1, true, len(points))
-	for idx, p := range points {
+	for idx := range points {
+		p := points[idx]
 		err := newSeries.SetPoint(idx, &p.t, p.f)
 		if err != nil {
 			panic(err)
@@ -49,7 +50,8 @@ func makeSeries(name string, labels data.Labels, points ...tp) Series {
 
 func makeNoNullSeries(name string, labels data.Labels, points ...noNullTP) Series {
 	newSeries := NewSeries(name, labels, 0, false, 1, false, len(points))
-	for idx, p := range points {
+	for idx := range points {
+		p := points[idx]
 		err := newSeries.SetPoint(idx, &p.t, &p.f)
 		if err != nil {
 			panic(err)
@@ -60,7 +62,8 @@ func makeNoNullSeries(name string, labels data.Labels, points ...noNullTP) Serie
 
 func makeSeriesTimeSecond(name string, labels data.Labels, points ...timeSecondTP) Series {
 	newSeries := NewSeries(name, labels, 1, false, 0, true, len(points))
-	for idx, p := range points {
+	for idx := range points {
+		p := points[idx]
 		err := newSeries.SetPoint(idx, &p.t, p.f)
 		if err != nil {
 			panic(err)

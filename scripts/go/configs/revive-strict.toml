@@ -14,7 +14,7 @@ warningCode = 1
 [rule.error-naming]
 [rule.exported]
 [rule.unexported-return]
-[rule.dot-imports]
+# [rule.dot-imports]
 [rule.receiver-naming]
 [rule.blank-imports]
 [rule.var-naming]

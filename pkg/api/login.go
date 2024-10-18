@@ -154,7 +154,7 @@ func tryOAuthAutoLogin(c *models.ReqContext) bool {
 	}
 	for key := range setting.OAuthService.OAuthInfos {
 		redirectUrl := setting.AppSubUrl + "/login/" + key
-		log.Infof("OAuth auto login enabled. Redirecting to " + redirectUrl)
+		log.Infof("OAuth auto login enabled. Redirecting to %s", redirectUrl)
 		c.Redirect(redirectUrl, 307)
 		return true
 	}

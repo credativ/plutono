@@ -696,7 +696,7 @@ func (cfg *Cfg) loadConfiguration(args *CommandLineArgs) (*ini.File, error) {
 		if err2 != nil {
 			return nil, err2
 		}
-		log.Fatalf(3, err.Error())
+		log.Fatalf(3, "%s", err.Error())
 	}
 
 	// apply environment overrides
