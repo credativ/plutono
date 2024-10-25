@@ -143,7 +143,7 @@ func validateRequiredField(notifications []*notificationsAsConfig) error {
 		}
 
 		if len(errStrings) != 0 {
-			return fmt.Errorf(strings.Join(errStrings, "\n"))
+			return fmt.Errorf("%s", strings.Join(errStrings, "\n"))
 		}
 	}
 

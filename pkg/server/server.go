@@ -227,7 +227,7 @@ func (s *Server) ExitCode(reason error) int {
 	code := 1
 
 	if errors.Is(reason, context.Canceled) && s.shutdownReason != "" {
-		reason = fmt.Errorf(s.shutdownReason)
+		reason = fmt.Errorf("%s", s.shutdownReason)
 		code = 0
 	}
 

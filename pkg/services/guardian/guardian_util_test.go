@@ -234,7 +234,7 @@ func (sc *scenarioContext) reportFailure(desc string, expected interface{}, actu
 		buf.WriteString(fmt.Sprintf("\n  Update permission (%d): dashboardId=%d, userId=%d, teamId=%d, role=%v, permission=%s", i, p.DashboardID, p.UserID, p.TeamID, r, p.Permission.String()))
 	}
 
-	sc.t.Fatalf(buf.String())
+	sc.t.Fatalf("%s", buf.String())
 }
 
 func newCustomUserPermission(dashboardID int64, userID int64, permission models.PermissionType) *models.DashboardAcl {

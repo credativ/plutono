@@ -262,7 +262,7 @@ func (ss *SQLStore) buildConnectionString() (string, error) {
 		if !filepath.IsAbs(ss.dbCfg.Path) {
 			ss.dbCfg.Path = filepath.Join(ss.Cfg.DataPath, ss.dbCfg.Path)
 		}
-		if err := os.MkdirAll(path.Dir(ss.dbCfg.Path), os.ModePerm); err != nil {
+		if err := os.MkdirAll(path.Dir(ss.dbCfg.Path), 0o750); err != nil {
 			return "", err
 		}
 

@@ -91,7 +91,7 @@ func (s *SocialGithub) FetchPrivateEmail(client *http.Client) (string, error) {
 		Verified bool   `json:"verified"`
 	}
 
-	response, err := s.httpGet(client, fmt.Sprintf(s.apiUrl+"/emails"))
+	response, err := s.httpGet(client, s.apiUrl+"/emails")
 	if err != nil {
 		return "", fmt.Errorf("Error getting email address: %s", err)
 	}
@@ -114,7 +114,7 @@ func (s *SocialGithub) FetchPrivateEmail(client *http.Client) (string, error) {
 }
 
 func (s *SocialGithub) FetchTeamMemberships(client *http.Client) ([]GithubTeam, error) {
-	url := fmt.Sprintf(s.apiUrl + "/teams?per_page=100")
+	url := s.apiUrl + "/teams?per_page=100"
 	hasMore := true
 	teams := make([]GithubTeam, 0)
 
@@ -220,7 +220,7 @@ func (s *SocialGithub) UserInfo(client *http.Client, token *oauth2.Token) (*Basi
 		Role:   role,
 	}
 
-	organizationsUrl := fmt.Sprintf(s.apiUrl + "/orgs")
+	organizationsUrl := s.apiUrl + "/orgs"
 
 	if !s.IsTeamMember(client) {
 		return nil, ErrMissingTeamMembership

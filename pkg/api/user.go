@@ -299,7 +299,7 @@ func searchUser(c *models.ReqContext) (*models.SearchUsersQuery, error) {
 	for _, user := range query.Result.Users {
 		user.AvatarUrl = dtos.GetGravatarUrl(user.Email)
 		user.AuthLabels = make([]string, 0)
-		if user.AuthModule != nil && len(user.AuthModule) > 0 {
+		if len(user.AuthModule) > 0 {
 			for _, authModule := range user.AuthModule {
 				user.AuthLabels = append(user.AuthLabels, GetAuthProviderLabel(authModule))
 			}

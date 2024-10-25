@@ -121,11 +121,3 @@ jobs:
 
       - name: Run E2E test
         run: e2e/run-suite
-
-      - name: Upload E2E test recordings
-        uses: actions/upload-artifact@v3
-        with:
-          name: e2e-test-recordings
-          path: e2e/suite1/videos
-          retention-days: 1
-        if: success() || failure()

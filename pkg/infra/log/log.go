@@ -211,7 +211,7 @@ func ReadLoggingConfig(modes []string, logsPath string, cfg *ini.File) error {
 		case "file":
 			fileName := sec.Key("file_name").MustString(filepath.Join(logsPath, "plutono.log"))
 			dpath := filepath.Dir(fileName)
-			if err := os.MkdirAll(dpath, os.ModePerm); err != nil {
+			if err := os.MkdirAll(dpath, 0o750); err != nil {
 				Root.Error("Failed to create directory", "dpath", dpath, "err", err)
 				return errutil.Wrapf(err, "failed to create log directory %q", dpath)
 			}

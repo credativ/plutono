@@ -64,7 +64,7 @@ func (s *SocialBase) httpGet(client *http.Client, url string) (response httpGetR
 	response = httpGetResponse{body, r.Header}
 
 	if r.StatusCode >= 300 {
-		err = fmt.Errorf(string(response.Body))
+		err = fmt.Errorf("%s", string(response.Body))
 		return
 	}
 
