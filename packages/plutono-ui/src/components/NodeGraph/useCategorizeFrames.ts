@@ -8,7 +8,21 @@ import { DataFrame } from '@credativ/plutono-data';
  */
 export function useCategorizeFrames(series: DataFrame[]) {
   return useMemo(() => {
-    const serviceMapFrames = series.filter((frame) => frame.meta?.preferredVisualisationType === 'nodeGraph');
+    const serviceMapFrames = series.filter((frame) => {
+      // Use the data frame if the preferred visualization type was set to nodeGraph.
+      if (frame.meta?.preferredVisualisationType === 'nodeGraph') {
+        return true;
+      }
+      // Use the data frame if its name is 'nodes' or 'edges'.
+      if (frame.name === 'nodes' || frame.name === 'edges') {
+        return true;
+      }
+      // Use the data frame if the query was named 'nodes' or 'edges'.
+      if (frame.refId === 'nodes' || frame.refId === 'edges') {
+        return true;
+      }
+      return false;
+    });
     return serviceMapFrames.reduce(
       (acc, frame) => {
         const sourceField = frame.fields.filter((f) => f.name === 'source');
