@@ -35,7 +35,7 @@ enable = [
   "ineffassign",
   "misspell",
   "rowserrcheck",
-  "exportloopref",
+  "copyloopvar",
   "staticcheck",
   "stylecheck",
   "typecheck",
