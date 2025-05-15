@@ -21,7 +21,6 @@ func (e *cloudWatchExecutor) executeLogActions(ctx context.Context, queryContext
 	eg, ectx := errgroup.WithContext(ctx)
 
 	for _, query := range queryContext.Queries {
-		query := query
 		eg.Go(func() error {
 			dataframe, err := e.executeLogAction(ectx, queryContext, query)
 			if err != nil {
