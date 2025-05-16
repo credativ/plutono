@@ -41,7 +41,7 @@ require (
 	github.com/gobwas/glob v0.2.3
 	github.com/golang/mock v1.5.0
 	github.com/golang/protobuf v1.4.3
-	github.com/google/go-cmp v0.5.9
+	github.com/google/go-cmp v0.6.0
 	github.com/google/uuid v1.2.0
 	github.com/gosimple/slug v1.9.0
 	github.com/grafana/grafana-aws-sdk v0.4.0
@@ -84,10 +84,10 @@ require (
 	github.com/xorcare/pointer v1.1.0
 	github.com/yudai/gojsondiff v1.0.0
 	go.opentelemetry.io/collector v0.21.0
-	golang.org/x/crypto v0.23.0
-	golang.org/x/net v0.21.0
+	golang.org/x/crypto v0.31.0
+	golang.org/x/net v0.33.0
 	golang.org/x/oauth2 v0.0.0-20210210192628-66670185b0cd
-	golang.org/x/sync v0.1.0
+	golang.org/x/sync v0.10.0
 	golang.org/x/time v0.0.0-20201208040808-7e3f01d25324
 	gonum.org/v1/gonum v0.12.0
 	google.golang.org/api v0.40.0
