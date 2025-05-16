@@ -35,6 +35,7 @@ func Decrypt(payload []byte, secret string) ([]byte, error) {
 	payload = payload[saltLength+aes.BlockSize:]
 	payloadDst := make([]byte, len(payload))
 
+	//nolint:staticcheck
 	stream := cipher.NewCFBDecrypter(block, iv)
 
 	// XORKeyStream can work in-place if the two arguments are the same.
@@ -67,6 +68,7 @@ func Encrypt(payload []byte, secret string) ([]byte, error) {
 		return nil, err
 	}
 
+	//nolint:staticcheck
 	stream := cipher.NewCFBEncrypter(block, iv)
 	stream.XORKeyStream(ciphertext[saltLength+aes.BlockSize:], payload)
 
