@@ -110,7 +110,6 @@ func (e *timeSeriesQuery) processQuery(q *Query, ms *es.MultiSearchRequestBuilde
 	}
 
 	for _, m := range q.Metrics {
-		m := m
 		if m.Type == countType {
 			continue
 		}

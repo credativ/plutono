@@ -140,7 +140,6 @@ func (e *cloudWatchExecutor) sendLiveQueriesToChannel(queryContext *tsdb.TsdbQue
 	eg, ectx := errgroup.WithContext(ctx)
 
 	for _, query := range queryContext.Queries {
-		query := query
 		eg.Go(func() error {
 			return e.startLiveQuery(ectx, responseChannel, query, queryContext.TimeRange)
 		})

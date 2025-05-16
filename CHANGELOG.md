@@ -1,3 +1,16 @@
+<!-- 7.5.38 START -->
+
+# 7.5.38 (2025-05-15)
+
+- Upgrade Go to 1.24.3
+- Upgrade github.com/google/go-cmp to 0.6.0
+- Upgrade golang.org/x/crypto to 0.38.0
+- Upgrade golang.org/x/net to 0.40.0
+- Upgrade golang.org/x/sync to 0.14.0
+- Upgrade golang.org/x/mod to 0.17.0
+
+<!-- 7.5.38 END -->
+
 <!-- 7.5.37 START -->
 
 # 7.5.37 (2025-03-13)
