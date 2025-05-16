@@ -2,8 +2,6 @@ module github.com/credativ/plutono
 
 go 1.24.3
 
-toolchain go1.24.3
-
 // Override xorm's outdated go-mssqldb dependency, since we can't upgrade to current xorm (due to breaking changes).
 // We need a more current go-mssqldb so we get rid of a version of apache/thrift with vulnerabilities.
 // Also, use our fork with fixes for unimplemented methods (required for Go 1.16).
