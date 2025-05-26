@@ -180,7 +180,7 @@ func staticHandler(ctx *macaron.Context, log *log.Logger, opt StaticOptions) boo
 	}
 
 	if !opt.SkipLogging {
-		log.Printf("[Static] Serving %s\n", file)
+		log.Printf("[Static] Serving %s\n", cleanedPath)
 	}
 
 	// Add an Expires header to the static content
@@ -188,7 +188,7 @@ func staticHandler(ctx *macaron.Context, log *log.Logger, opt StaticOptions) boo
 		opt.AddHeaders(ctx)
 	}
 
-	http.ServeContent(ctx.Resp, ctx.Req.Request, file, fi.ModTime(), fResponse)
+	http.ServeContent(ctx.Resp, ctx.Req.Request, cleanedPath, fi.ModTime(), fResponse)
 	return true
 }
 
