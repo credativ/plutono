@@ -118,19 +118,26 @@ func staticHandler(ctx *macaron.Context, log *log.Logger, opt StaticOptions) boo
 		return false
 	}
 
-	file := ctx.Req.URL.Path
+	requestedPath := ctx.Req.URL.Path
+
 	// if we have a prefix, filter requests by stripping the prefix
 	if opt.Prefix != "" {
-		if !strings.HasPrefix(file, opt.Prefix) {
+		if !strings.HasPrefix(requestedPath, opt.Prefix) {
 			return false
 		}
-		file = file[len(opt.Prefix):]
-		if file != "" && file[0] != '/' {
+		requestedPath = requestedPath[len(opt.Prefix):]
+		if requestedPath != "" && requestedPath[0] != '/' {
 			return false
 		}
 	}
 
-	f, err := opt.FileSystem.Open(file)
+	cleanedPath := path.Clean(requestedPath)
+
+	if strings.HasPrefix(cleanedPath, "../") || cleanedPath == ".." || cleanedPath == "." || cleanedPath == "" {
+		return false
+	}
+
+	f, err := opt.FileSystem.Open(cleanedPath)
 	fResponse := f
 	if err != nil {
 		return false
@@ -149,13 +156,13 @@ func staticHandler(ctx *macaron.Context, log *log.Logger, opt StaticOptions) boo
 	// Try to serve index file
 	if fi.IsDir() {
 		// Redirect if missing trailing slash.
-		if !strings.HasSuffix(ctx.Req.URL.Path, "/") {
-			http.Redirect(ctx.Resp, ctx.Req.Request, ctx.Req.URL.Path+"/", http.StatusFound)
+		if !strings.HasSuffix(cleanedPath, "/") {
+			http.Redirect(ctx.Resp, ctx.Req.Request, cleanedPath+"/", http.StatusFound)
 			return true
 		}
 
-		file = path.Join(file, opt.IndexFile)
-		fIndex, err := opt.FileSystem.Open(file)
+		indexFilePath = path.Join(cleanedPath, opt.IndexFile)
+		fIndex, err := opt.FileSystem.Open(indexFilePath)
 		fResponse = fIndex
 		if err != nil {
 			return false // Discard error.
