@@ -161,7 +161,7 @@ func staticHandler(ctx *macaron.Context, log *log.Logger, opt StaticOptions) boo
 			return true
 		}
 
-		indexFilePath = path.Join(cleanedPath, opt.IndexFile)
+		indexFilePath := path.Join(cleanedPath, opt.IndexFile)
 		fIndex, err := opt.FileSystem.Open(indexFilePath)
 		fResponse = fIndex
 		if err != nil {
