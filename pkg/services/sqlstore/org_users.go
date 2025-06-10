@@ -197,7 +197,7 @@ func RemoveOrgUser(cmd *models.RemoveOrgUserCommand) error {
 					return err
 				}
 			}
-		} else if cmd.ShouldDeleteOrphanedUser {
+		} else if cmd.ShouldDeleteOrphanedUser && !user.IsAdmin {
 			// no other orgs, delete the full user
 			if err := deleteUserInTransaction(sess, &models.DeleteUserCommand{UserId: user.Id}); err != nil {
 				return err

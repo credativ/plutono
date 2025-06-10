@@ -239,8 +239,16 @@ func TestAccountDataAccess(t *testing.T) {
 				})
 
 				Convey("Removing user from org should delete user completely if in no other org", func() {
+					// create instance admin so there is one left when we remove it from ac2
+					err := CreateUser(context.Background(), &models.CreateUserCommand{Login: "ac3", Email: "ac3@test.com", Name: "ac3 name", IsAdmin: true})
+					So(err, ShouldBeNil)
+
+					// remove instance admin privileges from ac2
+					err = UpdateUserPermissions(&models.UpdateUserPermissionsCommand{UserId: ac2.Id, IsPlutonoAdmin: false})
+					So(err, ShouldBeNil)
+
 					// make sure ac2 has no org
-					err := DeleteOrg(&models.DeleteOrgCommand{Id: ac2.OrgId})
+					err = DeleteOrg(&models.DeleteOrgCommand{Id: ac2.OrgId})
 					So(err, ShouldBeNil)
 
 					// remove ac2 user from ac1 org
@@ -251,6 +259,21 @@ func TestAccountDataAccess(t *testing.T) {
 
 					err = GetSignedInUser(&models.GetSignedInUserQuery{UserId: ac2.Id})
 					So(err, ShouldEqual, models.ErrUserNotFound)
+				})
+
+				Convey("Removing instance admin from org shouldn't delete user completely", func() {
+					// make sure ac2 has no org
+					err := DeleteOrg(&models.DeleteOrgCommand{Id: ac2.OrgId})
+					So(err, ShouldBeNil)
+
+					// remove ac2 user from ac1 org
+					remCmd := models.RemoveOrgUserCommand{OrgId: ac1.OrgId, UserId: ac2.Id, ShouldDeleteOrphanedUser: true}
+					err = RemoveOrgUser(&remCmd)
+					So(err, ShouldBeNil)
+					So(remCmd.UserWasDeleted, ShouldBeFalse)
+
+					err = GetSignedInUser(&models.GetSignedInUserQuery{UserId: ac2.Id})
+					So(err, ShouldBeNil)
 				})
 
 				Convey("Cannot delete last admin org user", func() {
