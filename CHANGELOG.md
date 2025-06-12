@@ -1,3 +1,17 @@
+<!-- 7.5.39 START -->
+
+# 7.5.39 (2025-06-12)
+
+- Fix NodeGraph not displaying anything with Postgres datasource
+- Prevent organisation admins from deleting instance admin accounts
+- Fix open redirect by sanitizing the path in the API handler
+- Upgrade Go to 1.24.4
+- Upgrade Alpine to 3.22.0
+- Upgrade github.com/mattn/go-sqlite3 to 1.14.22
+- Upgrade golang.org/x/crypto to 0.39.0
+
+<!-- 7.5.39 END -->
+
 <!-- 7.5.38 START -->
 
 # 7.5.38 (2025-05-15)
