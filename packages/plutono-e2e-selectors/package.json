@@ -2,7 +2,7 @@
   "author": "Plutono Team",
   "license": "Apache-2.0",
   "name": "@credativ/plutono-e2e-selectors",
-  "version": "7.5.38",
+  "version": "7.5.39",
   "description": "Plutono End-to-End Test Selectors Library",
   "keywords": [
     "cli",
