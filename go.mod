@@ -36,9 +36,9 @@ require (
 	github.com/go-stack/stack v1.8.0
 	github.com/gobwas/glob v0.2.3
 	github.com/golang/mock v1.5.0
-	github.com/golang/protobuf v1.4.3
-	github.com/google/go-cmp v0.6.0
-	github.com/google/uuid v1.2.0
+	github.com/golang/protobuf v1.5.4
+	github.com/google/go-cmp v0.7.0
+	github.com/google/uuid v1.6.0
 	github.com/gosimple/slug v1.9.0
 	github.com/grafana/grafana-aws-sdk v0.4.0
 	github.com/grafana/grafana-plugin-model v0.0.0-20190930120109-1fc953a61fb4
@@ -81,12 +81,12 @@ require (
 	go.opentelemetry.io/collector v0.21.0
 	golang.org/x/crypto v0.39.0
 	golang.org/x/net v0.40.0
-	golang.org/x/oauth2 v0.0.0-20210210192628-66670185b0cd
+	golang.org/x/oauth2 v0.28.0
 	golang.org/x/sync v0.15.0
 	golang.org/x/time v0.0.0-20201208040808-7e3f01d25324
 	gonum.org/v1/gonum v0.12.0
 	google.golang.org/api v0.40.0
-	google.golang.org/grpc v1.36.0
+	google.golang.org/grpc v1.73.0
 	gopkg.in/ini.v1 v1.62.0
 	gopkg.in/ldap.v3 v3.1.0
 	gopkg.in/macaron.v1 v1.4.0
@@ -106,7 +106,7 @@ require (
 	github.com/apache/thrift v0.14.1 // indirect
 	github.com/beorn7/perks v1.0.1 // indirect
 	github.com/centrifugal/protocol v0.3.4 // indirect
-	github.com/cespare/xxhash/v2 v2.1.1 // indirect
+	github.com/cespare/xxhash/v2 v2.3.0 // indirect
 	github.com/cheekybits/genny v1.0.0 // indirect
 	github.com/cpuguy83/go-md2man/v2 v2.0.0 // indirect
 	github.com/deepmap/oapi-codegen v1.3.13 // indirect
@@ -182,7 +182,7 @@ require (
 	golang.org/x/xerrors v0.0.0-20200804184101-5ec99f83aff1 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
 	google.golang.org/genproto v0.0.0-20210203152818-3206188e46ba // indirect
-	google.golang.org/protobuf v1.25.0 // indirect
+	google.golang.org/protobuf v1.36.6 // indirect
 	gopkg.in/alexcesaro/quotedprintable.v3 v3.0.0-20150716171945-2caba252f4dc // indirect
 	gopkg.in/asn1-ber.v1 v1.0.0-20181015200546-f715ec2f112d // indirect
 	gopkg.in/yaml.v3 v3.0.1 // indirect
