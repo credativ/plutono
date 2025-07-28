@@ -14,9 +14,24 @@ import (
 const defaultDingdingMsgType = "link"
 
 func patchDingDingURLFromSecureSettings(model *models.AlertNotification) {
-	if secretUrl := model.DecryptedValue("url"); secretUrl != "" {
-		model.Settings.Set("url", secretUrl)
-	}
+        if model.SecureSettings != nil {
+                value, exists := model.SecureSettings["url"]
+                if !exists {
+                        fmt.Println("Key 'url' not found in SecureSettings")
+                        return
+                }
+
+                secretUrlBytes, ok := value.([]byte)
+                if !ok {
+                        fmt.Printf("Invalid type for 'url', expected []byte but got %T\n", value)
+                        return
+                }
+                
+                if len(secretUrlBytes) > 0 {
+                        secretUrl := string(secretUrlBytes)
+                        model.Settings.Set("url", secretUrl)
+                }
+        }
 }
 
 func init() {
