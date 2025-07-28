@@ -13,6 +13,14 @@ import (
 
 const defaultDingdingMsgType = "link"
 
+func patchDingDingURLFromSecureSettings(model *models.AlertNotification) {
+	if model.SecureSettings != nil {
+		if secretUrl, ok := model.SecureSettings["url"].(string); ok && secretUrl != "" {
+			model.Settings.Set("url", secretUrl)
+		}
+	}
+}
+
 func init() {
 	alerting.RegisterNotifier(&alerting.NotifierPlugin{
 		Type:        "dingding",
@@ -28,6 +36,7 @@ func init() {
 				Placeholder:  "https://oapi.dingtalk.com/robot/send?access_token=xxxxxxxxx",
 				PropertyName: "url",
 				Required:     true,
+				Secure:       true,
 			},
 			{
 				Label:        "Message Type",
@@ -48,6 +57,9 @@ func init() {
 }
 
 func newDingDingNotifier(model *models.AlertNotification) (alerting.Notifier, error) {
+
+	patchDingDingURLFromSecureSettings(model)
+
 	url := model.Settings.Get("url").MustString()
 	if url == "" {
 		return nil, alerting.ValidationError{Reason: "Could not find url property in settings"}
