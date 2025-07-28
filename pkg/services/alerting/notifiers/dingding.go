@@ -14,11 +14,8 @@ import (
 const defaultDingdingMsgType = "link"
 
 func patchDingDingURLFromSecureSettings(model *models.AlertNotification) {
-	if model.SecureSettings != nil {
-		if secretUrlBytes, ok := model.SecureSettings["url"].([]byte); ok && len(secretUrlBytes) > 0 {
-			secretUrl := string(secretUrlBytes)
-			model.Settings.Set("url", secretUrl)
-		}
+	if secretUrl, err := model.DecryptedValue("url"); err == nil && secretUrl != "" {
+		model.Settings.Set("url", secretUrl)
 	}
 }
 
