@@ -1,5 +1,5 @@
 # Frontend builder stage
-FROM --platform=$BUILDPLATFORM docker.io/library/node:14.15.5-alpine3.13 as js-builder
+FROM --platform=$BUILDPLATFORM docker.io/library/node:14.15.5-alpine3.13 AS js-builder
 
 RUN apk add --no-cache git
 
@@ -26,7 +26,7 @@ ENV NODE_ENV=production \
 RUN yarn build
 
 # Backend builder stage
-FROM docker.io/library/golang:1.24.5-alpine3.22 as go-builder
+FROM docker.io/library/golang:1.25.0-alpine3.22 AS go-builder
 
 RUN apk add --no-cache gcc g++
 
@@ -46,7 +46,7 @@ RUN go run build.go build && \
     mv /go/src/github.com/credativ/plutono/bin/linux-$(go env GOARCH)/plutono-cli /go/src/github.com/credativ/plutono/bin/
 
 # Final stage
-FROM docker.io/library/alpine:3.22.1 as final
+FROM docker.io/library/alpine:3.22.1 AS final
 
 ARG PL_UID="472"
 ARG PL_GID="0"
