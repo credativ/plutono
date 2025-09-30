@@ -4,7 +4,6 @@ import {
   hideOptions,
   initialState as optionsPickerInitialState,
   moveOptionsHighlight,
-  OPTIONS_LIMIT,
   optionsPickerReducer,
   OptionsPickerState,
   showOptions,
@@ -18,6 +17,7 @@ import {
 import { reducerTester } from '../../../../../test/core/redux/reducerTester';
 import { QueryVariableModel, VariableOption, VariableTag } from '../../types';
 import { ALL_VARIABLE_TEXT, ALL_VARIABLE_VALUE } from '../../state/types';
+import config from 'app/core/config';
 
 const getVariableTestContext = (extend: Partial<OptionsPickerState>) => {
   return {
@@ -730,7 +730,7 @@ describe('optionsPickerReducer', () => {
         const queryValue = 'option:1337';
 
         const options = [];
-        for (let index = 0; index <= OPTIONS_LIMIT + 337; index++) {
+        for (let index = 0; index <= config.optionsLimit + 337; index++) {
           options.push({ text: `option:${index}`, value: `option:${index}`, selected: false });
         }
 
@@ -911,7 +911,7 @@ describe('optionsPickerReducer', () => {
       const searchQuery = 'option:11256';
 
       const options: VariableOption[] = [];
-      for (let index = 0; index <= OPTIONS_LIMIT + 11256; index++) {
+      for (let index = 0; index <= config.optionsLimit + 11256; index++) {
         options.push({ text: `option:${index}`, value: `option:${index}`, selected: false });
       }
 
@@ -937,7 +937,7 @@ describe('optionsPickerReducer', () => {
       const searchQuery = '__searchFilter';
       const options = [{ text: 'All', value: '$__all', selected: true }];
 
-      for (let i = 0; i <= OPTIONS_LIMIT + 137; i++) {
+      for (let i = 0; i <= config.optionsLimit + 137; i++) {
         options.push({ text: `option${i}`, value: `option${i}`, selected: false });
       }
       const { initialState } = getVariableTestContext({
@@ -949,7 +949,7 @@ describe('optionsPickerReducer', () => {
         .whenActionIsDispatched(updateOptionsFromSearch(options))
         .thenStateShouldEqual({
           ...initialState,
-          options: options.slice(0, OPTIONS_LIMIT),
+          options: options.slice(0, config.optionsLimit),
           selectedValues: [{ text: 'All', value: '$__all', selected: true }],
           highlightIndex: 0,
         });
@@ -967,10 +967,10 @@ describe('optionsPickerReducer', () => {
         id: '0',
       } as QueryVariableModel;
       const checkOptions = [];
-      for (let index = 0; index < OPTIONS_LIMIT; index++) {
+      for (let index = 0; index < config.optionsLimit; index++) {
         checkOptions.push({ text: `option${index}`, value: `option${index}`, selected: false });
       }
-      for (let i = 1; i <= OPTIONS_LIMIT + 137; i++) {
+      for (let i = 1; i <= config.optionsLimit + 137; i++) {
         payload.options.push({ text: `option${i}`, value: `option${i}`, selected: false });
       }
 
