@@ -2,7 +2,7 @@
   "author": "Plutono Team",
   "license": "Apache-2.0",
   "name": "@credativ/plutono-data",
-  "version": "7.5.42",
+  "version": "7.5.43",
   "description": "Plutono Data Library",
   "keywords": [
     "typescript"
