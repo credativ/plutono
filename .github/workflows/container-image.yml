@@ -63,6 +63,12 @@ jobs:
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Install chrome
+        run: >
+            cd /tmp &&
+            curl -LO http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_140.0.7339.207-1_amd64.deb &&
+            sudo dpkg -i --force-all google-chrome-stable_140.0.7339.207-1_amd64.deb
+
       - name: Install cypress
         run: node_modules/cypress/bin/cypress install
 
