@@ -2,7 +2,7 @@
   "author": "Plutono Team",
   "license": "Apache-2.0",
   "name": "@credativ/plutono-toolkit",
-  "version": "7.5.44",
+  "version": "7.5.45",
   "description": "Plutono Toolkit",
   "keywords": [
     "plutono",
@@ -28,8 +28,8 @@
   "dependencies": {
     "@babel/core": "7.9.0",
     "@babel/preset-env": "7.9.0",
-    "@credativ/plutono-data": "7.5.44",
-    "@credativ/plutono-ui": "7.5.44",
+    "@credativ/plutono-data": "7.5.45",
+    "@credativ/plutono-ui": "7.5.45",
     "@grafana/eslint-config": "2.3.0",
     "@grafana/tsconfig": "^1.0.0-rc1",
     "@types/command-exists": "^1.2.0",
