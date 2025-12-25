@@ -219,6 +219,7 @@ func (hs *HTTPServer) getFrontendSettingsMap(c *models.ReqContext) (map[string]i
 		"editorsCanAdmin":            hs.Cfg.EditorsCanAdmin,
 		"disableSanitizeHtml":        hs.Cfg.DisableSanitizeHtml,
 		"pluginsToPreload":           pluginsToPreload,
+		"optionsLimit":               hs.Cfg.OptionsLimit,
 		"buildInfo": map[string]interface{}{
 			"hideVersion":   hideVersion,
 			"version":       version,

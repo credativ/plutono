@@ -337,6 +337,8 @@ type Cfg struct {
 
 	// Data sources
 	DataSourceLimit int
+	OptionsLimit    int64
+	MaxDataPoints   int64
 
 	// Snapshots
 	SnapshotPublicMode bool
@@ -1418,6 +1420,9 @@ func (cfg *Cfg) GetContentDeliveryURL(prefix string) string {
 }
 
 func (cfg *Cfg) readDataSourcesSettings() {
+	const MaxDataPointsLimitScale = 10 //for some reason we need to divide by 10 for the max data points limit. IE 100 means 1000. Not clear why that is the case
 	datasources := cfg.Raw.Section("datasources")
 	cfg.DataSourceLimit = datasources.Key("datasource_limit").MustInt(5000)
+	cfg.OptionsLimit = datasources.Key("options_limit").MustInt64(1000)
+	cfg.MaxDataPoints = cfg.OptionsLimit / MaxDataPointsLimitScale
 }
