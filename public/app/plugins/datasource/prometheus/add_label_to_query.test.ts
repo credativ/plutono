@@ -113,6 +113,12 @@ describe('addLabelToQuery()', () => {
       'count(my_metric{bar="baz",job!="foo"} < (5*1024*1024*1024) or vector(0)) - 1'
     );
   });
+  it('should not add ad-hoc filter to the offset keyword', () => {
+    expect(addLabelToQuery('metric offset 5m', 'foo', 'bar')).toBe('metric{foo="bar"} offset 5m');
+    expect(
+      addLabelToQuery('unless ratelimit_service_rate_limit_over_limit offset 5m', 'container', 'istio-ratelimit')
+    ).toBe('unless ratelimit_service_rate_limit_over_limit{container="istio-ratelimit"} offset 5m');
+  });
 });
 
 describe('addLabelToSelector()', () => {
