@@ -1,6 +1,15 @@
+<!-- 7.5.47 START -->
+
+# 7.5.47 (2026-04-17)
+
+- Upgrade Go to 1.26.2
+- Upgrade Alpine to 3.23.4
+
+<!-- 7.5.47 END -->
+
 <!-- 7.5.46 START -->
 
-# 7.5.46 (2025-02-19)
+# 7.5.46 (2026-02-19)
 
 - Upgrade Go to 1.26.0
 - Upgrade Alpine to 3.23.3
