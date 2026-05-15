@@ -4,11 +4,14 @@
 
 // Code from https://github.com/gogits/gogs/blob/v0.7.0/modules/avatar/avatar.go
 
+// patch CVE-2026-21720, credativ GmbH
+
 package avatar
 
 import (
 	"bufio"
 	"bytes"
+	"context"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -59,11 +62,13 @@ func (a *Avatar) Encode(wr io.Writer) error {
 	return err
 }
 
-func (a *Avatar) Update() (err error) {
+func (a *Avatar) Update(ctx context.Context) (err error) {
 	select {
 	case <-time.After(time.Second * 3):
 		err = fmt.Errorf("get gravatar image %s timeout", a.hash)
-	case err = <-thunder.GoFetch(gravatarSource+a.hash+"?"+a.reqParams, a):
+	case <-ctx.Done():
+		err = fmt.Errorf("request cancelled for %s", a.hash)
+	case err = <-thunder.GoFetch(ctx, gravatarSource+a.hash+"?"+a.reqParams, a):
 	}
 	return err
 }
@@ -93,7 +98,7 @@ func (a *CacheServer) Handler(ctx *models.ReqContext) {
 
 	if avatar.Expired() {
 		// The cache item is either expired or newly created, update it from the server
-		if err := avatar.Update(); err != nil {
+		if err := avatar.Update(ctx.Req.Context()); err != nil {
 			log.Tracef("avatar update error: %v", err)
 			avatar = a.notFound
 		}
@@ -172,28 +177,33 @@ func (t *Thunder) init() {
 	}
 }
 
-func (t *Thunder) Fetch(url string, avatar *Avatar) error {
+func (t *Thunder) Fetch(ctx context.Context, url string, avatar *Avatar) error {
 	t.once.Do(t.init)
 	task := &thunderTask{
 		Url:    url,
 		Avatar: avatar,
 	}
 	task.Add(1)
-	t.q <- task
-	task.Wait()
-	return task.err
+	select {
+	case t.q <- task:
+		task.Wait()
+		return task.err
+	case <-ctx.Done():
+		return ctx.Err()
+	}
 }
 
-func (t *Thunder) GoFetch(url string, avatar *Avatar) chan error {
-	c := make(chan error)
+func (t *Thunder) GoFetch(ctx context.Context, url string, avatar *Avatar) chan error {
+	c := make(chan error, 1) // Buffered channel prevents goroutine leak
 	go func() {
-		c <- t.Fetch(url, avatar)
+		c <- t.Fetch(ctx, url, avatar)
 	}()
 	return c
 }
 
 // thunder download
 type thunderTask struct {
+	Ctx    context.Context
 	Url    string
 	Avatar *Avatar
 	sync.WaitGroup
@@ -214,7 +224,7 @@ func (a *thunderTask) fetch() error {
 	a.Avatar.timestamp = time.Now()
 
 	log.Debugf("avatar.fetch(fetch new avatar): %s", a.Url)
-	req, err := http.NewRequest("GET", a.Url, nil)
+	req, err := http.NewRequestWithContext(a.Ctx, "GET", a.Url, nil)
 	if err != nil {
 		return err
 	}
