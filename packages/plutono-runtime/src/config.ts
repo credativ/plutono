@@ -73,6 +73,7 @@ export class PlutonoBootConfig implements PlutonoConfig {
   customTheme?: any;
   awsAllowedAuthProviders: string[] = [];
   awsAssumeRoleEnabled = false;
+  optionsLimit = 1000;
 
   constructor(options: PlutonoBootConfig) {
     this.theme = options.bootData.user.lightTheme ? getTheme(PlutonoThemeType.Light) : getTheme(PlutonoThemeType.Dark);
