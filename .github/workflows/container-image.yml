@@ -65,9 +65,11 @@ jobs:
 
       - name: Install chrome
         run: >
-            cd /tmp &&
-            curl -LO http://dl.google.com/linux/chrome/deb/pool/main/g/google-chrome-stable/google-chrome-stable_140.0.7339.207-1_amd64.deb &&
-            sudo dpkg -i --force-all google-chrome-stable_140.0.7339.207-1_amd64.deb
+            docker pull ghcr.io/credativ/plutono:cypress-browser &&
+            docker create --name cypress-browser ghcr.io/credativ/plutono:cypress-browser true &&
+            docker cp cypress-browser:/google-chrome-stable_140.0.7339.207-1_amd64.deb /tmp/ &&
+            docker rm cypress-browser &&
+            sudo apt-get install -y --allow-downgrades --no-install-recommends /tmp/google-chrome-stable_140.0.7339.207-1_amd64.deb
 
       - name: Install cypress
         run: node_modules/cypress/bin/cypress install
