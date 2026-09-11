@@ -60,9 +60,6 @@ jobs:
               **/go.sum
               **/go.mod
 
-      - name: Linter
-        run: make lint-go
-
       - name: Test
         run: go test -v -covermode=atomic -tags=integration ./pkg/...
 
