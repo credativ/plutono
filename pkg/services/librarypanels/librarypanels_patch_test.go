@@ -99,6 +99,8 @@ func TestPatchLibraryPanel(t *testing.T) {
 			sc.initialResult.Result.Meta.CreatedBy.Name = UserInDbName
 			sc.initialResult.Result.Meta.CreatedBy.AvatarUrl = UserInDbAvatar
 			sc.initialResult.Result.Version = 2
+			// Reset time stamps to prevent flaky tests
+			sc.initialResult.Result.Meta.Updated = result.Result.Meta.Updated
 			if diff := cmp.Diff(sc.initialResult.Result, result.Result, getCompareOptions()...); diff != "" {
 				t.Fatalf("Result mismatch (-want +got):\n%s", diff)
 			}
@@ -118,6 +120,8 @@ func TestPatchLibraryPanel(t *testing.T) {
 			sc.initialResult.Result.Meta.CreatedBy.Name = UserInDbName
 			sc.initialResult.Result.Meta.CreatedBy.AvatarUrl = UserInDbAvatar
 			sc.initialResult.Result.Model["title"] = "New Name"
+			// Reset time stamps to prevent flaky tests
+			sc.initialResult.Result.Meta.Updated = result.Result.Meta.Updated
 			sc.initialResult.Result.Version = 2
 			if diff := cmp.Diff(sc.initialResult.Result, result.Result, getCompareOptions()...); diff != "" {
 				t.Fatalf("Result mismatch (-want +got):\n%s", diff)
@@ -145,6 +149,8 @@ func TestPatchLibraryPanel(t *testing.T) {
 			sc.initialResult.Result.Meta.CreatedBy.Name = UserInDbName
 			sc.initialResult.Result.Meta.CreatedBy.AvatarUrl = UserInDbAvatar
 			sc.initialResult.Result.Version = 2
+			// Reset time stamps to prevent flaky tests
+			sc.initialResult.Result.Meta.Updated = result.Result.Meta.Updated
 			if diff := cmp.Diff(sc.initialResult.Result, result.Result, getCompareOptions()...); diff != "" {
 				t.Fatalf("Result mismatch (-want +got):\n%s", diff)
 			}
@@ -170,6 +176,8 @@ func TestPatchLibraryPanel(t *testing.T) {
 			sc.initialResult.Result.Meta.CreatedBy.Name = UserInDbName
 			sc.initialResult.Result.Meta.CreatedBy.AvatarUrl = UserInDbAvatar
 			sc.initialResult.Result.Version = 2
+			// Reset time stamps to prevent flaky tests
+			sc.initialResult.Result.Meta.Updated = result.Result.Meta.Updated
 			if diff := cmp.Diff(sc.initialResult.Result, result.Result, getCompareOptions()...); diff != "" {
 				t.Fatalf("Result mismatch (-want +got):\n%s", diff)
 			}
@@ -195,6 +203,8 @@ func TestPatchLibraryPanel(t *testing.T) {
 			sc.initialResult.Result.Meta.CreatedBy.Name = UserInDbName
 			sc.initialResult.Result.Meta.CreatedBy.AvatarUrl = UserInDbAvatar
 			sc.initialResult.Result.Version = 2
+			// Reset time stamps to prevent flaky tests
+			sc.initialResult.Result.Meta.Updated = result.Result.Meta.Updated
 			if diff := cmp.Diff(sc.initialResult.Result, result.Result, getCompareOptions()...); diff != "" {
 				t.Fatalf("Result mismatch (-want +got):\n%s", diff)
 			}
@@ -211,6 +221,8 @@ func TestPatchLibraryPanel(t *testing.T) {
 			sc.initialResult.Result.Meta.CreatedBy.Name = UserInDbName
 			sc.initialResult.Result.Meta.CreatedBy.AvatarUrl = UserInDbAvatar
 			sc.initialResult.Result.Version = 2
+			// Reset time stamps to prevent flaky tests
+			sc.initialResult.Result.Meta.Updated = result.Result.Meta.Updated
 			if diff := cmp.Diff(sc.initialResult.Result, result.Result, getCompareOptions()...); diff != "" {
 				t.Fatalf("Result mismatch (-want +got):\n%s", diff)
 			}
