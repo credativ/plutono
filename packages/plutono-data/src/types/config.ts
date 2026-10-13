@@ -126,4 +126,5 @@ export interface PlutonoConfig {
   dateFormats?: SystemDateFormatSettings;
   sentry: SentryConfig;
   customTheme?: any;
+  optionsLimit: number;
 }

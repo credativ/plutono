@@ -5,6 +5,7 @@ import { ALL_VARIABLE_VALUE } from '../../state/types';
 import { isMulti, isQuery } from '../../guard';
 import { applyStateChanges } from '../../../../core/utils/applyStateChanges';
 import { containsSearchFilter } from '../../utils';
+import config from 'app/core/config';
 
 export interface ToggleOption {
   option?: VariableOption;
@@ -33,8 +34,6 @@ export const initialState: OptionsPickerState = {
   options: [],
   multi: false,
 };
-
-export const OPTIONS_LIMIT = 1000;
 
 const getTags = (model: VariableWithMultiSupport) => {
   if (isQuery(model) && Array.isArray(model.tags)) {
@@ -86,10 +85,11 @@ const applyLimit = (options: VariableOption[]): VariableOption[] => {
   if (!Array.isArray(options)) {
     return [];
   }
-  if (options.length <= OPTIONS_LIMIT) {
+  if (options.length <= config.optionsLimit) {
     return options;
   }
-  return options.slice(0, OPTIONS_LIMIT);
+  console.log('Need to slice!');
+  return options.slice(0, config.optionsLimit);
 };
 
 const updateDefaultSelection = (state: OptionsPickerState): OptionsPickerState => {
